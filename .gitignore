@@ -2,3 +2,6 @@ pdfs/
 site/
 __pycache__/
 *.pyc
+.DS_Store
+out/
+fix_ocr.py

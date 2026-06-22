@@ -42,6 +42,29 @@ theme:
 
 nav:
   - 首页: index.md
+  - 书籍:
+    - 机器学习:
+      - 斯坦福ML笔记:
+        - 封面: books/ml/stanford-ml-notes/index.md
+        - 第1周 · 引言&线性回归&线性代数: books/ml/stanford-ml-notes/ch01.md
+        - 第2周 · 多变量线性回归&Octave: books/ml/stanford-ml-notes/ch02.md
+        - 第3周 · 逻辑回归&正则化: books/ml/stanford-ml-notes/ch03.md
+        - 第4周 · 神经网络表述: books/ml/stanford-ml-notes/ch04.md
+        - 第5周 · 神经网络学习: books/ml/stanford-ml-notes/ch05.md
+        - 第6周 · 应用建议&系统设计: books/ml/stanford-ml-notes/ch06.md
+        - 第7周 · 支持向量机: books/ml/stanford-ml-notes/ch07.md
+        - 第8周 · 聚类&降维: books/ml/stanford-ml-notes/ch08.md
+        - 第9周 · 异常检测&推荐系统: books/ml/stanford-ml-notes/ch09.md
+        - 第10周 · 大规模ML&OCR&总结: books/ml/stanford-ml-notes/ch10.md
+        - 附件 · CS229复习&数学基础: books/ml/stanford-ml-notes/appendix.md
+    - 灵性:
+      - 与神对话:
+        - 封面: books/spirituality/conversations-with-god/index.md
+        - 第一卷 · 个人生活与真理: books/spirituality/conversations-with-god/vol1.md
+        - 第二卷 · 全球议题: books/spirituality/conversations-with-god/vol2.md
+        - 第三卷 · 宇宙真相: books/spirituality/conversations-with-god/vol3.md
+        - 第四卷 · 与神为友: books/spirituality/conversations-with-god/vol4.md
+        - 第五卷 · 与神合一: books/spirituality/conversations-with-god/vol5.md
 
 use_directory_urls: false
 markdown_extensions:
