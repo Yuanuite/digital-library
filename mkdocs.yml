@@ -1,6 +1,6 @@
 site_name: Library
 site_description: 个人数字图书馆
-site_url: https://qingyuan.github.io/digital-library/
+site_url: https://yuanuite.github.io/digital-library/
 docs_dir: docs
 theme:
   name: material
