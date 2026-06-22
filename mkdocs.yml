@@ -65,6 +65,21 @@ nav:
         - 第三卷 · 宇宙真相: books/spirituality/conversations-with-god/vol3.md
         - 第四卷 · 与神为友: books/spirituality/conversations-with-god/vol4.md
         - 第五卷 · 与神合一: books/spirituality/conversations-with-god/vol5.md
+    - 金融:
+      - Why Stock Markets Crash:
+        - 封面: books/finance/why-stock-markets-crash/index.md
+        - 前言: books/finance/why-stock-markets-crash/preface.md
+        - Ch1 · 金融崩盘: books/finance/why-stock-markets-crash/ch01.md
+        - Ch2 · 金融市场基础: books/finance/why-stock-markets-crash/ch02.md
+        - Ch3 · 崩盘是异常值: books/finance/why-stock-markets-crash/ch03.md
+        - Ch4 · 正反馈机制: books/finance/why-stock-markets-crash/ch04.md
+        - Ch5 · 泡沫与崩盘模型: books/finance/why-stock-markets-crash/ch05.md
+        - Ch6 · 分形与离散标度不变性: books/finance/why-stock-markets-crash/ch06.md
+        - Ch7 · 主要崩盘剖析: books/finance/why-stock-markets-crash/ch07.md
+        - Ch8 · 新兴市场: books/finance/why-stock-markets-crash/ch08.md
+        - Ch9 · 预测泡沫与崩盘: books/finance/why-stock-markets-crash/ch09.md
+        - Ch10 · 2050 增长终结: books/finance/why-stock-markets-crash/ch10.md
+        - 参考文献: books/finance/why-stock-markets-crash/references.md
 
 use_directory_urls: false
 markdown_extensions:

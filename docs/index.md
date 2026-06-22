@@ -18,16 +18,25 @@
 
     [:octicons-arrow-right-24: 开始阅读](books/ml/stanford-ml-notes/index.md)
 
-  -   :material-book-open-variant: __与神对话__
+-   :material-book-open-variant: __与神对话__
 
-      ---
+    ---
 
-      *尼尔·唐纳德·沃尔什 · 中文*
+    *尼尔·唐纳德·沃尔什 · 中文*
 
-      一场人与神的深度对话，五卷灵性经典，探讨个人生活、全球议题与宇宙真相。
+    一场人与神的深度对话，五卷灵性经典，探讨个人生活、全球议题与宇宙真相。
 
-      [:octicons-arrow-right-24: 开始阅读](books/spirituality/conversations-with-god/index.md)
+    [:octicons-arrow-right-24: 开始阅读](books/spirituality/conversations-with-god/index.md)
 
+-   :material-book-open-variant: __Why Stock Markets Crash__
+
+    ---
+
+    *Didier Sornette · English*
+
+    复杂金融系统中的临界事件，从物理学家视角剖析股市崩盘的机制与预兆，含分形、对数周期性等量化方法。
+
+    [:octicons-arrow-right-24: 开始阅读](books/finance/why-stock-markets-crash/index.md)
 
 <!-- 更多书籍卡片将通过 add-book-to-library skill 自动添加 -->
 
