@@ -5,6 +5,12 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Grant GITHUB_TOKEN write access to push to gh-pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,3 +25,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: site
+          publish_branch: gh-pages
