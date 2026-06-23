@@ -131,7 +131,13 @@ nav:
           - Ch29 · 内幕交易: books/finance/trading-and-exchanges/ch29.md
           - 参考文献: books/finance/trading-and-exchanges/references.md
           - 索引: books/finance/trading-and-exchanges/index_term.md
-    - 论文: papers/index.md
+    - 论文:
+      - papers/index.md
+      - 网络科学:
+        - papers/network-science/index.md
+        - 特征向量局域化:
+          - 封面: papers/network-science/eigenvector-localization/index.md
+          - 全文: papers/network-science/eigenvector-localization/paper.md
     - 笔记: notes/index.md
   - 关于: about.md
 
