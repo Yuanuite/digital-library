@@ -1,0 +1,5802 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="个人数字图书馆">
+      
+      
+      
+        <link rel="canonical" href="https://yuanuite.github.io/digital-library/books/finance/trading-and-exchanges/ch22.html">
+      
+      
+        <link rel="prev" href="ch21.html">
+      
+      
+        <link rel="next" href="ch23.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Ch22 · 绩效评估 - Yuan's Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-22-performance-evaluation-and-prediction" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../index.html" title="Yuan&#39;s Library" class="md-header__button md-logo" aria-label="Yuan's Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Yuan's Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ch22 · 绩效评估
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="Yuan&#39;s Library" class="md-nav__button md-logo" aria-label="Yuan's Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Yuan's Library
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    书籍
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    书籍
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ml/stanford-ml-notes/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    斯坦福ML笔记
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    斯坦福ML笔记
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1周 · 引言&线性回归&线性代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2周 · 多变量线性回归&Octave
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3周 · 逻辑回归&正则化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4周 · 神经网络表述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第5周 · 神经网络学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6周 · 应用建议&系统设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第7周 · 支持向量机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8周 · 聚类&降维
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第9周 · 异常检测&推荐系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10周 · 大规模ML&OCR&总结
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/appendix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附件 · CS229复习&数学基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    灵性
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    灵性
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../spirituality/conversations-with-god/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    与神对话
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    与神对话
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一卷 · 个人生活与真理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二卷 · 全球议题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三卷 · 宇宙真相
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四卷 · 与神为友
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五卷 · 与神合一
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    金融
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../why-stock-markets-crash/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Stock Markets Crash
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Why Stock Markets Crash
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/preface.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch1 · 金融崩盘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch2 · 金融市场基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch3 · 崩盘是异常值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch4 · 正反馈机制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch5 · 泡沫与崩盘模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch6 · 分形与离散标度不变性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch7 · 主要崩盘剖析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch8 · 新兴市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch9 · 预测泡沫与崩盘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch10 · 2050 增长终结
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trading and Exchanges
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trading and Exchanges
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch1 · 导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch2 · 交易故事
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch3 · 交易行业
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch4 · 订单与属性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch5 · 市场结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch6 · 订单驱动市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch7 · 经纪人
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch8 · 交易动机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch9 · 优良市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch10 · 知情交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch11 · 订单预测者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch12 · 欺诈与操纵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch13 · 做市商
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch14 · 买卖价差
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch15 · 大宗交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch16 · 价值交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch17 · 套利者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch18.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch18 · 买方交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch19.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch19 · 流动性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch20.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch20 · 波动性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch21.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch21 · 交易成本测量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch22 · 绩效评估
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ch22.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch22 · 绩效评估
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#221-the-performance-evaluation-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1 THE PERFORMANCE EVALUATION PROBLEM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222-performance-evaluation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2 PERFORMANCE EVALUATION METHODS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.2 PERFORMANCE EVALUATION METHODS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2221-absolute-performance-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.1 Absolute Performance Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2222-relative-performance-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2 Relative Performance Measurement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.2.2 Relative Performance Measurement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22221-market-adjusted-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2.1 Market-adjusted Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22222-risk-adjusted-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2.2 Risk-adjusted Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22223-market-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2.3 Market Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223-the-performance-prediction-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3 THE PERFORMANCE PREDICTION PROBLEM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.3 THE PERFORMANCE PREDICTION PROBLEM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2231-some-empirical-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.1 Some Empirical Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224-statistical-performance-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4 STATISTICAL PERFORMANCE EVALUATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.4 STATISTICAL PERFORMANCE EVALUATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2241-the-t-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.1 The t-Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2242-a-power-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.2 A Power Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2243-how-much-data-are-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.3 How Much Data Are Required?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2244-the-statistical-argument-for-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.4 The Statistical Argument for Indexing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2245-choosing-among-many-managers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.5 Choosing Among Many Managers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2246-summary-and-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.6 Summary and Discussion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.4.6 Summary and Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22461-length-of-sample-versus-number-of-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.6.1 Length of Sample Versus Number of Observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225-more-important-problems-with-statistical-performance-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5 MORE IMPORTANT PROBLEMS WITH STATISTICAL PERFORMANCE EVALUATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5 MORE IMPORTANT PROBLEMS WITH STATISTICAL PERFORMANCE EVALUATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2251-distributional-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.1 Distributional Shape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5.1 Distributional Shape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22511-normality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.1.1 Normality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22512-the-peso-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.1.2 The Peso Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2252-fraudulent-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.2 Fraudulent Returns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5.2 Fraudulent Returns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22521-return-smoothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.2.1 Return Smoothing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22522-pyramid-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.2.2 Pyramid Schemes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226-the-sample-selection-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6 THE SAMPLE SELECTION BIAS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.6 THE SAMPLE SELECTION BIAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2261-sample-selection-in-the-mutual-fund-industry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.1 Sample Selection in the Mutual Fund Industry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2262-avoiding-the-sample-selection-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.2 Avoiding the Sample Selection Bias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2263-regression-to-the-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.3 Regression to the Mean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2264-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.4 Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#227-economic-approaches-to-performance-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.7 ECONOMIC APPROACHES TO PERFORMANCE PREDICTION
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#228-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.8 SUMMARY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#229-some-points-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.9 SOME POINTS TO REMEMBER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2210-questions-for-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.10 QUESTIONS FOR THOUGHT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-vii-market-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part VII: Market Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch23.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch23 · 指数与组合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch24.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch24 · 专家做市商
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch25.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch25 · 内部化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch26.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch26 · 市场竞争
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch27.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch27 · 场内vs自动
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch28.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch28 · 泡沫与熔断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch29 · 内幕交易
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index_term.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#221-the-performance-evaluation-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.1 THE PERFORMANCE EVALUATION PROBLEM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222-performance-evaluation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2 PERFORMANCE EVALUATION METHODS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.2 PERFORMANCE EVALUATION METHODS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2221-absolute-performance-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.1 Absolute Performance Measurement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2222-relative-performance-measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2 Relative Performance Measurement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.2.2 Relative Performance Measurement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22221-market-adjusted-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2.1 Market-adjusted Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22222-risk-adjusted-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2.2 Risk-adjusted Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22223-market-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.2.2.3 Market Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223-the-performance-prediction-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3 THE PERFORMANCE PREDICTION PROBLEM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.3 THE PERFORMANCE PREDICTION PROBLEM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2231-some-empirical-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.3.1 Some Empirical Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224-statistical-performance-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4 STATISTICAL PERFORMANCE EVALUATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.4 STATISTICAL PERFORMANCE EVALUATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2241-the-t-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.1 The t-Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2242-a-power-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.2 A Power Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2243-how-much-data-are-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.3 How Much Data Are Required?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2244-the-statistical-argument-for-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.4 The Statistical Argument for Indexing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2245-choosing-among-many-managers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.5 Choosing Among Many Managers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2246-summary-and-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.6 Summary and Discussion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.4.6 Summary and Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22461-length-of-sample-versus-number-of-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.4.6.1 Length of Sample Versus Number of Observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225-more-important-problems-with-statistical-performance-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5 MORE IMPORTANT PROBLEMS WITH STATISTICAL PERFORMANCE EVALUATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5 MORE IMPORTANT PROBLEMS WITH STATISTICAL PERFORMANCE EVALUATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2251-distributional-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.1 Distributional Shape
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5.1 Distributional Shape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22511-normality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.1.1 Normality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22512-the-peso-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.1.2 The Peso Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2252-fraudulent-returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.2 Fraudulent Returns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.5.2 Fraudulent Returns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22521-return-smoothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.2.1 Return Smoothing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22522-pyramid-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.5.2.2 Pyramid Schemes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226-the-sample-selection-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6 THE SAMPLE SELECTION BIAS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="22.6 THE SAMPLE SELECTION BIAS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2261-sample-selection-in-the-mutual-fund-industry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.1 Sample Selection in the Mutual Fund Industry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2262-avoiding-the-sample-selection-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.2 Avoiding the Sample Selection Bias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2263-regression-to-the-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.3 Regression to the Mean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2264-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.6.4 Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#227-economic-approaches-to-performance-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.7 ECONOMIC APPROACHES TO PERFORMANCE PREDICTION
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#228-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.8 SUMMARY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#229-some-points-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.9 SOME POINTS TO REMEMBER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2210-questions-for-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22.10 QUESTIONS FOR THOUGHT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-vii-market-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part VII: Market Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../index.html" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    首页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../ml/stanford-ml-notes/index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    书籍
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../why-stock-markets-crash/index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    金融
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Trading and Exchanges
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-22-performance-evaluation-and-prediction">Chapter 22: Performance Evaluation and Prediction</h1>
+<p>Many people trade because they want to speculate successfully. They hope
+to profit by buying securities and contracts that will rise in value and
+by selling those that will fall.</p>
+<p>Unfortunately for those of us who would like to get rich quickly,
+predicting future prices is quite difficult. Some people can do it, but
+most cannot. Successful speculators must predict future prices well
+enough to beat the market on average. Unsuccessful speculators
+eventually lose money when trading. At best, they make less money than
+they would have made if they had simply bought and held index funds. If
+they trade only because they want to earn speculative trading profits,
+they should stop trading.</p>
+<p>In this chapter, we consider how to measure past performance and how to
+predict future performance. The two questions are closely related. Most
+people measure past performance primarily because they want to predict
+future performance. We shall see why predictions based only on past
+performance generally are quite unreliable. We can predict performance
+better by using other information.</p>
+<p>You must be able to predict performance if you intend to speculate.
+Speculators trade only because they expect to profit. Successful
+speculators therefore must constantly consider whether their trades will
+be profitable. If you cannot predict whether you will trade profitably,
+you should not speculate. The most important decision speculators make
+is whether they should trade.</p>
+<p>You also must be able to predict performance if you employ active
+investment managers to speculate on your behalf. <em>Active investment
+managers</em> speculate with their clients' money. They are <em>active</em>, as
+opposed to <em>passive</em>, because they actively try to identify and exploit
+speculative opportunities. Accordingly, they often trade frequently. You
+can hire their services by employing them as investment advisers or you
+can obtain their services indirectly by buying the mutual funds and
+commodity pools that they manage. In either event, when managers
+speculate on your behalf, you speculate on their success. To select good
+active investment managers, you must predict which ones will speculate
+successfully. If you cannot predict which managers will be successful,
+you should not employ active investment managers. The most important
+decision investment sponsors make is whether to employ active managers.</p>
+<p>Investors who believe that they cannot speculate successfully often
+invest their money with passive investment managers. <em>Passive investment
+managers</em> use <em>buy and hold strategies.</em> They simply buy and hold
+securities. Passive managers therefore rarely trade. The most common buy
+and hold strategy is the index replication strategy. <em>Index replicators</em>
+buy and hold portfolios that they design to replicate the returns to a
+broad market index. We discuss how they do this in <a href="#part0037.html_ch23">chapter
+23</a>{.nounder}.</p>
+<p>Indexing is very popular because many investors have decided that they
+do not want to speculate. They do not believe that they would be
+successful traders, and they do not believe
+that they can pick successful managers. The limitations of performance
+evaluation and prediction help explain why index markets are so popular.</p>
+<p>People often design investment management contracts so that the payments
+investment managers receive depend on their performance. Such contracts
+encourage investment managers to better serve their clients. You must
+appreciate the limitations of performance evaluation in order to
+understand how to best compensate investment managers and to understand
+the problems that arise in typical investment management contracts.</p>
+<p>We begin with a discussion of the principal problem of discriminating
+between skill and luck. We then briefly consider the mechanics of
+performance evaluation. If you already know how analysts compute
+returns, and how and why they compare them against benchmark returns,
+you can skip this section. The discussion then turns to the problem of
+predicting performance. We first consider how statisticians approach the
+problem and explain why their approach is not very powerful. We then
+consider alternative approaches to performance prediction based on
+economic theory.</p>
+<p>By the end of this chapter, you will understand why past performance
+does not necessarily predict future returns. You will also understand
+how sample selection biases affect the inferences you may make about
+investment decisions. Failures to understand these issues probably
+account for more trading losses than any other mistakes traders make.</p>
+<h2 id="221-the-performance-evaluation-problem">22.1 THE PERFORMANCE EVALUATION PROBLEM</h2>
+<p>Portfolio performance depends partly on the quality of its management.
+Managers who perform well add value to their portfolios. Managers who
+perform poorly waste value.</p>
+<p>Portfolio performance also depends on every factor that determines the
+values of the instruments in the portfolio. The factors may include
+macroeconomic, microeconomic, and firm-specific factors. <em>Macroeconomic
+factors</em> include changes in interest rates, general economic activity,
+productivity, and exchange rates. <em>Microeconomic factors</em> include
+industry supply and demand conditions, technological innovations, and
+government interventions. <em>Firmspecific factors</em> include a host of
+issues ranging from whether the firm is well managed to whether
+factories accidentally burn down to whether researchers make fortuitous
+discoveries.</p>
+<p>Active managers try to foresee every factor that will affect values.
+They then buy instruments that they expect will appreciate and sell
+those they expect will depreciate. If they are very skilled, they will
+be able to add substantial value to their portfolios by selecting which
+instruments to buy and which to sell.</p>
+<p>No one can anticipate most factors that affect portfolio returns.
+Unforeseeable factors therefore have a seemingly random effect on
+performance. Portfolios that perform well may be managed by skilled
+managers or by lucky managers. Likewise, poorly performing portfolios
+may be managed by unskilled managers or by unlucky managers.</p>
+<p>The investment policies that govern many portfolios often have a
+substantial effect on portfolio performance. These policies may prohibit
+skilled managers from exploiting positive factors or from avoiding
+negative factors.</p>
+<hr />
+<p><strong>[▶]{.ent} Sizzler Sick with <em>E.</em>
+Coli</strong></p>
+<p>Sizzler International is an operator/franchiser of family restaurants
+that specialize in grilled meats. Sizzler operates 65 company
+restaurants in the United States, and it franchises another 200. In
+1998, the company reorganized in a voluntary <a href="#part0021.html_ch11">Chapter
+11</a>{.nounder} bankruptcy. By the middle of 2000,
+its earnings were accelerating and many analysts, who had carefully
+studied the company and its prospects, believed that it had a winning
+strategy for revitalizing the chain. Based on their research, many
+investment managers bought Sizzler, expecting that it would outperform
+the market.</p>
+<p>They did not immediately realize their expectations. In July 2000, the
+bacterium <em>E. coli</em> infected 42 patrons of a Milwaukee Sizzler
+franchise. Seventeen were hospitalized, and a three-year-old girl died
+from complications resulting from the infection.</p>
+<p>Undercooked meats or food contaminated by raw meat spread the <em>E. coli</em>
+infection. The Milwaukee health commissioner believed that the infected
+patrons ate contaminated watermelon.</p>
+<p>News about the outbreak was well publicized throughout the country.
+Following the announcement, Sizzler's stock fell 35 percent as investors
+feared the lawsuits and the lost reputation that would surely follow
+this tragic event.</p>
+<p>The speculators who bought Sizzler may have been very well informed
+about its prospects. They undoubtedly knew that food poisoning episodes
+occasionally plague restaurant chains, and they probably discounted
+Sizzler's stock---and those of other restaurant chains---accordingly.
+Some may even have considered whether Sizzler designed and implemented
+adequate sanitation procedures to appropriately control the risks that
+they faced. Despite all these considerations, the Sizzler <em>E. coli</em> food
+poisoning episode probably was not predictable. These investors were
+simply unlucky. [◀]{.ent1}</p>
+<hr />
+<p>They also may force unskilled managers to unknowingly exploit positive
+factors or avoid negative factors. Portfolios that perform well
+therefore may be managed by skilled managers or simply by lucky managers
+subject to investment policies that the market currently favors.
+Likewise, poorly performing portfolios may be managed by unskilled
+managers or by skilled managers subject to investment policies that
+currently are out of favor.</p>
+<p>For example, consider the performance of portfolios that must be fully
+invested in equity. These portfolios fluctuate in value with the market
+regardless of how management operates. When the market rises, even the
+most poorly managed portfolios may have high positive returns. A market
+rise can offset losses due to inept management. Likewise, when the
+market falls, the best-managed portfolios may have negative returns. A
+market fall can overwhelm gains due to superior management. Analysts
+often characterize this phenomenon by saying, "A rising tide lifts all
+boats."</p>
+<p>Unforeseeable factors and unavoidable factors greatly complicate the
+performance evaluation problem. These factors make it difficult to
+estimate the manager's contribution to portfolio performance. Good
+performance evaluations must discriminate between skill and luck.
+Analysts must break total performance into separate components
+representing the contribution due to management and the contribution due
+to factors that no one could anticipate or control.</p>
+<p>The task of estimating the contribution of factors that no one could
+anticipate or control is very difficult because so many factors affect
+portfolio returns. Even the best estimates of manager performance are
+quite noisy. Discriminating between skill and luck as explanations for
+portfolio performance is very difficult.</p>
+<hr />
+<p><strong>[▶]{.ent} The Combinations of
+Luck and Skill</strong></p>
+<p>Since luck is random, no relation exists between luck and skill. Skilled
+people <em>are</em> sometimes lucky and sometimes unlikely. Likewise, unskilled
+people are sometimes lucky and sometimes unlucky. For your amusement,
+consider the following characterizations of the four possible
+combinations of luck and skill:</p>
+<p><img alt="Image" src="images/00112.jpeg" />{.calibre6}
+[◀]{.ent1}</p>
+<hr />
+<h2 id="222-performance-evaluation-methods">22.2 PERFORMANCE EVALUATION METHODS</h2>
+<p>These considerations suggest that relative performance evaluations are
+more valuable than absolute performance evaluations. <em>Absolute
+performance evaluations</em> simply compute total portfolio returns.
+<em>Relative performance evaluations</em> estimate how much portfolios have
+outperformed or underperformed the benchmarks or peers against which
+they are measured. By choosing benchmarks to represent how analysts
+expect portfolios would have performed without active management, they
+are better able to identify the contribution of management.</p>
+<p>To measure the relative performance of a portfolio, analysts examine the
+difference between the total return to the portfolio and the concurrent
+total return to the benchmark. We therefore must consider how analysts
+measure absolute portfolio performance before we consider how to measure
+relative portfolio performance.</p>
+<h5 id="2221-absolute-performance-measurement">22.2.1 Absolute Performance Measurement</h5>
+<p>Analysts measure the <em>absolute performance</em> of a portfolio when they
+estimate how much the nominal value of the portfolio has changed over
+some measurement interval. The measurement interval may be a year, a
+quarter, a month, a week, or a day; or it may be a current period to
+date, such as <em>year-to-date</em> (YTD).</p>
+<p>Measuring absolute performance is a relatively simple problem when
+investors have not transferred money or securities into or out of the
+portfolio. The <em>total return</em> to the portfolio is the percentage change
+in its value over the measurement interval. For example, if the value of
+a portfolio increases from 100 to 120 over a year, its total return for
+the year is 20 percent.</p>
+<p>The <em>total return</em> includes the value of any cash and securities that
+the portfolio receives or pays in conjunction with its holdings. Cash
+inflows typically include dividends, interest, and security lending fees
+received. Outflows include brokerage commissions, management fees,
+interest paid to purchase securities on credit, security borrowing fees,
+and short dividends. Portfolio cash flows also include all <em>variational
+margin payments</em> that the portfolio receives, or must make, when holding
+long or short positions in futures, options, and swaps, and when holding
+short positions in securities.</p>
+<hr />
+<p><strong>[▶]{.ent} The Beardstown Ladies</strong></p>
+<p>Founded in 1983, the Beardstown Business and Professional Women's Club
+is a famous investment club composed of about 15 women. By 1993, most of
+its members were in or near retirement, but still actively managing
+their portfolio.</p>
+<p>The club wrote several books and produced videos about their approach to
+investing. <em>The Beardstown Ladies' Common-Sense Investment Guide: How We
+Beat the Stock Market---And How You Can, Too</em> (1994) became an
+international best seller.</p>
+<p>On the jacket of that book, the Beardstown ladies claimed that they
+earned an average annual return of 23.4 percent in the 10 years ending
+in 1993. When challenged, they recomputed their returns with the
+assistance of the Price Waterhouse accounting firm. Their actual annual
+average return was 9.1 percent, significantly less than the 14.9 percent
+average annual total return to the S&amp;P 500 Index over the same period.
+Many people wondered how they could have thought that they were beating
+the market when they were actually underperforming it by an annual
+average of almost 6 percent.</p>
+<p>The ladies reported that they failed to properly use investment
+accounting software with which they were unfamiliar. They consequently
+mistook a 2-year return for a 10-year return. Additional information in
+their explanation supports the conclusion that they did not have strong
+computer skills---which would not be surprising for professional women
+(or men) in or nearing retirement in 1993. Their apparent lack of
+computational sophistication suggests that their reported explanation
+may be accurate.</p>
+<p>Many people, however, think that the women simply failed to account for
+the regular contributions that they made to their fund. Over 10 years,
+such a failure would lead to a gross overstatement of their total
+returns. Such a mistake would have been far more embarrassing to admit
+than the computational mistake that they reported. [◀]{.ent1}</p>
+<p><em>Sources:
+[<a href="http://www.time.com/time/rnagazine/1998/dom/980330/business.jail_the_beards12.html">www.time.com/time/rnagazine/1998/dom/980330/business.jail_the_beards
+12.html</a>{.nounder}]{.weblink}(Overview);
+[<a href="http://www.better-investmg.org/clubs/hom-the-ladies.html">www.better-investmg.org/clubs/hom-the-ladies.html</a>{.nounder}]{.weblink}
+(explanation by Betty Sinnock, Beardstown BPW Club senior partner).</em></p>
+<hr />
+<p>Inflows and outflows of securities typically involve corporate
+reorganizations such as mergers, acquisitions, and spin-offs.</p>
+<p>When investors transfer money (or securities) into or out of a
+portfolio, or when the portfolio distributes dividends to its investors,
+the total value of the portfolio changes. Without an adjustment, the
+change in portfolio value would misrepresent the actual performance of
+the portfolio. Capital additions would inflate the performance and
+capital distributions would deflate it.</p>
+<p>Analysts use two approaches to address the problem of capital additions
+and distributions. The most common approach is to compute the internal
+rate of return for the portfolio. The <em>internal rate of return</em> (IRR) is
+the compounded rate of return that a savings account would have to earn
+to exactly replicate the capital flows into and out of the portfolio.
+The IRR calculation assumes that beginning and ending savings account
+balances are equal to the beginning and ending portfolio values. The IRR
+is approximately a time- and value-weighted geometric average of the
+total returns measured between each capital addition and distribution.</p>
+<p>For many purposes, people would prefer to know the <em>holding period
+return</em> for a share of a portfolio rather than the average return earned
+by all investors in the portfolio. The
+holding period return estimates how much an investor would have made if
+he or she had invested a dollar in the portfolio at the beginning of the
+measurement period. Analysts typically compute holding period returns by
+assuming that all distributions are reinvested in the portfolio when
+they are paid.</p>
+<hr />
+<p><strong>[▶]{.ent} When Is 100-50 = 0?</strong></p>
+<p>Investors must be very careful when summing percentage returns. Suppose
+that a portfolio has a 100 percent increase in one year, followed by a
+50 percent decrease in the next year. The summed arithmetic return over
+the two years is 50 percent. The actual holding period return over the
+two years, however, is exactly zero. (Prices double the first year and
+halve the second year.)</p>
+<p>To properly compute a holding period return from a series of returns,
+you must compute their geometric sum rather than their arithmetic sum.
+You add 1 to each return, then multiply the resulting sums, and finally
+subtract 1 from the product. [◀]{.ent1}</p>
+<hr />
+<p>The holding period return and the internal rate of return differ when
+capital additions and distributions do not occur on a pro rata basis
+within the measurement period. Capital additions and distributions are
+on a <em>pro rata</em> basis occur when all investors participate in the
+capital transactions in exact proportion to their ownership shares.
+Since pro rata additions and distributions do not affect the proportion
+of the portfolio that each owner owns, all investors have the same
+internal rate of return over the holding period.</p>
+<p>Analysts often separate the total return into its <em>current yield</em>
+component and its <em>capital gains</em> component. The <em>current yield</em> of a
+portfolio (or of a security) is the total income---typically interest
+and dividends---that the portfolio receives from its assets divided by
+the value of the portfolio. For example, if the securities in a
+100-million-dollar portfolio pay 10 million dollars in dividends to the
+portfolio in a year, the current yield for that year is 10 percent. The
+<em>capital gains return</em> of a portfolio is the difference between the
+total return and the yield. It is the percentage change in the value of
+the assets of the portfolio, exclusive of the income that the assets
+pay. The distribution of total return into the current yield and the
+capital gains return is of particular interest to investors for whom
+ordinary income and capital gains are taxed at different rates.</p>
+<p>The current yield of the assets of a portfolio can be different from the
+current yield that owners of a portfolio receive. This happens when the
+portfolio pays its investors more or less income than it receives from
+its assets.</p>
+<hr />
+<p><strong>[▶]{.ent} -94.7%+ 95.6% = Very Bad News</strong></p>
+<p>ProFunds UltraOTC Fund lost 94.7 percent between March 10, 2000, and
+April 4, 2001, and gained 95.6 percent from April 4 to May 2, 2001. Had
+you invested 10,000 dollars in the fund on March 10, 2000, your position
+would have been worth just 1,037 dollars on May 2, 2001. [◀]{.ent1}</p>
+<p><em>Source: Karen Damato, "Doing the Math: Tech Investors' Road to Recovery
+is Long,"</em> Wall Street Journal <em>May 18, 2001, p. C1 (Western edition).</em></p>
+<hr />
+<p>Analysts who measure performance must estimate values for all portfolio
+positions at the beginning and end of the measurement period. Estimating
+values for instruments that trade in active markets is quite simple.
+Analysts usually estimate such values by the last trade price or by the
+midpoint between the last bid and offer prices. The estimation problem
+is much more difficult for instruments that do not trade often. In that
+case, analysts must estimate values from the prices of related
+instruments. For example, estimating the value of a real estate
+portfolio can be extremely difficult. Managers must generally estimate
+values by means of appraisals that depend critically on the sales prices
+of comparable properties. Estimated valuations of infrequently traded
+bonds likewise depend on the sales prices of similar debt instruments.</p>
+<h5 id="2222-relative-performance-measurement">22.2.2 Relative Performance Measurement</h5>
+<p>Raw returns are not useful for evaluating performance without some basis
+for comparison. For example, an equity portfolio that drops 10 percent
+when the market drops 20 percent has performed well relative to the
+market. In contrast, an equity portfolio that rises 15 percent when the
+market is up 30 percent has performed relatively poorly.</p>
+<p>Analysts compute <em>relative returns</em> to facilitate performance
+comparisons. A <em>relative return</em> is the difference between a portfolio
+return and a corresponding <em>benchmark return.</em> Analysts choose
+benchmarks to represent how they expect the portfolio would have
+performed without active management.</p>
+<hr />
+<p><strong>[▶]{.ent} Smooth Sailing, Rapids
+Ahead</strong></p>
+<p>Investors generally like stable portfolios because they are risk averse.
+Their investment managers therefore hope to report stable values.</p>
+<p>Managers of portfolios that include highly illiquid assets must estimate
+values for their assets when there are no sales prices. To create stable
+values, unethical managers may be slow to change their estimates when
+values change. They may be especially slow to adjust values when they
+fall. Investors in such funds therefore may believe that their funds are
+less risky than they actually are.</p>
+<p>When true asset values differ significantly from the manager's estimated
+values, various processes may force the manager to revalue them quickly.
+For example, if investors try to withdraw funds from the portfolio, the
+manager may have to sell assets. The resulting sales may be at
+substantially lower prices than the manager last estimated. These sales
+will cause the reported value of the portfolio to drop significantly.
+Seemingly secure funds therefore may be quite risky.</p>
+<p>Investors who are concerned about the valuation of illiquid assets
+should look at the sequence of reported portfolio returns. Returns
+display positive serial correlation when managers are smoothing values.
+[◀]{.ent1}</p>
+<hr />
+<p><strong>[▶]{.ent} AIMR-PPS</strong></p>
+<p>Although performance measurement seems very straightforward,
+difficulties involving exotic contracts, infrequently traded
+instruments, foreign exchange rates, and complex portfolio ownership
+structures complicate many performance measurement problems. Reasonable
+people often can arrive at different results using the same data.</p>
+<p>To ensure that performance measurements are presented on a comparable
+basis, the Association for Investment Management and Research (AIMR)
+developed performance presentation standards that they encourage
+analysts to use. The AIMR performance presentation standards (AIMR-PPS)
+allow investors to directly compare the performance of different
+investment managers. [◀]{.ent1}</p>
+<p><em>Source: The AIMR presentation standards appear at
+[<a href="http://www.aimr.com/standards/pps/ppsstand.html">www.aimr.com/standards/pps/ppsstand.html</a>{.nounder}]{.weblink}.</em></p>
+<hr />
+<p>The purpose of the benchmark comparison is to remove noise in the
+performance evaluation. A good benchmark adjusts raw returns to account
+for performance that should not be attributed to the manager. The
+remaining measure of performance therefore better represents the
+performance of the manager.</p>
+<h6 id="22221-market-adjusted-returns">22.2.2.1 Market-adjusted Returns</h6>
+<p>The most common benchmarks that analysts use to evaluate performance for
+equity portfolios are market indexes. For example, analysts generally
+compare portfolios that primarily hold a diversified set of large
+capitalization U.S. stocks against the S&amp;P 500 Index. They use
+specialized indexes to evaluate portfolios that invest in other asset
+classes. <a href="#part0035.html_ch22tab1">Table 22-1</a>{.nounder} provides a list
+of commonly used benchmark indexes.</p>
+<p><em>Market-adjusted returns</em> are portfolio returns minus corresponding
+market index returns. The market-adjusted returns in the above example
+are 10 percent and ---15 percent. For most purposes, market-adjusted
+returns demonstrate how well the portfolio has performed better than raw
+returns do.</p>
+<h6 id="22222-risk-adjusted-returns">22.2.2.2 Risk-adjusted Returns</h6>
+<p>Analysts sometimes further adjust raw returns to account for the
+exposure of portfolios to known risks. For example, consider the
+exposure of a portfolio to <em>market risk.</em> Market risk is the risk that
+values will rise or fall with marketwide changes in value. It varies by
+security, and therefore also by portfolio. Analysts characterize market
+risk by the <em>market beta</em> of a security. Beta measures the extent to
+which the security fluctuates in value with the market. A stock with a
+beta of 0.5 tends to rise or fall only 0.5 percent for every 1 percent
+rise or fall in the market. It is only half as risky as the market. The
+beta of a portfolio is the value-weighted average of the betas of the
+various securities in the portfolio. Since the market has a beta of 1,
+and since the market is just a portfolio of all available securities,
+the value-weighted average beta of all securities is 1.</p>
+<p><strong>TABLE 22-1.</strong>\
+Some Common Benchmark Indexes</p>
+<p><img alt="Image" src="images/00113.jpeg" />{.calibre9}</p>
+<p><img alt="Image" src="images/00114.jpeg" />{.calibre9}</p>
+<hr />
+<p><strong>[▶]{.ent} Foolish John</strong></p>
+<p>John took money out of α savings account where it was earning 5 percent
+to invest in the stock market. He made 23 percent trading actively and
+was delighted with his performance. He thought that he could pick stocks
+really well!</p>
+<p>That same year, the S&amp;P 500 rose 33 percent. Had John invested in an S&amp;P
+500 Index fund, he would have made 33 percent.</p>
+<p>John was pleased with his performance because he used the wrong frame of
+reference. He beat his measly savings account return by 18 percent. His
+performance was terrible, however, because he did not get the average
+return that other people got for bearing similar equity risks. He
+underperformed the market by 10 percent.</p>
+<p>Satisfied with his expertise, John decided to continue to trade
+actively. The next year, he again underperformed the market by 10
+percent. Unfortunately, that year the S&amp;P 500 lost 10 percent. John lost
+20 percent, which is 25 percent worse than he would have done had he
+kept his money in his savings account.</p>
+<p>His total return for the two years was <strong>---</strong> 1.6 percent. (The holding
+period is computed as (1 + 0.23) × (1 - 0.20) - 1.) The corresponding
+two-year S&amp;P 500 return was 19.7 percent. Had John kept his money in the
+savings account, he would have earned 10.3 percent. [◀]{.ent1}</p>
+<hr />
+<p>Managers who construct low beta portfolios tend to underperform the
+market when it is rising and outperform it when it falling. Likewise,
+those who construct high beta portfolios tend to outperform the market
+when it is rising and underperform it when it is falling.</p>
+<p>To account for these effects, analysts compute <em>risk-adjusted excess
+returns</em> by subtracting the average portfolio beta times the market
+return from the raw portfolio return. The resulting measure is also
+called the portfolio's <em>realized alpha.</em> The realized alpha helps
+analysts determine whether a manager successfully selects winners and
+losers after accounting for market risk.</p>
+<h6 id="22223-market-timing">22.2.2.3 Market Timing</h6>
+<p>An equity manager <em>times the market</em> when she changes the portfolio beta
+to exploit her predictions about the future direction of the market.
+Managers change their portfolio betas by exchanging high beta assets for
+low beta assets or vice versa. For example, managers lower their
+portfolio betas by selling securities and leaving the proceeds in cash,
+by selling high beta securities and buying low beta securities, by
+selling index futures, by buying puts, by selling calls, or by selling
+securities short. They raise their portfolio betas by doing the
+opposite.</p>
+<p>Risk-adjusted excess returns are best computed frequently because the
+portfolio beta changes whenever the manager exchanges assets that have
+different betas. To accurately estimate risk-adjusted returns, analysts
+must multiply market returns by concurrent portfolio betas.</p>
+<p>Analysts who compute risk-adjusted returns often also compute
+<em>market-timing returns.</em> The market-timing return is the difference
+between the portfolio beta times the market return and the market
+return. It indicates whether the portfolio manager is a skilled market
+timer.</p>
+<p>To summarize, raw portfolio returns can be broken into the sum of three
+parts: the market return, the market timing return, and the
+risk-adjusted excess return:</p>
+<p>Raw Return = (Raw Return - Beta X Market Return)</p>
+<p>+ (Beta X Market Return - Market Return)</p>
+<p>+ Market Return</p>
+<p>= Excess Return + Market Timing Return + Market Return.</p>
+<p>Analysts use these decompositions to attribute performance to the
+market, to the manager's timing ability, and to all other
+factors---including, of course, the manager's risk-adjusted selection
+skills.</p>
+<p>Analysts can easily generalize this decomposition to include other risk
+factors besides market risk. Finance courses and textbooks about
+investments describe these <em>multifactor risk models.</em> The most common
+additional risk factors that analysts use to analyze equity portfolios
+are factors that measure risks associated with firm size and with
+expected growth.</p>
+<h2 id="223-the-performance-prediction-problem">22.3 THE PERFORMANCE PREDICTION PROBLEM</h2>
+<p>People often evaluate past performance because they want to predict the
+future performance of a manager. Such analyses are valuable only if the
+factors that determined past performance will continue to determine
+future performance. Most people rarely think carefully about whether
+this will be true.</p>
+<hr />
+<p><strong>[▶]{.ent} Buy and Hold
+Benchmarks</strong></p>
+<p>The difference between the portfolio return and the return that the
+portfolio would have made had the manager not traded is a direct measure
+of an active manager's contribution to portfolio performance. This
+measure is intuitively attractive because it focuses only on the
+manager's decisions. The benchmark index for this approach to
+performance measurement is the beginning-of-period portfolio.
+Unfortunately, a serious problem complicates the use of this approach.</p>
+<p>This approach identifies only superior performance that takes place
+during the measurement period. Any superior performance that accrues in
+subsequent periods contributes to the performance of subsequent
+benchmarks. For example, suppose a manager buys a stock at the beginning
+of the year. The manager believes the stock will appreciate
+significantly over the next two years. The appreciation in the first
+year will accrue to his benefit, but the appreciation in the second year
+will not. A similar problem applies to sales. This problem causes
+managers to focus on short-term ideas. It also causes them to delay the
+implementation of ideas generated near the end of the year.</p>
+<p>Changing the definition of the benchmark index can reduce this problem.
+Instead of the beginning-of-period portfolio, a better benchmark would
+be the portfolio that would have been created if all trades made by the
+manager occurred one year later. With this benchmark, all trades get the
+benefit of at least one full year of evaluation. [◀]{.ent1}</p>
+<hr />
+<p>Whether the factors that determined a manager's past performance will
+continue to determine his or her future performance depends on three
+fundamental conditions. Each of the following conditions must be true to
+successfully predict future returns from past performance:</p>
+<p>• <em>Past performance must reflect the manager's skills.</em> If past
+performance was due only to luck, it will have no bearing on future
+returns.</p>
+<p>• <em>The manager's skills will continue to generate good future returns.</em>
+The skills necessary to perform well may vary by market conditions. For
+example, traders who succeed in bull markets may not succeed in bear
+markets. Past performance will have no bearing on future returns if the
+skills that generated it are no longer effective.</p>
+<p>• <em>The manager still has the skills necessary for success.</em> Investment
+management firms often lose essential skills when they lose employees or
+access to valuable resources. Investment managers also often lose
+essential skills as they age or lose their drive. Past performance will
+have no bearing on future returns if the skills that generated it are no
+longer available.</p>
+<hr />
+<p><strong>[▶]{.ent} Regulation FD</strong></p>
+<p>Regulation FD requires that publicly traded corporations immediately
+disclose to the entire public any material information that they
+disclose to any unrelated person. Before the U.S. Securities and
+Exchange Commission adopted this regulation in 2000, investment managers
+who were skilled at arranging and conducting interviews with corporate
+insiders often could obtain valuable material information from them.
+These skills no longer are as valuable as they once were now that
+Regulation FD prohibits this practice. The past performance of managers
+who had these skills therefore is not a good predictor of their future
+performance. [◀]{.ent1}</p>
+<hr />
+<p>If any of these conditions is not true, attempts to predict future
+performance from past performance will not be productive. People
+therefore should verify these conditions before attempting to predict
+future returns from past performance.</p>
+<p>Analysts may use analytic or statistical methods to determine whether
+performance is due to luck or to skill (the first condition). In the
+analytic approach, analysts try to identify the skills that determined
+past performance. This task is quite difficult because analysts must
+understand the management process well enough to recognize what
+determined past performance. In the statistical approach, analysts use
+statistical methods to show that luck alone cannot reasonably explain
+past performance. Analysts often use the statistical approach to avoid
+the difficulties associated with the analytic approach. The statistical
+approach, however, has its own difficulties. We discuss them in the next
+section.</p>
+<hr />
+<p><strong>[▶]{.ent} Our Faith in Past
+Performance</strong></p>
+<p>Why do so many people assume that past performance can predict future
+returns? This assumption is so pervasive and so wrong, it begs for an
+explanation. Perhaps behavioral biology can help us better understand
+ourselves.</p>
+<p>During our evolutionary history as creatures that could learn from our
+environment, our ancestors survived by learning that things which
+happened in the past often would happen again. Our ancestral aunts and
+uncles who did not use the past to predict the future often did not
+survive to reproduce. Other creatures ate them, they fell off cliffs,
+they starved, or they froze to death. We are here today because our
+ancestral parents successfully used the past to predict the future.
+Natural selection has hardwired us to believe that performance is
+persistent. [◀]{.ent1}</p>
+<hr />
+<p>To determine whether the manager's skills will continue to generate good
+future returns (the second condition), analysts must first identify the
+skills that determined past performance. They then must decide whether
+those skills will continue to be useful. This second task is more
+difficult than the first task because explaining the past generally is
+easier than predicting the future. Predictions about the future
+necessarily depend on uncertain assumptions.</p>
+<p>Analysts generally can determine whether the manager still has the
+necessary skills to perform well (the third condition) by direct
+inquiry. The determination, of course, is reliable only if the analysts
+know what skills to look for.</p>
+<p>Since the verification of all three conditions is difficult, most people
+simply do not do it. Instead, they just assume that past performance can
+predict future returns. The prediction of future returns from past
+performance, however, is notoriously imprecise. We know this both from
+experience and from statistical theory.</p>
+<h5 id="2231-some-empirical-evidence">22.3.1 Some Empirical Evidence</h5>
+<p>In the next section, we examine the problems that make statistical
+performance evaluation unreliable. Before we do so, let us consider some
+compelling empirical evidence.</p>
+<p>Financial researchers have observed that essentially no correlation
+exists between the best-performing funds in one year and the
+best-performing funds in the next year. Good past performers are about
+equally likely to be good future performers as are poor past performers.
+Good past performance simply does not regularly predict good future
+performance.</p>
+<p>(The very worst-performing funds, however, tend to remain at the bottom
+from year to year. These funds typically lose because they trade too
+much and because they have high management fees. As long as these
+conditions do not change, they stay at the bottom.)</p>
+<p>These results are very robust. They are true for equity funds, bond
+funds, and commodity pools. The results are uniform across years and
+across countries. The results are similar when performance is measured
+by quarter or by month. The results do not depend on the criteria for
+identifying the best funds. These empirical results strongly suggest
+that statistical methods cannot reliably predict future performance from
+past returns.</p>
+<h2 id="224-statistical-performance-evaluation">22.4 STATISTICAL PERFORMANCE EVALUATION</h2>
+<p>Past performance poorly predicts future returns primarily because past
+performance generally is due more to luck than to skill. Unpredictable
+return factors very often obscure the value that skilled management can
+add to a portfolio.</p>
+<p>This result is not surprising. Future price changes are largely
+unpredictable---even for well-informed traders---because informed
+traders make most instrument prices quite informative. Moreover, the
+competition among informed traders to profit from information ensures
+that few traders will have great insights
+into the future. We therefore do not expect that even highly skilled
+managers will have remarkably large returns on average.</p>
+<p>We can see why past performance is so uninformative by considering how
+statisticians judge whether a manager can systematically beat the
+market. Their methods measure whether actual performance is greater than
+luck alone can reasonably explain. To determine what is reasonable,
+statisticians examine return distributions. The <em>distribution</em> of a
+variable tells us the probability of every possible value of the
+variable.</p>
+<p>In a typical statistical analysis, statisticians use probability theory
+to characterize the distribution of possible returns that we would
+expect if managers were not skilled. This distribution therefore assumes
+that only luck determines performance. If the actual market-adjusted
+return is significantly greater than we would typically expect, based on
+luck alone, statisticians conclude that some factor other than luck
+probably contributed to the return. The likely factor is the skill of
+the investment manager.</p>
+<p>This section presents the test that analysts most commonly use to
+determine whether managers are skilled. We describe the reliability of
+the test, and how analysts should use it when deciding whether to invest
+with an active manager. Although our presentation assumes that analysts
+will apply the test to equity managers, the methods apply equally well
+to all other types of managers.</p>
+<p>I wrote this section so that any reader should be able to understand it.
+You do not need to know statistics to understand it. Without using
+mathematical notation, the text explains every statistical concept that
+you need to know to understand statistical performance evaluation.</p>
+<p>If you do not want to have a deeper understanding of the statistical
+problems associated with performance evaluation, you may wish to skip
+this section. (You would be poorly advised to do so, however, if you
+work in, or intend to work in, investment management.) The most
+important principle that you need to know is that statistical
+performance evaluation is generally unreliable because unpredictable
+return factors make it very difficult to identify managerial skill. In
+practice, more than 20 years of returns data are typically required to
+obtain useful results for a given investment manager. Even more data are
+required to determine whether the most successful investment manager,
+selected from of a large group of managers, was skilled or just lucky.</p>
+<h5 id="2241-the-t-test"><strong>22.4.1 The <em>t</em>-Test</strong></h5>
+<p>To determine whether a manager can systematically beat the market,
+statisticians typically examine the ratio between the manager's average
+market-adjusted return and a measure of average size they call the
+<em>standard error of the mean.</em> The <em>standard error</em> is a number that
+statisticians compute based on results from probability theory. It is
+proportional to the average size of the market-adjusted return that we
+would expect to observe if only luck were responsible for the manager's
+returns. If this ratio---called <em>Student's t-statistic</em> or simply the
+<em>t-ratio</em>---is large, statisticians conclude that luck alone probably
+cannot explain the returns.</p>
+<p>For example, if the manager has no skill, the probability that the
+<em>t</em>-statistic will be greater than 1.64 is only 5 percent. (The
+calculation of this probability assumes a one-sided <em>t</em>-test.) If
+statisticians conclude that the manager is skilled whenever the
+<em>t</em>-statistic for a manager's portfolio exceeds this <em>critical value</em>,
+they will be mistaken 5 percent of the time.</p>
+<hr />
+<p><strong>[▶]{.ent} Student's Brew
+Samples</strong></p>
+<p>W. S. Gosset first identified the <em>t</em>-test and the associated
+<em>t</em>-distribution. Gosset was a statistician who worked for Guinness
+Brewery in Great Britain. He invented the <em>t</em>-test in 1908 to analyze
+small brew samples for quality control.</p>
+<p>The brewery did not want Gosset to publish under his own name. Gosset
+therefore published under the pseudonym Student. This restriction
+explains why the <em>t</em>-distribution is also known as Student's
+distribution. [◀]{.ent1}</p>
+<hr />
+<p>The <em>critical value</em> depends primarily on the <em>confidence level of the
+test</em>---in this example, 95 percent---and to a lesser extent on the
+sample size. The critical value for a less discriminating test is
+smaller. For example, the critical value corresponding to a 90 percent
+confidence level is only 1.31. The critical value corresponding to a 50
+percent confidence level is zero. If luck alone determines
+market-adjusted returns, they will be positive 50 percent of the time.</p>
+<p>(Statisticians generally express the confidence level of a test in terms
+of its <em>significance level.</em> The significance level of a test is 1 minus
+the confidence level. This exposition uses confidence levels instead of
+significance levels because they are less confusing.)</p>
+<p>The test works because luck and skill have different long-term effects
+on average portfolio returns. Luck, by definition, is random and
+completely unpredictable. Good luck is as common as bad luck. Good luck
+increases returns and bad luck lowers them. Given enough time, however,
+the net effect of luck on average returns is small. In contrast, skill
+has a systematic positive effect on returns. Over time, a skillful
+manager should outperform the market.</p>
+<h5 id="2242-a-power-calculation">22.4.2 A Power Calculation</h5>
+<p>This <em>t</em>-test is <em>powerful</em> when statisticians are likely to conclude
+that the manager is skilled, given that the manager is indeed skilled.
+The probability that the <em>t</em>-ratio will exceed the critical value, given
+that the manager is skilled, is the <em>power</em> of the test. Statisticians
+calculate power using probability theory.</p>
+<p>The power of the test depends on several factors:</p>
+<p>• Power increases when the confidence level of the test decreases. Low
+confidence level tests have low critical values for the <em>t</em>-ratio. If
+the manager is skilled, the probability that his <em>t</em>-ratio will exceed
+the critical value (the power of the test) is greater when the critical
+value is small.</p>
+<p>• Power also increases with the skill of the manager. A highly skilled
+manager should have higher returns, and therefore a higher <em>t</em>-ratio.</p>
+<p>• The power of the test decreases with the importance of luck as a
+factor that determines returns. When luck primarily determines returns,
+bad luck can cause a skilled manager to perform poorly, and therefore
+have a <em>t</em>-statistic that is smaller than the critical value.</p>
+<p>• Finally, power increases with the years of data analyzed. Over a long
+period, good luck and bad luck tend to offset each other so that the
+manager's <em>t</em>-ratio depends more on skill than on luck. The probability
+that a skilled manager's <em>t</em>-ratio will exceed the critical value (the
+power of the test) therefore is greater when many years of returns data
+are included in the test.</p>
+<p>To compute the power of the <em>t</em>-test, we must specify quantities for
+these four factors. We specify the confidence level when we create the
+test. The number of years of returns generally depends on what data are
+available. We specify the last two factors---the true skill of the
+manager and the importance of luck as a determinant of returns---by
+considering the economic context of the performance evaluation problem.</p>
+<p>We quantify the true skill of a manager by how much we expect him to
+beat the market each year on average. A large number will imply a
+powerful test, but we cannot reasonably
+assume a large expected return. The competition among informed traders
+to profit from information, the costs of obtaining information, and the
+informational efficiency of most financial markets make large expected
+returns unrealistic. Given the competitive environment, most
+professional managers would be delighted beyond description if they were
+certain that they could beat the market by 2 percent per year, on
+average.</p>
+<p>To put this number into perspective, consider the performance of two of
+the most successful equity managers ever. Over 36 years through 2000,
+Warren Buffet, chairman of Berkshire Hathaway, beat the market by an
+average of 11.8 percent per year. During much of this period, however,
+he may have been quite lucky as well as quite skilled. Between 1991 and
+2000, his performance dropped to 6.8 percent per year over the market. I
+will comment more on his performance below.</p>
+<p>Consider also the performance of Peter Lynch. During his 13 years as
+manager of the Fidelity Magellan Fund, the fund outperformed the market
+by an average of 12.7 percent per year. In his last five years, however,
+the Fund outperformed the market by an average of only 5.1 percent per
+year. Like Warren Buffet, Peter Lynch may have been quite lucky as well
+as quite skilled.</p>
+<p>The performance of these superstars was quite remarkable. The fact that
+they have not been able to sustain their initial performance rates
+suggests that they may have been quite lucky in the beginning of their
+tenures. (The decline may also be due to the increased difficulties of
+managing ever-larger funds.) If we assume that their real skill is
+somewhere between 5 and 7 percent---this still seems high to me---it is
+reasonable to assume that the skill of a typical skilled manager is only
+2 percent.</p>
+<p>We quantify the importance of luck as a determinant of returns by the
+<em>standard deviation</em> that we would expect market-adjusted returns would
+have if only pure luck generated them. The <em>standard deviation</em> is a
+probability concept that measures the variation of a variable about its
+mean. The standard deviation of market-adjusted returns depends on the
+standard deviation of the portfolio returns, the standard deviation of
+the market returns, and the correlation between the two returns. An
+increase in either standard deviation increases the market-adjusted
+return standard deviation. A high correlation lowers the market-adjusted
+return standard deviation. Probability theory gives us a formula for the
+market-adjusted return standard deviation, σ<em>Adj-</em> It is
+<img alt="Image" src="images/00115.jpeg" />{.calibre6}
+where <em>ρ</em> is the correlation. If the portfolio is well diversified,
+empirical experience suggests that reasonable annual values for these
+parameters are <em>σport</em> = 16%, σm = 14.5%, and <em>ρ</em> ---0.9. These values
+imply a market-adjusted return standard deviation of 7.0 percent.</p>
+<p><a href="#part0035.html_ch22tab2">Table 22-2</a>{.nounder} presents power
+calculations for various combinations of these parameters. The results
+show that if we want to be 95 percent confident that we do not identify
+an unskilled manager as skilled, the probability that the <em>t</em>-test will
+identify a skilled (2 percent) manager using five years of monthly data
+is only 15 percent! An additional five years of data only raises this
+probability only to 23 percent. The test requires more data than are
+generally available to confidently separate skill from luck.</p>
+<p>If we use a test with a lower confidence level of 75 percent, we will
+identify an unskilled manager as a skilled manager one time out of four.
+Even with this low standard, we will still only identify truly skilled
+managers less than one half of the time (48 percent) given five years of
+data and a bit more than half the time (59 percent) given 10 years of
+data.</p>
+<p><strong>TABLE 22-2.</strong>\
+The Power of a Standard One-sided <em>t</em>-Test of Manager Performance</p>
+<p><img alt="Image" src="images/00116.jpeg" />{.calibre9}</p>
+<p><img alt="Image" src="images/00117.jpeg" />{.calibre9}</p>
+<p>If we use a 50 percent confidence level test, we will identify an
+unskilled manager as skilled half of the time. With this extremely low
+confidence level, the probability that we identify skilled managers as
+skilled is only 74 percent using five years of data and 82 percent with
+10 years of data. For comparison, note that
+the probability of identifying a skilled manager as skilled is 50
+percent if we merely flip a coin to decide the issue! Clearly, we
+require more data than are generally available to confidently separate
+skill from luck when using statistical methods.</p>
+<hr />
+<p><strong>[▶]{.ent} One Year of Data Just Doesn't Cut It</strong></p>
+<p>Many people make decisions about managers from just one year of data. If
+this were not so, the business sections of newspapers would not be full
+of ads that publicize last year's returns for various mutual funds. Of
+course, the only funds that advertise are those which performed well
+last year.</p>
+<p>The probability of correctly identifying a truly skilled manager with a
+year of data is less than 10 percent in any test that will not regularly
+identify an unskilled manager as skilled. Last year's return therefore
+is essentially worthless for judging managerial skill. [◀]{.ent1}</p>
+<hr />
+<h5 id="2243-how-much-data-are-required">22.4.3 How Much Data Are Required?</h5>
+<p>Power calculations can also tell us how many years of returns we need in
+order to conduct a test with a given confidence level and power. <a href="#part0035.html_ch22tab3">Table
+22-3</a>{.nounder} presents the results of these
+calculations for several confidence levels and powers.</p>
+<p>These results show that even tests with low confidence and power levels
+require more years of returns than are commonly available. For example,
+suppose that skilled managers can beat the market by 2 percent on
+average. A test that does not identify unskilled managers as skilled
+managers 75 percent of the time, and that identifies skilled managers as
+skilled managers 75 percent of the time, requires 22 years of monthly
+returns! If skilled managers were extraordinarily skilled, so that they
+could beat the market by 4 percent on average, we would still require
+six years of data to run a test with these low confidence and power
+levels.</p>
+<h5 id="2244-the-statistical-argument-for-indexing">22.4.4 The Statistical Argument for Indexing</h5>
+<p>Before we abandon the statistical approach to determining whether a
+manager is skilled, consider how we might sensibly choose the confidence
+and power levels of our test. These test characteristics depend on how
+the test results will be used.</p>
+<p>For example, suppose that we will invest with an active manager if the
+test indicates he is skilled and invest in an index fund otherwise. If
+the manager is not skilled, but the test indicates that he is, we will
+expect to lose. If we expect large losses, the test confidence level
+should be high in order to avoid identifying unskilled managers as
+skilled managers. Likewise, if the manager is indeed skilled, and the
+test indicates that he is, we will expect to profit. If we expect high
+profits, the power of the test should be high to avoid failing to
+identify skilled managers. Finally, if the expected returns to investing
+in an index fund are large, the confidence level should be high.</p>
+<p><strong>TABLE 22-3.</strong>\
+Years of Data Required to Obtain Specified Confidence and Power Levels
+for the Standard One-sided <em>t</em>-Test of Manager Performance</p>
+<p><img alt="Image" src="images/00118.jpeg" />{.calibre9}</p>
+<p>The confidence and power levels that we
+choose therefore should depend on the costs and benefits associated with
+our decision. Depending on these consequences, good decisions may not
+require high confidence and power levels. In this subsection, we
+consider what should be the confidence and power levels for a given
+sample size. We will assume that we will use the test to choose between
+investing with an active investment manager and investing in an index
+fund.</p>
+<p>Our analysis will choose the confidence and power levels to maximize our
+expected market-adjusted return. The results therefore will show how
+much we expect to profit from choosing between an active manager and an
+index function, assuming that we design the best possible test. If these
+expected profits are small, we should not consider choosing a manager
+based only on past performance.</p>
+<p>To estimate the expected return, we must make some assumptions about the
+consequences of our decision and about how common skilled managers are.
+We start by assuming that a previously skilled manager can produce 2
+percent market-adjusted returns per year, on average, before accounting
+for management fees and trading commissions. (We implicitly assume
+assumptions 2 and 3 of section 22.3, so that a skilled manager will
+continue to generate good future returns, on average.) Although 2
+percent may seem low, it is a reasonable assumption given the
+competition among managers for trading profits. As noted above, most
+managers would be delighted beyond expression if they and their clients
+were certain that they could beat the market by 2 percent per year on
+average.</p>
+<p>Since trading is a zero-sum game, unskilled managers must lose on
+average to skilled managers. Their losses will depend on the fraction of
+managers who are skilled. Assume that one-third of managers are skilled,
+so that the average unskilled manager underperforms the market by about
+1 percent per year, before accounting for management fees and trading
+commissions:
+<img alt="Image" src="images/00119.jpeg" />{.calibre6}.
+This assumption seems generous to me.</p>
+<p>All active managers---skilled and unskilled taken
+together---underperform the market by an average of more than 1 percent
+per year, after accounting for expenses. (The average U.S. equity mutual
+fund underperformed the S&amp;P 500 Index by 1.4 percent between 1962 and
+1997.) This average implies that commissions plus management fees for
+all active managers average at least 1 percent. Assume that they total
+just 1 percent. Accordingly, we expect that skilled managers will beat
+the market by 1 percent per year, on average, after expenses, and
+unskilled managers will underperform the market by 2 percent per year,
+on average, after expenses.</p>
+<p>Finally, we assume that index funds underperform the market by −0.15
+percent. This is typical for index funds that have very low management
+fees and tend to track the market extremely closely.</p>
+<p>The consequences will vary according to whether the manager is truly
+skilled and according to whether the test indicates that the manager is
+skilled. We therefore must assign costs and benefits to four different
+states. Since we need to compute the overall expected return, we also
+need to specify the probabilities of these
+four states. Our assumptions allow us to specify these costs, benefits,
+and probabilities:</p>
+<p>• If the manager is not skilled, and the test indicates that the manager
+is not skilled, we will invest in an index fund and our market-adjusted
+returns will be −0.15 percent. The probability of this situation is the
+confidence level times the probability that the manager is not skilled.</p>
+<p>• If the manager is not skilled, and the test indicates that the manager
+is skilled, we expect to underperform the market by 2 percent per year,
+on average, by investing with the manager. The probability of this
+situation is 1 minus the confidence level times the probability that the
+manager is not skilled. Statisticians call this type of mistake the
+<em>Type I error</em> of the test.</p>
+<p>• If the manager is skilled, and the test indicates that the manager is
+skilled, we expect the manager to beat the market by 1 percent per year,
+on average. The probability of this situation is the power of the test
+times the probability that the manager is indeed skilled.</p>
+<p>• If the manager is skilled, and the test indicates that the manager is
+not skilled, we will invest in an index fund and our market-adjusted
+returns will be −0.15 percent. The probability of this situation is 1
+minus the power of the test times the probability that the manager is
+indeed skilled. Statisticians call this type of mistake the <em>Type II
+error</em> of the test.</p>
+<p><a href="#part0035.html_ch22tab4">Table 22-4</a>{.nounder} summarizes this
+information.</p>
+<p>The overall expected market-adjusted return associated with the decision
+is the average of the expected consequences weighted by their respective
+probabilities. For a given sample size, the resulting expected return is
+maximized by choosing a confidence level, which implies the test power.
+<a href="#part0035.html_ch22tab5">Table 22-5</a>{.nounder} presents results for
+several sample sizes.</p>
+<p>The results show that the optimal tests require high confidence levels
+for all sample sizes. For small sample sizes, the optimal confidence
+level is very high because there is not enough information to reliably
+discriminate between skilled and unskilled managers. Since investing
+with an unskilled manager is costly relative to investing with an index
+fund, and since skilled managers are relatively rare, a trader who
+follows the optimal strategy will almost always invest in index funds.
+Accordingly, the maximized expected return is essentially the same as
+the index fund return. For very large sample sizes, enough information
+is available to reliably discriminate between skilled and unskilled
+managers. The optimal confidence level remains high to avoid the mistake
+of investing with unskilled managers. The high power ensures that we
+invest with an active manager if he is skilled.</p>
+<p><strong>TABLE 22-4.</strong>\
+Assumed Consequences and Probabilities of All Possible States</p>
+<p><img alt="Image" src="images/00120.jpeg" />{.calibre9}</p>
+<p><strong>TABLE 22-5.</strong>\
+Optimal <em>t</em>-Test Confidence and Power Levels and Maximized Expected
+Returns</p>
+<p><img alt="Image" src="images/00121.jpeg" />{.calibre9}</p>
+<p>We assumed that a skilled manager will outperform an index fund by 1.15
+percent on average. If the test could perfectly discriminate between
+skilled and unskilled traders, the expected value of conducting the test
+would be one-third of this value because---by assumption---only
+one-third of active managers are skilled. Note that even with 50 years
+of data, the expected return of using the test (0.298 percent) is still
+only 78 percent of its theoretical maximum (0.383 =
+<img alt="Image" src="images/00122.jpeg" />{.calibre6}
+× 1.15 percent).</p>
+<p>The maximized expected return from using the <em>t</em>-test---expressed
+relative to the expected index fund return---is the value of the option
+to decide whether to invest with an active manager when the alternative
+is to invest in an index fund. It is always positive because you can
+always choose to invest in an index fund. For sample sizes of ten or
+fewer years, the value of this option is extremely low. With ten years
+of data, it is only 8.6 basis points. Not surprisingly, many investors
+choose to ignore these options. They invest in index funds because they
+do not believe that they can add significant value to their wealth by
+choosing managers.</p>
+<h5 id="2245-choosing-among-many-managers">22.4.5 Choosing Among Many Managers</h5>
+<p>In practice, investors rarely decide only between just one active
+manager and an index fund when choosing whether to invest with an active
+manager. Instead, they usually consider many managers, and generally,
+only those they know have done well in the past.</p>
+<p>The best-performing managers of a large group of managers always will
+have performed very well. In a large group of people, extreme luck can
+produce very impressive results. Standard statistical tests of whether
+such man agers are skilled or just lucky will
+invariably indicate that the managers are skilled.</p>
+<p>Standard tests in this application, however, produce highly unreliable
+results. Standard tests consider whether a manager chosen at random is
+skilled. In this application, we already know that a manager has
+performed well, and we examine him or her only because we know that the
+manager has performed well. The proper test must consider whether the
+manager is skilled, given that we already know that the manager was
+among the best-performing managers of a large group of managers. Whether
+a given manager is skilled, and whether the best-performing manager
+among a group of managers is skilled, are different questions. To answer
+different questions, we require different tests.</p>
+<p>Managers who have performed well may have been skilled, or they may have
+been exceptionally lucky. Unfortunately, the larger the group of
+managers from which we select the best performing managers, the more
+impressive are the performances of the luckiest unskilled managers. In a
+large sample of managers, some unskilled managers will be extremely
+lucky simply by chance.</p>
+<p><a href="#part0035.html_ch22tab6">Table 22-6</a>{.nounder} shows just how lucky the
+best-performing manager from a large group of unskilled managers can be.
+The calculations assume that all the managers have constructed well
+diversified portfolios which are closely correlated with the market. We
+therefore assume that the annual standard deviation of their
+market-adjusted returns is only 7 percent per year.</p>
+<p>The results in the third column (labeled Median) of the first panel show
+that in half of all years, on average, the best-performing manager from
+a group of 10,000 unskilled managers will beat the market by almost 27
+percent! The winner will beat the market by more than 28 percent in one
+year out of four (next column) and by almost 31 percent in one year out
+of 20 (column labeled 95th percentile). The results are even more
+impressive when the best manager comes from a larger group.</p>
+<p>The second and third panels present results for five- and ten-year
+periods. On average, the luckiest of 10,000 unskilled managers will beat
+the market by an annual average of more than 8 percent in half of all
+ten-year periods, by almost 9 percent in one ten-year period out of
+four, and by almost 10 percent in one ten-year period out of twenty.</p>
+<p>The last three columns show similar results for the 99th percentile
+manager in each group size. This manager's performance is also very
+impressive, although not nearly as extreme as the best-performing
+manager.</p>
+<p>Exceptionally lucky managers perform very well in comparison to skilled
+managers of average luck. These returns are all greater than the 2
+percent per year that we assumed a good skilled manager could produce on
+average. Even in ten-year periods, it is much better to be very lucky
+than skilled with average luck!</p>
+<p>The results in this table indicate that if you want to be more than 95
+percent confident that you do not identify an unskilled manager as a
+skilled manager when examining ten years of returns for the
+best-performing manager out of 10,000, you must classify as unskilled
+any manager whose average market-adjusted performance is less than 10
+percent per year. Tests with such confidence have essentially no power
+to identify any but the luckiest---or most skilled---managers.</p>
+<p>The results in this table greatly underestimate the actual performance
+of the luckiest managers because the best (and worst)-performing
+managers typically construct undiversified portfolios. The annual
+standard deviation of their market-adjusted returns therefore is much
+greater than the 7 percent we assumed.</p>
+<p><strong>TABLE 22-6.</strong>\
+Distributions of the Average Market-adjusted Performance of the Luckiest
+Managers of Various Group Sizes</p>
+<p><img alt="Image" src="images/00123.jpeg" />{.calibre9}</p>
+<p><img alt="Image" src="images/00124.jpeg" />{.calibre9}</p>
+<h5 id="2246-summary-and-discussion">22.4.6 Summary and Discussion</h5>
+<p>The results in this section strongly demonstrate that past returns data
+are not very useful for determining whether a manager is skilled. For
+them to be of much value, we must base statistical analyses of past
+returns on more years of data than are normally available to us.</p>
+<hr />
+<p><strong>[▶]{.ent} Is Warren Buffet
+Skilled or Lucky?</strong></p>
+<p>Berkshire Hathaway is a firm that Warren Buffet has managed since 1965.
+Although it has many operating divisions, in many respects it is
+essentially a closed-end investment fund. Because Berkshire Hathaway is
+primarily an insurance company, its reported book value is based on the
+market values of its holdings rather than on historic costs of its
+holdings. The book value therefore is essentially the net asset value of
+the firm.</p>
+<p>Many people regard Warren Buffet as the most skilled investment manager
+of the late twentieth century. Since he took control of Berkshire
+Hathaway, its book value had appreciated 2,078-fold through December
+2000. This corresponds to a compounded average growth rate of 23.6
+percent per year. By comparison, the average annual total return
+(capital gains plus dividends) of the S&amp;P 500 Index during this period
+was 11.8 percent. Berkshire Hathaway outperformed the market by an
+average of 11.8 percent per year. The firm exactly doubled the
+performance of the S&amp;P 500 Index over this period.</p>
+<p>Is Warren Buffet indeed a skilled investment manager, or has he simply
+been a very lucky manager?</p>
+<p>A standard <em>t</em>-test indicates that he is exceptionally skilled. Over the
+36 years, Berkshire Hathaway's annual market-adjusted return standard
+deviation was 14.3 percent per year, so that the standard <em>t</em>-statistic
+is 4.9. The probability that an unskilled manager would have a
+<em>t</em>-statistic larger than 4.9 is only 0.0011 percent.</p>
+<p>This test, however, is not the proper test. Warren Buffet came to our
+attention only because he had exceptionally high returns. If his
+performance had not been exceptionally good, you probably would have
+never heard of him, and I certainly would not be writing about him. To
+properly address the question, we must consider whether Warren Buffet's
+investment performance is significantly better than we would expect from
+the best managers in a large group of unskilled managers.</p>
+<p>Assume that Warren Buffet competed with at least 10,000 investment
+managers in 1965. Many of these managers underperformed the market and
+subsequently quit or were dismissed from their jobs. The total number of
+managers in 1965 would be much greater if we considered every amateur
+investor who would have become a professional investor if his or her
+investment performance had been better than it was.</p>
+<p>If 10,000 unskilled managers constructed portfolios with normally
+distributed market-adjusted returns having mean zero and standard
+deviation 14.3 percent, the probability that the best-performing manager
+would beat the market by an annual rate of 11.8 percent or greater is
+only 0.5 percent. If there were 100,000 managers, the probability would
+have been 5 percent. These results suggest that Warren Buffet very
+likely is a skilled manager. [◀]{.ent1}</p>
+<p><em>Source: Author's calculations based on data at
+[<a href="http://www.berkshirehathaway.com/2000ar/2000letter.html">www.berkshirehathaway.com/2000ar/2000letter.html</a>{.nounder}]{.weblink}.</em></p>
+<hr />
+<p>The problem is that skill is a far less significant determinant of
+portfolio returns than is luck. In particular, the additional return
+that we expect a manager can add to a portfolio is small relative to the
+variation in portfolio returns due to factors which managers cannot
+anticipate or act upon. Statisticians and engineers say that this
+problem has a low <em>signal to noise ratio.</em> The signal---whether the
+manager is skilled---is hard to find because it is lost in noise
+(variation due to other factors).</p>
+<hr />
+<p><strong>[▶]{.ent} A Last Word for the
+Statisticians</strong></p>
+<p>In practice, many managers pursue similar trading strategies so that
+they obtain similar results. The market-adjusted returns of these
+traders are correlated. I derived the results that appear in <a href="#part0035.html_ch22tab6">table
+22-6</a>{.nounder} by assuming that the
+market-adjusted returns of all managers are uncorrelated. They therefore
+overstate the performance of the best-performing managers.</p>
+<p>You can easily understand the problem by assuming that all managers
+pursue the same investment strategy so that they all obtain the same
+results. The distribution of the returns of the best-performing manager
+within a group of these identical managers does not depend on the size
+of the group because they all produce the same returns. Although many
+managers may be in the group, the effective size of the group is only
+one because they all pursue only one strategy. The correlation of
+trading strategies among managers therefore reduces effective group
+size.</p>
+<p><a href="#part0035.html_ch22tab7">Table 22-7</a>{.nounder} tabulates extreme
+average market-adjusted return distributions for varying degrees of
+correlation among the managers' market-adjusted returns. The results
+summarize 10-year average market-adjusted returns for the best manager
+and the 99th percentile manager within a group of 10,000 managers.</p>
+<p>Comparing these results against the results in <a href="#part0035.html_ch22tab6">table
+22-6</a>{.nounder} shows that when the correlation
+is 0.25, the return distribution for the best manager within a group of
+10,000 managers is similar to the distribution for the best manager
+within a group of approximately 2000 managers with uncorrelated returns.
+(The approximation is based on a logarithmic interpolation.) For a given
+group size, if we account for the correlation among manager
+market-adjusted returns, the performance of managers like Warren Buffet
+appears more remarkable. [◀]{.ent1}</p>
+<hr />
+<p>The problem would be much easier to solve if we believed that skilled
+managers could add more, on average, than the 2 percent per year to a
+portfolio that we assumed in our analyses. Unfortunately, it is
+unreasonable to assume much greater skill than 2 percent because trading
+is a highly competitive zero-sum game. Even if we assume greater skills,
+we would have to assume that fewer managers have them. Although the test
+then would discriminate better, the greater scarcity of skilled managers
+would offset the improvement to some extent.</p>
+<p><strong>TABLE 22-7.</strong>\
+Distributions of the 10-year Average Market-adjusted Performance of the
+Luckiest Managers in a Group of 10,000 Managers for Varying Degrees of
+Correlation Among the Manager Market-adjusted Returns</p>
+<p><img alt="Image" src="images/00125.jpeg" />{.calibre9}</p>
+<hr />
+<p><strong>[▶]{.ent} Closet Indexers</strong></p>
+<p><em>Closet indexers are</em> active equity investment managers who create
+portfolios that very closely replicate the benchmark indexes their
+clients use to measure their performance. Their clients presumably
+expect that their managers will choose portfolios to beat their
+benchmarks. It is very difficult, however, to significantly outperform
+an index with a portfolio that is very closely correlated to it.</p>
+<p>Closet indexers choose closely correlated portfolios because such
+portfolios rarely significantly underperform their benchmark indexes.
+Closet indexers minimize the risk of significant failure.</p>
+<p>Clients generally do not like closet indexers because they pay them high
+fees for their "active management" but they essentially receive only
+index portfolios in exchange. The management fees for index funds are
+much lower than those for actively managed portfolios.</p>
+<p>Since the returns of closet indexers are very closely correlated to
+their benchmark indexes, analysts can determine whether closet managers
+are skilled managers with much less data than they require to determine
+whether true active managers are skilled. [◀]{.ent1}</p>
+<hr />
+<p>The problem would be much easier to solve if the variation due to other
+factors were smaller. In our analysis, we assumed that the variation of
+market-adjusted portfolio returns is 7 percent per year. We derived this
+number by assuming that the portfolio return standard deviation is 16
+percent, the market return standard deviation is 14.5 percent, and the
+correlation between the two returns is 0.9. If the problem were
+characterized by lower standard deviations or by a higher correlation,
+stronger tests would be possible. For example, if the correlation were
+0.95 instead of 0.9, the market-adjusted portfolio return standard
+deviation would be 5 percent per year. The power of a 95 percent
+confidence level test using five years of returns, assuming manager
+skill of 2 percent, would rise from 15 percent (assuming a 7 percent
+market-adjusted return standard deviation) to 22 percent. If the
+correlation were 0.99, the market-adjusted return standard deviation
+would drop to 2.6 percent, and the test power would rise to 52 percent.
+Unfortunately, the portfolio returns of most equity managers are not so
+highly correlated with the market.</p>
+<p>To solve a low signal to noise ratio problem, we must either know more
+about the signal or somehow reduce the noise. In practice, analysts most
+frequently attempt to lower the noise by using factor models to explain
+unanticipated portfolio returns. The analysis of market-adjusted returns
+that we studied in this section is based on a simple one-factor
+market-adjusted model of portfolio returns. More complex models attempt
+to attribute returns to other factors, such as interest rates, firm
+size, and expected growth rates. Since the variation in the resulting
+factor-adjusted excess returns is lower than the variation in the
+market-adjusted returns, tests of manager performance will be more
+powerful for a given sample size. These tests, however, identify manager
+skill only after accounting for factor returns. They will not measure
+the value added by managers who can successfully predict factor returns,
+and who can adjust their portfolios to benefit from their skills.</p>
+<p>With five years of monthly returns data, a test with 95 percent
+confidence and 75 percent power to identify 2 percent skilled managers
+requires an annual factor-adjusted excess return standard deviation of
+only 1.9 percent. Unfortunately, factor models generally cannot explain
+returns so precisely. Such models would have
+to explain 98.6 percent of the total variation in returns to achieve
+such precision.</p>
+<hr />
+<p><strong>[▶]{.ent} A Good Dissertation Topic</strong></p>
+<p>We know that skilled managers should perform better in liquid markets
+than in illiquid markets because the costs of establishing positions are
+lower in liquid markets. This observation is especially important for
+large fund managers and for skilled managers who pursue strategies that
+many other skilled managers pursue.</p>
+<p>Since liquidity varies through time, so will the performance of such
+skilled managers. Tests of manager skill therefore should incorporate
+information about time-varying liquidity. To the best of my knowledge,
+no such tests have ever been done. [◀]{.ent1}</p>
+<hr />
+<p>The fraction of total variation that a statistical model explains is
+called the <em>R^2^</em> of the model. Factor models typically have <em>R^2^</em> of
+less than 90 percent in annual data. For comparison, the <em>R^2^</em> of the
+simple market-adjusted return model is 81 percent when the portfolio
+standard deviation is 16 percent, and the market-adjusted return
+standard deviation is 7.0 percent {0.81 = (0.9)^2^ = (16^2^ -
+7^2^).16^2^}. (In the simple market-adjusted return model, the <em>R^2^</em> is
+equal to the square of the correlation coefficient of the portfolio
+returns with the market returns.)</p>
+<p>In principle, analysts could construct stronger tests if they knew more
+about a manager's presumed skill. For example, suppose an analyst
+believes that a manager may be skilled only in rising markets but not in
+falling markets. This information would allow the analyst to construct a
+stronger test of whether the manager is skilled. In particular, the
+analyst would examine returns only in rising markets. In general,
+analysts can better identify skill if they can identify some variables
+that are correlated with it.</p>
+<h6 id="22461-length-of-sample-versus-number-of-observations">22.4.6.1 Length of Sample Versus Number of Observations</h6>
+<p>In most statistical analyses, the greater the number of observations,
+the more powerful the results will be. The results presented throughout
+this section illustrate this principle. The more years of data upon
+which statistical performance evaluations are based, the more powerful
+those evaluations will be.</p>
+<p>For a given sample period, the number of observations can be increased
+by sampling more frequently. For example, in a 10-year period, analysts
+can examine 10 annual, 120 monthly, and approximately 522 weekly
+nonoverlapping returns.</p>
+<p>In performance evaluations, however, statistical power depends primarily
+on the length of the sample period and not on the frequency of sampling
+within that period. This is because the total performance within a
+period is the same regardless of how often we observe it within the
+period. Analyses that attempt to discriminate between luck and skill
+need long sample periods to separate the systematic contribution of
+skilled managers from the noise of unanticipated factors. Sampling more
+often within a period does not address this need.</p>
+<p>More frequent sampling, however, often produces slightly more powerful
+tests, especially when the total number of observations otherwise would
+be less than 20. The standard error of the mean---which appears in the
+denominator of the <em>t</em>-statistic---often can be estimated more
+accurately from more frequent observations for a given sample period.
+Whether it can or cannot depends on whether prices follow a random walk
+at various observation intervals. The issue is technical and need not
+concern us further. It explains, however, why I presented analyses for
+monthly returns instead of annual returns in this section.</p>
+<h2 id="225-more-important-problems-with-statistical-performance-evaluation">22.5 MORE IMPORTANT PROBLEMS WITH STATISTICAL PERFORMANCE EVALUATION</h2>
+<p>Statistical performance evaluation often is even more difficult than the
+results in the previous section indicate. If the returns being analyzed
+are not well characterized by the assumptions upon which statisticians
+base their analyses, the conclusions that statisticians reach will not
+be reliable.</p>
+<p>Two main problems may cause returns data to
+have substantially different properties than statisticians expect. These
+problems involve distributional shape and the accuracy of the returns
+data. These issues are very important because some investment strategies
+produce highly unusual return distributions and because---through
+malice, negligence, or simple oversight---returns data sometimes do not
+represent true performance. Investors who fail to recognize these
+problems risk making decisions that often cause them to lose their
+entire investments.</p>
+<h5 id="2251-distributional-shape">22.5.1 Distributional Shape</h5>
+<p>The <em>shape</em> of the distribution of a variable refers to how the
+probabilities of different values of the variable are distributed. If
+the distribution is <em>flat</em>, all values have equal probabilities. If the
+distribution is <em>fat-tailed</em>, extreme values are common.</p>
+<p>Distributional shape is important because statisticians base their tests
+on assumptions about the return probabilities based on luck alone. If
+the shape they assume is different from the true shape of random
+returns, their inferences will be wrong.</p>
+<p>The quantitative properties of the <em>t</em>-tests presented above were
+derived by assuming that portfolio returns are <em>normally distributed.</em>
+The <em>normal distribution</em> is a specific bell-shaped distribution. (The
+probabilities of each outcome plotted against their corresponding
+outcomes trace the shape of a bell.) For reasons that need not concern
+us now, the normal distribution very often provides excellent
+characterizations of the distributions of a wide variety of random
+variables. Statisticians therefore most commonly base their analyses on
+this distribution.</p>
+<h6 id="22511-normality">22.5.1.1 Normality</h6>
+<p>The actual distribution of portfolio returns, however, is not normal.
+Many studies demonstrate that extreme values are more common for
+portfolio returns than we would expect if they were normally
+distributed. The actual distribution of returns therefore is fat-tailed
+in comparison to the normal distribution. Although the difference is not
+great, the unfortunate consequence of the more common extreme values is
+that <em>t</em>-tests are less powerful than they would be if the returns were
+normally distributed. The results we discussed above, discouraging as
+they are, actually overstate the reliability of <em>t</em>-tests.</p>
+<h6 id="22512-the-peso-problem">22.5.1.2 The Peso Problem</h6>
+<p>One particular property of the normal distribution is of critical
+interest to us. The normal distribution is a <em>symmetric distribution.</em>
+In a <em>symmetric distribution</em>, outcome probabilities depend only on
+their distance from the median value of the distribution. The
+probabilities of outcomes at equal distances above and below the median
+therefore are the same. The returns of well-diversified portfolios are
+approximately symmetrically distributed. Although there are some
+systematic departures from symmetry (large negative values are slightly
+more common than large positive values), these departures usually affect
+index returns as well. Accordingly, market-adjusted returns tend to be
+quite symmetric for well-diversified portfolios because the asymmetries
+in the portfolio and index returns offset each other.</p>
+<p>Certain portfolio strategies, however, can produce highly asymmetric
+return distributions. Unfortunately,
+<em>t</em>-tests applied to returns generated by these portfolios can produce
+highly unreliable results. The true confidence levels and power of
+<em>t</em>-tests based on highly asymmetric distributions are vastly different
+from those based on the normal distribution.</p>
+<hr />
+<p><strong>[▶]{.ent} How to Fool Most People Most of the Time: Sell Volatility</strong></p>
+<p>An equities manager can produce an enhanced index return in most years
+by holding an index portfolio (or a closet index portfolio) and writing
+out-of-the-money options. The index portfolio produces the index return.
+The out-of-the-money options produce a small additional return if the
+options are not exercised. If the options are exercised, the portfolio
+generally will suffer a significant loss. The options will be exercised
+when the market is highly volatile. Since it takes essentially no skill
+to set up this strategy, it is an example of an <em>informationless trading
+strategy.</em></p>
+<p>The market-adjusted returns of this portfolio will be small and positive
+most of the time. Only very rarely will the fund underperform the
+market. When it does, however, the underperformance will be very large.</p>
+<p>If the manager has not been unlucky, <em>t</em>-tests will indicate that the
+manager is highly skilled, even in small samples. Clients therefore must
+be very vigilant to ensure that their managers have not given them a
+peso problem. [◀]{.ent1}</p>
+<hr />
+<p>The <em>peso problem</em> is an extreme example of this problem. A <em>peso
+problem</em> arises when a trading strategy almost always produces a small
+positive return. Very rarely, however, the strategy produces a very
+large negative return that may more than offset the many small gains the
+portfolio normally produces. This distribution of returns is highly
+asymmetric.</p>
+<p>The peso problem is of special concern to performance evaluation. Until
+a calamity occurs, a manager who holds a portfolio with a peso problem
+appears to be quite skilled. The manager, however, is lucky rather than
+skilled.</p>
+<p>It is almost impossible to use statistical methods to evaluate managers
+who have peso problems. A reliable evaluation requires enough data to
+ensure that calamities are adequately represented in the sample. Since
+calamities are quite rare, the sample must be extraordinarily long. The
+only reliable way that clients can determine whether their managers are
+creating peso problems is to directly examine the strategies that their
+portfolio managers use.</p>
+<hr />
+<p><strong>[▶]{.ent} The Peso Problem</strong></p>
+<p>The following story is part of the folklore of the Economics Department
+at the University of Chicago. I have no idea of its veracity.</p>
+<p>In the 1960s and 1970s, inflation in Mexico was significantly higher
+than in the United States. Interest rates therefore were higher in
+Mexico than in the United States. Had there been a floating exchange
+rate regime then, the Mexican peso would have depreciated relative to
+the dollar at a rate that would have made investors roughly indifferent
+between investing in the United States and in Mexico. For example, a
+U.S. investor would have earned higher interest in Mexico than in the
+United States, but the premium would have been offset by a decrease in
+the dollar value of the peso over the period of the investment.</p>
+<p>In fact, the Mexican government fixed the exchange rate so that it could
+not change. The continuing inflation, however, forced the government to
+devalue the peso on an irregular basis. Anyone who had assets
+denominated in Mexican pesos suffered a large loss every time the peso
+was devalued.</p>
+<p>Investment in Mexican debt securities therefore created a <em>peso
+problem.</em> As long as there was no devaluation, the investment would
+systematically outperform similar dollar-denominated investments.
+Whenever a devaluation occurred, however, the gains would be lost
+overnight.</p>
+<p>A certain Chicago professor is said to have invested in Mexican debt
+instruments to take advantage of the interest rate differential. When
+confronted by his colleagues about the peso problem, the professor was
+reported to have said that he was not worried: As an authority on
+international economics who had trained a significant number of Mexican
+economists, he was certain that his former students would call him for
+his advice before they devalued the peso. He therefore expected that he
+would be able to avoid the peso problem by selling immediately after he
+took their call.</p>
+<p>He was right. His students did call, but they could not reach him
+because he was traveling![◀]{.ent1}</p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} The St. Petersburg
+Paradox: Why Not Double-down?</strong></p>
+<p>Bet a dollar on the outcome of a coin flip. If you win, quit with a
+1-dollar profit. If you lose, bet 2 dollars on the outcome of another
+coin flip. If you win, quit. Your total profit from both coin flips will
+be 1 dollar. If you lose, double your bet again to 4 dollars. If you win
+this third flip, quit with a 1-dollar profit (4 --2 − 1), otherwise
+continue doubling your bet until you win.</p>
+<p>This <em>doubling-down</em> betting strategy is called the <em>St. Petersburg
+paradox.</em> If you have infinite wealth, you will always win 1 dollar by
+playing it until you finally win. If your wealth is finite, however, you
+will eventually go bankrupt if you play the game often enough. It is a
+paradox because these results do not depend on whether the coin is fair.</p>
+<p>An equities manager can produce an enhanced index return in most years
+by holding an index portfolio and making a short-term bet on some
+investment idea. The index portfolio produces the index return. If the
+bet does not work out, bet again with twice the money. Continue doubling
+down until you win. This simple trading strategy ensures that the fund
+manager outperforms the market as long as the fund does not go bankrupt.</p>
+<p>The doubling-down strategy is very attractive to undisciplined
+investment managers because it usually allows them to avoid the
+psychological consequences of their poor decisions. They rationalize by
+thinking that they initially may have been wrong about an idea, but in
+the end they got it right.</p>
+<p>The strategy is also attractive to unethical investment managers who
+fear that their clients will dismiss them if they perform poorly. They
+will play the strategy if they have performed poorly. Such managers are
+unethical because they do not care about the risks that they impose upon
+their clients, and because they manage their portfolios to benefit
+themselves rather than their clients. [◀]{.ent1}</p>
+<hr />
+<h5 id="2252-fraudulent-returns">22.5.2 Fraudulent Returns</h5>
+<p>An implicit assumption of statistical performance evaluation is that the
+returns under analysis are true returns. Statistical tests applied to
+returns that are not accurate obviously will not produce accurate
+results. Computer scientists and statisticians are both fond of saying,
+"Garbage in, garbage out."</p>
+<p>You need to be aware of two processes that can cause returns to be
+fraudulent. They involve return smoothing and pyramid schemes.</p>
+<h6 id="22521-return-smoothing">22.5.2.1 Return Smoothing</h6>
+<p>As noted in "Smooth Sailing, Rapids Ahead" (p. <strong>448),</strong> managers who
+value portfolios of infrequently traded assets may adjust the values of
+those assets less quickly than they should. The portfolio returns that
+they compute from these values therefore will be inaccurate. In
+particular, they will change too slowly. Their variation from period to
+period will be less than it should be, and the ratio of return
+continuations to return reversals (return serial correlation) will be
+higher than it should be. Consequently, the returns will appear to be
+smoother than they should be.</p>
+<p>Artificial smoothness affects statistical performance evaluation because
+smoothing decreases return volatility. The artificially low return
+volatility causes statisticians to conclude that large mean returns are
+more significant than they are. In particular, recall that the <em>t</em>-test
+is based on the ratio of the mean return to a measure of its expected
+dispersion called the standard error. Since statisticians usually
+estimate the standard error from the return
+volatility, artificially low return
+volatility causes artificially low standard error estimates, which cause
+artificially high <em>t</em>-ratios, and therefore overconfident conclusions.</p>
+<p>When managers smoothe too much, their reported valuations may
+significantly differ from true valuations. At some point, their
+regulators, customers, brokers, auditors, or custodians may recognize
+the discrepancy and demand immediate adjustment. Since smoothing
+invariably delays the recognition of capital losses rather than of
+capital gains, the resulting revaluations produce very significant
+negative returns. Smoothing thus can produce an artificial peso problem.
+From the investors' point of view, however, there is nothing artificial
+about the problem.</p>
+<h6 id="22522-pyramid-schemes">22.5.2.2 Pyramid Schemes</h6>
+<p>A <em>pyramid scheme</em> is a fraud that dishonest investment managers commit
+against their clients. In these schemes, the manager explicitly or
+implicitly promises a high rate of return on an investment. Investors
+then place their money with the manager, who usually very actively
+promotes the scheme. The manager then uses their capital to pay high
+returns to initial investors. The apparently high returns realized by
+the initial investors attract new investors. As long as the manager can
+attract an ever-growing base of new investors, he can pay off earlier
+investors, and the scheme can survive. At some point, however, the fraud
+gets so large that the manager can no longer pay earlier investors. At
+that point, it collapses and anyone who has not yet been paid usually
+loses everything. The promoter profits either by stealing funds or by
+charging management fees. Pyramid schemes, of course, are illegal almost
+everywhere.</p>
+<p>These schemes are called pyramid schemes because they are built upon an
+ever-enlarging base of investors. The investors at the top profit from
+the "support" provided by the investors at the base. They are similar to
+chain letters. Pyramid schemes are extreme examples of "robbing Peter to
+pay Paul." Pyramid schemes are also known as Ponzi schemes after Charles
+K. Ponzi, who ran an extremely large pyramid scheme in 1920.</p>
+<p>Until pyramid schemes collapse, the returns that they generate are
+remarkably good. If you analyze these returns to determine whether a
+manager is skilled or just lucky, you will conclude that the manager is
+skilled.</p>
+<p>The only way to protect against losing to a pyramid scheme is to
+determine whether the manager's accounting systems accurately report
+investment assets, account liabilities, investment income, and capital
+gains distributions. In a pyramid scheme, actual assets and actual
+investment income generally will be substantially less than reported.</p>
+<p>If pyramid scheme promoters are not too greedy, if their excess returns
+are not too large, if they can convince their clients to not withdraw
+their funds, and if they can somehow control the audits of their
+portfolios, pyramid schemes can go undetected for a very long time. An
+investment manager's performance record therefore is no substitute for
+doing the <em>due diligence</em> that all prudent investors must undertake to
+ensure that they are not contributing to pyramid schemes.</p>
+<h2 id="226-the-sample-selection-bias">22.6 THE SAMPLE SELECTION BIAS</h2>
+<p>The two preceding sections demonstrate that statistical tests for
+managers generally do not produce useful information about their skill.
+The properties of the tests described there were derived by assuming
+that analysts would use the tests under ideal circumstances. In
+practice, statistical performance evaluations rarely are applied under
+ideal circumstances. Consequently, the tests are still less useful than
+they seem.</p>
+<hr />
+<p><strong>[▶]{.ent} Ponzi's Ponzi Scheme</strong></p>
+<p>Charles K. Ponzi established the Securities Exchange Company in December
+1919 in Boston. His company purportedly traded postal reply coupons.</p>
+<p>Postal reply coupons are coupons redeemable for postage. People who
+wanted to enclose return postage used them when corresponding with
+people in other countries. The postal reply coupon system was set up in
+1906 by a postal convention of over 60 countries. Participants in the
+system agreed to honor the coupons at fixed exchange rates. When the
+system was initially established, coupons everywhere sold for slightly
+more than they were worth in postage. Following World War I, however,
+changes in exchange rates made it possible to buy coupons in some
+countries and redeem them at a substantial percentage profit in other
+countries. Although the percentage profits could be quite large, the
+total amounts that anyone could earn this way were quite small because
+the coupons were not worth much.</p>
+<p>To fund his operation, Ponzi sold bonds to investors that promised them
+a 50 percent return over 90 days. He claimed that he could produce this
+income through the 400 percent returns he was making by redeeming postal
+reply coupons. No evidence suggests that Ponzi ever redeemed more than a
+trivial quantity of coupons.</p>
+<p>Ponzi repaid his bonds at face value in 45 days. The resulting
+excitement caused his business to grow exponentially. By July, the
+business was taking in 1 million dollars per week from offices in
+several cities in the Northeast.</p>
+<p>The government forced Ponzi to halt sales of his notes on July 26. By
+that time, he had collected about 9.5 million dollars from more than
+10,000 investors. On July 28, investors started to demand payment on
+their notes. Remarkably, instead of running away with the money, Ponzi
+paid the notes until he ran out of cash on August 7.</p>
+<p>Ponzi was arrested on August 12 and charged with many counts of federal
+mail fraud. He negotiated a guilty to plea to one count, and the court
+sentenced him to five years in prison. Following his release, he engaged
+in other financial frauds for which he was caught and convicted.
+[◀]{.ent1}</p>
+<p><em>Source: Charles K. Ponzi Website:</em> The Remarkable Criminal Financial
+Career of Charles K. Ponzi <em>by Mark C. Knutson at
+[<a href="http://www.mark-knutson.com">www.mark-knutson.com</a>{.nounder}]{.weblink},
+May 31, 2001.</em></p>
+<hr />
+<p>The most important problem that plagues these tests is the sample
+selection problem. This problem can affect inferences whenever people
+learn from the past. Their learning may involve formal analyses like the
+<em>t</em>-test described above, or it may simply involve judgments that people
+make based on their experience. In either event, you must be very
+careful that the <em>sample selection bias</em> does not affect your
+conclusions.</p>
+<p>The <em>sample selection bias</em> arises when some process selects the
+information that you see about some object. If the process does not
+randomly select the information that you see, you will see only selected
+aspects of the object and your impression of it will not be accurate.
+Decisions that you make based upon your information therefore very
+likely will be faulty.</p>
+<hr />
+<p><strong>[▶]{.ent} Blind Men Describe an
+Elephant</strong></p>
+<p>The story of the blind men who examine different parts of an elephant
+illustrates the sample selection bias: Each man feels only the trunk,
+leg, side, or tail, and each respectively concludes that the elephant is
+like a snake, a tree trunk, a wall, or a rope. Since each man examines
+only one aspect of the elephant, none of them appreciates the totality
+of the elephant. Each man would make a poor decision about elephants
+based only on the information produced by his examination of the
+elephant. [◀]{.ent1}</p>
+<hr />
+<h5 id="2261-sample-selection-in-the-mutual-fund-industry">22.6.1 Sample Selection in the Mutual Fund Industry</h5>
+<p>Suppose you examine the marketing literature of a company that manages
+and distributes a large family of mutual funds. Each fund accurately
+reports its performance relative to appropriate benchmarks. By reviewing
+the data, or by doing some formal statistical calculations, you conclude
+that their performance has been very impressive. On average, the funds
+in this family have substantially beaten their benchmarks. The
+performance obviously is both statistically significant and economically
+significant. The funds have performed much better than you would expect
+if their managers were not skilled. You therefore conclude that their
+managers are skilled and decide to invest your money with this company.</p>
+<p>You may be very disappointed with your results. Many mutual fund
+distributors feature only their best-performing funds in their marketing
+literature. Although they may offer other reasons for why they select
+which funds to feature, they undoubtedly know that they will benefit
+from this presentation of their products. The average performance of all
+funds in the family actually may be negative. If you knew this, you
+might have concluded that it is unlikely the company's funds will beat
+the market on average, and that the managers of their best-performing
+funds probably were only lucky. If the managers indeed are not skilled,
+you probably will be disappointed with your decision. You would have
+made a better decision had you known about the other funds.</p>
+<p>A sample selection bias affected your inference. You only saw the funds
+that the marketing literature presented and therefore only saw a
+selected view of the company.</p>
+<p>Even if the company presents the results for all its funds, you still
+may not see the entire picture. Mutual fund distributors often kill
+their poorly performing funds, usually by merging them with
+better-performing funds. The reported performance of the survivor is
+based only on its performance and does not include the performance of
+the failed fund. Mutual fund companies may kill their losers because
+they become expensive to operate when they get small. They may also kill
+them because they do not want to report their performance. In either
+event, by killing poorly performing funds, they raise the computed
+average performance of the surviving funds. The average performance of
+all funds may be negative, but you could not know this without knowing
+about the other funds. This type of sample selection bias is called the
+<em>survivorship bias.</em></p>
+<p>Some large mutual fund companies start many new mutual funds every year.
+They keep the ones that perform well and kill the ones that fail. In
+this way, they are able to create the winners that they need to market
+their funds. If you are unaware of this process, you may give too much
+significance to past returns. You may not realize that the fund which
+generated superior past performance came to your attention only because
+it was among the best-performing funds of a large group of funds.</p>
+<h5 id="2262-avoiding-the-sample-selection-bias">22.6.2 Avoiding the Sample Selection Bias</h5>
+<p>Sample selection biases may be responsible for more trading losses than
+any other cause. They usually arise because people do not see the whole
+picture or because they fail to ask the right questions when they
+interpret what they see.</p>
+<p>Many people invest with active investment managers who have performed
+well. As noted in section 22.4.5, whether their performance is
+statistically significant must be judged relative to the entire sample
+of managers. What appears to be significant out of context may not be
+noteworthy in context. The important point to remember is that bad
+managers do not come to your attention. Nobody talks about them. Nobody
+writes about them. They do not write books. You learn about the best
+managers only because they had great performance. Everyone talks about
+them. Everyone writes about them. They write books that everyone reads.
+To make reasonable statistical inferences about whether great performing
+managers are skilled, you must know the total number of managers who
+might have been lucky but were not.</p>
+<hr />
+<p><strong>[▶]{.ent} My Favorite Fraud</strong></p>
+<p>The following scheme is illegal. Do not use it. I present it only so
+that you can better appreciate the sample selection bias, and so that
+you can avoid falling for this scheme should a con man ever try to
+target you.</p>
+<p>Buy a mailing list of 20,480 wealthy and gullible people. Send them a
+letter in which you explain that you are a very successful trader who
+has more money than you can spend. Boast about how you correctly
+predicted what direction prices would move during nine of the last ten
+months. Tell some story about how you did it. Then tell them that you
+now crave their recognition for being a market genius, since money is no
+longer very meaningful to you. Give them your prediction for the next
+month.</p>
+<p>Divide your names into two equal groups. To the first group, predict
+that the market will rise. To the second group, predict that it will
+fall.</p>
+<p>One month later, write a letter to the 10,240 people for whom you
+correctly predicted the market. Continue boasting and remind them that
+you correctly picked the market for them. Tell them how much money they
+could have made if they had traded on your recommendation. Then give
+them another pick. Of course, you predict an increase to one half of the
+group and a decrease to the other half.</p>
+<p>Repeat this for ten months until 20 people have seen you correctly
+predict the market 10 times in a row (20 = 20480/2^10^). If they are not
+aware of your scheme, they will be convinced that you have correctly
+picked the market 10 times for them, and they will be prepared to
+believe that you did indeed do it correctly in nine of the ten months
+before you started to correspond with them. Such results are exceedingly
+unlikely to occur at random. They will swear that you are a genius.</p>
+<p>You now have these people wrapped around your finger. If they are
+gullible, you may be able to abuse their trust.</p>
+<p>If you also send letters to people for whom you incorrectly predicted
+the market, you can increase your yield. Simply tell them that you are
+only human and cannot get it right every time. You will have 200 people
+for whom you have correctly called the market exactly nine times and
+another 900 for whom you have correctly called the market exactly eight
+times. You probably will not want to continue corresponding with those
+for whom you failed to call the market three or more times.</p>
+<p>The "lucky" ones for whom you correctly predicted the market cannot
+possibly make the proper inference about your skill without knowing your
+scheme. If they do know the scheme, the only rational inference is that
+you are not skilled. [◀]{.ent1}</p>
+<hr />
+<p>Similar comments apply to investment newsletters. Only the newsletters
+that have great records for recommending securities and contracts
+survive to come to your attention. The ones with poor records fail. The
+surviving newsletters may be written by insightful authors or by lucky
+authors. Unfortunately, you generally cannot
+assess the authors' skills from their performance record.</p>
+<h5 id="2263-regression-to-the-mean">22.6.3 Regression to the Mean</h5>
+<p>Although sample selection can produce an upward bias in an average of
+past returns, it cannot affect subsequent returns. Perhaps the clearest
+evidence that sample selection has affected an average of past returns
+is the difference between that average and an average of subsequent
+returns. When selection has caused the past return average to be high,
+the subsequent return average is invariably lower. This phenomenon is
+called <em>regression to the mean.</em> Researchers have identified it in many
+different contexts.</p>
+<h5 id="2264-summary">22.6.4 Summary</h5>
+<p>Whenever some process filters the data that you see, you get only a
+selected aspect of reality. When you make decisions based on that view,
+you often will make poor decisions. The only way to avoid the sample
+selection bias is to understand how the data came to your attention. You
+must always ask whether an event is significant relative to the process
+that generated it, and not simply relative to what you know about it.</p>
+<hr />
+<p><strong>[▶]{.ent} The Regression of Public Commodity Pools</strong></p>
+<p>In the early and middle 1980s, approximately 2,000 commodity trading
+advisers were registered with the National Futures Association. The vast
+majority of these advisers managed private accounts.</p>
+<p>Between July 1979 and June 1985, these advisers offered approximately 15
+new commodity funds---commonly called <em>public commodity pools</em>---per
+year to public investors. The offerings were accompanied by prospectuses
+that reported the average returns for the adviser's accounts for at
+least the previous 36 months (if the adviser had been advising that
+long).</p>
+<p>Their average monthly return in the 36 months before the offering was
+4.1 percent. These funds had performed remarkably well!</p>
+<p>In the first year after going public, their average monthly return was
+0.23 percent. The results did not improve much in subsequent years.
+These returns were stunningly disappointing in comparison to the prior
+returns.</p>
+<p>These results suggest that most of the advisers who offered public funds
+probably had simply been lucky in the previous 36 months. Once the funds
+went public, their average returns regressed to the mean.</p>
+<p>To support this conclusion, consider how many of the 2,000 advisers we
+would expect would have average returns greater than 4.1 percent per
+month over the previous 36 months, purely by chance. During this period,
+all public commodity funds had a mean monthly return of approximately
+0.7 percent per month with a standard deviation of 11.3 percent per
+month. If we assume that returns are normally distributed with this mean
+and standard deviation, by pure chance, a probability calculation (not
+reported) predicts that we would expect 70 of 2,000 advisers would have
+an average monthly return of greater than 4.1 percent over the last
+three years. Chance alone therefore provides more than enough advisers
+to explain the 4.1 percent monthly return average of the advisers who
+offered public commodity funds. (Note that the average includes managers
+with prior average returns both greater and less than 4.1 percent.)
+[◀]{.ent1}</p>
+<p><em>Source: Edwin J. Elton, Martin J. Gruber and Joel Rentzler, "New Public
+Offerings, Information, and Investor Rationality: The Case of Publicly
+Offered Commodity Funds,"</em> Journal of Business <em>62, no. 1 (1989): 1-15.</em></p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} Warren Buffet
+Reconsidered</strong></p>
+<p>In the 26 years between 1965 and 1990, the book value of Berkshire
+Hathaway increased by an average of 13.2 percent more than the total
+return on the S&amp;P 500 Index. By 1990, Warren Buffet was widely acclaimed
+to be a highly skilled investment manager.</p>
+<p>During the next 10 years, the book value of Berkshire Hathaway increased
+only by an average of only 6.84 percent more than the total return on
+the S&amp;P 500 Index. Although this performance is still quite impressive,
+it is not as impressive as the earlier performance. The performance
+clearly regressed toward the mean. In his first 26 years, Warren Buffet
+probably was lucky as well as skilled. In the subsequent 10 years, he
+was either less lucky or it was much more difficult to produce the same
+extreme returns with a much larger firm.</p>
+<p>Suppose that in 1990, you decided to collect returns data for the next
+ten years to determine whether Warren Buffet was truly a skilled trader.
+The standard <em>t</em>-test then would be appropriate because the subsequent
+returns would not be subject to the sample selection bias. Using only
+annual data from 1991 through 2000, the <em>t</em>-statistic is 1.95. The
+probability that an unskilled manager would have a <em>t</em>-statistic greater
+than this value is slightly greater than 4 percent. These results
+suggest that only one unskilled manager in 25 would have performed
+better than Warren Buffet over this period. Warren Buffet probably is a
+skilled manager. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} More Caveman Psychology</strong></p>
+<p>Our evolutionary history has hardwired our brains to believe that
+everything has a cause. Our ancestral aunts and uncles who could not
+connect events to causes often failed to exploit opportunities that
+enhanced their survival, or to avoid risks that threatened their
+survival. They therefore did not survive to reproduce as often as did
+our ancestral parents. We know that our ancestral parents survived
+because we are here to speculate on how they did it. They must have been
+able to connect events to their causes better than our ancestral aunts
+and uncles. Our minds therefore are probably hardwired to seek an
+explanation for every event.</p>
+<p>Many people think that the desire for an explanation for everything is
+the reason why many people are religious. Although I do not believe
+this, it seems reasonable to me that this hardwired desire to link
+causes to events explains why people want to believe that successful
+people are skilled and not just lucky. [◀]{.ent1}</p>
+<hr />
+<p>In trading, the sample selection bias is especially important because
+winners come to our attention much more often than losers do. Unless we
+are very disciplined, we may easily overvalue winners.</p>
+<p>The sample selection problem is especially difficult to recognize
+because most of us want to believe that winners are skilled and not just
+lucky. Our natural inclination is to attribute performance to skill or
+the lack of it. Most of us believe that there is a reason for
+everything. We would rather that the reason be skill than luck. When
+making inferences, always beware of rose-colored glasses.</p>
+<p>Our desire to attribute performance to skill or the lack of it applies
+primarily to others. When we consider our own performance, our natural
+inclination is to attribute good performance to skill and bad
+performance to luck. We do this because we want to feel good about
+ourselves. We therefore tend to remember good results and try to forget
+bad results. This may be the most dangerous selection bias that we face.</p>
+<h2 id="227-economic-approaches-to-performance-prediction">22.7 ECONOMIC APPROACHES TO PERFORMANCE PREDICTION</h2>
+<p>The difficulties associated with statistical performance prediction
+suggest that inferences based only on past performance will not be
+useful for predicting future performance. Past performance simply does
+not predict future returns with enough confidence to be of much use for
+most applications.</p>
+<p>Fortunately, economic theory---simple game theory, actually---suggests
+another approach. In the long run, players win games when they have a
+<em>comparative advantage</em> over their opponents. Players have a
+<em>comparative advantage</em> when they have greater skills or greater
+resources than their opponents. The skills and resources, of course,
+must be those which will help the players excel. They therefore will
+vary by the strategies that the players pursue.</p>
+<hr />
+<p><strong>[▶]{.ent} It Seems Like Everyone Is a Winner</strong></p>
+<p>People talk about their successes far more often than their failures.
+They enjoy describing their winnings and they are embarrassed to admit
+their mistakes.</p>
+<p>If you listen only to what people say about their trades, you will think
+that most traders are winners. If you draw inferences from what you
+hear, you might think that you, too, would be a winner, if only you
+traded. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} Winning the Olympic
+Marathon</strong></p>
+<p>On average, <em>better</em> players win games. Good players and even great
+players do not generally win when they play against even better players.</p>
+<p>A player has an <em>absolute advantage</em> when he or she can do something
+well. For example, a marathoner who can complete the marathon in less
+than 2:20 is incredibly fast. Unless you are involved in track and
+field, you probably have never met anyone so fast. A 2:20 marathoner
+will win the vast majority of marathons that are run every year.</p>
+<p>Such a time, however, would have been good for only 36th place in the
+men's marathon at the 2000 Olympics. Most marathons do not attract
+world-class runners. Those which do, however, are highly competitive.
+You do not win such races by running extremely fast. You win them by
+running faster than every other runner.</p>
+<p>To win a game, you must not just play it well. You must play it better
+than your opponents. [◀]{.ent1}</p>
+<hr />
+<p>Since trading is essentially a game, we should be able to predict
+long-run performance by identifying the factors that produce it. Those
+traders who have comparative advantages in those factors should be the
+long-run winners.</p>
+<p><a href="#part0035.html_ch22tab8">Tables 22-8</a>{.nounder} and
+<a href="#part0035.html_ch22tab9">22-9</a>{.nounder} provide a partial list of the
+factors that may predict the performance of managers, traders and the
+organizations for which they work. These factors vary in importance
+depending on the investment styles and the trading strategies that the
+manager, trader, or firm pursue.</p>
+<p>The most important comparative advantage that a manager or trader should
+have is a thorough appreciation of the need to have a comparative
+advantage. Traders who do not understand why comparative advantage is
+important will not consider whether they have a comparative advantage
+before they trade. If they do not consider this question, they can have
+no reason to expect that they will trade profitably.</p>
+<p>Traders who appreciate the importance of comparative advantage consider
+both why their trading strategy should work, and why they expect other
+traders will lose to them. Since trading is a zero-sum game, the two
+issues are inseparable. Most traders, however, focus only on why they
+think they will profit and not also on why they think other traders will
+lose to them. Traders who understand both sides of their trades will
+undoubtedly be more successful than those who consider only the logic of
+their side.</p>
+<p>Most people have trouble identifying comparative advantage. We often
+mistake absolute advantage for comparative advantage. We may err because
+absolute advantage is correlated with comparative advantage. The more
+skilled a manager is, the more skilled the manager will be in comparison
+with other managers. To identify comparative advantage, however, you
+must compare managers. The point bears repeating: To win a zero-sum
+game, you must not just be good, you must be better.</p>
+<h2 id="228-summary">22.8 SUMMARY</h2>
+<p>People primarily examine past performance because they want to predict
+good future performance. Unfortunately, good past performance does not
+necessarily predict good future returns. In fact, it rarely does. Over
+human time frames, luck is generally a more important determinant of
+good performance than is skill. In addition,
+the skills that may have been responsible for good past performance may
+not produce good future performance. Moreover, a formerly skilled
+manager may not still be skilled. These issues make the prediction of
+good future performance from good past performance an essentially
+worthless activity.</p>
+<p><strong>TABLE 22-8.</strong>\
+Factors Correlated with the Performance of Investment Managers and
+Traders</p>
+<p><img alt="Image" src="images/00126.jpeg" />{.calibre9}</p>
+<p><img alt="Image" src="images/00127.jpeg" />{.calibre9}</p>
+<p>Even the most sophisticated statistical tests rarely can separate skill
+from luck. The typical contribution of skill to performance is simply
+too small.</p>
+<p><strong>TABLE 22-9.</strong>\
+Factors Correlated with the Performance of Investment Management Firms
+and Trading Firms</p>
+<p><img alt="Image" src="images/00128.jpeg" />{.calibre9}</p>
+<p>The contribution is small because many traders compete with each other
+to profit. Their trading makes prices quite informative, so that most
+price changes are not predictable. Statistical performance evaluation
+therefore is unreliable without more data than are generally available
+to us.</p>
+<p>The importance of luck cannot be overemphasized. It is much better to be
+lucky than skilled. The luckiest managers in a large group of managers
+will certainly perform better than almost all skilled managers with
+average luck. Superior past performance---even that of the most
+acclaimed managers---by itself does not necessarily indicate skill.</p>
+<p>These results do not imply that there are no skilled managers. The
+discussions in <a href="#part0020.html_ch10">chapters 10-12</a>{.nounder} about
+speculative trading strategies suggest that skilled managers exist and
+are profitable. Some skilled managers may even be able to beat the
+market by more than the average 2 percent that we have assumed
+throughout this chapter. Unfortunately, we probably cannot identify
+these managers only from past returns.</p>
+<p>To identify skilled managers, it is best to consider the characteristic
+factors that generate superior performance. These factors include
+intelligence, experience, education, training, creativity, memory,
+discipline, drive, and access to data. Managers who have these
+characteristics tend to perform better than those who do not.</p>
+<p>Most professional managers have these characteristics and therefore
+appear to be good managers. They probably can manage better than most
+people. However, they mostly compete with other managers, not with the
+average person. Winning managers are those who have a comparative
+advantage. They are not just good managers, they are better managers. To
+identify a successful manager, you must therefore be familiar with many
+managers so that you can compare them. If you do not have the
+characteristics of a successful manager, you probably will not trade
+successfully in the long run.</p>
+<hr />
+<p><strong>[▶]{.ent} Why Do We Mistake
+Absolute Advantage for Comparative Advantage?</strong></p>
+<p>A very important difference between physical survival and trading
+explains why our successful evolutionary history has not prepared us to
+be successful traders.</p>
+<p>Survival is primarily a game played against nature in which nature does
+not actively create adaptive strategies to defeat us. To survive, our
+ancestors merely had to be good at survival.</p>
+<p>In contrast, trading is a zero-sum game in which our competitors
+constantly try to adapt to defeat us. Good competitors win only if they
+are the best competitors.</p>
+<p>Our evolutionary history has trained us to appreciate absolute advantage
+but not to seek comparative advantage. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} Handicapping a Horse Race</strong></p>
+<p>Handicapping a horse race involves essentially the same processes as
+choosing an investment manager. Handicappers and investment sponsors
+both try to predict the outcomes of zero-sum games. They both consider
+three classes of factors when they estimate the odds that a horse will
+win the race, or a manager will outperform other managers: past
+performance, absolute advantage, and comparative advantage. The
+similarity between the two problems explains why investment sponsors
+often call their searches for investment managers <em>horse races.</em> <a href="#part0035.html_ch22tab10">Table
+22-10</a>{.nounder} illustrates these parallels.
+[◀]{.ent1}</p>
+<hr />
+<p><strong>TABLE 22-10.</strong>\
+Parallels Between Handicapping Horses and Choosing Investment Managers</p>
+<p><img alt="Image" src="images/00129.jpeg" />{.calibre9}</p>
+<p>Perhaps the most important indicator of a
+skilled manager is whether the manager clearly understands that success
+comes from having a comparative advantage. Managers who are not
+constantly thinking about their comparative advantages cannot know when
+they should trade. I would be very reluctant to invest with managers who
+confuse absolute advantage with comparative advantage. Successful
+managers should be able to clearly articulate the comparative advantages
+that they believe will allow them to profit in the zero-sum game.</p>
+<h2 id="229-some-points-to-remember">22.9 SOME POINTS TO REMEMBER</h2>
+<p>• Distinguishing skill from luck is very difficult.</p>
+<p>• The skills that produced superior performance in the past may not
+produce such performance in the future.</p>
+<p>• Past returns do not necessarily indicate future returns.</p>
+<p>• Even when they have no skill, many traders will perform very well just
+by chance.</p>
+<p>• Sample selection biases seriously affect common inferences.</p>
+<p>• To avoid the sample selection problem, we must always consider how
+information came to our attention.</p>
+<p>• An analysis of comparative advantage is probably the only reliable way
+to determine who can trade well.</p>
+<h2 id="2210-questions-for-thought">22.10 QUESTIONS FOR THOUGHT</h2>
+<p>• Do equal-dollar investors always have greater returns than buy and
+hold investors? How does the answer depend on the serial correlation of
+prices? Which strategy is more attractive to contrarians? To momentum
+traders?</p>
+<p>• Peter Lynch, former portfolio manager of the Fidelity Magellan Fund,
+was an extremely successful investment manager. During his 13-year
+tenure (May 1977 to May 1990), the fund outperformed the market by 1.03
+percent per month. The standard deviation of the market-adjusted return
+was 2.21 percent per month. Was Peter Lynch skilled or just lucky? How
+did you first learn about him and about the Fidelity Magellan Fund?</p>
+<p>• How is information in the newspaper subject to sample selection
+biases?</p>
+<p>• How is selecting a manager like selecting stocks for a portfolio?</p>
+<p>• Where do you get your investment ideas? Is your idea generation
+process subject to selection biases?</p>
+<p>• Do you have any reason to believe that you would be a successful
+active manager?</p>
+<p>• Do you have any reason to believe that you could choose a successful
+active manager?</p>
+<p>• A highly skilled manager will probably demand higher compensation. How
+will the compensation affect his or her subsequent returns? If it were
+easier to determine whether managers are skilled, how would the labor
+market for investment managers be different? How would investment
+returns, net of managerial fees, be different?</p>
+<p>• Corporate managers typically manage
+portfolios of real assets, whereas investment managers manage portfolios
+of financial assets. Are they otherwise similar? Do the principles
+discussed in this chapter about evaluating and predicting performance
+for investment managers also apply to corporate managers?</p>
+<p>• Closed-end mutual funds are corporations that hold portfolios of
+financial assets. Unlike open-end funds, investors cannot buy or sell
+shares directly. Instead, they buy and sell shares in the secondary
+market. Accordingly, the market price and the net asset value of
+closed-end funds can differ significantly. What can the market discount
+or premium over net asset value tell us about the manager's skill?</p>
+<p>• Why were so many investors willing to extend so much credit to Charles
+Ponzi?</p>
+<p>• How might a statistician recognize when an investment manager is
+adjusting the valuations of illiquid portfolio assets too
+slowly?</p>
+<h2 id="part-vii-market-structure">Part VII: Market Structure</h2>
+<p>The final chapters of this book examine the economics of market
+structures. The topics we consider encompass many active regulatory
+debates.</p>
+<p>In <a href="#part0037.html_ch23">chapter 23</a>{.nounder}, we consider why index
+markets are organized as they are. Our discussion shows how uninformed
+traders benefit from trading indexes.</p>
+<p><a href="#part0038.html_ch24">Chapter 24</a>{.nounder} examines the specialist
+trading system. Specialists are broker-dealers who supply liquidity and
+arrange trades at exchanges and at some proprietary trading firms.
+Exchanges, regulators, and their business models sometimes compel
+specialists to supply liquidity when they otherwise would not want to do
+so. To encourage them to offer such liquidity, they must receive some
+benefit from their unique positions.</p>
+<p>The next three chapters examine how markets and dealers compete against
+each other for order flow. We examine internalization and order
+preferencing by dealers in <a href="#part0039.html_ch25">chapter 25</a>{.nounder},
+why markets consolidate and fragment in <a href="#part0040.html_ch26">chapter
+26</a>{.nounder}, and screen-versus floor-based
+trading in <a href="#part0041.html_ch27">chapter 27</a>{.nounder}. We pay special
+attention to the problems that result when traders can trade the same
+instruments in different places.</p>
+<p><a href="#part0042.html_ch28">Chapter 28</a>{.nounder} discusses the origins of
+extreme volatility. There we consider how market structures contribute
+to---and mitigate---volatility. We also consider whether markets should
+have circuit breakers to control excess volatility.</p>
+<p><a href="#part0043.html_ch29">Chapter 29</a>{.nounder} considers the benefits and
+consequences of prohibiting insider trading. Interestingly, the most
+important issues involve labor economics rather than market
+microstructure.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="ch21.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Ch21 · 交易成本测量">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Ch21 · 交易成本测量
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="ch23.html" class="md-footer__link md-footer__link--next" aria-label="下一页: Ch23 · 指数与组合">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Ch23 · 指数与组合
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.code.annotate", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+      
+        <script src="../../../javascripts/pseudocode-render.js"></script>
+      
+        <script src="../../../javascripts/translate-toggle.js"></script>
+      
+    
+  </body>
+</html>

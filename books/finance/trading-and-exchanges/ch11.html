@@ -1,0 +1,3973 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="个人数字图书馆">
+      
+      
+      
+        <link rel="canonical" href="https://yuanuite.github.io/digital-library/books/finance/trading-and-exchanges/ch11.html">
+      
+      
+        <link rel="prev" href="ch10.html">
+      
+      
+        <link rel="next" href="ch12.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Ch11 · 订单预测者 - Yuan's Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-11-order-anticipators" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../index.html" title="Yuan&#39;s Library" class="md-header__button md-logo" aria-label="Yuan's Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Yuan's Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ch11 · 订单预测者
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="Yuan&#39;s Library" class="md-nav__button md-logo" aria-label="Yuan's Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Yuan's Library
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    书籍
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    书籍
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ml/stanford-ml-notes/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    斯坦福ML笔记
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    斯坦福ML笔记
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1周 · 引言&线性回归&线性代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2周 · 多变量线性回归&Octave
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3周 · 逻辑回归&正则化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4周 · 神经网络表述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第5周 · 神经网络学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6周 · 应用建议&系统设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第7周 · 支持向量机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8周 · 聚类&降维
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第9周 · 异常检测&推荐系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10周 · 大规模ML&OCR&总结
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/appendix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附件 · CS229复习&数学基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    灵性
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    灵性
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../spirituality/conversations-with-god/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    与神对话
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    与神对话
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一卷 · 个人生活与真理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二卷 · 全球议题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三卷 · 宇宙真相
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四卷 · 与神为友
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五卷 · 与神合一
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    金融
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../why-stock-markets-crash/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Stock Markets Crash
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Why Stock Markets Crash
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/preface.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch1 · 金融崩盘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch2 · 金融市场基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch3 · 崩盘是异常值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch4 · 正反馈机制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch5 · 泡沫与崩盘模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch6 · 分形与离散标度不变性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch7 · 主要崩盘剖析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch8 · 新兴市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch9 · 预测泡沫与崩盘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch10 · 2050 增长终结
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trading and Exchanges
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trading and Exchanges
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch1 · 导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch2 · 交易故事
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch3 · 交易行业
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch4 · 订单与属性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch5 · 市场结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch6 · 订单驱动市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch7 · 经纪人
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch8 · 交易动机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch9 · 优良市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch10 · 知情交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch11 · 订单预测者
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ch11.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch11 · 订单预测者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#111-front-runners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 FRONT RUNNERS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.1 FRONT RUNNERS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1111-front-running-aggressive-traders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.1 Front Running Aggressive Traders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1112-front-running-passive-traders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.2 Front Running Passive Traders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1113-front-runners-and-market-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.3 Front Runners and Market Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1114-front-runners-and-liquidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.4 Front Runners and Liquidity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-sentiment-oriented-technical-traders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 SENTIMENT-ORIENTED TECHNICAL TRADERS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.2 SENTIMENT-ORIENTED TECHNICAL TRADERS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-sentiment-oriented-technical-traders-market-efficiency-and-liquidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2.1 Sentiment-oriented Technical Traders, Market Efficiency, and Liquidity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-squeezers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 SQUEEZERS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-manipulation-of-stop-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 MANIPULATION OF STOP ORDERS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 SUMMARY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-some-points-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 SOME POINTS TO REMEMBER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#117-questions-for-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.7 QUESTIONS FOR THOUGHT
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch12 · 欺诈与操纵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch13 · 做市商
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch14 · 买卖价差
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch15 · 大宗交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch16 · 价值交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch17 · 套利者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch18.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch18 · 买方交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch19.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch19 · 流动性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch20.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch20 · 波动性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch21.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch21 · 交易成本测量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch22.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch22 · 绩效评估
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch23.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch23 · 指数与组合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch24.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch24 · 专家做市商
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch25.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch25 · 内部化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch26.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch26 · 市场竞争
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch27.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch27 · 场内vs自动
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch28.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch28 · 泡沫与熔断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch29 · 内幕交易
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index_term.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#111-front-runners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 FRONT RUNNERS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.1 FRONT RUNNERS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1111-front-running-aggressive-traders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.1 Front Running Aggressive Traders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1112-front-running-passive-traders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.2 Front Running Passive Traders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1113-front-runners-and-market-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.3 Front Runners and Market Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1114-front-runners-and-liquidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1.4 Front Runners and Liquidity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-sentiment-oriented-technical-traders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 SENTIMENT-ORIENTED TECHNICAL TRADERS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.2 SENTIMENT-ORIENTED TECHNICAL TRADERS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1121-sentiment-oriented-technical-traders-market-efficiency-and-liquidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2.1 Sentiment-oriented Technical Traders, Market Efficiency, and Liquidity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-squeezers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 SQUEEZERS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-manipulation-of-stop-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 MANIPULATION OF STOP ORDERS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 SUMMARY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-some-points-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 SOME POINTS TO REMEMBER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#117-questions-for-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.7 QUESTIONS FOR THOUGHT
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../index.html" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    首页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../ml/stanford-ml-notes/index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    书籍
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../why-stock-markets-crash/index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    金融
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Trading and Exchanges
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-11-order-anticipators">Chapter 11: Order Anticipators</h1>
+<p><em>Order anticipators</em> are speculators who try to profit by trading before
+other traders trade. They make money when they correctly anticipate how
+other traders will affect prices or when they can extract option values
+from the orders that other traders offer to the market.</p>
+<p>Order anticipators include front runners, sentiment-oriented technical
+traders, and squeezers. <em>Front runners</em> collect information about trades
+that other traders have decided to arrange. <em>Sentiment-oriented
+technical traders</em> try to predict trades that uninformed traders will
+decide to make. <em>Squeezers</em> try to exploit traders who must trade by
+cornering the market.</p>
+<p>Order anticipators are <em>parasitic traders</em>. They profit only when they
+can prey on other traders. They do not make prices more informative, and
+they do not make markets more liquid. To trade profitably, you must
+avoid these traders. You therefore must understand how they trade.</p>
+<p>Large traders are especially vulnerable to order anticipators. You must
+be familiar with parasitic traders to understand how large traders
+expose their orders.</p>
+<p>Some front runners obtain their information about trader intentions from
+brokers. If you trade with brokers, if you are a broker, if you are
+interested in becoming a broker, or if you regulate brokers, you must
+know how brokers occasionally expose orders unwittingly or
+intentionally.</p>
+<p>Trading by order anticipators often makes prices more volatile and
+markets less efficient. If volatility and price efficiency interest you,
+you must consider how order anticipators affect the markets.</p>
+<p>Uninformed traders sometimes affect prices significantly. Traders who
+can predict what uninformed traders will do therefore can sometimes
+profit from that knowledge. If you have these skills, how
+sentiment-oriented technical traders trade should interest you.</p>
+<p>Even if you cannot predict what uninformed traders will do, you may be
+able to identify what uninformed traders have done after the fact.
+Although you cannot profit directly from this information, you can use
+it to better understand why your trading strategies worked or failed.
+Understanding how sentiment-oriented technical traders collect and
+process information will help you to better understand uninformed
+traders.</p>
+<p>In markets that enforce time precedence, order anticipators must improve
+price by at least the minimum price increment to trade ahead of other
+traders. The size of the price increment therefore greatly affects the
+profitability of order anticipators' strategies in such markets. You
+must be familiar with order anticipation trading strategies in order to
+form reasonable opinions about the proper size of the minimum price
+increment.</p>
+<h2 id="111-front-runners">11.1 FRONT RUNNERS</h2>
+<p><em>Front runners</em> collect information about trades that other traders have
+decided to arrange. They then try to trade before those traders complete
+their trades. Front runners may obtain their information from public
+sources, from the traders they front-run, or from brokers. Practitioners
+call them front runners because they hurry (run) to trade before (in
+front of) other traders.</p>
+<hr />
+<p>[▶]{.ent} <strong>An Illegal
+Front-running Scheme Involving a Violation of Confidentiality</strong></p>
+<p>Rob is a runner who works for a large brokerage house on the floor of a
+futures exchange. Rob's job is to carry orders from his firm's telephone
+booth on the perimeter of the exchange floor to his firm's brokers in
+various trading pits.</p>
+<p>Nate trades commodity futures for his own account in one of those pits.
+He and Rob have arranged a set of signals by which Rob can
+surreptitiously tell Nate that he is carrying a large buy or sell order.
+They may convey their signal by a glance at a clock, by the hand in
+which Rob carries the order, by the placement of a pen in a pocket or
+behind an ear, or by some other means. Rob and Nate employ a variety of
+signals to make it difficult for anyone to detect what they are doing.</p>
+<p>When Nate sees the signal for a large buy order, he immediately buys
+contracts for his own account. After Rob delivers the order to his
+firm's broker, the broker buys contracts to fill it. Nate profits as the
+broker pushes the price up to fill the order. Nate sometimes sells his
+newly acquired contracts to the broker. Afterward, Nate and Rob split
+the profits.</p>
+<p>Their profits come at the expense of the broker's customers. The
+customers pay higher prices when buying and obtain lower prices when
+selling because Nate takes liquidity that they otherwise would have
+taken.</p>
+<p>This scheme is very difficult to detect in actively traded markets. To
+prevent it, brokerage firms, their customers, and exchanges must
+carefully watch how prices change before and after orders arrive. They
+must try to remember who traded before large orders arrived so that they
+can identify systematic patterns that might suggest a front-running
+problem.</p>
+<p>Brokers also must secure their communications to prevent these schemes.
+At several exchanges, new wireless electronic order delivery systems
+eliminate the need for floor runners and thereby remove potential for
+fraud in that link of the order transmission chain. [◀]{.ent1}</p>
+<hr />
+<p>Front-running strategies differ according to the type of trader that
+they front-run. Front runners may trade in front of aggressive traders
+or passive traders. <em>Aggressive traders</em> demand liquidity, and <em>passive
+traders</em> offer liquidity.</p>
+<h5 id="1111-front-running-aggressive-traders">11.1.1 Front Running Aggressive Traders</h5>
+<p>Aggressive traders usually issue market orders. Their demands often push
+prices up when they buy and down when they sell. Front runners who trade
+ahead of aggressive traders profit from the price impact of the
+aggressive traders' trades.</p>
+<p>In most markets, front running is illegal when the front runner
+improperly obtains information about the incoming order. Front runners
+obtain information improperly when they violate a confidential brokerage
+relationship or when they eavesdrop on confidential communications.
+These violations may take place at any point between the receipt of the
+order by the broker and its final execution.</p>
+<p>Not all front running is illegal. Observant traders on the floor of an
+exchange can often infer an order from how a broker handles it. Brokers
+must be especially careful to avoid revealing their orders
+inadvertently.</p>
+<hr />
+<p>[▶]{.ent} <strong>Legal Front Running by
+an Observant Trader</strong></p>
+<p>Rifka and Jon have traded on the same options floor for years. Although
+they are not friends, their proximity to each other has allowed them to
+become very well acquainted. Rifka trades for her own account. Jon is a
+floor broker for a large firm.</p>
+<p>Rifka has noticed that Jon behaves slightly differently when he receives
+a large order than a small order. The differences are very subtle; Rifka
+cannot even articulate what she sees. She just knows from experience
+when Jon has a large order.</p>
+<p>Jon's behavior does not reveal whether the order is a buy or sell order.
+Rifka often guesses correctly because she has noticed that Jon tends to
+buy after he has bought and sell after he has sold: At least one of
+Jon's clients probably splits his or her large orders.</p>
+<p>When Rifka suspects that Jon has received a large order, she will try to
+front-run it. If she feels confident about the side of the order, she
+may try to beat Jon to the market. Otherwise, she will wait to see which
+side Jon needs to trade. She may then better his price and hope to make
+a profit when Jon's client returns to the market.</p>
+<p>Rifka's trading is legal. Her profits come from recognizing Jon's
+shortcomings as a broker and from noting that Jon's clients tend to
+split their orders. She is a profitable trader because she is observant
+and because she acts quickly on her information. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p>[▶]{.ent} <strong>Shop the Block</strong></p>
+<p>Brokers <em>shop the block</em> when they expose large orders. Not
+surprisingly, prices tend to rise when they widely shop a large block
+buy order, and fall when they widely shop a large block sell order.
+[◀]{.ent1}</p>
+<hr />
+<p>Front runners sometimes obtain information about orders when brokers
+call them to arrange trades. Brokers who want to arrange a large trade
+must call traders they think might be willing to take the other side.
+They often reveal their orders in these calls. Although front runners
+may legally exploit this information, those who do so risk harming their
+relationships with these brokers. Brokers must be very careful to expose
+orders only to traders who will most likely take the other side. They
+most avoid exposing their orders to traders who would front-run their
+clients.</p>
+<p>Front runners capture the benefits of price discrimination that large
+traders would otherwise obtain. In continuous auctions, large traders
+typically split their orders so that they can discriminate among the
+traders who offer them liquidity. They want to trade first with those
+traders offering the best prices and then, if necessary, with traders
+offering inferior prices. Splitting their orders thus produces a better
+average price than they would obtain if they had to fill their entire
+order at a single price. Front runners appropriate the benefits of price
+discrimination by taking liquidity from the traders offering the best
+prices. They then offer this liquidity back to the large traders at
+inferior prices. The effect of a successful front-running strategy is to
+force large traders to pay more uniform prices to fill their orders.</p>
+<p>Under some very limited circumstances, front runners can be valuable to
+large traders. If front runners can find liquidity more cheaply than
+large traders can, the front runners may lower the costs of trading
+large sizes. To be of value to large traders, front runners must
+consolidate the other side and then deliver it to the large traders at a
+lower cost than the large traders could obtain on their own. Large
+traders who believe this is true should widely publicize their orders in
+some credible manner. Those who do are <em>sunshine traders</em>.</p>
+<p>Although front runners sometimes may be better traders than large
+traders are, large traders will not benefit from front runners if many
+front runners compete to front-run them. The impact on price of many
+traders competing to acquire the same positions tends to be much greater
+than that of a single trader who trades strategically. Front runners
+generally trade less efficiently than large traders do because they
+trade too quickly. Front running therefore generally hurts the traders
+they front-run.</p>
+<hr />
+<p>[▶]{.ent} <strong>Front Running by
+Skilled Traders</strong></p>
+<p>Stuart wants to buy 150,000 shares of a somewhat illiquid security. If
+he buys it himself without interference from front runners, he may be
+able to buy 30,000 shares for 100 and 30,000 more at every 10 cents from
+100.10 to 100.40. His average price will be 100.20, which is better than
+the 100.40 price he would have to pay if he had to fill the entire order
+at one price.</p>
+<p>Suppose that front runners are better traders than Stuart is. If they
+buy before he does, they may be able to find 50,000 shares at each price
+from 100 to 100.20 so that their average price is 100.10. If the front
+runners then sell to Stuart for 100.20, he will be indifferent to the
+front running. He may actually prefer to be front-run if they save him
+the costs of searching. Moreover, if Stuart negotiates well with the
+front runners, he may be able to drive them down from 100.20 toward
+100.10. (Although he may be able to drive the front runners below 100.10
+on any given transaction, they will not continue to front-run for him if
+he consistently forces losses on them.) Of course, if the front runners
+have some market power, they may <em>squeeze</em> Stuart so that he has to pay
+more than 100.40 to fill his order. [◀]{.ent1}</p>
+<hr />
+<p>When large traders recognize that they cannot trade as well as a
+professional trader can, they commonly hire a professional to help them
+trade. They may hire a <em>block broker</em> to act as their agent, or they may
+ask a <em>block dealer</em> to facilitate their trades. Block dealers who
+<em>facilitate</em> their customers' trades trade their blocks at uniform
+prices. The dealers then try to profit by trading the block in the
+market at a better average price. In a sense, block traders are front
+runners whom large traders hire to help them solve their trading
+problems. We discuss block trading in detail in <a href="#part0026.html_ch15">chapter
+15</a>{.nounder}.</p>
+<h5 id="1112-front-running-passive-traders">11.1.2 Front Running Passive Traders</h5>
+<p><em>Passive traders</em> offer liquidity to the market. They give other traders
+options to trade when they want to trade. They usually offer limit
+orders or quotes to the market. Front runners who trade in front of
+passive traders try to extract the option values of the passive traders'
+orders. Economists call such front runners <em>quote matchers</em>.</p>
+<p><em>Quote matching</em> is a front-running strategy in which quote matchers try
+to trade in front of (and on the same side as) large patient traders.
+Once the quote matchers trade, the orders they front-run protect them
+from serious losses on their positions. If prices move against them,
+quote matchers limit their losses by trading with the passive traders.
+If prices move in their favor, the quote matchers profit to the full
+extent of the price changes. Since the decimalization of the U.S. stock
+markets, quote matching has also been called <em>penny jumping</em>.</p>
+<p>The returns that quote matchers can obtain are option-like returns. They
+are unbounded on one side and limited on the other side. Quote-matching
+return distributions are similar to return distributions for option
+contracts because quote matchers extract the option values of the
+standing orders that they front-run. When a quote matcher buys stock in
+front of a large buy limit order, the quote matcher has a long position
+in the stock and hopes to use the long put option offered by the buy
+limit order should she need it. The combination of a long stock position
+and a long put position has the same return distribution as a call
+option. Likewise, when a quote matcher sells stock in front of a large
+sell order, the quote matcher has a short stock position and hopes to
+use the call option implicit in the sell order should she need it. This
+combination has the same return distribution as a put option.</p>
+<hr />
+<p>[▶]{.ent} <strong>A Case of
+Self-front-running?</strong></p>
+<p>One of several market makers who trade the Spider (SPDR) at the American
+Stock Exchange told me the following story:</p>
+<p>Over a period of several months in 1998-1999, a broker well known to the
+SPDR market makers would come to the post to trade extremely large
+orders. The largest such orders were for approximately 850,000 shares,
+or about 85 million dollars at the then current price of 100 dollars per
+share. The first few times this happened, the market makers would fill
+the orders, only to discover that they would lose money as the market
+regularly moved against their positions.</p>
+<p>They soon paid very close attention to this broker. The market makers
+discovered that whenever he traded large size, the market would almost
+invariably move in the same direction within five minutes. They also
+noted that the broker would usually unwind these trades the same day at
+a substantial profit.</p>
+<p>The market makers therefore started to hedge their positions by trading
+S&amp;P 500 futures immediately upon filling these SPDR orders. After
+completing their hedge, they immediately continued to trade the futures
+on the same side to profit from the correlation between this broker's
+orders and the subsequent price change.</p>
+<p>My correspondent reported that this happened about 70 to 90 times over
+about nine months. It then stopped as abruptly as it started. The
+broker's client usually correctly anticipated subsequent moves in the
+S&amp;P 500 Index. The market makers made a small fortune on these trades
+once they figured out what was happening. They did not know, however,
+how the broker's client knew what direction the S&amp;P 500 Index would
+move.</p>
+<p>The market makers presumed that the client was front running very large
+program trades in the stock market. The client may have been front
+running another trader. In that case, the client, the broker, or both
+would have been violating the law.</p>
+<p>Alternatively, the client may have been front running his own orders in
+an attempt to lower the net cost of his program trades. If the client
+was a large equity fund with an investment policy that prohibited
+trading in the futures markets, the SPDR would have been the only
+feasible alternative to execute this strategy. Self-front-running may
+lower the cost of a program trade when highly correlated markets do not
+move in perfect lockstep. By submitting orders to both markets at the
+same time, a trader obtains the liquidity in both markets without either
+market realizing the full size of his trade. [◀]{.ent1}</p>
+<hr />
+<p>Quote matchers profit at the expense of passive traders. They take
+liquidity that otherwise would have gone to the passive traders. If the
+passive traders subsequently fail to trade because prices move away from
+their orders, they lose the profits that the quote matchers make.</p>
+<hr />
+<p>[▶]{.ent} <strong>Quote Matching</strong></p>
+<p>Jose places a large limit buy order at 20 pesos. Maria sees the order
+and immediately submits her own limit buy order at 20.01. An incoming
+market sell order arrives, and Maria's order is matched with it. If
+prices rise, Maria will profit to the full extent of the price rise. If
+prices fall, she will try to sell to Jose at 20, and her loss will be
+only 1 centavo.</p>
+<p>Maria's potential return distribution is asymmetric. She has the
+possibility of significant gains, but her losses may be quite limited.
+If the probability of a price increase is about the same as a decrease,
+and if the probability that Jose cancels his order is not large, Maria's
+expected profits from this strategy would be positive. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p>[▶]{.ent} <strong>Trapping Quote
+Matchers</strong></p>
+<p>Jose knows that quote matchers often try to front-run his orders. To
+frustrate them, he occasionally cancels a standing order if he suspects
+that a trader has front-run him. He also sometimes traps quote matchers
+with the following strategy.</p>
+<p>When Jose wants to be a seller, he baits his trap by submitting a large
+standing buy limit order. If a quote matcher posts a buy order in front
+of his order, he springs his trap by immediately selling to that order
+and simultaneously canceling his buy order. Otherwise, he cancels his
+buy order.</p>
+<p>If the trap works, the quote matcher now has Jose's trading problem. The
+quote matcher needs to sell, but the apparent buyer upon whose order she
+was relying (Jose) has disappeared. [◀]{.ent1}</p>
+<hr />
+<p>Quote matchers will trade profitably only if the standing orders that
+they front-run are still standing should they need to close their
+positions quickly. If these trading options are no longer available,
+quote matchers will have trouble getting out of their positions when
+prices move against them. Quote matching will not be profitable if
+passive traders cancel their orders, if they adjust them frequently to
+reflect changes in values, or if other traders fill the passive traders'
+orders.</p>
+<p>Since quote matchers must respond to changes in market conditions faster
+than the passive traders who they front-run, they must have excellent
+access to the markets. Successful quote matchers will tend to be floor
+traders in floor-based markets and computerized traders in screen-based
+markets.</p>
+<p>Quote matching also will not be profitable if quote matchers must
+substantially improve prices in order to establish their positions. The
+price impacts of their trades are transaction costs. These costs
+decrease their profits if the strategy works, and they increase their
+losses if the strategy fails.</p>
+<p>In markets that enforce time precedence, a large minimum price increment
+makes quote matching less profitable. In such markets, traders must
+improve prices by at least the minimum price increment to trade ahead of
+other traders. The minimum price increment therefore is the price that
+quote matchers must pay to front-run passive traders. They do not pay
+this price to the passive traders they front-run, however. Instead, they
+pay it to the traders with whom they trade to establish their positions.
+These traders would have traded with the passive traders if the quote
+matchers had not front-run them. In markets that enforce time
+precedence, front runners must pay traders on the other side a premium
+to prevent them from exercising the trading options that the quote
+matchers want to exploit.</p>
+<p>To prevent losses to quote matchers, traders who supply liquidity must
+control how they expose their orders. They defend themselves from front
+runners by using floor brokers to hide their orders, by breaking up
+their orders, and by switching to market order strategies from limit
+order strategies. Unfortunately, these responses increase their
+transaction costs, lower displayed sizes, and reduce market
+transparency.</p>
+<h5 id="1113-front-runners-and-market-efficiency">11.1.3 Front Runners and Market Efficiency</h5>
+<p>Whether front runners make prices more or less informative depends on
+whether they front-run informed traders or uninformed traders. In both
+cases, front running accelerates the price impacts of the traders they
+front-run.</p>
+<p>When front runners front-run uninformed traders, their trades usually
+make prices less informative. When prices equal fundamental values
+before uninformed traders trade, their trading always make prices less
+informative. When prices differ from fundamental values, at best
+uninformed traders move prices toward fundamental values only by chance.</p>
+<p>Front runners make prices more informative when they front-run informed
+traders. These trades move prices closer to fundamental values sooner
+than they would have otherwise.</p>
+<p>The long-run effect of front running informed traders, however, may be
+to make prices less informative. Front running decreases the profits
+that informed traders make. Consequently, fewer informed traders will
+trade profitably. Those who can trade profitably will invest less in
+their information than they would if front runners did not front-run
+their trades. Front running of informed
+traders therefore will drive informed traders from the market, and
+prices will be less informative in the long run.</p>
+<h5 id="1114-front-runners-and-liquidity">11.1.4 Front Runners and Liquidity</h5>
+<p>Front runners generally make markets less liquid. Since trading is a
+zero-sum game, their profits are transaction costs for other traders. If
+the front runners do not provide liquidity in exchange for these
+transaction costs, all other traders taken as a group would be better
+off if front runners did not trade.</p>
+<p>Front runners generally provide no service to the traders they
+front-run. As noted above, front runners may benefit these traders only
+if they are better traders, if they do not compete with each other to
+quickly establish their front-running positions, and if they do not then
+squeeze the traders that they front-run. These conditions rarely are
+simultaneously true. If large traders thought they could benefit from
+front running, they would contract directly with block dealers or
+brokers to obtain these services. Rather than help traders, front
+runners generally hurt them by taking liquidity away from them.</p>
+<p>Front runners benefit the traders with whom they trade when they improve
+prices to step in front of other traders. Front runners can offer better
+prices, however, only because they can extract more value from the
+traders they are front running. The increased costs that they impose on
+the traders they front-run therefore more than offset the benefits that
+other traders obtain from price improvement.</p>
+<p>Front runners also affect liquidity through their effects on other
+traders. Traders alter their trading strategies to avoid losing to front
+runners. Some traders trade more aggressively. They may price their
+orders more aggressively, or they may demand liquidity rather than
+supply it. Both responses benefit traders on the other side of the
+market, but these benefits are exactly offset by the higher transaction
+costs of the more aggressive traders. Some traders trade less
+aggressively when confronted with the prospect of front running and the
+higher transaction costs it imposes on them. Their withdrawal from the
+market decreases liquidity.</p>
+<p>Front runners are parasitic traders. They profit by extracting value
+from other traders, but they do not give back anything in exchange. The
+simplest proof of this conclusion lies in the observation that front
+runners do not offer to trade when they have no one to front-run. Front
+runners do not bring anything new to the table. Worse, they tend to
+drive away the orders from which they profit.</p>
+<h2 id="112-sentiment-oriented-technical-traders">11.2 SENTIMENT-ORIENTED TECHNICAL TRADERS</h2>
+<p><em>Sentiment-oriented technical traders</em> try to predict the trades that
+uninformed traders will decide to make. They then try to trade before
+the uninformed traders trade. Sentiment-oriented technical traders
+profit when they correctly anticipate the impacts that uninformed
+traders will have on prices.</p>
+<p>Sentiment-oriented technical traders differ from front runners.
+Sentiment-oriented technical traders try to predict trading decisions
+that other traders have not yet made. In contrast, front runners trade
+on information about orders that other traders have submitted or intend
+to submit.</p>
+<hr />
+<p>[▶]{.ent} <strong>Predicting Investment
+Trades: The January Effect</strong></p>
+<p>Historically, prices in the U.S. stock markets have risen more in
+January than in any other month of the year. Statistical analyses show
+that the difference between the average January return and the average
+of the other monthly returns appears too large to attribute just to
+chance. On average, over the 75-year period from 1926 to 2000, January
+returns have exceeded the other monthly returns by 0.85 percentage
+points.</p>
+<p>One possible explanation involves year-end bonuses and pension fund
+contributions. Traders who invest these cash flows in January may be
+responsible for pushing the market up in that month. Tax selling in
+December also may be responsible for the January effect.</p>
+<p>Sentiment-oriented technical traders who can predict these investment
+cash flows will buy in December or earlier to profit from the impact
+that these uninformed investors will have on price. If many such
+technical traders trade, they will push prices up well before January.
+[◀]{.ent1}</p>
+<p><em>Data source: CRSP combined NYSE and AMEX value-weighted,
+dividend-adjusted monthly return index</em>. [◀]{.ent1}</p>
+<hr />
+<p>Traders who can successfully predict the trades that informed traders
+will make are themselves well-informed traders. Since informed traders
+trade on information, only traders with their information can predict
+what trades they will decide to make.</p>
+<p>Uninformed traders trade for many reasons (see <a href="#part0017.html_ch08">chapter
+8</a>{.nounder}). Sentiment-oriented technical traders
+try to identify these reasons in order to predict when uninformed
+traders will trade. These reasons may be rational, or they may be the
+result of mistaken beliefs. Rational reasons to trade include investing,
+borrowing, hedging, asset exchanging, and gambling. Trading decisions
+based on mistaken beliefs typically involve mistakes that poor
+speculators make.</p>
+<p>The information resources that sentiment-oriented technical traders use
+to make their predictions depend on the different types of trades that
+they try to predict.</p>
+<p>• Traders who try to predict trades that investors and borrowers make
+examine data about intertemporal cash flows. These data include
+information about the timing and magnitude of paychecks, year-end
+bonuses, dividend payments, pension fund contributions, special
+subscriptions, and tax payments.</p>
+<p>• Those who try to predict hedging trades consider the risks that
+concern people. They may collect data about production, inventories, and
+business commitments.</p>
+<p>• Those who try to predict asset exchanges may study how production,
+sales, and international fund flows require traders to exchange assets.</p>
+<p>• Those who try to predict what gamblers will do consider the factors
+that excite gamblers. They may collect information about what
+instruments are volatile and what securities are in the news.</p>
+<p>• Those who try to predict the mistakes that speculators make consider
+how speculators form their opinions. These traders may examine data
+about past prices and volumes. They may also collect information from
+psychometric surveys designed to measure trader confidence and outlook.</p>
+<hr />
+<p>[▶]{.ent} <strong>Predicting Hedging
+Trades: Dynamic Option Replication</strong></p>
+<p>Dealers who trade options often hedge their positions by buying or
+selling the underlying instruments. The effect of their trading is to
+replicate the returns to the options that they are hedging. The rates at
+which they make these trades depend on how underlying prices change and
+on several other factors that appear in mathematical formulas like the
+Black-Scholes option pricing equation. These hedging strategies are
+<em>dynamic hedges</em> because they require trades whenever the underlying
+prices change.</p>
+<p>Some traders hedge assets by using dynamic hedges to simulate an options
+return. <em>Portfolio insurance</em> is an example of one such strategy.</p>
+<p>Observant traders can predict the trades these hedgers make from recent
+price changes in the underlying instruments. These traders try to
+collect information about the size of the positions that the hedgers
+want to protect. They may obtain this information by examining option
+open interests, by surveying traders or their advisers, or by
+characterizing the relation between price changes and trading volumes.
+[◀]{.ent1}</p>
+<hr />
+<hr />
+<p>[▶]{.ent} <strong>Predicting Foreign Exchange Trades: IPOs in Asia</strong></p>
+<p>The mechanism for <em>subscribing</em> to an initial public stock offering in
+many Asian countries differs from that in the United States. In the
+United States, an investment bank allocates shares in an IPO before the
+offering. Only people who purchase the shares tender the cash to
+purchase them.</p>
+<p>In Asia, traders who want to participate in an offering deposit the full
+purchase price with the investment bank before the offering. If the
+offering is oversubscribed, the bank allocates the shares on a pro rata
+basis. If the offering is very popular, it may be oversubscribed
+hundreds of times. Huge cash flows therefore may result.</p>
+<p>If an Asian offering is very popular among international investors, the
+local currency may appreciate as investors buy it to tender to the
+offering. Traders who are aware of this phenomenon will try to predict
+when an offering will be very popular so that they can buy the currency
+before it appreciates. [◀]{.ent1}</p>
+<hr />
+<p>Sentiment-oriented technical trading can be quite risky because it
+involves front running uninformed traders. The impacts that uninformed
+traders have on prices often move prices away from their fundamental
+values. Such movements attract value traders to the other side of the
+market. If the value traders trade aggressively, they may drive prices
+back toward fundamental values, and sentiment-oriented technical traders
+then will lose. Sentiment-oriented technical traders therefore must know
+when to close their positions. If they hold their positions too long,
+they will lose when prices revert to fundamental values.</p>
+<p>Since sentiment-oriented technical traders tend to lose to value
+traders, sentiment-oriented technical trading will be most profitable in
+instruments that are not easily valued. Value traders trade less
+aggressively in hard-to-value instruments than in instruments with
+values that they know well.</p>
+<p>Perhaps the best examples of hard-to-value instruments are stocks in
+developing industries like the Internet. Their values are hard to
+estimate because they depend on uncertain technologies and on the
+development of unknown markets. Since these stocks tend to attract many
+uninformed traders, sentiment-oriented technical traders may
+occasionally identify profitable trading opportunities in them. The
+stocks and bonds of companies in emerging markets also may provide such
+opportunities for similar reasons.</p>
+<hr />
+<p>[▶]{.ent} <strong>Great Companies Are Not
+Always Good Investments</strong></p>
+<p>Iomega makes high-capacity, removable media disk drives for personal
+computers. When it introduced the 100-megabyte Zip drive, it represented
+a very substantial improvement over existing 1.44-MB floppy disk drives.
+As investors became familiar with the product, the company's stock
+appreciated more than 1000 percent between June 1995 and May 1996. At
+its peak in May 1996, the total market value of the company was more
+than 10 percent of the value of IBM. It then fell by two-thirds over the
+next several months.</p>
+<p>Many investors apparently mistook a good firm for a good investment.
+Investors make this mistake when they fail to consider whether the price
+of the firm already reflects the information that they believe they
+have. This often happens when investors are impressed with new
+technologies. Speculators who recognized the potential for this mistake
+early on could have made a lot of money buying the stock even when it
+was overvalued. To profit, however, they would have had to sell before
+the fall. The strategy therefore would have been quite risky. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p>[▶]{.ent} <strong>Asset Bubbles</strong></p>
+<p>Investors often hold assets because they expect that they will
+appreciate. If many traders are overly optimistic about the prospects
+for capital gains, they will buy the asset, and the impact of their
+trades will make their expectations self-fulfilling.</p>
+<p>An <em>asset bubble</em> exists when traders buy an asset because they hope it
+will continue to appreciate as it has in the past. In an asset bubble,
+the price of an asset may rise well above its fundamental value as long
+as traders continue to expect that it will keep on appreciating.</p>
+<p>Traders who believe that uninformed traders will continue to buy an
+asset without regard for its fundamental value may buy the asset first.
+They must be extremely careful, however. When sentiment changes, the
+bubble will burst and prices will fall extremely quickly. [◀]{.ent1}</p>
+<hr />
+<p>Successful sentiment-oriented technical traders may trade successfully
+in instruments whose values depend on difficult-to-measure fundamental
+factors. The three most important such factors are expected inflation,
+future political uncertainty, and the equity risk premium. Stock, bond,
+and precious metal values depend crucially on these factors. Since these
+factors are very hard to measure, value traders do not know well the
+fundamental values of instruments whose values depend on them.
+Uninformed traders therefore may significantly affect prices in these
+instruments. Traders who can predict what uninformed traders will do may
+therefore be able to trade these instruments profitably.</p>
+<h5 id="1121-sentiment-oriented-technical-traders-market-efficiency-and-liquidity">11.2.1 Sentiment-oriented Technical Traders, Market Efficiency, and Liquidity</h5>
+<p>Sentiment-oriented technical traders are like front runners because they
+try to trade before other traders. They therefore accelerate the impact
+that other traders will have on price.</p>
+<p>Since sentiment-oriented technical traders try to trade before
+uninformed traders, their trading tends to make prices less informative.
+This is especially true when they trade into a rising asset bubble.</p>
+<p>Sentiment-oriented technical traders decrease market liquidity. They
+make markets less liquid for the traders they front-run. Although they
+sometimes improve prices, the additional transaction costs they impose
+on their victims more than offset the price improvements that they offer
+to the traders with whom they trade.</p>
+<h2 id="113-squeezers">11.3 SQUEEZERS</h2>
+<p><em>Squeezers</em> try to monopolize one side of a market so that anyone who
+must liquidate a position on the other side must negotiate with them. If
+they successfully <em>corner the market</em>, they can demand any price they
+want. Squeezers generally acquire their power by surreptitiously buying
+all available supply before other buyers realize they can buy only from
+them.</p>
+<p>Squeezers are order anticipators because they trade before other traders
+have a chance to trade. They differ from front runners and
+sentiment-oriented technical traders because they deliberately design
+situations that force other people to trade with them.</p>
+<hr />
+<p>[▶]{.ent} <strong>Benjamin P. Hutchinson
+and the Great Wheat Corner of 1888</strong></p>
+<p>In the spring and summer of 1888, Benjamin P. Hutchinson bought
+thousands of September wheat futures contracts on the floor of the
+Chicago Board of Trade. At the same time, he bought much of the
+available deliverable supply. At the end of September, he controlled
+most of the wheat in Chicago's grain elevators, and he was long several
+million bushels of September wheat.</p>
+<p>As the contract delivery date approached, it became apparent that
+Hutchinson would demand delivery on his long futures positions. Traders
+who had sold the contract short needed to repurchase the contract or
+prepare to deliver the wheat. Hutchinson, however, refused to sell them
+his contracts or his wheat. The price of wheat therefore rose
+spectacularly as traders tried to cover their short positions. Between
+September 22 and September 30, the price rose from approximately 1
+dollar to 2 dollars. Traders who were caught short suffered tremendous
+losses. Hutchinson ultimately specified the prices at which he released
+them. He made millions of dollars from this corner. [◀]{.ent1}</p>
+<hr />
+<hr />
+<hr />
+<p>[▶]{.ent} <strong>A Short Squeeze in a Penny Stock Fraud</strong></p>
+<p>XYZ is a thinly traded, low-priced stock with a small float. The <em>float
+of a stock</em> consists of those shares which the public can trade. A stock
+has a <em>small float</em> when management controls most of the shares
+outstanding or when legal restrictions prevent trading of most
+outstanding shares.</p>
+<p>Ian is a value trader. Given his research, Ian believes with great
+confidence that XYZ is overpriced. He therefore borrows the stock and
+sells it short.</p>
+<p>The stock is in fact overpriced. It has been promoted excessively by
+dishonest dealers who hope to sell it at high prices to unsuspecting
+traders, lan's sales make their plan less profitable. His sales, in
+effect, allow him to participate in the profits of the fraud without
+paying the costs of setting it up and without bearing any legal risk if
+it is detected. The promoters do not appreciate his interference, and
+they do not want to share their profits with him. Unfortunately for Ian,
+he unknowingly borrowed some of the stock from the promoters.</p>
+<p>The promoters decide to squeeze Ian. They buy stock in XYZ to raise its
+price. They then demand that Ian return the shares he borrowed. Other
+traders who lent Ian shares also demand that he return the shares so
+they can sell them to the promoters. Ian tries to borrow the shares from
+someone else, but none are available. He therefore must purchase the
+stock on the open market. Ian ends up buying the stock at a high price
+from the squeezers. Although Ian was right about XYZ being overpriced,
+he still lost much money in this short squeeze. [◀]{.ent1}</p>
+<hr />
+<p>The largest and most notorious squeezes have occurred in commodity
+futures markets. Smaller squeezes occasionally take place in thinly
+traded stocks.</p>
+<p>Squeezes are now illegal in United States. In the futures markets, the
+Commodity Futures Trading Commission carefully monitors trading and open
+interests as contracts expire. If the Commission believes that traders
+are not using the markets appropriately, they may intervene to prevent
+squeezes. They generally base their opinions on whether demands to
+deliver are reasonable, given market conditions.</p>
+<hr />
+<p>[▶]{.ent} <strong>"Shooting the Moon" in
+Hearts</strong></p>
+<p>Players lose the card game Hearts when they pick up the queen of spades
+or too many of the various hearts. However, if one player can pick up
+the queen of spades and all 13 of the hearts, that player wins big, and
+everyone else loses. Players <em>shoot the moon</em> when they try to execute
+this strategy.</p>
+<p>To shoot the moon, players must conceal their intentions lest another
+player foil them. If they collect many---but not all---of the cards they
+need to shoot the moon, they will lose badly.</p>
+<p>Traders who try to squeeze a market essentially shoot the moon. If they
+are successful, everyone else will lose. But if they do not control
+enough of the available supply, prices will drop before they can sell
+their positions. Since they typically push prices up to acquire their
+positions, they lose badly. [◀]{.ent1}</p>
+<hr />
+<p>In the U.S. stock markets, the Securities and Exchange Commission and
+the various exchanges monitor trading to detect and prevent squeezes.
+They cannot identify all stock squeezes, however. Squeezers often defend
+their actions by arguing that they are simply speculating on
+information. Since the SEC cannot easily discriminate between
+intentional squeezes and squeezes that result from price changes caused
+by honest speculators, short sellers always must beware of squeezes.</p>
+<p>Squeezers are parasitic traders because they design trading strategies
+that profit only when they can exploit other traders. Their
+manipulations make prices less informative, and their trades greatly
+increase transaction costs for other traders.</p>
+<h2 id="114-manipulation-of-stop-orders">11.4 MANIPULATION OF STOP ORDERS</h2>
+<p>Traders who use stop orders must be very careful about exposing their
+orders. Shrewd traders who know where stop loss orders are set can
+employ a manipulative trading strategy called <em>gunning the market</em> to
+profit from this information.</p>
+<p>Market manipulators gun the market when they push prices up or down to
+activate stop orders. The stop orders then accelerate those price
+changes. The manipulators close their positions at a profit by trading
+with the stop orders.</p>
+<p>Traders who use stop strategies can protect themselves from gunning
+strategies by hiding their orders and by trading only in very liquid
+markets that are expensive to manipulate. Otherwise, traders must
+monitor the markets to determine whether the price changes that hurt
+their positions are due to fundamental changes in value or to traders
+attempting to exploit stop strategies.</p>
+<p>In some countries, including the United States, price manipulation of
+this type is illegal. The law, however, is virtually impossible to
+enforce because it is difficult to prove that a trader was gunning the
+market. When confronted, manipulators defend themselves by saying, "I
+bought because I felt that price was too low, and I sold when the market
+realized my expectations." If asked why they did not buy again when the
+market subsequently fell, they say, "Since I did not expect the market
+to fall, the fall demonstrated to me that I really did not understand
+what was happening. I was therefore unwilling to trade again." Without
+reliable evidence that documents the true purpose of their trading
+strategies, authorities cannot convict gunners of price manipulation.</p>
+<h2 id="115-summary">11.5 SUMMARY</h2>
+<p>Order anticipators are speculators who attempt to profit from
+information about the trades that other traders will make rather than
+from information about fundamental values. They trade in front of other
+traders. They profit when other traders move prices to complete their
+trades.</p>
+<p>Order anticipators are parasitic traders because they profit only by
+exploiting other traders. They generally do not make prices more
+informative, and they do not make the markets more liquid.</p>
+<p>Order anticipators differ by what they know about the trades that other
+traders will make. <em>Front runners</em> know exactly what other traders have
+decided to do. <em>Sentiment-oriented technical
+traders</em> try to predict what other traders will decide to do.
+<em>Squeezers</em> force other traders into making trades at very
+disadvantageous prices.</p>
+<p>Traders protect themselves from order anticipators in several ways. They
+protect themselves from front runners primarily by closely guarding
+information about the trades that they intend to do. They protect
+themselves from sentiment-oriented technical traders by trading quickly.
+They protect themselves from squeezers by always making sure that they
+have multiple ways to close their positions.</p>
+<p>Markets can help protect traders from some types of order anticipators.
+Markets protect liquidity suppliers from quote matchers with order
+precedence systems that give time precedence to traders who expose their
+orders first. Such systems are meaningful only if they also have a
+significant minimum price increment that forces front runners to
+significantly improve prices if they want to trade first.</p>
+<hr />
+<p>[▶]{.ent} <strong>Gunning the Market</strong></p>
+<p>Suppose that the price of silver futures contracts is presently 4.96
+dollars a troy ounce. P. J. knows that many short sellers have placed
+stop loss buy orders at 5.00.</p>
+<p>P. J. aggressively buys silver futures contracts to push the price from
+4.96 to 5.00 in order to trigger the stop loss orders. She then sells
+her position to the traders who set those stop orders at 5.00 dollars
+per ounce. If the average cost of her purchases is 4.98 dollars, she
+would make a nominal return of 0.4 percent on the strategy.</p>
+<p>The actual return on her capital will be much higher because she does
+not have to pay for the futures contracts when she buys them. She has to
+post only a small fraction of their notional value as margin. After this
+episode ends, the price of silver will probably drop again to 4.96.
+[◀]{.ent1}</p>
+<hr />
+<h2 id="116-some-points-to-remember">11.6 SOME POINTS TO REMEMBER</h2>
+<p>• Order anticipators profit when they can exploit information about
+other traders' orders.</p>
+<p>• Since they do not offer liquidity or make prices more informative,
+order anticipators are parasitic traders.</p>
+<p>• Front runners front-run orders that other traders have submitted.</p>
+<p>• Quote matchers front-run traders who offer liquidity.</p>
+<p>• Sentiment-oriented technical traders anticipate the orders that other
+traders will submit.</p>
+<p>• Squeezers anticipate trades that other traders must make.</p>
+<p>• Traders who are aware of stop orders may manipulate them.</p>
+<h2 id="117-questions-for-thought">11.7 QUESTIONS FOR THOUGHT</h2>
+<p>• What are the advantages and disadvantages of splitting large orders?</p>
+<p>• What are the advantages and disadvantages of displaying large orders?</p>
+<p>• Consider the following front-running scheme: A dishonest block broker
+deliberately exposes large orders to an accomplice who front-runs the
+orders. The accomplice is a large trader who plausibly might be willing
+to fill these orders. Is this scheme illegal? How could anyone catch the
+conspirators? How can brokerage clients protect themselves from this
+fraud? How can brokerage firms protect themselves against employing such
+rogue brokers?</p>
+<p>• Time precedence with a large minimum price increment helps protect
+liquidity suppliers from quote matchers. How large should the minimum
+price increment be? What happens if it is too large?</p>
+<p>• Suppose that a market decreases its minimum price increment from 10
+cents to 5 cents. How might a firm circumvent this change by splitting
+its stock?</p>
+<p>• How can quote matchers avoid being trapped?</p>
+<p>• When quote matchers front-run an order in markets that enforce time
+precedence, they improve prices for traders on the other side of the
+market and narrow bid/ask spreads. Should markets therefore encourage
+quote matching?</p>
+<p>• What effect does quote matching have on
+market liquidity?</p>
+<p>• Should exchanges try to discourage quote matching?</p>
+<p>• What is the relation between value traders and sentiment-oriented
+technical traders?</p>
+<p>• What is the relation between information-oriented technical traders
+and sentiment-oriented technical traders?</p>
+<p>• Short squeezes occur when traders with short positions are squeezed.
+Can traders with long positions also be squeezed?</p>
+<p>• What type of order anticipator is a trader who guns the market to
+exploit stop orders?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="ch10.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Ch10 · 知情交易者">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Ch10 · 知情交易者
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="ch12.html" class="md-footer__link md-footer__link--next" aria-label="下一页: Ch12 · 欺诈与操纵">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Ch12 · 欺诈与操纵
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.code.annotate", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+      
+        <script src="../../../javascripts/pseudocode-render.js"></script>
+      
+        <script src="../../../javascripts/translate-toggle.js"></script>
+      
+    
+  </body>
+</html>

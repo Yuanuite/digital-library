@@ -1,0 +1,4482 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="个人数字图书馆">
+      
+      
+      
+        <link rel="canonical" href="https://yuanuite.github.io/digital-library/books/finance/trading-and-exchanges/ch26.html">
+      
+      
+        <link rel="prev" href="ch25.html">
+      
+      
+        <link rel="next" href="ch27.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Ch26 · 市场竞争 - Yuan's Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-26-competition-within-and-among-markets" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../index.html" title="Yuan&#39;s Library" class="md-header__button md-logo" aria-label="Yuan's Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Yuan's Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ch26 · 市场竞争
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="Yuan&#39;s Library" class="md-nav__button md-logo" aria-label="Yuan's Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Yuan's Library
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    书籍
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    书籍
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器学习
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    机器学习
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ml/stanford-ml-notes/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    斯坦福ML笔记
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    斯坦福ML笔记
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1周 · 引言&线性回归&线性代数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2周 · 多变量线性回归&Octave
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3周 · 逻辑回归&正则化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4周 · 神经网络表述
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第5周 · 神经网络学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6周 · 应用建议&系统设计
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第7周 · 支持向量机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8周 · 聚类&降维
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第9周 · 异常检测&推荐系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10周 · 大规模ML&OCR&总结
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml/stanford-ml-notes/appendix.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附件 · CS229复习&数学基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    灵性
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    灵性
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../spirituality/conversations-with-god/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    与神对话
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    与神对话
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第一卷 · 个人生活与真理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第二卷 · 全球议题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第三卷 · 宇宙真相
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第四卷 · 与神为友
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spirituality/conversations-with-god/vol5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第五卷 · 与神合一
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    金融
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    金融
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../why-stock-markets-crash/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Stock Markets Crash
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Why Stock Markets Crash
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/preface.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch1 · 金融崩盘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch2 · 金融市场基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch3 · 崩盘是异常值
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch4 · 正反馈机制
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch5 · 泡沫与崩盘模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch6 · 分形与离散标度不变性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch7 · 主要崩盘剖析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch8 · 新兴市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch9 · 预测泡沫与崩盘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch10 · 2050 增长终结
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-stock-markets-crash/references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trading and Exchanges
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trading and Exchanges
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch01.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch1 · 导论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch02.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch2 · 交易故事
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch03.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch3 · 交易行业
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch04.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch4 · 订单与属性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch05.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch5 · 市场结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch06.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch6 · 订单驱动市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch07.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch7 · 经纪人
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch08.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch8 · 交易动机
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch09.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch9 · 优良市场
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch10 · 知情交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch11 · 订单预测者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch12 · 欺诈与操纵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch13 · 做市商
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch14 · 买卖价差
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch15 · 大宗交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch16 · 价值交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch17 · 套利者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch18.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch18 · 买方交易者
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch19.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch19 · 流动性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch20.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch20 · 波动性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch21.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch21 · 交易成本测量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch22.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch22 · 绩效评估
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch23.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch23 · 指数与组合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch24.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch24 · 专家做市商
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch25.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch25 · 内部化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch26 · 市场竞争
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ch26.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch26 · 市场竞争
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#261-trading-systems-and-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.1 TRADING SYSTEMS AND TECHNOLOGY
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26.1 TRADING SYSTEMS AND TECHNOLOGY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2611-a-very-short-history-of-fragmentation-and-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.1.1 A Very Short History of Fragmentation and Consolidation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#262-market-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.2 MARKET CONSOLIDATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26.2 MARKET CONSOLIDATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2621-innovative-markets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.2.1 Innovative Markets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2622-the-order-flow-externality-order-exposure-and-preferencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.2.2 The Order Flow Externality, Order Exposure, and Preferencing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2623-public-policy-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.2.3 Public Policy Implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#263-market-fragmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3 MARKET FRAGMENTATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26.3 MARKET FRAGMENTATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2631-unequal-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.1 Unequal Sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2632-asymmetric-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.2 Asymmetric Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2633-unequal-patience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.3 Unequal Patience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2634-unequal-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.4 Unequal Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2635-unequal-creditworthiness-and-trustworthiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.5 Unequal Creditworthiness and Trustworthiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#264-market-segmentation-how-fragmented-markets-consolidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.4 MARKET SEGMENTATION: HOW FRAGMENTED MARKETS CONSOLIDATE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#265-externalities-in-the-competition-among-market-centers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.5 EXTERNALITIES IN THE COMPETITION AMONG MARKET CENTERS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26.5 EXTERNALITIES IN THE COMPETITION AMONG MARKET CENTERS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2651-the-order-flow-externality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.5.1 The Order Flow Externality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2652-secondary-precedence-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.5.2 Secondary Precedence Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2653-regulatory-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.5.3 Regulatory Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#266-consolidation-of-marketplaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.6 CONSOLIDATION OF MARKETPLACES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#267-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.7 SUMMARY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#268-some-points-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.8 SOME POINTS TO REMEMBER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#269-questions-for-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.9 QUESTIONS FOR THOUGHT
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch27.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch27 · 场内vs自动
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch28.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch28 · 泡沫与熔断
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ch29 · 内幕交易
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考文献
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index_term.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#261-trading-systems-and-technology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.1 TRADING SYSTEMS AND TECHNOLOGY
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26.1 TRADING SYSTEMS AND TECHNOLOGY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2611-a-very-short-history-of-fragmentation-and-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.1.1 A Very Short History of Fragmentation and Consolidation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#262-market-consolidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.2 MARKET CONSOLIDATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26.2 MARKET CONSOLIDATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2621-innovative-markets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.2.1 Innovative Markets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2622-the-order-flow-externality-order-exposure-and-preferencing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.2.2 The Order Flow Externality, Order Exposure, and Preferencing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2623-public-policy-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.2.3 Public Policy Implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#263-market-fragmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3 MARKET FRAGMENTATION
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26.3 MARKET FRAGMENTATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2631-unequal-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.1 Unequal Sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2632-asymmetric-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.2 Asymmetric Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2633-unequal-patience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.3 Unequal Patience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2634-unequal-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.4 Unequal Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2635-unequal-creditworthiness-and-trustworthiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.3.5 Unequal Creditworthiness and Trustworthiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#264-market-segmentation-how-fragmented-markets-consolidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.4 MARKET SEGMENTATION: HOW FRAGMENTED MARKETS CONSOLIDATE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#265-externalities-in-the-competition-among-market-centers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.5 EXTERNALITIES IN THE COMPETITION AMONG MARKET CENTERS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26.5 EXTERNALITIES IN THE COMPETITION AMONG MARKET CENTERS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2651-the-order-flow-externality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.5.1 The Order Flow Externality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2652-secondary-precedence-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.5.2 Secondary Precedence Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2653-regulatory-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.5.3 Regulatory Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#266-consolidation-of-marketplaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.6 CONSOLIDATION OF MARKETPLACES
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#267-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.7 SUMMARY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#268-some-points-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.8 SOME POINTS TO REMEMBER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#269-questions-for-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26.9 QUESTIONS FOR THOUGHT
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../index.html" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    首页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../ml/stanford-ml-notes/index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    书籍
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../why-stock-markets-crash/index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    金融
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Trading and Exchanges
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-26-competition-within-and-among-markets">Chapter 26: Competition Within and Among Markets</h1>
+<p>In the last few years, many exchanges, brokers, electronic
+communications networks (ECNs), and dealers have created innovative
+trading systems to provide traders with better services at lower costs.
+The competition among these <em>market centers</em> is significantly changing
+how all markets operate, and the pace of change is accelerating.</p>
+<p>The competition among market centers has some worrisome consequences,
+however. The proliferation of market centers is fragmenting the markets.
+Buyers and sellers often are in different places, so that they may have
+trouble finding each other. Their transaction costs therefore may be
+higher than they would be if all traders traded in the same place. The
+benefits of competition among market centers may be offset by the
+increased costs it creates for traders who are searching for the best
+price.</p>
+<p>A market in which people can trade essentially the same thing in
+different market centers is a <em>fragmented market.</em> A market in which all
+traders trade in the same market center is a <em>consolidated market.</em></p>
+<p>Regulators and practitioners wonder whether markets should be
+consolidated or fragmented. Regulations can produce either alternative.
+Most futures markets are fully consolidated, as are some national stock
+markets.</p>
+<p>The issue is quite complicated. The competition among traders to obtain
+the best price works best in consolidated markets. The competition among
+market centers to provide low-cost services to traders, however, implies
+fragmented markets. The two competitions therefore are inconsistent with
+each other. Any reasonable attempts to address competitive issues must
+consider why market fragmentation occurs, and the benefits and costs of
+market diversity.</p>
+<p>In this chapter, we consider the economic forces that cause markets to
+consolidate and to fragment. Our discussion starts with a short
+description of how technology has changed trading markets. This section
+presents the technological context of the main issues. The economic
+analysis starts with a discussion of why markets consolidate. We then
+consider why markets fragment, and how fragmented markets coalesce into
+segmented markets. Finally, we address the public policy problems
+related to externalities among market segments.</p>
+<h2 id="261-trading-systems-and-technology">26.1 TRADING SYSTEMS AND TECHNOLOGY</h2>
+<p>New trading systems have proliferated largely due to advances in
+communications and computing technologies. New communications
+technologies have given traders instantaneous presence in markets that
+they formerly could not attend. Traders no longer need to be on an
+exchange floor to know what is happening there or to trade effectively.
+Instantaneous market data reporting systems and order-routing systems
+now allow traders anywhere in the world to see and act upon
+opportunities wherever they occur.</p>
+<hr />
+<p><strong>[▶]{.ent} Slogans Don't Help</strong></p>
+<p>All languages promote wisdom with slogans. Slogans, however, will not
+resolve debates on market structure. For example, "United We Stand,
+Divided We Fall" suggests that consolidated markets are good, but
+"Strength Through Diversity" suggests that fragmented markets are good.
+When applied to market structure, these two slogans promote the two
+different competitions that take place in the trading industry. The
+first slogan promotes the competition of traders to find the best price,
+and the second promotes the competition among market centers to provide
+the best services. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} Where Is the Market for AOL?</strong></p>
+<p>AOL Time Warner common stock trades in each of the following market
+centers:</p>
+<p>• The New York Stock Exchange, its primary listing market</p>
+<p>• All U.S. regional exchanges: Boston, Chicago, Cincinnati, Pacific, and
+Philadelphia</p>
+<p>• Most ECNs and alternative trading systems. The most important of these
+are Island, Instinet, REDIBook, Archipelago, Bloomberg Tradebook, BRUT,
+and POSIT.</p>
+<p>• The third market and Nasdaq---Bernard Madoff Investment Securities and
+Knight Capital Markets are the largest dealers in these markets</p>
+<p>• The upstairs block trading market</p>
+<p>• Some large foreign stock exchanges</p>
+<p>The risk in AOL common stock also trades in the following derivative
+contract markets:</p>
+<p>• U.S. options exchanges all trade AOL stock option contracts cleared by
+the Options Clearing Corporation. These include the Chicago Board
+Options Exchange, the American Stock Exchange, the Pacific Exchange, the
+Philadelphia Stock Exchange, and the International Securities Exchange.</p>
+<p>• Futures contracts on AOL common stock shares will trade at several
+exchanges starting in late 2002.</p>
+<p>• Many large investment banks will write individually tailored synthetic
+derivative contracts in AOL for their clients. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} From Dispatch Messenger to ECN</strong></p>
+<p>In the beginning, markets reported some trade prices---and almost no
+quotations---by dispatch messengers. They usually traveled by horseback
+and ship. Later they reported prices by carrier pigeon, semaphore,
+telegraph, telex, and telephone. Now most organized markets continuously
+report all trade prices and all quotations as they occur via dedicated
+communications systems run by computers. Information that once moved at
+equine speed now moves at the speed of light.</p>
+<p>Likewise, traders once made all trading decisions themselves and brokers
+once arranged all trades manually. Now computers commonly make and
+implement trading decisions while dedicated exchange, ECN, broker, and
+dealer trading systems arrange trades automatically. [◀]{.ent1}</p>
+<hr />
+<p>New computing technologies have allowed market centers to organize
+sophisticated algorithm-based order-matching systems that would be
+impossible to implement by hand. These systems provide traders with
+complex order management tools that permit traders to more effectively
+solve their trading problems. Examples of such features include systems
+that</p>
+<p>• Display orders only to traders who commit to filling them</p>
+<p>• Ensure that a trader buys and sells equal dollar values</p>
+<p>• Ensure an order that is part of a larger strategy will fill only if
+all orders in the strategy fill</p>
+<p>• Allow traders to submit orders with limit prices indexed to market
+conditions</p>
+<p>• Substitute orders in one instrument for orders in another instrument
+based on market conditions.</p>
+<p>Trading systems that incorporate these features use complex rules to
+treat all traders fairly, subject to various constraints. They could not
+be implemented without the assistance of a computer. New computing
+technologies therefore have allowed markets to develop new applications
+that formerly would have been economically infeasible.</p>
+<p>Even when clerks can effectively operate a trading system by hand, they
+are not as cost effective as computers. New computing technologies
+therefore have allowed market centers to lower the costs of existing
+services in addition to providing new services.</p>
+<hr />
+<p><strong>[▶]{.ent} The OM SAXESS Trading
+System</strong></p>
+<p>OM Gruppen of Stockholm sells and operates exchange trading systems.
+Their SAXESS system allows traders to submit various types of
+contingency orders: combination orders, linked orders, stop loss orders,
+block orders, and balance orders. The algorithms necessary to provide
+these services are quite complex because the execution of some orders is
+contingent on the execution of other orders. [◀]{.ent1}</p>
+<p><em>Source:</em>
+[<a href="http://www.omgroup.com/">http://www.omgroup.com/</a>{.nounder}]{.weblink}.</p>
+<hr />
+<h5 id="2611-a-very-short-history-of-fragmentation-and-consolidation">26.1.1 A Very Short History of Fragmentation and Consolidation</h5>
+<p>In the beginning, most trading occurred on the trading floors of
+regional exchanges. Professional traders wanted to belong to these
+exchanges because only by being on these floors could they learn about
+market conditions and access trading opportunities. Nonmembers traded
+through member-brokers because that was the only way they could trade in
+these markets. Although no single market structure can simultaneously
+best serve the needs of all traders, most traders traded at exchanges
+because everyone traded there.</p>
+<p>Trading in many instruments fragmented across regional exchanges because
+impatient traders would not send their orders to distant exchanges.
+These traders incurred high transaction costs to compensate dealers who
+moved liquidity through time and arbitrageurs who moved liquidity from
+market to market. Wide arbitrage spreads reflected the high costs of
+obtaining information and acting upon it across large distances.</p>
+<p>When new communications technologies reduced the costs of transmitting
+market information and orders, regional exchanges consolidated to form
+large international markets. Where permitted, many alternative trading
+systems operate on the periphery of these markets. These systems provide
+special services to traders whose needs vary substantially. Arbitrageurs
+ensure that prices in all systems reflect market conditions throughout
+the world.</p>
+<p>Traders now trade in whatever trading system best serves their
+particular needs, confident that prices in that market segment will
+reflect liquidity conditions in all other segments. New trading systems
+have proliferated as entrepreneurial exchanges, brokers, dealers, data
+vendors, and software providers compete to help satisfy the liquidity
+demands of diverse traders.</p>
+<h2 id="262-market-consolidation">26.2 MARKET CONSOLIDATION</h2>
+<hr />
+<p><strong>[▶]{.ent} The Cheese Cart Crowd</strong></p>
+<p>Markets consolidate for the same reason a crowd forms when a supermarket
+gives free appetizer samples. Everyone likes to obtain something for
+nothing.</p>
+<p>Traders give away free options when they offer limit orders, offer
+quotes, or accept offers to trade. Since traders value these options,
+these offers attract a crowd.</p>
+<p>In the supermarket, only the manufacturer's representative offers free
+cheese. In trading markets, traders who are attracted by free options
+often also offer options. [◀]{.ent1}</p>
+<hr />
+<p>Markets are <em>consolidated</em> when all traders trade in the same place.
+Markets naturally consolidate. Since trades are easiest to arrange on
+good terms in liquid markets, traders gravitate to the most liquid
+market. Each trader who joins a market adds liquidity to that market.
+The additional liquidity then attracts more traders, who add more
+liquidity. Economists call this phenomenon the <em>order flow externality.</em>
+It causes markets to consolidate without any regulatory intervention.</p>
+<p>We can best understand the implications of the order flow externality by
+momentarily adopting a simple but highly unrealistic assumption. Assume
+that all traders are essentially identical. In particular, assume that
+all traders trade for similar reasons; they trade the same sizes, they
+are equally patient---or impatient---to trade; they are equally
+creditworthy; and they pursue roughly the same investment strategies.</p>
+<p>If this extreme assumption were true, the same exchange services would
+interest all traders. Whatever market pleased one trader would please
+all other traders. No trader would want to trade anywhere but where all
+other traders trade. Traders would find the best terms for their trades
+there because all interested traders would be there. With all interested
+traders in the same market, the search for best price would be least
+costly.</p>
+<p>The market in which identical traders would trade need not convene in
+any one physical location. It could reside anywhere that traders can
+expose their orders to everyone and trade with any order. Electronic
+trading systems are becoming increasingly
+common because electronic networks often provide cheaper and more
+efficient communications than face-to-face networks do.</p>
+<p>This consolidated market would treat each trader equally. No one would
+receive any special preferences based on size, creditworthiness, or
+experience because we assumed that no such differences exist.</p>
+<h5 id="2621-innovative-markets">26.2.1 Innovative Markets</h5>
+<p>Occasionally, someone may want to create a new market with different
+trading rules or with a new technology. If the innovation lowers
+transaction costs or provides more service, all traders would join the
+new market, and the market would remain consolidated. All traders would
+want to join the new market because all traders are identical. If one
+trader decides that it is optimal to join, all other traders will reach
+the same conclusion.</p>
+<p>It may be difficult to convince all traders to switch to the new market
+at the same time, even if everyone would be better off trading there.
+The order flow externality gives the incumbent market a tremendous
+advantage over new rivals. No trader wants to be the first trader in a
+new market, no matter how good it might be. If the new market structure
+is not substantially better than the incumbent one, or if it is too
+costly for traders to redirect their orders, it may not be possible to
+convince enough traders to switch to make the new market viable. An
+innovative market may fail simply because it cannot take the order flow
+externality away from the incumbent market. The order flow externality
+may allow an incumbent market to survive even if another market
+structure could provide better service.</p>
+<hr />
+<p><strong>[▶]{.ent} The Optimark Experience: 406 Million Dollars Lost!</strong></p>
+<p>Optimark was a highly innovative trading system that permitted traders
+to create "profiles" for their orders. Using a graphical interface,
+traders could express degrees of preference (trader satisfaction) for
+various combinations of price and quantity. A Cray supercomputer
+processed these profiles to match buyers to sellers according to a
+complex set of preference rules.</p>
+<p>Many people---especially institutional traders---were very excited by
+the system when it was under development in the mid-1990s. The novel
+means by which the system could allow them to express their preferences,
+and the novel ways in which these expressions could facilitate
+negotiation of cheap, mutually satisfactory trades, particularly
+enchanted them.</p>
+<p>Unfortunately, their excitement did not generate much order flow. After
+a couple of years of very poor performance, Optimark closed the U.S.
+equities segment of its business in September 2000. Accumulated deficits
+for the entire firm through September 2001 totaled 406 million dollars.
+Much of the loss was due to technology development and marketing.</p>
+<p>How you interpret this story depends on what you think about the
+technology that Optimark introduced. If you believe that the technology
+represents a significant improvement over existing exchange
+technologies, then you learned that the order flow externality is
+extremely hard to overcome, especially for systems that traders cannot
+easily understand. If you believe---as I do---that the technology was
+inferior to existing exchange technologies, then you learned that
+traders enthusiastically support interesting development efforts as long
+as they do not have to pay for them. [◀]{.ent1}</p>
+<p><em>Source:
+[<a href="http://www.sec.gov/Archives/edgar/data/1062023/000095012301500801/y47391a2el0-ka.txt">www.sec.gov/Archives/edgar/data/1062023/000095012301500801/y47391a2el0-ka.txt</a>{.nounder}]{.weblink}</em>.</p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} Why ECNs Compete Well
+with Nasdaq but Not with the NYSE</strong></p>
+<p>Several ECNs provide electronic order-driven markets for U.S. equity
+traders. ECNs get around the order flow externality problem through
+clever manipulation of their linkages with the Nasdaq trading system.
+ECNs can route orders to Nasdaq, and they can post and quickly revise
+quotes on Nasdaq. They use these facilities to expose their clients to
+the liquidity available in Nasdaq.</p>
+<p>When an ECN receives a market order, it determines whether the order
+would be best executed by crossing it with standing orders in the ECN
+order book or by sending it to Nasdaq. If the order would obtain a
+better execution through Nasdaq, the ECN sends the order there.
+Otherwise, it crosses the order internally. This procedure ensures that
+market order traders who send their orders to ECNs obtain execution that
+are at least as good as they would obtain on Nasdaq.</p>
+<p>When an ECN receives a limit order, it first determines whether it is
+marketable in Nasdaq or in its own system. If it is marketable, the ECN
+treats it like a market order and sends it to the best market. If the
+order is not marketable, the ECN places it in its order book. If the
+order matches or improves the best price on the ECN book, the ECN
+revises its Nasdaq quote to reflect the improved price or size of the
+new order. If a market order then arrives at the ECN with which the ECN
+can match the standing limit order, the ECN crosses the order and
+adjusts its Nasdaq quote. If Nasdaq routes a marketable order to the
+ECN, the ECN fills the order if it has not already been filled. This
+procedure ensures that limit orders sent to ECNs are exposed to the
+entire market.</p>
+<p>The exposure of a limit order in two markets at once puts the order in
+<em>double jeopardy</em> of executing twice. The problem is especially serious
+if either market has slow execution, quotation, order-routing, or trade
+reporting systems. In that case, both markets may try to execute the
+order before either market can cancel an order or adjust a quote.</p>
+<p>Since most traders will not bear the risk of double execution, one
+market must take precedence over another. Existing order-routing systems
+ensure that ECNs have precedence over Nasdaq but not over the NYSE. This
+difference explains why ECNs have taken significant market share from
+Nasdaq but not from the NYSE. An ECN cannot cross a market order with a
+limit order that it has routed to the NYSE until it cancels the NYSE
+limit order and receives a report confirming that the order is canceled.
+This process generally takes much longer than most market order traders
+are willing to wait. [◀]{.ent1}</p>
+<hr />
+<p>To initially compete with an incumbent market, a new market must find a
+way around the order flow externality problem. The new market must be
+closely integrated with the incumbent market so that traders can easily
+obtain liquidity in either market, or the new market must have an
+extremely effective advertising campaign that can convince many traders
+to switch at the same time. The ECNs that started to complete with
+Nasdaq in the late 1990s took the first approach.</p>
+<h5 id="2622-the-order-flow-externality-order-exposure-and-preferencing">26.2.2 The Order Flow Externality, Order Exposure, and Preferencing</h5>
+<p>When a market fully displays its orders and quotes, dealers can compete
+against the order-flow externality held by that market by filling market
+orders on the same terms available in that market. Since their clients
+get the same execution that they otherwise
+would have received, they do not care where their market orders fill.</p>
+<hr />
+<p><strong>[▶]{.ent} Order Exposure on the NYSE Floor</strong></p>
+<p>Floor brokers generally handle large market-not-held orders on the floor
+of the NYSE. The floor brokers often reveal their orders only after
+identifying traders likely to be interested in trading, and then only to
+the extent that they believe the interested traders are willing to
+trade.</p>
+<p>Try as they might, exchange floor brokers do not always manage order
+exposure perfectly. They may misjudge who might be interested in trading
+or the size that a trader will trade. They may inadvertently expose
+their orders by the way they walk, talk, or otherwise present
+themselves. They also may deliberately reveal their orders to reward
+friends or to exchange favors with traders with whom they must deal,
+shoulder-to-shoulder, every day of the year.</p>
+<p>Large traders protect themselves against these risks by breaking their
+orders into parts. They then sequentially submit the parts to their
+broker as each part fills. They may also submit the parts to different
+brokers. [◀]{.ent1}</p>
+<hr />
+<p>If permitted to do so, dealers frequently establish preferencing
+arrangements to compete against such markets. If they arrange to fill
+orders that primarily come from uninformed traders, dealers may be able
+to offer better terms than are available in the primary market. Dealers
+then will take much of that order flow away from the primary market.</p>
+<p>When dealers take market orders away from the primary market, the
+primary market becomes less attractive to limit order traders. Traders
+then either send their limit orders elsewhere or use market orders
+instead.</p>
+<p>The order flow externality is strongest when traders are uncertain about
+what orders and quotes are available in a market. If so, traders need to
+be in that market to take advantage of whatever opportunities are
+present there. These issues are of greatest concern to traders who want
+to fill large orders because other traders generally are unwilling to
+display large sizes. To fill their orders, they therefore must
+participate in the market where other large traders trade.</p>
+<p>Facilities that allow traders to control the exposure of their orders
+strengthen the order flow externality where it is strongest. Strong
+markets do not want to display their quotes and orders because doing so
+only allows dealers to compete along side of it. Electronic markets that
+permit traders to place undisplayed orders, and floor-based markets in
+which brokers hold undisplayed orders, force traders to come to them to
+trade. Strong markets do not benefit from exposing their orders.</p>
+<p>The order flow externality is very strong at the New York Stock Exchange
+because much of the liquidity there is in the hands of floor brokers who
+do not fully disclose their orders. Dealers successfully compete against
+the NYSE market only when filling small market orders that come
+primarily from uninformed traders, and very large orders that require
+more liquidity than is available on the floor of the exchange.</p>
+<p>In contrast, the order flow externality is weak at the Nasdaq Stock
+Market because traders who route their orders cannot learn any more
+about market conditions than do traders who preference their orders to
+specific dealers of ECNs. Dealers and ECNs therefore have competed very
+successfully against the Nasdaq Stock Market.</p>
+<h5 id="2623-public-policy-implications">26.2.3 Public Policy Implications</h5>
+<p>The role for public policy would be quite limited if all traders were
+identical. Good public policy would simply allow traders to choose for
+themselves the trading system that they prefer. Although the best market
+system would be a consolidated system, regulators would not need to
+impose one on identical traders: They would choose it for themselves.</p>
+<p>Regulatory efforts to impose a consolidated system risk choosing the
+wrong market structure or stifling innovation. When regulators
+consolidate by fiat, they have to determine what structure to use and
+when to change it as new technologies and demands for service emerge.
+Should the consolidated system enforce strict price-time precedence, as
+the Tokyo Stock Exchange does? Open-outcry futures markets generally do
+not. Should the consolidated system display all orders, as the CATS
+system in Toronto does? Most trading systems do not. Should displayed
+orders have precedence over undisclosed orders that were submitted
+first, as is the case in the GLOBEX and Paris
+CAC trading systems? Most systems do not even allow undisclosed orders.
+These differences in market structure are very significant. The public
+welfare depends on the market structures that regulators chose.</p>
+<p>When traders choose where they trade, the competition for their orders
+helps reveal the market structures that best serve them. This
+competition occasionally fragments the market as innovative systems take
+order flow from incumbent systems. If traders are identical, however,
+the fragmentation will be transitory. The best market structure will
+eventually garner all the order flow, if new markets can overcome the
+advantages of the order flow externality.</p>
+<p>Regulators can help ensure that competition reveals the best market
+structure by helping disseminate reliable and unbiased information about
+competing market structures. Such information makes it easier for
+traders to switch to better trading systems as they become available.</p>
+<p>It also might appear desirable for regulators to require that incumbent
+trading systems permit fast linkages between their trading systems and
+those of their rivals. Although such policies make it easier for rivals
+to overcome the advantage of the order flow externality, they can
+seriously disrupt incumbent trading systems that use slow trading
+technologies. If the slow technology is slow because the market has
+failed to innovate, requiring fast linkages will promote
+efficiency-enhancing competition. But if the technology is slow because
+traders need time to arrange trades that they could not otherwise
+arrange, requiring fast linkages will disrupt the incumbent market and
+possibly destroy its valuable trading system. The decision to require
+fast linkages therefore is not merely a decision to promote competition;
+it can unintentionally impose an inferior market structure upon certain
+markets.</p>
+<h2 id="263-market-fragmentation">26.3 MARKET FRAGMENTATION</h2>
+<p>Markets fragment because traders are not all identical and because their
+trading problems differ considerably. Some market structures therefore
+better serve the needs of some traders than other market structures do.
+Consequently, identical instruments---and very similar instruments---may
+simultaneously trade in multiple market centers.</p>
+<p>Although different traders prefer different market structures, they all
+greatly appreciate the order flow externality. Every trader wishes that
+all other traders would trade exclusively in his or her preferred market
+structure. Traders naturally want their preferred market to be as liquid
+as possible.</p>
+<p>In the remainder of this section, we identify how traders differ, and
+how these differences cause them to prefer different market structures.</p>
+<h5 id="2631-unequal-sizes">26.3.1 Unequal Sizes</h5>
+<p>Traders differ in the quantities that they want to trade. Some traders
+are so large that their orders can significantly move the market. Others
+are so small that their individual orders rarely have any price impact.</p>
+<p>Large traders are reluctant to reveal their trading plans. They fear
+that if their orders were widely revealed before they arranged their
+trades, other traders would front-run them and thereby increase their
+trading costs. Large traders manage this risk by controlling the
+exposure of their orders. They prefer to expose their orders only to
+traders who will commit to trading with them.</p>
+<hr />
+<p><strong>[▶]{.ent} Order Exposure in
+Cantor Fitzgerald's Government Bond Trading System</strong></p>
+<p>eSpeed, the government bond trading system used by Cantor Fitzgerald, is
+an electronic trading system designed to serve the needs of large
+traders. Traders confidentially indicate to eSpeed that they are willing
+to trade at a given price. The system continuously publishes the best
+bid and ask prices. When a trader indicates that he will take a standing
+bid or offer, the taking trader and the standing trader take turns
+revealing how much they want to trade. They reveal increasing sizes
+until one of the two traders no longer wants to increase the size of the
+trade. At that point, the eSpeed system executes the trade at the last
+agreed-upon size.</p>
+<p>All traders are able to see the agreed-upon size of the trade as it is
+growing, but no one except the two parties to the trade and the broker
+can see the negotiations. The system thus allows the two traders to see
+each other's orders only to the extent that they are willing to trade
+while ensuring that neither trader knows with whom he or she is trading.</p>
+<p>Some large traders are so sensitive about revealing size that they split
+their orders so that no one can confidently infer the full size of their
+orders. Occasionally, two such traders will unknowingly trade with each
+other two or more times in a row simply because neither trader is
+willing to let any other trader know the full size of the order.
+[◀]{.ent1}</p>
+<hr />
+<p>Executing large orders can be difficult and expensive in markets that
+widely display orders. If traders do not expose their orders, finding
+the other side is difficult. If they expose their orders, they may scare
+away traders who might otherwise supply liquidity to them, and other
+traders may front-run them. Large traders therefore prefer market
+structures that allow them to find traders willing to trade while
+minimizing the information they must expose to find these traders.</p>
+<hr />
+<p><strong>[▶]{.ent} Order Exposure in Crossing Networks</strong></p>
+<p>Electronic crossing networks, such as POSIT, allow large traders to
+avoid exposing their orders. These computerized trading systems take
+electronically transmitted orders and match them at prices determined
+elsewhere. The systems are completely confidential. They reveal only the
+aggregate sizes of the matches they have arranged. [◀]{.ent1}</p>
+<hr />
+<p>Large traders also prefer markets that enforce strict time precedence
+rules in conjunction with an economically significant minimum price
+increment. These rules protect them from quote-matching front runners
+when they expose their orders. <a href="#part0021.html_ch11">Chapter
+11</a>{.nounder} discusses front-running strategies.</p>
+<p>In contrast, small traders like to expose their orders. They do not fear
+front runners because front running a small order is not generally
+profitable. Wide exposure allows small traders to fill their orders
+quickly, at the best prices available. They prefer market structures in
+which they can expose their orders.</p>
+<p>Small market order traders like markets that have small minimum price
+increments because they pay the bid/ask spread when they trade. Since
+spreads cannot be smaller than the minimum price increment, a large
+price increment can force them to pay artificially high spreads.</p>
+<h5 id="2632-asymmetric-information">26.3.2 Asymmetric Information</h5>
+<p>Well-informed and uninformed traders generally prefer different market
+structures. Most traders want to avoid trading with well-informed
+traders. Well-informed traders therefore prefer to trade in fully
+consolidated markets, in which all traders trade anonymously, so that
+they cannot easily be identified as informed traders.</p>
+<p>In contrast, uninformed traders prefer to trade in markets that expose
+trader identities so that they can avoid informed traders. They also
+prefer to trade in markets where they can try to convince other traders
+that they are uninformed. Retail traders benefit from the preferencing
+of their orders to dealers who discriminate between their orders and
+more informed orders. <a href="#part0026.html_ch15">Chapters 15</a>{.nounder},
+<a href="#part0037.html_ch23">23</a>{.nounder}, and
+<a href="#part0039.html_ch25">25</a>{.nounder} discuss how fragmented market
+structures have evolved to benefit uninformed traders.</p>
+<hr />
+<p><strong>[▶]{.ent} Hybrid Trading
+Systems</strong></p>
+<p>The New York Stock Exchange and the Nasdaq Stock Market both have hybrid
+trading systems. The NYSE is essentially an order-driven public auction
+in which specialists ensure that impatient traders can always trade.
+Nasdaq is essentially a quote-driven dealer market in which public
+traders can offer liquidity by exposing their orders. Both systems are
+hybrids designed to meet the needs of all types of traders. [◀]{.ent1}</p>
+<hr />
+<h5 id="2633-unequal-patience">26.3.3 Unequal Patience</h5>
+<p>Some traders are more patient than are others. Impatient traders want to
+trade quickly. They generally will pay bid/ask spreads and high
+commissions to increase the probability that they trade. Impatient
+traders like market structures in which dealers are always available to
+provide them with liquidity when they want to trade. In contrast,
+patient traders are cost-sensitive and willing to wait for the market to
+come to them. They tend to supply liquidity through their limit orders
+and through the floor brokers who represent them.</p>
+<p>Some market structures serve the needs of impatient traders better than
+those of patient traders. For example, Nasdaq's Small Order Execution
+System (SOES) is a quote-based system that allows small impatient
+traders to trade immediately whenever they want to. Users of this
+system, however, generally must buy at the ask and sell at the bid.
+Since Nasdaq allows traders to preference their orders to specific
+dealers, and thus does not enforce time precedence, Nasdaq does not best
+serve the needs of patient traders. Patient traders instead prefer
+consolidated order-driven trading systems that enforce universal time
+precedence. Such systems increase their probability of trading when they
+expose their orders.</p>
+<p>All traders must decide whether they value execution certainty more than
+they value transaction cost savings. Those who value the former opt for
+quote-driven market systems that provide execution certainty at the
+expense of transaction costs. Those who value transaction cost savings
+opt for order-driven market systems that provide lower transaction costs
+for executed trades, but lower certainty that orders will trade. Diverse
+market structures exist because no single trading system best serves the
+needs of both patient and impatient traders.</p>
+<h5 id="2634-unequal-access">26.3.4 Unequal Access</h5>
+<p>By design or historic accident, markets often deny some traders access
+to information or facilities that other traders have. For example,
+exchange members may have direct access to floor information or trading
+opportunities that are unavailable to off-floor traders. The latter
+group of traders generally can trade only by purchasing brokerage
+services from exchange members.</p>
+<p>Many large institutions and sophisticated individual investors believe
+that they could execute their trades at a lower cost if they had the
+same access to information and trading facilities that exchange members
+have. Disadvantaged traders naturally favor market structures in which
+they have stronger and more equal roles. Diversity in market structures
+is partly due to competitive responses to their disenfranchisement.
+Trading systems like Instinet and POSIT attract order flow, in part,
+because users can arrange their trades without the intermediation of
+traditional brokers.</p>
+<h5 id="2635-unequal-creditworthiness-and-trustworthiness">26.3.5 Unequal Creditworthiness and Trustworthiness</h5>
+<p>Traders differ in their creditworthiness and trustworthiness. Trades
+settle only if traders acknowledge and fulfill the terms of their
+agreements. Traders who do not settle, impose costs upon other traders.</p>
+<p>Trustworthy and creditworthy traders
+therefore prefer to trade with each other and exclude less worthy
+traders. When they cannot do so, they bear the costs that less worthy
+traders impose upon them. Depending on the market, they may directly
+bear these costs when a deadbeat fails to settle properly with them, or
+they may indirectly bear these costs by settling their trades through a
+clearinghouse that guarantees their performance.</p>
+<p>Markets exclude individuals who would impose costs upon others if
+allowed to trade. The excluded individuals may still trade, but usually
+they must trade through intermediaries who guarantee their trades.
+Exchanges, dealer networks, and clearinghouses impose financial and
+ethical standards upon their members in order to exclude traders who
+might impose unnecessary settlement costs upon others. Any consolidated
+trading system that imposes the same standards on all traders requires
+the more creditworthy and more trustworthy traders to subsidize the less
+worthy ones.</p>
+<h2 id="264-market-segmentation-how-fragmented-markets-consolidate">26.4 MARKET SEGMENTATION: HOW FRAGMENTED MARKETS CONSOLIDATE</h2>
+<p>The two preceding sections suggest that a trade-off may exist between
+the cost-reducing benefits of market consolidation and the
+service-enhancing benefits of market diversity. Within any given market
+structure, liquidity is greatest and transaction costs are lowest when
+all traders trade in that structure. All traders therefore want all
+other traders to trade in the market structure that they prefer.
+Differences among traders, however, cause them to prefer diverse market
+structures. Unfortunately, no single market best meets the service needs
+of all traders; thus, in many markets, a diversity of market structures
+has evolved to serve the various needs of different traders. The
+resulting fragmentation suggests that some of the cost-reducing benefits
+of market consolidation may be lost. In particular, regulators and
+practitioners fear that fragmented markets substantially increase
+transaction costs.</p>
+<p>These concerns would be well founded if traders in various market
+fragments did not know about---and respond to---market conditions in
+other fragments. Each fragment then would constitute an isolated market
+in which price formation would take place independently of all other
+fragments. The resulting prices would depend only on market conditions
+within each fragment. Prices would not efficiently incorporate all
+available information about fundamental asset values because information
+in one fragment would not affect trading in other fragments. Transaction
+costs would be high because liquidity demands in one fragment could not
+meet liquidity supplies in other fragments. Traders thus would have to
+satisfy all liquidity demands separately within each fragment.</p>
+<p>Market diversity, however, does not necessarily imply inferior price
+formation and high transaction costs. Traders can obtain the benefits of
+consolidation in fragmented markets when information flows freely
+between market fragments, and when some traders can choose which
+fragment in which to trade. These two conditions are sufficient to
+coalesce a fragmented market into a unified complex of diverse segments.
+The first condition ensures that traders know what is happening in each
+market segment. The second condition ensures that some traders can act
+on that information when prices or liquidity conditions diverge.</p>
+<hr />
+<p><strong>[▶]{.ent} The Route to Best
+Execution</strong></p>
+<p>Many trade facilitators sell sophisticated order-routing systems to
+their clients. These systems take client orders and route them to the
+best available market. They are particularly useful to large traders who
+want to <em>sweep the market</em> by taking liquidity from all sources at once.
+Most of these vendors bundle their order-routing systems with buy-side
+order management systems that they offer to their clients. <a href="#part0040.html_ch26tab1">Table
+26-1</a>{.nounder} provides a partial list of
+these vendors. [◀]{.ent1}</p>
+<hr />
+<p>Three mechanisms consolidate a fragmented market. First, within each
+market segment, traders adjust their orders to reflect information that
+traders reveal in other segments. These adjustments cause prices to
+reflect information from all segments.</p>
+<p>Second, some traders route their orders to market segments where they
+expect to obtain the best prices. Traders who demand liquidity route
+their orders to segments that are currently most liquid. Traders who
+supply liquidity route their orders to segments with the greatest
+current demands for liquidity. These order-routing decisions help
+balance the supply and demand for liquidity in all market segments.</p>
+<p>Finally, arbitrageurs specialize in moving liquidity among market
+segments. They trade whenever prices in one segment are inconsistent
+with prices in another segment. Their trading enforces the law of one
+price across market segments as they connect buyers in one segment to
+sellers in another segment. <a href="#part0028.html_ch17">Chapter 17</a>{.nounder}
+discusses how and why arbitrageurs move liquidity among market segments.</p>
+<p>The forces that consolidate market segments are quite robust. Even if
+some traders can trade only in one market segment, the market will
+remain consolidated if other traders can freely route their orders to
+other market segments. In the worst case, if an order cannot move to its
+best market, arbitrageurs will move the best market to the order.</p>
+<p>These three mechanisms will consolidate a fragmented market only if
+information about trades and orders in each market segment is publicly
+available at low cost. Without this information, traders cannot easily
+search for the best price across market segments.</p>
+<p>Traders will consolidate fragmented markets only if they always seek the
+best prices for their orders. Problems may arise, however, when traders
+use brokers to arrange their trades. Although traders expect that their
+brokers will seek the best prices for their orders, brokers may not
+always do so. If they do not, market fragmentation may reduce liquidity
+and make the price formation process less efficient. <a href="#part0015.html_ch07">Chapter
+7</a>{.nounder} discusses this agency problem in
+detail.</p>
+<p><strong>TABLE 26-1</strong>.\
+Buy-Side Equity Order-Routing Systems</p>
+<p><img alt="Image" src="images/00136.jpeg" />{.calibre9}</p>
+<p>Agency problems at their worst involve frauds
+that brokers perpetrate upon their clients. For example, brokers may
+arrange to have confederates fill orders at inferior prices. Such frauds
+are much easier to commit in fragmented markets than in consolidated
+markets because fewer people monitor trading in small market segments
+than in fully consolidated markets. Any consideration of the trade-offs
+between market consolidation and market diversity therefore must
+consider the potential for fraud in fragmented markets.</p>
+<hr />
+<p><strong>[▶]{.ent} Anyone Care to Swim?</strong></p>
+<p>Traders say that they access <em>liquidity pools</em> in fragmented markets.
+The order flow externality causes a pool of liquidity to form in each
+market fragment. [◀]{.ent1}</p>
+<hr />
+<p>Public policy makers who consider whether to consolidate fragmented
+markets by regulation should compare the benefits and costs of
+diversity. Unfortunately, both are hard to measure.</p>
+<p>We can identify a lower bound for the costs of diversity. The total
+costs of trading in a segmented market must exceed the trading costs in
+a fully consolidated market by at least the cost of the information
+systems necessary to consolidate the market plus the resources that
+arbitrageurs use to move liquidity among market segments. If this lower
+bound is high, market diversity is very expensive.</p>
+<p>In very active markets, information usually is quite cheap relative to
+the volume of trade, and the competition among arbitrageurs to profit
+from trading opportunities ensures that they provide cheap and efficient
+service. The benefits of complete consolidation in such markets
+therefore are small relative to the benefits of market diversity. Active
+markets therefore can support more diverse market structures than less
+active markets can.</p>
+<h2 id="265-externalities-in-the-competition-among-market-centers">26.5 EXTERNALITIES IN THE COMPETITION AMONG MARKET CENTERS</h2>
+<p>The discussion in the preceding section suggests that competition among
+market centers to satisfy different service needs of diverse clienteles
+is generally beneficial. The resulting segmentation helps traders solve
+their various trading problems at minimum cost. If information flows
+freely between market segments and if no serious agency problems are
+present, segmentation is unlikely to have any overwhelmingly negative
+effects on price formation and transaction costs.</p>
+<p>The conclusion that competition among market centers is beneficial,
+however, depends on the assumption that no significant externalities
+affect the competition. An <em>externality</em> arises whenever someone does
+something that has an impact upon others for which he or she is neither
+adequately compensated nor properly penalized. When no one compensates
+people for the benefits they provide others, they tend to do less than
+would be socially desirable. Likewise, when no one penalizes people for
+the costs they impose upon others, they tend to do more than would be
+socially desirable. Unfortunately, competition among market centers
+involves several such externalities.</p>
+<h5 id="2651-the-order-flow-externality">26.5.1 The Order Flow Externality</h5>
+<p>We have already discussed the most important externality that affects
+competition among markets. The order flow externality makes it very
+difficult for new markets to compete effectively against incumbent
+markets.</p>
+<p>The order flow externality is an example of a <em>network externality.</em>
+Network externalities arise whenever the value of a system to a user
+increases as more people use the system. For example, a phone network is
+more valuable to each subscriber when the
+network connects many subscribers as opposed to few subscribers.</p>
+<hr />
+<p><strong>[▶]{.ent} How Many Disks Have You Received from AOL?</strong></p>
+<p>When a new market with a network externality opens, competitors must
+rush to quickly build their networks. AOL is the best-known example of a
+recent winner in a new market with a network externality. People once
+joked about how many computer disks AOL mailed to potential subscribers.
+Those disks, however, helped to create AOL's unassailable market
+position. [◀]{.ent1}</p>
+<hr />
+<p>Trading systems are networks that link many potential buyers to many
+potential sellers. The more buyers and sellers who participate in the
+system, the more valuable it is to everyone who uses it.</p>
+<p>Network externalities can create tremendous barriers to entry. Usually,
+one trading system grows large, and no other system can become large
+enough, quickly enough, to be a viable economic competitor. Markets with
+network externalities are <em>winner-take-all markets.</em> Without government
+regulation, new entrants often cannot get a toehold.</p>
+<p>The U.S. government requires that all phone companies allow all other
+phone companies to access their networks. Without such linkages, new
+phone companies could not compete with existing companies. The cellular
+telephone, telephone-over-cable, and telephone-over-Internet industries
+would not exist today were it not for these open access regulations. The
+government, of course, specifies the <em>interconnect access fees</em> that
+companies can charge each other for access to their networks.</p>
+<p>Governments can acquire, and have required, linkages among trading
+networks. In 1975, the U.S. government required that U.S. equity
+exchanges establish the Intermarket Trading System (ITS) to link their
+trading floors. The exchanges created a rather inefficient system, so
+ITS has had little effect on the markets. A redesign of the system is
+presently very high on the political agendas of many market centers. For
+example, the ECNs would like to have access to a revised ITS system
+through which they can route firm commitments at high speed. Most
+incumbent exchanges, of course, are not interested in improving the
+system.</p>
+<p>Order routing systems created by various data vendors also link traders
+with various trading systems. These links connect to the <em>application
+programming interface</em> (API) of each trading system. (APIs are portals
+through which computer systems talk with each other.) This approach to
+market center linkage may ultimately accomplish all that coordinated
+regulatory linkages attempt to accomplish.</p>
+<h5 id="2652-secondary-precedence-rules">26.5.2 Secondary Precedence Rules</h5>
+<p>The second most important externality in exchange competition is also
+due to the option values implicit in orders. Traders who offer standing
+limit orders benefit other traders, but no one compensates them for the
+benefits that they provide. They therefore provide less liquidity than
+would be socially optimal.</p>
+<p>The liquidity offered by limit order traders benefits markets because it
+attracts traders. Exchanges and ECNs therefore try to encourage traders
+to offer limit orders. Traders will offer liquidity when they are
+rewarded for---and not hurt by---offering liquidity.</p>
+<p>Some ECNs reward limit order traders by charging lower fees for limit
+orders than for market orders. In effect, market order traders pay limit
+order traders a fee for their liquidity in these systems. In <a href="#part0025.html_ch14">chapter
+14</a>{.nounder}, we show that in competitive
+order-driven markets, such differential fees simply narrow equilibrium
+bid/ask spreads so that the long-run incentives to supply or demand
+liquidity are unchanged.</p>
+<p>In general, any preference given to limit order traders will have no net
+effect on the supply of liquidity in a competitive equilibrium in which
+all traders are precommitted to trading. In such models, spreads adjust
+so that traders are indifferent between offering and taking liquidity.</p>
+<hr />
+<p><strong>[▶]{.ent} Lost Time Precedence</strong></p>
+<p>Time precedence rules govern trading in U.S. exchange-listed stocks at
+exchanges, but not among exchanges and over-the-counter dealers.
+Regional exchange specialists and third market dealers like Bernard
+Madoff regularly fill market orders at the same bid or ask prices that
+traders at the New York and American Stock Exchanges first quoted.
+Likewise, exchange traders occasionally fill market orders at prices
+that regional specialists and third market dealers quoted first. In
+either event, the trader who quoted first does not receive a trade that
+he or she would have received if time precedence were universally
+enforced across markets.</p>
+<p>Order crossing by brokers also often violates time precedence. Many
+brokers like to match orders internally for execution because internal
+matching ensures that they obtain two commissions for the trade instead
+of one. These brokers then print the trade at a market with a thin limit
+order book to ensure that no standing limit order interferes with the
+trade. Traders who place their orders in exchange order books would be
+better off if the brokers had to print their crosses in a consolidated
+market.</p>
+<p>In both examples, limit order traders would be better off if time
+precedence were universally enforced. [◀]{.ent1}</p>
+<hr />
+<p>In most markets, however, not all potential traders are committed to
+trading. In particular, quote-matching order anticipators trade only if
+they can extract option values from limit orders. (<a href="#part0021.html_ch11">Chapter
+11</a>{.nounder} discusses the quote-matching
+strategy.) Their trading therefore taxes liquidity. In equilibrium,
+quote matchers' profits imply higher transaction costs for precommitted
+traders whether they use limit orders or market orders.</p>
+<p>Since quote matchers directly hurt limit order traders, and thereby
+indirectly hurt market order traders, markets have an incentive to
+exclude quote matchers. The only effective way that they can do so is by
+maintaining secondary precedence rules---time precedence and public
+order precedence---that give precedence to limit order traders who
+display their orders. An economically significant minimum price
+increment, of course, must be set to make these precedence rules
+meaningful.</p>
+<p>An externality problem arises when market segments compete with each
+other because a market segment cannot meaningfully enforce secondary
+precedence rules when other segments trading the same---or essentially
+the same---instruments do not. Quote matchers simply place their orders
+and quotes in other markets when they do not have precedence in a given
+market. If they can get their orders filled in these other markets, they
+get around the secondary precedence rules.</p>
+<p>Markets that attract few limit orders have little incentive to maintain
+an economically significant minimum price increment to protect limit
+order traders. On the contrary, with a small increment, they can attract
+orders of quote matchers who will improve the consolidated quote in
+order to obtain market orders. Since brokers generally must execute
+orders at the best available prices, they often route to markets that
+display the best prices. A small market with little volume may therefore
+obtain order flow by offering a small minimum price increment. Although
+larger markets may want to protect limit order traders, they cannot do
+so: To remain competitive, they must lower
+their minimum price increments to equal the smallest minimum increment
+offered by any market.</p>
+<hr />
+<p><strong>[▶]{.ent} The Race to the Bottom</strong></p>
+<p>Reduction of the minimum price increment in U.S. equities markets
+started in the 1990s and culminated in the full decimalization of the
+markets in 2001. As the above analysis suggests, the first markets to
+offer smaller minimum price increments were weaker markets like the
+American Stock Exchange and the ECNs. They moved first because they had
+little incentive to protect limit order traders. (They then had few such
+traders.) The larger markets had to decrease their price increments to
+remain competitive in the face of best execution standards that require
+brokers to obtain the best available prices for their clients' orders.
+[◀]{.ent1}</p>
+<hr />
+<p>Unregulated competition among markets therefore does not permit markets
+to enforce trading rules that would solve the order exposure externality
+problem. Consequently, public limit order traders offer less liquidity
+than they would have if they traded in a fully consolidated trading
+system that used an economically meaningful minimum price increment to
+enforce secondary order precedence rules.</p>
+<h5 id="2653-regulatory-services">26.5.3 Regulatory Services</h5>
+<p>Markets compete for order flow by offering services that they believe
+will be attractive to their clienteles. We can divide the services that
+markets offer into two groups, according to whether the benefits they
+provide are private or public services.</p>
+<p>Private services benefit only the traders who use the market.
+Order-routing systems and accounting systems are examples of such
+services. Since usage of these services is easy to measure, markets can
+charge their traders to cover the costs of providing these services.
+Markets therefore will provide whatever private services their users
+demand.</p>
+<p>Public services benefit everyone, regardless of where---or sometimes
+whether---they trade. The promotion of price continuity, and the
+regulation of insider trading, manipulative trading practices, and
+capital structures, are examples of services that produce public
+benefits. These services improve market quality for everyone. Exchanges
+fund them through fees that they charge traders who use their markets.
+Traders can avoid these fees by patronizing markets that do not provide
+these regulatory services. Since markets can charge only their traders
+for these services that benefit everyone, unregulated competition among
+market centers produces fewer public services than would be socially
+desirable.</p>
+<h2 id="266-consolidation-of-marketplaces">26.6 CONSOLIDATION OF MARKETPLACES</h2>
+<p>The preceding sections discuss consolidation and fragmentation of
+trading in a single instrument. In this section, we identify additional
+forces that cause market centers---exchanges, ECNs, brokers, and
+dealers---to consolidate through mergers, acquisitions, joint ventures,
+and joint operating agreements.</p>
+<p>Two major waves of such consolidations have occurred. The first followed
+the invention and widespread adoption of the telegraph and telephone.
+These communications technologies greatly decreased the costs of knowing
+what was going on in distant markets and of routing orders to those
+markets. Once, every major city had exchanges that traded many of the
+same securities, and many of these cities also had futures markets that
+traded similar contracts. With improvements in telecommunications,
+traders seeking better prices eventually caused markets to consolidate.
+The markets that lost order flow failed or merged with other exchanges.</p>
+<p>The second wave of consolidations started in the early 1990s and is
+continuing to this day. This wave is occurring largely in response to
+three factors. The first factor is the order flow externality mentioned
+above. It is responsible for much of the consolidation among dealers and
+among some ECNs.</p>
+<p>The second factor is related to changes in the costs of operating
+trading systems. Advances in computing technologies have caused the
+ratio of variable costs to fixed costs to decline. Consequently, the
+economies of scale in operating trading systems have increased.
+Operating small trading systems has become more costly relative to
+operating large trading systems. To reduce costs, many exchanges and
+brokerages have consolidated.</p>
+<hr />
+<p><strong>[▶]{.ent} An Academic Proposal
+for Exchange Competition</strong></p>
+<p>Consider the following proposal for competition among equity markets:</p>
+<p>1. Regulations would completely consolidate all trading in an equity
+issue into a single market. Different equities might trade in different
+markets, but all trading in a given equity would be in the same market.</p>
+<p>2. Shareholders would decide each year at which market their equity
+issues will trade.</p>
+<p>This proposal would produce many benefits of regulatory consolidation
+while preserving the benefits of competition among markets. Instead of
+competing for order flow, markets would compete for listings. Although
+the proposal provides a simple and attractive solution to a complex
+problem, only academics have shown any interest in it. [◀]{.ent1}</p>
+<hr />
+<p>Finally, much consolidation is taking place because regulatory
+restrictions on cross-border cooperation and competition have loosened.
+These changes are most obvious in the European Community. Markets there
+are quickly consolidating to take advantage of the order flow
+externality and economies of scale in operating large trading systems.
+Likewise, the relaxation of regulatory restrictions has led to several
+international joint operating agreements among futures exchanges.</p>
+<hr />
+<p><strong>[▶]{.ent} Should Apples and Oranges Trade Together?</strong></p>
+<p>The order flow externality most obviously applies to a single
+instrument. Traders interested in trading a given instrument are
+attracted to the market with the most order flow in that instrument.</p>
+<p>This principle also applies to instruments that are similar to each
+other. Instruments are similar when their values largely depend on the
+same common valuation factors. Many traders therefore regard them as
+good substitutes for each other. Such traders are attracted to markets
+that actively trade any of these instruments. Markets that actively
+trade many similar instruments are especially attractive to traders who
+are interested in exposure to the common valuation factors. The order
+flow externality thus applies to common factors as well as to individual
+instruments.</p>
+<p>Markets that trade similar instruments often merge to take advantage of
+the order flow externality. By concentrating order flow in similar
+instruments, they increase the liquidity of underlying common factors.
+This effect explains why mergers of markets within a country generally
+have been quite successful. It also helps explain why stocks generally
+do not trade well outside of their national markets. [◀]{.ent1}</p>
+<hr />
+<h2 id="267-summary">26.7 SUMMARY</h2>
+<p>Markets consolidate because traders attract traders. Trading is easiest
+and cheapest where most traders of an instrument or similar instruments
+trade. Liquidity attracts liquidity.</p>
+<p>Markets fragment because the trading problems that traders solve,
+differ. Different market structures serve some traders better than
+others. Markets fragment when, for enough traders, benefits from
+differentiation exceed benefits from consolidation.</p>
+<p>Some traders are small and unconcerned about the price impacts of their
+trades, while other traders are large and very concerned about front
+running. Small traders prefer market structures that widely expose their
+orders so that everyone can see and react to them. Large traders prefer
+market structures that allow them to control how and to whom their
+orders are exposed.</p>
+<p>Some traders are well informed about fundamental values and therefore
+very concerned about revealing their information, while others are
+relatively uninformed and very concerned about minimizing transaction
+costs. Uninformed traders prefer markets where they can be identified
+and given better prices. Informed traders prefer consolidated markets
+with anonymous trading so that they can hide in the order flow.</p>
+<p>Some traders are impatient to trade and therefore willing to pay for
+liquidity, while others are patient and willing to wait for their price.
+The former prefer quote-driven markets, while the latter prefer
+order-driven markets.</p>
+<hr />
+<p><strong>[▶]{.ent} RISC versus CISC</strong></p>
+<p>Issues involving market structure are similar to issues involving
+computer microprocessor architecture.</p>
+<p>The reduced instruction set computing (RISC) approach to microprocessor
+design uses a simple processor to process a limited set of instructions
+very quickly. Software parses complex instructions into simpler
+instructions for execution. This architecture can be very efficient
+because RISC processors are very fast.</p>
+<p>The complex instruction set computing (CISC) approach uses a complex
+processor to process complex instructions. This architecture can be very
+efficient when complex instructions are quite common.</p>
+<p>The RISC approach corresponds to fully consolidated markets. A simple
+market structure that receives all order flow can work very quickly and
+efficiently, but it can solve only simple trading problems. Traders with
+complex trading problems typically break up their orders into smaller
+pieces when trading in these markets.</p>
+<p>The CISC approach corresponds to fragmented markets. Fragmented markets
+can provide more service to diverse clienteles than can fully
+consolidated markets. [◀]{.ent1}</p>
+<hr />
+<hr />
+<p><strong>[▶]{.ent} The Libertarian View</strong></p>
+<p>Although enlightened regulation of the markets might benefit everyone,
+many people are reluctant to give regulators much power to regulate.
+They fear that regulators---through ignorance or malice---may abuse
+their power. The history of regulation is replete with examples of
+regulations that have been more costly than beneficial. [◀]{.ent1}</p>
+<hr />
+<p>Not withstanding these differences, all traders appreciate the benefits
+of consolidation. Traders often trade in markets that they do not like
+simply because those markets are most liquid. Conversely, no market will
+attract and keep liquidity if it does not provide good service to many
+traders. Competition among market structures generally reveals the
+market structures that best serve various types of traders.</p>
+<p>Fragmented markets consolidate when traders can access information about
+market conditions within each segment. Traders use this information to
+adjust their orders, reroute their orders, or issue new orders. Prices
+and liquidity in each segment thereby reflect information from all other
+segments.</p>
+<p>Traders naturally enforce price priority in segmented markets when they
+seek the best prices for their orders. Traders do not enforce secondary
+order precedence rules, such as time precedence, across market segments.
+Only coordinated regulation can implement such rules.</p>
+<p>Fragmented markets generally will provide less regulatory oversight than
+is socially optimal. Good regulatory activities benefit everyone, but
+exchanges can charge only those traders who trade in their segments.
+Only coordinated regulation can ensure that markets provide adequate
+regulatory oversight.</p>
+<p>Two types of competition characterize segmented markets. Traders compete
+for the best price, and market centers compete to serve diverse traders.
+Unfortunately, policies that promote the benefits from one competition
+can decrease the benefits from the other. Regulators therefore must
+balance the benefits obtained from these two types of competition.</p>
+<h2 id="268-some-points-to-remember">26.8 SOME POINTS TO REMEMBER</h2>
+<p>• Markets consolidate because traders attract traders. Liquidity
+attracts liquidity.</p>
+<p>• Consolidation maximizes competition among traders and thereby most
+efficiently reveals the best price.</p>
+<p>• A better market structure may never emerge
+if it cannot attract enough traders to move away from an incumbent
+market to make it liquid.</p>
+<p>• The order flow externality is strongest when search costs are highest.</p>
+<p>• When a market displays enough information about orders and quotes to
+accurately predict the average execution price of a market order,
+preferencing to dealers of such market orders can weaken the order flow
+externality held by that market.</p>
+<p>• Markets fragment as exchanges, brokers, ECNs, and dealers compete to
+meet the diverse service requirements of different traders.</p>
+<p>• Fragmented markets consolidate when traders can observe and act upon
+information in all market segments.</p>
+<p>• Arbitrageurs help consolidate fragmented markets.</p>
+<p>• Externality problems affect the competition among market centers to
+provide exchange services. Unregulated competition therefore may not
+create the best market structures.</p>
+<h2 id="269-questions-for-thought">26.9 QUESTIONS FOR THOUGHT</h2>
+<p>• Should regulators consolidate all trading to maximize price
+competition among traders and to lower liquidity search costs? If so, to
+what market structure should they consolidate?</p>
+<p>• How important are the externalities that affect the competition for
+order flow? Is time precedence valuable? Is order exposure valuable? Is
+market surveillance valuable? Is price continuity desirable?</p>
+<p>• Are regulatory services valuable? Should laws compel exchanges to
+provide regulatory services, or should governmental agencies directly
+supply these services?</p>
+<p>• Who should pay for market regulation?</p>
+<p>• How should regulators trade off the interests of diverse traders?
+Should we favor small individual traders over large institutional
+traders? Should we favor impatient traders over patient traders? Should
+we favor informed traders over uninformed traders? Should we favor
+public traders over exchange members?</p>
+<p>• Can domestic regulators regulate market structure when market centers
+compete globally to provide exchange services?</p>
+<p>• How does market fragmentation affect the information in prices?</p>
+<p>• Why is the order flow externality called an externality?</p>
+<p>• Before decimalization, the Nasdaq Stock Market had a smaller minimum
+price increment than the New York Stock Exchange. Can you explain this
+fact in light of their different market structures?</p>
+<p>• How does the order flow externality make the provision of price
+continuity possible?</p>
+<p>• What problems do you see with "An Academic Proposal for Exchange
+Competition?" How might clienteles specialize in various stocks? Would
+market structure affect portfolio allocation decisions or corporate
+control decisions?</p>
+<p>• Can markets consolidate even if no coordinated mechanism, like the
+In-termarket Trading System (ITS), routes orders from one market segment
+to another? Do proprietary electronic routing systems that allow traders
+and brokers to quickly select and route to the best markets for their
+orders make coordinated intermarket routing systems unnecessary?</p>
+<p>• Innovative markets fail if the cost of
+convincing traders that they are beneficial is too high relative to the
+additional benefits they provide. What is the exact condition for
+failure? How does it depend on who bears the cost of educating traders?
+How does it depend on the ability of the new market to charge traders
+for the additional benefits that they receive?</p>
+<p>• The proponents of CISC and RISC microprocessors compete with each
+other in the marketplace. How does their competition differ from the
+competition among markets for order flow?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="ch25.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Ch25 · 内部化">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Ch25 · 内部化
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="ch27.html" class="md-footer__link md-footer__link--next" aria-label="下一页: Ch27 · 场内vs自动">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Ch27 · 场内vs自动
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.code.annotate", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+      
+        <script src="../../../javascripts/pseudocode-render.js"></script>
+      
+        <script src="../../../javascripts/translate-toggle.js"></script>
+      
+    
+  </body>
+</html>
