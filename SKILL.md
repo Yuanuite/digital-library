@@ -279,14 +279,17 @@ mkdir -p docs/<type>/<category>/<book-slug>/images
 
 ### Phase 6：接入导航和首页
 
-#### mkdocs.yml nav
+#### 6.1 mkdocs.yml nav
 
-在对应分类位置插入：
+在对应分类位置插入。注意 `navigation.indexes` 已启用，**每个层级必须有 index.md 作为第一项**，否则点击该层级会直接跳到第一个子页面：
+
 ```yaml
 nav:
   - 首页: index.md
   - 书籍:
+    - books/index.md                # ← 分区索引（已有）
     - <分类名>:
+      - books/<category>/index.md   # ← 分类索引（如已有则跳过，如新建分类则创建）
       - <书名>:
         - 封面: books/<category>/<book-slug>/index.md
         - 第1章 · <标题>: books/<category>/<book-slug>/ch01.md
@@ -295,22 +298,37 @@ nav:
 
 章节标题从每个 `ch*.md` 的 `#` 行提取，>50 字符则截断。
 
-#### 首页卡片
+#### 6.2 分类索引页（如新建分类）
 
-在 `docs/index.md` 的对应分类区域添加卡片：
+创建 `docs/books/<category>/index.md`，展示该分类下所有书籍卡片：
+
 ```markdown
+# 分类名
+
+<div class="grid cards" markdown>
+
 -   :material-book-open-variant: __书名__
 
     ---
 
-    *作者 · 语言*
+    作者 · 语言
 
     简介
 
-    [:octicons-arrow-right-24: 开始阅读](books/<category>/<book-slug>/index.md)
+    [:octicons-arrow-right-24: 开始阅读](<book-slug>/index.md)
+
+</div>
 ```
 
-**Phase 6 完成后**：写入 `current_phase: "phase_6_done"`，`phase_6.status: "done"`。
+#### 6.3 首页卡片（docs/index.md）
+
+仅 `<category>/index.md` 未覆盖的卡片放首页。设计原则：**首页 → 分区页 → 书籍** 三层递进，首页放分区卡片，分类页放书籍卡片。
+
+#### 6.4 术语缩写（可选）
+
+如有新领域术语，追加到 `docs/snippets/abbreviations.md`（用 `<!-- -->` 注释分区，**禁用 `#` 标题**——snippet 注入页面时 `#` 会渲染为可见标题）。
+
+**Phase 6 完成后**：执行 [上传后自检清单](#上传后自检清单)，通过后写入 `current_phase: "phase_6_done"`。
 
 ### Phase 7：验证
 
@@ -330,6 +348,31 @@ mkdocs build
 
 ---
 
+## 上传后自检清单
+
+每本书加入导航和首页后，`mkdocs build` 前逐项检查：
+
+| # | 检查项 | 症状 | 修复 |
+|---|--------|------|------|
+| 1 | `:material-xxx:` 图标显示为原始文本 | 首页/分区页卡片图标不显示 | `mkdocs.yml` 需启用 `pymdownx.emoji` (twemoji) |
+| 2 | 点击分区/分类 tab 直接跳到第一本书 | 无中间过渡页 | 该层级需 `index.md` 作为 nav 第一项（配合 `navigation.indexes`） |
+| 3 | snippet 文件中的 `#` 标题渲染到页面 | 书籍封面出现无关 H1 标题 | snippet 用 `<!-- -->` 注释，不用 `#` / `##` |
+| 4 | 新建分类后点击分类跳转错误 | 404 或跳到其他书 | `mkdocs.yml` nav 中该分类第一项加 `books/<cat>/index.md` |
+| 5 | 新增书籍在分区页无入口 | 用户找不到新书 | `docs/books/<category>/index.md` 添加对应卡片 |
+| 6 | 新增分区在首页无入口 | 首页没有该分区卡片 | `docs/books/index.md` 添加分区卡片 |
+
+### 每次上传后需更新的文件（按概率）
+
+| 概率 | 文件 | 改什么 |
+|------|------|--------|
+| 100% | `mkdocs.yml` nav | 插入书名 + 章节列表 |
+| 90% | `docs/books/<category>/index.md` | 添加新书卡片 |
+| 30% | `docs/books/index.md` | 新分类时添加分区卡片 |
+| 20% | `docs/books/<category>/index.md` | 新建（新分类时） |
+| 10% | `docs/snippets/abbreviations.md` | 新领域术语 |
+
+---
+
 ## 失败模式速查
 
 | 症状 | 一线修复 | 仍失败 |
@@ -343,6 +386,9 @@ mkdocs build
 | 索引锚点 404 | `mkdocs build` 后从 HTML 提取 id | 手动比对 mkdocs slug 规则 |
 | 图片不显示 | 检查路径相对 `docs/` 而非文件所在目录 | `![](images/x.jpg)` 不是 `![](../images/x.jpg)` |
 | Build 报错 nav 路径 | 检查 `mkdocs.yml` 的 nav 路径文件存在 | `use_directory_urls: false` 确保 .md 链接稳定 |
+| 图标 `:xxx:` 显示为文本 | `mkdocs.yml` 加 `pymdownx.emoji` twemoji | Material icons 需要 emoji 扩展解析 |
+| 点击分区/分类直接跳书 | 该层级 nav 第一项加 `index.md` | `navigation.indexes` 需 index.md 作为可点击索引 |
+| snippet 标题污染页面 | 改 `# 标题` 为 `<!-- 标题 -->` | snippet 的 `#` 在注入页面后渲染为 H1 |
 | 图注/表注未与正文区分 | 包裹 `<p class="caption">图N.N 标题</p>` | CSS `.caption { text-align: center; font-size: .8rem; }` |
 | 4×4 格子世界散落成数字 | 用 `<table class="grid-world">` 包裹 | CSS 加固定格子尺寸 + 边框 |
 | OCR 伪影：`<details>natural_image</details>` | 删除空 `<details>` 块，只留 `![](image)` | Phase 4.5 Haiku 逐章审核 |
@@ -365,6 +411,8 @@ mkdocs build
 | 9 | `\boldsymbol` 不渲染 | `tex-mml-chtml.js` 不含 boldsymbol 包 → 红色未识别 | 用 `tex-chtml-full.js` CDN |
 | 10 | 超宽公式出滚动条 | 用户不接受滚动条 | 用 `\begin{aligned}` 手动断行 |
 | 11 | 表格数据挤在一起 | 默认表格无居中、无 padding | CSS `td { text-align: center; padding: .4rem .8rem; }` |
+| 12 | nav 分区不设 index.md | 点击 tab 直接跳第一本书，用户找不到其他书 | 每层 nav 第一项放 `index.md`（分区卡片页） |
+| 13 | snippet 用 `#` 注释分组 | `#` 注入页面后渲染为 H1，显示无关标题 | 用 `<!-- 注释 -->` |
 
 ---
 
