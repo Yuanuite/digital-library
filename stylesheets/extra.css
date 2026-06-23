@@ -47,3 +47,25 @@
 
 /* inline math */
 .md-typeset .arithmatex { font-size: inherit; }
+
+/* 缩写悬浮提示 — CSS 即时渲染，0ms 延迟 */
+.md-typeset abbr[title] {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted var(--md-typeset-color);
+  text-decoration: none !important;
+}
+.md-typeset abbr[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 4px);
+  white-space: nowrap;
+  background: var(--md-default-fg-color);
+  color: var(--md-default-bg-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: .75rem;
+  z-index: 1000;
+  pointer-events: none;
+}
