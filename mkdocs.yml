@@ -45,6 +45,7 @@ theme:
 nav:
   - 首页: index.md
   - 书籍:
+    - books/index.md
     - 机器学习:
       - 斯坦福ML笔记:
         - 封面: books/ml/stanford-ml-notes/index.md
@@ -124,6 +125,9 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.mark
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.snippets:
       base_path: docs
 extra_css:
