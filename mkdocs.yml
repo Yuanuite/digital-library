@@ -159,5 +159,6 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js
   - javascripts/pseudocode-render.js
   - javascripts/translate-toggle.js
+  - javascripts/abbr-tooltip.js
 extra:
   generator: false
