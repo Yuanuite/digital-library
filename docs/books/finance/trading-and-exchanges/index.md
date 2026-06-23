@@ -8,11 +8,11 @@
 
 **market microstructure for Practitioners**
 
-[LARRY HARRIS]{.small}
+[LARRY HARRIS]
 
-![Image](images/00002.jpeg){.calibre6}
+![Image](images/00002.jpeg)
 
-![Image](images/00003.jpeg){.calibre6}
+![Image](images/00003.jpeg)
 
 Oxford New York\
 Auckland Bangkok Buenos Aires Cape Town Chennai Dar es Salaam Delhi Hong
@@ -23,7 +23,7 @@ Copyright © 2003 by Oxford University Press, Inc.
 
 Published by Oxford University Press, Inc.\
 198 Madison Avenue, New York, New York, 10016\
-[[www.oup.com](http://www.oup.com){.nounder}]{.weblink}
+[[www.oup.com](http://www.oup.com)]
 
 Oxford is a registered trademark of Oxford University Press
 

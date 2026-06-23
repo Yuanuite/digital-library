@@ -1,4 +1,4 @@
-# Bibliography
+# References
 
 This bibliography provides selected references for further reading. I
 classified the references using the chapter outline of this book. Since
@@ -317,7 +317,7 @@ Chakravarty, Sugato. 2001. Stealth-trading: Which traders' trades move
 stock prices? *Journal of Financial Economics* 61(2), 289--307.
 
 Fama, Eugene F. 1965. Random walks in stock market prices. *Financial
-Analysts Journal21(S)*, 55--59; reprinted \[1995\] in *Financial
+Analysts Journal21(S)*, 55--59; reprinted [1995] in *Financial
 Analysts Journal* 51(1), 75--80.
 
 Figlewski, Stephen. 1982. Information diversity and market behavior.
@@ -466,7 +466,7 @@ markets. *Journal of Finance* 33(4), 1133--1151.
 ## Chapter 14: Bid/Ask Spreads
 
 Bagehot, Walter (pseudonym for Jack Treynor). 1971. The only game in
-town. *Financial Analysts Journal* 27(2), 12--14, 22; reprinted \[1995\]
+town. *Financial Analysts Journal* 27(2), 12--14, 22; reprinted [1995]
 in *Financial Analysts Journal* 51(1), 81--83.
 
 Benston, George J., and Robert Hagerman. 1974. Determinants of bid-asked
@@ -589,11 +589,11 @@ information and price effects. *Journal of Finance* 56(5), 1723--1746.
 
 ## Chapter 16: Value Traders
 
-Kagel, John H., and Dan Levin. 1986. The winner\'s curse and public
+Kagel, John H., and Dan Levin. 1986. The winner's curse and public
 information in common value auctions. *American Economic Review* 76(5),
 894--920.
 
-Thaler, Richard H. 1988. Anomalies: The winner\'s curse. *Journal of
+Thaler, Richard H. 1988. Anomalies: The winner's curse. *Journal of
 Economic Perspectives* 2(1), 191--202.
 
 Treynor, Jack. 1987. The economics of the dealer function. *Financial
@@ -667,10 +667,10 @@ patterns. *Review of Financial Studies* 1(1), 3--40.
 Black, Fischer. 1995. Equilibrium exchanges. *Financial Analysts
 Journal* 51(3), 23--29.
 
-Bloomfield, Robert, and Maureen O\'Hara. 1999. Market transparency: Who
+Bloomfield, Robert, and Maureen O'Hara. 1999. Market transparency: Who
 wins and who loses? *Review of Financial Studies* 2(1), 5--35.
 
-Bloomfield, Robert, and Maureen O\'Hara. 2000. Can transparent markets
+Bloomfield, Robert, and Maureen O'Hara. 2000. Can transparent markets
 survive? *Journal of Financial Economics* 55(3), 425--459.
 
 Board, John, and Charles Sutcliffe. 2000. The proof of the pudding: The
@@ -680,7 +680,7 @@ effects of increased trade transparency in the London Stock Exchange.
 Chordia, Tarun, Richard Roll, and Avanidhar Subrahmanyam. 2000.
 Commonality in liquidity. *Journal of Financial Economics* 56(1), 3--28.
 
-Chordia, Tarun, Richard Roll, and Avandihar Subrahmanyam. 2001. Market
+Chordia, Tarun, Richard Roll, and Avanidhar Subrahmanyam. 2001. Market
 liquidity and trading activity. *Journal of Finance* 56(2), 501--503.
 
 Harris, Lawrence. 1990. Liquidity, trading rules and electronic trading
@@ -691,7 +691,7 @@ Hasbrouck, Joel, and Duane J. Seppi. 2001. Common factors in prices,
 order flow and liquidity. *Journal of Financial Economics* 59(3),
 383--411.
 
-Lamoureux, Christopher G., and Charles R. Schnitzlein. 1997. When it\'s
+Lamoureux, Christopher G., and Charles R. Schnitzlein. 1997. When it's
 not the only game in town: The effect of bilateral search on the quality
 of a dealer market. *Journal of Finance* 52(2), 683--712.
 
@@ -833,7 +833,7 @@ Financial Studies* 5(4), 553--580.
 Chen, Zhiwu, and Peter J. Knez. 1996. Portfolio performance measurement:
 Theory and applications. *Review of Financial Studies* 9(2), 511--555.
 
-Ellis, Charles D. 1975. The loser\'s game. *Financial Analysts Journal*
+Ellis, Charles D. 1975. The loser's game. *Financial Analysts Journal*
 31(4), 19--20, 22, 24, 26; reprinted in *Financial Analysts Journal*
 51(1), 95--100.
 
@@ -868,7 +868,7 @@ Hau, Harald. 2001. Location matters: An examination of trading profits.
 *Jouranl of Finance* 56(5), 1959--1983.
 
 Murphy, J. Michael. 1980. Why no one can tell
-who\'s winning. *Financial Analysts Journal* 36(3), 49--57.
+who's winning. *Financial Analysts Journal* 36(3), 49--57.
 
 ## Chapter 23: Index and Portfolio Markets
 
@@ -908,7 +908,7 @@ Financial Studies* 1(2), 137--158.
 
 Renshaw, Edward F., and Paul J. Feldstein. 1960. The case for an
 unmanaged investment company. *Financial Analysts Journal* 16(1),
-43--46; reprinted \[1995\] in *Financial Analysts Journal* 51(1),
+43--46; reprinted [1995] in *Financial Analysts Journal* 51(1),
 59--62.
 
 Stoll, Hans R. 1988. Portfolio trading. *Journal of Portfolio
@@ -950,7 +950,7 @@ Glosten, Lawrence R. 1989. Insider trading, liquidity, and the role of
 the monopolist specialist. *Journal of Business* 62(2), 211--236.
 
 Goldman, M. Barry, and Avraham Beja. 1979. Market prices vs. equilibrium
-prices: Returns\' variance, serial correlation, and the role of the
+prices: Returns' variance, serial correlation, and the role of the
 specialist. *Journal of Finance* 34(3), 595--607.
 
 Goldstein, Michael A., and Kenneth A. Kavajecz. 2000. Eighths,
@@ -969,11 +969,11 @@ Hasbrouck, Joel, and George Sofianos. 1993. The trades of market makers:
 An empirical analysis of NYSE specialists. *Journal of Finance* 48(5),
 1565--1594.
 
-Kavajecz, Kenneth A. 1999. A specialist\'s quoted depth and the limit
+Kavajecz, Kenneth A. 1999. A specialist's quoted depth and the limit
 order book. *Journal of Finance* 54(2), 747--771.
 
 Kavajecz, Kenneth A., and Elizabeth Odders-White. 2001. An examination
-of changes in specialists\' posted price schedules. *Review of Financial
+of changes in specialists' posted price schedules. *Review of Financial
 Studies* 14, 681--704.
 
 Madhavan, Ananth, and George Sofianos. 1998. An empirical analysis of
@@ -983,7 +983,7 @@ NYSE specialist trading. *Journal of Financial Economics* 48(2),
 McInish, Thomas H., and Robert A. Wood. 1995. Hidden limit orders on the
 NYSE. *Journal of Portfolio Management* 21(3), 19--26.
 
-Ready, Mark. 1999. The specialist\'s discretion: Stopped orders and
+Ready, Mark. 1999. The specialist's discretion: Stopped orders and
 price improvement. *Review of Financial Studies* 12(5), 1075--1112.
 
 Seppi, Duane J. 1997. Liquidity provision with limit orders and a
@@ -1005,14 +1005,14 @@ Battalio, Robert, and Craig W. Holden. 2001. A simple model of payment
 for order flow, internalization, and total trading cost. *Journal of
 Financial Markets* 4(1), 33--71.
 
-Bloomfield, Robert, and Maureen O\'Hara. 1998. Does order preferencing
+Bloomfield, Robert, and Maureen O'Hara. 1998. Does order preferencing
 matter? *Journal of Financial Economics* 50(1), 3--37.
 
 Chordia, Tarun, and Avanidhar Subrahmanyam. 1995. Market making, the
 tick size, and payment-for-order flow: Theory and evidence. *Journal of
 Business* 68(4), 543--575.
 
-Easley, David, Nicholas M. Kiefer, and Maureen O\'Hara. 1996.
+Easley, David, Nicholas M. Kiefer, and Maureen O'Hara. 1996.
 Cream-skimming or profit sharing? The curious role of purchased order
 flow. *Journal of Finance* 51(3), 811--833.
 
@@ -1027,7 +1027,7 @@ Kandel, Eugene, and Leslie M. Marx. 1999. Odd-eighth avoidance as a
 defense against SOES bandits. *Journal of Financial Economics* 51(1),
 85--102.
 
-Macy, Jonathan R., and Maureen O\'Hara. 1997. The law and economics of
+Macy, Jonathan R., and Maureen O'Hara. 1997. The law and economics of
 best execution. *Journal of Financial Intermediation* 6(3), 188--223.
 
 Securities and Exchange Commission, Division of Market Regulation. 1994.
@@ -1099,7 +1099,7 @@ Innovations and Market Volatility* (Blackwell, Maiden, MA).
 ## Chapter 27: Floor Versus Automated Trading Systems
 
 Benveniste, Lawrence M., Alan J. Marcus, and William J. Wilhelm. 1992.
-What\'s special about the specialist? *Journal of Financial Economics*
+What's special about the specialist? *Journal of Financial Economics*
 32(1), 61--86.
 
 Glosten, Lawrence R. 1994. Is the electronic open limit order book
@@ -1176,7 +1176,7 @@ Financial Crises, 4th ed. (Wiley Investment Classics, New York.
 Kleidon, Allan W. 1992. Arbitrage, nontrading, and stale prices: October
 1987. *Journal of Business* 65(4), 483--508.
 
-Kodres, Laura E., and Daniel P. O\'Brien.
+Kodres, Laura E., and Daniel P. O'Brien.
 1994. The existence of Pareto-superior price limits. *American Economic
 Review* 84(4), 919--932.
 
