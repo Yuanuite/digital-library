@@ -1,83 +1,46 @@
-# 📚 个人数字图书馆
+# 📚 Yuan's Library
 
 欢迎来到我的数字图书馆。这里收录了我在学习过程中阅读的书籍、论文和笔记。
 
 ---
 
-## 书籍
+## ✨ 阅读增强
 
-<div class="grid cards" markdown>
+本站启用了两项辅助功能，在所有页面自动生效：
 
--   :material-book-open-variant: __斯坦福大学 2014 机器学习教程 · 个人笔记__
-
-    ---
-
-    *黄海广 · 中文*
-
-    吴恩达 (Andrew Ng) 机器学习课程中文笔记，涵盖监督学习、无监督学习、神经网络、SVM、推荐系统等，含 CS229 数学复习材料。
-
-    [:octicons-arrow-right-24: 开始阅读](books/ml/stanford-ml-notes/index.md)
-
--   :material-book-open-variant: __论系统工程（新世纪版）__
-
-    ---
-
-    *钱学森等 · 中文*
-
-    系统科学与系统工程的经典文集，收录钱学森等学者关于系统工程、社会工程、军事系统工程、系统学等 50 余篇开创性文章。
-
-    [:octicons-arrow-right-24: 开始阅读](books/engineering/lun-system-engineering/index.md)
-
--   :material-book-open-variant: __与神对话__
-
-    ---
-
-    *尼尔·唐纳德·沃尔什 · 中文*
-
-    一场人与神的深度对话，五卷灵性经典，探讨个人生活、全球议题与宇宙真相。
-
-    [:octicons-arrow-right-24: 开始阅读](books/spirituality/conversations-with-god/index.md)
-
--   :material-book-open-variant: __Why Stock Markets Crash__
-
-    ---
-
-    *Didier Sornette · English*
-
-    复杂金融系统中的临界事件，从物理学家视角剖析股市崩盘的机制与预兆，含分形、对数周期性等量化方法。
-
-    [:octicons-arrow-right-24: 开始阅读](books/finance/why-stock-markets-crash/index.md)
-
--   :material-book-open-variant: __Trading and Exchanges__
-
-    ---
-
-    *Larry Harris · English*
-
-    市场微观结构经典教材，覆盖交易行业、订单属性、市场结构、流动性、波动性、交易成本等 29 个主题。
-
-    [:octicons-arrow-right-24: 开始阅读](books/finance/trading-and-exchanges/index.md)
-
-<!-- 更多书籍卡片将通过 add-book-to-library skill 自动添加 -->
-
-</div>
+| 功能 | 语法 | 效果 |
+|------|------|------|
+| **术语悬浮提示** | 自动识别 | 专业缩写（如 OCR、API、SVM、GDP）带下划虚线，鼠标悬停显示全称 |
+| **文本高亮** | `==重点==` | 渲染为 ==黄色高亮背景==，适合标记关键概念 |
 
 ---
 
-## 论文
+## 🏛️ 馆藏
 
 <div class="grid cards" markdown>
 
-<!-- 论文卡片将通过 skill 自动添加 -->
+-   :material-bookshelf: __书籍__
 
-</div>
+    ---
 
----
+    机器学习、系统工程、金融、灵性等学科书籍，含完整章节导航和数学公式渲染。
 
-## 笔记
+    [:octicons-arrow-right-24: 浏览书籍](books/index.md)
 
-<div class="grid cards" markdown>
+-   :material-file-document-multiple: __论文__
 
-<!-- 笔记卡片将通过 skill 自动添加 -->
+    ---
+
+    学术论文与技术报告。
+
+    [:octicons-arrow-right-24: 浏览论文](papers/index.md)
+
+-   :material-notebook: __笔记__
+
+    ---
+
+    读书笔记与学习心得。
+
+    [:octicons-arrow-right-24: 浏览笔记](notes/index.md)
 
 </div>

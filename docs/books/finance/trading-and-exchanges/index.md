@@ -1,5 +1,3 @@
---8<-- "snippets/abbreviations.md"
-
 # Trading and Exchanges
 
 **Larry Harris**

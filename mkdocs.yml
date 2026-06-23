@@ -44,95 +44,103 @@ theme:
 
 nav:
   - 首页: index.md
-  - 书籍:
-    - books/index.md
-    - 机器学习:
-      - books/ml/index.md
-      - 斯坦福ML笔记:
-        - 封面: books/ml/stanford-ml-notes/index.md
-        - 第1周 · 引言&线性回归&线性代数: books/ml/stanford-ml-notes/ch01.md
-        - 第2周 · 多变量线性回归&Octave: books/ml/stanford-ml-notes/ch02.md
-        - 第3周 · 逻辑回归&正则化: books/ml/stanford-ml-notes/ch03.md
-        - 第4周 · 神经网络表述: books/ml/stanford-ml-notes/ch04.md
-        - 第5周 · 神经网络学习: books/ml/stanford-ml-notes/ch05.md
-        - 第6周 · 应用建议&系统设计: books/ml/stanford-ml-notes/ch06.md
-        - 第7周 · 支持向量机: books/ml/stanford-ml-notes/ch07.md
-        - 第8周 · 聚类&降维: books/ml/stanford-ml-notes/ch08.md
-        - 第9周 · 异常检测&推荐系统: books/ml/stanford-ml-notes/ch09.md
-        - 第10周 · 大规模ML&OCR&总结: books/ml/stanford-ml-notes/ch10.md
-        - 附件 · CS229复习&数学基础: books/ml/stanford-ml-notes/appendix.md
-    - 工程:
-      - books/engineering/index.md
-      - 论系统工程:
-        - 封面: books/engineering/lun-system-engineering/index.md
-        - 序言 · 致读者/增订版说明/前言: books/engineering/lun-system-engineering/ch01.md
-        - 组织管理的技术 ~ 计量系统工程: books/engineering/lun-system-engineering/ch02.md
-        - 标准化和标准学研究 ~ 关于系统学的通信: books/engineering/lun-system-engineering/ch03.md
-        - 中国系统工程发展 ~ 环境系统工程: books/engineering/lun-system-engineering/ch04.md
-        - 系统工程与经济管理体制 ~ 创立现代化建设的科学: books/engineering/lun-system-engineering/ch05.md
-        - 现代科学技术体系结构 ~ 工程控制论: books/engineering/lun-system-engineering/ch06.md
-        - 附录 · 系统科学略谈 ~ 软科学: books/engineering/lun-system-engineering/ch07.md
-    - 灵性:
-      - books/spirituality/index.md
-      - 与神对话:
-        - 封面: books/spirituality/conversations-with-god/index.md
-        - 第一卷 · 个人生活与真理: books/spirituality/conversations-with-god/vol1.md
-        - 第二卷 · 全球议题: books/spirituality/conversations-with-god/vol2.md
-        - 第三卷 · 宇宙真相: books/spirituality/conversations-with-god/vol3.md
-        - 第四卷 · 与神为友: books/spirituality/conversations-with-god/vol4.md
-        - 第五卷 · 与神合一: books/spirituality/conversations-with-god/vol5.md
-    - 金融:
-      - books/finance/index.md
-      - Why Stock Markets Crash:
-        - 封面: books/finance/why-stock-markets-crash/index.md
-        - 前言: books/finance/why-stock-markets-crash/preface.md
-        - Ch1 · 金融崩盘: books/finance/why-stock-markets-crash/ch01.md
-        - Ch2 · 金融市场基础: books/finance/why-stock-markets-crash/ch02.md
-        - Ch3 · 崩盘是异常值: books/finance/why-stock-markets-crash/ch03.md
-        - Ch4 · 正反馈机制: books/finance/why-stock-markets-crash/ch04.md
-        - Ch5 · 泡沫与崩盘模型: books/finance/why-stock-markets-crash/ch05.md
-        - Ch6 · 分形与离散标度不变性: books/finance/why-stock-markets-crash/ch06.md
-        - Ch7 · 主要崩盘剖析: books/finance/why-stock-markets-crash/ch07.md
-        - Ch8 · 新兴市场: books/finance/why-stock-markets-crash/ch08.md
-        - Ch9 · 预测泡沫与崩盘: books/finance/why-stock-markets-crash/ch09.md
-        - Ch10 · 2050 增长终结: books/finance/why-stock-markets-crash/ch10.md
-        - 参考文献: books/finance/why-stock-markets-crash/references.md
-      - Trading and Exchanges:
-        - 封面: books/finance/trading-and-exchanges/index.md
-        - Ch1 · 导论: books/finance/trading-and-exchanges/ch01.md
-        - Ch2 · 交易故事: books/finance/trading-and-exchanges/ch02.md
-        - Ch3 · 交易行业: books/finance/trading-and-exchanges/ch03.md
-        - Ch4 · 订单与属性: books/finance/trading-and-exchanges/ch04.md
-        - Ch5 · 市场结构: books/finance/trading-and-exchanges/ch05.md
-        - Ch6 · 订单驱动市场: books/finance/trading-and-exchanges/ch06.md
-        - Ch7 · 经纪人: books/finance/trading-and-exchanges/ch07.md
-        - Ch8 · 交易动机: books/finance/trading-and-exchanges/ch08.md
-        - Ch9 · 优良市场: books/finance/trading-and-exchanges/ch09.md
-        - Ch10 · 知情交易者: books/finance/trading-and-exchanges/ch10.md
-        - Ch11 · 订单预测者: books/finance/trading-and-exchanges/ch11.md
-        - Ch12 · 欺诈与操纵: books/finance/trading-and-exchanges/ch12.md
-        - Ch13 · 做市商: books/finance/trading-and-exchanges/ch13.md
-        - Ch14 · 买卖价差: books/finance/trading-and-exchanges/ch14.md
-        - Ch15 · 大宗交易者: books/finance/trading-and-exchanges/ch15.md
-        - Ch16 · 价值交易者: books/finance/trading-and-exchanges/ch16.md
-        - Ch17 · 套利者: books/finance/trading-and-exchanges/ch17.md
-        - Ch18 · 买方交易者: books/finance/trading-and-exchanges/ch18.md
-        - Ch19 · 流动性: books/finance/trading-and-exchanges/ch19.md
-        - Ch20 · 波动性: books/finance/trading-and-exchanges/ch20.md
-        - Ch21 · 交易成本测量: books/finance/trading-and-exchanges/ch21.md
-        - Ch22 · 绩效评估: books/finance/trading-and-exchanges/ch22.md
-        - Ch23 · 指数与组合: books/finance/trading-and-exchanges/ch23.md
-        - Ch24 · 专家做市商: books/finance/trading-and-exchanges/ch24.md
-        - Ch25 · 内部化: books/finance/trading-and-exchanges/ch25.md
-        - Ch26 · 市场竞争: books/finance/trading-and-exchanges/ch26.md
-        - Ch27 · 场内vs自动: books/finance/trading-and-exchanges/ch27.md
-        - Ch28 · 泡沫与熔断: books/finance/trading-and-exchanges/ch28.md
-        - Ch29 · 内幕交易: books/finance/trading-and-exchanges/ch29.md
-        - 参考文献: books/finance/trading-and-exchanges/references.md
-        - 索引: books/finance/trading-and-exchanges/index_term.md
+  - 馆藏:
+    - 书籍:
+      - books/index.md
+      - 机器学习:
+        - books/ml/index.md
+        - 斯坦福ML笔记:
+          - 封面: books/ml/stanford-ml-notes/index.md
+          - 第1周 · 引言&线性回归&线性代数: books/ml/stanford-ml-notes/ch01.md
+          - 第2周 · 多变量线性回归&Octave: books/ml/stanford-ml-notes/ch02.md
+          - 第3周 · 逻辑回归&正则化: books/ml/stanford-ml-notes/ch03.md
+          - 第4周 · 神经网络表述: books/ml/stanford-ml-notes/ch04.md
+          - 第5周 · 神经网络学习: books/ml/stanford-ml-notes/ch05.md
+          - 第6周 · 应用建议&系统设计: books/ml/stanford-ml-notes/ch06.md
+          - 第7周 · 支持向量机: books/ml/stanford-ml-notes/ch07.md
+          - 第8周 · 聚类&降维: books/ml/stanford-ml-notes/ch08.md
+          - 第9周 · 异常检测&推荐系统: books/ml/stanford-ml-notes/ch09.md
+          - 第10周 · 大规模ML&OCR&总结: books/ml/stanford-ml-notes/ch10.md
+          - 附件 · CS229复习&数学基础: books/ml/stanford-ml-notes/appendix.md
+      - 工程:
+        - books/engineering/index.md
+        - 论系统工程:
+          - 封面: books/engineering/lun-system-engineering/index.md
+          - 序言 · 致读者/增订版说明/前言: books/engineering/lun-system-engineering/ch01.md
+          - 组织管理的技术 ~ 计量系统工程: books/engineering/lun-system-engineering/ch02.md
+          - 标准化和标准学研究 ~ 关于系统学的通信: books/engineering/lun-system-engineering/ch03.md
+          - 中国系统工程发展 ~ 环境系统工程: books/engineering/lun-system-engineering/ch04.md
+          - 系统工程与经济管理体制 ~ 创立现代化建设的科学: books/engineering/lun-system-engineering/ch05.md
+          - 现代科学技术体系结构 ~ 工程控制论: books/engineering/lun-system-engineering/ch06.md
+          - 附录 · 系统科学略谈 ~ 软科学: books/engineering/lun-system-engineering/ch07.md
+      - 灵性:
+        - books/spirituality/index.md
+        - 与神对话:
+          - 封面: books/spirituality/conversations-with-god/index.md
+          - 第一卷 · 个人生活与真理: books/spirituality/conversations-with-god/vol1.md
+          - 第二卷 · 全球议题: books/spirituality/conversations-with-god/vol2.md
+          - 第三卷 · 宇宙真相: books/spirituality/conversations-with-god/vol3.md
+          - 第四卷 · 与神为友: books/spirituality/conversations-with-god/vol4.md
+          - 第五卷 · 与神合一: books/spirituality/conversations-with-god/vol5.md
+      - 金融:
+        - books/finance/index.md
+        - Why Stock Markets Crash:
+          - 封面: books/finance/why-stock-markets-crash/index.md
+          - 前言: books/finance/why-stock-markets-crash/preface.md
+          - Ch1 · 金融崩盘: books/finance/why-stock-markets-crash/ch01.md
+          - Ch2 · 金融市场基础: books/finance/why-stock-markets-crash/ch02.md
+          - Ch3 · 崩盘是异常值: books/finance/why-stock-markets-crash/ch03.md
+          - Ch4 · 正反馈机制: books/finance/why-stock-markets-crash/ch04.md
+          - Ch5 · 泡沫与崩盘模型: books/finance/why-stock-markets-crash/ch05.md
+          - Ch6 · 分形与离散标度不变性: books/finance/why-stock-markets-crash/ch06.md
+          - Ch7 · 主要崩盘剖析: books/finance/why-stock-markets-crash/ch07.md
+          - Ch8 · 新兴市场: books/finance/why-stock-markets-crash/ch08.md
+          - Ch9 · 预测泡沫与崩盘: books/finance/why-stock-markets-crash/ch09.md
+          - Ch10 · 2050 增长终结: books/finance/why-stock-markets-crash/ch10.md
+          - 参考文献: books/finance/why-stock-markets-crash/references.md
+        - Trading and Exchanges:
+          - 封面: books/finance/trading-and-exchanges/index.md
+          - Ch1 · 导论: books/finance/trading-and-exchanges/ch01.md
+          - Ch2 · 交易故事: books/finance/trading-and-exchanges/ch02.md
+          - Ch3 · 交易行业: books/finance/trading-and-exchanges/ch03.md
+          - Ch4 · 订单与属性: books/finance/trading-and-exchanges/ch04.md
+          - Ch5 · 市场结构: books/finance/trading-and-exchanges/ch05.md
+          - Ch6 · 订单驱动市场: books/finance/trading-and-exchanges/ch06.md
+          - Ch7 · 经纪人: books/finance/trading-and-exchanges/ch07.md
+          - Ch8 · 交易动机: books/finance/trading-and-exchanges/ch08.md
+          - Ch9 · 优良市场: books/finance/trading-and-exchanges/ch09.md
+          - Ch10 · 知情交易者: books/finance/trading-and-exchanges/ch10.md
+          - Ch11 · 订单预测者: books/finance/trading-and-exchanges/ch11.md
+          - Ch12 · 欺诈与操纵: books/finance/trading-and-exchanges/ch12.md
+          - Ch13 · 做市商: books/finance/trading-and-exchanges/ch13.md
+          - Ch14 · 买卖价差: books/finance/trading-and-exchanges/ch14.md
+          - Ch15 · 大宗交易者: books/finance/trading-and-exchanges/ch15.md
+          - Ch16 · 价值交易者: books/finance/trading-and-exchanges/ch16.md
+          - Ch17 · 套利者: books/finance/trading-and-exchanges/ch17.md
+          - Ch18 · 买方交易者: books/finance/trading-and-exchanges/ch18.md
+          - Ch19 · 流动性: books/finance/trading-and-exchanges/ch19.md
+          - Ch20 · 波动性: books/finance/trading-and-exchanges/ch20.md
+          - Ch21 · 交易成本测量: books/finance/trading-and-exchanges/ch21.md
+          - Ch22 · 绩效评估: books/finance/trading-and-exchanges/ch22.md
+          - Ch23 · 指数与组合: books/finance/trading-and-exchanges/ch23.md
+          - Ch24 · 专家做市商: books/finance/trading-and-exchanges/ch24.md
+          - Ch25 · 内部化: books/finance/trading-and-exchanges/ch25.md
+          - Ch26 · 市场竞争: books/finance/trading-and-exchanges/ch26.md
+          - Ch27 · 场内vs自动: books/finance/trading-and-exchanges/ch27.md
+          - Ch28 · 泡沫与熔断: books/finance/trading-and-exchanges/ch28.md
+          - Ch29 · 内幕交易: books/finance/trading-and-exchanges/ch29.md
+          - 参考文献: books/finance/trading-and-exchanges/references.md
+          - 索引: books/finance/trading-and-exchanges/index_term.md
+    - 论文: papers/index.md
+    - 笔记: notes/index.md
+  - 关于: about.md
 
 use_directory_urls: false
 markdown_extensions:
+  - pymdownx.snippets:
+      base_path: docs
+      auto_append:
+        - snippets/abbreviations.md
   - abbr
   - footnotes
   - md_in_html
@@ -142,8 +150,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.snippets:
-      base_path: docs
 extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css
