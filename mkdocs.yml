@@ -47,6 +47,7 @@ nav:
   - 书籍:
     - books/index.md
     - 机器学习:
+      - books/ml/index.md
       - 斯坦福ML笔记:
         - 封面: books/ml/stanford-ml-notes/index.md
         - 第1周 · 引言&线性回归&线性代数: books/ml/stanford-ml-notes/ch01.md
@@ -60,7 +61,19 @@ nav:
         - 第9周 · 异常检测&推荐系统: books/ml/stanford-ml-notes/ch09.md
         - 第10周 · 大规模ML&OCR&总结: books/ml/stanford-ml-notes/ch10.md
         - 附件 · CS229复习&数学基础: books/ml/stanford-ml-notes/appendix.md
+    - 工程:
+      - books/engineering/index.md
+      - 论系统工程:
+        - 封面: books/engineering/lun-system-engineering/index.md
+        - 序言 · 致读者/增订版说明/前言: books/engineering/lun-system-engineering/ch01.md
+        - 组织管理的技术 ~ 计量系统工程: books/engineering/lun-system-engineering/ch02.md
+        - 标准化和标准学研究 ~ 关于系统学的通信: books/engineering/lun-system-engineering/ch03.md
+        - 中国系统工程发展 ~ 环境系统工程: books/engineering/lun-system-engineering/ch04.md
+        - 系统工程与经济管理体制 ~ 创立现代化建设的科学: books/engineering/lun-system-engineering/ch05.md
+        - 现代科学技术体系结构 ~ 工程控制论: books/engineering/lun-system-engineering/ch06.md
+        - 附录 · 系统科学略谈 ~ 软科学: books/engineering/lun-system-engineering/ch07.md
     - 灵性:
+      - books/spirituality/index.md
       - 与神对话:
         - 封面: books/spirituality/conversations-with-god/index.md
         - 第一卷 · 个人生活与真理: books/spirituality/conversations-with-god/vol1.md
@@ -69,6 +82,7 @@ nav:
         - 第四卷 · 与神为友: books/spirituality/conversations-with-god/vol4.md
         - 第五卷 · 与神合一: books/spirituality/conversations-with-god/vol5.md
     - 金融:
+      - books/finance/index.md
       - Why Stock Markets Crash:
         - 封面: books/finance/why-stock-markets-crash/index.md
         - 前言: books/finance/why-stock-markets-crash/preface.md
