@@ -38,6 +38,16 @@
 
     [:octicons-arrow-right-24: 开始阅读](books/finance/why-stock-markets-crash/index.md)
 
+-   :material-book-open-variant: __Trading and Exchanges__
+
+    ---
+
+    *Larry Harris · English*
+
+    市场微观结构经典教材，覆盖交易行业、订单属性、市场结构、流动性、波动性、交易成本等 29 个主题。
+
+    [:octicons-arrow-right-24: 开始阅读](books/finance/trading-and-exchanges/index.md)
+
 <!-- 更多书籍卡片将通过 add-book-to-library skill 自动添加 -->
 
 </div>

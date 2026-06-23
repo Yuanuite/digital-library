@@ -80,6 +80,39 @@ nav:
         - Ch9 · 预测泡沫与崩盘: books/finance/why-stock-markets-crash/ch09.md
         - Ch10 · 2050 增长终结: books/finance/why-stock-markets-crash/ch10.md
         - 参考文献: books/finance/why-stock-markets-crash/references.md
+      - Trading and Exchanges:
+        - 封面: books/finance/trading-and-exchanges/index.md
+        - Ch1 · 导论: books/finance/trading-and-exchanges/ch01.md
+        - Ch2 · 交易故事: books/finance/trading-and-exchanges/ch02.md
+        - Ch3 · 交易行业: books/finance/trading-and-exchanges/ch03.md
+        - Ch4 · 订单与属性: books/finance/trading-and-exchanges/ch04.md
+        - Ch5 · 市场结构: books/finance/trading-and-exchanges/ch05.md
+        - Ch6 · 订单驱动市场: books/finance/trading-and-exchanges/ch06.md
+        - Ch7 · 经纪人: books/finance/trading-and-exchanges/ch07.md
+        - Ch8 · 交易动机: books/finance/trading-and-exchanges/ch08.md
+        - Ch9 · 优良市场: books/finance/trading-and-exchanges/ch09.md
+        - Ch10 · 知情交易者: books/finance/trading-and-exchanges/ch10.md
+        - Ch11 · 订单预测者: books/finance/trading-and-exchanges/ch11.md
+        - Ch12 · 欺诈与操纵: books/finance/trading-and-exchanges/ch12.md
+        - Ch13 · 做市商: books/finance/trading-and-exchanges/ch13.md
+        - Ch14 · 买卖价差: books/finance/trading-and-exchanges/ch14.md
+        - Ch15 · 大宗交易者: books/finance/trading-and-exchanges/ch15.md
+        - Ch16 · 价值交易者: books/finance/trading-and-exchanges/ch16.md
+        - Ch17 · 套利者: books/finance/trading-and-exchanges/ch17.md
+        - Ch18 · 买方交易者: books/finance/trading-and-exchanges/ch18.md
+        - Ch19 · 流动性: books/finance/trading-and-exchanges/ch19.md
+        - Ch20 · 波动性: books/finance/trading-and-exchanges/ch20.md
+        - Ch21 · 交易成本测量: books/finance/trading-and-exchanges/ch21.md
+        - Ch22 · 绩效评估: books/finance/trading-and-exchanges/ch22.md
+        - Ch23 · 指数与组合: books/finance/trading-and-exchanges/ch23.md
+        - Ch24 · 专家做市商: books/finance/trading-and-exchanges/ch24.md
+        - Ch25 · 内部化: books/finance/trading-and-exchanges/ch25.md
+        - Ch26 · 市场竞争: books/finance/trading-and-exchanges/ch26.md
+        - Ch27 · 场内vs自动: books/finance/trading-and-exchanges/ch27.md
+        - Ch28 · 泡沫与熔断: books/finance/trading-and-exchanges/ch28.md
+        - Ch29 · 内幕交易: books/finance/trading-and-exchanges/ch29.md
+        - 参考文献: books/finance/trading-and-exchanges/references.md
+        - 索引: books/finance/trading-and-exchanges/index_term.md
 
 use_directory_urls: false
 markdown_extensions:
