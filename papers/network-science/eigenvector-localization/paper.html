@@ -1,0 +1,1294 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="个人数字图书馆">
+      
+      
+      
+        <link rel="canonical" href="https://yuanuite.github.io/digital-library/papers/network-science/eigenvector-localization/paper.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="../../../notes/index.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>全文 - Yuan's Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scientific-reports" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../index.html" title="Yuan&#39;s Library" class="md-header__button md-logo" aria-label="Yuan's Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Yuan's Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              全文
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../books/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  馆藏
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  关于
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="Yuan&#39;s Library" class="md-nav__button md-logo" aria-label="Yuan's Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Yuan's Library
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../notes/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    馆藏
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    馆藏
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../books/index.html" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    书籍
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    论文
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    论文
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    网络科学
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    网络科学
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    特征向量局域化
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2_2" id="__nav_2_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    特征向量局域化
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="paper.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    全文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../index.html" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    首页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../books/index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    馆藏
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    论文
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    网络科学
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    特征向量局域化
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="scientific-reports">SCIENTIFIC REPORTS</h1>
+<p>OPEN</p>
+<h1 id="distinct-types-of-eigenvector-localization-in-networks">Distinct types of eigenvector localization in networks</h1>
+<p>Romualdo Pastor-Satorras<sup>1</sup> &amp; Claudio Castellano<sup>2,3</sup></p>
+<p>r eceived: 21 April 2015</p>
+<p>a ccepted: 27 November 2015</p>
+<p>Published: 12 January 2016</p>
+<p>The spectral properties of the adjacency matrix provide a trove of information about the structure and function of complex networks. In particul <span class="arithmatex">\(\mathsf{I r} _{\pmb{\jmath}}\)</span> the largest eigenvalue and its associated principal eigenvector are crucial in the understanding of nodes’ centrality and the unfolding of dynamical processes. Here we show that two distinct types of localization of the principal eigenvector may occur in heterogeneous networks. For synthetic networks with degree distribution <span class="arithmatex">\(P ( q ) {\sim} q^{- \gamma}\)</span> , localization occurs on the largest hub <span class="arithmatex">\(\operatorname{i f} \gamma &gt; 5 / 2 ;\)</span> for <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> a new type of localization arises on a mesoscopic subgraph associated with the shell with the largest index in the K-core decomposition. Similar evidence for the existence of distinct localization modes is found in the analysis of real-world networks. Our results open a new perspective on dynamical processes on networks and on a recently proposed alternative measure of node centrality based on the non-backtracking matrix.</p>
+<p>An issue of paramount significance regarding the analysis of networked systems is the identification of the most important (or central) vertices<sup>1</sup>. The centrality of a vertex may stem from the number of diferent vertices that can be reached from it, from the role it plays in the communication between diferent parts of the network, or from how closely knit its neighborhood is. Following these approaches, diferent centrality measures have been defined and exploited, such as degree centrality, betweenness centrality<sup>2</sup>, or the K-core index and associated K-core decomposition<sup>3</sup>. Among those definitions, one of the most relevant is based on the intuitive notion that nodes are central when they are connected to other central nodes. This concept is mathematically encoded in the eigenvector centrality<sup>4</sup> (EC) of node i, defined as the componen <span class="arithmatex">\(f_{i}\)</span> of the principal eigenvector (PEV) f associated with the largest eigenvalue <span class="arithmatex">\(\Lambda_{1}\)</span> of the adjacency matrix <span class="arithmatex">\(A_{i j} .\)</span> EC is the simplest of a family of centralities based on the spectral properties of the adjacency matrix including, among others, Katz’s centrality<sup>5</sup> and PageRank<sup>6</sup>.</p>
+<p>Apart from providing relevant information about the network structure<sup>1</sup>, the PEV and associated largest eigen value play a fundamental role in the theoretical understanding of the behavior of dynamical processes, such as synchronization<sup>7</sup> and spreading<sup>8,9</sup>, mediated by complex topologies. Considerable efort has thus been devoted in recent years to the study of the spectral properties of heterogeneous networks<sup>10–13</sup>. In this framework, Goltsev et al.<sup>14</sup> (see also<sup>15,16</sup>) have considered the localization of the PEV, i.e., whether its normalization weight is concen trated on a small subset of nodes or not. More in detail, let us consider an ensemble of networks of size <span class="arithmatex">\(N ,\)</span> with a PEV <span class="arithmatex">\({\bf \bar{\rho}} _{f_{i}}\)</span> normalized as a standard Euclidean vector, i.e. <span class="arithmatex">\(\textstyle \sum_{i} f_{i} ^{2} = 1\)</span> . An eigenvector is localized on a subset V of size <span class="arithmatex">\(N_{V}\)</span> if a finite fraction of the normalization weight is concentrated on <span class="arithmatex">\(\begin{array} {r} {V ( \sum_{i \in V} f_{i} ^{2} \sim \mathcal{O} ( 1 ) )} \end{array}\)</span> ) despite the fact that V is not extensive, <span class="arithmatex">\(\mathrm{i} . e . , N_{V}\)</span> is not proportional to N. This includes the case of localization on a finite set of nodes <span class="arithmatex">\(( \mathrm{i} . e . N_{V}\)</span> independent of <span class="arithmatex">\(N , N_{V} = 1\)</span> in the extreme case of localization on a single node), but also the case of localization on a mesoscopic subset of nodes for which <span class="arithmatex">\(N_{V} {\sim} N^{\beta}\)</span> with <span class="arithmatex">\(\beta &lt; 1\)</span> 1. Otherwise, the eigenvector is instead delocalized, and a finite fraction of the nodes <span class="arithmatex">\(N_{V} {\sim} N\)</span> contribute to the normalization weight, implying that their components are <span class="arithmatex">\(f_{i} {\sim} N^{- 1 / 2}\)</span></p>
+<p>In this context, Goltsev et al.<sup>14</sup> study the localization in power-law distributed networks, with a degree distri bution scaling as <span class="arithmatex">\(P ( q ) \sim q^{- \gamma}\)</span> , for which the leading eigenvalue <span class="arithmatex">\(\Lambda_{1}\)</span> is essentially given by the maximum between <span class="arithmatex">\(\langle q^{2} \rangle / \langle q \rangle\)</span> and <span class="arithmatex">\(\sqrt{q_{\mathrm{m a x}}} ,\)</span> , where <span class="arithmatex">\(q_{\mathrm{m a x}}\)</span> is the largest degree in the network<sup>9,11</sup>. For <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> , where <span class="arithmatex">\(\Lambda_{1} \sim \sqrt{q_{\mathrm{m a x}}} ;\)</span> , Goltsev <span class="arithmatex">\(e t a l . ^{14}\)</span> find that the PEV becomes localized around the hub with degree <span class="arithmatex">\(q_{\mathrm{m a x}} ^{\mathrm{~ \ ~} 14}\)</span> . On the other hand, they argue that, for <span class="arithmatex">\(\gamma &lt; 5 / 2 .\)</span> , when <span class="arithmatex">\(\Lambda_{1} \sim \big &lt; q^{2} \big &gt; / \big &lt; q \big &gt;\)</span> , the PEV is delocalized. These observations are relevant in diferent contexts. Firstly, they point out a weakness of EC as a measure of centrality for heterogeneous power-law networks <span class="arithmatex">\(( \gamma &gt; 5 / 2 )\)</span> , because of the exceedingly large role of the largest hub<sup>16</sup>. On the other hand, in the so-called quenched mean-field approach<sup>9,17</sup> to epidemic spreading on networks, the density of infected individuals in the steady state can be related to the properties of the <span class="arithmatex">\(\mathrm{P E V^{14}}\)</span> . The localization occurring for large γ implies that the density of infected individuals in the steady state in those processes might not be an extensive quantity, casting doubts on the validity of this theoretical approach and on the actual onset of the endemic infected state.</p>
+<p>Here we show that the localization properties of the adjacency matrix PEV for heterogeneous (power-law distributed) networks are described by a picture much more complex than previously believed. In fact, we provide strong numerical evidence that the EC in heterogeneous networks never achieves full delocalization. In the case of uncorrelated synthetic networks with a power-law degree distribution, we obtain, by means of a finite-size scaling analysis, that for mild levels of heterogeneity (with <span class="arithmatex">\(\gamma &gt; 5 / 2 )\)</span> , the EC is strongly localized on the hubs, as previously argued. For high heterogeneity <span class="arithmatex">\(( \gamma &lt; \bar{5} / 2 )\)</span> ), however, we point out that the <span class="arithmatex">\(\begin{array} {r} {\check{\mathrm{E C}} ,} \end{array}\)</span> as measured by the components of the PEV, is highly correlated with the corresponding node’s degree. This strong correlation results in an efective localization on a mesoscopic subgraph, that can be identified as the shell with the largest index in the K-core decom position of the network<sup>3</sup>. The paper of Goltsev et al.<sup>14</sup> is perfectly correct for what concerns the case <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> but, by only considering the possibility of localization on a finite set of nodes, could not detect the mesoscopic localization occurring for <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> . In order to overcome the localization efects intrinsic of the <span class="arithmatex">\(\mathrm{E C} ,\)</span> a new centrality measure, based on the largest eigenvalue of the Hashimoto, or non-backtracking, matrix, has been recently proposed<sup>16</sup>. We observe that this new centrality is not completely free from localization efects. Thus, while it almost coincides with the EC for <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> , and for <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> it avoids the extreme localization around the hubs shown by the <span class="arithmatex">\(\mathrm{E C} ,\)</span> it is still localized in this case in some mesoscopic subset of nodes, whose characterization calls for further research. The extension of our analysis to the case of real world networks is hampered by the fact that usually only one network instance is available, which prevents performing a finite-size scaling study. Nevertheless, we numerically argue that also for real networks a twofold scenario holds, in which the PEV is either localized on the hubs, or efectively localized on the maximum K-core of the network.</p>
+<h2 id="results">Results</h2>
+<p>Eigenvector localization and the inverse participation ratio. A full characterization of an undirected network of size N is given by its adjacency matrix<sup>1</sup> A, whose elements take the value <span class="arithmatex">\(A_{i j} = 1\)</span> if nodes i and j are connected by an edge, and value <span class="arithmatex">\(\stackrel{\cdot} {A_{i j}} = 0\)</span> otherwise. The spectral properties of the adjacency matrix are defined by the set of eigenvalues <span class="arithmatex">\(\Lambda_{i} ,\)</span> and associated eigenvectors <span class="arithmatex">\(\mathbf{f} ( \bar{\Lambda_{i}} ) , i = \bar{1 , . . . ,} N ,\)</span> , defined by</p>
+<div class="arithmatex">\[
+\mathbf{A} \mathbf{f} (\Lambda) = \Lambda \mathbf{f} (\Lambda).\tag{1}
+\]</div>
+<p>Since the adjacency matrix is symmetric all its eigenvalues are real. The largest of those eigenvalues <span class="arithmatex">\(\Lambda_{1} ,\)</span> is associated with the principal eigenvector (PEV) which we denote simply by f.</p>
+<p>The concept of the localization of the PEV f translates in determining whether the value of its normalized com ponents is evenly distributed among all nodes in the network, or either it attains a large value on some subset, and is much smaller in all the rest. While this concept is quite easy to grasp, assessing it in a single network instance is a delicate issue because any quantitative definition involves some degree of arbitrariness. The task becomes however straightforward when ensembles of networks of diferent size can be generated. In such a case, the localization of the eigenvector f associated with the eigenvalue Λ can be precisely assessed by computing the inverse participation ratio (IPR), defined <span class="arithmatex">\(\mathbf{a} \mathbf{s} ^{14 , 1 \epsilon}\)</span></p>
+<div class="arithmatex">\[
+Y_{\Lambda} = \sum_{i} f_{i} ^{4} (\Lambda).\tag{2}
+\]</div>
+<p>In the absence of any knowledge about the localization support, it is possible to determine whether an eigenvector is localized (on some subset in the network) by studying its inverse participation ratio, as a function of the system size N and fitting its behavior to a power-law decay of the form</p>
+<div class="arithmatex">\[
+Y_{\Lambda} (N) \sim N^{- \alpha}.\tag{3}
+\]</div>
+<p>If the eigenvector is delocalized, i.e. for <span class="arithmatex">\(f_{i} {\sim} N^{- 1 / 2} ,\)</span> the exponent α is equal to 1. An exponent <span class="arithmatex">\(\alpha &lt; 1\)</span> is evidence that some form of localization is taking place. In the case of extreme localization on a single node, or on a set of node with size <span class="arithmatex">\(N_{V}\)</span> independent of the network size N, the corresponding components of the PEV are finite and this implies <span class="arithmatex">\(Y_{\Lambda} ^{\mathrm{l o c}} {\sim} \mathcal{O} ( 1 )\)</span> , i,e., α = 0 for <span class="arithmatex">\(N {\longrightarrow} \infty\)</span> . Finally, if localization takes place over a subextensive set of nodes of size <span class="arithmatex">\(N_{V} {\sim} N^{\beta}\)</span> , we expect</p>
+<div class="arithmatex">\[
+Y_{\Lambda} (N) \sim \frac{1}{N_{V}} \sim N^{- \beta},\tag{4}
+\]</div>
+<p>leading to a decay exponent <span class="arithmatex">\(\alpha = \beta .\)</span></p>
+<p>Eigenvector localization in synthetic networks. We study the localization properties of the PEV computed for synthetic power-law distributed networks of growing size, generated using the uncorrelated configuration model (UCM)<sup>18</sup>, a modification of the standard configuration model<sup>19,20</sup> designed to avoid degree correlations<sup>21</sup>. In order to explore the presence or absence of localization, we analyze the scaling of <span class="arithmatex">\(Y_{\Lambda} ( N )\)</span> as function of N as dis cussed above. In Fig. 1(a) we apply this finite-size scaling analysis to synthetic networks with diferent values of γ. In this and the following figures, statistical averages are performed over at least 100 diferent network samples. Error bars are usually smaller than the symbol sizes. In the case of large γ we observe an IPR tending to a constant for large N, confirming the localization on the hubs predicted by refs. 14,15. The situation is however surprisingly diferent for <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> . Thus, while according to Goltsev et al.<sup>14</sup>, we should expect a delocalized PEV and an IPR decreasing as <span class="arithmatex">\(N^{- \alpha}\)</span> with <span class="arithmatex">\(\alpha = 1\)</span> , we observe instead power-law decays with N, with efective exponents α always smaller than 1/2. The change of behavior of the IPR can be further confirmed in Fig. 1(b), where we plot the IPR as a function of the degree exponent <span class="arithmatex">\(\gamma ,\)</span> for diferent values of N. While it is clear that for <span class="arithmatex">\(\gamma \geq 2 . 7\)</span> the IPR tends to a constant asymptotically, slow crossover efects do not allow to draw firm conclusions based on numerics about the precise value of γ for which the behavior changes. However, since the dependence of the largest eigenvalue on N changes for <span class="arithmatex">\(\gamma = 5 / 2^{11}\)</span> we expect the transition to take place exactly at <span class="arithmatex">\(\gamma = 5 / 2 \colon\)</span> : simulation results are perfectly compatible with this result.</p>
+<p><img alt="" src="images/6603c7c57a373e332d125ff85db301d272af1bea2ede36976780e38a7a4c7cab.jpg" /></p>
+<p><img alt="" src="images/22d6f530f2bab4ed3b60068cf42b3abb9d1dcd03b4cd7bf037b7f9b8213daaa5.jpg" /><br />
+Figure 1. (a) Inverse participation ratio as a function of the network size for the adjacency matrix of synthetic networks with diferent degree exponent γ. For large <span class="arithmatex">\(\gamma ,\)</span> the IPR tends to saturate to a constant value for suficiently large value of N. For <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> , on the other hand, the behavior of the IPR can be fitted to <span class="arithmatex">\(Y_{\Lambda_{*}} ( N ) \sim N^{- \overline{{\alpha}}}\)</span> , with <span class="arithmatex">\(\alpha &lt; 1 / 2\)</span> . The dashed line represents a power-law behavior <span class="arithmatex">\({\sim} N^{- 1}\)</span> , corresponding to a <sup>1</sup> delocalized IPR. (b) Inverse participation ratio as a function of the degree exponent γ for diferent network size N. The plot confirms the presence of transition in the behavior of the IPR, located in the vicinity of <span class="arithmatex">\(\gamma = 5 / 2\)</span></p>
+<p>The behavior at <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> can be understood mathematically by observing that the largest eigenvalue in this regime, <span class="arithmatex">\(\Lambda_{1} = \langle q^{2} \rangle / \langle \dot{q} \rangle^{11}\)</span> , coincides with the largest eigenvalue of the adjacency matrix in the annealed network approximation. The annealed network approximation <span class="arithmatex">\(^{122 , 23}\)</span> consists in replacing the actual, fixed, adjacency matrix by an average performed over degree classes, taking the form</p>
+<div class="arithmatex">\[
+\overline{{a}} _{i j} = \frac{q_{j} ^{\prime} P (q_{i} \mid q_{j} ^{\prime})}{N P (q_{i})},\tag{5}
+\]</div>
+<p>where <span class="arithmatex">\(P ( q | q^{\prime} )\)</span> is the conditional probability that a link from a node of degree <span class="arithmatex">\(q^{\prime}\)</span> points to a node of degree <span class="arithmatex">\(q^{24} .\)</span> . For degree uncorrelated networks, with <span class="arithmatex">\(P ( q | q^{\prime} ) = q P ( q ) / \langle q \rangle^{25}\)</span> , we obtain an averaged adjacency matrix</p>
+<div class="arithmatex">\[
+\overline{{a}} _{i j} = \frac{q_{i} q_{j}}{N \left&lt;   q \right &gt;}.\tag{6}
+\]</div>
+<p>The matrix <span class="arithmatex">\(\overline{{a}} _{i j}\)</span> is semi-positive definite and therefore all its eigenvalues are non-negat <span class="arithmatex">\(\mathrm{i} \mathrm{v} e^{26}\)</span> . Then considering that <span class="arithmatex">\(\operatorname{T r} ( {\bar{\mathbf{a}}} ^{2} ) = [ \operatorname{T r} ( {\bar{\mathbf{a}}} ) ] ^{2} = {\dot{(}} \langle q^{2} \rangle / \langle q \rangle ) ^{2}\)</span> , where <span class="arithmatex">\(\operatorname{T r} ( \cdot )\)</span> is the trace operator, we have tha <span class="arithmatex">\(\overline{{a}} _{i j}\)</span> has a unique non-zero eigenvalue <span class="arithmatex">\(\Lambda_{\mathrm{a n}} {=} \langle q^{2} \rangle / \langle q \rangle\)</span> , with associated principal eigenvector <span class="arithmatex">\(f_{i} ^{\mathrm{a n}} \propto q_{i}\)</span> . Applying the normalization condition <span class="arithmatex">\(\textstyle \sum_{i} f_{i} ^{2} = 1\)</span> , we obtain the normalized form</p>
+<div class="arithmatex">\[
+f_{i} ^{\mathrm{an}} = \frac{q_{i}}{\left[ N \left&lt;   q^{2} \right&gt;\right] ^{1 / 2}}.\tag{7}
+\]</div>
+<p>Inserting the expression of <span class="arithmatex">\(f_{i} ^{\mathrm{a n}}\)</span> into Eq. (2) yields</p>
+<div class="arithmatex">\[
+Y_{\Lambda_{1}} (N) \sim 1 / N^{(3 - \gamma) / 2},\tag{8}
+\]</div>
+<p>that is, a decay with an exponent smaller than 1/2, in agreement with the results in Fig. 1(b). Figure 2(a) confirms that also quenched synthetic networks have PEV components proportional in average to the degree. Notice that Eq. (8) is approximately true only in quenched networks for <span class="arithmatex">\(\gamma &lt; 5 / \bar{2}\)</span> , since the condition leading to it, Eq. (7) fails a <span class="arithmatex">\(\mathbf{t} \gamma &gt; 5 / 2\)</span> , see Fig. 2(b, inset).</p>
+<p>A more physical interpretation of the particular distribution of the PEV in power-law networks with <span class="arithmatex">\(\gamma &lt; 5 / 2 .\)</span> is that the PEV becomes efectively localized on the max(imum) K-core of the network, defined as the set of nodes with the largest core index <span class="arithmatex">\(K_{M}\)</span> in a K-core decomposition<sup>3,27</sup>. The K-core decomposition is an iterative procedure to classify vertices of a network in layers of increasing density of connections. Starting with the full graph, one removes the vertices with degree <span class="arithmatex">\(q = 1\)</span> , i.e. with only one connection. This procedure is repeated until only nodes with degree <span class="arithmatex">\(q \geq 2\)</span> are left. The removed nodes constitute the <span class="arithmatex">\(K = \cdot\)</span> 1-shell and those remaining compose the <span class="arithmatex">\(K {=} 2 {\mathrm{- c o r e}}\)</span> . At the next step all vertices with degree <span class="arithmatex">\(q = 2\)</span> are removed, thus leaving the <span class="arithmatex">\(K {=} 3 {\mathrm{-}} \mathsf{c o r e}\)</span> . The procedure is repeated iteratively. The maximum K-core (of index <span class="arithmatex">\(K_{M} )\)</span> is the set of vertices such that one more iteration of the procedure removes all of them. The line of argument leading to this interpretation stems from combining the results of ref. <span class="arithmatex">\(^{14 ,}\)</span> in which it is proposed that, in epidemic spreading in complex networks<sup>28</sup>, infection activity is localized on the PEV, with the observations in ref. 29, in which the maximum K-core is identified as a subset of nodes sustaining epidemic activity fo <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span></p>
+<p><img alt="" src="images/26c8802177ef0573ac728769832d62f7d992ad7b874773dd5afa83159b568c64.jpg" /></p>
+<p><img alt="" src="images/18489aa718a719005b0e892365b1fbc9213cad62c101049c62e9e4c3be78cf1f.jpg" /><br />
+Figure 2. (a) Rescaled scatter plot of <span class="arithmatex">\(\dot{\ f_{i}} [ N \langle q^{2} \rangle ] ^{1 / 2}\)</span> as a function of <span class="arithmatex">\(q_{i}\)</span> for a synthetic network with <span class="arithmatex">\(\gamma = 2 . 1\)</span> and size <span class="arithmatex">\(N = 10^{6}\)</span> . Data fits the expectation for the PEV in the annealed network approximation, Eq. (7), with only small fluctuations. (b, main) Scatter plot of the squared PEV components as a function of the K-core index for the adjacency matrix of a power-law synthetic network with <span class="arithmatex">\(\gamma = 2 . 1\)</span> and size <span class="arithmatex">\(N = 10^{6}\)</span> . (b, inset) Scatter plot of the squared PEV components as a function of the degree q in a synthetic network with <span class="arithmatex">\(\gamma = 3 . 5\)</span> and size <span class="arithmatex">\(N = 10^{6}\)</span></p>
+<p><img alt="" src="images/517cf822880610b62cb344c63c8a45815c28a71835580cf8c84d08abf31536c7.jpg" /></p>
+<p><img alt="" src="images/2b6acd80046d04b64b1a5b99c47616ca8a5698d3449c7eab93b3b175033ea709.jpg" /><br />
+Figure 3. (a) Total weight <span class="arithmatex">\(W_{K_{M}}\)</span> of the PEV on the nodes of the max K-core in synthetic networks as a function <sup>M</sup>of size N. (b) Inverse participation ratio as a function of the size of the max K-core <span class="arithmatex">\(N_{K , \cdot \cdot}\)</span> . The dashed line represents a power-law behavior <span class="arithmatex">\({\sim} N_{K_{M}} ^{- 1} .\)</span> We can see the asymptotic behavior <span class="arithmatex">\(Y_{\Lambda_{1}} \sim \dot{N} _{K_{M}} ^{\underline{{{M}}} 1}\)</span> , valid for large network sizes.</p>
+<p>We can see this effective localization on the maximum K-core in different ways. In the first place, in Fig. 2(b,main) we plot the squared components <span class="arithmatex">\(f_{i} ^{2}\)</span> of the PEV for all vertices against their corresponding K-core index. From this Figure we conclude that all nodes with the largest f components belong to the max K-core. The size of this max K-core, <span class="arithmatex">\(N_{K_{M}} .\)</span> , grows sublinearly as a function of the network size as <span class="arithmatex">\(N_{K_{M}} \sim N^{( 3 - \gamma ) / 227}\)</span> . However, despite this sublinear growth, a finite fraction of the total PEV weight is concentrated on this subset. We check this fact in Fig. 3(a): the total weight of the nodes in the max K-core,</p>
+<div class="arithmatex">\[
+W_{K_{M}} = \sum_{i | i \in K_{M}} f_{i} ^{2},\tag{9}
+\]</div>
+<p>tends to a constant in the limit of large network size, implying that more than half of the weight of the normalized PEV resides over the max K-core. Finally, the size dependence of the max K-core translates, from Eq. (4) in an IPR scaling as <span class="arithmatex">\(Y_{\Lambda_{1}} \sim N_{K_{u}} ^{- 1} \sim 1 / N^{( 3 - \gamma ) / 2}\)</span> , in agreement with the result obtained from the degree dependence of the <sup>1</sup> PEV components, <span class="arithmatex">\(f_{i} ^{^{s n}} {\sim} q_{i} ,\)</span> see Eq. (8). The relation between IPR and max K-core size is satisfactorily checked in Fig. 3(b), where we observe it to be valid for large network sizes</p>
+<p>For <span class="arithmatex">\(\gamma &gt; 5 / 2 ,\)</span> , instead, Fig. 2(b,inset) confirms the localization of the PEV around the hub<sup>14,16</sup>, displaying a dis proportionately large component on the node with the largest degree. Notice that, irrespective of the value of <span class="arithmatex">\(\gamma ,\)</span> with high probability the hub belongs to the max K-core. What changes in the two cases is that for <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> the hub alone carries a finite fraction of the normalization weight <span class="arithmatex">\(\left( f_{i} \sim \mathcal{O} \left( 1 \right) \right)\)</span> while for γ &lt; 5/2 it carries a vanishing fraction, and all nodes of the max K-core must be considered to have a finite weight <span class="arithmatex">\(W_{K_{M}} .\)</span> . The behavior for <span class="arithmatex">\(\gamma &gt; 3\)</span> is clearly evident from Fig. 2(b,inset). In the case <span class="arithmatex">\(5 / 2 &lt; \gamma &lt; 3\)</span> , the accumulation of a finite weight on the hub takes place fo suficiently large N. This efect is observed in Fig. 4, were we plot the total weight <span class="arithmatex">\(W_{K_{M}}\)</span> of the nodes in the max K-core, Eq. (9), the total weight in the hub, <span class="arithmatex">\(W_{H} ,\)</span> and the total weight in the max <span class="arithmatex">\(K \mathrm{-} \mathsf{c o r e} ,\)</span> , subtracting the hub, <span class="arithmatex">\(W_{K_{M} - H} .\)</span> As we can observe from this Figure, the weight at the hub is small for network sizes <span class="arithmatex">\(N &lt; 10^{6}\)</span> , but it then starts to increase, to finally take over, for large network sizes <span class="arithmatex">\(N &gt; 10^{7}\)</span></p>
+<p><img alt="" src="images/ef0affdb6e1a66dae99fe295191a45ac891a43f03fbfc66856e801e03c05d41e.jpg" /><br />
+Figure 4. Weight of the PEV as a function of the network size in power-law networks with degree exponent <span class="arithmatex">\(\gamma = 2 . 8 .\)</span> . The diferent functions correspond to: total weight of the nodes in max K-core, <span class="arithmatex">\(W_{K_{M}} ;\)</span> ; total weight in the hub, <span class="arithmatex">\(W_{H} ;\)</span> total weight in the max K-core, subtracting the hub, <span class="arithmatex">\(W_{K_{M}}\)</span> .</p>
+<p><img alt="" src="images/8f793f772e285989d79e3322cd10ad09549a015fa9436ff1eb398bfd2906b083.jpg" /><br />
+Figure 5. Inverse participation ratio as a function of the network size N for the NBTC for power-law synthetic networks with diferent degree exponents <span class="arithmatex">\(\gamma .\)</span> The dashed line has slope −1 indicating delocalization.</p>
+<p>The non-backtracking centrality. The observations presented here, together with the arguments provided by Martin et al.<sup>16</sup>, hint that the EC is problematic as a useful measure of centrality. For large values of <span class="arithmatex">\(\gamma ,\)</span> it is afected by an exceedingly strong localization on the hub, arising as a purely topological artifact: the hub is central because its neighbors are central, but those in turn are central only because of the hub. For small values <span class="arithmatex">\(\operatorname{o f} \gamma ,\)</span> on the other hand, the observed relation <span class="arithmatex">\(f_{i} \sim q_{i}\)</span> indicates that the eigenvector centrality provides essentially the same information as the degree centrality. As an attempt to correct the flaws of the EC, Martin et <span class="arithmatex">\(a l . ^{16}\)</span> propose a modified centrality measure, the non-backtracking centrality (NBTC), which is computed in terms of the non-backtracking matrix. The Hashimoto, or non-backtracking matrix <span class="arithmatex">\(( \mathrm{\dot{N} B T} ) ^{16 , 30 , 31}\)</span> , is defined as follows: an initially undirected network is converted into a directed one by transforming each undirected edge into a pair of directed edges, each pointing in opposite directions. If the initial undirected network has E edges, the NBT matrix is a <span class="arithmatex">\(2 E \times 2 E\)</span> matrix with rows and columns corresponding to directed edges i→ j with value <span class="arithmatex">\(B_{i \to j , l \to m} = \delta_{i , m} ( 1 - \delta_{j , l} ) , \delta_{i , j}\)</span> being the Kronecker symbol. The components of the principal eigenvector of the NBT matrix, <span class="arithmatex">\(f_{i \to j}\)</span> measure the centrality of vertex i disregarding the contribution of vertex j. The NBT centrality of vertex j is given by the sum of these contributions for all neighbors of <span class="arithmatex">\(\begin{array} {r} {\dot{\jmath} _{:} f_{j} ^{N B T} = \sum_{i} A_{i j} f_{i \to j} .} \end{array}\)</span> . The elements of the NBT matrix count the number of non-backtracking walks in a graph and hence remove self-feedback in the calculation of node centrality, thus eliminating in principle the artificial topolog ical enhancement of the hub’s centrality.</p>
+<p>As Fig. 5 shows, however, the NBTC is not free from localization efects: For all values of γ the NBTC is no delocalized, i.e. <span class="arithmatex">\(Y_{\Lambda_{1}}\)</span> does not decrease as 1/N when increasing N. This fact can be understood for <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> in view <sup>1</sup>of the previous results. The adjacency matrix PEV is localized on the max K-core, which features many mutual interconnections: the centrality of a node is only weakly afected by self-feedback, and removing the contribution of backtracking paths has therefore little efect. This is confirmed by the scatter plot of the NBTC values <span class="arithmatex">\(f_{i} ^{\mathrm{N B T}}\)</span> as a function of the corresponding components <span class="arithmatex">\(f_{i}\)</span> of the adjacency matrix PEV, computed for the same synthetic networks, Fig. <span class="arithmatex">\(6 ( \mathsf{a} )\)</span> . For <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> the two quantities are very strongly correlated. For <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> instead, Fig. <span class="arithmatex">\(6 ( \mathrm{a} )\)</span> shows that the NBT centrality is truly diferent and uncorrelated from the adjacency matrix EC. However, as Fig. 5 shows, the NBT IPR, computed from the components of the NBTC, decreases with the system size N more slowly than <span class="arithmatex">\(N^{- 1}\)</span> . This is indicative that also in this case a localization occurs on a mesoscopic subset, whose size grows sublin early. Figure 6(b) shows that this localization is not due to a strong correlation between the NBT centrality and the degree of nodes, contrary to what happens for the EC for <span class="arithmatex">\(\gamma &lt; 5 / \overset{} {2}\)</span></p>
+<p><img alt="" src="images/16f8a08f62568c3c0341dc02897a9ebacbeba5c0faec02b34ad4c6c2bb236376.jpg" /></p>
+<p><img alt="" src="images/9f1c34f17c5cc7392b77d16bdd4e97c4b34715ea27efaa573e4eeda95d8d54eb.jpg" /><br />
+Figure 6. (a) Scatter plot of the NBTC centralities <span class="arithmatex">\(f_{i} ^{\mathrm{N B T}}\)</span> as a function of the corresponding components of the PEV of the adjacency matrix <span class="arithmatex">\(f_{i} ,\)</span> in synthetic uncorrelated networks with a power-law degree distribution. Network size <span class="arithmatex">\(\dot{N} = 10^{\dot{6}} .\)</span> . (b) Rescaled scatter plot of the NBTC centralitie <span class="arithmatex">\(f_{i} ^{\mathrm{{N B T}}} [ N \left. q^{2} \right. ] ^{1 / 2}\)</span> as a function of <span class="arithmatex">\(\dot{\mathbf{\eta}} _{i}\)</span> for a synthetic network with <span class="arithmatex">\(\gamma = 3 . 5\)</span> and size <span class="arithmatex">\(N = 10^{6}\)</span></p>
+<p>Eigenvector localization in real networks. For real networks, which have fixed size and do not allow for a finite size scaling analysis, localization is necessarily a more blurred concept. The value of <span class="arithmatex">\(\mathrm{\Delta} Y_{\Lambda} .\)</span> gauges how localized the PEV is, but it does not permit to unambiguously declare a network localized or not. However, also in this case it is possible to detect, as in synthetic networks, the existence of diferent localization modes. We consider here several real complex networks exhibiting large variations in size, heterogeneity and degree correlations (see Methods and Supplemental Material, SM, for details).</p>
+<p>The linear relation between <span class="arithmatex">\(f_{i}\)</span> and the degree <span class="arithmatex">\(q_{i}\)</span> is not fulfilled in real networks (see Supplementary Figure <span class="arithmatex">\(\mathrm{S F} {-} 1 )\)</span> probably due to the presence of nontrivial degree correlations (see SM) which are absent in the synthetic networks The efective localization on the max-K core is however still present in some cases. In Fig. 7 we plot for these net works the squared PEV component <span class="arithmatex">\(f_{i} ^{2}\)</span> as a function of the K-core index. In some cases (HEP, Movies) all nodes in the max K-core have a comparable and large EC (as in synthetic networks for <span class="arithmatex">\(\gamma &lt; 5 / 2 )\)</span> , suggesting localization on the max K-core. In other cases (Internet, Amazon) one or a few nodes have a disproportionately large value of <span class="arithmatex">\(f_{i} ^{2} {\mathrm{:}}\)</span> , hinting at a localization around hubs, as in synthetic networks for large γ.</p>
+<p>To clarify the phenomenology we report in Table 1 for each of the real-world networks the values of the leading eigenvalue, and the factors <span class="arithmatex">\(\langle q^{2} \rangle / \langle q \rangle\)</span> and <span class="arithmatex">\({\sqrt{q_{\operatorname* {m a x}}}} .\)</span> The analysis here is complicated by the presence of degree correlation (see SM), which invalidate the direct connection<sup>11</sup> between <span class="arithmatex">\(\Lambda_{1}\)</span> and the largest between <span class="arithmatex">\(\sqrt{q_{\mathrm{m a x}}}\)</span> and <span class="arithmatex">\(\langle q^{2} \rangle / \langle q \rangle^{14}\)</span> However, in some cases (Internet, Amazon) the leading eigenvalue is much closer to <span class="arithmatex">\(\sqrt{\boldsymbol{q} _{\mathrm{m a x}}}\)</span> than to <span class="arithmatex">\(\langle q^{2} \rangle / \langle q \rangle \colon\)</span> : This suggests a localization around the hub and matches well with Fig. 7. In others the opposite is true: <span class="arithmatex">\(\Lambda_{1}\)</span> is very far from <span class="arithmatex">\(\sqrt{q_{\mathrm{m a x}}}\)</span> and relatively close to <span class="arithmatex">\(\langle q^{2} \rangle / \langle q \rangle\)</span> , hinting at a localization on the max <span class="arithmatex">\(K .\)</span> -core, again in agreement with Fig. 7. In other cases (P2P, WWW), values are so close that no conclusion can be drawn.</p>
+<p>A further confirmation of this picture is provided by the analysis of the NBT centrality. When localization occurs on hubs one expects the elimination of backtracking paths to have a strong impact, as self-feedback efects are tamed. In this case we expect the ratio between the IPR for the NBTC and the IPR for the adjacency matrix to be small. On the contrary, when the localization occurs on the max K-core, passing from the adjacency to the NBT matrix would not lead to a big change and we expect the ratio to be close to 1. Table 1 confirms this expectation: the IPR ratio is small when the leading eigenvalue <span class="arithmatex">\(\Lambda_{1}\)</span> is essentially given by <span class="arithmatex">\(\sqrt{q_{\mathrm{m a x}}}\)</span> (localization on hubs) while it is close to 1 when <span class="arithmatex">\(\Lambda_{1}\)</span> is closer to the <span class="arithmatex">\(\langle q^{2} \rangle / \langle q \rangle\)</span> factor (localization on the max K-core). A visual representation of these results is provided in Fig. <span class="arithmatex">\(^{8 ,}\)</span> where we plot the IPR ratio as a function of the ratio between <span class="arithmatex">\(\Lambda_{1}\)</span> and <span class="arithmatex">\(\sqrt{q_{\mathrm{m a x}}}\)</span> . As we can see, networks in which the PEV is localized in the max K-core are situated in the upper right corner of the panel, while the lower left corner shows the networks with localization occurring on the hubs.</p>
+<h2 id="discussion">Discussion</h2>
+<p>The properties of the principal eigenvector (PEV), and associated largest eigenvalue, of the adjacency matrix defining a network have a notable relevance as characterizing several features of its structure and its efects on the behavior of dynamical processes running on top of it. Most important among these features is the role of the components of the PEV as a measure of a node’s importance, the so-called eigenvector centrality. One of the prop erties of the PEV that has recently attracted the interest of the statistical physics community is its localization. In the case of networks with a power-law degree distribution <span class="arithmatex">\(P ( q ) \sim q^{- \gamma}\)</span> , initial research on this subject<sup>14,16</sup> suggested that, <span class="arithmatex">\(\mathrm{f o r} \gamma &gt; 5 / 2\)</span> , the PEV is localized on the nodes with largest degree. On the other hand, for <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> , the PEV should be delocalized.</p>
+<p><img alt="" src="images/f0ddfee5376b67f25322114018162764ee7bbbe5e9f659806b86958150227c29.jpg" /><br />
+Figure 7. Scatter plot of squared PEV components of the adjacency matrix of the real-world networks as a function of the K-core index.</p>
+<table><tr><td>Network</td><td>N</td><td> $\langle q\rangle$ </td><td> $\langle q^{2}\rangle/\langle q\rangle$ </td><td> $\sqrt{q_{\text{max}}}$ </td><td> $\Lambda_{1}$ </td><td>Y ( $\Lambda_{1}$ )</td><td>Y ( $\Lambda_{1}^{NBT}$ )</td><td>IPR Ratio</td></tr><tr><td>HEP</td><td>12006</td><td>19.74</td><td>129.94</td><td>22.16</td><td>244.93</td><td>0.003890</td><td>0.003887</td><td>0.9993</td></tr><tr><td>Slashdot</td><td>82168</td><td>12.27</td><td>149.71</td><td>50.52</td><td>134.63</td><td>0.002174</td><td>0.002006</td><td>0.9228</td></tr><tr><td>Amazon</td><td>403394</td><td>12.11</td><td>30.55</td><td>52.46</td><td>57.15</td><td>0.089122</td><td>0.005423</td><td>0.0608</td></tr><tr><td>Internet</td><td>10790</td><td>4.16</td><td>259.46</td><td>48.34</td><td>59.58</td><td>0.066138</td><td>0.015783</td><td>0.2386</td></tr><tr><td>Email</td><td>36692</td><td>10.02</td><td>140.08</td><td>37.19</td><td>118.42</td><td>0.003790</td><td>0.003446</td><td>0.9091</td></tr><tr><td>P2P</td><td>62586</td><td>4.73</td><td>11.60</td><td>9.75</td><td>13.18</td><td>0.000921</td><td>0.000592</td><td>0.6429</td></tr><tr><td>Movies</td><td>81860</td><td>89.53</td><td>594.92</td><td>61.55</td><td>817.36</td><td>0.000640</td><td>0.000638</td><td>0.9966</td></tr><tr><td>WWW</td><td>325729</td><td>6.69</td><td>280.68</td><td>103.54</td><td>184.93</td><td>0.022726</td><td>0.008357</td><td>0.3677</td></tr><tr><td>PGP</td><td>10680</td><td>4.55</td><td>18.88</td><td>14.32</td><td>42.44</td><td>0.016622</td><td>0.015989</td><td>0.9619</td></tr></table>
+
+<p>Table 1. Relevant metrics for the various real-world networks with and the measured value of the IPR ratio between <span class="arithmatex">\(\pmb{Y} ( \pmb{\Lambda} _{1} ^{N B T} )\)</span> and <span class="arithmatex">\(Y ( \pmb{\Lambda} _{1} )\)</span> . Size and other information on the networks are provided in the Supplementary Information.</p>
+<p>In this paper we have shown that eigenvector localization in heterogeneous networks is described by a more complex picture. Thus, we present evidence that for all power-law distributed networks the PEV is always localized to some extent. In the case of synthetic power-law distributed networks, we observe that, while for mildly hetero geneous networks with <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> the PEV is indeed localized on the nodes with maximum degree (the hubs), in the case of high heterogeneity, with <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> , the PEV shows a peculiar form of localization, its components <span class="arithmatex">\(f_{i}\)</span> being proportional to the node’s degree, <span class="arithmatex">\(f_{i} \sim q_{i}\)</span> . This particular proportionality induces an efective localization on the maximum K-core of the network, defined as the core of maximum index in a K-core decomposition. This max K-core concentrates a finite fraction of the normalized weight of the PEV, despite the fact that the size of the max K-core is sublinear with the network size. In the case of real world networks, the elucidation of the PEV localization is not so clearcut. We however provide evidence for an analogous scenario as that observed in synthetic networks, where the nature of the localization of the PEV is ruled by its associated largest eigenvalue <span class="arithmatex">\(\Lambda_{1} \mathbf{:}\)</span> When <span class="arithmatex">\(\Lambda_{1}\)</span> is close to the mean-field value <span class="arithmatex">\(\langle q^{2} \rangle / \langle q \rangle\)</span> , localization on the max K-core is expected. On the other hand, when the largest eigenvalue is close to <span class="arithmatex">\(\sqrt{q_{\mathrm{m a x}}}\)</span> , localization takes place on the hubs.</p>
+<p>The results presented here give a new perspective on complex topologies from several viewpoints. Firstly, it is common knowledge that networks with <span class="arithmatex">\(\gamma &gt; 3\)</span> are fundamentally diferent from those with <span class="arithmatex">\(\gamma &lt; 3\)</span> (scale-free net works) because the divergence of the second moment of the degree distribution has a series of crucial efects. A tacit corollary is that networks with <span class="arithmatex">\(2 &lt; \gamma &lt; 3\)</span> have essentially the same properties. Our paper, together with other recent results<sup>14</sup>, points out that networks with exponent <span class="arithmatex">\(\gamma &lt; 5 / 2\)</span> are in many respects qualitatively diferent from those with <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> . Secondly, our results point out the weakness of eigenvector centrality as a measure of central ity for power-law networks. Indeed, for <span class="arithmatex">\(\gamma &lt; 5 / 2 ,\)</span> eigenvector centrality does not provide more information than degree centrality, while for <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> the eigenvector localization on the hubs arises as a purely topological artifact. Alternative measures of centrality, based on the Hashimoto non-backtracking matrix<sup>16,30,31</sup> are also not free from localization efects. Finally, from a dynamical point of view, largest eigenvalues and the associated eigenvectors are crucially related to the properties of processes on networks<sup>7,14,32</sup> and their localization efects should be taken properly into account when developing theories relying on the structure of the adjacency matrix.</p>
+<p><img alt="" src="images/a50cfae129b09c476baf7dc8bc89b7d92e6260f472d2c1f40f2dd0246d82837c.jpg" /><br />
+Figure 8. Ratio between the NBTC IPR and the IPR of the adjacency matrix as a function of the ratio between the largest eigenvalue and the square root of the maximum degree, for the real networks considered. The symbol codes are: square for localization on the max K-core; circle for localization on the hub; triangle up for networks in which <span class="arithmatex">\(\sqrt{q_{\mathrm{m a x}}}\)</span> is very close to <span class="arithmatex">\(\langle q^{2} \rangle / \langle q \rangle\)</span> , so no conclusion can be drawn; triangle down for the rest of networks.</p>
+<p>The localization properties described here call for a revision of our present understanding of heterogeneous topologies. Other networks properties, such as degree correlations, clustering or the presence of a community structure, might play a role in the localization of the PEV. The clarification of these efects, as well as the understanding of the nature of the mesoscopic subgraph on which the NBTC is localized for <span class="arithmatex">\(\gamma &gt; 5 / 2\)</span> , are still open questions, calling for further scientific efort.</p>
+<h2 id="methods">Methods</h2>
+<p>Real networks analyzed. We consider in our analysis the following real networks datasets:</p>
+<p>HEP: Collaboration network between authors of papers submitted to the High Energy Physics section of the online preprint server arXiv. Each node is a scientist. Two scientists are connected by an edge if they have coauthored a preprint<sup>33</sup>.</p>
+<p>•    Slashdot: User network of the Slashdot technology news website. Nodes represent users, which can tag each other as friends or foes. An edge represents the presence of a tagging between two users<sup>34</sup>.</p>
+<p>•    Amazon: Co-purchasing network from the online store Amazon. Nodes represent products, which are joined by edges if they are frequently purchased together<sup>35</sup>.</p>
+<p>•    Internet: Internet map at the Autonomous System level, collected at the Oregon route server. Vertices represent autonomous systems (aggregations of Internet routers under the same administrative policy), while edges represent the existence of border gateway protocol (BGP) peer connections between the corresponding autonomous systems<sup>36</sup>.</p>
+<p>•    Email: Enron email communication network. Nodes represent email addresses. An edge joins two addresses if they have exchanged at least one email<sup>34</sup>.</p>
+<p>•    P2P: Gnutella peer-to-peer file sharing network. Nodes represent hosts in the Gnutella system. An edge stands for a connection between two Gnutella hosts<sup>33</sup>.</p>
+<p>•    Movies: Network of movie actor collaborations obtained from the Internet Movie Database (IMDB). Each vertex represents an actor. Two actors are joined by an edge if they have co-starred at least one movie<sup>37</sup>.</p>
+<p>•    WWW: Notre Dame web graph. Nodes represent web pages from University of Notre Dame. Edges indicate the presence of a hyperlink pointing from one page to another<sup>38</sup>.</p>
+<p>•    PGP: Social network defined by the users of the pretty-good-privacy (PGP) encryption algorithm for secure information exchange. Vertices represent users of the PGP algorithm. An edge between two vertices indicates that each user has signed the encryption key of the other<sup>39</sup>.</p>
+<p>Some of this networks are actually directed. We have symmetrized them, rendering them undirected, to perform our analyses.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>
+<p>Newman, M. E. J. Networks: An introduction (Oxford University Press, Oxford, 2010).</p>
+</li>
+<li>
+<p>Freeman, L. C. A set of measures of centrality based on betweenness. Sociometry 40, 35–41 (1977).</p>
+</li>
+<li>
+<p>Seidman, S. B. Network structure and minimum degree. Social Networks 5, 269 –287 (1983).</p>
+</li>
+<li>
+<p>Bonacich, P. Factoring and weighting approaches to status scores and clique identification. Journal of Mathematical Sociology 2, 113–120 (1972).</p>
+</li>
+<li>
+<p>Katz, L. A new status index derived from sociometrix analysis. Psychometrika 18, 39–43 (1953).</p>
+</li>
+<li>
+<p>Brin, S. &amp; Page, L. The anatomy of a large-scale hypertextual Web search engine. Computer Networks and ISDN Systems 30, 107–117 (1998).</p>
+</li>
+<li>
+<p>Restrepo, J. G., Ott, E. &amp; Hunt, B. R. Onset of synchronization in large networks of coupled oscillators. Phys. Rev. E 71, 036151 (2005).</p>
+</li>
+<li>
+<p>Chakrabarti, D., Wang, Y., Wang, C., Leskovec, J. &amp; Faloutsos, C. Epidemic thresholds in real networks. ACM Trans. Inf. Syst. Secur. 10, 1–26 (2008).</p>
+</li>
+<li>
+<p>Castellano, C. &amp; Pastor-Satorras, R. Thresholds for epidemic spreading in networks. Phys. Rev. Lett. 105, 218701 (2010)</p>
+</li>
+<li>
+<p>Farkas, I. J., Derényi, I., Barabási, A.-L. &amp; Vicsek, T. Spectra of “real-world” graphs: Beyond the semicircle law. Phys. Rev. E 64, 026704 (2001).</p>
+</li>
+<li>
+<p>Chung, F., Lu, L. &amp; Vu, V. Spectra of random graphs with given expected degrees. Proc. Natl. Acad. Sci. USA 100, 6313–6318 (2003).</p>
+</li>
+<li>
+<p>Dorogovtsev, S. N., Goltsev, A. V., Mendes, J. F. F. &amp; Samukhin, A. N. Spectra of complex networks. Phys. Rev. E 68, 046109 (2003).</p>
+</li>
+<li>
+<p>Kühn, R. Spectra of sparse random matrices. Journal of Physics A: Mathematical and Theoretical 41, 295002 (2008).</p>
+</li>
+<li>
+<p>Goltsev, A. V., Dorogovtsev, S. N., Oliveira, J. G. &amp; Mendes, J. F. F. Localization and Spreading of Diseases in Complex Networks. Phys. Rev. Lett 109, 128702 (2012).</p>
+</li>
+<li>
+<p>Nadakuditi, R. R. &amp; Newman, M. E. J. Spectra of random graphs with arbitrary expected degrees. Phys. Rev. E 87, 012803 (2013).</p>
+</li>
+<li>
+<p>Martin, T., Zhang, X. &amp; Newman, M. E. J. Localization and centrality in networks. Phys. Rev. E 90, 052808 (2014).</p>
+</li>
+<li>
+<p>Ferreira. S. C.. Castellano. C. &amp; Pastor-Satorras. R. Epidemic thresholds of the susceptible-infected-susceptible model on networks A comparison of numerical and theoretical results. Phys. Rev. E 86, 041125 (2012).</p>
+</li>
+<li>
+<p>Catanzaro, M., Boguñá, M. &amp; Pastor-Satorras, R. Generation of uncorrelated random scale-free networks. Phys. Rev. E 71, 027103 (2005).</p>
+</li>
+<li>
+<p>Molloy, M. &amp; Reed, B. A critical point for random graphs with a given degree sequence. Random Struct. Algorithms 6, 161 (1995).</p>
+</li>
+<li>
+<p>Molloy, M. &amp; Reed, B. The size of the giant component of a random graph with a given degree sequence. Combinatorics, Probab. Comput. 7, 295 (1998).</p>
+</li>
+<li>
+<p>Boguñá, M., Pastor-Satorras, R. &amp; Vespignani, A. Cut-ofs and finite size efects in scale-free networks. Euro. Phys. J. B 38, 205–210 (2004).</p>
+</li>
+<li>
+<p>Dorogovtsev, S. N., Goltsev, A. V. &amp; Mendes, J. F. F. Critical phenomena in complex networks. Rev. Mod. Phys. 80, 1275–1335 (2008).</p>
+</li>
+<li>
+<p>Boguñá, M., Castellano, C. &amp; Pastor-Satorras, R. Langevin approach for the dynamics of the contact process on annealed scale-free networks. Phys. Rev. E 79, 036110 (2009)</p>
+</li>
+<li>
+<p>Pastor-Satorras, R., Vázquez, A. &amp; Vespignani, A. Dynamical and correlation properties of the Internet. Phys. Rev. Lett. 87, 258701 (2001).</p>
+</li>
+<li>
+<p>Dorogovtsev, S. N. &amp; Mendes, J. F. F. Evolution of networks. Advances in Physics 51, 1079–1187 (2002).</p>
+</li>
+<li>
+<p>Gantmacher, F. R. The theory of matrices, vol. II (Chelsea Publishing Company, New York, 1974).</p>
+</li>
+<li>
+<p>Dorogovtsev, S. N., Goltsev, A. V. &amp; Mendes, J. F. F. k-core organization of complex networks. Phys. Rev. Lett. 96, 040601 (2006).</p>
+</li>
+<li>
+<p>Pastor-Satorras, R., Castellano, C., Van Mieghem, P. &amp; Vespignani, A. Epidemic processes in complex networks. Rev. Mod. Phys. 87, 925–979 (2015).</p>
+</li>
+<li>
+<p>Castellano, C. &amp; Pastor-Satorras, R. Competing activation mechanisms in epidemics on networks. Nature Scientific Reports 2, 371 (2012).</p>
+</li>
+<li>
+<p>Hashimoto, K. Zeta functions of finite graphs and representations of p-adic groups. Adv. Stud. Pure Math. 15, 211–280 (1989).</p>
+</li>
+<li>
+<p>Krzakala, F. et al. Spectral redemption in clustering sparse networks. Proceedings of the National Academy of Sciences 110, 20935–20940 (2013).</p>
+</li>
+<li>
+<p>Karrer, B., Newman, M. E. J. &amp; Zdeborová, L. Percolation on sparse networks. Phys. Rev. Lett. 113, 208702 (2014).</p>
+</li>
+<li>
+<p>Kleinberg, J. L. J. &amp; Faloutsos, C. Graph evolution: Densification and shrinking diameter. ACM Trans. Knowl. Discov. Data 1, 2 (2007).</p>
+</li>
+<li>
+<p>Leskovec, J., Lang, K., Dasgupta, A. &amp; Mahoney, M. Community structure in large networks: Natural cluster sizes and the absence oflarge well-defined clusters. Internet Mathematics 6, 29-123 (2009).</p>
+</li>
+<li>
+<p>Leskovec, J., Adamic, L. A. &amp; Huberman, B. A. The dynamics of viral marketing. ACM Trans. Web 1 (2007).</p>
+</li>
+<li>
+<p>Pastor-Satorras, R. &amp; Vespignani, A. Evolution and structure of the Internet: A statistical physics approach (Cambridge University Press, Cambridge, 2004).</p>
+</li>
+<li>
+<p>Barabási, A.-L. &amp; Albert, R. Emergence of scaling in random networks. Science 286, 509–512 (1999).</p>
+</li>
+<li>
+<p>Albert, R., Jeong, H. &amp; Barabási, A.-L. Diameter of the World-Wide Web. Nature 401, 130–131 (1999).</p>
+</li>
+<li>
+<p>Boguñá, M., Pastor-Satorras, R., Daz-Guilera, A. &amp; Arenas, A. Models of social networks based on social distance attachment. Phys. Rev. E 70, 056122 (2004).</p>
+</li>
+</ol>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>R.P.-S. acknowledges financial support from the Spanish MINECO, under projects No. FIS2010-21781-C02-01 and FIS2013-47282-C2-2, EC FET-Proactive Project MULTIPLEX (Grant No. 317532), and ICREA Academia, funded by the Generalitat de Catalunya.</p>
+<h2 id="author-contributions">Author Contributions</h2>
+<p>R.P.-S. and C.C. designed the research. R.P.-S. performed the data analysis. R.P.-S. and C.C. wrote the paper.</p>
+<h2 id="additional-information">Additional Information</h2>
+<p>Supplementary information accompanies this paper at http://www.nature.com/srep</p>
+<p>Competing financial interests: The authors declare no competing financial interests.</p>
+<p>How to cite this article: Pastor-Satorras, R. and Castellano, C. Distinct types of eigenvector localization in networks. Sci. Rep. 6, 18847; doi: 10.1038/srep18847 (2016).</p>
+<p><img alt="" src="images/7bce736477c69da62d6b7caae7902a5d9b71b146d8a75c73f1d367b6be0ee8d2.jpg" /></p>
+<p>Ccc This work is licensed under a Creative Commons Attribution 4.0 International License. The images BY or other third party material in this article are included in the article’s Creative Commons license, unless indicated otherwise in the credit line; if the material is not included under the Creative Commons license, users will need to obtain permission from the license holder to reproduce the material. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="index.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: 封面">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                封面
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../notes/index.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 笔记">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                笔记
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+      
+        <script src="../../../javascripts/pseudocode-render.js"></script>
+      
+        <script src="../../../javascripts/translate-toggle.js"></script>
+      
+        <script src="../../../javascripts/abbr-tooltip.js"></script>
+      
+    
+  </body>
+</html>
