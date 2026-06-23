@@ -18,6 +18,16 @@
 
     [:octicons-arrow-right-24: 开始阅读](books/ml/stanford-ml-notes/index.md)
 
+-   :material-book-open-variant: __论系统工程（新世纪版）__
+
+    ---
+
+    *钱学森等 · 中文*
+
+    系统科学与系统工程的经典文集，收录钱学森等学者关于系统工程、社会工程、军事系统工程、系统学等 50 余篇开创性文章。
+
+    [:octicons-arrow-right-24: 开始阅读](books/engineering/lun-system-engineering/index.md)
+
 -   :material-book-open-variant: __与神对话__
 
     ---
