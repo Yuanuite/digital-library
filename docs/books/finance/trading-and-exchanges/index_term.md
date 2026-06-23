@@ -376,7 +376,7 @@ market versus limit orders, [381](#part0029.html_page_381)
 primary determinants, *[311](#part0025.html_page_311),*
 [312](#part0025.html_page_312)--13
 
-and public traders' competiton with dealers,
+and public traders' competition with dealers,
 [310](#part0025.html_page_310)--11
 
 secondary determinants, *[312](#part0025.html_page_312),*
@@ -1303,7 +1303,7 @@ custodian, *[38](#part0011.html_page_38),*
 
 customer service agent, *[147](#part0015.html_page_147)*
 
-CX\. *See* Cantor Financial Futures Exchange
+CX. *See* Cantor Financial Futures Exchange
 
 cyclic arbitrage, *[356](#part0028.html_page_356),*
 [357](#part0028.html_page_357)
@@ -3418,7 +3418,7 @@ missed trade opportunity costs,
 
 mixed offers, *[362](#part0028.html_page_362)*
 
-MMI\. *See* Major Market Index (MMI)
+MMI. *See* Major Market Index (MMI)
 
 model risk, *[363](#part0028.html_page_363),
 [368](#part0028.html_page_368)--69*
@@ -3804,7 +3804,7 @@ definiton of, [195](#part0017.html_page_195),
 
 trading strategy, [196](#part0017.html_page_196)
 
-order book officals, *[500](#part0038.html_page_500)*
+order book officials, *[500](#part0038.html_page_500)*
 
 order books, *[90](#part0013.html_page_90),
 [109](#part0013.html_page_109)--10,*
