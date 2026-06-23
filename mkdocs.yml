@@ -27,7 +27,9 @@ theme:
     - announce.dismiss
     - content.code.copy
     - content.code.annotate
-    - navigation.expand
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.prune
     - navigation.footer
     - navigation.indexes
     - navigation.instant
@@ -116,9 +118,14 @@ nav:
 
 use_directory_urls: false
 markdown_extensions:
+  - abbr
+  - footnotes
   - md_in_html
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.mark
+  - pymdownx.snippets:
+      base_path: docs
 extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css
@@ -128,3 +135,5 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js
   - javascripts/pseudocode-render.js
   - javascripts/translate-toggle.js
+extra:
+  generator: false

@@ -1,3 +1,5 @@
+--8<-- "snippets/abbreviations.md"
+
 # Why Stock Markets Crash
 
 **Critical Events in Complex Financial Systems**
