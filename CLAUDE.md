@@ -89,11 +89,17 @@ RAW --extract--> EXTRACTED --clean+split--> STRUCTURED --wire+build--> LIVE
 
 **Hugo 主题覆盖** — 修改主题功能时，一律用项目级文件覆盖，不动子模块 `themes/hugo-book/`。优先级：`assets/` > `layouts/` > `i18n/` > CI deploy.yml patch。
 
-**暗色模式 CSS 特异性** — 新增任何暗/亮双模式样式时，选择器必须写 `html[data-theme="dark"]` 而非 `[data-theme="dark"]`。后者特异性 (0,1,0) 与主题 `:root` 相同，主题后加载会覆盖自定义变量。加 `html` 前缀 → (0,1,1) 碾压主题。
+**暗色模式三条铁律**：
 
-**colorScheme 同步** — 新增涉及暗/亮切换的 JS 时，设置 `data-theme` 的同时必须设 `document.documentElement.style.colorScheme = t`，否则原生控件（滚动条、表单、`<select>`）不跟随。head 内联防闪烁脚本也要同步。
+1. **选择器用 `html[data-theme]` 前缀** — 特异性 (0,1,1) 碾压主题 `:root` (0,1,0) 和 `@media`。任何时候不能只用 `[data-theme]` 或依赖 `@media (prefers-color-scheme)`。
 
-**head 防闪烁** — 新增依赖 localStorage 的 UI 状态时，必须在 `layouts/_partials/docs/inject/head.html` 加同步内联脚本，放在 `<link>` 之前，避免页面渲染后再切换导致闪烁。
+2. **三处同步** — 每个 CSS 变量必须同时出现在：
+   - `assets/_custom.scss` 的 `html[data-theme]` 块（CSS 级兜底）
+   - `layouts/_partials/docs/inject/head.html` 防闪烁脚本（页面加载前，inline 最高优先级）
+   - `static/theme-toggle.js` 的 `setTheme()`（点击时 `setProperty` 覆盖旧值）
+   缺一处就会在对应时机失效。
+
+3. **JS toggle 用 `setProperty`，不靠 `dataset`** — `dataset.theme` 触发 CSS 规则，但 head.html 加载时已用 `setProperty` 设了 inline 值（优先级最高）。toggle 时必须同样 `setProperty` 逐变量覆盖，否则 var() 永远取加载时的旧值。
 
 ## 任务委派（Haiku 模型）
 
