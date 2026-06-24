@@ -53,6 +53,13 @@ themes/hugo-book/          # Git submodule
 6. 更新 `content/_index.md` 首页书架
 7. `hugo serve` 预览 → push → CI 自动部署
 
+## 通用原则
+
+**奥卡姆剃刀（精简化代码）** — 任何改动尽可能小：能改一行不改两行，能复用不新建，能局部修改不重构。目标是解决当前问题，不顺便做"优化"。
+
+**Hugo 主题覆盖** — 修改主题功能时，一律用项目级文件覆盖，不动子模块 `themes/hugo-book/`。优先级：`assets/` > `layouts/` > `i18n/` > CI deploy.yml patch。
+
 ## fix 流程
-1. fix之后需要询问用户是否push
-2. 纠错、push等简单内容采用haiku agent处理
+1. fix 之后需要询问用户是否 push
+2. 纠错、push 等简单内容采用 haiku agent 处理
+3. push之后主动整理提炼fix过程中预计在维护过程中的经验，加入到CLAUDE.md中
