@@ -1,3 +1,8 @@
+{{- /* 防止亮/暗闪烁：页面渲染前从 localStorage 读取主题 */ -}}
+<script>
+  (function(){var t=localStorage.getItem('book-theme');if(t)document.documentElement.dataset.theme=t})()
+</script>
+
 {{- /* 字体：Noto Sans SC（思源黑体）+ Inter（拉丁/数字） */ -}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +22,8 @@
 <link rel="stylesheet" href="{{ "pseudocode.min.css" | relURL }}">
 <script defer src="{{ "pseudocode.min.js" | relURL }}"></script>
 
-{{- /* 代码复制按钮 + 缩写 tooltip + KaTeX 初始化 */ -}}
+{{- /* 代码复制按钮 + 缩写 tooltip + KaTeX 初始化 + 主题切换 */ -}}
 <script defer src="{{ "code-copy.js" | relURL }}"></script>
 <script defer src="{{ "abbr-tooltip.js" | relURL }}"></script>
 <script defer src="{{ "katex-init.js" | relURL }}"></script>
+<script defer src="{{ "theme-toggle.js" | relURL }}"></script>

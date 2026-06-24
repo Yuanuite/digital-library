@@ -642,3 +642,56 @@ body {
   line-height: 1.4;
   pointer-events: none;
 }
+
+// ============================================
+// 主题切换按钮 + 手动覆盖系统偏好
+// ============================================
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.4rem;
+  margin-bottom: 0.8rem;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+  &:hover { background: var(--gray-200); }
+}
+
+// 手动 dark mode：覆盖 prefers-color-scheme
+[data-theme="dark"] {
+  --body-background: #1a1a1a;
+  --body-background-tint: none;
+  --body-font-color: #e0e0e0;
+  --color-link: #4db6ac;
+  --color-visited-link: #4db6ac;
+  --icon-filter: brightness(0) invert(1);
+  --gray-100: #2d2d2d;
+  --gray-200: #3d3d3d;
+  --gray-500: #a0a0a0;
+  color-scheme: dark;
+  .markdown .solution {
+    border-left-color: #66bb6a;
+    background: rgba(46, 125, 50, 0.15);
+  }
+}
+[data-theme="light"] {
+  --body-background: #ffffff;
+  --body-background-tint: none;
+  --body-font-color: #000000;
+  --color-link: #00897b;
+  --color-visited-link: #00897b;
+  --icon-filter: none;
+  --gray-100: #f0f0f0;
+  --gray-200: #d0d0d0;
+  --gray-500: #707070;
+  color-scheme: light;
+  .markdown .solution {
+    border-left-color: #2e7d32;
+    background: #e8f5e9;
+  }
+}
