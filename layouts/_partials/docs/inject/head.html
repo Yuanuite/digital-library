@@ -1,0 +1,48 @@
+{{- /* 字体：Noto Sans SC（思源黑体）+ Inter（拉丁/数字） */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+
+{{- /* 代码语法高亮（Chroma）*/ -}}
+{{- with resources.Get "syntax.css" | minify -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end -}}
+
+{{- /* KaTeX: 全站加载，auto-render 处理 $...$ 和 $...$ */ -}}
+<link rel="stylesheet" href="{{ "katex/katex.min.css" | relURL }}">
+<script defer src="{{ "katex/katex.min.js" | relURL }}"></script>
+<script defer src="{{ "katex/auto-render.min.js" | relURL }}"></script>
+
+{{- /* pseudocode.js: RL 书的算法块（<pre class="pseudocode">） */ -}}
+<link rel="stylesheet" href="{{ "pseudocode.min.css" | relURL }}">
+<script defer src="{{ "pseudocode.min.js" | relURL }}"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 1. KaTeX 自动渲染（处理 $...$ 和 $$...$$）
+    if (window.renderMathInElement) {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "\\[", right: "\\]", display: true },
+          { left: "\\(", right: "\\)", display: false },
+          { left: "$", right: "$", display: false }
+        ],
+        ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+        ignoredClasses: ["pseudocode"],
+        throwOnError: false
+      });
+    }
+
+    // 2. pseudocode.js 渲染算法块
+    if (window.pseudocode) {
+      document.querySelectorAll("pre.pseudocode").forEach(function (el) {
+        try {
+          pseudocode.renderElement(el, { lineNumber: false });
+        } catch (e) {
+          console.error("pseudocode error:", e, el);
+        }
+      });
+    }
+  });
+</script>

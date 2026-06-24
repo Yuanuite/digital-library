@@ -1,0 +1,106 @@
+{{/*
+  覆盖主题 menu-filetree。
+  左侧只放固定入口（书架/笔记/论文/标签）。
+  书名 + 章节树仅在「正在看那本书」时出现（IsAncestor），否则不显示任何书。
+  100 本书也不撑爆侧边栏——找书靠「书架」入口和搜索。
+*/}}
+{{ $currentPage := . }}
+{{ $booksSection := .Site.GetPage "/books" }}
+{{ $notesSection := .Site.GetPage "/notes" }}
+{{ $papersSection := .Site.GetPage "/papers" }}
+{{ $tagsPage := .Site.GetPage "/tags" }}
+
+<ul>
+  {{/* 书架入口（仅在该页本身 active，不因子页面高亮）*/}}
+  {{ with $booksSection }}
+    <li>
+      <a href="{{ .RelPermalink }}" class="{{ if eq $currentPage . }}active{{ end }}">
+        {{ partial "docs/title" . }}
+      </a>
+    </li>
+  {{ end }}
+
+  {{/* 当前正在看的书：显示书名 + 展开章节树；不在任何书内时不显示 */}}
+  {{ range $booksSection.Sections }}
+    {{ if .IsAncestor $currentPage }}
+      <li>
+        {{ template "book-page-link" (dict "Page" . "CurrentPage" $currentPage) }}
+        {{ template "book-section-children" (dict "Section" . "CurrentPage" $currentPage) }}
+      </li>
+    {{ end }}
+  {{ end }}
+
+  {{/* 静态入口：笔记 / 论文 / 标签 / 参考 */}}
+  {{ $refSection := .Site.GetPage "/reference" }}
+  {{ with $notesSection }}
+    <li>{{ template "menu-static-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
+  {{ end }}
+  {{ with $papersSection }}
+    <li>{{ template "menu-static-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
+  {{ end }}
+  {{ with $refSection }}
+    <li>{{ template "menu-static-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
+  {{ end }}
+  {{ with $tagsPage }}
+    <li>{{ template "menu-static-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
+  {{ end }}
+</ul>
+
+{{ define "menu-static-link" }}
+  {{ $current := eq .CurrentPage .Page }}
+  {{ $ancestor := .Page.IsAncestor .CurrentPage }}
+  <a href="{{ .Page.RelPermalink }}" class="{{ if or $current $ancestor }}active{{ end }}">
+    {{ partial "docs/title" .Page }}
+  </a>
+{{ end }}
+
+{{ define "book-section-children" }}
+  <ul>
+    {{ range (where .Section.Pages "Params.bookHidden" "ne" true) }}
+      {{ if .IsSection }}
+        <li {{- if .Params.BookFlatSection }} class="book-section-flat" {{ end -}}>
+          {{ template "book-page-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
+          {{ template "book-section-children" (dict "Section" . "CurrentPage" $.CurrentPage) }}
+        </li>
+      {{ else if and .IsPage .Content }}
+        <li>
+          {{ template "book-page-link" (dict "Page" . "CurrentPage" $.CurrentPage) }}
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+{{ end }}
+
+{{ define "book-page-link" }}
+  {{ $current := eq .CurrentPage .Page }}
+  {{ $ancestor := .Page.IsAncestor .CurrentPage }}
+
+  {{ if .Page.Params.BookCollapseSection }}
+    <input type="checkbox" id="section-{{ md5 .Page }}" class="toggle" {{ if or $current $ancestor }}checked{{ end }} />
+    <label for="section-{{ md5 .Page }}" class="flex">
+      <a {{ if .Page.Content }}href="{{ .Page.RelPermalink }}"{{ else }}role="button"{{ end }} class="{{ if $current }}active{{ end }}">
+        {{ template "book-icon-title" .Page -}}
+      </a>
+      <img src="{{ partial "docs/icon" "chevron-right" }}" class="book-icon" alt="{{ partial "docs/text/i18n" "Expand" }}" />
+    </label>
+  {{ else if .Page.Params.BookHref }}
+    <a href="{{ .Page.Params.BookHref }}" class="{{ if $current }}active{{ end }}" target="_blank" rel="noopener">
+      {{ template "book-icon-title" .Page -}}
+    </a>
+  {{ else if .Page.Content }}
+    <a href="{{ .Page.RelPermalink }}" class="{{ if $current }}active{{ end }}">
+      {{ template "book-icon-title" .Page -}}
+    </a>
+  {{ else }}
+    <a>
+      {{ template "book-icon-title" .Page -}}
+    </a>
+  {{ end }}
+{{ end }}
+
+{{ define "book-icon-title" }}
+{{- with .Page.Params.BookIcon -}}
+  <img src="{{ partial "docs/icon" . }}" class="book-icon" alt="{{ partial "docs/text/i18n" "Expand" }}" />
+{{- end -}}
+{{- partial "docs/title" .Page -}}
+{{ end }}

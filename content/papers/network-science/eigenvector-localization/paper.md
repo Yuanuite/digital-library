@@ -1,0 +1,279 @@
+---
+title: "SCIENTIFIC REPORTS"
+weight: 1
+---
+# SCIENTIFIC REPORTS
+
+OPEN
+
+# Distinct types of eigenvector localization in networks
+
+Romualdo Pastor-Satorras<sup>1</sup> & Claudio Castellano<sup>2,3</sup>
+
+r eceived: 21 April 2015
+
+a ccepted: 27 November 2015
+
+Published: 12 January 2016
+
+The spectral properties of the adjacency matrix provide a trove of information about the structure and function of complex networks. In particul $\mathsf{I r} _{\pmb{\jmath}}$ the largest eigenvalue and its associated principal eigenvector are crucial in the understanding of nodes’ centrality and the unfolding of dynamical processes. Here we show that two distinct types of localization of the principal eigenvector may occur in heterogeneous networks. For synthetic networks with degree distribution $P ( q ) {\sim} q^{- \gamma}$ , localization occurs on the largest hub $\operatorname{i f} \gamma > 5 / 2 ;$ for $\gamma < 5 / 2$ a new type of localization arises on a mesoscopic subgraph associated with the shell with the largest index in the K-core decomposition. Similar evidence for the existence of distinct localization modes is found in the analysis of real-world networks. Our results open a new perspective on dynamical processes on networks and on a recently proposed alternative measure of node centrality based on the non-backtracking matrix.
+
+An issue of paramount significance regarding the analysis of networked systems is the identification of the most important (or central) vertices<sup>1</sup>. The centrality of a vertex may stem from the number of diferent vertices that can be reached from it, from the role it plays in the communication between diferent parts of the network, or from how closely knit its neighborhood is. Following these approaches, diferent centrality measures have been defined and exploited, such as degree centrality, betweenness centrality<sup>2</sup>, or the K-core index and associated K-core decomposition<sup>3</sup>. Among those definitions, one of the most relevant is based on the intuitive notion that nodes are central when they are connected to other central nodes. This concept is mathematically encoded in the eigenvector centrality<sup>4</sup> (EC) of node i, defined as the componen $f_{i}$ of the principal eigenvector (PEV) f associated with the largest eigenvalue $\Lambda_{1}$ of the adjacency matrix $A_{i j} .$ EC is the simplest of a family of centralities based on the spectral properties of the adjacency matrix including, among others, Katz’s centrality<sup>5</sup> and PageRank<sup>6</sup>.
+
+Apart from providing relevant information about the network structure<sup>1</sup>, the PEV and associated largest eigen value play a fundamental role in the theoretical understanding of the behavior of dynamical processes, such as synchronization<sup>7</sup> and spreading<sup>8,9</sup>, mediated by complex topologies. Considerable efort has thus been devoted in recent years to the study of the spectral properties of heterogeneous networks<sup>10–13</sup>. In this framework, Goltsev et al.<sup>14</sup> (see also<sup>15,16</sup>) have considered the localization of the PEV, i.e., whether its normalization weight is concen trated on a small subset of nodes or not. More in detail, let us consider an ensemble of networks of size $N ,$ with a PEV ${\bf \bar{\rho}} _{f_{i}}$ normalized as a standard Euclidean vector, i.e. $\textstyle \sum_{i} f_{i} ^{2} = 1$ . An eigenvector is localized on a subset V of size $N_{V}$ if a finite fraction of the normalization weight is concentrated on $\begin{array} {r} {V ( \sum_{i \in V} f_{i} ^{2} \sim \mathcal{O} ( 1 ) )} \end{array}$ ) despite the fact that V is not extensive, $\mathrm{i} . e . , N_{V}$ is not proportional to N. This includes the case of localization on a finite set of nodes $( \mathrm{i} . e . N_{V}$ independent of $N , N_{V} = 1$ in the extreme case of localization on a single node), but also the case of localization on a mesoscopic subset of nodes for which $N_{V} {\sim} N^{\beta}$ with $\beta < 1$ 1. Otherwise, the eigenvector is instead delocalized, and a finite fraction of the nodes $N_{V} {\sim} N$ contribute to the normalization weight, implying that their components are $f_{i} {\sim} N^{- 1 / 2}$
+
+In this context, Goltsev et al.<sup>14</sup> study the localization in power-law distributed networks, with a degree distri bution scaling as $P ( q ) \sim q^{- \gamma}$ , for which the leading eigenvalue $\Lambda_{1}$ is essentially given by the maximum between $\langle q^{2} \rangle / \langle q \rangle$ and $\sqrt{q_{\mathrm{m a x}}} ,$ , where $q_{\mathrm{m a x}}$ is the largest degree in the network<sup>9,11</sup>. For $\gamma > 5 / 2$ , where $\Lambda_{1} \sim \sqrt{q_{\mathrm{m a x}}} ;$ , Goltsev $e t a l . ^{14}$ find that the PEV becomes localized around the hub with degree $q_{\mathrm{m a x}} ^{\mathrm{~ \ ~} 14}$ . On the other hand, they argue that, for $\gamma < 5 / 2 .$ , when $\Lambda_{1} \sim \big < q^{2} \big > / \big < q \big >$ , the PEV is delocalized. These observations are relevant in diferent contexts. Firstly, they point out a weakness of EC as a measure of centrality for heterogeneous power-law networks $( \gamma > 5 / 2 )$ , because of the exceedingly large role of the largest hub<sup>16</sup>. On the other hand, in the so-called quenched mean-field approach<sup>9,17</sup> to epidemic spreading on networks, the density of infected individuals in the steady state can be related to the properties of the $\mathrm{P E V^{14}}$ . The localization occurring for large γ implies that the density of infected individuals in the steady state in those processes might not be an extensive quantity, casting doubts on the validity of this theoretical approach and on the actual onset of the endemic infected state.
+
+Here we show that the localization properties of the adjacency matrix PEV for heterogeneous (power-law distributed) networks are described by a picture much more complex than previously believed. In fact, we provide strong numerical evidence that the EC in heterogeneous networks never achieves full delocalization. In the case of uncorrelated synthetic networks with a power-law degree distribution, we obtain, by means of a finite-size scaling analysis, that for mild levels of heterogeneity (with $\gamma > 5 / 2 )$ , the EC is strongly localized on the hubs, as previously argued. For high heterogeneity $( \gamma < \bar{5} / 2 )$ ), however, we point out that the $\begin{array} {r} {\check{\mathrm{E C}} ,} \end{array}$ as measured by the components of the PEV, is highly correlated with the corresponding node’s degree. This strong correlation results in an efective localization on a mesoscopic subgraph, that can be identified as the shell with the largest index in the K-core decom position of the network<sup>3</sup>. The paper of Goltsev et al.<sup>14</sup> is perfectly correct for what concerns the case $\gamma > 5 / 2$ but, by only considering the possibility of localization on a finite set of nodes, could not detect the mesoscopic localization occurring for $\gamma < 5 / 2$ . In order to overcome the localization efects intrinsic of the $\mathrm{E C} ,$ a new centrality measure, based on the largest eigenvalue of the Hashimoto, or non-backtracking, matrix, has been recently proposed<sup>16</sup>. We observe that this new centrality is not completely free from localization efects. Thus, while it almost coincides with the EC for $\gamma < 5 / 2$ , and for $\gamma > 5 / 2$ it avoids the extreme localization around the hubs shown by the $\mathrm{E C} ,$ it is still localized in this case in some mesoscopic subset of nodes, whose characterization calls for further research. The extension of our analysis to the case of real world networks is hampered by the fact that usually only one network instance is available, which prevents performing a finite-size scaling study. Nevertheless, we numerically argue that also for real networks a twofold scenario holds, in which the PEV is either localized on the hubs, or efectively localized on the maximum K-core of the network.
+
+## Results
+
+Eigenvector localization and the inverse participation ratio. A full characterization of an undirected network of size N is given by its adjacency matrix<sup>1</sup> A, whose elements take the value $A_{i j} = 1$ if nodes i and j are connected by an edge, and value $\stackrel{\cdot} {A_{i j}} = 0$ otherwise. The spectral properties of the adjacency matrix are defined by the set of eigenvalues $\Lambda_{i} ,$ and associated eigenvectors $\mathbf{f} ( \bar{\Lambda_{i}} ) , i = \bar{1 , . . . ,} N ,$ , defined by
+
+$$
+\mathbf{A} \mathbf{f} (\Lambda) = \Lambda \mathbf{f} (\Lambda).\tag{1}
+$$
+
+Since the adjacency matrix is symmetric all its eigenvalues are real. The largest of those eigenvalues $\Lambda_{1} ,$ is associated with the principal eigenvector (PEV) which we denote simply by f.
+
+The concept of the localization of the PEV f translates in determining whether the value of its normalized com ponents is evenly distributed among all nodes in the network, or either it attains a large value on some subset, and is much smaller in all the rest. While this concept is quite easy to grasp, assessing it in a single network instance is a delicate issue because any quantitative definition involves some degree of arbitrariness. The task becomes however straightforward when ensembles of networks of diferent size can be generated. In such a case, the localization of the eigenvector f associated with the eigenvalue Λ can be precisely assessed by computing the inverse participation ratio (IPR), defined $\mathbf{a} \mathbf{s} ^{14 , 1 \epsilon}$
+
+$$
+Y_{\Lambda} = \sum_{i} f_{i} ^{4} (\Lambda).\tag{2}
+$$
+
+In the absence of any knowledge about the localization support, it is possible to determine whether an eigenvector is localized (on some subset in the network) by studying its inverse participation ratio, as a function of the system size N and fitting its behavior to a power-law decay of the form
+
+$$
+Y_{\Lambda} (N) \sim N^{- \alpha}.\tag{3}
+$$
+
+If the eigenvector is delocalized, i.e. for $f_{i} {\sim} N^{- 1 / 2} ,$ the exponent α is equal to 1. An exponent $\alpha < 1$ is evidence that some form of localization is taking place. In the case of extreme localization on a single node, or on a set of node with size $N_{V}$ independent of the network size N, the corresponding components of the PEV are finite and this implies $Y_{\Lambda} ^{\mathrm{l o c}} {\sim} \mathcal{O} ( 1 )$ , i,e., α = 0 for $N {\longrightarrow} \infty$ . Finally, if localization takes place over a subextensive set of nodes of size $N_{V} {\sim} N^{\beta}$ , we expect
+
+$$
+Y_{\Lambda} (N) \sim \frac{1}{N_{V}} \sim N^{- \beta},\tag{4}
+$$
+
+leading to a decay exponent $\alpha = \beta .$
+
+Eigenvector localization in synthetic networks. We study the localization properties of the PEV computed for synthetic power-law distributed networks of growing size, generated using the uncorrelated configuration model (UCM)<sup>18</sup>, a modification of the standard configuration model<sup>19,20</sup> designed to avoid degree correlations<sup>21</sup>. In order to explore the presence or absence of localization, we analyze the scaling of $Y_{\Lambda} ( N )$ as function of N as dis cussed above. In Fig. 1(a) we apply this finite-size scaling analysis to synthetic networks with diferent values of γ. In this and the following figures, statistical averages are performed over at least 100 diferent network samples. Error bars are usually smaller than the symbol sizes. In the case of large γ we observe an IPR tending to a constant for large N, confirming the localization on the hubs predicted by refs. 14,15. The situation is however surprisingly diferent for $\gamma < 5 / 2$ . Thus, while according to Goltsev et al.<sup>14</sup>, we should expect a delocalized PEV and an IPR decreasing as $N^{- \alpha}$ with $\alpha = 1$ , we observe instead power-law decays with N, with efective exponents α always smaller than 1/2. The change of behavior of the IPR can be further confirmed in Fig. 1(b), where we plot the IPR as a function of the degree exponent $\gamma ,$ for diferent values of N. While it is clear that for $\gamma \geq 2 . 7$ the IPR tends to a constant asymptotically, slow crossover efects do not allow to draw firm conclusions based on numerics about the precise value of γ for which the behavior changes. However, since the dependence of the largest eigenvalue on N changes for $\gamma = 5 / 2^{11}$ we expect the transition to take place exactly at $\gamma = 5 / 2 \colon$ : simulation results are perfectly compatible with this result.
+
+![](images/6603c7c57a373e332d125ff85db301d272af1bea2ede36976780e38a7a4c7cab.jpg)
+
+![](images/22d6f530f2bab4ed3b60068cf42b3abb9d1dcd03b4cd7bf037b7f9b8213daaa5.jpg)  
+Figure 1. (a) Inverse participation ratio as a function of the network size for the adjacency matrix of synthetic networks with diferent degree exponent γ. For large $\gamma ,$ the IPR tends to saturate to a constant value for suficiently large value of N. For $\gamma < 5 / 2$ , on the other hand, the behavior of the IPR can be fitted to $Y_{\Lambda_{*}} ( N ) \sim N^{- \overline{{\alpha}}}$ , with $\alpha < 1 / 2$ . The dashed line represents a power-law behavior ${\sim} N^{- 1}$ , corresponding to a <sup>1</sup> delocalized IPR. (b) Inverse participation ratio as a function of the degree exponent γ for diferent network size N. The plot confirms the presence of transition in the behavior of the IPR, located in the vicinity of $\gamma = 5 / 2$
+
+The behavior at $\gamma < 5 / 2$ can be understood mathematically by observing that the largest eigenvalue in this regime, $\Lambda_{1} = \langle q^{2} \rangle / \langle \dot{q} \rangle^{11}$ , coincides with the largest eigenvalue of the adjacency matrix in the annealed network approximation. The annealed network approximation $^{122 , 23}$ consists in replacing the actual, fixed, adjacency matrix by an average performed over degree classes, taking the form
+
+$$
+\overline{{a}} _{i j} = \frac{q_{j} ^{\prime} P (q_{i} \mid q_{j} ^{\prime})}{N P (q_{i})},\tag{5}
+$$
+
+where $P ( q | q^{\prime} )$ is the conditional probability that a link from a node of degree $q^{\prime}$ points to a node of degree $q^{24} .$ . For degree uncorrelated networks, with $P ( q | q^{\prime} ) = q P ( q ) / \langle q \rangle^{25}$ , we obtain an averaged adjacency matrix
+
+$$
+\overline{{a}} _{i j} = \frac{q_{i} q_{j}}{N \left<   q \right >}.\tag{6}
+$$
+
+The matrix $\overline{{a}} _{i j}$ is semi-positive definite and therefore all its eigenvalues are non-negat $\mathrm{i} \mathrm{v} e^{26}$ . Then considering that $\operatorname{T r} ( {\bar{\mathbf{a}}} ^{2} ) = [ \operatorname{T r} ( {\bar{\mathbf{a}}} ) ] ^{2} = {\dot{(}} \langle q^{2} \rangle / \langle q \rangle ) ^{2}$ , where $\operatorname{T r} ( \cdot )$ is the trace operator, we have tha $\overline{{a}} _{i j}$ has a unique non-zero eigenvalue $\Lambda_{\mathrm{a n}} {=} \langle q^{2} \rangle / \langle q \rangle$ , with associated principal eigenvector $f_{i} ^{\mathrm{a n}} \propto q_{i}$ . Applying the normalization condition $\textstyle \sum_{i} f_{i} ^{2} = 1$ , we obtain the normalized form
+
+$$
+f_{i} ^{\mathrm{an}} = \frac{q_{i}}{\left[ N \left<   q^{2} \right>\right] ^{1 / 2}}.\tag{7}
+$$
+
+Inserting the expression of $f_{i} ^{\mathrm{a n}}$ into Eq. (2) yields
+
+$$
+Y_{\Lambda_{1}} (N) \sim 1 / N^{(3 - \gamma) / 2},\tag{8}
+$$
+
+that is, a decay with an exponent smaller than 1/2, in agreement with the results in Fig. 1(b). Figure 2(a) confirms that also quenched synthetic networks have PEV components proportional in average to the degree. Notice that Eq. (8) is approximately true only in quenched networks for $\gamma < 5 / \bar{2}$ , since the condition leading to it, Eq. (7) fails a $\mathbf{t} \gamma > 5 / 2$ , see Fig. 2(b, inset).
+
+A more physical interpretation of the particular distribution of the PEV in power-law networks with $\gamma < 5 / 2 .$ is that the PEV becomes efectively localized on the max(imum) K-core of the network, defined as the set of nodes with the largest core index $K_{M}$ in a K-core decomposition<sup>3,27</sup>. The K-core decomposition is an iterative procedure to classify vertices of a network in layers of increasing density of connections. Starting with the full graph, one removes the vertices with degree $q = 1$ , i.e. with only one connection. This procedure is repeated until only nodes with degree $q \geq 2$ are left. The removed nodes constitute the $K = \cdot$ 1-shell and those remaining compose the $K {=} 2 {\mathrm{- c o r e}}$ . At the next step all vertices with degree $q = 2$ are removed, thus leaving the $K {=} 3 {\mathrm{-}} \mathsf{c o r e}$ . The procedure is repeated iteratively. The maximum K-core (of index $K_{M} )$ is the set of vertices such that one more iteration of the procedure removes all of them. The line of argument leading to this interpretation stems from combining the results of ref. $^{14 ,}$ in which it is proposed that, in epidemic spreading in complex networks<sup>28</sup>, infection activity is localized on the PEV, with the observations in ref. 29, in which the maximum K-core is identified as a subset of nodes sustaining epidemic activity fo $\gamma < 5 / 2$
+
+![](images/26c8802177ef0573ac728769832d62f7d992ad7b874773dd5afa83159b568c64.jpg)
+
+![](images/18489aa718a719005b0e892365b1fbc9213cad62c101049c62e9e4c3be78cf1f.jpg)  
+Figure 2. (a) Rescaled scatter plot of $\dot{\ f_{i}} [ N \langle q^{2} \rangle ] ^{1 / 2}$ as a function of $q_{i}$ for a synthetic network with $\gamma = 2 . 1$ and size $N = 10^{6}$ . Data fits the expectation for the PEV in the annealed network approximation, Eq. (7), with only small fluctuations. (b, main) Scatter plot of the squared PEV components as a function of the K-core index for the adjacency matrix of a power-law synthetic network with $\gamma = 2 . 1$ and size $N = 10^{6}$ . (b, inset) Scatter plot of the squared PEV components as a function of the degree q in a synthetic network with $\gamma = 3 . 5$ and size $N = 10^{6}$
+
+![](images/517cf822880610b62cb344c63c8a45815c28a71835580cf8c84d08abf31536c7.jpg)
+
+![](images/2b6acd80046d04b64b1a5b99c47616ca8a5698d3449c7eab93b3b175033ea709.jpg)  
+Figure 3. (a) Total weight $W_{K_{M}}$ of the PEV on the nodes of the max K-core in synthetic networks as a function <sup>M</sup>of size N. (b) Inverse participation ratio as a function of the size of the max K-core $N_{K , \cdot \cdot}$ . The dashed line represents a power-law behavior ${\sim} N_{K_{M}} ^{- 1} .$ We can see the asymptotic behavior $Y_{\Lambda_{1}} \sim \dot{N} _{K_{M}} ^{\underline{{{M}}} 1}$ , valid for large network sizes.
+
+We can see this effective localization on the maximum K-core in different ways. In the first place, in Fig. 2(b,main) we plot the squared components $f_{i} ^{2}$ of the PEV for all vertices against their corresponding K-core index. From this Figure we conclude that all nodes with the largest f components belong to the max K-core. The size of this max K-core, $N_{K_{M}} .$ , grows sublinearly as a function of the network size as $N_{K_{M}} \sim N^{( 3 - \gamma ) / 227}$ . However, despite this sublinear growth, a finite fraction of the total PEV weight is concentrated on this subset. We check this fact in Fig. 3(a): the total weight of the nodes in the max K-core,
+
+$$
+W_{K_{M}} = \sum_{i | i \in K_{M}} f_{i} ^{2},\tag{9}
+$$
+
+tends to a constant in the limit of large network size, implying that more than half of the weight of the normalized PEV resides over the max K-core. Finally, the size dependence of the max K-core translates, from Eq. (4) in an IPR scaling as $Y_{\Lambda_{1}} \sim N_{K_{u}} ^{- 1} \sim 1 / N^{( 3 - \gamma ) / 2}$ , in agreement with the result obtained from the degree dependence of the <sup>1</sup> PEV components, $f_{i} ^{^{s n}} {\sim} q_{i} ,$ see Eq. (8). The relation between IPR and max K-core size is satisfactorily checked in Fig. 3(b), where we observe it to be valid for large network sizes
+
+For $\gamma > 5 / 2 ,$ , instead, Fig. 2(b,inset) confirms the localization of the PEV around the hub<sup>14,16</sup>, displaying a dis proportionately large component on the node with the largest degree. Notice that, irrespective of the value of $\gamma ,$ with high probability the hub belongs to the max K-core. What changes in the two cases is that for $\gamma > 5 / 2$ the hub alone carries a finite fraction of the normalization weight $\left( f_{i} \sim \mathcal{O} \left( 1 \right) \right)$ while for γ < 5/2 it carries a vanishing fraction, and all nodes of the max K-core must be considered to have a finite weight $W_{K_{M}} .$ . The behavior for $\gamma > 3$ is clearly evident from Fig. 2(b,inset). In the case $5 / 2 < \gamma < 3$ , the accumulation of a finite weight on the hub takes place fo suficiently large N. This efect is observed in Fig. 4, were we plot the total weight $W_{K_{M}}$ of the nodes in the max K-core, Eq. (9), the total weight in the hub, $W_{H} ,$ and the total weight in the max $K \mathrm{-} \mathsf{c o r e} ,$ , subtracting the hub, $W_{K_{M} - H} .$ As we can observe from this Figure, the weight at the hub is small for network sizes $N < 10^{6}$ , but it then starts to increase, to finally take over, for large network sizes $N > 10^{7}$
+
+![](images/ef0affdb6e1a66dae99fe295191a45ac891a43f03fbfc66856e801e03c05d41e.jpg)  
+Figure 4. Weight of the PEV as a function of the network size in power-law networks with degree exponent $\gamma = 2 . 8 .$ . The diferent functions correspond to: total weight of the nodes in max K-core, $W_{K_{M}} ;$ ; total weight in the hub, $W_{H} ;$ total weight in the max K-core, subtracting the hub, $W_{K_{M}}$ .
+
+![](images/8f793f772e285989d79e3322cd10ad09549a015fa9436ff1eb398bfd2906b083.jpg)  
+Figure 5. Inverse participation ratio as a function of the network size N for the NBTC for power-law synthetic networks with diferent degree exponents $\gamma .$ The dashed line has slope −1 indicating delocalization.
+
+The non-backtracking centrality. The observations presented here, together with the arguments provided by Martin et al.<sup>16</sup>, hint that the EC is problematic as a useful measure of centrality. For large values of $\gamma ,$ it is afected by an exceedingly strong localization on the hub, arising as a purely topological artifact: the hub is central because its neighbors are central, but those in turn are central only because of the hub. For small values $\operatorname{o f} \gamma ,$ on the other hand, the observed relation $f_{i} \sim q_{i}$ indicates that the eigenvector centrality provides essentially the same information as the degree centrality. As an attempt to correct the flaws of the EC, Martin et $a l . ^{16}$ propose a modified centrality measure, the non-backtracking centrality (NBTC), which is computed in terms of the non-backtracking matrix. The Hashimoto, or non-backtracking matrix $( \mathrm{\dot{N} B T} ) ^{16 , 30 , 31}$ , is defined as follows: an initially undirected network is converted into a directed one by transforming each undirected edge into a pair of directed edges, each pointing in opposite directions. If the initial undirected network has E edges, the NBT matrix is a $2 E \times 2 E$ matrix with rows and columns corresponding to directed edges i→ j with value $B_{i \to j , l \to m} = \delta_{i , m} ( 1 - \delta_{j , l} ) , \delta_{i , j}$ being the Kronecker symbol. The components of the principal eigenvector of the NBT matrix, $f_{i \to j}$ measure the centrality of vertex i disregarding the contribution of vertex j. The NBT centrality of vertex j is given by the sum of these contributions for all neighbors of $\begin{array} {r} {\dot{\jmath} _{:} f_{j} ^{N B T} = \sum_{i} A_{i j} f_{i \to j} .} \end{array}$ . The elements of the NBT matrix count the number of non-backtracking walks in a graph and hence remove self-feedback in the calculation of node centrality, thus eliminating in principle the artificial topolog ical enhancement of the hub’s centrality.
+
+As Fig. 5 shows, however, the NBTC is not free from localization efects: For all values of γ the NBTC is no delocalized, i.e. $Y_{\Lambda_{1}}$ does not decrease as 1/N when increasing N. This fact can be understood for $\gamma < 5 / 2$ in view <sup>1</sup>of the previous results. The adjacency matrix PEV is localized on the max K-core, which features many mutual interconnections: the centrality of a node is only weakly afected by self-feedback, and removing the contribution of backtracking paths has therefore little efect. This is confirmed by the scatter plot of the NBTC values $f_{i} ^{\mathrm{N B T}}$ as a function of the corresponding components $f_{i}$ of the adjacency matrix PEV, computed for the same synthetic networks, Fig. $6 ( \mathsf{a} )$ . For $\gamma < 5 / 2$ the two quantities are very strongly correlated. For $\gamma > 5 / 2$ instead, Fig. $6 ( \mathrm{a} )$ shows that the NBT centrality is truly diferent and uncorrelated from the adjacency matrix EC. However, as Fig. 5 shows, the NBT IPR, computed from the components of the NBTC, decreases with the system size N more slowly than $N^{- 1}$ . This is indicative that also in this case a localization occurs on a mesoscopic subset, whose size grows sublin early. Figure 6(b) shows that this localization is not due to a strong correlation between the NBT centrality and the degree of nodes, contrary to what happens for the EC for $\gamma < 5 / \overset{} {2}$
+
+![](images/16f8a08f62568c3c0341dc02897a9ebacbeba5c0faec02b34ad4c6c2bb236376.jpg)
+
+![](images/9f1c34f17c5cc7392b77d16bdd4e97c4b34715ea27efaa573e4eeda95d8d54eb.jpg)  
+Figure 6. (a) Scatter plot of the NBTC centralities $f_{i} ^{\mathrm{N B T}}$ as a function of the corresponding components of the PEV of the adjacency matrix $f_{i} ,$ in synthetic uncorrelated networks with a power-law degree distribution. Network size $\dot{N} = 10^{\dot{6}} .$ . (b) Rescaled scatter plot of the NBTC centralitie $f_{i} ^{\mathrm{{N B T}}} [ N \left. q^{2} \right. ] ^{1 / 2}$ as a function of $\dot{\mathbf{\eta}} _{i}$ for a synthetic network with $\gamma = 3 . 5$ and size $N = 10^{6}$
+
+Eigenvector localization in real networks. For real networks, which have fixed size and do not allow for a finite size scaling analysis, localization is necessarily a more blurred concept. The value of $\mathrm{\Delta} Y_{\Lambda} .$ gauges how localized the PEV is, but it does not permit to unambiguously declare a network localized or not. However, also in this case it is possible to detect, as in synthetic networks, the existence of diferent localization modes. We consider here several real complex networks exhibiting large variations in size, heterogeneity and degree correlations (see Methods and Supplemental Material, SM, for details).
+
+The linear relation between $f_{i}$ and the degree $q_{i}$ is not fulfilled in real networks (see Supplementary Figure $\mathrm{S F} {-} 1 )$ probably due to the presence of nontrivial degree correlations (see SM) which are absent in the synthetic networks The efective localization on the max-K core is however still present in some cases. In Fig. 7 we plot for these net works the squared PEV component $f_{i} ^{2}$ as a function of the K-core index. In some cases (HEP, Movies) all nodes in the max K-core have a comparable and large EC (as in synthetic networks for $\gamma < 5 / 2 )$ , suggesting localization on the max K-core. In other cases (Internet, Amazon) one or a few nodes have a disproportionately large value of $f_{i} ^{2} {\mathrm{:}}$ , hinting at a localization around hubs, as in synthetic networks for large γ.
+
+To clarify the phenomenology we report in Table 1 for each of the real-world networks the values of the leading eigenvalue, and the factors $\langle q^{2} \rangle / \langle q \rangle$ and ${\sqrt{q_{\operatorname* {m a x}}}} .$ The analysis here is complicated by the presence of degree correlation (see SM), which invalidate the direct connection<sup>11</sup> between $\Lambda_{1}$ and the largest between $\sqrt{q_{\mathrm{m a x}}}$ and $\langle q^{2} \rangle / \langle q \rangle^{14}$ However, in some cases (Internet, Amazon) the leading eigenvalue is much closer to $\sqrt{\boldsymbol{q} _{\mathrm{m a x}}}$ than to $\langle q^{2} \rangle / \langle q \rangle \colon$ : This suggests a localization around the hub and matches well with Fig. 7. In others the opposite is true: $\Lambda_{1}$ is very far from $\sqrt{q_{\mathrm{m a x}}}$ and relatively close to $\langle q^{2} \rangle / \langle q \rangle$ , hinting at a localization on the max $K .$ -core, again in agreement with Fig. 7. In other cases (P2P, WWW), values are so close that no conclusion can be drawn.
+
+A further confirmation of this picture is provided by the analysis of the NBT centrality. When localization occurs on hubs one expects the elimination of backtracking paths to have a strong impact, as self-feedback efects are tamed. In this case we expect the ratio between the IPR for the NBTC and the IPR for the adjacency matrix to be small. On the contrary, when the localization occurs on the max K-core, passing from the adjacency to the NBT matrix would not lead to a big change and we expect the ratio to be close to 1. Table 1 confirms this expectation: the IPR ratio is small when the leading eigenvalue $\Lambda_{1}$ is essentially given by $\sqrt{q_{\mathrm{m a x}}}$ (localization on hubs) while it is close to 1 when $\Lambda_{1}$ is closer to the $\langle q^{2} \rangle / \langle q \rangle$ factor (localization on the max K-core). A visual representation of these results is provided in Fig. $^{8 ,}$ where we plot the IPR ratio as a function of the ratio between $\Lambda_{1}$ and $\sqrt{q_{\mathrm{m a x}}}$ . As we can see, networks in which the PEV is localized in the max K-core are situated in the upper right corner of the panel, while the lower left corner shows the networks with localization occurring on the hubs.
+
+## Discussion
+
+The properties of the principal eigenvector (PEV), and associated largest eigenvalue, of the adjacency matrix defining a network have a notable relevance as characterizing several features of its structure and its efects on the behavior of dynamical processes running on top of it. Most important among these features is the role of the components of the PEV as a measure of a node’s importance, the so-called eigenvector centrality. One of the prop erties of the PEV that has recently attracted the interest of the statistical physics community is its localization. In the case of networks with a power-law degree distribution $P ( q ) \sim q^{- \gamma}$ , initial research on this subject<sup>14,16</sup> suggested that, $\mathrm{f o r} \gamma > 5 / 2$ , the PEV is localized on the nodes with largest degree. On the other hand, for $\gamma < 5 / 2$ , the PEV should be delocalized.
+
+![](images/f0ddfee5376b67f25322114018162764ee7bbbe5e9f659806b86958150227c29.jpg)  
+Figure 7. Scatter plot of squared PEV components of the adjacency matrix of the real-world networks as a function of the K-core index.
+
+<table><tr><td>Network</td><td>N</td><td> $\langle q\rangle$ </td><td> $\langle q^{2}\rangle/\langle q\rangle$ </td><td> $\sqrt{q_{\text{max}}}$ </td><td> $\Lambda_{1}$ </td><td>Y ( $\Lambda_{1}$ )</td><td>Y ( $\Lambda_{1}^{NBT}$ )</td><td>IPR Ratio</td></tr><tr><td>HEP</td><td>12006</td><td>19.74</td><td>129.94</td><td>22.16</td><td>244.93</td><td>0.003890</td><td>0.003887</td><td>0.9993</td></tr><tr><td>Slashdot</td><td>82168</td><td>12.27</td><td>149.71</td><td>50.52</td><td>134.63</td><td>0.002174</td><td>0.002006</td><td>0.9228</td></tr><tr><td>Amazon</td><td>403394</td><td>12.11</td><td>30.55</td><td>52.46</td><td>57.15</td><td>0.089122</td><td>0.005423</td><td>0.0608</td></tr><tr><td>Internet</td><td>10790</td><td>4.16</td><td>259.46</td><td>48.34</td><td>59.58</td><td>0.066138</td><td>0.015783</td><td>0.2386</td></tr><tr><td>Email</td><td>36692</td><td>10.02</td><td>140.08</td><td>37.19</td><td>118.42</td><td>0.003790</td><td>0.003446</td><td>0.9091</td></tr><tr><td>P2P</td><td>62586</td><td>4.73</td><td>11.60</td><td>9.75</td><td>13.18</td><td>0.000921</td><td>0.000592</td><td>0.6429</td></tr><tr><td>Movies</td><td>81860</td><td>89.53</td><td>594.92</td><td>61.55</td><td>817.36</td><td>0.000640</td><td>0.000638</td><td>0.9966</td></tr><tr><td>WWW</td><td>325729</td><td>6.69</td><td>280.68</td><td>103.54</td><td>184.93</td><td>0.022726</td><td>0.008357</td><td>0.3677</td></tr><tr><td>PGP</td><td>10680</td><td>4.55</td><td>18.88</td><td>14.32</td><td>42.44</td><td>0.016622</td><td>0.015989</td><td>0.9619</td></tr></table>
+
+Table 1. Relevant metrics for the various real-world networks with and the measured value of the IPR ratio between $\pmb{Y} ( \pmb{\Lambda} _{1} ^{N B T} )$ and $Y ( \pmb{\Lambda} _{1} )$ . Size and other information on the networks are provided in the Supplementary Information.
+
+In this paper we have shown that eigenvector localization in heterogeneous networks is described by a more complex picture. Thus, we present evidence that for all power-law distributed networks the PEV is always localized to some extent. In the case of synthetic power-law distributed networks, we observe that, while for mildly hetero geneous networks with $\gamma > 5 / 2$ the PEV is indeed localized on the nodes with maximum degree (the hubs), in the case of high heterogeneity, with $\gamma < 5 / 2$ , the PEV shows a peculiar form of localization, its components $f_{i}$ being proportional to the node’s degree, $f_{i} \sim q_{i}$ . This particular proportionality induces an efective localization on the maximum K-core of the network, defined as the core of maximum index in a K-core decomposition. This max K-core concentrates a finite fraction of the normalized weight of the PEV, despite the fact that the size of the max K-core is sublinear with the network size. In the case of real world networks, the elucidation of the PEV localization is not so clearcut. We however provide evidence for an analogous scenario as that observed in synthetic networks, where the nature of the localization of the PEV is ruled by its associated largest eigenvalue $\Lambda_{1} \mathbf{:}$ When $\Lambda_{1}$ is close to the mean-field value $\langle q^{2} \rangle / \langle q \rangle$ , localization on the max K-core is expected. On the other hand, when the largest eigenvalue is close to $\sqrt{q_{\mathrm{m a x}}}$ , localization takes place on the hubs.
+
+The results presented here give a new perspective on complex topologies from several viewpoints. Firstly, it is common knowledge that networks with $\gamma > 3$ are fundamentally diferent from those with $\gamma < 3$ (scale-free net works) because the divergence of the second moment of the degree distribution has a series of crucial efects. A tacit corollary is that networks with $2 < \gamma < 3$ have essentially the same properties. Our paper, together with other recent results<sup>14</sup>, points out that networks with exponent $\gamma < 5 / 2$ are in many respects qualitatively diferent from those with $\gamma > 5 / 2$ . Secondly, our results point out the weakness of eigenvector centrality as a measure of central ity for power-law networks. Indeed, for $\gamma < 5 / 2 ,$ eigenvector centrality does not provide more information than degree centrality, while for $\gamma > 5 / 2$ the eigenvector localization on the hubs arises as a purely topological artifact. Alternative measures of centrality, based on the Hashimoto non-backtracking matrix<sup>16,30,31</sup> are also not free from localization efects. Finally, from a dynamical point of view, largest eigenvalues and the associated eigenvectors are crucially related to the properties of processes on networks<sup>7,14,32</sup> and their localization efects should be taken properly into account when developing theories relying on the structure of the adjacency matrix.
+
+![](images/a50cfae129b09c476baf7dc8bc89b7d92e6260f472d2c1f40f2dd0246d82837c.jpg)  
+Figure 8. Ratio between the NBTC IPR and the IPR of the adjacency matrix as a function of the ratio between the largest eigenvalue and the square root of the maximum degree, for the real networks considered. The symbol codes are: square for localization on the max K-core; circle for localization on the hub; triangle up for networks in which $\sqrt{q_{\mathrm{m a x}}}$ is very close to $\langle q^{2} \rangle / \langle q \rangle$ , so no conclusion can be drawn; triangle down for the rest of networks.
+
+The localization properties described here call for a revision of our present understanding of heterogeneous topologies. Other networks properties, such as degree correlations, clustering or the presence of a community structure, might play a role in the localization of the PEV. The clarification of these efects, as well as the understanding of the nature of the mesoscopic subgraph on which the NBTC is localized for $\gamma > 5 / 2$ , are still open questions, calling for further scientific efort.
+
+## Methods
+
+Real networks analyzed. We consider in our analysis the following real networks datasets:
+
+HEP: Collaboration network between authors of papers submitted to the High Energy Physics section of the online preprint server arXiv. Each node is a scientist. Two scientists are connected by an edge if they have coauthored a preprint<sup>33</sup>.
+
+•	 Slashdot: User network of the Slashdot technology news website. Nodes represent users, which can tag each other as friends or foes. An edge represents the presence of a tagging between two users<sup>34</sup>.
+
+•	 Amazon: Co-purchasing network from the online store Amazon. Nodes represent products, which are joined by edges if they are frequently purchased together<sup>35</sup>.
+
+•	 Internet: Internet map at the Autonomous System level, collected at the Oregon route server. Vertices represent autonomous systems (aggregations of Internet routers under the same administrative policy), while edges represent the existence of border gateway protocol (BGP) peer connections between the corresponding autonomous systems<sup>36</sup>.
+
+•	 Email: Enron email communication network. Nodes represent email addresses. An edge joins two addresses if they have exchanged at least one email<sup>34</sup>.
+
+•	 P2P: Gnutella peer-to-peer file sharing network. Nodes represent hosts in the Gnutella system. An edge stands for a connection between two Gnutella hosts<sup>33</sup>.
+
+•	 Movies: Network of movie actor collaborations obtained from the Internet Movie Database (IMDB). Each vertex represents an actor. Two actors are joined by an edge if they have co-starred at least one movie<sup>37</sup>.
+
+•	 WWW: Notre Dame web graph. Nodes represent web pages from University of Notre Dame. Edges indicate the presence of a hyperlink pointing from one page to another<sup>38</sup>.
+
+•	 PGP: Social network defined by the users of the pretty-good-privacy (PGP) encryption algorithm for secure information exchange. Vertices represent users of the PGP algorithm. An edge between two vertices indicates that each user has signed the encryption key of the other<sup>39</sup>.
+
+Some of this networks are actually directed. We have symmetrized them, rendering them undirected, to perform our analyses.
+
+## References
+
+1. Newman, M. E. J. Networks: An introduction (Oxford University Press, Oxford, 2010).
+
+2. Freeman, L. C. A set of measures of centrality based on betweenness. Sociometry 40, 35–41 (1977).
+
+3. Seidman, S. B. Network structure and minimum degree. Social Networks 5, 269 –287 (1983).
+
+4. Bonacich, P. Factoring and weighting approaches to status scores and clique identification. Journal of Mathematical Sociology 2, 113–120 (1972).
+
+5. Katz, L. A new status index derived from sociometrix analysis. Psychometrika 18, 39–43 (1953).
+
+6. Brin, S. & Page, L. The anatomy of a large-scale hypertextual Web search engine. Computer Networks and ISDN Systems 30, 107–117 (1998).
+
+7. Restrepo, J. G., Ott, E. & Hunt, B. R. Onset of synchronization in large networks of coupled oscillators. Phys. Rev. E 71, 036151 (2005).
+
+8. Chakrabarti, D., Wang, Y., Wang, C., Leskovec, J. & Faloutsos, C. Epidemic thresholds in real networks. ACM Trans. Inf. Syst. Secur. 10, 1–26 (2008).
+
+9. Castellano, C. & Pastor-Satorras, R. Thresholds for epidemic spreading in networks. Phys. Rev. Lett. 105, 218701 (2010)
+
+10. Farkas, I. J., Derényi, I., Barabási, A.-L. & Vicsek, T. Spectra of “real-world” graphs: Beyond the semicircle law. Phys. Rev. E 64, 026704 (2001).
+
+11. Chung, F., Lu, L. & Vu, V. Spectra of random graphs with given expected degrees. Proc. Natl. Acad. Sci. USA 100, 6313–6318 (2003).
+
+12. Dorogovtsev, S. N., Goltsev, A. V., Mendes, J. F. F. & Samukhin, A. N. Spectra of complex networks. Phys. Rev. E 68, 046109 (2003).
+
+13. Kühn, R. Spectra of sparse random matrices. Journal of Physics A: Mathematical and Theoretical 41, 295002 (2008).
+
+14. Goltsev, A. V., Dorogovtsev, S. N., Oliveira, J. G. & Mendes, J. F. F. Localization and Spreading of Diseases in Complex Networks. Phys. Rev. Lett 109, 128702 (2012).
+
+15. Nadakuditi, R. R. & Newman, M. E. J. Spectra of random graphs with arbitrary expected degrees. Phys. Rev. E 87, 012803 (2013).
+
+16. Martin, T., Zhang, X. & Newman, M. E. J. Localization and centrality in networks. Phys. Rev. E 90, 052808 (2014).
+
+17. Ferreira. S. C.. Castellano. C. & Pastor-Satorras. R. Epidemic thresholds of the susceptible-infected-susceptible model on networks A comparison of numerical and theoretical results. Phys. Rev. E 86, 041125 (2012).
+
+18. Catanzaro, M., Boguñá, M. & Pastor-Satorras, R. Generation of uncorrelated random scale-free networks. Phys. Rev. E 71, 027103 (2005).
+
+19. Molloy, M. & Reed, B. A critical point for random graphs with a given degree sequence. Random Struct. Algorithms 6, 161 (1995).
+
+20. Molloy, M. & Reed, B. The size of the giant component of a random graph with a given degree sequence. Combinatorics, Probab. Comput. 7, 295 (1998).
+
+21. Boguñá, M., Pastor-Satorras, R. & Vespignani, A. Cut-ofs and finite size efects in scale-free networks. Euro. Phys. J. B 38, 205–210 (2004).
+
+22. Dorogovtsev, S. N., Goltsev, A. V. & Mendes, J. F. F. Critical phenomena in complex networks. Rev. Mod. Phys. 80, 1275–1335 (2008).
+
+23. Boguñá, M., Castellano, C. & Pastor-Satorras, R. Langevin approach for the dynamics of the contact process on annealed scale-free networks. Phys. Rev. E 79, 036110 (2009)
+
+24. Pastor-Satorras, R., Vázquez, A. & Vespignani, A. Dynamical and correlation properties of the Internet. Phys. Rev. Lett. 87, 258701 (2001).
+
+25. Dorogovtsev, S. N. & Mendes, J. F. F. Evolution of networks. Advances in Physics 51, 1079–1187 (2002).
+
+26. Gantmacher, F. R. The theory of matrices, vol. II (Chelsea Publishing Company, New York, 1974).
+
+27. Dorogovtsev, S. N., Goltsev, A. V. & Mendes, J. F. F. k-core organization of complex networks. Phys. Rev. Lett. 96, 040601 (2006).
+
+28. Pastor-Satorras, R., Castellano, C., Van Mieghem, P. & Vespignani, A. Epidemic processes in complex networks. Rev. Mod. Phys. 87, 925–979 (2015).
+
+29. Castellano, C. & Pastor-Satorras, R. Competing activation mechanisms in epidemics on networks. Nature Scientific Reports 2, 371 (2012).
+
+30. Hashimoto, K. Zeta functions of finite graphs and representations of p-adic groups. Adv. Stud. Pure Math. 15, 211–280 (1989).
+
+31. Krzakala, F. et al. Spectral redemption in clustering sparse networks. Proceedings of the National Academy of Sciences 110, 20935–20940 (2013).
+
+32. Karrer, B., Newman, M. E. J. & Zdeborová, L. Percolation on sparse networks. Phys. Rev. Lett. 113, 208702 (2014).
+
+33. Kleinberg, J. L. J. & Faloutsos, C. Graph evolution: Densification and shrinking diameter. ACM Trans. Knowl. Discov. Data 1, 2 (2007).
+
+34. Leskovec, J., Lang, K., Dasgupta, A. & Mahoney, M. Community structure in large networks: Natural cluster sizes and the absence oflarge well-defined clusters. Internet Mathematics 6, 29-123 (2009).
+
+35. Leskovec, J., Adamic, L. A. & Huberman, B. A. The dynamics of viral marketing. ACM Trans. Web 1 (2007).
+
+36. Pastor-Satorras, R. & Vespignani, A. Evolution and structure of the Internet: A statistical physics approach (Cambridge University Press, Cambridge, 2004).
+
+37. Barabási, A.-L. & Albert, R. Emergence of scaling in random networks. Science 286, 509–512 (1999).
+
+38. Albert, R., Jeong, H. & Barabási, A.-L. Diameter of the World-Wide Web. Nature 401, 130–131 (1999).
+
+39. Boguñá, M., Pastor-Satorras, R., Daz-Guilera, A. & Arenas, A. Models of social networks based on social distance attachment. Phys. Rev. E 70, 056122 (2004).
+
+## Acknowledgements
+
+R.P.-S. acknowledges financial support from the Spanish MINECO, under projects No. FIS2010-21781-C02-01 and FIS2013-47282-C2-2, EC FET-Proactive Project MULTIPLEX (Grant No. 317532), and ICREA Academia, funded by the Generalitat de Catalunya.
+
+## Author Contributions
+
+R.P.-S. and C.C. designed the research. R.P.-S. performed the data analysis. R.P.-S. and C.C. wrote the paper.
+
+## Additional Information
+
+Supplementary information accompanies this paper at http://www.nature.com/srep
+
+Competing financial interests: The authors declare no competing financial interests.
+
+How to cite this article: Pastor-Satorras, R. and Castellano, C. Distinct types of eigenvector localization in networks. Sci. Rep. 6, 18847; doi: 10.1038/srep18847 (2016).
+
+![](images/7bce736477c69da62d6b7caae7902a5d9b71b146d8a75c73f1d367b6be0ee8d2.jpg)
+
+Ccc This work is licensed under a Creative Commons Attribution 4.0 International License. The images BY or other third party material in this article are included in the article’s Creative Commons license, unless indicated otherwise in the credit line; if the material is not included under the Creative Commons license, users will need to obtain permission from the license holder to reproduce the material. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0

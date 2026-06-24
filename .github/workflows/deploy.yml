@@ -1,28 +1,29 @@
-# GitHub Actions workflow: deploy MkDocs site to GitHub Pages
 name: Deploy Book Site
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-# Grant GITHUB_TOKEN write access to push to gh-pages
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - run: pip install mkdocs-material pymdown-extensions jieba
-      - run: mkdocs build
-      - uses: peaceiris/actions-gh-pages@v3
+          submodules: true
+          fetch-depth: 0
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.163.3'
+          extended: true
+      - name: Build
+        run: hugo --gc --minify
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: site
-          publish_branch: gh-pages
+          publish_dir: public

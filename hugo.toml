@@ -1,0 +1,56 @@
+# Yuan's Library — Hugo configuration
+baseURL = 'https://yuanuite.github.io/digital-library/'
+title = "Yuan's Library"
+theme = 'hugo-book'
+
+enableGitInfo = true
+disablePathToLower = true
+uglyurls = true
+relativeurls = false
+
+copyright = '© Yuanuite'
+
+[markup]
+[markup.goldmark.renderer]
+  unsafe = true
+[markup.goldmark.extensions]
+  typographer = false
+[markup.goldmark.extensions.passthrough]
+  enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+  block = [['$$', '$$'], ['\\[', '\\]']]
+  inline = [['$', '$'], ['\\(', '\\)']]
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 4
+  ordered = false
+[markup.highlight]
+  style = 'github'
+  lineNos = false
+  noClasses = false
+
+[outputs]
+  home = ['html', 'rss']
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+[languages.zh]
+  label = '中文'
+  locale = 'zh-CN'
+  weight = 1
+
+[params]
+  BookTheme = 'auto'
+  BookSection = '*'
+  BookSearch = true
+  BookComments = false
+  BookDateFormat = '2006-01-02'
+  BookRepo = 'https://github.com/yuanuite/digital-library'
+  BookPortableLinks = 'warning'
+
+[[menu.after]]
+  name = 'GitHub'
+  url = 'https://github.com/yuanuite/digital-library'
+  weight = 10
