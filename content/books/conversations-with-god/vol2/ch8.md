@@ -1,5 +1,6 @@
 ---
 title: "第8章 · 超越种族偏见"
+weight: 80
 description: "种族偏见"
 ---
 # Chapter 08

@@ -1,5 +1,6 @@
 ---
 title: "第4章 · 亲密关系修行"
+weight: 40
 description: "戒律与修行"
 ---
 # Chapter 04

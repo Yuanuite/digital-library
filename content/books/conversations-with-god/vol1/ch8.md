@@ -1,5 +1,6 @@
 ---
 title: "第8章 · 健康与疗愈之道"
+weight: 80
 description: "疾病与疗愈"
 ---
 # Chapter 08

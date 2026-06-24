@@ -1,5 +1,6 @@
 ---
 title: "第9章 · 直觉与超感知"
+weight: 90
 description: "超感知觉"
 ---
 # Chapter 09

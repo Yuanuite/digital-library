@@ -1,5 +1,6 @@
 ---
 title: "第6章 · 经济与资源共享"
+weight: 60
 description: "资源共享"
 ---
 # Chapter 06

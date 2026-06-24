@@ -57,6 +57,18 @@
                       {{ range (where $bookPage.Pages "Params.bookHidden" "ne" true) }}
                         {{ if .IsSection }}
                           <li>{{ template "book-page-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
+                          {{/* 如果当前页在此子 section 内，展开其章节 */}}
+                          {{ if or (eq $currentPage .) (.IsAncestor $currentPage) }}
+                            <ul>
+                            {{ range (where .Pages "Params.bookHidden" "ne" true) }}
+                              {{ if .IsSection }}
+                                <li>{{ template "book-page-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
+                              {{ else if and .IsPage .Content }}
+                                <li>{{ template "book-page-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
+                              {{ end }}
+                            {{ end }}
+                            </ul>
+                          {{ end }}
                         {{ else if and .IsPage .Content }}
                           <li>{{ template "book-page-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
                         {{ end }}

@@ -1,5 +1,6 @@
 ---
 title: "第7章 · 性别平等的觉醒"
+weight: 70
 description: "性别平等"
 ---
 # Chapter 07

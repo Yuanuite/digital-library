@@ -1,5 +1,6 @@
 ---
 title: "第7章 · 神圣人际关系"
+weight: 70
 description: "神圣关系"
 ---
 # Chapter 07

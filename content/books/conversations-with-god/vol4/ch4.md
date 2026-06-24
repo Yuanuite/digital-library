@@ -1,5 +1,6 @@
 ---
 title: "第4章 · 日常与神同行"
+weight: 40
 description: "与神同行"
 ---
 # Chapter 04

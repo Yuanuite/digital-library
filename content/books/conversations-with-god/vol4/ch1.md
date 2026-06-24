@@ -1,5 +1,6 @@
 ---
 title: "第1章 · 重新认识真正的神"
+weight: 10
 description: "认识真神"
 ---
 # Chapter 01

@@ -1,5 +1,6 @@
 ---
 title: "第2章 · 友谊的坚实基础"
+weight: 20
 description: "友谊基础"
 ---
 # Chapter 02

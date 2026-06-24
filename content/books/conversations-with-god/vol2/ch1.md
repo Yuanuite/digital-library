@@ -1,5 +1,6 @@
 ---
 title: "第1章 · 开启全球对话"
+weight: 10
 description: "全球议题"
 ---
 # Chapter 01

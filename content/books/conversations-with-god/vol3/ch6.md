@@ -1,5 +1,6 @@
 ---
 title: "第6章 · 宇宙的根本法则"
+weight: 60
 description: "根本法则"
 ---
 # Chapter 06

@@ -1,5 +1,6 @@
 ---
 title: "第3章 · 灵魂的永恒之旅"
+weight: 30
 description: "灵魂永恒"
 ---
 # Chapter 03

@@ -1,5 +1,6 @@
 ---
 title: "第2章 · 高维实相探索"
+weight: 20
 description: "高维实相"
 ---
 # Chapter 02

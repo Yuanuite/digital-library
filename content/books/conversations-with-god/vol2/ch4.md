@@ -1,5 +1,6 @@
 ---
 title: "第4章 · 迈向统一社会"
+weight: 40
 description: "统一社会"
 ---
 # Chapter 04

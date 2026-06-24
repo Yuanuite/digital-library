@@ -1,5 +1,6 @@
 ---
 title: "第5章 · 教育与文化变革"
+weight: 50
 description: "教育变革"
 ---
 # Chapter 05

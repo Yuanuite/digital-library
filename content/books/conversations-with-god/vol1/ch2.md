@@ -1,5 +1,6 @@
 ---
 title: "第2章 · 生活的真正目的"
+weight: 20
 description: "寻找神之路"
 ---
 # Chapter 02

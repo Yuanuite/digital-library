@@ -1,5 +1,6 @@
 ---
 title: "第3章 · 创造持久和平"
+weight: 30
 description: "持久和平"
 ---
 # Chapter 03

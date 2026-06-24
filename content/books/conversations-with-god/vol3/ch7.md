@@ -1,5 +1,6 @@
 ---
 title: "第7章 · 创造的伟大奥秘"
+weight: 70
 description: "创造奥秘"
 ---
 # Chapter 07

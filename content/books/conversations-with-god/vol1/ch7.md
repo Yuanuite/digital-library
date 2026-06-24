@@ -1,5 +1,6 @@
 ---
 title: "第7章 · 性与灵性融合"
+weight: 70
 description: "关系的目标"
 ---
 # Chapter 07

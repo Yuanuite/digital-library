@@ -1,5 +1,6 @@
 ---
 title: "第5章 · 真实与内在力量"
+weight: 50
 description: "苦难与觉醒"
 ---
 # Chapter 05

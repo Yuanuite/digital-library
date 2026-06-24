@@ -1,5 +1,6 @@
 ---
 title: "第1章 · 对话的缘起"
+weight: 10
 description: "痛苦与质问"
 ---
 # Chapter 01
