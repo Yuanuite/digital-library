@@ -124,6 +124,20 @@ RAW --extract--> EXTRACTED --clean+split--> STRUCTURED --wire+build--> LIVE
 
 3. **JS toggle 用 `setProperty`，不靠 `dataset`** — `dataset.theme` 触发 CSS 规则，但 head.html 加载时已用 `setProperty` 设了 inline 值（优先级最高）。toggle 时必须同样 `setProperty` 逐变量覆盖，否则 var() 永远取加载时的旧值。
 
+## 搜索功能实现要点
+
+- **片段长度** — `highlightContent()` 的 `radius = 10` 即可在关键词前后展示约 3-5 个中文词；默认 60 字符过长，在侧栏中信息冗余。
+
+- **关键词标记用 `<span>` 不用 `<mark>`** — `<mark>` 浏览器默认黄底高亮过于突兀；用 `<span class="search-match">` + CSS `color` 改色 + `background: none` 更克制。CSS 中 `.search-match` 必须显式 `background: none` 覆盖可能的继承背景。
+
+- **搜索结果视觉层级** — 三级体系：可点击链接用 `var(--body-font-color)`（主文本色）、不可点击元信息/片段用 `var(--gray-500)`（灰色）、匹配关键词用独立颜色（如 `#e53935` 红）。用 `#book-search-results a/small/p` 选择器分别控制。
+
+- **移动端搜索入口** — Hugo Book 主题移动端侧栏通过 CSS checkbox hack（`#menu-control:checked ~ main .book-menu`）控制显隐。在 `layouts/_partials/docs/header.html` 中添加 `<label for="menu-control">` 包裹搜索图标 + `onclick="setTimeout(()=>document.querySelector('#book-search-input')?.focus(),350)"` 实现一键打开侧栏并聚焦搜索框。350ms 需匹配侧栏 CSS transition 时长。
+
+- **移动端触控与可读性** — 搜索输入框 `font-size: 16px`（防 iOS 自动缩放）+ `min-height: 44px`（Apple HIG 触控目标）。搜索结果列表设 `max-height: 50vh; overflow-y: auto` 防止溢出。
+
+- **Hugo 资源指纹验证** — `resources.ExecuteAsTemplate` + `resources.Minify` + `resources.Fingerprint` 生成带 hash 的文件名。验证构建产物时需在 `public/` 或 `--destination` 目录中搜索 `zh.search.min.*.js` 等通配模式，而非直接按源文件名查找。
+
 ## 任务委派（Haiku 模型）
 
 **规则**：需要理解 >2 个文件的因果链 → 主线程。单文件、确定目标、无判断 → Haiku。
