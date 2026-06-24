@@ -1,5 +1,6 @@
 ---
-description: "恐惧与金钱真相"
+title: "第6章 · 恐惧与金钱真相"
+description: "恐惧与丰盛"
 ---
 # Chapter 06
 

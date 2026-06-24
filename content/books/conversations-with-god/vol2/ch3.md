@@ -1,5 +1,6 @@
 ---
-description: "创造持久和平"
+title: "第3章 · 创造持久和平"
+description: "持久和平"
 ---
 # Chapter 03
 

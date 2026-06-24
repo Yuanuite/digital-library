@@ -1,5 +1,6 @@
 ---
-description: "经济与资源共享"
+title: "第6章 · 经济与资源共享"
+description: "资源共享"
 ---
 # Chapter 06
 

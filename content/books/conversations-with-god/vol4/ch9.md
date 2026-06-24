@@ -1,5 +1,6 @@
 ---
-description: "与神共创人生"
+title: "第9章 · 与神共创人生"
+description: "共创人生"
 ---
 # Chapter 09
 

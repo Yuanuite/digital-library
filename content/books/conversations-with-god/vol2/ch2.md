@@ -1,5 +1,6 @@
 ---
-description: "政府的真正职能"
+title: "第2章 · 政府的真正职能"
+description: "政府的职能"
 ---
 # Chapter 02
 

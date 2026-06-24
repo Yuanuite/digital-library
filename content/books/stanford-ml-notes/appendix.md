@@ -1,7 +1,7 @@
 ---
-title: "附件"
+title: "附件 · CS229复习"
 weight: 120
-description: "CS229线性代数与概率论复习"
+description: "线代概率"
 ---
 # 附件
 

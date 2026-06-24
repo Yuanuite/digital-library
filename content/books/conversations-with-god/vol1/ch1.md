@@ -1,5 +1,6 @@
 ---
-description: "对话的缘起"
+title: "第1章 · 对话的缘起"
+description: "痛苦与质问"
 ---
 # Chapter 01
 

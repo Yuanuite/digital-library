@@ -1,5 +1,6 @@
 ---
-description: "创造的伟大奥秘"
+title: "第7章 · 创造的伟大奥秘"
+description: "创造奥秘"
 ---
 # Chapter 07
 

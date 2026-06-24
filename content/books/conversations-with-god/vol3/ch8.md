@@ -1,5 +1,6 @@
 ---
-description: "意识的演化之路"
+title: "第8章 · 意识的演化之路"
+description: "意识演化"
 ---
 # Chapter 08
 

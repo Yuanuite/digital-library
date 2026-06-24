@@ -1,5 +1,6 @@
 ---
-description: "亲密关系修行"
+title: "第4章 · 亲密关系修行"
+description: "戒律与修行"
 ---
 # Chapter 04
 

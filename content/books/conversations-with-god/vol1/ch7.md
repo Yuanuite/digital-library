@@ -1,5 +1,6 @@
 ---
-description: "性与灵性融合"
+title: "第7章 · 性与灵性融合"
+description: "关系的目标"
 ---
 # Chapter 07
 

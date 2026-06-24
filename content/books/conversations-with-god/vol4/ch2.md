@@ -1,5 +1,6 @@
 ---
-description: "友谊的坚实基础"
+title: "第2章 · 友谊的坚实基础"
+description: "友谊基础"
 ---
 # Chapter 02
 

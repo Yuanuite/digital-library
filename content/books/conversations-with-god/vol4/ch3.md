@@ -1,5 +1,6 @@
 ---
-description: "建立与神的友谊"
+title: "第3章 · 建立与神的友谊"
+description: "与神交友"
 ---
 # Chapter 03
 

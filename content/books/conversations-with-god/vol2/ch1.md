@@ -1,5 +1,6 @@
 ---
-description: "开启全球对话"
+title: "第1章 · 开启全球对话"
+description: "全球议题"
 ---
 # Chapter 01
 

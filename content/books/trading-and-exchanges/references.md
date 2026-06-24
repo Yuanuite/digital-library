@@ -1,5 +1,6 @@
 ---
-title: "References"
+title: "参考文献"
+description: "Sources and papers"
 weight: 310
 ---
 # References

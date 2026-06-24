@@ -1,5 +1,6 @@
 ---
-description: "日常与神同行"
+title: "第4章 · 日常与神同行"
+description: "与神同行"
 ---
 # Chapter 04
 

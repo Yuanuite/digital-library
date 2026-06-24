@@ -1,5 +1,6 @@
 ---
-description: "倾听内在指引"
+title: "第8章 · 倾听内在指引"
+description: "内在指引"
 ---
 # Chapter 08
 

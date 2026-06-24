@@ -1,5 +1,6 @@
 ---
-description: "环境与人类责任"
+title: "第9章 · 环境与人类责任"
+description: "环境责任"
 ---
 # Chapter 09
 

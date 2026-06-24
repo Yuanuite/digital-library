@@ -1,5 +1,6 @@
 ---
-description: "业力与今生功课"
+title: "第9章 · 业力与今生功课"
+description: "轮回与业力"
 ---
 # Chapter 09
 

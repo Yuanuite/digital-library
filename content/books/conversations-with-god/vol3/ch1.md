@@ -1,5 +1,6 @@
 ---
-description: "宇宙的终极真相"
+title: "第1章 · 宇宙的终极真相"
+description: "终极真相"
 ---
 # Chapter 01
 

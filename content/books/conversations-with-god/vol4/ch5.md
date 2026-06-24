@@ -1,5 +1,6 @@
 ---
-description: "信任与全然交托"
+title: "第5章 · 信任与全然交托"
+description: "信任交托"
 ---
 # Chapter 05
 

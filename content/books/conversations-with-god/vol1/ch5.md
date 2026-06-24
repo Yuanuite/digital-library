@@ -1,5 +1,6 @@
 ---
-description: "真实与内在力量"
+title: "第5章 · 真实与内在力量"
+description: "苦难与觉醒"
 ---
 # Chapter 05
 

@@ -1,5 +1,6 @@
 ---
-title: "Index"
+title: "索引"
+description: "Key terms"
 weight: 300
 ---
 # Index

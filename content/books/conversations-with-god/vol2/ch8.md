@@ -1,5 +1,6 @@
 ---
-description: "超越种族偏见"
+title: "第8章 · 超越种族偏见"
+description: "种族偏见"
 ---
 # Chapter 08
 

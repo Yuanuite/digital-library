@@ -1,5 +1,6 @@
 ---
-description: "生死轮回与转世"
+title: "第4章 · 生死轮回与转世"
+description: "生死轮回"
 ---
 # Chapter 04
 

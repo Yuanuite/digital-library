@@ -1,5 +1,6 @@
 ---
-description: "迈向统一社会"
+title: "第4章 · 迈向统一社会"
+description: "统一社会"
 ---
 # Chapter 04
 

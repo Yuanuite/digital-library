@@ -1,5 +1,6 @@
 ---
-description: "爱与关系的真谛"
+title: "第3章 · 爱与关系的真谛"
+description: "爱的本质"
 ---
 # Chapter 03
 

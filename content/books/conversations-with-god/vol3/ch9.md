@@ -1,5 +1,6 @@
 ---
-description: "直觉与超感知"
+title: "第9章 · 直觉与超感知"
+description: "超感知觉"
 ---
 # Chapter 09
 

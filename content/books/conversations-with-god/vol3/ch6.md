@@ -1,5 +1,6 @@
 ---
-description: "宇宙的根本法则"
+title: "第6章 · 宇宙的根本法则"
+description: "根本法则"
 ---
 # Chapter 06
 

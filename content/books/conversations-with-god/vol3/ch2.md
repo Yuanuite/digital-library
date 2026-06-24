@@ -1,5 +1,6 @@
 ---
-description: "高维实相探索"
+title: "第2章 · 高维实相探索"
+description: "高维实相"
 ---
 # Chapter 02
 

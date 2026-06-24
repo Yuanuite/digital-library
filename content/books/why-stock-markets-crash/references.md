@@ -1,6 +1,6 @@
 ---
-title: "References"
-description: "Key academic papers, sources, and data references"
+title: "参考文献"
+description: "Papers and data sources"
 weight: 120
 ---
 # References

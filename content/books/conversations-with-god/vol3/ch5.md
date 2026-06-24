@@ -1,5 +1,6 @@
 ---
-description: "善恶的起源"
+title: "第5章 · 善恶的起源"
+description: "善恶起源"
 ---
 # Chapter 05
 

@@ -1,5 +1,6 @@
 ---
-description: "灵魂的永恒之旅"
+title: "第3章 · 灵魂的永恒之旅"
+description: "灵魂永恒"
 ---
 # Chapter 03
 

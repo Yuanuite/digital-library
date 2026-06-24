@@ -1,5 +1,6 @@
 ---
-description: "生活的真正目的"
+title: "第2章 · 生活的真正目的"
+description: "寻找神之路"
 ---
 # Chapter 02
 
