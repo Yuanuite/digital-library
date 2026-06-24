@@ -19,93 +19,97 @@
 &lt;div class="book-toc-list"&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch01.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 1 financial crashes: what, how, why, and when?&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · Financial Crashes&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;What, how, why, and when&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch02.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 2 fundamentals of financial markets&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · Fundamentals of Financial Markets&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Efficient markets, random walks, and fundamentals of finance&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Efficient markets, random walks&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch03.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 3 financial crashes are “outliers”&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · Crashes as Outliers&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Crashes as statistical outliers with power law distributions&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Power laws, extreme events&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch04.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 4 positive feedbacks&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · Positive Feedbacks&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Positive feedback, herding, imitation, and bubble formation&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Herding, imitation, bubbles&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch05.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 5 modeling financial bubbles and market crashes&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · Models of Bubbles and Crashes&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Models of bubbles using log-periodic oscillations and critical points&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Log-periodic oscillations&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch06.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 6 hierarchies, complex fractal dimensions, and lo...&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · Fractals and Scale Invariance&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Fractals, complex fractal dimensions, and log-periodicity&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Mathematical foundations&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch07.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 7 autopsy of major crashes: universal exponents a...&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · Autopsy of Major Crashes&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Analysis of major crashes: 1929, 1987, and 2000 bubbles&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;1929, 1987, 2000&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch08.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 8 bubbles, crises, and crashes in emergent markets&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · Emerging Markets&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Bubbles, currency crises, and contagion in emerging markets&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Currency crises, contagion&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch09.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 9 prediction of bubbles, crashes, and antibubbles&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第9章 · Prediction of Bubbles and Crashes&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Predicting bubbles and crashes with early warning signals&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Early warning signals&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch10.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 10 — 2050: The End of the Growth Era?&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第10章 · 2050: End of the Growth Era&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Growth, resources, and the end of cheap oil through 2050&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Resources and limits&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/preface.html"&gt;
- &lt;span class="toc-row-title"&gt;Preface&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;序言&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Why physicists study crashes&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/references.html"&gt;
- &lt;span class="toc-row-title"&gt;References&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;参考文献&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Key academic papers, sources, and data references&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Papers and data sources&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;

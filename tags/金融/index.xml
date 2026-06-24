@@ -19,93 +19,97 @@
 &lt;div class="book-toc-list"&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch01.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 1 financial crashes: what, how, why, and when?&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · Financial Crashes&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;What, how, why, and when&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch02.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 2 fundamentals of financial markets&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · Fundamentals of Financial Markets&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Efficient markets, random walks, and fundamentals of finance&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Efficient markets, random walks&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch03.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 3 financial crashes are “outliers”&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · Crashes as Outliers&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Crashes as statistical outliers with power law distributions&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Power laws, extreme events&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch04.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 4 positive feedbacks&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · Positive Feedbacks&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Positive feedback, herding, imitation, and bubble formation&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Herding, imitation, bubbles&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch05.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 5 modeling financial bubbles and market crashes&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · Models of Bubbles and Crashes&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Models of bubbles using log-periodic oscillations and critical points&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Log-periodic oscillations&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch06.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 6 hierarchies, complex fractal dimensions, and lo...&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · Fractals and Scale Invariance&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Fractals, complex fractal dimensions, and log-periodicity&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Mathematical foundations&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch07.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 7 autopsy of major crashes: universal exponents a...&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · Autopsy of Major Crashes&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Analysis of major crashes: 1929, 1987, and 2000 bubbles&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;1929, 1987, 2000&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch08.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 8 bubbles, crises, and crashes in emergent markets&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · Emerging Markets&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Bubbles, currency crises, and contagion in emerging markets&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Currency crises, contagion&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch09.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 9 prediction of bubbles, crashes, and antibubbles&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第9章 · Prediction of Bubbles and Crashes&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Predicting bubbles and crashes with early warning signals&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Early warning signals&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/ch10.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 10 — 2050: The End of the Growth Era?&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第10章 · 2050: End of the Growth Era&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Growth, resources, and the end of cheap oil through 2050&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Resources and limits&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/preface.html"&gt;
- &lt;span class="toc-row-title"&gt;Preface&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;序言&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Why physicists study crashes&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/references.html"&gt;
- &lt;span class="toc-row-title"&gt;References&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;参考文献&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Key academic papers, sources, and data references&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Papers and data sources&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -131,225 +135,249 @@
 &lt;div class="book-toc-list"&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch01.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 1: Introduction&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · Introduction&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Overview of markets, trading, and market microstructure&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Markets and trading&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch02.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 2: Trading Stories&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · Trading Stories&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Real trading stories across stocks, bonds, futures, and currencies&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Real trading scenarios&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch03.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 3: The Trading Industry&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · The Trading Industry&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Exchanges, brokers, dealers, and trading instruments overview&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Exchanges, brokers, dealers&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch04.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 4: Orders and Order Properties&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · Orders and Order Properties&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Order types, properties, and the limit order book&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Order types and books&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch05.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 5: Market Structures&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · Market Structures&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Continuous, call, quote-driven, and order-driven market structures&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Continuous, call, dealer markets&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch06.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 6: Order-Driven Markets&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · Order-Driven Markets&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Oral auctions, order matching, and pricing rules in order-driven markets&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Limit order books&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch07.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 7: Brokers&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · Brokers&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Broker roles, agency trading, and commission structures&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Agency and principal trading&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch08.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 8: Why People Trade&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · Why People Trade&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Why people trade: invest, hedge, speculate, arbitrage, and gamble&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Hedging, speculation, arbitrage&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch09.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 9: Good Markets&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第9章 · Good Markets&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Market quality: liquidity, efficiency, fairness, and stability&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Liquidity, efficiency, fairness&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch10.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 10: Informed Traders and Market Efficiency&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第10章 · Informed Traders&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Informed traders, market efficiency, and adverse selection&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Information and adverse selection&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch11.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 11: Order Anticipators&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第11章 · Order Anticipators&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Order anticipators, front-running, and quote matching strategies&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Front-running, penny jumping&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch12.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 12: Bluffers and Market Manipulation&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第12章 · Bluffers and Manipulation&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Bluffers, market manipulation, corners, and squeezes&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Fraud, corners, squeezes&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch13.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 13: Dealers&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第13章 · Dealers&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Dealers, market making, inventory management, and dealer profits&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Market making, inventory&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch14.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 14: Bid/Ask Spreads&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第14章 · Bid-Ask Spreads&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Bid-ask spreads, components, determinants, and spread economics&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Components and determinants&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch15.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 15: Block Traders&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第15章 · Block Traders&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Block trading, upstairs markets, and dark pool strategies&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Upstairs markets, dark pools&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch16.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 16: Value Traders&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第16章 · Value Traders&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Value traders, fundamental analysis, and valuation strategies&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Fundamental analysis&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch17.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 17: Arbitrageurs&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第17章 · Arbitrageurs&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Arbitrageurs, risk-free profits, and convergence trading&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Risk-free profit&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch18.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 18: Buy-Side Traders&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第18章 · Buy-Side Traders&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Buy-side traders: mutual funds, pensions, and institutional trading&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Mutual funds, pensions&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch19.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 19: Liquidity&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第19章 · Liquidity&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;Liquidity dimensions, measurement, and determinants&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;Dimensions and measurement&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch20.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 20: Volatility&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第20章 · Volatility&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Measurement and implications&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch21.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 21: Liquidity and Transaction Cost measurement&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第21章 · Transaction Cost Measurement&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Implementation shortfall&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch22.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 22: Performance Evaluation and Prediction&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第22章 · Performance Evaluation&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Benchmarks, attribution&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch23.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 23: Index and Portfolio Markets&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第23章 · Indexes and Portfolios&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Passive investing, ETFs&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch24.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 24: Specialists&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第24章 · Specialist Dealers&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;NYSE market makers&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch25.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 25: Internalization, Preferencing, and Crossing&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第25章 · Internalization&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Broker-dealer crossing&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch26.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 26: Competition Within and Among Markets&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第26章 · Competition Among Markets&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Fragmentation, regulation&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch27.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 27: Floor Versus Automated Trading Systems&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第27章 · Floor vs Automated Trading&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Market evolution&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch28.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 28: Bubbles, Crashes, and Circuit Breakers&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第28章 · Bubbles and Circuit Breakers&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Market stability&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch29.html"&gt;
- &lt;span class="toc-row-title"&gt;Chapter 29: Insider Trading&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;第29章 · Insider Trading&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Regulation and detection&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/index_term.html"&gt;
- &lt;span class="toc-row-title"&gt;Index&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;索引&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Key terms&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/references.html"&gt;
- &lt;span class="toc-row-title"&gt;References&lt;/span&gt;
+ &lt;span class="toc-row-title"&gt;参考文献&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Sources and papers&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
