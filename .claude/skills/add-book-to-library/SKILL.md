@@ -343,6 +343,10 @@ V*(s) = max_a [ R(s,a) + γ ∑ P(s'|s,a) V*(s') ]
 categories: ["机器学习"]
 ```
 
+#### 侧栏菜单（自动生成）
+
+侧栏由 `menu-filetree.html` 根据 `categories` + content 结构自动渲染，无需手写 `hugo.toml` 菜单。章节标题从 `ch*.md` 的 `title` frontmatter 提取（`{{< book-toc >}}` 短代码），>50 字符则在 frontmatter 中截断。
+
 #### Footer 导航约定
 
 书封面 `_index.md` 的 prev 链接优先指向分类页；第一章的 prev 回退至书封面（不循环到末章）——由 `layouts/_partials/docs/inject/footer.html` 自动处理，无需手动配置。
