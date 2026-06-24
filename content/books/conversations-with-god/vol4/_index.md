@@ -1,10 +1,10 @@
 ---
-title: "与神为友"
+title: "与神为友 · 第四卷"
 weight: 40
 ---
 
 <section class="book-cover">
-  <h1 class="book-cover-title">与神为友</h1>
+  <h1 class="book-cover-title">与神为友 · 第四卷</h1>
   <p class="book-cover-subtitle">将对话升华为友谊</p>
   <p class="book-cover-author">尼尔·唐纳德·沃尔什 · 李继宏 译</p>
 </section>

@@ -1,10 +1,10 @@
 ---
-title: "与神合一"
+title: "与神合一 · 第五卷"
 weight: 50
 ---
 
 <section class="book-cover">
-  <h1 class="book-cover-title">与神合一</h1>
+  <h1 class="book-cover-title">与神合一 · 第五卷</h1>
   <p class="book-cover-subtitle">合一经验与人类幻觉</p>
   <p class="book-cover-author">尼尔·唐纳德·沃尔什 · 李继宏 译</p>
 </section>
