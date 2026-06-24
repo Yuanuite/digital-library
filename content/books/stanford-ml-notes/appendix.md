@@ -1,6 +1,7 @@
 ---
 title: "附件"
 weight: 120
+description: "CS229线性代数与概率论复习"
 ---
 # 附件
 
