@@ -249,33 +249,68 @@ mkdir -p content/<type>/<category>/<book-slug>/images
 
 #### 表格标题
 
-将 `表N.N　标题` 包裹为表格标题居中样式：
-```html
-<p class="caption">表5.1　n步Q收获</p>
+将 `表N.N　标题` 包裹为 caption shortcode：
+```markdown
+{{</* caption */>}}表5.1　n步Q收获{{</* /caption */>}}
 ```
-
 紧接在 `<table>` 之前。
 
-#### 跨页面交叉引用
+#### 学术块（定义 / 定理 / 例题 / 要点）
 
-**强制**：遍历所有 `ch*.md`，将正文中的「第 N 章」转为可点击链接：
+Hugo 站点已内置以下 shortcode，教材类书籍必须使用：
+
+**定义：**
+```markdown
+{{</* definition title="马尔可夫决策过程" */>}}
+一个 MDP 由状态集 S、动作集 A、转移概率 P 和奖励函数 R 组成。
+{{</* /definition */>}}
 ```
-第3章 → [第3章](ch03.md)
+效果：紫色左边框 + `定义` 标签。
+
+**定理 / 引理 / 命题 / 推论：**
+```markdown
+{{</* theorem type="定理" title="贝尔曼最优方程" */>}}
+V*(s) = max_a [ R(s,a) + γ ∑ P(s'|s,a) V*(s') ]
+{{</* /theorem */>}}
 ```
-不替换标题行（`# 第N章`）和已有链接。**链接用 `.md` 后缀，Hugo 构建时自动转为 `.html`。**
+`type` 可选：`定理`(默认) | `引理` | `命题` | `推论`。蓝色左边框。
+
+**例题：**
+```markdown
+{{</* example title="赌徒破产问题" */>}}
+题目描述...
+{{</* solution */>}}解答内容...{{</* /solution */>}}
+{{</* /example */>}}
+```
+绿色左边框 + `例题` 标签。`{{</* solution */>}}` 可嵌套其中。
+
+**要点（章末总结）：**
+```markdown
+{{</* key-point */>}}
+本章核心结论：...
+{{</* /key-point */>}}
+```
+橙色左边框 + `要点` 标签。
+
+**通用提示框：**
+```markdown
+{{</* callout type="tip" title="小技巧" */>}}
+使用向量化运算可以加速...
+{{</* /callout */>}}
+```
+`type`：`tip`(蓝) | `note`(灰) | `warning`(橙) | `important`(红)。
 
 #### 解答块
 
-将 `解答：` 起头的内容包裹：
-```html
-<div class="solution" markdown="1">
-
+将 `解答：` 起头的内容包裹为 solution shortcode：
+```markdown
+{{</* solution */>}}
 解答：...
-
-</div>
+{{</* /solution */>}}
 ```
+绿色左边框，暗色模式自动适配。**禁止**裸写 `<div class="solution">`。
 
-**失败分支**：`</div>` 漏写 → build 时 HTML 错乱。每个 `解答：` 出现次数应等于 `<div class="solution">` 出现次数。
+**失败分支**：shortcode 未闭合 → Hugo build 报错。每个 `解答：` 出现次数应等于 `{{</* solution */>}}` 出现次数。
 
 #### 索引（`index_term.md`）
 
