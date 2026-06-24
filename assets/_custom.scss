@@ -686,11 +686,32 @@ body {
   pointer-events: none;
 }
 
-// === 搜索结果匹配关键词 ===
+// === 搜索结果列表 ===
+#book-search-results {
+  li { margin-bottom: 0.6rem; }
+  a {
+    color: var(--body-font-color);
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+  small {
+    display: block;
+    color: var(--gray-500);
+    font-size: 0.75rem;
+  }
+  p {
+    color: var(--gray-500);
+    font-size: 0.8rem;
+    margin: 0.15rem 0 0;
+    line-height: 1.4;
+  }
+}
+
+// === 搜索关键词高亮 ===
 .search-match {
-  color: var(--accent);
+  color: #e53935;
   background: none;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 // === 侧栏分类标签 ===
