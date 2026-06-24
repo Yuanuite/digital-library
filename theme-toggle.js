@@ -22,6 +22,8 @@
       d.style.setProperty('--surface','rgba(255,255,255,0.06)');
       d.style.setProperty('--hairline','rgba(255,255,255,0.14)');
       d.style.setProperty('--hairline-strong','rgba(255,255,255,0.24)');
+      d.style.backgroundColor = '#1a1a1a';
+      d.style.color = '#e0e0e0';
     } else {
       d.style.setProperty('--body-background','#fff');
       d.style.setProperty('--body-font-color','#000');
@@ -34,6 +36,8 @@
       d.style.setProperty('--surface','#f5f5f7');
       d.style.setProperty('--hairline','rgba(0,0,0,0.1)');
       d.style.setProperty('--hairline-strong','rgba(0,0,0,0.18)');
+      d.style.backgroundColor = '#ffffff';
+      d.style.color = '#000000';
     }
     localStorage.setItem(KEY, t);
     if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙';
