@@ -15,6 +15,11 @@ copyright = '© Yuanuite'
   unsafe = true
 [markup.goldmark.extensions]
   typographer = false
+[markup.goldmark.extensions.footnote]
+  enable = true
+  backlink = true
+  linkStyle = 'superscript'
+  title = '查看脚注'
 [markup.goldmark.extensions.passthrough]
   enable = true
 [markup.goldmark.extensions.passthrough.delimiters]
