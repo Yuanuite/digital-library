@@ -1,333 +1,215 @@
-<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="期权定价数值方法"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch13.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="第13章"><meta property="og:description" content="期权定价数值方法"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-25T00:38:50+08:00"><meta itemprop=name content="第13章"><meta itemprop=description content="期权定价数值方法"><meta itemprop=dateModified content="2026-06-25T00:38:50+08:00"><meta itemprop=wordCount content="762"><title>第13章 • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch13.html><link rel=stylesheet href=/digital-library/book.min.3e23691350be517993d48d54e83ad8cdb3ba65cbe241510666b8cea7648f70d1.css integrity="sha256-PiNpE1C+UXmT1I1U6DrYzbO6ZcviQVEGZrjOp2SPcNE=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.47665ac3627003a65d3d940453d201c36bbd431e78e2a3055c82577347046dd2.js integrity="sha256-R2Zaw2JwA6ZdPZQEU9IBw2u9Qx544qMFXIJXc0cEbdI=" crossorigin=anonymous></script><script>(function(){var e,t=localStorage.getItem("book-theme");if(!t)return;e=document.documentElement,e.dataset.theme=t,e.style.colorScheme=t,t==="dark"?(e.style.setProperty("--body-background","#1a1a1a"),e.style.setProperty("--body-font-color","#e0e0e0"),e.style.setProperty("--color-link","#4db6ac"),e.style.setProperty("--gray-100","#2d2d2d"),e.style.setProperty("--gray-200","#3d3d3d"),e.style.setProperty("--gray-500","#a0a0a0"),e.style.setProperty("--text-primary","#f5f5f7"),e.style.setProperty("--text-secondary","#a1a1a6"),e.style.setProperty("--surface","rgba(255,255,255,0.06)"),e.style.setProperty("--hairline","rgba(255,255,255,0.14)"),e.style.setProperty("--hairline-strong","rgba(255,255,255,0.24)")):(e.style.setProperty("--body-background","#fff"),e.style.setProperty("--body-font-color","#000"),e.style.setProperty("--color-link","#00897b"),e.style.setProperty("--gray-100","#f0f0f0"),e.style.setProperty("--gray-200","#d0d0d0"),e.style.setProperty("--gray-500","#707070"),e.style.setProperty("--text-primary","#1d1d1f"),e.style.setProperty("--text-secondary","#6e6e73"),e.style.setProperty("--surface","#f5f5f7"),e.style.setProperty("--hairline","rgba(0,0,0,0.1)"),e.style.setProperty("--hairline-strong","rgba(0,0,0,0.18)"))})()</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script defer src=/digital-library/code-copy.js></script><script defer src=/digital-library/abbr-tooltip.js></script><script defer src=/digital-library/katex-init.js></script><script defer src=/digital-library/theme-toggle.js></script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="二叉树定价"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch13.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="第13章"><meta property="og:description" content="二叉树定价"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-25T01:25:59+08:00"><meta itemprop=name content="第13章"><meta itemprop=description content="二叉树定价"><meta itemprop=dateModified content="2026-06-25T01:25:59+08:00"><meta itemprop=wordCount content="2355"><title>第13章 • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch13.html><link rel=stylesheet href=/digital-library/book.min.3e23691350be517993d48d54e83ad8cdb3ba65cbe241510666b8cea7648f70d1.css integrity="sha256-PiNpE1C+UXmT1I1U6DrYzbO6ZcviQVEGZrjOp2SPcNE=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.d2946a832021f7e9858c14b364ee46037eda966c3a5284b187db9e863a8b319a.js integrity="sha256-0pRqgyAh9+mFjBSzZO5GA37almw6UoSxh9uehjqLMZo=" crossorigin=anonymous></script><script>(function(){var e,t=localStorage.getItem("book-theme");if(!t)return;e=document.documentElement,e.dataset.theme=t,e.style.colorScheme=t,t==="dark"?(e.style.setProperty("--body-background","#1a1a1a"),e.style.setProperty("--body-font-color","#e0e0e0"),e.style.setProperty("--color-link","#4db6ac"),e.style.setProperty("--gray-100","#2d2d2d"),e.style.setProperty("--gray-200","#3d3d3d"),e.style.setProperty("--gray-500","#a0a0a0"),e.style.setProperty("--text-primary","#f5f5f7"),e.style.setProperty("--text-secondary","#a1a1a6"),e.style.setProperty("--surface","rgba(255,255,255,0.06)"),e.style.setProperty("--hairline","rgba(255,255,255,0.14)"),e.style.setProperty("--hairline-strong","rgba(255,255,255,0.24)")):(e.style.setProperty("--body-background","#fff"),e.style.setProperty("--body-font-color","#000"),e.style.setProperty("--color-link","#00897b"),e.style.setProperty("--gray-100","#f0f0f0"),e.style.setProperty("--gray-200","#d0d0d0"),e.style.setProperty("--gray-500","#707070"),e.style.setProperty("--text-primary","#1d1d1f"),e.style.setProperty("--text-secondary","#6e6e73"),e.style.setProperty("--surface","#f5f5f7"),e.style.setProperty("--hairline","rgba(0,0,0,0.1)"),e.style.setProperty("--hairline-strong","rgba(0,0,0,0.18)"))})()</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script defer src=/digital-library/code-copy.js></script><script defer src=/digital-library/abbr-tooltip.js></script><script defer src=/digital-library/katex-init.js></script><script defer src=/digital-library/theme-toggle.js></script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/digital-library/index.html><span>Yuan's Library</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=搜索 aria-label=搜索 maxlength=64>
 <kbd class=book-search-kbd>⌘K</kbd><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><button id=theme-toggle class=theme-toggle aria-label=切换深色/浅色模式 title=切换深色/浅色模式>
 <span class=theme-icon>🌙</span></button><ul><li><a href=/digital-library/books/index.html>书架</a><li><span class=menu-category>机器学习</span><ul><li><a href=/digital-library/books/stanford-ml-notes/index.html>斯坦福机器学习教程笔记</a></li></ul></li><li><span class=menu-category>灵性</span><ul><li><a href=/digital-library/books/conversations-with-god/index.html>与神对话</a></li></ul></li><li><span class=menu-category>工程</span><ul><li><a href=/digital-library/books/lun-system-engineering/index.html>论系统工程（新世纪版）</a></li></ul></li><li><span class=menu-category>金融</span><ul><li><a href=/digital-library/books/why-stock-markets-crash/index.html>Why Stock Markets Crash</a></li><li><a href=/digital-library/books/trading-and-exchanges/index.html>Trading and Exchanges</a></li><li><a href=/digital-library/books/options-futures-derivatives/index.html>期权、期货及其他衍生产品</a><ul><li><a href=/digital-library/books/options-futures-derivatives/preface.html>前言与导览</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch01.html>第1章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch02.html>第2章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch03.html>第3章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch04.html>第4章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch05.html>第5章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch06.html>第6章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch07.html>第7章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch08.html>第8章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch09.html>第9章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch10.html>第10章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch11.html>第11章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch12.html>第12章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch13.html class=active>第13章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch14.html>第14章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch15.html>第15章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch16.html>第16章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch17.html>第17章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch18.html>第18章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch19.html>第19章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch20.html>第20章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch21.html>第21章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch22.html>第22章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch23.html>第23章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch24.html>第24章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch25.html>第25章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch26.html>第26章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch27.html>第27章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch28.html>第28章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch29.html>第29章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch30.html>第30章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch31.html>第31章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch32.html>第32章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch33.html>第33章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch34.html>第34章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch35.html>第35章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch36.html>第36章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch37.html>第37章</a></li></ul></li></ul></li></li><li><a href=/digital-library/notes.html>欢迎</a></li><li><a href=/digital-library/papers/index.html>论文</a></li><li><a href=/digital-library/reference/index.html>元素模板</a></li><li><a href=/digital-library/tags/index.html>Tags</a></li><li><a href=/digital-library/about.html>关于本站</a></li></ul><ul><li><a href=https://github.com/yuanuite/digital-library target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/digital-library/icons/menu.svg class=book-icon alt=Menu></label><h3>第13章</h3><div class=header-actions><label for=menu-control class=mobile-search-trigger onclick='setTimeout(()=>document.querySelector("#book-search-input")?.focus(),350)' aria-label=搜索><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-</label><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#131-单步二叉树模型与无套利方法>13.1 单步二叉树模型与无套利方法</a><ul><li><a href=#chapter_173.xhtml_Af15d00eb-4929-4373-b113-85c78c626184>13.1.1 推广</a></li><li><a href=#chapter_173.xhtml_Af48500ec-4198-4a13-99b0-9e845a78810a>13.1.2 股票期望收益的无关性</a></li></ul></li><li><a href=#132-风险中性定价>13.2 风险中性定价</a><ul><li><a href=#chapter_174.xhtml_A4cde00ed-044a-4be3-b2a6-8a16e6215bc2>13.2.1 再论单步二叉树例子</a></li><li><a href=#chapter_174.xhtml_Ab3e400ee-1f48-4770-a220-b726237dbbde>13.2.2 现实世界与风险中性世界的区别</a></li></ul></li><li><a href=#133-两步二叉树>13.3 两步二叉树</a></li><li><a href=#134-看跌期权的例子>13.4 看跌期权的例子</a></li><li><a href=#135-美式期权>13.5 美式期权</a></li><li><a href=#136-delta>13.6 delta</a></li><li><a href=#137-选取u和d使二叉树与波动率吻合>13.7 选取u和d使二叉树与波动率吻合</a></li><li><a href=#138-二叉树公式>13.8 二叉树公式</a></li><li><a href=#139-增加二叉树的步数>13.9 增加二叉树的步数</a></li><li><a href=#1310-使用derivagem软件>13.10 使用DerivaGem软件</a></li><li><a href=#1311-其他标的资产上的期权>13.11 其他标的资产上的期权</a><ul><li><a href=#chapter_183.xhtml_Ae3a500f5-ab54-490d-ad6b-f7fb76911ca7>13.11.1 支付连续股息收益率股票的期权</a></li><li><a href=#chapter_183.xhtml_A6d8900f5-c019-4432-b1d4-462cc25fca45>13.11.2 股指期权</a></li><li><a href=#chapter_183.xhtml_A807500f5-6f05-466a-ae66-784615beee98>13.11.3 货币期权</a></li><li><a href=#chapter_183.xhtml_Ac5b100f6-ce5e-4803-9dfb-7aaf2c7d7c60>13.11.4 期货期权</a></li></ul></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#概念思考题>概念思考题</a></li><li><a href=#练习题>练习题</a></li><li><a href=#附录13-a由二叉树模型推导布莱克-斯科尔斯-默顿欧式期权定价公式>附录13 A由二叉树模型推导布莱克-斯科尔斯-默顿欧式期权定价公式</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=第13章>第13章<a class=anchor href=#%e7%ac%ac13%e7%ab%a0>#</a></h1><p>对期权定价时，一种常用的方法是构造二叉树(binomial
-tree)。这里的二叉树是指在期权期限内可能会出现的股票价格变动路径的图形。这种方法假设股票价格服从随机游走(random
-walk)：在树形上的每一步，股票价格以某种概率会向上移动一定的比率，同时以某种概率会向下移动一定的比率。在步长足够小的极限状态下，这种模型与第15章中讨论的布莱克-斯科尔斯-默顿模型是一致的。在本章的附录里我们将证明当步长变得越来越小时，由二叉树给出的欧式期权价格收敛到布莱克-斯科尔斯-默顿价格。</p><p>本章中的内容很重要：第一个原因是本章解释了用来对期权定价的无套利假设的特点，第二个原因是介绍了常常用于对美式期权和其他衍生产品定价所用的二叉树数值方法，第三个原因是本章引进了非常重要的风险中性定价原理。</p><p>本章采用的是考克斯、罗斯和鲁宾斯坦在1979年发表的一篇重要文章中的方法。我们将在第21章里对二叉树数值方法进行更详细的讨论。</p><h2 id=131-单步二叉树模型与无套利方法>13.1 单步二叉树模型与无套利方法<a class=anchor href=#131-%e5%8d%95%e6%ad%a5%e4%ba%8c%e5%8f%89%e6%a0%91%e6%a8%a1%e5%9e%8b%e4%b8%8e%e6%97%a0%e5%a5%97%e5%88%a9%e6%96%b9%e6%b3%95>#</a></h2><p>我们由一个非常简单的例子入手。假设一只股票的当前价格为20美元，并且我们已知在3个月后股票的价格将会变为22美元或18美元。我们希望对3个月后能够以21美元买入股票的期权定价。这个期权在3个月后的价值将为以下两者之一：如果股票价格变为22美元，期权价值将为1美元；如果股票价格为18美元，期权价值将为0。这些情形如图13-1所示。</p><p>我们发现可以利用一种比较简单的方式来对此例中的期权定价，唯一需要的假设是在市场上没有套利机会。由股票和期权可以构造一个在3个月后价值没有不确定性的投资组合。因为这一投资组合没有任何风险，所以其收益率一定等于无风险利率。这样我们可得出构造这一投资组合的成本，并由此得出期权的价格。因为这里有两个证券（股票与股票期权），并且只有两种不同的可能性，因此我们总是可以构造出无风险投资组合。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_235_01.jpg alt>
-{ratio="0.404"
-w="947px" w-new="383px"
-style="max-width:947px;max-height:383px;width:100%"}</p><p>图13-1 第13.1节例子中股票价格的变化</p><p>考虑一个由Δ单位的股票多头和一份看涨期权空头所构成的投资组合。我们将求出使投资组合成为无风险的Δ。当股票价格由20美元变为22美元时，所持股票的价值为22Δ，期权的价值为1美元，投资组合的总价值为22Δ-1；当股票价格由20美元变为18美元时，所持股票的价值变为18Δ，期权的价值为0，投资组合的总价值为18Δ。当投资组合在以上两种可能性下价值相等时，投资组合没有任何风险，这意味着：</p><p>22Δ-1=18Δ</p><p>即</p><p>Δ=0.25</p><p>因此，无风险投资组合为：</p><p>• 多头：0.25单位的股票；</p><p>• 空头：1份期权。</p><p>如果股票价格上涨为22美元，投资组合价值为</p><p>22×0.25-1=4.5（美元）</p><p>如果股票价格下跌到18美元，投资组合价值为</p><p>18×0.25=4.5（美元）</p><p>无论股票价格上涨还是下跌，在期权到期时投资组合的价值总是4.5美元。</p><p>在无套利机会时，无风险投资组合的收益率等于无风险利率。假设这时的（连续复利）无风险利率为每年4%，那么该投资组合在今天的价值必须为4.5美元的贴现值，即</p><p>4.5e-0.04×3/12=4.455（美元）</p><p>股票在今天的价格已知为20美元，如果将期权的价格记为f，那么投资组合在今天的价值是</p><p>20×0.25-f=5-f</p><p>因此</p><p>5-f=4.455</p><p>或</p><p>f=0.545</p><p>以上讨论说明，在无套利机会时，期权的目前价值必须为0.545美元。如果期权价值高于0.545美元，那么构造投资组合的费用就会低于4.455美元，而投资组合的收益率就会高于无风险利率；如果期权价值低于0.545美元，那么卖空这一投资组合将会提供一个低于无风险利率的借款机会。</p><p>在市场上我们无法交易0.25股股票，但是以上讨论也适用于卖出400份期权及买入100股股票的情形。一般来讲，对于每份卖出的期权，我们都要买入Δ股股票来构成无风险投资组合。在对冲期权风险时，参数Δ(delta)很重要，在本章后面的内容以及第19章里我们将对这个参数做进一步讨论。</p><h3 id=chapter_173.xhtml_Af15d00eb-4929-4373-b113-85c78c626184 class=thirdTitle>13.1.1 推广<a class=anchor href=#chapter_173.xhtml_Af15d00eb-4929-4373-b113-85c78c626184>#</a></h3><p>我们可以将以上无套利的论证进行推广。假定股票的价格为S0，股票期权（或以股票为标的的任何衍生产品）的价格为f。假定期权的期限为T，在期权有效期内，股票价格或者会上涨到S0u，或者会下跌到S0d，其中u>1，d&lt;1。当股票价格上涨时，增长的比率为u-1。当股票价格下跌时，下跌的比率为1-d。假设股票价格变到S0u时相应的期权价格为fu，而股票价格变为S0d时期权价格为fd。结果如图13-2所示。</p><p>与前面相同，我们考虑一个由Δ单位股票的多头与一份期权的空头所组成的投资组合。我们可以找到一个使投资组合没有任何风险的Δ：如果股票价格上涨，在期权到期时投资组合的价值为</p><p>S0uΔ-fu</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_236_01.jpg alt>
-{ratio="0.732"
-w="548px" w-new="401px"
-style="max-width:548px;max-height:401px;width:100%"}</p><p>图13-2 单步二叉树中的股票价格与期权价格</p><p>如果股票价格下跌，组合的价值为</p><p>S0dΔ-fd</p><p>令以上两个值相等，即</p><p>S0uΔ-fu=S0dΔ-fd</p><p>我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_236_02.jpg alt>
-{ratio="0.173"
-w="701px" w-new="121px"
-style="max-width:701px;max-height:121px;width:100%"}</p><p>这时投资组合是无风险的。因为没有套利机会，其收益率必须等于无风险利率。式(13-1)表明，Δ为时间T时期权价格变化与股票价格变化的比率。</p><p>如果我们将无风险利率记为r，那么投资组合的现值为</p><p>(S0uΔ-fu)e-rT</p><p>而构造投资组合的起始成本为</p><p>S0Δ-f</p><p>所以</p><p>S0Δ-f=(S0uΔ-fu)e-rT</p><p>即</p><p>f=S0Δ(1-ue-rT)+fue-rT</p><p>将式(13-1)中的Δ代入上式并化简，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_236_03.jpg alt>
-{ratio="0.163"
-w="712px" w-new="116px"
-style="max-width:712px;max-height:116px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_236_04.jpg alt>
-{ratio="0.181"
-w="629px" w-new="114px"
-style="max-width:629px;max-height:114px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_236_05.jpg alt>
-{ratio="0.081"
-w="1102px" w-new="89px"
-style="max-width:1102px;max-height:89px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_237_01.jpg alt>
-{ratio="0.116"
-w="955px" w-new="111px"
-style="max-width:955px;max-height:111px;width:100%"}</p><p>当股票价格由单步二叉树给出时，式(13-2)及式(13-3)可以用来对期权进行定价。这个公式需要的唯一假设是在市场上没有套利机会。</p><p>在前面所考虑的例子中（见图13-1），u=1.1,d=0.9,r=0.04,T=0.25,fu=1及fd=0。由式(13-3)，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_237_02.jpg alt>
-{ratio="0.213"
-w="525px" w-new="112px"
-style="max-width:525px;max-height:112px;width:100%"}</p><p>由式(13-2)，我们得出</p><p>f=e-0.04×0.25(0.5503×1+0.4497×0)=0.545</p><p>这与本节开始时所得结果是一致的。</p><h3 id=chapter_173.xhtml_Af48500ec-4198-4a13-99b0-9e845a78810a class=thirdTitle>13.1.2 股票期望收益的无关性<a class=anchor href=#chapter_173.xhtml_Af48500ec-4198-4a13-99b0-9e845a78810a>#</a></h3><p>期权定价公式(13-2)中没有涉及股票价格上涨或下跌的概率。例如，按此公式计算，当股票价格上涨概率为0.5时所得的欧式期权价格与股票价格上涨概率为0.9时所得的欧式期权价格一样。这一结果有点儿令人惊讶，似乎与我们的直觉不符。我们会很自然地认为当股票价格上涨的概率增大时，这一股票上的看涨期权价格也会增大，同时这一股票上的看跌期权价格会下降。但事实并非如此。</p><p>这里的关键原因是我们并不是在一个绝对条件下对期权进行定价的。我们是根据股票价格来计算期权价格，而未来股票价格涨跌的概率已经反映在其价格之中。因此，当根据股票价格对期权定价时，我们无须再考虑股票上涨与下跌的概率。</p><h2 id=132-风险中性定价>13.2 风险中性定价<a class=anchor href=#132-%e9%a3%8e%e9%99%a9%e4%b8%ad%e6%80%a7%e5%ae%9a%e4%bb%b7>#</a></h2><p>我们现在可以引进关于衍生产品定价的一个重要原理，即所谓的风险中性定价(risk-neutral
-valuation)：对衍生产品定价时，我们可以假设投资者是风险中性(risk-neutral)的。这个假设是指投资的风险增长时，投资者并不需要额外的期望收益作为补偿。所有投资者都是风险中性的世界叫作风险中性世界(risk-neutral
-world)。当然，我们所生活的世界不是风险中性的：投资者所承受的风险越大，他们所要求的回报也会越高。但是，我们发现当假设世界是风险中性时给出的衍生产品价格不但在风险中性世界里是正确的，而且在我们所生活的世界里也是正确的。这种定价方式奇迹般地避开了我们一无所知的有关买方与卖方的风险厌恶程度。</p><p>风险中性定价方法乍看起来好像很令人吃惊。期权是风险投资，难道一个人对风险的态度不应当影响对它们的定价吗？这里的答案是当我们利用标的资产的价格对期权定价时，投资者对风险的态度是不重要的。当投资者对风险更加厌恶时，股票价格将会下跌，但是将期权价格与股票价格联系起来的公式是不变的。</p><p>风险中性世界的两个特点可以简化对衍生产品的定价：</p><p>(1)股票（或任何投资）的期望收益率等于无风险利率。</p><p>(2)对期权（或其他证券）的期望收益贴现的利率等于无风险利率。</p><p>在式(13-2)中，参数p应当理解为在风险中性世界里股票价格上涨的概率，而1-p是在这个世界里股票价格下跌的概率（假设u>erT，所以0&lt;p&lt;1）。表达式</p><p>pfu+(1-p)fd</p><p>则是期权在到期日的收益在风险中性世界里的期望值，因而式(13-2)可以表达为期权今天的价值等于将其收益在风险中性世界里的期望值以无风险利率贴现所得的现值。这正是风险中性定价的一个应用。</p><p>为了证明我们对p的理解是合理的，我们注意当上涨概率为p时，股票在时间T的期望收益E(ST)为</p><p>E(ST)=pS0u+(1-p)S0d</p><p>即</p><p>E(ST)=pS0(u-d)+S0d</p><p>将式(13-3)中的p代入公式，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_238_01.jpg alt>
-{ratio="0.070"
-w="992px" w-new="69px"
-style="max-width:992px;max-height:69px;width:100%"}</p><p>以上公式说明股票价格上涨概率为p时，股票价格以无风险利率的平均速度增长。换句话说，当p为价格上涨概率时，股价在风险中性世界中的变化行为完全如我们所期望的那样。</p><p>对衍生产品定价时，风险中性方法是非常重要的结果。这个结果说明当我们假设世界是风险中性时，得到的价格不但在风险中性世界里是正确的，在所有世界里也都是正确的。我们已经证明了当股票价格按简单二叉树的方式变化时，风险中性定价的正确性。可以证明，即使不做此假设，结论依然成立。</p><p>在利用风险中性方法对衍生产品定价时，我们首先计算在风险中性世界里各种不同结果发生的概率，然后由此计算衍生产品的期望收益值。衍生产品的价格等于这个期望值在无风险利率下的贴现值。</p><h3 id=chapter_174.xhtml_A4cde00ed-044a-4be3-b2a6-8a16e6215bc2 class=thirdTitle>13.2.1 再论单步二叉树例子<a class=anchor href=#chapter_174.xhtml_A4cde00ed-044a-4be3-b2a6-8a16e6215bc2>#</a></h3><p>我们再回到图13-1所示的例子上，并以此说明风险中性定价与无套利定价所给出的结果是一样的。在图13-1中，股票的当前价格为20美元，3个月后的股票价格可变成22美元或18美元。所考虑的期权为欧式期权，执行价格为21美元，期限为3个月，无风险利率为4%。</p><p>定义p为在风险中性世界里股票价格上涨的概率。我们可以由式(13-3)来计算p。另一种计算p的方法是利用在风险中性世界里，股票的期望收益率一定等于无风险利率，这意味着p必须满足</p><p>22p+18(1-p)=20e0.04×3/12</p><p>即</p><p>4p=20e0.04×3/12-18</p><p>因此p=0.5503。</p><p>在第3个月后，看涨期权价值为1所对应的概率为0.5503；看涨期权价值为0所对应的概率为0.4497。因此，它的期望值为</p><p>0.5503×1+0.4497×0=0.5503</p><p>在风险中性世界对该期望值以无风险利率进行贴现后得到期权在今天的价值为</p><p>0.5503e-0.04×3/12</p><p>即0.545美元。这与前面所得的值相同，这说明了无套利方法与风险中性定价所给出的结果是一致的。</p><h3 id=chapter_174.xhtml_Ab3e400ee-1f48-4770-a220-b726237dbbde class=thirdTitle>13.2.2 现实世界与风险中性世界的区别<a class=anchor href=#chapter_174.xhtml_Ab3e400ee-1f48-4770-a220-b726237dbbde>#</a></h3><p>我们应当强调的是p为风险中性世界里股票价格上涨的概率。一般来讲，这一概率与现实世界里股票价格上涨的概率是不同的。在我们的例子中，p=0.5503。当价格上涨的概率为0.5503时，股票与期权的期望收益率为4%，等于无风险利率。假设在现实世界里股票的期望收益率为10%,p*代表在现实世界里股票价格上涨的概率。那么</p><p>22p*+18(1-p*)=20e0.10×3/12</p><p>因此p*=0.6266。</p><p>在现实世界里期权的期望收益值为</p><p>p *×1+(1-p*)×0</p><p>即0.6266。不幸的是，找出在现实世界里应当使用的贴现率并不是件容易的事。市场对股票所要求的收益率是10%，因此在对该股票上投资的现金流期望值贴现时，应当使用这个值。期权头寸比股票头寸的风险更大，因此对于期权期望收益值的贴现率要比10%更高，但是我们不知道贴现率应当比10%高多少。
-<a href=/digital-library/index.html>[1]</a>{#chapter_174.xhtml_B1}
-风险中性定价方法解决了这个问题，因为在风险中性世界里，所有资产的期望收益率（以及对期望收益的贴现率）均为无风险利率。</p><h2 id=133-两步二叉树>13.3 两步二叉树<a class=anchor href=#133-%e4%b8%a4%e6%ad%a5%e4%ba%8c%e5%8f%89%e6%a0%91>#</a></h2><p>我们可以将以上的分析推广到图13-3所示的两步二叉树情形中。这时股票起始价格为20美元，在树中的任意一步之间，股票价格或上涨10%或下跌10%。假定树中每一步的步长为3个月，无风险利率为4%。像前面一样，我们所考虑期权的期限为6个月，执行价格为21美元。</p><p>这里分析的目的是计算在起始点时的期权价格。我们可以重复利用上一节里的定价原理对这个期权定价。图13-4与图13-3的树形相似，其不同之处是在图13-4的节点上既显示了股票价格也显示了期权价格（节点上面的数字为股票价格，下面的数字为期权价格）。树中最后一层节点上的期权价格很容易求得，它们等于期权的收益：在节点D，股票价格为24.2，期权价格为24.2-21=3.2；在节点E及F上期权处于虚值状态，因此相应的期权价格为零。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_239_01.jpg alt>
-{ratio="0.694"
-w="801px" w-new="556px"
-style="max-width:801px;max-height:556px;width:100%"}</p><p>图13-3 两步二叉树中的股票价格</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_239_02.jpg alt>
-{ratio="0.671"
-w="865px" w-new="580px"
-style="max-width:865px;max-height:580px;width:100%"}</p><p>图13-4
-两步二叉树的股票价格及期权价格。对于每个节点，上面的数字为股票价格，下面的数字为期权价格</p><p>在节点C，期权的价格为0。这是因为节点C的价值来自节点E和F，而在这两个节点上期权价格均为0。为了求得在节点B上的期权价格，我们考虑由图13-5所示的二叉树。利用本章前面引入的符号，u=1.1，d=0.9，r=4%和T=0.25，因此p=0.5503。由式(13-2)我们可以得出在节点B上，期权价值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_240_01.jpg alt>
-{ratio="0.681"
-w="633px" w-new="431px"
-style="max-width:633px;max-height:431px;width:100%"}</p><p>图13-5 图13-4中估计节点B上的期权价格</p><p>e-0.04×3/12(0.5503×3.2+0.4497×0)=1.7433</p><p>最后要计算最初始节点A上的期权价格。为此我们考虑二叉树的第一步。我们已知期权在节点B上的价格为1.7433，在节点C上的价值为0，由式(13-2)得出在节点A上期权价值为</p><p>e-0.04×3/12(0.5503×1.7433+0.4497×0)=0.9497（美元）</p><p>期权的价值是0.9497美元。</p><p>注意，在以上的例子中，u与d（股票上涨与下跌的比率）在每一节点上均相同，而且树中每一步的步长也均相等。因此由式(13-3)所计算出的风险中性概率p在每一个节点上也都是相同的。</p><p>推广</p><p>由图13-6我们可以得出关于两步二叉树的一般结论。初始股票价格为S0。在二叉树上的每一步，股票价格或者上涨到初始价格的u倍，或者下跌到初始价格的d倍，期权价值显示在树上（例如，在股票价格上涨两次后，期权价值为fuu）。我们假定无风险利率为r，二叉树的步长为Δt年。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_240_02.jpg alt>
-{ratio="0.709"
-w="872px" w-new="618px"
-style="max-width:872px;max-height:618px;width:100%"}</p><p>图13-6 一般两步二叉树中的股票价格及期权价格</p><p>因为步长为Δt，式(13-2)及式(13-3)变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_240_03.jpg alt>
-{ratio="0.172"
-w="1106px" w-new="190px"
-style="max-width:1106px;max-height:190px;width:100%"}</p><p>重复应用式(13-5)，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_240_04.jpg alt>
-{ratio="0.196"
-w="1121px" w-new="220px"
-style="max-width:1121px;max-height:220px;width:100%"}</p><p>将式(13-7)和式(13-8)代入式(13-9)，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_240_05.jpg alt>
-{ratio="0.056"
-w="1275px" w-new="72px"
-style="max-width:1275px;max-height:72px;width:100%"}</p><p>以上结论与前面提到的风险中性定价理论是一致的。变量p2、2p(1-p)、(1-p)2分别对应于股票价格取上、中、下三个节点上值的概率。期权价格等于其在风险中性世界里的期望收益值以无风险利率进行贴现后所得的现值。</p><p>当我们在树形上引入更多的步数时，风险中性定价原理仍然成立，期权价格依然等于其收益在风险中性世界里的期望值以无风险利率贴现后的现值。</p><h2 id=134-看跌期权的例子>13.4 看跌期权的例子<a class=anchor href=#134-%e7%9c%8b%e8%b7%8c%e6%9c%9f%e6%9d%83%e7%9a%84%e4%be%8b%e5%ad%90>#</a></h2><p>本章所描述的方法既可以用于对看涨期权定价，也可以用于对看跌期权定价。考虑一个2年期执行价格为52美元的欧式看跌期权，股票的当前价格为50美元。我们假定股票价格服从步长为1年的两步二叉树。在二叉树的每一步上，股票价格或者上涨20%，或者下跌20%，我们假定无风险利率为5%。</p><p>二叉树如图13-7所示，这里u=1.2,d=0.8,Δt=1及r=0.05。由式(13-6)，我们可以得出风险中性概率p为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_241_01.jpg alt>
-{ratio="0.224"
-w="496px" w-new="111px"
-style="max-width:496px;max-height:111px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_241_02.jpg alt>
-{ratio="0.703"
-w="872px" w-new="613px"
-style="max-width:872px;max-height:613px;width:100%"}</p><p>图13-7
-利用两步二叉树来对欧式看跌期权定价。节点上面的数字为股票价格，下面的数字为期权价格</p><p>最终的股票价格可能为72美元、48美元或32美元。这时，fuu=0,fud=4与fdd=20。由式(13-10)，我们有</p><p>f=e-2×0.05×1(0.62822×0+2×0.6282×0.3718×4+0.37182×20)=4.1923</p><p>看跌期权的价值为4.1923美元。这一结果也可以利用式(13-5)并从树的最后节点一步步向回推算得出。图13-7给出了中间节点上的期权价格。</p><h2 id=135-美式期权>13.5 美式期权<a class=anchor href=#135-%e7%be%8e%e5%bc%8f%e6%9c%9f%e6%9d%83>#</a></h2><p>到目前为止，我们考虑的期权都是欧式期权。接下来我们考虑如何利用像图13-4或图13-7中所描述的二叉树来对美式期权进行定价。定价的过程是从树的末尾出发以倒推的形式推算到树的起始点，在树的每一个节点上我们都需要检验提前行使期权是否为最优。在树的最后节点上，期权的价格等于欧式期权的价格，之前任何一个节点上期权的价格等于以下两个数量的最大值：</p><p>(1)由式(13-5)所计算的值；</p><p>(2)提前行使期权的收益。</p><p>图13-8显示了当期权为美式期权（而不是欧式期权）时，图13-7会如何变化。股票价格和上下变动的概率并没有改变，期权在最后节点上的价格也没有改变。在节点B上，式(13-5)所给出的期权价值为1.4147，而提前行使期权的相应收益为负值(=-8)。显然在节点B上提前行使期权不会是最优的，因此在该节点上，期权价格为1.4147。在节点C上，式(13-5)所给出的期权价值为9.4636，提前行使期权的收益为12。这时，提前行使期权为最优，因此在该节点上期权价值为12。在最初的节点A上，式(13-5)所计算的数量为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_241_03.jpg alt>
-{ratio="0.714"
-w="843px" w-new="602px"
-style="max-width:843px;max-height:602px;width:100%"}</p><p>图13-8
-利用两步二叉树对美式看跌期权定价。在每个节点上面的数字为股票价格，下面的数字为期权价格</p><p>e-0.05×1(0.6282×1.4147+0.3718×12)=5.0894</p><p>提前行使期权的收益为2，这时提前行使期权不为最优。因此，期权价值为5.0894美元。</p><h2 id=136-delta>13.6 delta<a class=anchor href=#136-delta>#</a></h2><p>我们现在引进delta，这个变量（有时称为希腊值）在期权定价以及对冲过程中是个很重要的参数。</p><p>一份股票期权的delta(Δ)为期权价格变化同标的股票价格变化之间的比率，它是当我们卖出一份期权时，为了构造无风险组合而需要持有的标的股票数量。这一数量与本章前面所引入的Δ相同。构造无风险投资组合有时也称为delta对冲(delta
-hedging)。看涨期权的delta为正，而看跌期权的delta为负。</p><p>由图13-1，我们可以计算出所考虑的看涨期权delta为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_242_01.jpg alt>
-{ratio="0.359"
-w="298px" w-new="107px"
-style="max-width:298px;max-height:107px;width:100%"}</p><p>这是因为当股票由18美元变为22美元时，期权价格由0美元变为1美元（这也是第13.1节里计算出的Δ值）。</p><p>在图13-4中，对应于股票价格在第1步变化的delta为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_242_02.jpg alt>
-{ratio="0.260"
-w="415px" w-new="108px"
-style="max-width:415px;max-height:108px;width:100%"}</p><p>如果在第1步后股票价格上涨，第2步的delta为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_242_03.jpg alt>
-{ratio="0.254"
-w="425px" w-new="108px"
-style="max-width:425px;max-height:108px;width:100%"}</p><p>如果在第1步后股票价格下跌，在第2步的delta为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_242_04.jpg alt>
-{ratio="0.328"
-w="314px" w-new="103px"
-style="max-width:314px;max-height:103px;width:100%"}</p><p>由图13-7得出，在第1步后的delta为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_242_05.jpg alt>
-{ratio="0.192"
-w="557px" w-new="107px"
-style="max-width:557px;max-height:107px;width:100%"}</p><p>在第2步后delta等于</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_242_06.jpg alt>
-{ratio="0.122"
-w="888px" w-new="108px"
-style="max-width:888px;max-height:108px;width:100%"}</p><p>两步二叉树的例子说明了delta的值随着时间变化（在图13-4中，delta从0.4358变为0.7273或0；在图13-7中，delta从-0.4024变为-0.1667或-1.0000）。因此，采用期权和股票进行无风险对冲时，我们需要不断调整所持股票的数量。在第19章里，我们还要对期权的这一特性做进一步讨论。</p><h2 id=137-选取u和d使二叉树与波动率吻合>13.7 选取u和d使二叉树与波动率吻合<a class=anchor href=#137-%e9%80%89%e5%8f%96u%e5%92%8cd%e4%bd%bf%e4%ba%8c%e5%8f%89%e6%a0%91%e4%b8%8e%e6%b3%a2%e5%8a%a8%e7%8e%87%e5%90%bb%e5%90%88>#</a></h2><p>为了构造步长为Δt的二叉树，我们需要确定三个参数：u、d和p。一旦u和d确定之后，我们在选取p时要确保期望收益率等于无风险利率r，我们已经证明</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_243_01.jpg alt>
-{ratio="0.121"
-w="951px" w-new="115px"
-style="max-width:951px;max-height:115px;width:100%"}</p><p>参数u和d的选取要确保波动率的吻合。股票（或任何资产）价格波动率σ的定义是使得
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_243_02.jpg alt>
-{.content-image-class
-ratio="0.409" w="137px" w-new="56px"
-style="max-width:137px;max-height:56px"}
-为股票价格在一个长度为Δt的时间区间上收益的标准差（有关进一步的讨论，见第15章）。与此等价，回报的方差为σ2Δt。变量X的方差定义为E(X2)-[E(X)]2，其中E代表期望值。在每一个步长为Δt的区间内，股票收益率等于u-1的概率为p，收益率等于d-1的概率为1-p。将二叉树波动率与股票波动率进行匹配，得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_243_03.jpg alt>
-{ratio="0.044"
-w="1515px" w-new="66px"
-style="max-width:1515px;max-height:66px;width:100%"}</p><p>将式(13-11)的概率表达式代入以上方程并进行简化，得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_243_04.jpg alt>
-{ratio="0.057"
-w="1149px" w-new="65px"
-style="max-width:1149px;max-height:65px;width:100%"}</p><p>当忽略Δt2和Δt的更高阶项后，这个方程的解为
-<a href=/digital-library/index.html>[2]</a>{#chapter_179.xhtml_B2}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_243_05.jpg alt>
-{ratio="0.130"
-w="515px" w-new="67px"
-style="max-width:515px;max-height:67px;width:100%"}</p><p>这些正是考克斯、罗斯和鲁宾斯坦(1979)对u和d所取的值。</p><p>在以上分析中，我们选择的u和d是在风险中性世界里匹配波动率的。如果我们选择在现实世界里匹配波动率，情况又会如何？我们现在证明这样做所得的结果是一样的。</p><p>假定在现实世界里价格向上移动的概率为p*，在风险中性世界里价格向上移动的概率为p。图13-9显示了不同世界里相应的概率。定义μ为现实世界回报期望值，因此</p><p>p *u+(1-p*)d=eμΔt</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_243_06.jpg alt>
-{ratio="0.491"
-w="853px" w-new="419px"
-style="max-width:853px;max-height:419px;width:100%"}</p><p>图13-9 股票价格在Δt时间内的变化</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_243_07.jpg alt>
-{ratio="0.206"
-w="539px" w-new="111px"
-style="max-width:539px;max-height:111px;width:100%"}</p><p>假定σ为现实世界的波动率，匹配方差会得出与式(13-12)等同的方程，其中的p被p*代替。将式(13-14)代入，得出</p><p>eμΔt(u+d)-ud-e2μΔt=σ2Δt</p><p>以上方程与式(13-13)几乎相同，唯一的不同是其中r被μ代替。当忽略Δt2和Δt的更高阶项后，得出方程的解与式(13-13)的解相同，为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_243_08.jpg alt>
-{ratio="0.146"
-w="519px" w-new="76px"
-style="max-width:519px;max-height:76px;width:100%"}</p><p>哥萨诺夫定理</p><p>以上结果与一个叫作哥萨诺夫定理(Girsanov's
-theorem)的重要结果密切相关。当我们从现实世界转换到风险中性世界时，股票价格的期望收益值将会变化，但它的波动率保持不变。一般来讲，当我们从具有一组风险偏好的世界转换到具有另一组风险偏好的世界时，变量的期望收益率会变化，但其波动率保持不变。在第28章里，我们将会更详细地探讨风险偏好对市场变量性质的影响。有时，我们也将从一组风险偏好转换到另一组风险偏好的做法称为测度变换(changing
-the
-measure)。现实世界的测度有时称为P-测度，而风险中性世界的测度则称为Q-测度。
-<a href=/digital-library/index.html>[3]</a>{#chapter_179.xhtml_B3}</p><h2 id=138-二叉树公式>13.8 二叉树公式<a class=anchor href=#138-%e4%ba%8c%e5%8f%89%e6%a0%91%e5%85%ac%e5%bc%8f>#</a></h2><p>上一节里的分析表明，当二叉树上的步长为Δt时，为了与波动率相吻合，我们取</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_244_01.jpg alt>
-{ratio="0.072"
-w="956px" w-new="69px"
-style="max-width:956px;max-height:69px;width:100%"}</p><p>和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_244_02.jpg alt>
-{ratio="0.076"
-w="965px" w-new="73px"
-style="max-width:965px;max-height:73px;width:100%"}</p><p>而且由式(13-6)可得</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_244_03.jpg alt>
-{ratio="0.121"
-w="961px" w-new="116px"
-style="max-width:961px;max-height:116px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_244_04.jpg alt>
-{ratio="0.079"
-w="941px" w-new="74px"
-style="max-width:941px;max-height:74px;width:100%"}</p><p>式(13-15)～式(13-18)定义了二叉树。</p><p>我们再考虑图13-8中的美式看跌期权，其中股票价格为50美元，执行价格为52美元，无风险利率为5%，期权期限为2年，二叉树包含两步。这时Δt=1。假定波动率为30%，由式(13-15)～式(13-18)，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_244_05.jpg alt>
-{ratio="0.084"
-w="1276px" w-new="107px"
-style="max-width:1276px;max-height:107px;width:100%"}</p><p>以及</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_244_06.jpg alt>
-{ratio="0.179"
-w="619px" w-new="111px"
-style="max-width:619px;max-height:111px;width:100%"}</p><p>图13-10给出了二叉树的形状。看跌期权的价值为7.43（这与图13-8中假定u=1.2与d=0.8所得的价格是不一样的）。注意，在第一步末，当股票价格达到下方节点时，期权将会被行权。</p><h2 id=139-增加二叉树的步数>13.9 增加二叉树的步数<a class=anchor href=#139-%e5%a2%9e%e5%8a%a0%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%ad%a5%e6%95%b0>#</a></h2><p>到目前为止，我们所列举的二叉树简单得不切实际。显而易见，如果假定在期权期限内价格变化由一步或两步二叉树表达，那么由此得出的期权价格将只是一个非常粗略的近似。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_244_07.jpg alt>
-{ratio="0.714"
-w="867px" w-new="619px"
-style="max-width:867px;max-height:619px;width:100%"}</p><p>图13-10
-用两步二叉树对一个2年期的美式看跌期权进行定价。股票价格为50美元，执行价格为52美元，无风险利率为5%，波动率为30%</p><p>在实际应用二叉树时，期权的期限通常会被分割为30个或更多的时间步。在每一个时间步里，股票价格的变动由单二叉树表达。在30个时间步中，总共有31个终端股票价格，并且有230，即大约10亿种可能的股票价格路径。</p><p>不管步数是多少，树形的结构都是由式(13-15)～式(13-18)定义。例如，假定图13-10中的二叉树为5步而不是2步，相应的参数Δt=2/5=0.4，r=0.05及σ=0.3。相应的参数
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_245_01.jpg alt>
-{.content-image-class
-ratio="0.285" w="228px" w-new="65px"
-style="max-width:228px;max-height:65px"}
-=1.2089，d=1/1.2089=0.8272，a=e0.05×0.4=1.0202，及p=(1.0202-0.8272)/(1.2089-0.8272)=0.5056。</p><p>当时间步数增加（从而Δt变小）时，在二叉树模型里对股票价格变化所做的假设与在第15章中引入的布莱克-斯科尔斯-默顿模型里的假设是一样的。在利用二叉树对欧式期权定价时，当步数增加时，所得价格将会收敛到布莱克-斯科尔斯-默顿价格。我们在本章的附录里将证明这个结论。</p><h2 id=1310-使用derivagem软件>13.10 使用DerivaGem软件<a class=anchor href=#1310-%e4%bd%bf%e7%94%a8derivagem%e8%bd%af%e4%bb%b6>#</a></h2><p>本书的附带软件DerivaGem对读者了解二叉树非常有用。用户可以根据书末的说明将软件装在自己的电脑上，然后可以采用"Equity_FX_Indx_Fut_Opts_Calc"工作页进行计算，在计算中选择"股权"(Equity)作为"标的资产类型"(Underlying
-Type)，选择"二叉树美式"(Binomial American)作为"期权类型"(Option
-Type)。输入股价(stock price)、波动率(volatility)、无风险利率(risk-free
-rate)、到期日(time to expiration)、执行价格(exercise
-price)以及树的步数(tree
-steps)分别为50、30%、5%、2、52及2。先单击"看跌期权"(Put)键，再单击"计算"(Calculate)键。期权价格为7.428，这一价格显示在名为"价格"(Price)的小格中。单击"显示二叉树"(Display
-Tree)，用户可以看到类似于图13-10的图形（红色数字对应于期权将被行权的节点）。</p><p>返回到"Equity_FX_Indx_Fut_Opts_Calc"工作页并将时间步数改为5步，单击"回车"键并单击"计算"键，你将发现期权价格变为7.671，单击"显示二叉树"，一个5步的树形与u、d、a和p的数值将会显示出来。</p><p>DerivaGem可以展示的树形最多为10步，但计算量最多可达500步。在我们的例子中，500步树形所对应的期权价格（精确到小数点第2位）为7.47，这是一个非常精确的结果。将"期权类型"选为"二叉树欧式"(Binomial
-European)，我们可以对欧式期权定价。选用500步树形所得的结果与具有同样参数的美式期权的结果一致，即6.76（将期权类型改为"布莱克-斯科尔斯欧式"(Black-Scholes
-European)，我们可以计算第15章里将讨论的布莱克-斯科尔斯-默顿公式所得的结果，结果也是6.76）。</p><p>通过改变"标的资产类型"，我们也可以分析标的资产并非为股票的期权。接下来我们将讨论这些期权。</p><h2 id=1311-其他标的资产上的期权>13.11 其他标的资产上的期权<a class=anchor href=#1311-%e5%85%b6%e4%bb%96%e6%a0%87%e7%9a%84%e8%b5%84%e4%ba%a7%e4%b8%8a%e7%9a%84%e6%9c%9f%e6%9d%83>#</a></h2><p>在第10章里我们介绍了股指期权、货币期权和期货期权，在第17章和第18章中我们还要进一步讨论这些期权。事实上，我们可以采用和构造股票期权几乎一样的方法来构造二叉树，唯一的变化是对概率p的计算有所改变。像对于股票期权定价时那样，我们仍采用式(13-2)，即每一个节点上的期权价值（在提前行权的可能性被考虑之前）等于p乘以股票价格上涨时所对应的期权价值加上1-p乘以股票价格下跌时所对应的期权价值，并以无风险利率进行贴现。</p><h3 id=chapter_183.xhtml_Ae3a500f5-ab54-490d-ad6b-f7fb76911ca7 class=thirdTitle>13.11.1 支付连续股息收益率股票的期权<a class=anchor href=#chapter_183.xhtml_Ae3a500f5-ab54-490d-ad6b-f7fb76911ca7>#</a></h3><p>考虑一只支付连续股息收益率q的股票。在风险中性世界里，股息加上资本收益(capital
-gain)的总和等于r，股息收益为q，因此资本收益为r-q。如果股票在今天的价格为S0，步长为Δt，第一步后股价的期望值必须为S0e(r-q)Δt，因此</p><p>pS0u+(1-p)S0d=S0e(r-q)Δt</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_246_01.jpg alt>
-{ratio="0.370"
-w="289px" w-new="107px"
-style="max-width:289px;max-height:107px;width:70%"}</p><p>与计算无股息股票期权类似，我们将u设为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_246_02.jpg alt>
-{.content-image-class
-ratio="0.416" w="154px" w-new="64px"
-style="max-width:154px;max-height:64px"}
-，d=1/u以便使树形与波动率相吻合。这意味着我们可以利用式(13-15)～式(13-18)，而计算中唯一的改动是将a=erΔt改为a=e(r-q)Δt。</p><h3 id=chapter_183.xhtml_A6d8900f5-c019-4432-b1d4-462cc25fca45 class=thirdTitle>13.11.2 股指期权<a class=anchor href=#chapter_183.xhtml_A6d8900f5-c019-4432-b1d4-462cc25fca45>#</a></h3><p>在第5章中计算股指期货价格时，我们曾假设股指中的标的股票所支付的股息收益率为q，在这里我们仍采用类似的假设。对于股指期权定价类似于对支付已知连续股息率的股票期权定价。</p><p>【例13-1】
-某股指的目前水平为810，波动率为20%，股息收益率为2%，无风险利率为5%。图13-11显示了DerivaGem对于一个执行价格为800，期权为6个月的欧式看涨期权的定价结果。在计算中采用了两步二叉树。这时</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_246_03.jpg alt>
-{ratio="0.264"
-w="936px" w-new="247px"
-style="max-width:936px;max-height:247px;width:100%"}</p><p>期权价值为53.39。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_246_04.jpg alt>
-{ratio="0.437"
-w="1233px" w-new="539px"
-style="max-width:1233px;max-height:539px;width:100%"}</p><p>图13-11
-利用两步二叉树对股指上6个月期限的欧式看涨期权定价，目前的股指水平为810，执行价格是800，无风险利率是5%，波动率是20%，股息率是2%</p><h3 id=chapter_183.xhtml_A807500f5-6f05-466a-ae66-784615beee98 class=thirdTitle>13.11.3 货币期权<a class=anchor href=#chapter_183.xhtml_A807500f5-6f05-466a-ae66-784615beee98>#</a></h3><p>如第5.10节所示，外汇可以被视为提供收益率等于外币无风险利率rf的资产。同股指相比较，我们可以采用式(13-15)～式(13-18)并令a=e(r-rf)Δt来对货币期权进行定价。</p><p>【例13-2】
-某一外币的当前价值为0.6100美元，汇率波动率为12%，外币的无风险利率为7%，美元的无风险利率为5%。图13-12显示了DerivaGem对于一个执行价格为0.6000，期限为3个月美式看涨期权的定价结果，在计算中采用了三步二叉树。</p><p>这时</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_247_01.jpg alt>
-{ratio="0.259"
-w="970px" w-new="251px"
-style="max-width:970px;max-height:251px;width:100%"}</p><p>期权价值为0.019。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_247_02.jpg alt>
-{ratio="0.463"
-w="1422px" w-new="659px"
-style="max-width:1422px;max-height:659px;width:100%"}</p><p>图13-12
-利用三步二叉树模型对一个3个月期限的货币看涨期权定价。汇率当前价格为0.6100，执行价格为0.6000，无风险利率为5%，波动率为12%，外币无风险利率为7%</p><h3 id=chapter_183.xhtml_Ac5b100f6-ce5e-4803-9dfb-7aaf2c7d7c60 class=thirdTitle>13.11.4 期货期权<a class=anchor href=#chapter_183.xhtml_Ac5b100f6-ce5e-4803-9dfb-7aaf2c7d7c60>#</a></h3><p>进入期货合约的多头或空头时投资者无须支付任何费用。这说明在风险中性世界里期货价格的增长率期望应当为零（在第18.6节中我们将详细讨论这一点）。同上，我们定义p为期货价格上涨的概率，u为价格上涨的比例，d为价格下跌的比例。在开始时期货价格为F0。在第一步Δt时间后，期货价格的期望值仍然应当是F0。这意味着</p><p>pF0u+(1-p)F0d=F0</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_247_03.jpg alt>
-{ratio="0.488"
-w="203px" w-new="99px"
-style="max-width:203px;max-height:99px;width:100%"}</p><p>我们可以利用式(13-15)～式(13-18)以及a=1对期权进行定价。</p><p>【例13-3】
-当前的期货价格为31，波动率为30%，无风险利率为5%。图13-13显示了由DerivaGem对于一个执行价格为30，期限为9个月的美式看跌期权的定价结果，计算中采用了三步二叉树。这时</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_247_04.jpg alt>
-{ratio="0.379"
-w="668px" w-new="253px"
-style="max-width:668px;max-height:253px;width:100%"}</p><p>期权价值为2.84。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_248_01.jpg alt>
-{ratio="0.523"
-w="1329px" w-new="695px"
-style="max-width:1329px;max-height:695px;width:100%"}</p><p>图13-13
-采用三步二叉树模型对一个9个月期限的期货美式看跌期权定价。期货当前价格为31，执行价格为30，波动率为30%，无风险利率为5%</p><h2 id=小结>小结<a class=anchor href=#%e5%b0%8f%e7%bb%93>#</a></h2><p>本章简要介绍了对于股票与其他标的资产上期权的定价过程。对于在期权期限内股票价格服从单步二叉树的简单情形，我们可以构造一个由期权与股票所构成的无风险投资组合。在无套利机会的前提下，无风险投资组合的收益率一定等于无风险利率，由此我们可将股票期权的价格用标的股票价格表示。值得注意的是，我们对于股票在每个节点上涨与下跌的概率无须做任何假设。</p><p>如果股票价格的变化由多步二叉树表述，我们可以依次处理二叉树的每一步，并由期权的到期日出发倒推到树形的起始点，得出期权的价格。在分析中，我们只需要假设在市场上不存在套利机会，而对价格上涨及下跌的概率无须做任何假设。</p><p>另一个重要的原理是在对股票期权定价时，可以假设世界是风险中性的。本章以数值例子和代数的推导形式说明了无套利理论与风险中性定价是等价的，并给出同样的期权价格。</p><p>股票期权的delta（即Δ）考虑了标的股票价格的微小变化对于期权价格变化的影响。delta为期权价格变化与标的股票价格变化的比率。为了构造无风险头寸，对于每个卖出的期权，投资者必须买入Δ单位的股票。通过观察一个典型的二叉树，我们可以看到Δ在期权有效期内随时间变化而改变。这意味着，为了对冲期权，我们必须不断调整标的股票的头寸。</p><p>构造股指、外汇、期货定价的二叉树与构造股票期权的二叉树非常相似。在第21章里，我们将进一步讨论二叉树，并说明在实际中应用二叉树的更多细节。</p><h2 id=推荐阅读>推荐阅读<a class=anchor href=#%e6%8e%a8%e8%8d%90%e9%98%85%e8%af%bb>#</a></h2><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_248_02.jpg alt>
-{ratio="0.186"
-w="1626px" w-new="303px"
-style="max-width:1626px;max-height:303px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_249_01.jpg alt>
-{ratio="0.074"
-w="1612px" w-new="119px"
-style="max-width:1612px;max-height:119px;width:100%"}</p><h2 id=概念思考题>概念思考题<a class=anchor href=#%e6%a6%82%e5%bf%b5%e6%80%9d%e8%80%83%e9%a2%98>#</a></h2><p>13.1 什么是风险中性定价？</p><p>13.2 解释使用单步二叉树时，用于对期权进行定价的无套利理论。</p><p>13.3 u和d是什么？用来计算它们的公式是什么？</p><p>13.4 p是如何定义的？计算p的公式是什么？</p><p>13.5 解释在现实世界中，计算期权收益的贴现率的困难。</p><p>13.6 股票期权的delta是什么？</p><p>13.7 什么是哥萨诺夫定理？</p><p>13.8
-当假设股票提供连续股息收益率时，使用二叉树对期权的定价过程将如何变化？</p><p>13.9
-股票的当前价格为40美元，已知在一个月后股票的价格将可能变为42美元或38美元，无风险利率为每年8%（连续复利），执行价格为39美元、一个月期限的欧式期权价值是多少？</p><p>13.10
-股票的当前价格为50美元，已知在6个月后这一股票的价格将可能变为45美元或55美元，无风险利率为10%（连续复利）。执行价格为50美元、6个月期限的欧式看跌期权的价值是多少？</p><h2 id=练习题>练习题<a class=anchor href=#%e7%bb%83%e4%b9%a0%e9%a2%98>#</a></h2><p>13.11
-股票的当前价格为100美元，在今后每6个月内，股票价格可能或上涨10%或下跌10%，无风险利率为每年8%（连续复利），执行价格为100美元、1年期的欧式看涨期权的价格是多少？</p><p>13.12
-在练习题13.11的情形下，执行价格为100美元、1年期的看跌期权价格是多少？验证所得结果满足看跌-看涨期权平价关系式。</p><p>13.13
-假设在期权期限内，股票价格变化服从两步二叉树。解释为什么用股票与期权构造的投资组合不可能在整个期权有效期内一直保持无风险状态。</p><p>13.14
-股票的当前价格为50美元，已知在2个月后股票价格将可能变为53美元或48美元，无风险利率为每年10%（连续复利）。执行价格为49美元、2个月期限的欧式看涨期权价格为多少？在讨论中采用无套利方法。</p><p>13.15
-股票的当前价格为80美元，已知在4个月后股票价格将可能变为75美元或85美元，无风险利率为每年5%（连续复利），执行价格为80美元、4个月期限的欧式看跌期权价格为多少？在讨论中采用无套利方法。</p><p>13.16
-股票的当前价格为40美元，已知在3个月后股票价格将可能变为45美元或35美元，无风险利率为每年8%（按季度复利），计算执行价格为40美元、3个月期限的欧式看跌期权价格。验证由无套利理论与风险中性原理给出的价格相等。</p><p>13.17
-某股票的当前价格为50美元，在今后6个月的每3个月时间内，股票价格都可能或上涨6%，或下跌5%，无风险利率为每年5%（连续复利）。执行价格为51美元、6个月期限的欧式看涨期权价值为多少？</p><p>13.18
-考虑练习题13.17中的情形，执行价格为51美元、6个月欧式看跌期权的价值为多少？验证看跌-看涨期权平价关系式的正确性。如果看跌期权为美式期权，在二叉树的某些节点上提前行使期权会是最优吗？</p><p>13.19
-股票的当前价格为25美元，已知在2个月末股票价格将可能变为23美元或27美元，无风险利率为每年10%（连续复利）。假定ST为股票在2个月末的价格，2个月后收益为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_250_01.jpg alt>
-{.content-image-class
-ratio="1.404" w="47px" w-new="66px"
-style="max-width:47px;max-height:66px"} 的衍生产品的价值是多少？</p><p>13.20
-计算用于对外汇期权定价的二叉树中的u、d和p，二叉树的步长为1个月，本国利率为5%，国外利率为8%，汇率的波动率为每年12%。</p><p>13.21
-一只无股息股票的价格为78美元，波动率为30%，所有期限的无风险利率均为每年3%（连续复利）。采用2个月的步长，计算参数u、d和p。采用两步二叉树，即步长为2个月、4个月期限的欧式看涨期权的价值为多少？期权的执行价格为80美元。假定一个交易员卖出了1000份期权（10份合约），交易员在交易开始时，应该持有怎样的股票头寸来对冲交易风险。</p><p>13.22
-一个股指当前取值为1500，波动率为18%，所有期限的无风险利率均为每年4%（连续复利），股指的股息收益率为2.5%。采用6个月的步长，计算参数u、d和p。采用两步二叉树，即步长为6个月，期限为12个月美式看跌期权的价值为多少？期权的执行价格为1480美元。</p><p>13.23
-某商品期货的价格为90美元，利用三步二叉树计算期权价格：(a)9个月期限、执行价格为93美元的美式看涨期权：(b)9个月期限、执行价格为93美元的美式看跌期权。波动率为28%，无风险利率（所有期限）为3%（连续复利）。</p><p>13.24
-一只无股息的生物科技股票的当前价格为140美元，波动率为25%，无风险利率为4%，对于3个月步长：</p><p>(a)价格上升的百分比为多少？</p><p>(b)价格下跌的百分比为多少？</p><p>(c)在风险中性世界里，价格上升的概率为多少？</p><p>(d)在风险中性世界里，价格下跌的概率为多少？</p><p>利用两步二叉树对6个月期限的欧式看涨和看跌期权定价，这里的期权执行价格均为150美元。</p><p>13.25
-在练习题13.24中，假定交易员卖出了10000份欧式看涨期权，而且两步二叉树可以用来描述股票价格变化，为了对冲此6个月期限的欧式看涨期权，在第1个3个月区间的开始时刻和第2个3个月区间的开始时刻，交易员要持有多少股票？对于第2个3个月区间，考虑在第1个3个月区间价格上升和价格下降时两种情形。</p><p>13.26
-股票的当前价格为50美元，在6个月后股票价格将可能变为60美元或42美元，无风险利率为每年12%（连续复利），计算执行价格为48美元、期限为6个月的欧式看涨期权价格。验证无套利方法与风险中性定价方法所得结果是一致的。</p><p>13.27
-股票的价格为40美元，在今后6个月中每一个3个月的时间内，股票价格或上涨10%或下跌10%，无风险利率为每年12%（连续复利）:</p><p>(a)执行价格为42美元、6个月期限的欧式看跌期权价值是多少？</p><p>(b)执行价格为42美元、6个月期限的美式看跌期权价值是多少？</p><p>13.28 利用"试错法"(trial and error
-app-roach)，估计练习题13.27中的期权在什么样的执行价格下应该被马上行使。</p><p>13.29
-考虑一只不支付股息的股票的欧式看涨期权，股票价格为40美元，执行价格为40美元，无风险利率为每年4%，波动率为每年30%，到期日为6个月。</p><p>(a)计算两步二叉树的u、d和p。</p><p>(b)使用两步二叉树为期权定价。</p><p>(c)验证DerivaGem给出了相同的答案。</p><p>(d)使用DerivaGem以5、50、100和500个时间步对期权进行定价。</p><p>13.30
-重复作业题13.29中的计算，假定标的资产为期货合约，期权为美式看跌期权，执行价格与期货价格均为50美元，无风险利率为10%，期限为6个月，期货价格波动率为每年40%。</p><p>13.31
-本章的第一个脚注表示，对于图13-1中的例子，为了使期权收益在现实世界里的期望值贴现后与期权价格吻合，现实世界里贴现率应取为55.96%。证明如果期权是看跌期权，这时在现实世界里的贴现率应取为-70.4%。解释为什么这两个现实世界里的贴现率会如此不同。</p><h2 id=附录13-a由二叉树模型推导布莱克-斯科尔斯-默顿欧式期权定价公式>附录13 A由二叉树模型推导布莱克-斯科尔斯-默顿欧式期权定价公式<a class=anchor href=#%e9%99%84%e5%bd%9513-a%e7%94%b1%e4%ba%8c%e5%8f%89%e6%a0%91%e6%a8%a1%e5%9e%8b%e6%8e%a8%e5%af%bc%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e6%ac%a7%e5%bc%8f%e6%9c%9f%e6%9d%83%e5%ae%9a%e4%bb%b7%e5%85%ac%e5%bc%8f>#</a></h2><p>推导著名的布莱克-斯科尔斯-默顿欧式期权定价公式有许多种方法，其中一种是在二叉树模型中令步数趋于无穷大。</p><p>假设我们利用n步二叉树对执行价格为K，期限为T的欧式看涨期权定价。每步的时间长度是T/n，如果在树上股票价值有j次向上移动，n-j次向下移动，最后的股票价格等于S0ujdn-j，其中u是价格上涨的比例，d是下跌的比例，S0是开始时的股票价格。欧式看涨期权的收益为</p><p>max(S0ujdn-j-K,0)</p><p>由二项分布的性质，j次向上移动，n-j次向下移动的概率为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_251_01.jpg alt>
-{ratio="0.249"
-w="429px" w-new="107px"
-style="max-width:429px;max-height:107px;width:100%"}</p><p>因此看涨期权收益的期望值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_251_02.jpg alt>
-{ratio="0.125"
-w="872px" w-new="109px"
-style="max-width:872px;max-height:109px;width:100%"}</p><p>因为树形所表示的是在风险中性世界里股票价格的变化，所以我们应当用无风险利率贴现得到期权价格</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_251_03.jpg alt>
-{ratio="0.087"
-w="1355px" w-new="118px"
-style="max-width:1355px;max-height:118px;width:100%"}</p><p>只有当股票价格高于执行价格时，式(13A-1)中的项才是非零的，即</p><p>S0ujdn-j>K</p><p>或</p><p>ln(S0/K)>-jln(u)-(n-j)ln(d)</p><p>因为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_251_04.jpg alt>
-{.content-image-class
-ratio="0.339" w="171px" w-new="58px"
-style="max-width:171px;max-height:58px"} 和
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_251_05.jpg alt>
-{.content-image-class
-ratio="0.293" w="191px" w-new="56px"
-style="max-width:191px;max-height:56px"} ，这个条件等价于</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_251_06.jpg alt>
-{ratio="0.116"
-w="661px" w-new="77px"
-style="max-width:661px;max-height:77px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_251_07.jpg alt>
-{ratio="0.358"
-w="388px" w-new="139px"
-style="max-width:388px;max-height:139px;width:100%"}</p><p>因此式(13A-1)可以被写成</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_251_08.jpg alt>
-{ratio="0.119"
-w="902px" w-new="107px"
-style="max-width:902px;max-height:107px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_01.jpg alt>
-{ratio="0.343"
-w="402px" w-new="138px"
-style="max-width:402px;max-height:138px;width:100%"}</p><p>为方便起见，我们定义</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_02.jpg alt>
-{ratio="0.103"
-w="1208px" w-new="124px"
-style="max-width:1208px;max-height:124px;width:100%"}</p><p>和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_03.jpg alt>
-{ratio="0.111"
-w="1158px" w-new="128px"
-style="max-width:1158px;max-height:128px;width:100%"}</p><p>因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_04.jpg alt>
-{ratio="0.067"
-w="1068px" w-new="72px"
-style="max-width:1068px;max-height:72px;width:100%"}</p><p>首先考虑U2。我们知道，当实验次数趋于无穷大时，二项分布将趋向于正态分布。具体地讲，当实验次数为n，成功的概率为p时，成功次数的概率分布近似地等于均值为np，标准差为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_252_05.jpg alt>
-{.content-image-class
-ratio="0.295" w="210px" w-new="62px"
-style="max-width:210px;max-height:62px"}
-的正态分布。式(13A-3)中的U2是成功次数大于α的概率。由正态分布的性质，我们知道当n很大时</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_06.jpg alt>
-{ratio="0.115"
-w="1079px" w-new="124px"
-style="max-width:1079px;max-height:124px;width:100%"}</p><p>其中N为累积正态分布函数。将α代入该式，我们得到</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_07.jpg alt>
-{ratio="0.107"
-w="1267px" w-new="136px"
-style="max-width:1267px;max-height:136px;width:100%"}</p><p>由式(13-15)～式(13-18)，我们有</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_08.jpg alt>
-{ratio="0.317"
-w="379px" w-new="120px"
-style="max-width:379px;max-height:120px;width:70%"}</p><p>将指数函数按级数展开后我们可以看到，当n趋于无穷大时，p(1-p)趋向于1/4，而
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_252_09.jpg alt>
-{.content-image-class
-ratio="0.271" w="251px" w-new="68px"
-style="max-width:251px;max-height:68px"} 则收敛于</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_10.jpg alt>
-{ratio="0.396"
-w="288px" w-new="114px"
-style="max-width:288px;max-height:114px;width:70%"}</p><p>所以当n趋于无穷大时，式(13A-6)成为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_11.jpg alt>
-{ratio="0.109"
-w="1194px" w-new="130px"
-style="max-width:1194px;max-height:130px;width:100%"}</p><p>我们现在考虑U1。由式(13A-2)可得</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_12.jpg alt>
-{ratio="0.091"
-w="1225px" w-new="112px"
-style="max-width:1225px;max-height:112px;width:100%"}</p><p>定义</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_13.jpg alt>
-{ratio="0.121"
-w="1054px" w-new="128px"
-style="max-width:1054px;max-height:128px;width:100%"}</p><p>这时</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_14.jpg alt>
-{ratio="0.250"
-w="460px" w-new="115px"
-style="max-width:460px;max-height:115px;width:100%"}</p><p>式(13A-8)可以写成</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_252_15.jpg alt>
-{ratio="0.103"
-w="1037px" w-new="107px"
-style="max-width:1037px;max-height:107px;width:100%"}</p><p>因为在风险中性世界里，收益的期望值为无风险利率r，所以pu+(1-p)d=erT/n，且</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_253_01.jpg alt>
-{ratio="0.142"
-w="751px" w-new="107px"
-style="max-width:751px;max-height:107px;width:100%"}</p><p>这说明U1涉及二项分布，在这里上移的概率是p*（而不是p）。通过由正态分布来近似二项分布，我们可以得到与式(13A-5)类似的结果</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_253_02.jpg alt>
-{ratio="0.232"
-w="534px" w-new="124px"
-style="max-width:534px;max-height:124px;width:100%"}</p><p>与式(13A-6)相似，代入α，将会得到</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_253_03.jpg alt>
-{ratio="0.143"
-w="937px" w-new="134px"
-style="max-width:937px;max-height:134px;width:100%"}</p><p>将u和d代入式(13A-9)</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_253_04.jpg alt>
-{ratio="0.218"
-w="611px" w-new="133px"
-style="max-width:611px;max-height:133px;width:100%"}</p><p>将指数函数按级数展开后我们可以看到，当n趋于无穷大时，p*(1-p*)趋向于1/4，而
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_253_05.jpg alt>
-{.content-image-class
-ratio="0.444" w="234px" w-new="104px"
-style="max-width:234px;max-height:104px"} 收敛于</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_253_06.jpg alt>
-{ratio="0.401"
-w="284px" w-new="114px"
-style="max-width:284px;max-height:114px;width:100%"}</p><p>所以当n趋于无穷大时</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_253_07.jpg alt>
-{ratio="0.114"
-w="1216px" w-new="139px"
-style="max-width:1216px;max-height:139px;width:100%"}</p><p>由式(13A-4)、式(13A-7)和式(13A-10)，我们有</p><p>c=S0N(d1)-Ke-rTN(d2)</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_253_08.jpg alt>
-{ratio="0.238"
-w="568px" w-new="135px"
-style="max-width:568px;max-height:135px;width:100%"}</p><p>和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_253_09.jpg alt>
-{ratio="0.159"
-w="798px" w-new="127px"
-style="max-width:798px;max-height:127px;width:100%"}</p><p>这就是欧式看涨期权的布莱克-斯科尔斯-默顿公式。在第15章里，我们将进一步讨论这个公式，并且在附录15A里会给出另一种推导方式。</p><p><a href=/digital-library/index.html>[1]</a>{#chapter_188.xhtml_BT1}
-因为期权价格为0.545，我们可以得出相应的贴现率为55.96%。这是因为0.545=0.6266e-0.5596×3/12。</p><p><a href=/digital-library/index.html>[2]</a>{#chapter_188.xhtml_BT2} 这里我们利用级数展开</p><p>**</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_243_09.jpg alt>
-{ratio="0.264"
-w="363px" w-new="96px"
-style="max-width:363px;max-height:96px;width:100%"}</p><p><a href=/digital-library/index.html>[3]</a>{#chapter_188.xhtml_BT3}
-在我们所采用的记号下，p为Q-测度下的概率，而p*是P-测度下的概率。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><nav class=book-nav><div class="flex justify-between"><div class=book-nav-prev><a href=/digital-library/books/options-futures-derivatives/ch12.html class=book-nav-link>← 第12章</a></div><div class=book-nav-next><a href=/digital-library/books/options-futures-derivatives/ch14.html class=book-nav-link>第14章 →</a></div></div></nav><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#131-单步二叉树模型与无套利方法>13.1 单步二叉树模型与无套利方法</a><ul><li><a href=#chapter_173.xhtml_Af15d00eb-4929-4373-b113-85c78c626184>13.1.1 推广</a></li><li><a href=#chapter_173.xhtml_Af48500ec-4198-4a13-99b0-9e845a78810a>13.1.2 股票期望收益的无关性</a></li></ul></li><li><a href=#132-风险中性定价>13.2 风险中性定价</a><ul><li><a href=#chapter_174.xhtml_A4cde00ed-044a-4be3-b2a6-8a16e6215bc2>13.2.1 再论单步二叉树例子</a></li><li><a href=#chapter_174.xhtml_Ab3e400ee-1f48-4770-a220-b726237dbbde>13.2.2 现实世界与风险中性世界的区别</a></li></ul></li><li><a href=#133-两步二叉树>13.3 两步二叉树</a></li><li><a href=#134-看跌期权的例子>13.4 看跌期权的例子</a></li><li><a href=#135-美式期权>13.5 美式期权</a></li><li><a href=#136-delta>13.6 delta</a></li><li><a href=#137-选取u和d使二叉树与波动率吻合>13.7 选取u和d使二叉树与波动率吻合</a></li><li><a href=#138-二叉树公式>13.8 二叉树公式</a></li><li><a href=#139-增加二叉树的步数>13.9 增加二叉树的步数</a></li><li><a href=#1310-使用derivagem软件>13.10 使用DerivaGem软件</a></li><li><a href=#1311-其他标的资产上的期权>13.11 其他标的资产上的期权</a><ul><li><a href=#chapter_183.xhtml_Ae3a500f5-ab54-490d-ad6b-f7fb76911ca7>13.11.1 支付连续股息收益率股票的期权</a></li><li><a href=#chapter_183.xhtml_A6d8900f5-c019-4432-b1d4-462cc25fca45>13.11.2 股指期权</a></li><li><a href=#chapter_183.xhtml_A807500f5-6f05-466a-ae66-784615beee98>13.11.3 货币期权</a></li><li><a href=#chapter_183.xhtml_Ac5b100f6-ce5e-4803-9dfb-7aaf2c7d7c60>13.11.4 期货期权</a></li></ul></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#概念思考题>概念思考题</a></li><li><a href=#练习题>练习题</a></li><li><a href=#附录13-a由二叉树模型推导布莱克-斯科尔斯-默顿欧式期权定价公式>附录13 A由二叉树模型推导布莱克-斯科尔斯-默顿欧式期权定价公式</a></li></ul></nav></div></aside></main></body></html>
+</label><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#131-单步二叉树模型与无套利方法>13.1 单步二叉树模型与无套利方法</a></li><li><a href=#1311-推广>13.1.1 推广</a></li><li><a href=#1312-股票期望收益的无关性>13.1.2 股票期望收益的无关性</a></li><li><a href=#132-风险中性定价>13.2 风险中性定价</a></li><li><a href=#1321-再论单步二叉树例子>13.2.1 再论单步二叉树例子</a></li><li><a href=#1322-现实世界与风险中性世界的区别>13.2.2 现实世界与风险中性世界的区别</a></li><li><a href=#133-两步二叉树>13.3 两步二叉树</a></li><li><a href=#134-看跌期权的例子>13.4 看跌期权的例子</a></li><li><a href=#135-美式期权>13.5 美式期权</a></li><li><a href=#136-delta>13.6 delta</a></li><li><a href=#137-选取u和d使二叉树与波动率吻合>13.7 选取u和d使二叉树与波动率吻合</a></li><li><a href=#138-二叉树公式>13.8 二叉树公式</a></li><li><a href=#139-增加二叉树的步数>13.9 增加二叉树的步数</a></li><li><a href=#1310-使用derivagem软件>13.10 使用DerivaGem软件</a></li><li><a href=#1311-其他标的资产上的期权>13.11 其他标的资产上的期权</a></li><li><a href=#13111-支付连续股息收益率股票的期权>13.11.1 支付连续股息收益率股票的期权</a></li><li><a href=#13112-股指期权>13.11.2 股指期权</a></li><li><a href=#13113-货币期权>13.11.3 货币期权</a></li><li><a href=#13114-期货期权>13.11.4 期货期权</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#概念思考题>概念思考题</a></li><li><a href=#练习题>练习题</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=第13章-二叉树>第13章 二叉树<a class=anchor href=#%e7%ac%ac13%e7%ab%a0-%e4%ba%8c%e5%8f%89%e6%a0%91>#</a></h1><p>对期权定价时，一种常用的方法是构造二叉树(binomial tree)。这里的二叉树是指在期权期限内可能会出现的股票价格变动路径的图形。这种方法假设股票价格服从随机游走(random walk)：在树形上的每一步，股票价格以某种概率会向上移动一定的比率，同时以某种概率会向下移动一定的比率。在步长足够小的极限状态下，这种模型与第15章中讨论的布莱克-斯科尔斯-默顿模型是一致的。在本章的附录里我们将证明当步长变得越来越小时，由二叉树给出的欧式期权价格收敛到布莱克-斯科尔斯-默顿价格。</p><p>本章中的内容很重要：第一个原因是本章解释了用来对期权定价的无套利假设的特点，第二个原因是介绍了常常用于对美式期权和其他衍生产品定价所用的二叉树数值方法，第三个原因是本章引进了非常重要的风险中性定价原理。</p><p>本章采用的是考克斯、罗斯和鲁宾斯坦在1979年发表的一篇重要文章中的方法。我们将在第21章里对二叉树数值方法进行更详细的讨论。</p><h2 id=131-单步二叉树模型与无套利方法>13.1 单步二叉树模型与无套利方法<a class=anchor href=#131-%e5%8d%95%e6%ad%a5%e4%ba%8c%e5%8f%89%e6%a0%91%e6%a8%a1%e5%9e%8b%e4%b8%8e%e6%97%a0%e5%a5%97%e5%88%a9%e6%96%b9%e6%b3%95>#</a></h2><p>我们由一个非常简单的例子入手。假设一只股票的当前价格为20美元，并且我们已知在3个月后股票的价格将会变为22美元或18美元。我们希望对3个月后能够以21美元买入股票的期权定价。这个期权在3个月后的价值将为以下两者之一：如果股票价格变为22美元，期权价值将为1美元；如果股票价格为18美元，期权价值将为0。这些情形如图13-1所示。</p><p>我们发现可以利用一种比较简单的方式来对此例中的期权定价，唯一需要的假设是在市场上没有套利机会。由股票和期权可以构造一个在3个月后价值没有不确定性的投资组合。因为这一投资组合没有任何风险，所以其收益率一定等于无风险利率。这样我们可得出构造这一投资组合的成本，并由此得出期权的价格。因为这里有两个证券（股票与股票期权），并且只有两种不同的可能性，因此我们总是可以构造出无风险投资组合。</p><p><img src=images/e3066c28834394da6ca0b51475c1998c7c5fcd606233bf803b6a68c4e0476b43.jpg alt><br>图13-1 第13.1节例子中股票价格的变化</p><p>考虑一个由Δ单位的股票多头和一份看涨期权空头所构成的投资组合。我们将求出使投资组合成为无风险的Δ。当股票价格由20美元变为22美元时，所持股票的价值为22Δ，期权的价值为1美元，投资组合的总价值为22Δ-1；当股票价格由20美元变为18美元时，所持股票的价值变为18Δ，期权的价值为0，投资组合的总价值为18Δ。当投资组合在以上两种可能性下价值相等时，投资组合没有任何风险，这意味着：</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>22 $\Delta$ -1=18 $\Delta$</div><p>即</p><p>Δ=0.25</p><p>因此，无风险投资组合为：</p><p>• 多头：0.25单位的股票；</p><p>• 空头：1份期权。</p><p>如果股票价格上涨为22美元，投资组合价值为22×0.25-1=4.5（美元）</p><p>如果股票价格下跌到18美元，投资组合价值为18×0.25=4.5（美元）</p><p>无论股票价格上涨还是下跌，在期权到期时投资组合的价值总是4.5美元。</p><p>在无套利机会时，无风险投资组合的收益率等于无风险利率。假设这时的（连续复利）无风险利率为每年4%，那么该投资组合在今天的价值必须为4.5美元的贴现值，即</p><p>4.5e-0.04×3/12=4.455（美元）</p><p>股票在今天的价格已知为20美元，如果将期权的价格记为f，那么投资组合在今天的价值是</p><p>20×0.25-f=5-f</p><p>因此</p><p>或</p><p>f=0.545</p><p>以上讨论说明，在无套利机会时，期权的目前价值必须为0.545美元。如果期权价值高于0.545美元，那么构造投资组合的费用就会低于4.455美元，而投资组合的收益率就会高于无风险利率；如果期权价值低于0.545美元，那么卖空这一投资组合将会提供一个低于无风险利率的借款机会。</p><p>在市场上我们无法交易0.25股股票，但是以上讨论也适用于卖出400份期权及买入100股股票的情形。一般来讲，对于每份卖出的期权，我们都要买入Δ股股票来构成无风险投资组合。在对冲期权风险时，参数Δ(delta)很重要，在本章后面的内容以及第19章里我们将对这个参数做进一步讨论。</p><h2 id=1311-推广>13.1.1 推广<a class=anchor href=#1311-%e6%8e%a8%e5%b9%bf>#</a></h2><p>我们可以将以上无套利的论证进行推广。假定股票的价格为S0，股票期权（或以股票为标的的任何衍生产品）的价格为f。假定期权的期限为T，在期权有效期内，股票价格或者会上涨到S0u，或者会下跌到S0d，其中u>1，d&lt;1。当股票价格上涨时，增长的比率为u-1。当股票价格下跌时，下跌的比率为1-d。假设股票价格变到S0u时相应的期权价格为fu，而股票价格变为S0d时期权价格为fd。结果如图13-2所示。</p><p>与前面相同，我们考虑一个由Δ单位股票的多头与一份期权的空头所组成的投资组合。我们可以找到一个使投资组合没有任何风险的Δ：如果股票价格上涨，在期权到期时投资组合的价值为</p><p>S0uΔ-fu</p><p><img src=images/57041d02ffb2b74ca382859da43fbf0c2c6f8046cd38286797725593d1c14511.jpg alt><br>图13-2 单步二叉树中的股票价格与期权价格</p><p>令以上两个值相等，即</p>$$
+\mathrm{S0u} \Delta - \mathrm{fu} = \mathrm{S0d} \Delta - \mathrm{fd}
+$$<p>我们得出</p>$$
+\Delta = \frac{f_{u} - f_{d}}{S_{0} u - S_{0} d}\tag{13-1}
+$$<p>这时投资组合是无风险的。因为没有套利机会，其收益率必须等于无风险利率。式(13-1)表明，Δ为时间T时期权价格变化与股票价格</p><p>变化的比率。</p><p>如果我们将无风险利率记为r，那么投资组合的现值为</p>$$
+\mathrm{(S0u\Delta - fu)e- rT}
+$$<p>而构造投资组合的起始成本为</p>$$
+\mathrm{S0} \Delta - \mathrm{f}
+$$<p>所以</p>$$
+\mathrm{S0} \Delta - \mathrm{f} = (\mathrm{S0u} \Delta - \mathrm{fu}) \mathrm{e} - \mathrm{rT}
+$$<p>即</p>$$
+\mathrm{f} = \mathrm{S0} \Delta (1 - \mathrm{ue} - \mathrm{rT}) + \mathrm{fue} - \mathrm{rT}
+$$<p>将式(13-1)中的Δ代入上式并化简，我们得出</p>$$
+f = S_{0} \left(\frac{f_{u} - f_{d}}{S_{0} u - S_{0} d}\right) (1 - u \mathrm{e} ^{- r T}) + f_{u} \mathrm{e} ^{- r T}
+$$<p>或</p>$$
+f = \frac{f_{u} (1 - d \mathrm{e} ^{- r T}) + f_{d} (u \mathrm{e} ^{- r T} - 1)}{u - d}
+$$<p>或</p>$$
+f = \mathrm{e} ^{- r T} \left[ p f_{u} + (1 - p) f_{d} \right]\tag{13-2}
+$$<p>其中</p>$$
+p = \frac{\mathrm{e} ^{r T} - d}{u - d}\tag{13-3}
+$$<p>当股票价格由单步二叉树给出时，式(13-2)及式(13-3)可以用来对期权进行定价。这个公式需要的唯一假设是在市场上没有套利机会。</p><p>在前面所考虑的例子中（见图13-1），</p><p>u=1.1,d=0.9,r=0.04,T=0.25,fu=1及fd=0。由式(13-3)，我们得出</p>$$
+p = \frac{\mathrm{e} ^{0 . 04 \times 3 / 12} - 0 . 9}{1 . 1 - 0 . 9} = 0. 5503
+$$<p>由式(13-2)，我们得出</p>$$
+\mathrm{f} = \mathrm{e} - 0. 04 \times 0. 25 (0. 5503 \times 1 + 0. 4497 \times 0) = 0. 545
+$$<p>这与本节开始时所得结果是一致的。</p><h2 id=1312-股票期望收益的无关性>13.1.2 股票期望收益的无关性<a class=anchor href=#1312-%e8%82%a1%e7%a5%a8%e6%9c%9f%e6%9c%9b%e6%94%b6%e7%9b%8a%e7%9a%84%e6%97%a0%e5%85%b3%e6%80%a7>#</a></h2><p>期权定价公式(13-2)中没有涉及股票价格上涨或下跌的概率。例如，按此公式计算，当股票价格上涨概率为0.5时所得的欧式期权价格与股票价格上涨概率为0.9时所得的欧式期权价格一样。这一结果有点儿令人惊讶，似乎与我们的直觉不符。我们会很自然地认为当股票价格上涨的概率增大时，这一股票上的看涨期权价格也会增大，同时这一股票上的看跌期权价格会下降。但事实并非如此。</p><p>这里的关键原因是我们并不是在一个绝对条件下对期权进行定价的。我们是根据股票价格来计算期权价格，而未来股票价格涨跌的概率已经反映在其价格之中。因此，当根据股票价格对期权定价时，我们无须再考虑股票上涨与下跌的概率。</p><h2 id=132-风险中性定价>13.2 风险中性定价<a class=anchor href=#132-%e9%a3%8e%e9%99%a9%e4%b8%ad%e6%80%a7%e5%ae%9a%e4%bb%b7>#</a></h2><p>我们现在可以引进关于衍生产品定价的一个重要原理，即所谓的风险中性定价(risk-neutral valuation)：对衍生产品定价时，我们可以假设投资者是风险中性(risk-neutral)的。这个假设是指投资的风险增长时，投资者并不需要额外的期望收益作为补偿。所有投资者都是风险中性的世界叫作风险中性世界(risk-neutral world)。当然，我们所生活的世界不是风险中性的：投资者所承受的风险越大，他们所要求的回报也会越高。但是，我们发现当假设世界是风险中性时给出的衍生产品价格不但在风险中性世界里是正确的，而且在我们所生活的世界里也是正确的。这种定价方式奇迹般地避开了我们一无所知的有关买方与卖方的风险厌恶程度。</p><p>风险中性定价方法乍看起来好像很令人吃惊。期权是风险投资，难道一个人对风险的态度不应当影响对它们的定价吗？这里的答案是当我们利用标的资产的价格对期权定价时，投资者对风险的态度是不重要的。当投资者对风险更加厌恶时，股票价格将会下跌，但是将期权价格与股票价格联系起来的公式是不变的。</p><p>风险中性世界的两个特点可以简化对衍生产品的定价：</p><p>(1)股票（或任何投资）的期望收益率等于无风险利率。</p><p>(2)对期权（或其他证券）的期望收益贴现的利率等于无风险利率。</p><p>在式(13-2)中，参数p应当理解为在风险中性世界里股票价格上涨的概率，而1-p是在这个世界里股票价格下跌的概率（假设u>erT，所以0&lt;p&lt;1）。表达式</p>$$
+\mathrm{pfu} ^{+} (1 - \mathrm{p}) \mathrm{fd}
+$$<p>则是期权在到期日的收益在风险中性世界里的期望值，因而式(13-2)可以表达为期权今天的价值等于将其收益在风险中性世界里的期望值以无风险利率贴现所得的现值。这正是风险中性定价的一个应用。</p><p>为了证明我们对p的理解是合理的，我们注意当上涨概率为p时，股票在时间T的期望收益E(ST)为</p>$$
+\begin{array}{r l} \mathrm{E(ST)} & = \mathrm{pSOu} + (1 - \mathrm{p}) \mathrm{S0d} \\ & \text{即} \end{array}
+$$$$
+\mathrm{E(ST)} = \mathrm{pS0(u-d)} + \mathrm{S0d}
+$$<p>将式(13-3)中的p代入公式，我们得出</p>$$
+E (S_{T}) = S_{0} \mathrm{e} ^{r T}\tag{13-4}
+$$<p>以上公式说明股票价格上涨概率为p时，股票价格以无风险利率的平均速度增长。换句话说，当p为价格上涨概率时，股价在风险中性世界中的变化行为完全如我们所期望的那样。</p><p>对衍生产品定价时，风险中性方法是非常重要的结果。这个结果说明当我们假设世界是风险中性时，得到的价格不但在风险中性世界里是正确的，在所有世界里也都是正确的。我们已经证明了当股票价格按简单二叉树的方式变化时，风险中性定价的正确性。可以证明，即使不做此假设，结论依然成立。</p><p>在利用风险中性方法对衍生产品定价时，我们首先计算在风险中性世界里各种不同结果发生的概率，然后由此计算衍生产品的期望收益值。衍生产品的价格等于这个期望值在无风险利率下的贴现值。</p><h2 id=1321-再论单步二叉树例子>13.2.1 再论单步二叉树例子<a class=anchor href=#1321-%e5%86%8d%e8%ae%ba%e5%8d%95%e6%ad%a5%e4%ba%8c%e5%8f%89%e6%a0%91%e4%be%8b%e5%ad%90>#</a></h2><p>我们再回到图13-1所示的例子上，并以此说明风险中性定价与无套利定价所给出的结果是一样的。在图13-1中，股票的当前价格为20美元，3个月后的股票价格可变成22美元或18美元。所考虑的期权为欧式期权，执行价格为21美元，期限为3个月，无风险利率为4%。</p><p>定义p为在风险中性世界里股票价格上涨的概率。我们可以由式(13-3)来计算p。另一种计算p的方法是利用在风险中性世界里，股票的期望收益率一定等于无风险利率，这意味着p必须满足</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>$22\mathrm{p} + 18(1 - \mathrm{p}) = 20\mathrm{e}0.04\times 3 / 12$</div><p>即</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>4p=20e0.04×3/12-18</span></span></code></pre></div><p>因此p=0.5503。</p><p>在第3个月后，看涨期权价值为1所对应的概率为0.5503；看涨期权价值为0所对应的概率为0.4497。因此，它的期望值为</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>0.5503×1+0.4497×0=0.5503</span></span></code></pre></div><p>在风险中性世界对该期望值以无风险利率进行贴现后得到期权在今天的价值为</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=line><span class=cl>0.5503e-0.04×3/12</span></span></code></pre></div><p>即0.545美元。这与前面所得的值相同，这说明了无套利方法与风险中性定价所给出的结果是一致的。</p><h2 id=1322-现实世界与风险中性世界的区别>13.2.2 现实世界与风险中性世界的区别<a class=anchor href=#1322-%e7%8e%b0%e5%ae%9e%e4%b8%96%e7%95%8c%e4%b8%8e%e9%a3%8e%e9%99%a9%e4%b8%ad%e6%80%a7%e4%b8%96%e7%95%8c%e7%9a%84%e5%8c%ba%e5%88%ab>#</a></h2><p>我们应当强调的是p为风险中性世界里股票价格上涨的概率。一般来讲，这一概率与现实世界里股票价格上涨的概率是不同的。在我们的例子中，p=0.5503。当价格上涨的概率为0.5503时，股票与期权的期望收益率为4%，等于无风险利率。假设在现实世界里股票的期望收益率为10%,p*代表在现实世界里股票价格上涨的概率。那么</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>22p*+18(1-p*)=20e0.10×3/12</span></span></code></pre></div><p>因此p*=0.6266。</p><p>在现实世界里期权的期望收益值为</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csv data-lang=csv><span class=line><span class=cl><span class=s>p *×1+(1-p*)×0</span></span></span></code></pre></div><p>即0.6266。不幸的是，找出在现实世界里应当使用的贴现率并不是件容易的事。市场对股票所要求的收益率是10%，因此在对该股票上投资的现金流期望值贴现时，应当使用这个值。期权头寸比股票头寸的风险更大，因此对于期权期望收益值的贴现率要比10%更高，但是我们不知道贴现率应当比10%高多少。 [1] 风险中性定价方法解决了这个问题，因为在风险中性世界里，所有资产的期望收益率（以及对期望收益的贴现率）均为无风险利率。</p><h2 id=133-两步二叉树>13.3 两步二叉树<a class=anchor href=#133-%e4%b8%a4%e6%ad%a5%e4%ba%8c%e5%8f%89%e6%a0%91>#</a></h2><p>我们可以将以上的分析推广到图13-3所示的两步二叉树情形中。这时股票起始价格为20美元，在树中的任意一步之间，股票价格或上涨10%或下跌10%。假定树中每一步的步长为3个月，无风险利率为4%。像前面一样，我们所考虑期权的期限为6个月，执行价格为21美元。</p><p>这里分析的目的是计算在起始点时的期权价格。我们可以重复利用上一节里的定价原理对这个期权定价。图13-4与图13-3的树形相似，其不同之处是在图13-4的节点上既显示了股票价格也显示了期权价格（节点上面的数字为股票价格，下面的数字为期权价格）。树中最后一层节点上的期权价格很容易求得，它们等于期权的收益：在节点D，股票价格为24.2，期权价格为24.2-21=3.2；在节点E及F上期权处于虚值状态，因此相应的期权价格为零。</p><p><img src=images/26a249f2aa8c2ef5d051575ca149fbf3c63a7f291f8227c063bd2413f50fcce6.jpg alt><br>图13-3 两步二叉树中的股票价格</p><p><img src=images/d2640a423406d22a94185702d95a76f1fd978b089b59af100692466e27b270e4.jpg alt><br>图13-4 两步二叉树的股票价格及期权价格。对于每个节点，上面的数字为股票价格，下面的数字为期权价格</p><p>在节点C，期权的价格为0。这是因为节点C的价值来自节点E和F，而在这两个节点上期权价格均为0。为了求得在节点B上的期权价格，我们考虑由图13-5所示的二叉树。利用本章前面引入的符号，u=1.1，d=0.9，r=4%和T=0.25，因此p=0.5503。由式(13-2)我们可以得出在节点B上，期权价值为</p><p><img src=images/34d00fdcf7c51cd2501292cc485892babe963ab0d161ef345baa9ff94b5de356.jpg alt><br>图13-5 图13-4中估计节点B上的期权价格</p>$$
+\mathrm{e} - 0. 04 \times 3 / 12 (0. 5503 \times 3. 2 + 0. 4497 \times 0) = 1. 7433
+$$<p>最后要计算最初始节点A上的期权价格。为此我们考虑二叉树的第一步。我们已知期权在节点B上的价格为1.7433，在节点C上的价值为0，由式(13-2)得出在节点A上期权价值为</p>$$
+\mathrm{e} - 0. 04 \times 3 / 12 (0. 5503 \times 1. 7433 + 0. 4497 \times 0) = 0. 9497 (\text{美元})
+$$<p>期权的价值是0.9497美元。</p><p>注意，在以上的例子中，u与d（股票上涨与下跌的比率）在每一节点上均相同，而且树中每一步的步长也均相等。因此由式(13-3)所计算出的风险中性概率p在每一个节点上也都是相同的。</p><p>由图13-6我们可以得出关于两步二叉树的一般结论。初始股票价格为S0。在二叉树上的每一步，股票价格或者上涨到初始价格的u倍，或者下跌到初始价格的d倍，期权价值显示在树上（例如，在股票价格上涨两次后，期权价值为fuu）。我们假定无风险利率为r，二叉树的步长为 $\Delta$ t年。</p><p><img src=images/c431e1a9c4ac2509edff2125425f14cfb54d8a0c1375208059f3c88effbb200c.jpg alt><br>图13-6 一般两步二叉树中的股票价格及期权价格</p><p>因为步长为Δt，式(13-2)及式(13-3)变为</p>$$
+\begin{array}{l} f = \mathrm{e} ^{- r \Delta t} [ p f_{u} + (1 - p) f_{d} ] \\ p = \frac{\mathrm{e} ^{r \Delta t} - d}{u - d} \end{array}\tag{13-5}
+$$<p>(13-6)</p><p>重复应用式(13-5)，我们得出</p>$$
+f_{u} = \mathrm{e} ^{- r \Delta t} \left[ p f_{u u} + (1 - p) f_{u d} \right]\tag{13-7}
+$$$$
+f_{d} = \mathrm{e} ^{- r \Delta t} \left[ p f_{u d} + (1 - p) f_{d d} \right]\tag{13-8}
+$$$$
+f = \mathrm{e} ^{- r \Delta t} \left[ p f_{u} + (1 - p) f_{d} \right]\tag{13-9}
+$$<p>将式(13-7)和式(13-8)代入式(13-9)，我们得出</p>$$
+f = \mathrm{e} ^{- 2 r \Delta t} \left[ p^{2} f_{u u} + 2 p (1 - p) f_{u d} + (1 - p) ^{2} f_{d d} \right]\tag{13-10}
+$$<p>以上结论与前面提到的风险中性定价理论是一致的。变量 $\mathrm{p 2}$ $\mathrm{2 p ( 1^{-} p ) \cdot ( 1^{-} p )}$ 2分别对应于股票价格取上、中、下三个节点上值的概率。期权价格等于其在风险中性世界里的期望收益值以无风险利率进行贴现后所得的现值。</p><p>当我们在树形上引入更多的步数时，风险中性定价原理仍然成立，期权价格依然等于其收益在风险中性世界里的期望值以无风险利率贴现后的现值。</p><h2 id=134-看跌期权的例子>13.4 看跌期权的例子<a class=anchor href=#134-%e7%9c%8b%e8%b7%8c%e6%9c%9f%e6%9d%83%e7%9a%84%e4%be%8b%e5%ad%90>#</a></h2><p>本章所描述的方法既可以用于对看涨期权定价，也可以用于对看跌期权定价。考虑一个2年期执行价格为52美元的欧式看跌期权，股票的当前价格为50美元。我们假定股票价格服从步长为1年的两步二叉树。在二叉树的每一步上，股票价格或者上涨20%，或者下跌20%，我们假定无风险利率为5%。</p><p>二叉树如图13-7所示，这里u=1.2,d=0.8,Δt=1及 $\mathrm{r} {=} 0 . 05$ 。由式(13-6)，我们可以得出风险中性概率p为</p>$$
+p = \frac{\mathrm{e} ^{0 . 05 \times 1} - 0 . 8}{1 . 2 - 0 . 8} = 0. 6282
+$$<p><img src=images/0601b3f819ae2f32eeb76ec261a7f57f2c4b7da74af108dab3c048c39caf38a7.jpg alt></p><p>图13-7 利用两步二叉树来对欧式看跌期权定价。节点上面的数字为股票价格，下面的数字为期权价格</p><p>最终的股票价格可能为72美元、48美元或32美元。这时，fuu=0,fud=4与fdd=20。由式(13-10)，我们有</p>$$
+\begin{array}{l} \mathrm{f = e^{-}} \\ 2 \times 0. 05 \times 1 (0. 62822 \times 0 + 2 \times 0. 6282 \times 0. 3718 \times 4 + 0. 37182 \times 20) = 4. 192 \\ 3 \end{array}
+$$<p>看跌期权的价值为4.1923美元。这一结果也可以利用式(13-5)并从树的最后节点一步步向回推算得出。图13-7给出了中间节点上的期权价格。</p><h2 id=135-美式期权>13.5 美式期权<a class=anchor href=#135-%e7%be%8e%e5%bc%8f%e6%9c%9f%e6%9d%83>#</a></h2><p>到目前为止，我们考虑的期权都是欧式期权。接下来我们考虑如何利用像图13-4或图13-7中所描述的二叉树来对美式期权进行定价。定价的过程是从树的末尾出发以倒推的形式推算到树的起始点，在树的每一个节点上我们都需要检验提前行使期权是否为最优。在树的最后节点上，期权的价格等于欧式期权的价格，之前任何一个节点上期权的价格等于以下两个数量的最大值：</p><p>(1)由式(13-5)所计算的值；</p><p>(2)提前行使期权的收益。</p><p>图13-8显示了当期权为美式期权（而不是欧式期权）时，图13-7会如何变化。股票价格和上下变动的概率并没有改变，期权在最后节点上的价格也没有改变。在节点B上，式(13-5)所给出的期权价值为1.4147，而提前行使期权的相应收益为负值(=-8)。显然在节点B上提前行使期权不会是最优的，因此在该节点上，期权价格为1.4147。在节点C上，式(13-5)所给出的期权价值为9.4636，提前行使期权的收益为12。这时，提前行使期权为最优，因此在该节点上期权价值为12。在最初的节点A上，式(13-5)所计算的数量为</p><p><img src=images/ff6d91471695697e18a6de8db6f494179b64305440ec332fff20ab5bbfe7d3f0.jpg alt><br>图13-8 利用两步二叉树对美式看跌期权定价。在每个节点上面的数字为股票价格，下面的数字为期权价格</p>$$
+\mathrm{e} - 0. 05 \times 1 (0. 6282 \times 1. 4147 + 0. 3718 \times 12) = 5. 0894
+$$<p>提前行使期权的收益为2，这时提前行使期权不为最优。因此，期权价值为5.0894美元。</p><h2 id=136-delta>13.6 delta<a class=anchor href=#136-delta>#</a></h2><p>我们现在引进delta，这个变量（有时称为希腊值）在期权定价以及对冲过程中是个很重要的参数。</p><p>一份股票期权的delta(Δ)为期权价格变化同标的股票价格变化之间的比率，它是当我们卖出一份期权时，为了构造无风险组合而需要持有的标的股票数量。这一数量与本章前面所引入的Δ相同。构造无风险投资组合有时也称为delta对冲(delta hedging)。看涨期权的delta为正，而看跌期权的delta为负。</p><p>由图13-1，我们可以计算出所考虑的看涨期权delta为</p>$$
+\frac{1 - 0}{22 - 18} = 0. 25
+$$<p>这是因为当股票由18美元变为22美元时，期权价格由0美元变为1美元（这也是第13.1节里计算出的Δ值）。</p><p>在图13-4中，对应于股票价格在第1步变化的delta为</p>$$
+\frac{1 . 7433 - 0}{22 - 18} = 0. 4358
+$$<p>如果在第1步后股票价格上涨，第2步的delta为</p>$$
+\frac{3 . 2 - 0}{24 . 2 - 19 . 8} = 0. 7273
+$$<p>如果在第1步后股票价格下跌，在第2步的delta为</p>$$
+\frac{0 - 0}{19 . 8 - 16 . 2} = 0
+$$<p>由图13-7得出，在第1步后的delta为</p>$$
+\frac{1 . 4147 - 9 . 4636}{60 - 40} = - 0. 4024
+$$<p>在第2步后delta等于</p>$$
+\frac{0 - 4}{72 - 48} = - 0. 1667 \quad \text{或} \quad \frac{4 - 20}{48 - 32} = - 1. 0000
+$$<p>两步二叉树的例子说明了delta的值随着时间变化（在图13-4中，delta从0.4358变为0.7273或0；在图13-7中，delta从-0.4024变为-0.1667或-1.0000）。因此，采用期权和股票进行无风险对冲时，我们需要不断调整所持股票的数量。在第19章里，我们还要对期权的这一特性做进一步讨论。</p><h2 id=137-选取u和d使二叉树与波动率吻合>13.7 选取u和d使二叉树与波动率吻合<a class=anchor href=#137-%e9%80%89%e5%8f%96u%e5%92%8cd%e4%bd%bf%e4%ba%8c%e5%8f%89%e6%a0%91%e4%b8%8e%e6%b3%a2%e5%8a%a8%e7%8e%87%e5%90%bb%e5%90%88>#</a></h2><p>为了构造步长为Δt的二叉树，我们需要确定三个参数：u、d和$\textrm{p} _{\circ}$ 一旦u和d确定之后，我们在选取p时要确保期望收益率等于无风险利率r，我们已经证明</p>$$
+p = \frac{\mathrm{e} ^{r \Delta t} - d}{u - d}\tag{13-11}
+$$<p>参数u和d的选取要确保波动率的吻合。股票（或任何资产）价格</p>$$
+\sigma \sqrt{\Delta t}
+$$<p>波动率σ的定义是使得 0√∆l 为股票价格在一个长度为 $\Delta{\ t}$ 的时间区间上收益的标准差（有关进一步的讨论，见第15章）。与此等价，回报的方差为 $\textup{o} 2 \Delta \textup{t}$ 。变量X的方差定义为E $\left( \mathrm{X 2} \right) - \left[ \mathrm{E} \left( \mathrm{X} \right) \right] 2$ ，其中E代表期望值。在每一个步长为 $\Delta{\ t}$ 的区间内，股票收益率等于u-1的概率为 $\mathrm{\Delta \Omega / p}$ ，收益率等于d-1的概率为 $1 {-} \mathrm{p}$ 。将二叉树波动率与股票波动率进行匹配，得出</p>$$
+p (u - 1) ^{2} + (1 - p) (d - 1) ^{2} - [ p (u - 1) + (1 - p) (d - 1) ] ^{2} = \sigma^{2} \Delta t\tag{13-12}
+$$<p>将式(13-11)的概率表达式代入以上方程并进行简化，得出</p>$$
+\mathrm{e} ^{r \Delta t} (u + d) - u d - \mathrm{e} ^{2 r \Delta t} = \sigma^{2} \Delta t\tag{13-13}
+$$<p>当忽略Δt2和 $\Delta$ t的更高阶项后，这个方程的解为 [2]</p>$$
+u = \mathrm{e} ^{\sigma \sqrt{\Delta t}} \quad \text{及} \quad d = \mathrm{e} ^{- \sigma \sqrt{\Delta t}}
+$$<p>这些正是考克斯、罗斯和鲁宾斯坦(1979)对u和d所取的值。</p><p>在以上分析中，我们选择的u和d是在风险中性世界里匹配波动率的。如果我们选择在现实世界里匹配波动率，情况又会如何？我们现在证明这样做所得的结果是一样的。</p><p>假定在现实世界里价格向上移动的概率为p*，在风险中性世界里价格向上移动的概率为p。图13-9显示了不同世界里相应的概率。定义μ为现实世界回报期望值，因此</p>$$
+\mathrm{p} * \mathrm{u} ^{+} (1 - \mathrm{p} *) \mathrm{d} = \mathrm{e} \mu \Delta t
+$$<p><img src=images/52dba079636ddad01d17cbecdcd5c8b200bb7f01a810fad029c9fdd051d349fb.jpg alt><br>a）现实世界</p><p><img src=images/4fb80541620f2f499bf833884c35238c0ed9aafbd44e3198492c1c769b563cff.jpg alt><br>b）风险中性世界<br>图13-9 股票价格在Δt时间内的变化</p><p>或</p>$$
+p^{*} = \frac{\mathrm{e} ^{\mu \Delta t} - d}{u - d}\tag{13-14}
+$$<p>假定σ为现实世界的波动率，匹配方差会得出与式(13-12)等同的方程，其中的p被p*代替。将式(13-14)代入，得出</p>$$
+\mathrm{e} \mu \Delta t (u + d) - u d - e 2 \mu \Delta t = \sigma 2 \Delta t
+$$<p>以上方程与式(13-13)几乎相同，唯一的不同是其中r被μ代替。当忽略Δt2和Δt的更高阶项后，得出方程的解与式(13-13)的解相同，为</p>$$
+u = \mathrm{e} ^{\sigma \sqrt{\Delta t}} \quad \text{及} \quad d = \mathrm{e} ^{- \sigma \sqrt{\Delta t}}
+$$<p>哥萨诺夫定理</p><p>以上结果与一个叫作哥萨诺夫定理(Girsanov's theorem)的重要结果密切相关。当我们从现实世界转换到风险中性世界时，股票价格的期望收益值将会变化，但它的波动率保持不变。一般来讲，当我们从具有一组风险偏好的世界转换到具有另一组风险偏好的世界时，变量的期望收益率会变化，但其波动率保持不变。在第28章里，我们将会更详细地探讨风险偏好对市场变量性质的影响。有时，我们也将从一组风险偏好转换到另一组风险偏好的做法称为测度变换(changingthe measure)。现实世界的测度有时称为P-测度，而风险中性世界的测度则称为Q-测度。 [3]</p><h2 id=138-二叉树公式>13.8 二叉树公式<a class=anchor href=#138-%e4%ba%8c%e5%8f%89%e6%a0%91%e5%85%ac%e5%bc%8f>#</a></h2><p>上一节里的分析表明，当二叉树上的步长为 $\Delta$ t时，为了与波动率相吻合，我们取</p>$$
+u = \mathrm{e} ^{\sigma \sqrt{\Delta t}}\tag{13-15}
+$$<p>和</p>$$
+d = \mathrm{e} ^{- \sigma \sqrt{\Delta t}}\tag{13-16}
+$$<p>而且由式(13-6)可得</p>$$
+p = \frac{a - d}{u - d}\tag{13-17}
+$$<p>其中</p>$$
+a = \mathrm{e} ^{r \Delta t}\tag{13-18}
+$$<p>式(13-15)～式(13-18)定义了二叉树。</p><p>我们再考虑图13-8中的美式看跌期权，其中股票价格为50美元，执行价格为52美元，无风险利率为5%，期权期限为2年，二叉树包含两步。这时 $\Delta \ : \mathrm{t} = 1$ 。假定波动率为30%，由式(13-15)～式(13-18)，我们得出</p>$$
+u = \mathrm{e} ^{0. 3 \times 1} = 1. 3499, d = \frac{1}{1 . 3499} = 0. 7408, a = \mathrm{e} ^{0. 05 \times 1} = 1. 0513
+$$<p>以及</p>$$
+p = \frac{1 . 0513 - 0 . 7408}{1 . 3499 - 0 . 7408} = 0. 5097
+$$<p>图13-10给出了二叉树的形状。看跌期权的价值为7.43（这与图13-8中假定u=1.2与d=0.8所得的价格是不一样的）。注意，在第一步末，当股票价格达到下方节点时，期权将会被行权。</p><h2 id=139-增加二叉树的步数>13.9 增加二叉树的步数<a class=anchor href=#139-%e5%a2%9e%e5%8a%a0%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e6%ad%a5%e6%95%b0>#</a></h2><p>到目前为止，我们所列举的二叉树简单得不切实际。显而易见，如果假定在期权期限内价格变化由一步或两步二叉树表达，那么由此得出的期权价格将只是一个非常粗略的近似。</p><p><img src=images/81e067671ba66864ba88b6e0b54d674e9f89cd50379ec7abcde0fbdc8b7fac54.jpg alt><br>图13-10 用两步二叉树对一个2年期的美式看跌期权进行定价。股票价格为50美元，执行价格为52美元，无风险利率为5%，波动率为30%</p><p>在实际应用二叉树时，期权的期限通常会被分割为30个或更多的时间步。在每一个时间步里，股票价格的变动由单二叉树表达。在30个时间步中，总共有31个终端股票价格，并且有230，即大约10亿种可能的股票价格路径。</p><p>不管步数是多少，树形的结构都是由式(13-15)～式(13-18)定义。例如，假定图13-10中的二叉树为5步而不是2步，相应的参数Δt=2/5=0.4，r=0.05及σ=0.3。相应的参数</p>$$
+u = \mathrm{e} ^{0. 3 \times \sqrt{0 . 4}} \quad = 1. 2089, \mathrm{d} = 1 / 1. 2089 = 0. 8272, \mathrm{a} = \mathrm{e} 0. 05 \times 0. 4 = 1. 0202, \text{及} \mathrm{p} = (1. 0202 - 0. 8272) / (1. 2089 - 0. 8272) = 0. 5056 。
+$$<p>当时间步数增加（从而Δt变小）时，在二叉树模型里对股票价格变化所做的假设与在第15章中引入的布莱克-斯科尔斯-默顿模型里的假设是一样的。在利用二叉树对欧式期权定价时，当步数增加时，所得价格将会收敛到布莱克-斯科尔斯-默顿价格。我们在本章的附录里将证明这个结论。</p><h2 id=1310-使用derivagem软件>13.10 使用DerivaGem软件<a class=anchor href=#1310-%e4%bd%bf%e7%94%a8derivagem%e8%bd%af%e4%bb%b6>#</a></h2><p>本书的附带软件DerivaGem对读者了解二叉树非常有用。用户可以根据书末的说明将软件装在自己的电脑上，然后可以采用“Equity_FX_Indx_Fut_Opts_Calc”工作页进行计算，在计算中选择“股权”(Equity)作为“标的资产类型”(Underlying Type)，选择“二叉树美式”(Binomial American)作为“期权类型”(OptionType)。输入股价(stock price)、波动率(volatility)、无风险利率(risk-free rate)、到期日(time to expiration)、执行价格(exercise price)以及树的步数(tree steps)分别为50、30%、5%、2、52及2。先单击“看跌期权”(Put)键，再单击“计算”(Calculate)键。期权价格为7.428，这一价格显示在名为“价格”(Price)的小格中。单击“显示二叉树”(Display Tree)，用户可以看到类似于图13-10的图形（红色数字对应于期权将被行权的节点）。</p><p>返回到“Equity_FX_Indx_Fut_Opts_Calc”工作页并将时间步数改为5步，单击“回车”键并单击“计算”键，你将发现期权价格变为7.671，单击“显示二叉树”，一个5步的树形与u、d、a和p的数值将会显示出来。</p><p>DerivaGem可以展示的树形最多为10步，但计算量最多可达500步。在我们的例子中，500步树形所对应的期权价格（精确到小数点第2位）为7.47，这是一个非常精确的结果。将“期权类型”选为“二叉树欧式”(Binomial European)，我们可以对欧式期权定价。选用500步树形所得的结果与具有同样参数的美式期权的结果一致，即6.76（将期权类型改为“布莱克-斯科尔斯欧式”(Black-ScholesEuropean)，我们可以计算第15章里将讨论的布莱克-斯科尔斯-默顿公式所得的结果，结果也是6.76）。</p><p>通过改变“标的资产类型”，我们也可以分析标的资产并非为股票的期权。接下来我们将讨论这些期权。</p><h2 id=1311-其他标的资产上的期权>13.11 其他标的资产上的期权<a class=anchor href=#1311-%e5%85%b6%e4%bb%96%e6%a0%87%e7%9a%84%e8%b5%84%e4%ba%a7%e4%b8%8a%e7%9a%84%e6%9c%9f%e6%9d%83>#</a></h2><p>在第10章里我们介绍了股指期权、货币期权和期货期权，在第17章和第18章中我们还要进一步讨论这些期权。事实上，我们可以采用和构造股票期权几乎一样的方法来构造二叉树，唯一的变化是对概率 $\cdot \mathrm{p}$ 的计算有所改变。像对于股票期权定价时那样，我们仍采用式(13-2)，即每一个节点上的期权价值（在提前行权的可能性被考虑之前）等于p乘以股票价格上涨时所对应的期权价值加上1-p乘以股票价格下跌时所对应的期权价值，并以无风险利率进行贴现。</p><h2 id=13111-支付连续股息收益率股票的期权>13.11.1 支付连续股息收益率股票的期权<a class=anchor href=#13111-%e6%94%af%e4%bb%98%e8%bf%9e%e7%bb%ad%e8%82%a1%e6%81%af%e6%94%b6%e7%9b%8a%e7%8e%87%e8%82%a1%e7%a5%a8%e7%9a%84%e6%9c%9f%e6%9d%83>#</a></h2><p>考虑一只支付连续股息收益率q的股票。在风险中性世界里，股息加上资本收益(capital gain)的总和等于r，股息收益为q，因此资本收益为 $\lceil \mathrm{r} ^{-} \mathrm{q}$ 。如果股票在今天的价格为S0，步长为 $\Delta$ t，第一步后股价的期望值必须为 $\mathrm{{/ S 0 e} ( r {-} q ) \ \Delta t}$ ，因此</p>$$
+\mathrm{pS0u^{+} (1- p) S0d = S0e(r- q)\Delta t}
+$$<p>即</p>$$
+p = \frac{\mathrm{e} ^{(r - q) \Delta t} - d}{u - d}
+$$$$
+u = \mathrm{e} ^{\sigma \sqrt{\Delta t}}
+$$<p>与计算无股息股票期权类似，我们将u设为 u − e${\mathrm{d}} {=} 1 / {\mathrm{u}}$ 以便使树形与波动率相吻合。这意味着我们可以利用式 $( 13 - 15 )$ ～式(13-18)，而计算中唯一的改动是将 $\mathrm{a} \mathrm{=} \mathrm{e r} \Delta$ t改为 $\mathsf{1 a {=} e} \left( \mathrm{r {-} q} \right) \Delta$ t。</p><h2 id=13112-股指期权>13.11.2 股指期权<a class=anchor href=#13112-%e8%82%a1%e6%8c%87%e6%9c%9f%e6%9d%83>#</a></h2><p>在第5章中计算股指期货价格时，我们曾假设股指中的标的股票所支付的股息收益率为q，在这里我们仍采用类似的假设。对于股指期权定价类似于对支付已知连续股息率的股票期权定价。</p><p>【例13-1】 某股指的目前水平为810，波动率为20%，股息收益率为2%，无风险利率为5%。图13-11显示了DerivaGem对于一个执行价格为800，期权为6个月的欧式看涨期权的定价结果。在计算中采用了两步二叉树。这时</p>$$
+\Delta t = 0. 25, \quad u = \mathrm{e} ^{0. 20 \times \sqrt{0 . 25}} = 1. 1052,
+$$$$
+d = 1 / u = 0. 9048, \quad a = \mathrm{e} ^{(0. 05 - 0. 02) \times 0. 25} = 1. 0075
+$$$$
+p = \frac{1 . 0075 - 0 . 9048}{1 . 1052 - 0 . 9048} = 0. 5126
+$$<p>期权价值为53.39。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>DerivaGem 输出结果
+</span></span><span class=line><span class=cl>在每个节点：
+</span></span><span class=line><span class=cl>上方数值 = 标的资产价格
+</span></span><span class=line><span class=cl>下方数值 = 期权价格
+</span></span><span class=line><span class=cl>阴影部分表示期权已被行使
+</span></span><span class=line><span class=cl>执行价格 = 800
+</span></span><span class=line><span class=cl>每步的贴现因子 = 0.9876
+</span></span><span class=line><span class=cl>时间步长dt = 0.2500年，即91.25天
+</span></span><span class=line><span class=cl>每步的增长因子a = 1.0075
+</span></span><span class=line><span class=cl>价格上涨概率p = 0.5126
+</span></span><span class=line><span class=cl>价格上涨幅度u = 1.1052
+</span></span><span class=line><span class=cl>价格下跌幅度d = 0.9048</span></span></code></pre></div><p><img src=images/e637149ddcf6815bdb0fdfcc4452e459f7016870f31bf6af0d40ffb906ce9e1d.jpg alt><br>图13-11 利用两步二叉树对股指上6个月期限的欧式看涨期权定价，目前的股指水平为810，执行价格是800，无风险利率是5%，波动率是20%，股息率是2%</p><h2 id=13113-货币期权>13.11.3 货币期权<a class=anchor href=#13113-%e8%b4%a7%e5%b8%81%e6%9c%9f%e6%9d%83>#</a></h2><p>如第5.10节所示，外汇可以被视为提供收益率等于外币无风险利率rf的资产。同股指相比较，我们可以采用式(13-15)～式(13-18)并令 $\mathrm{\ddot{a} = e} \left( \mathrm{r - r f} \right) \Delta$ t来对货币期权进行定价。</p><p>【例13-2】 某一外币的当前价值为0.6100美元，汇率波动率为12%，外币的无风险利率为7%，美元的无风险利率为5%。图13-12显示了DerivaGem对于一个执行价格为0.6000，期限为3个月美式看涨期权的定价结果，在计算中采用了三步二叉树。</p><p>这时</p>$$
+\Delta t = 0. 08333, \quad u = \mathrm{e} ^{0. 12 \times \sqrt{0 . 08333}} = 1. 0352
+$$$$
+d = 1 / u = 0. 9660, \quad a = \mathrm{e} ^{(0. 05 - 0. 07) \times 0. 08333} = 0. 9983
+$$$$
+p = \frac{0 . 9983 - 0 . 9660}{1 . 0352 - 0 . 9660} = 0. 4673
+$$<p>期权价值为0.019。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>DerivaGem 输出结果
+</span></span><span class=line><span class=cl>在每个节点：
+</span></span><span class=line><span class=cl>上方数值 = 标的资产价格
+</span></span><span class=line><span class=cl>下方数值 = 期权价格
+</span></span><span class=line><span class=cl>阴影部分表示期权已被行使
+</span></span><span class=line><span class=cl>执行价格 = 0.6
+</span></span><span class=line><span class=cl>每步的贴现因子 = 0.9958
+</span></span><span class=line><span class=cl>时间步长 dt = 0.0833 年，即 30.42 天
+</span></span><span class=line><span class=cl>每步的增长因子 a = 0.9983
+</span></span><span class=line><span class=cl>价格上涨概率 p = 0.4673
+</span></span><span class=line><span class=cl>价格上涨幅度 u = 1.0352
+</span></span><span class=line><span class=cl>价格下跌幅度 d = 0.9660</span></span></code></pre></div><p><img src=images/3938312286640a9970f5651ab9305f2df3deff28b1658ab5cb1fd1c3eda07658.jpg alt><br>图13-12 利用三步二叉树模型对一个3个月期限的货币看涨期权定价。汇率当前价格为0.6100，执行价格为0.6000，无风险利率为5%，波动率为12%，外币无风险利率为7%</p><h2 id=13114-期货期权>13.11.4 期货期权<a class=anchor href=#13114-%e6%9c%9f%e8%b4%a7%e6%9c%9f%e6%9d%83>#</a></h2><p>进入期货合约的多头或空头时投资者无须支付任何费用。这说明在风险中性世界里期货价格的增长率期望应当为零（在第18.6节中我们将详细讨论这一点）。同上，我们定义p为期货价格上涨的概率，u为价格上涨的比例，d为价格下跌的比例。在开始时期货价格为F0。在第一步 $\Delta$ t时间后，期货价格的期望值仍然应当是F0。这意味着</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>$\mathrm{pF0u + (1 - p)F0d = F0}$</div><p>即</p>$$
+p = \frac{1 - d}{u - d}
+$$<p>我们可以利用式(13-15)～式(13-18)以及a=1对期权进行定价。</p><p>【例13-3】 当前的期货价格为31，波动率为30%，无风险利率为5%。图13-13显示了由DerivaGem对于一个执行价格为30，期限为9个月的美式看跌期权的定价结果，计算中采用了三步二叉树。这时</p>$$
+\Delta t = 0. 25, u = \mathrm{e} ^{0. 3 \times \sqrt{0 . 25}} = 1. 1618
+$$$$
+d = 1 / u = 1 / 1. 1618 = 0. 8607, a = 1
+$$$$
+p = \frac{1 - 0 . 8607}{1 . 1618 - 0 . 8607} = 0. 4626
+$$<p>期权价值为2.84。</p><p>DerivaGem输出结果在每个节点：上方数值=标的资产价格下方数值=期权价格阴影部分表示期权已被行使</p><p>执行价格=30每步的贴现因子=0.9876时间步长dt=0.2500年，即91.25天每步的增长因子a=1.000价格上涨概率p=0.4626价格上涨幅度u=1.1618价格下跌幅度d=0.8607</p><p><img src=images/eed68a6ddd99e229868e2ac5a5f182e2383af882a99052f7946a69622180e6ca.jpg alt><br>图13-13 采用三步二叉树模型对一个9个月期限的期货美式看跌期权定价。期货当前价格为31，执行价格为30，波动率为30%，无风险利率为5%</p><h2 id=小结>小结<a class=anchor href=#%e5%b0%8f%e7%bb%93>#</a></h2><p>本章简要介绍了对于股票与其他标的资产上期权的定价过程。对于在期权期限内股票价格服从单步二叉树的简单情形，我们可以构造一个由期权与股票所构成的无风险投资组合。在无套利机会的前提下，无风险投资组合的收益率一定等于无风险利率，由此我们可将股票期权的价格用标的股票价格表示。值得注意的是，我们对于股票在每个节点上涨与下跌的概率无须做任何假设。</p><p>如果股票价格的变化由多步二叉树表述，我们可以依次处理二叉树的每一步，并由期权的到期日出发倒推到树形的起始点，得出期权的价格。在分析中，我们只需要假设在市场上不存在套利机会，而对价格上涨及下跌的概率无须做任何假设。</p><p>另一个重要的原理是在对股票期权定价时，可以假设世界是风险中性的。本章以数值例子和代数的推导形式说明了无套利理论与风险中性定价是等价的，并给出同样的期权价格。</p><p>股票期权的delta（即Δ）考虑了标的股票价格的微小变化对于期权价格变化的影响。delta为期权价格变化与标的股票价格变化的比率。为了构造无风险头寸，对于每个卖出的期权，投资者必须买入Δ单位的股票。通过观察一个典型的二叉树，我们可以看到Δ在期权有效期内随时间变化而改变。这意味着，为了对冲期权，我们必须不断调整标的股票的头寸。</p><p>构造股指、外汇、期货定价的二叉树与构造股票期权的二叉树非常相似。在第21章里，我们将进一步讨论二叉树，并说明在实际中应用二叉树的更多细节。</p><h2 id=推荐阅读>推荐阅读<a class=anchor href=#%e6%8e%a8%e8%8d%90%e9%98%85%e8%af%bb>#</a></h2><p>Coval, J.D. and T. Shumway. “Expected Option Returns," Journal of Finance, 56, 3 (2001): 983-1009.</p><p>Cox, J. C., S. A. Ross, and M. Rubinstein. “Option Pricing: A Simplified Approach," Journal of Financial Economics 7 (October 1979): 229–264.</p><p>Rendleman, R., and B. Bartter. “Two State Option Pricing," Journal of Finance 34 (1979): 1092-1110.</p><p>Shreve, S. E. Stochastic Calculus for Finance I: The Binomial Asset Pricing Model. New York: Springer, 2005.</p><h2 id=概念思考题>概念思考题<a class=anchor href=#%e6%a6%82%e5%bf%b5%e6%80%9d%e8%80%83%e9%a2%98>#</a></h2><p>13.1 什么是风险中性定价？</p><p>13.2 解释使用单步二叉树时，用于对期权进行定价的无套利理论。</p><p>13.3 u和d是什么？用来计算它们的公式是什么？</p><p>13.4 p是如何定义的？计算p的公式是什么？</p><p>13.5 解释在现实世界中，计算期权收益的贴现率的困难。</p><p>13.6 股票期权的delta是什么？</p><p>13.7 什么是哥萨诺夫定理？</p><p>13.8 当假设股票提供连续股息收益率时，使用二叉树对期权的定价过程将如何变化？</p><p>13.9 股票的当前价格为40美元，已知在一个月后股票的价格将可能变为42美元或38美元，无风险利率为每年8%（连续复利），执行价格为39美元、一个月期限的欧式期权价值是多少？</p><p>13.10 股票的当前价格为50美元，已知在6个月后这一股票的价格将可能变为45美元或55美元，无风险利率为10%（连续复利）。执行价格为50美元、6个月期限的欧式看跌期权的价值是多少？</p><h2 id=练习题>练习题<a class=anchor href=#%e7%bb%83%e4%b9%a0%e9%a2%98>#</a></h2><p>13.11 股票的当前价格为100美元，在今后每6个月内，股票价格可能或上涨10%或下跌10%，无风险利率为每年8%（连续复利），执行价格为100美元、1年期的欧式看涨期权的价格是多少？</p><p>13.12 在练习题13.11的情形下，执行价格为100美元、1年期的看跌期权价格是多少？验证所得结果满足看跌-看涨期权平价关系式。</p><p>13.13 假设在期权期限内，股票价格变化服从两步二叉树。解释为什么用股票与期权构造的投资组合不可能在整个期权有效期内一直保持无风险状态。</p><p>13.14 股票的当前价格为50美元，已知在2个月后股票价格将可能变为53美元或48美元，无风险利率为每年10%（连续复利）。执行价格为49美元、2个月期限的欧式看涨期权价格为多少？在讨论中采用无套利方法。</p><p>13.15 股票的当前价格为80美元，已知在4个月后股票价格将可能变为75美元或85美元，无风险利率为每年5%（连续复利），执行价格为80美元、4个月期限的欧式看跌期权价格为多少？在讨论中采用无套利方法。</p><p>13.16 股票的当前价格为40美元，已知在3个月后股票价格将可能变为45美元或35美元，无风险利率为每年8%（按季度复利），计算执行价格为40美元、3个月期限的欧式看跌期权价格。验证由无套利理论与风险中性原理给出的价格相等。</p><p>13.17 某股票的当前价格为50美元，在今后6个月的每3个月时间内，股票价格都可能或上涨6%，或下跌5%，无风险利率为每年5%（连续复利）。执行价格为51美元、6个月期限的欧式看涨期权价值为多少？</p><p>13.18 考虑练习题13.17中的情形，执行价格为51美元、6个月欧式看跌期权的价值为多少？验证看跌-看涨期权平价关系式的正确性。</p><p>如果看跌期权为美式期权，在二叉树的某些节点上提前行使期权会是最优吗？</p><p>13.19 股票的当前价格为25美元，已知在2个月末股票价格将可能变为23美元或27美元，无风险利率为每年10%（连续复利）。假定ST为股票在2个月末的价格，2个月后收益为 ST 的衍生产品的价值是多少？</p><p>13.20 计算用于对外汇期权定价的二叉树中的u、d和p，二叉树的步长为1个月，本国利率为5%，国外利率为8%，汇率的波动率为每年12%。</p><p>13.21 一只无股息股票的价格为78美元，波动率为30%，所有期限的无风险利率均为每年3%（连续复利）。采用2个月的步长，计算参数u、d和p。采用两步二叉树，即步长为2个月、4个月期限的欧式看涨期权的价值为多少？期权的执行价格为80美元。假定一个交易员卖出了1000份期权（10份合约），交易员在交易开始时，应该持有怎样的股票头寸来对冲交易风险。</p><p>13.22 一个股指当前取值为1500，波动率为18%，所有期限的无风险利率均为每年4%（连续复利），股指的股息收益率为2.5%。采用6个月的步长，计算参数u、d和p。采用两步二叉树，即步长为6个月，期限为12个月美式看跌期权的价值为多少？期权的执行价格为1480美元。</p><p>13.23 某商品期货的价格为90美元，利用三步二叉树计算期权价格：(a)9个月期限、执行价格为93美元的美式看涨期权：(b)9个月期限、执行价格为93美元的美式看跌期权。波动率为28%，无风险利率（所有期限）为3%（连续复利）。</p><p>13.24 一只无股息的生物科技股票的当前价格为140美元，波动率为25%，无风险利率为4%，对于3个月步长：</p><p>(a)价格上升的百分比为多少？</p><p>(b)价格下跌的百分比为多少？</p><p>(c)在风险中性世界里，价格上升的概率为多少？</p><p>(d)在风险中性世界里，价格下跌的概率为多少？</p><p>利用两步二叉树对6个月期限的欧式看涨和看跌期权定价，这里的期权执行价格均为150美元。</p><p>13.25 在练习题13.24中，假定交易员卖出了10000份欧式看涨期权，而且两步二叉树可以用来描述股票价格变化，为了对冲此6个月期限的欧式看涨期权，在第1个3个月区间的开始时刻和第2个3个月区间的开始时刻，交易员要持有多少股票？对于第2个3个月区间，考虑在第1个3个月区间价格上升和价格下降时两种情形。</p><p>13.26 股票的当前价格为50美元，在6个月后股票价格将可能变为60美元或42美元，无风险利率为每年12%（连续复利），计算执行价格为48美元、期限为6个月的欧式看涨期权价格。验证无套利方法与风险中性定价方法所得结果是一致的。</p><p>13.27 股票的价格为40美元，在今后6个月中每一个3个月的时间内，股票价格或上涨10%或下跌10%，无风险利率为每年12%（连续复利）:</p><p>(a)执行价格为42美元、6个月期限的欧式看跌期权价值是多少？</p><p>(b)执行价格为42美元、6个月期限的美式看跌期权价值是多少？</p><p>13.28 利用“试错法”(trial and error app-roach)，估计练习题13.27中的期权在什么样的执行价格下应该被马上行使。</p><p>13.29 考虑一只不支付股息的股票的欧式看涨期权，股票价格为40美元，执行价格为40美元，无风险利率为每年4%，波动率为每年30%，到期日为6个月。</p><p>(a)计算两步二叉树的u、d和p。</p><p>(b)使用两步二叉树为期权定价。</p><p>(c)验证DerivaGem给出了相同的答案。</p><p>(d)使用DerivaGem以5、50、100和500个时间步对期权进行定价。</p><p>13.30 重复作业题13.29中的计算，假定标的资产为期货合约，期权为美式看跌期权，执行价格与期货价格均为50美元，无风险利率为10%，期限为6个月，期货价格波动率为每年40%。</p><p>13.31 本章的第一个脚注表示，对于图13-1中的例子，为了使期权收益在现实世界里的期望值贴现后与期权价格吻合，现实世界里贴现率应取为55.96%。证明如果期权是看跌期权，这时在现实世界里的贴现率应取为-70.4%。解释为什么这两个现实世界里的贴现率会如此不同。</p><h1 id=附录13-a由二叉树模型推导布莱克-斯科尔斯-默顿欧式期权定价公式>附录13 A由二叉树模型推导布莱克-斯科尔斯-默顿欧式期权定价公式<a class=anchor href=#%e9%99%84%e5%bd%9513-a%e7%94%b1%e4%ba%8c%e5%8f%89%e6%a0%91%e6%a8%a1%e5%9e%8b%e6%8e%a8%e5%af%bc%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e6%ac%a7%e5%bc%8f%e6%9c%9f%e6%9d%83%e5%ae%9a%e4%bb%b7%e5%85%ac%e5%bc%8f>#</a></h1><p>推导著名的布莱克-斯科尔斯-默顿欧式期权定价公式有许多种方法，其中一种是在二叉树模型中令步数趋于无穷大。</p><p>假设我们利用n步二叉树对执行价格为K，期限为T的欧式看涨期权定价。每步的时间长度是T/n，如果在树上股票价值有j次向上移动，n-j次向下移动，最后的股票价格等于S0ujdn-j，其中u是价格上涨的比例，d是下跌的比例，S0是开始时的股票价格。欧式看涨期权的收益为</p>$$
+\max \left(\mathrm{S0ujdn-j-K,0}\right)
+$$<p>由二项分布的性质，j次向上移动，n-j次向下移动的概率为</p>$$
+\frac{n !}{(n - j) ! j !} p^{j} (1 - p) ^{n - j}
+$$<p>因此看涨期权收益的期望值为</p>$$
+\sum_{j = 0} ^{n} \frac{n !}{(n - j) ! j !} p^{j} (1 - p) ^{n - j} \max \left(S_{0} u^{j} d^{n - j} - K, 0\right)
+$$<p>因为树形所表示的是在风险中性世界里股票价格的变化，所以我们应当用无风险利率贴现得到期权价格</p>$$
+c = \mathrm{e} ^{- r T} \sum_{j = 0} ^{n} \frac{n !}{(n - j) ! j !} p^{j} (1 - p) ^{n - j} \max \left(S_{0} u^{j} d^{n - j} - K, 0\right)\tag{13A-1}
+$$<p>只有当股票价格高于执行价格时，式(13A-1)中的项才是非零的，即S0ujdn-j>K</p><p>或</p>$$
+\ln (\mathrm{S} 0 / \mathrm{K}) > - \mathrm{j} \ln (\mathrm{u}) - (\mathrm{n} - \mathrm{j}) \ln (\mathrm{d})
+$$<p>因为 $u = \mathrm{e} ^{\sigma{\sqrt{T / n}}} \not \equiv \mathrm{e} ^{- \sigma{\sqrt{T / n}}}$ ，这个条件等价于</p>$$
+\ln \left(S_{0} / K\right) > n \sigma \sqrt{T / n} - 2 j \sigma \sqrt{T / n}
+$$<p>或</p>$$
+j > \frac{n}{2} - \frac{\ln (S_{0} / K)}{2 \sigma \sqrt{T / n}}
+$$<p>因此式(13A-1)可以被写成</p>$$
+c = \mathrm{e} ^{- r T} \sum_{j > \alpha} \frac{n !}{(n - j) ! j !} p^{j} (1 - p) ^{n - j} \left(S_{0} u^{j} d^{n - j} - K\right)
+$$<p>其中</p>$$
+\alpha = \frac{n}{2} - \frac{\ln (S_{0} / K)}{2 \sigma \sqrt{T / n}}
+$$<p>为方便起见，我们定义</p>$$
+U_{1} = \sum_{j > \alpha} \frac{n !}{(n - j) ! j !} p^{j} (1 - p) ^{n - j} u^{j} d^{n - j}\tag{13A-2}
+$$<p>和</p>$$
+U_{2} = \sum_{j > \alpha} \frac{n !}{(n - j) ! j !} p^{j} (1 - p) ^{n - j}\tag{13A-3}
+$$<p>因此</p>$$
+c = \mathrm{e} ^{- r T} (S_{0} U_{1} - K U_{2})\tag{13A-4}
+$$<p>首先考虑U2。我们知道，当实验次数趋于无穷大时，二项分布将趋向于正态分布。具体地讲，当实验次数为n，成功的概率为p时，成功次数的概率分布近似地等于均值为np，标准差为</p>$$
+\sqrt{n p (1 - p)}
+$$<p>√np(1 = P) 的正态分布。式(13A-3)中的U2是成功次数大于α的概率。由正态分布的性质，我们知道当n很大时</p>$$
+U_{2} = N \left(\frac{n p - \alpha}{\sqrt{n p (1 - p)}}\right)\tag{13A-5}
+$$<p>其中N为累积正态分布函数。将α代入该式，我们得到</p>$$
+U_{2} = N \left(\frac{\ln \left(S_{0} / K\right)}{2 \sigma \sqrt{T} \sqrt{p (1 - p)}} + \frac{\sqrt{n} (p - 1 / 2)}{\sqrt{p (1 - p)}}\right)\tag{13A-6}
+$$<p>由式(13-15)～式(13-18)，我们有</p>$$
+p = \frac{\mathrm{e} ^{r T / n} - \mathrm{e} ^{- \sigma \sqrt{T / n}}}{\mathrm{e} ^{\sigma \sqrt{T / n}} - \mathrm{e} ^{- \sigma \sqrt{T / n}}}
+$$<p>将指数函数按级数展开后我们可以看到，当n趋于无穷大时， $\mathrm{p} ( \mathrm{1 -}$</p><p>$_ \mathrm{p} )$ 趋向于1/4，而</p>$$
+\sqrt{n} (p - 1 / 2) _{\text{则收敛于}}
+$$$$
+\frac{(r - \sigma^{2} / 2) \sqrt{T}}{2 \sigma}
+$$<p>所以当n趋于无穷大时，式(13A-6)成为</p>$$
+U_{2} = N \left(\frac{\ln (S_{0} / K) + (r - \sigma^{2} / 2) T}{\sigma \sqrt{T}}\right)\tag{13A-7}
+$$<p>我们现在考虑U1。由式(13A-2)可得</p>$$
+U_{1} = \sum_{j > \alpha} \frac{n !}{(n - j) ! j !} (p u) ^{j} [ (1 - p) d ] ^{n - j}\tag{13A-8}
+$$<p>定义</p>$$
+p^{*} = \frac{p u}{p u + (1 - p) d}\tag{13A-9}
+$$<p>这时</p>$$
+1 - p^{*} = \frac{(1 - p) d}{p u + (1 - p) d}
+$$<p>式(13A-8)可以写成</p>$$
+U_{1} = [ p u + (1 - p) d ] ^{n} \sum_{j > \alpha} \frac{n !}{(n - j) ! j !} \left(p^{*}\right) ^{j}! \left(1 - p^{*}\right) ^{n - j}
+$$<p>因为在风险中性世界里，收益的期望值为无风险利率r，所以 ${\mathrm{\ p u^{+}}}$ $( \mathrm{{1 - p} ) d \mathrm{{= e r T} / \mathrm{{n}}}}$ ，且</p>$$
+U_{1} = \mathrm{e} ^{r T} \sum_{j > \alpha} \frac{n !}{(n - j) ! j !} (p^{*}) ^{j} (1 - p^{*}) ^{n - j}
+$$<p>这说明U1涉及二项分布，在这里上移的概率是p*（而不是p）。通过由正态分布来近似二项分布，我们可以得到与式(13A-5)类似的结果</p>$$
+U_{1} = \mathrm{e} ^{r T} N \left(\frac{n p^{*} - \alpha}{\sqrt{n p^{*} (1 - p^{*})}}\right)
+$$<p>与式(13A-6)相似，代入α，将会得到</p>$$
+U_{1} = \mathrm{e} ^{r T} N \left(\frac{\ln \left(S_{0} / K\right)}{2 \sigma \sqrt{T} \sqrt{p^{*} (1 - p^{*})}} + \frac{\sqrt{n} \left(p^{*} - 1 / 2\right)}{\sqrt{p^{*} (1 - p^{*})}}\right)
+$$<p>将u和d代入式(13A-9)</p>$$
+p^{*} = \left(\frac{\mathrm{e} ^{r T / n} - \mathrm{e} ^{- \sigma \sqrt{T / n}}}{\mathrm{e} ^{\sigma \sqrt{T / n}} - \mathrm{e} ^{- \sigma \sqrt{T / n}}}\right) \left(\frac{\mathrm{e} ^{\sigma \sqrt{T / n}}}{\mathrm{e} ^{r T / n}}\right)
+$$<p>将指数函数按级数展开后我们可以看到，当n趋于无穷大时， $\mathrm{p} *$</p>$$
+\sqrt{n} \left(p^{*} - \frac{1}{2}\right) _{\text{收敛于}}
+$$<p>(1-p*)趋向于1/4，而</p>$$
+\frac{(r + \sigma^{2} / 2) \sqrt{T}}{2 \sigma}
+$$<p>所以当n趋于无穷大时</p>$$
+U_{1} = \mathrm{e} ^{r T} N \left(\frac{\ln (S_{0} / K) + (r + \sigma^{2} / 2) T}{\sigma \sqrt{T}}\right)\tag{13A-10}
+$$<p>由式(13A-4)、式(13A-7)和式(13A-10)，我们有c=S0N(d1)-Ke-rTN(d2)</p><p>其中</p>$$
+d_{1} = \frac{\ln (S_{0} / K) + (r + \sigma^{2} / 2) T}{\sigma \sqrt{T}}
+$$<p>和</p>$$
+d_{2} = \frac{\ln (S_{0} / K) + (r - \sigma^{2} / 2) T}{\sigma \sqrt{T}} = d_{1} - \sigma \sqrt{T}
+$$<p>这就是欧式看涨期权的布莱克-斯科尔斯-默顿公式。在第15章里，我们将进一步讨论这个公式，并且在附录15A里会给出另一种推导方式。</p><p>[1] 因为期权价格为0.545，我们可以得出相应的贴现率为55.96%。这是因为 $0 . 545 {=} 0 . 6266 \mathrm{e} {-} 0 . 5596 {\times} 3 / 12$ 0</p><p>[2] 这里我们利用级数展开</p><p>**</p>$$
+\mathrm{e} ^{x} = 1 + x + \frac{x^{2}}{2 !} + \frac{x^{3}}{3 !} + \dots
+$$<p>[3] 在我们所采用的记号下，p为Q-测度下的概率，而p*是P-测度下的概率。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><nav class=book-nav><div class="flex justify-between"><div class=book-nav-prev><a href=/digital-library/books/options-futures-derivatives/ch12.html class=book-nav-link>← 第12章</a></div><div class=book-nav-next><a href=/digital-library/books/options-futures-derivatives/ch14.html class=book-nav-link>第14章 →</a></div></div></nav><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#131-单步二叉树模型与无套利方法>13.1 单步二叉树模型与无套利方法</a></li><li><a href=#1311-推广>13.1.1 推广</a></li><li><a href=#1312-股票期望收益的无关性>13.1.2 股票期望收益的无关性</a></li><li><a href=#132-风险中性定价>13.2 风险中性定价</a></li><li><a href=#1321-再论单步二叉树例子>13.2.1 再论单步二叉树例子</a></li><li><a href=#1322-现实世界与风险中性世界的区别>13.2.2 现实世界与风险中性世界的区别</a></li><li><a href=#133-两步二叉树>13.3 两步二叉树</a></li><li><a href=#134-看跌期权的例子>13.4 看跌期权的例子</a></li><li><a href=#135-美式期权>13.5 美式期权</a></li><li><a href=#136-delta>13.6 delta</a></li><li><a href=#137-选取u和d使二叉树与波动率吻合>13.7 选取u和d使二叉树与波动率吻合</a></li><li><a href=#138-二叉树公式>13.8 二叉树公式</a></li><li><a href=#139-增加二叉树的步数>13.9 增加二叉树的步数</a></li><li><a href=#1310-使用derivagem软件>13.10 使用DerivaGem软件</a></li><li><a href=#1311-其他标的资产上的期权>13.11 其他标的资产上的期权</a></li><li><a href=#13111-支付连续股息收益率股票的期权>13.11.1 支付连续股息收益率股票的期权</a></li><li><a href=#13112-股指期权>13.11.2 股指期权</a></li><li><a href=#13113-货币期权>13.11.3 货币期权</a></li><li><a href=#13114-期货期权>13.11.4 期货期权</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#概念思考题>概念思考题</a></li><li><a href=#练习题>练习题</a></li></ul></nav></div></aside></main></body></html>

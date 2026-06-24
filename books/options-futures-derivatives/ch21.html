@@ -1,631 +1,221 @@
-<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="蒙特卡洛、有限差分"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch21.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="第21章"><meta property="og:description" content="蒙特卡洛、有限差分"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-25T00:38:50+08:00"><meta itemprop=name content="第21章"><meta itemprop=description content="蒙特卡洛、有限差分"><meta itemprop=dateModified content="2026-06-25T00:38:50+08:00"><meta itemprop=wordCount content="1470"><title>第21章 • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch21.html><link rel=stylesheet href=/digital-library/book.min.3e23691350be517993d48d54e83ad8cdb3ba65cbe241510666b8cea7648f70d1.css integrity="sha256-PiNpE1C+UXmT1I1U6DrYzbO6ZcviQVEGZrjOp2SPcNE=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.47665ac3627003a65d3d940453d201c36bbd431e78e2a3055c82577347046dd2.js integrity="sha256-R2Zaw2JwA6ZdPZQEU9IBw2u9Qx544qMFXIJXc0cEbdI=" crossorigin=anonymous></script><script>(function(){var e,t=localStorage.getItem("book-theme");if(!t)return;e=document.documentElement,e.dataset.theme=t,e.style.colorScheme=t,t==="dark"?(e.style.setProperty("--body-background","#1a1a1a"),e.style.setProperty("--body-font-color","#e0e0e0"),e.style.setProperty("--color-link","#4db6ac"),e.style.setProperty("--gray-100","#2d2d2d"),e.style.setProperty("--gray-200","#3d3d3d"),e.style.setProperty("--gray-500","#a0a0a0"),e.style.setProperty("--text-primary","#f5f5f7"),e.style.setProperty("--text-secondary","#a1a1a6"),e.style.setProperty("--surface","rgba(255,255,255,0.06)"),e.style.setProperty("--hairline","rgba(255,255,255,0.14)"),e.style.setProperty("--hairline-strong","rgba(255,255,255,0.24)")):(e.style.setProperty("--body-background","#fff"),e.style.setProperty("--body-font-color","#000"),e.style.setProperty("--color-link","#00897b"),e.style.setProperty("--gray-100","#f0f0f0"),e.style.setProperty("--gray-200","#d0d0d0"),e.style.setProperty("--gray-500","#707070"),e.style.setProperty("--text-primary","#1d1d1f"),e.style.setProperty("--text-secondary","#6e6e73"),e.style.setProperty("--surface","#f5f5f7"),e.style.setProperty("--hairline","rgba(0,0,0,0.1)"),e.style.setProperty("--hairline-strong","rgba(0,0,0,0.18)"))})()</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script defer src=/digital-library/code-copy.js></script><script defer src=/digital-library/abbr-tooltip.js></script><script defer src=/digital-library/katex-init.js></script><script defer src=/digital-library/theme-toggle.js></script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="数值方法"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch21.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="第21章"><meta property="og:description" content="数值方法"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-25T01:25:59+08:00"><meta itemprop=name content="第21章"><meta itemprop=description content="数值方法"><meta itemprop=dateModified content="2026-06-25T01:25:59+08:00"><meta itemprop=wordCount content="3976"><title>第21章 • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch21.html><link rel=stylesheet href=/digital-library/book.min.3e23691350be517993d48d54e83ad8cdb3ba65cbe241510666b8cea7648f70d1.css integrity="sha256-PiNpE1C+UXmT1I1U6DrYzbO6ZcviQVEGZrjOp2SPcNE=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.d2946a832021f7e9858c14b364ee46037eda966c3a5284b187db9e863a8b319a.js integrity="sha256-0pRqgyAh9+mFjBSzZO5GA37almw6UoSxh9uehjqLMZo=" crossorigin=anonymous></script><script>(function(){var e,t=localStorage.getItem("book-theme");if(!t)return;e=document.documentElement,e.dataset.theme=t,e.style.colorScheme=t,t==="dark"?(e.style.setProperty("--body-background","#1a1a1a"),e.style.setProperty("--body-font-color","#e0e0e0"),e.style.setProperty("--color-link","#4db6ac"),e.style.setProperty("--gray-100","#2d2d2d"),e.style.setProperty("--gray-200","#3d3d3d"),e.style.setProperty("--gray-500","#a0a0a0"),e.style.setProperty("--text-primary","#f5f5f7"),e.style.setProperty("--text-secondary","#a1a1a6"),e.style.setProperty("--surface","rgba(255,255,255,0.06)"),e.style.setProperty("--hairline","rgba(255,255,255,0.14)"),e.style.setProperty("--hairline-strong","rgba(255,255,255,0.24)")):(e.style.setProperty("--body-background","#fff"),e.style.setProperty("--body-font-color","#000"),e.style.setProperty("--color-link","#00897b"),e.style.setProperty("--gray-100","#f0f0f0"),e.style.setProperty("--gray-200","#d0d0d0"),e.style.setProperty("--gray-500","#707070"),e.style.setProperty("--text-primary","#1d1d1f"),e.style.setProperty("--text-secondary","#6e6e73"),e.style.setProperty("--surface","#f5f5f7"),e.style.setProperty("--hairline","rgba(0,0,0,0.1)"),e.style.setProperty("--hairline-strong","rgba(0,0,0,0.18)"))})()</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script defer src=/digital-library/code-copy.js></script><script defer src=/digital-library/abbr-tooltip.js></script><script defer src=/digital-library/katex-init.js></script><script defer src=/digital-library/theme-toggle.js></script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/digital-library/index.html><span>Yuan's Library</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=搜索 aria-label=搜索 maxlength=64>
 <kbd class=book-search-kbd>⌘K</kbd><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><button id=theme-toggle class=theme-toggle aria-label=切换深色/浅色模式 title=切换深色/浅色模式>
 <span class=theme-icon>🌙</span></button><ul><li><a href=/digital-library/books/index.html>书架</a><li><span class=menu-category>机器学习</span><ul><li><a href=/digital-library/books/stanford-ml-notes/index.html>斯坦福机器学习教程笔记</a></li></ul></li><li><span class=menu-category>灵性</span><ul><li><a href=/digital-library/books/conversations-with-god/index.html>与神对话</a></li></ul></li><li><span class=menu-category>工程</span><ul><li><a href=/digital-library/books/lun-system-engineering/index.html>论系统工程（新世纪版）</a></li></ul></li><li><span class=menu-category>金融</span><ul><li><a href=/digital-library/books/why-stock-markets-crash/index.html>Why Stock Markets Crash</a></li><li><a href=/digital-library/books/trading-and-exchanges/index.html>Trading and Exchanges</a></li><li><a href=/digital-library/books/options-futures-derivatives/index.html>期权、期货及其他衍生产品</a><ul><li><a href=/digital-library/books/options-futures-derivatives/preface.html>前言与导览</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch01.html>第1章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch02.html>第2章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch03.html>第3章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch04.html>第4章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch05.html>第5章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch06.html>第6章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch07.html>第7章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch08.html>第8章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch09.html>第9章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch10.html>第10章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch11.html>第11章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch12.html>第12章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch13.html>第13章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch14.html>第14章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch15.html>第15章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch16.html>第16章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch17.html>第17章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch18.html>第18章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch19.html>第19章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch20.html>第20章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch21.html class=active>第21章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch22.html>第22章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch23.html>第23章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch24.html>第24章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch25.html>第25章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch26.html>第26章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch27.html>第27章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch28.html>第28章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch29.html>第29章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch30.html>第30章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch31.html>第31章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch32.html>第32章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch33.html>第33章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch34.html>第34章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch35.html>第35章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch36.html>第36章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch37.html>第37章</a></li></ul></li></ul></li></li><li><a href=/digital-library/notes.html>欢迎</a></li><li><a href=/digital-library/papers/index.html>论文</a></li><li><a href=/digital-library/reference/index.html>元素模板</a></li><li><a href=/digital-library/tags/index.html>Tags</a></li><li><a href=/digital-library/about.html>关于本站</a></li></ul><ul><li><a href=https://github.com/yuanuite/digital-library target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/digital-library/icons/menu.svg class=book-icon alt=Menu></label><h3>第21章</h3><div class=header-actions><label for=menu-control class=mobile-search-trigger onclick='setTimeout(()=>document.querySelector("#book-search-input")?.focus(),350)' aria-label=搜索><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-</label><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#211-二叉树>21.1 二叉树</a><ul><li><a href=#chapter_293.xhtml_Ae3360175-51a3-4eae-b8f0-65783dcd3ad3>21.1.1 风险中性定价</a></li><li><a href=#chapter_293.xhtml_Af2670175-66da-41a3-a80c-b42854cafd52>21.1.2 确定p、u和d</a></li><li><a href=#chapter_293.xhtml_A01cb0176-58c7-4e33-b779-a47ee9112a31>21.1.3 资产价格的树形</a></li><li><a href=#chapter_293.xhtml_A73b60176-83b3-41cc-b55f-665e1512aab7>21.1.4 在树形上倒推计算</a></li><li><a href=#chapter_293.xhtml_Aca9d0178-5a14-4bde-9c7a-9f7d881f9a6c>21.1.5 代数表达式</a></li><li><a href=#chapter_293.xhtml_Aaefc0179-a8b6-4f5f-acfb-377948fb0624>21.1.6 估计delta与其他希腊值</a></li></ul></li><li><a href=#212-利用二叉树对股指货币与期货合约上的期权定价>21.2 利用二叉树对股指、货币与期货合约上的期权定价</a></li><li><a href=#213-支付股息股票的二叉树模型>21.3 支付股息股票的二叉树模型</a><ul><li><a href=#chapter_295.xhtml_Aa19a017c-6af3-4541-bb44-18b66882ce4c>21.3.1 股息收益率是已知的情形</a></li><li><a href=#chapter_295.xhtml_A929d017d-e161-44e9-a079-506d3df69055>21.3.2 已知股息金额数量的情形</a></li><li><a href=#chapter_295.xhtml_A012f017f-89bb-48e0-a648-1c1959bf1a1b>21.3.3 控制变量技巧</a></li></ul></li><li><a href=#214-构造树形的其他方法>21.4 构造树形的其他方法</a></li><li><a href=#215-依赖时间的参数>21.5 依赖时间的参数</a></li><li><a href=#216-蒙特卡罗模拟法>21.6 蒙特卡罗模拟法</a><ul><li><a href=#chapter_298.xhtml_Ad5db0185-221f-4040-b1f7-4b965abe6eee>21.6.1 依赖多个市场变量的衍生产品</a></li><li><a href=#chapter_298.xhtml_A95500186-7f0e-4da2-bf6c-8f7e369bbd63>21.6.2 从正态分布中产生随机样本</a></li><li><a href=#chapter_298.xhtml_A73070186-1023-4373-8cf5-1afa43f4f796>21.6.3 模拟次数</a></li><li><a href=#chapter_298.xhtml_A06ca0187-7a07-48cc-b051-6fe300eb8bd3>21.6.4 通过树形抽样</a></li><li><a href=#chapter_298.xhtml_Addda0187-c3ac-4d0c-b6a7-fa828a368b69>21.6.5 计算希腊值</a></li><li><a href=#chapter_298.xhtml_Ac2d80188-a0b8-43d8-9286-05985971f66b>21.6.6 应用</a></li></ul></li><li><a href=#217-方差缩减程序>21.7 方差缩减程序</a><ul><li><a href=#chapter_299.xhtml_A919f0188-27e6-4fe3-a9ef-c3466c7c6ccc>21.7.1 对偶变量技巧</a></li><li><a href=#chapter_299.xhtml_A6e5a0188-875e-410c-9834-f20607d8b8bf>21.7.2 控制变量技巧</a></li><li><a href=#chapter_299.xhtml_Ad8f10189-a1eb-424a-ab6f-5c07a54accc9>21.7.3 重点抽样法</a></li><li><a href=#chapter_299.xhtml_A82c20189-6657-4f5e-b6a7-134ddddbda7b>21.7.4 间隔抽样法</a></li><li><a href=#chapter_299.xhtml_A404b0189-1cfa-44d2-b302-1643cea853f1>21.7.5 矩匹配法</a></li><li><a href=#chapter_299.xhtml_Ab517018a-0858-46c8-bf15-ce63dc551468>21.7.6 利用伪随机数序列</a></li></ul></li><li><a href=#218-有限差分法>21.8 有限差分法</a><ul><li><a href=#chapter_300.xhtml_A83af018b-71cd-4c3d-a07f-54810e3455b1>21.8.1 隐式有限差分法</a></li><li><a href=#chapter_300.xhtml_Ad5e3018d-18e7-4ebc-8e29-709310171283>21.8.2 显式有限差分法</a></li><li><a href=#chapter_300.xhtml_A76c5018f-8496-41ac-bbac-5bc3dcc8f038>21.8.3 变量替换</a></li><li><a href=#chapter_300.xhtml_A38410190-85be-429a-a321-122e0d7b3570>21.8.4 与三叉树法的关系</a></li><li><a href=#chapter_300.xhtml_Ae6420191-b0f5-4b00-9409-f1f1ba96472d>21.8.5 其他差分法</a></li><li><a href=#chapter_300.xhtml_Af92c0191-ba91-472d-824e-a23cc394cd61>21.8.6 有限差分法的应用</a></li></ul></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#练习题>练习题</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=第21章>第21章<a class=anchor href=#%e7%ac%ac21%e7%ab%a0>#</a></h1><p>在这一章里，我们将讨论3种用于期权定价的数值方法，这些方法一般是在没有类似于布莱克-斯科尔斯-默顿模型这样的解析解时才会采用。第1种方法是在第13章里介绍的涉及构造树形结构表达资产变化的方式；第2种方法是蒙特卡罗模拟方法，在第14章里解释随机过程时，我们曾对这一方法进行过简单的讨论；第3种方法涉及有限差分法。</p><p>蒙特卡罗方法主要适用于当衍生产品的收益依赖标的资产的历史价格，或者依赖多个标的资产的情形；树形法和有限差分法主要适用于期权持有者可以提前行权的美式期权，或者当持有者需要在到期日之前做出某种决定的衍生产品。除了对产品定价，本章所讨论的数值方法也都可以用来计算delta、gamma、vega等希腊值。</p><p>这里所讨论的基本数值方法可用来处理我们在实际中所遇到的大多数问题，但有时需要将这些方法进行改进后才能用来解决一些特殊的问题。在第27章里，我们将讨论如何处理。</p><h2 id=211-二叉树>21.1 二叉树<a class=anchor href=#211-%e4%ba%8c%e5%8f%89%e6%a0%91>#</a></h2><p>我们在第13章中介绍了二叉树方法。这种方法既可以用于对欧式期权定价，也可用于对美式期权定价。在第15章、第17章和第18章中给出的布莱克-斯科尔斯-默顿模型及其推广形式为欧式期权提供了解析定价公式，
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【布莱克-斯科尔斯-默顿模型基于与二叉树相同的假设。正如在附录13A里所示，当步数逐渐增大时，由二叉树给出的欧式期权价格收敛于由布莱克-斯科尔斯-默顿模型给出的价格。】
-]{.zuixiaoyao_zhushi_text}
-但美式期权价格的解析公式不存在。二叉树最有用的地方正是对美式期权定价。 [
-㊟ ]{.zuixiaoyao_zhushi} [
-【有人提出了求解美式期权的近似解析公式，网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes里的Technical
-Note 8描述了这种二阶近似法。】 ]{.zuixiaoyao_zhushi_text}</p><p>如第13章所述，在二叉树方法中，我们首先将期权的期限分成许多长度为Δt的很小时间区间，并假定在每一个时间区间里股票价格从开始的价格S变为两个新价格Su与Sd中的一个。这一模型如图21-1所示。一般来讲，u＞1，d＜1。因此，我们称S到Su的变化为价格上涨，S到Sd的变化为价格下跌。价格上涨的概率记为p，价格下跌的概率为1-p。</p><h3 id=chapter_293.xhtml_Ae3360175-51a3-4eae-b8f0-65783dcd3ad3 class=thirdTitle>21.1.1 风险中性定价<a class=anchor href=#chapter_293.xhtml_Ae3360175-51a3-4eae-b8f0-65783dcd3ad3>#</a></h3><p>第13章与第15章中所讨论的风险中性定价原理说明，对期权（或其他衍生产品）定价时，我们可以假定世界是风险中性的。这意味着出于定价的目的，我们可以采用以下步骤：</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_374_01.jpg alt>
-{ratio="0.639"
-w="668px" w-new="427px"
-style="max-width:668px;max-height:427px;width:100%"}</p><p>图21-1 在二叉树模型中，经过时间Δt后资产价格的变化</p><p>(1)假定所有交易证券的期望收益率均为无风险利率；</p><p>(2)计算衍生产品收益的期望值，并以无风险利率对其贴现。</p><p>以上描述的过程是采取树形定价的基础。</p><h3 id=chapter_293.xhtml_Af2670175-66da-41a3-a80c-b42854cafd52 class=thirdTitle>21.1.2 确定p、u和d<a class=anchor href=#chapter_293.xhtml_Af2670175-66da-41a3-a80c-b42854cafd52>#</a></h3><p>参数p、u和d的选择必须保证股票价格在时间Δt内变化的均值与方差都给出正确的值。由于我们假定了风险中性世界，股票的期望收益率为无风险利率r。如果资产提供收益率q的收入，那么资本增值部分的期望收益率必须是r-q。这意味着在时间区间Δt末，资产价格的期望值为Se(r-q)Δt，其中S为资产在时间区间开始时的价格。为了保证二叉树与回报均值相吻合，我们有</p><p>Se(r-q)Δt=pSu+(1-p)Sd</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_374_02.jpg alt>
-{ratio="0.064"
-w="1075px" w-new="69px"
-style="max-width:1075px;max-height:69px;width:100%"}</p><p>一个变量Q的方差等于E(Q2)-[E(Q)]2。将资产价格在Δt时间内的百分比变化记为R，那么1+R等于u的概率为p，等于d的概率为1-p。从式(21-1)可知，1+R的方差为</p><p>pu 2+(1-p)d2-e2(r-q)Δt</p><p>因为任何一个变量加上一个常数并不改变该变量的方差，1+R的方差与R的方差是一样的。如第15.4节所述，这个值等于σ2Δt，因此</p><p>pu 2+(1-p)d2-e2(r-q)Δt=σ2Δt</p><p>由式(21-1)，e(r-q)Δt(u+d)=pu2+(1-p)d2+ud，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_374_03.jpg alt>
-{ratio="0.054"
-w="1193px" w-new="65px"
-style="max-width:1193px;max-height:65px;width:100%"}</p><p>式(21-1)及式(21-2)给出了决定p、u和d的两个条件。考克斯、罗斯和鲁宾斯坦(1979)选取的第3个条件为
-[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See J. C. Cox, S. A. Ross, and M.
-Rubinstein, "Option Pricing: A Simplified Approach," Journal of
-FinancialEconomics, 7(October 1979), 229-264.】
-]{.zuixiaoyao_zhushi_text}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_374_04.jpg alt>
-{ratio="0.115"
-w="928px" w-new="107px"
-style="max-width:928px;max-height:107px;width:100%"}</p><p>当忽略Δt的高阶项时，式(21-1)～式(21-3)的解为
-<a href=/digital-library/index.html>[1]</a>{#chapter_293.xhtml_B1}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_375_01.jpg alt>
-{ratio="0.112"
-w="958px" w-new="107px"
-style="max-width:958px;max-height:107px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_375_02.jpg alt>
-{ratio="0.068"
-w="960px" w-new="65px"
-style="max-width:960px;max-height:65px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_375_03.jpg alt>
-{ratio="0.068"
-w="960px" w-new="65px"
-style="max-width:960px;max-height:65px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_375_04.jpg alt>
-{ratio="0.067"
-w="968px" w-new="65px"
-style="max-width:968px;max-height:65px;width:100%"}</p><p>变量a有时被称为增长因子(growth
-factor)。注意，式(21-4)~式(21-7)与第13.8节和第13.11节里的结果是一致的。</p><h3 id=chapter_293.xhtml_A01cb0176-58c7-4e33-b779-a47ee9112a31 class=thirdTitle>21.1.3 资产价格的树形<a class=anchor href=#chapter_293.xhtml_A01cb0176-58c7-4e33-b779-a47ee9112a31>#</a></h3><p>图21-2展示了资产价格4步树形的完整结构。在时间0，价格S0为已知；在时刻Δt，价格有两种可能的值：S0u、S0d；在时刻2Δt，价格有三种可能的值：S0u2、S0、S0d2；依此类推。在一般情形下，在时刻iΔt，价格有i+1种可能取值，它们是</p><p>S0ujdi-j,j=0,1,...,i</p><p>注意在图21-2中，在计算节点上资产价格时我们采用了关系式u=1/d。例如，当j=2和i=3时，资产价格为S0u2d=S0u。还应注意，树中节点是重合的(recombine)，也就是说资产价格先上涨后下跌与先下跌再上涨所得出的值是一样的。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_375_05.jpg alt>
-{ratio="0.688"
-w="1118px" w-new="769px"
-style="max-width:1118px;max-height:769px;width:100%"}</p><p>图21-2 用于期权定价的树形</p><h3 id=chapter_293.xhtml_A73b60176-83b3-41cc-b55f-665e1512aab7 class=thirdTitle>21.1.4 在树形上倒推计算<a class=anchor href=#chapter_293.xhtml_A73b60176-83b3-41cc-b55f-665e1512aab7>#</a></h3><p>通过在时间T（即树的末端）的期权价格由反向归纳(backward
-induction)的方式可以对期权定价。期权在时刻T的价值是已知的，例如，看跌期权的价值为max(K-ST,0)，而看涨期权的价格为max(ST-K,0)，其中ST为股票在时刻T的价格，K为执行价格。因为我们假定了风险中性世界，在T-Δt时刻，每个节点上的期权价值等于将T时刻期权价值的期望值以无风险利率r贴现。类似地，在T-2Δt时刻，每个节点上的期权价值可以将T-Δt时刻期权价值的期望值以无风险利率贴现求得，并依此类推。如果期权为美式，在二叉树的每个节点上我们需要检验在这一节点行使期权是否比再继续持有Δt时间的期权更有利。以倒推的形式我们可以最后得出期权在0时刻的价格。</p><p>【例21-1】
-考虑一个无股息股票上5个月期限的美式看跌期权，股票的当前价格为50美元，执行价格为50美元，无风险利率为每年10%，波动率为每年40%。采用我们常用的符号，这意味着S0=50、K=50、r=0.10、σ=0.40、T=0.4167和q=0。假如在构造二叉树时，我们将期权期限分为5个时间段，每段为1个月（=0.0833年）。这时Δt=0.0833，利用式(21-4)~式(21-7)得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_376_01.jpg alt>
-{ratio="0.146"
-w="1225px" w-new="179px"
-style="max-width:1225px;max-height:179px;width:100%"}</p><p>图21-3展示了由DerivaGem产生的二叉树。在每一个节点上有两个数值：上面的数值表示该节点所对应的股票价格，下面的数值代表节点所对应的期权价值。股价上涨的概率总是等于0.5073，而股价下跌的概率总是等于0.4927。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_376_02.jpg alt>
-{ratio="0.701"
-w="1654px" w-new="1160px"
-style="max-width:1654px;max-height:1160px;width:100%"}</p><p>图21-3 DerivaGem产生的关于无股息股票上美式看跌期权的二叉树（例21-1）</p><p>在iΔt时(i=0,1,...,5)，股票在第j个节(j=0,1,...,i)上的价格为S0ujdi-j。例如，股票在节点A(i=4,j=1)（即树的第4步从下面数起第2个节点）上的价格为50×1.1224×0.89093=39.69（美元）。在最后面的节点上，期权价格为max(K-ST,0)。例如，期权在节点G上的价格为50-35.36=14.64（美元）。期权在倒数第2步上的价格可由最后节点上的价格计算得出。首先我们假定在这些节点上不行使期权，这意味着期权价格等于在下一步节点上价格期望值的贴现值。例如，在节点E上，期权价格的计算式为</p><p>(0.5073×0+0.4927×5.45)e-0.10×0.0833=2.66</p><p>而在节点A上，期权价格的计算式为</p><p>(0.5073×5.45+0.4927×14.64)e-0.10×0.0833=9.90</p><p>然后我们检验提前行使期权是否比持有期权更为有利。在节点E上，提前行使期权带来的收益为0，因为股价与执行价格均为50美元，很显然我们应该等待，即持有期权，因此在节点E的期权价格为2.66美元。在节点A上，情形会有所不同。如在该节点行使期权，价值为50-39.69，即10.31美元，这一价值大于9.90美元。如果股票价格到达节点A，期权应该被行使，因此A点的期权价值为10.31美元。</p><p>前面节点上的期权价值可以采用类似的方式计算。注意，当期权处于实值状态时，提前行使并不总是最佳的。考虑节点B，如果期权被行使，其价值为50-39.69=10.31美元。但是，如果没有提前行使期权，其价值则为</p><p>(0.5073×6.38+0.4927×14.64)e-0.10×0.0833=10.36</p><p>因此，在这一节点上不应该提前行使期权。该节点上期权的正确价格为10.36美元。</p><p>从树的最后向前倒推，我们得出在初始节点上期权的价格为4.49美元。这一数量是对期权当前价格的估计。在实际中，我们应采用更小的时间步长Δt和更多的节点。DerivaGem显示30步、50步、100步和500步二叉树所得的期权价格分别为4.263美元、4.272美元、4.278美元和4.283美元。</p><h3 id=chapter_293.xhtml_Aca9d0178-5a14-4bde-9c7a-9f7d881f9a6c class=thirdTitle>21.1.5 代数表达式<a class=anchor href=#chapter_293.xhtml_Aca9d0178-5a14-4bde-9c7a-9f7d881f9a6c>#</a></h3><p>假定将一个美式期权的期限分成了N个长度为Δt的时间区间。我们称在时间iΔt的第j个节点(i,j)节点，其中0≤i≤N，0≤j≤i。这意味着在时间iΔt，树形上最低的节点(i,0)，次低的节点(i,1)，并依此类推。令fi,j为期权(i,j)节点上的值，标的资产(i,j)节点上的价格为S0ujdi-j。如果期权是看涨期权，它在时间T（到期日）的值为max(ST-K,0)，因此</p><p>fN,j=max(S0ujdN-j-K,0),j=0,1,...,N</p><p>如果期权是看跌期权，它在时间T的值为max(K-ST,0)，因此</p><p>fN,j=max(K-S0ujdN-j,0),j=0,1,...,N</p><p>在iΔt时，(i,j)节点移动到(i+1)Δt时(i+1,j+1)节点的概率为p；在iΔt时刻(i,j)节点移动(i+1)Δt时(i+1,j)节点的概率为1-p。假定期权没有被提前行使，由风险中性定价原理可以得出，对0≤i≤N-1和0≤j≤i</p><p>fi,j=e-rΔt[pfi+1,j+1+(1-p)fi+1,j]</p><p>当考虑提前行使期权时，这个fi,j必须同期权的内含价值进行比较，因此对于看涨期权</p><p>fi,j=max{S0ujdi-j-K,e-rΔt[pfi+1,j+1+(1-p)fi+1,j]}</p><p>对于看跌期权</p><p>fi,j=max{K-S0ujdi-j,e-rΔt[pfi+1,j+1+(1-p)fi+1,j]}</p><p>注意，由于定价计算从T时刻开始并以倒推的形式进行，所以在iΔt时刻的期权价值不仅反映了在iΔt时刻提前行使期权的可能性对于期权价值的影响，而且也反映了在将来提前行使期权对于期权价值的影响。</p><p>当Δt趋向于0时，我们可以得到美式期权的精确价值。在实际中，N=30的树形结构通常会给出一个合理的价格。图21-4显示了例21-1中期权价格的收敛性，这一图形是由DerivaGem软件的应用工具计算而得出的。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_378_01.jpg alt>
-{ratio="0.520"
-w="1208px" w-new="628px"
-style="max-width:1208px;max-height:628px;width:100%"}</p><p>图21-4 由DerivaGem软件计算的例21-1中期权价格的收敛性</p><h3 id=chapter_293.xhtml_Aaefc0179-a8b6-4f5f-acfb-377948fb0624 class=thirdTitle>21.1.6 估计delta与其他希腊值<a class=anchor href=#chapter_293.xhtml_Aaefc0179-a8b6-4f5f-acfb-377948fb0624>#</a></h3><p>根据前面的定义，期权的delta(Δ)为期权价格变化与标的股票价格变化的比率，即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_378_02.jpg alt>
-{ratio="1.329"
-w="82px" w-new="109px"
-style="max-width:82px;max-height:109px;width:30%"}</p><p>其中ΔS为股票价格的微小变化，Δf为相应期权价格的微小变化。在Δt时刻，当股票价格为S0u时，期权价格估计值为f1，1；当股票价格为S0d时，期权价格的估计值为f1，0。这说明当ΔS=S0u-S0d时，Δf=f1，1-f1，0，因此在Δt的Δ近似值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_378_03.jpg alt>
-{ratio="0.119"
-w="977px" w-new="116px"
-style="max-width:977px;max-height:116px;width:100%"}</p><p>为了确定gamma(Γ)，我们注意在2Δt时刻有两个Δ的估计。当股票价格(S0u2+S0)/2时（2Δt时刻的第2个与第3个节点的中间值），Δ(f2,2-f2,1)/(S0u2-S0)；当股票价格(S0+S0d2)/2时（2Δt时刻的第1个与第2个节点的中间值），Δ(f2,1-f2,0)/(S0-S0d2)。两个股票价格的差为h，其中</p><p>h=0.5(S0u2-S0d2)</p><p>gamma等于delta的变化除以h，即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_378_04.jpg alt>
-{ratio="0.083"
-w="1404px" w-new="117px"
-style="max-width:1404px;max-height:117px;width:100%"}</p><p>这些计算给出了在Δt时刻的delta估计值和2Δt时刻的gamma估计值。在实际中，这些估计值也用来作为在0时刻的delta和gamma估计值。
-<a href=/digital-library/index.html>[2]</a>{#chapter_293.xhtml_B2}</p><p>从二叉树中另一个可以进一步直接估计的对冲参数为theta(Θ)，这一参数代表在其他条件不变时期权价格变化与时间变化的比率。期权在时刻0的价值是f0，0，时刻2Δt的价值是f2，1。theta的一个估计值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_379_01.jpg alt>
-{ratio="0.119"
-w="971px" w-new="116px"
-style="max-width:971px;max-height:116px;width:100%"}</p><p>对于vega的计算，我们可以从对波动率做一个微小的变化而得出。当σ的变动量为Δσ时，我们可以重新构造二叉树（Δt的数量应该不变），并对期权重新定价。vega的估计值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_379_02.jpg alt>
-{ratio="0.514"
-w="210px" w-new="108px"
-style="max-width:210px;max-height:108px;width:70%"}</p><p>其中f及f*分别为由最初的二叉树和重建的二叉树得出的期权价值。我们也可以采用类似的方法计算rho。</p><p>【例21-2】
-再一次考虑例21-1，由图21-3得出f1，0=6.96和f1，1=2.16。式(21-8)给出的delta估计值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_379_03.jpg alt>
-{ratio="0.231"
-w="446px" w-new="103px"
-style="max-width:446px;max-height:103px;width:100%"}</p><p>利用式(21-9)，我们可以由在节点B、C及F上的期权价值估计期权的gamma</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_379_04.jpg alt>
-{ratio="0.071"
-w="1503px" w-new="107px"
-style="max-width:1503px;max-height:107px;width:100%"}</p><p>利用式(21-10)，可以由在节点D及C上的期权价值估计期权的theta，结果为每年</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_379_05.jpg alt>
-{ratio="0.267"
-w="386px" w-new="103px"
-style="max-width:386px;max-height:103px;width:100%"}</p><p>或每日历天为-0.012。当然，这些结果只是粗略的估计。当采用的步数增加时，这些估计值会越来越精确。当步数取为50时，DerivaGem给出的delta、gamma和theta值分别为-0.415、0.034及-0.0117。改变参数并重新计算期权价格，我们可以得出vega和rho的估计值分别为0.123和-0.072。</p><h2 id=212-利用二叉树对股指货币与期货合约上的期权定价>21.2 利用二叉树对股指、货币与期货合约上的期权定价<a class=anchor href=#212-%e5%88%a9%e7%94%a8%e4%ba%8c%e5%8f%89%e6%a0%91%e5%af%b9%e8%82%a1%e6%8c%87%e8%b4%a7%e5%b8%81%e4%b8%8e%e6%9c%9f%e8%b4%a7%e5%90%88%e7%ba%a6%e4%b8%8a%e7%9a%84%e6%9c%9f%e6%9d%83%e5%ae%9a%e4%bb%b7>#</a></h2><p>像在第13章、第17章和第18章中解释过的那样，当对股指、货币和期货上的期权定价时，我们可以将这些标的资产看成是提供的已知收益率的资产。对于股指，收益率等于股指中股票组合的股息收益率；对于货币，收益率等于外币无风险利率；对于期货合约，收益率等于本国无风险利率。因此只要适当地选择式(21-7)中的q值，我们就可以将二叉树应用于对股指、货币和期货上的期权定价。</p><p>【例21-3】
-考虑一个股指期货上4个月期的美式看涨期权，当前期货的价格为300，执行价格为300，年化无风险利率为8%，年化股指波动率为30%。为了构造二叉树，我们将期权期限分成4个长度为1个月的时间段。这时，F0=300,K=300,r=0.08，σ=0.3，T=0.3333和Δt=0.0833。因为可以将期货合同当成一个支付连续股息收益率r的股票，在式(21-7)中应当将q取成r，因此a=1。其他构造二叉树的参数为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_380_01.jpg alt>
-{ratio="0.294"
-w="751px" w-new="221px"
-style="max-width:751px;max-height:221px;width:100%"}</p><p>利用DerivaGem可以产生如图21-5所示的二叉树（其中节点上面的数值为期货价格，下面的数值为期权价格）。期权的估计值为19.16。当取更多的步数时，我们可以得到更高的精度。例如，当采用50步二叉树时，DerivaGem得出的期权价格为20.18；当采用100步二叉树时，DerivaGem得出的期权价格为20.22。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_380_02.jpg alt>
-{ratio="0.646"
-w="1640px" w-new="1060px"
-style="max-width:1640px;max-height:1060px;width:100%"}</p><p>图21-5 DerivaGem产生的对于美式股指期货期权定价的二叉树（例21-3）</p><p>【例21-4】
-考虑英镑上的1年期美式看跌期权。当前汇率为1.6100，执行价格为1.6000，美元无风险利率为每年8%，英镑利率为每年9%，英镑汇率的波动率为每年12%。在这里S0=1.61，K=1.60,r=0.08，rf=0.09，σ=0.12和T=1.0。为了构造二叉树，我们将期权期限分成4个长度为3个月的时间段，因此Δt=0.25。这时q=rf，由式(21-7)得出</p><p>a=e(0.08-0.09)×0.25=0.9975</p><p>构造二叉树所用的其他参数为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_380_03.jpg alt>
-{ratio="0.286"
-w="773px" w-new="221px"
-style="max-width:773px;max-height:221px;width:100%"}</p><p>我们将用DerivaGem产生的二叉树展示在图21-6中（节点上面的值代表汇率，下面的值代表期权价值）。期权的估计值为0.0710美元（采用50步二叉树，DerivaGem计算的期权价格为0.0738；采用100步二叉树，DerivaGem计算的期权价格也是0.0738）。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_381_01.jpg alt>
-{ratio="0.656"
-w="1625px" w-new="1066px"
-style="max-width:1625px;max-height:1066px;width:100%"}</p><p>图21-6 DerivaGem产生的对于美式货币看跌期权定价的二叉树（例21-4）</p><h2 id=213-支付股息股票的二叉树模型>21.3 支付股息股票的二叉树模型<a class=anchor href=#213-%e6%94%af%e4%bb%98%e8%82%a1%e6%81%af%e8%82%a1%e7%a5%a8%e7%9a%84%e4%ba%8c%e5%8f%89%e6%a0%91%e6%a8%a1%e5%9e%8b>#</a></h2><p>我们现在考虑一个较为棘手的问题，即如何用二叉树对支付股息的股票期权定价。像在第15章中指出的那样，为了方便我们讨论，"股息"一词是指在除息日由于股息而导致股票价格下跌的数量。</p><h3 id=chapter_295.xhtml_Aa19a017c-6af3-4541-bb44-18b66882ce4c class=thirdTitle>21.3.1 股息收益率是已知的情形<a class=anchor href=#chapter_295.xhtml_Aa19a017c-6af3-4541-bb44-18b66882ce4c>#</a></h3><p>在考虑长期限股票期权时，有时为了方便而假定股票支付连续收益率为q的股息。对这种期权可以采用与股指期权同样的方法定价。</p><p>为了取得更精确的结果，我们可以假设已知股息收益率是以离散形式支付的。假定股票只付一次股息，而且股息收益率（即股息为股票价格的百分比）是已知的。参数u、d和p与没有股息情形下一样。如果iΔt在除息日之前的时间，二叉树上对应这个时间的节点上股票价格为</p><p>S0ujdi-j,j=0,1,...,i</p><p>如果iΔt在除息日之后，那么相应节点上的股票价格为</p><p>S0(1-δ)ujdi-j,j=0,1,...,i</p><p>其中δ为股息收益率。树形如图21-7所示。对于期权有效期内有多个已知股息收益率的情形，我们可以采用同样的办法处理。如果δi为0时刻到iΔt时刻之间所有除息日的总股息收益率，那么iΔt时刻节点上的股票价格为</p><p>S0(1-δi)ujdi-j</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_382_01.jpg alt>
-{ratio="0.744"
-w="1272px" w-new="946px"
-style="max-width:1272px;max-height:946px;width:100%"}</p><p>图21-7 在指定时刻支付已知股息收益率的股票二叉树</p><h3 id=chapter_295.xhtml_A929d017d-e161-44e9-a079-506d3df69055 class=thirdTitle>21.3.2 已知股息金额数量的情形<a class=anchor href=#chapter_295.xhtml_A929d017d-e161-44e9-a079-506d3df69055>#</a></h3><p>在某些情形下，尤其是当期权的期限很短时，最符合现实的做法是假设已知支付的股息金额数量（而不是股息收益率）。假设股票波动率σ为常数，这时二叉树的形状会像图21-8显示的那样。二叉树将不再会重合，这意味着所要估算的节点数量将会变得很大。假设只有一次股息，而且除息日τ介于kΔt(k+1)Δt之间，股息金额数量为D。当i≤k时，在iΔt时刻节点上的股票价格为</p><p>S0ujdi-j,j=0,1,2,...,i</p><p>这与以前所述的股价相同；当i=k+1时，相应节点上的股票价格为</p><p>S0ujdi-j-D,j=0,1,2,...,i</p><p>当i=k+2时，相应节点上的股票价格为</p><p>(S0ujdi-1-j-D)u(S0ujdi-1-j-D)d</p><p>其中j=0,1,2,...,i-1。因此，在iΔt时刻总共有2i个（而不是i+1个）节点。当i=k+m时，在iΔt时刻总共有m(k+2)个节点，而不是k+m+1个节点。如果在期权期限内有多个除息日的话，那么节点数量会增长得更快。</p><p>第15.12节说明了在对支付股息的股票上期权进行定价时，可以假定股票价格具有两个组成部分：一部分为不确定，另一部分为期权期限内股息的贴现值。我们还给出了从业者认为这样假设是合理的几个原因。显然，美式期权的定价方法应该完全与欧式期权的定价等同（否则，不应该被提前行使的美式期权的价格不会与欧式期权价格相等）。因此在实践中对支付已知股息的股票上美式期权定价时，所使用的就是第15.12节里所描述的方法。这样做可以解决图21-8所示的节点泛滥问题。</p><p>假定在期权期限内只有一个除息日τ，并且kΔt≤τ≤(k+1)Δt。在iΔt时刻，股票的不确定部分价格S*为</p><p>S *=S,当iΔt＞τ</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_383_01.jpg alt>
-{ratio="0.770"
-w="1069px" w-new="823px"
-style="max-width:1069px;max-height:823px;width:100%"}</p><p>图21-8 已知股息金额数量并且假设波动率为常数的股票二叉树</p><p>以及</p><p>S *=S-De-r(τ-iΔt),当iΔt≤τ</p><p>其中D为股息。令σ*为S*的波动率，并假设为常数。参数p、u和d可由式(21-4)～式(21-7)计算（用σ*替代σ）。这样我们可以采用通常的方式构造模拟S*的二叉树。
-<a href=/digital-library/index.html>[3]</a>{#chapter_295.xhtml_B3}
-通过在每个节点上把将来股息（如果有的话）的贴现值加回到股票价格上，我们可以将二叉树转化成模拟原股票价格S的二叉树。假定
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_383_02.jpg alt>
-{.content-image-class
-ratio="1.200" w="50px" w-new="60px"
-style="max-width:50px;max-height:60px"}
-为S*在时刻0的值，在iΔt时刻，如iΔt＜τ，股票价格为</p><p>S *ujdi-j+De-r(τ-iΔt),j=0,1,...,i</p><p>如iΔt＞τ，股票价格为</p><p>S *ujdi-j,j=0,1,...,i</p><p>这种方法将二叉树变成了重合状态，即在iΔt时刻只有i+1个节点。我们可以把这种方法推广到存在多个股息的情形中。</p><p>【例21-5】
-考虑一个某股票上期限为5个月的看跌期权，预计在期权期限内股票将支付2.06美元的股息。股票初始价格为52美元，执行价格为50美元，无风险利率为每年10%，波动率为每年40%，股票除息日在3个半月后。</p><p>我们首先构造关于S*的二叉树，这里S*等于原股票价格减去期权有效期内股息的贴现值。股息的贴现值为</p><p>2.06e-0.2917×0.1=2.00</p><p>因此，S*的初始值为50。假定所给的每年40%的波动率是关于S*的波动率。图21-3给出了S*的二叉树（S*的初始值与波动率与构成图21-3的股票价格的初始值及波动率相同）。在每个节点上加上股息的现值就可以得到图21-9中关于股票价格S的二叉树。与图21-3一样，树上每个节点上涨的概率为0.5073，下跌的概率为0.4927。按通常的方式在二叉树上向后反推，即可得出期权价格，即4.44美元（利用50步二叉树，DerivaGem给出的期权值是4.208；利用100步二叉树，给出的值是4.214）。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_384_01.jpg alt>
-{ratio="0.650"
-w="1637px" w-new="1064px"
-style="max-width:1637px;max-height:1064px;width:100%"}</p><p>图21-9 DerivaGem产生的二叉树（例21-5）</p><h3 id=chapter_295.xhtml_A012f017f-89bb-48e0-a648-1c1959bf1a1b class=thirdTitle>21.3.3 控制变量技巧<a class=anchor href=#chapter_295.xhtml_A012f017f-89bb-48e0-a648-1c1959bf1a1b>#</a></h3><p>对美式期权定价时，我们可以采用控制变量技巧(control variate
-technique)方法提高计算精度， [ ㊟ ]{.zuixiaoyao_zhushi} [ 【See J. C.
-Hull and A. White, "The Use of the Control Variate Technique in Option
-Pricing," Journal of Financialand Quantitative Analysis, 23(September
-1988): 237-251.】 ]{.zuixiaoyao_zhushi_text}
-这一方法使用同一个树形计算美式期权价值fA，以及相应的欧式期权价格fE。我们同时也采用布莱克-斯科尔斯-默顿模型计算欧式期权价格fBSM。假设由树形得出的欧式期权误差fBSM-fE与树形所得出的美式期权误差是相同的。因此，美式期权的估计值为</p><p>fA+(fBSM-fE)</p><p>为了说明这一方法，我们利用图21-10对图21-3中的例子定价。计算求得的fE为4.32美元。由布莱克-斯科尔斯-默顿公式计算出的欧式期权fBSM价格为4.08美元，图21-3给出的美式期权估计值为4.49美元，因此由控制变量技巧所估计的美式期权价格为</p><p>4.49+(4.08-4.32)=4.25</p><p>利用100步的二叉树可以得出美式期权一个比较精确的估计值为4.278。因此在这个例子中，控制变量技巧所得结果的精确度确实比二叉树（估计值为4.49）有了显著的提高。</p><p>控制变量技巧实际上是采用树形计算欧式与美式期权的差值，而非美式期权本身的价格。我们在本章后面讨论蒙特卡罗模拟法时将给出控制变量技巧的进一步的应用。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_385_01.jpg alt>
-{ratio="0.625"
-w="1653px" w-new="1033px"
-style="max-width:1653px;max-height:1033px;width:100%"}</p><p>图21-10
-DerivaGem产生的二叉树，这里的期权为图21-3里的欧式期权（在每个节点上，上面数值为股票价格，下面数值为期权价格）</p><h2 id=214-构造树形的其他方法>21.4 构造树形的其他方法<a class=anchor href=#214-%e6%9e%84%e9%80%a0%e6%a0%91%e5%bd%a2%e7%9a%84%e5%85%b6%e4%bb%96%e6%96%b9%e6%b3%95>#</a></h2><p>迄今为止所描述的考克斯、罗斯和鲁宾斯坦方法并不是构造二叉树的唯一方法。在风险中性世界里，变量lnS在时间Δt内变化的均值(r-q-σ2/2)Δt，标准差为σΔt。这些均值与标准差可通过令p=0.5和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_385_02.jpg alt>
-{ratio="0.086"
-w="733px" w-new="63px"
-style="max-width:733px;max-height:63px;width:100%"}</p><p>相吻合。这种构造树形的方法与考克斯、罗斯和鲁宾斯坦的方法相比具有许多的优点：无论σ取什么值或步长是多少，树形上的概率总是p=0.5。
-<a href=/digital-library/index.html>[4]</a>{#chapter_296.xhtml_B4}
-缺点是通过这种树形计算delta、gamma、rho不是那么容易，这是因为最初的股票价格并不再是树形的中心。</p><p>【例21-6】
-某个9个月期限、执行价格为0.7950的美式外汇期权。当前的汇率为0.7900，国内无风险利率为每年6%，外国无风险利率为每年10%，汇率的波动率为4%，这时S0=0.79，K=0.795，r=0.06，rf=0.10,σ=0.04与T=0.75。我们取Δt=0.25（三步），而且树形上每个分支的概率为0.5，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_385_03.jpg alt>
-{ratio="0.176"
-w="745px" w-new="131px"
-style="max-width:745px;max-height:131px;width:100%"}</p><p>汇率二叉树如图21-11所示。由二叉树得出的期权价格为0.0026。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_386_01.jpg alt>
-{ratio="0.570"
-w="1284px" w-new="732px"
-style="max-width:1284px;max-height:732px;width:100%"}</p><p>图21-11
-美式外汇看涨期权定价的二叉树（节点上面的数值为汇率，下面的数值为期权价格，所有的概率均为0.5）</p><p>三叉树</p><p>三叉树可用来代替二叉树。三叉树的一般形式如图21-12所示。假定在树形的每个节点上价格变化为上升、取中间值、下降的概率分别为pu、pm和pd，树形的时间步长为Δt。假定股票支付股息收益率q，与InS的均值和标准差相吻合的参数为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_386_02.jpg alt>
-{ratio="0.136"
-w="1466px" w-new="200px"
-style="max-width:1466px;max-height:200px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_386_03.jpg alt>
-{ratio="0.753"
-w="1182px" w-new="890px"
-style="max-width:1182px;max-height:890px;width:100%"}</p><p>图21-12 股票价格的三叉树</p><p>三叉树的计算过程与二叉树类似：计算由树尾倒推到树的起点。在每一个节点上，我们需要计算行使期权的价值与继续持有期权的价值。继续持有期权的价值等于</p><p>e-rΔt(pufu+pmfm+pdfd)</p><p>其中fu、fm和fd分别为对应于下一步价格上升、取中间值和下降时的节点上的期权价格。可以证明，三叉树与第21.8节中讨论的显式差分方法等价。</p><p>Figlewski和Gao提出了一种改进三叉树的方法，他们称此方法为自适应网格模型(adaptive
-mesh
-model)。该模型在粗网格（Δt较大）的树形里加入细网格（Δt较小）的树形。 [
-㊟ ]{.zuixiaoyao_zhushi} [ 【See S. Figlewski and B. Gao, "The Adaptive
-Mesh Model: A New Approach to Efficient Option Pricing," Journalof
-Financial Economics, 53(1999): 313-351.】 ]{.zuixiaoyao_zhushi_text}
-对于一般美式期权定价，在期权接近满期、资产价格接近执行价格的区域里加入细网格是最有效的。</p><h2 id=215-依赖时间的参数>21.5 依赖时间的参数<a class=anchor href=#215-%e4%be%9d%e8%b5%96%e6%97%b6%e9%97%b4%e7%9a%84%e5%8f%82%e6%95%b0>#</a></h2><p>到目前为止，我们一直假定r、q、rf和σ均为常数。在实际中往往假设这些参数与时间有关。一般假设这些参数在时间t与t+Δt之间等于其远期值。
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【远期收益率和远期方差率的计算方式与远期利率类似（方差率为波动率的平方）。】
-]{.zuixiaoyao_zhushi_text}</p><p>在CRR二叉树上，为了使r和q（或rf）成为时间的函数，我们在时间t的节点上令</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_387_01.jpg alt>
-{ratio="0.065"
-w="995px" w-new="65px"
-style="max-width:995px;max-height:65px;width:100%"}</p><p>其中f(t)为介于t与t+Δt之间的远期利率，g(t)为q介于t与t+Δt之间的远期值。因为u和d与a无关，所以这样的假设并不改变二叉树的形状。从时刻t节点上所生出树叉的概率是
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【对于足够大的时间步数，这些概率永远为正。】 ]{.zuixiaoyao_zhushi_text}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_387_02.jpg alt>
-{ratio="0.217"
-w="1054px" w-new="229px"
-style="max-width:1054px;max-height:229px;width:100%"}</p><p>二叉树方法中的其他步骤和前面所介绍的一样，唯一不同之处是在t与t+Δt之间贴现时我们要用f(t)。</p><p>当σ为时间函数时，建立二叉树会比较困难。假设σ(t)为期限等于t的期权定价时所用的波动率。一种方法是使时间步长与时间区间内的平均方差率成反比。这时在树形上u和d保持不变，从而保证了树形的再重合。定义V=σ(T)2T，其中T为树形的期限。定义ti为第i步末所对应的时间。树形共有N步，我们可以选择ti而保证σ(ti)2ti=iV/N，并令
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_387_03.jpg alt>
-{.content-image-class
-ratio="0.380" w="163px" w-new="62px"
-style="max-width:163px;max-height:62px"}
-，d=1/u，p由u、d、r和q表达，其表达形式类似于常数波动率的情形。这里的计算过程可以与处理非常数利率的过程并用，以此我们可以建立利率和波动率均非常数的二叉树。</p><h2 id=216-蒙特卡罗模拟法>21.6 蒙特卡罗模拟法<a class=anchor href=#216-%e8%92%99%e7%89%b9%e5%8d%a1%e7%bd%97%e6%a8%a1%e6%8b%9f%e6%b3%95>#</a></h2><p>我们现在介绍蒙特卡罗模拟法，这与二叉树法有很大不同。通过一个估计π的简单Excel程序，例子21-1展示了蒙特卡罗随机抽样的思路。</p><p>业界事例21-1</p><p>利用蒙特卡罗方法计算π</p><p>假定图21-13中正方形的边长为1。设想你向这一方块随机地投掷飞镖，并随后计算飞镖落在圆圈中的比率。你会取得什么结果呢？方块的面积为1.0，圆圈的半径为0.5，圆圈的面积为π乘以半径的平方，即π/4。因此，飞镖落在圆圈的比率应等于π/4。将飞镖落在圆圈的比率乘以4即可得到π的估计值。</p><p>我们可以利用Excel计算表模拟表21-1中投掷飞镖的情形。我们将计算表的元素A1和B1分别定义为=RAND()。A1和B1为介于0与1之间的随机数，这两个随机数分别定义了飞镖落下的靠右以及靠上的位置，随后我们将计算表的元素C1定义为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_388_01.jpg alt>
-{ratio="0.989"
-w="376px" w-new="372px"
-style="max-width:376px;max-height:372px;width:70%"}</p><p>图21-13 通过掷飞镖计算π</p><p>=IF((A1-0.5)^2+(B1-0.5)^2＜0.5^2,4,0)</p><p>当飞镖落在圆圈内时，C1=4；否则C1=0。</p><p>表21-1 业界事例21-1中的计算表样本</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_388_02.jpg alt>
-{ratio="0.269"
-w="1687px" w-new="454px"
-style="max-width:1687px;max-height:454px;width:100%"}</p><p>计算表里接下来的99行的定义与第1行类似（这是Excel里的选择和拖动操作）。定义C102为=AVERAGE(C1:C100)，C103为=STDEV(C1:C100)，C102（在表21-1中为3.04）是由100次随机抽样计算出的π估计值，C103是估算值的标准差。在例21-7中我们将会看到，标准差可以被用来检测估计值的精确度。增加抽样次数会改进精确度，但收敛到准确值3.14159的速度很慢。</p><p>在计算期权价格时，蒙特卡罗模拟法利用了风险中性理论。我们首先在风险中性世界里随机地产生标的资产价格的路径，并由此取得收益的期望值，然后再对其按无风险利率贴现。考虑依赖某单个市场变量S并在T时刻产生收益的衍生产品。假定利率为常数，我们可以通过以下步骤对衍生产品定价：</p><p>(1)在风险中性世界里对S的随机路径进行抽样；</p><p>(2)计算衍生产品的收益；</p><p>(3)重复第1步和第2步，从而取得许多在风险中性世界里该衍生产品收益的样本；</p><p>(4)计算收益的平均值，这是衍生产品在风险中性世界里期望收益值的估计值；</p><p>(5)以无风险利率对期望收益值贴现，所得结果即为衍生产品价格的估计值。</p><p>以上过程显示在DerivaGem的蒙特卡罗计算表中。</p><p>假定在风险中性世界里标的市场变量服从以下过程</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_389_01.jpg alt>
-{ratio="0.063"
-w="1029px" w-new="65px"
-style="max-width:1029px;max-height:65px;width:100%"}</p><p>其中dz为维纳过程，
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_389_02.jpg alt>
-{.content-image-class
-ratio="1.372" w="43px" w-new="59px"
-style="max-width:43px;max-height:59px"}
-为标的变量在风险中性世界里的期望收益率，σ为波动率。
-<a href=/digital-library/index.html>[5]</a>{#chapter_298.xhtml_B5}
-为了模拟变量S的路径，我们可以将期权的期限分割成N个长度为Δt的小区间，并将式(21-13)近似为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_389_03.jpg alt>
-{ratio="0.055"
-w="1268px" w-new="70px"
-style="max-width:1268px;max-height:70px;width:100%"}</p><p>其中S(t)是S在t时的值，ε是从期望值为0、标准差为1.0正态分布中的抽样。这可以使得我们从S的初始值计算出S在Δt时的值，并通过Δt的值计算出S在2Δt的值，等等。在第14.3节里我们曾对这一过程进行过描述。每个模拟样本都需要通过对正态分布进行N次抽样构造S的整个路径。</p><p>在实际中，对lnS进行抽样通常比对S进行抽样要更为准确。由伊藤引理得出，lnS服从的过程为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_389_04.jpg alt>
-{ratio="0.100"
-w="1108px" w-new="111px"
-style="max-width:1108px;max-height:111px;width:100%"}</p><p>因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_389_05.jpg alt>
-{ratio="0.139"
-w="889px" w-new="124px"
-style="max-width:889px;max-height:124px;width:100%"}</p><p>其等价形式为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_389_06.jpg alt>
-{ratio="0.087"
-w="1290px" w-new="112px"
-style="max-width:1290px;max-height:112px;width:100%"}</p><p>以上方程可用于产生S的路径。</p><p>对lnS（而不是S）进行模拟的结果会更加精确，而且如果
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_389_07.jpg alt>
-{.content-image-class
-ratio="1.556" w="36px" w-new="56px"
-style="max-width:36px;max-height:56px"} 和σ是常数，那么对于任何期限T [
-㊟ ]{.zuixiaoyao_zhushi} [
-【与之相比，式(21-14)只有在Δt趋于0时才正确。】
-]{.zuixiaoyao_zhushi_text}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_389_08.jpg alt>
-{ratio="0.153"
-w="752px" w-new="115px"
-style="max-width:752px;max-height:115px;width:100%"}</p><p>因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_389_09.jpg alt>
-{ratio="0.096"
-w="1241px" w-new="119px"
-style="max-width:1241px;max-height:119px;width:100%"}</p><p>以上方程可用于对在T时刻提供非标准收益形式的衍生产品定价。如业界事例21-2所示，它也可用来检验布莱克-斯科尔斯-默顿模型。</p><p>蒙特卡罗模拟法的主要优点在于这一方法既可用于当收益只依赖标的变量S终端值的情形，也可用于当收益依赖标的变量S路径的情形（例如，该方法可用于收益依赖S在0和T之间平均值的情形）。衍生产品的收益可能发生在期限内的若干时间点上（而不是只是期限的末尾）。对任何关于S的随机过程均可以采用这一方法。我们接下来将要说明，这里所描述的方法可推广到收益依赖若干标的变量的情形。蒙特卡罗模拟法的缺点在于该方法的计算速度较慢，并且当可以提前行使期权时，不太容易采用这种方法。
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【如第27章所述，一些研究人员已经提出了一些将蒙特卡罗模拟用于美式期权定价的方法。】
-]{.zuixiaoyao_zhushi_text}</p><p>业界事例21-2</p><p>在Excel上检验布莱克-斯科尔斯-默顿公式</p><p>对于欧式看涨期权，我们可以采用很多步数的二叉树检验布莱克-斯科尔斯-默顿公式的正确性。另外一种检验布莱克-斯科尔斯-默顿公式正确性的方法是蒙特卡罗模拟。表21-2是一个Excel计算表，计算表的元素C2、D2、E2、F2和G2分别代表S0、K、r、σ和T。元素D4、E4和F4分别用于计算d1、d2和期权价格（计算表中布莱克-斯科尔斯-默顿价格为4.817）。</p><p>表21-2 利用蒙特卡罗法检验布莱克-斯科尔斯-默顿公式</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_390_01.jpg alt>
-{ratio="0.309"
-w="1690px" w-new="523px"
-style="max-width:1690px;max-height:523px;width:100%"}</p><p>NORMSINV为标准正态分布的逆分布函数，因此，NORMSINV(RAND())给出了一个服从标准正态分布的随机抽样。我们令A1为</p><p>=$C$2＊EXP($E$2-$F$2＊$F$2/2)＊$G$2+$F$2＊NORMSINV(RAND())＊SQRT($G$2)）这是按式(21-17)所做的计算，得出的是股票在T时刻的随机抽样值。我们将B1设成=EXP(-$E$2＊$G$2)＊MAX(A1-$D$2，0)，这是看涨期权收益的贴现值。我们在接下来的999行进行类似的操作。定义B1002=AVERAGE(B1:
-B1000)，在计算表中，该值为4.98，这是对期权价格的估计，这一估计应该与布莱克-斯科尔斯-默顿价格的差别不大。B1003定义为STDEV(B1:B1000)，由例21-8我们可以知道，B1003可用于检验估计的精确性。</p><h3 id=chapter_298.xhtml_Ad5db0185-221f-4040-b1f7-4b965abe6eee class=thirdTitle>21.6.1 依赖多个市场变量的衍生产品<a class=anchor href=#chapter_298.xhtml_Ad5db0185-221f-4040-b1f7-4b965abe6eee>#</a></h3><p>在第14.5节里，我们曾讨论过相关的随机过程。考虑收益依赖n个变量θi(1≤i≤n)的衍生产品。定义si为θi的波动率，
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_390_02.jpg alt>
-{.content-image-class
-ratio="1.315" w="54px" w-new="71px"
-style="max-width:54px;max-height:71px"}
-为θi在风险中性世界里的期望增长率，ρik为θi与θk之间的相关系数(correlation)。
-<a href=/digital-library/index.html>[6]</a>{#chapter_298.xhtml_B6}
-与单个标的变量的情形相似，我们将期权的期限分割成N个长度为Δt的子时间。θi的离散形式为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_390_03.jpg alt>
-{ratio="0.059"
-w="1294px" w-new="76px"
-style="max-width:1294px;max-height:76px;width:100%"}</p><p>其中εi为标准正态分布的随机样本。εi与εk的相关系数为ρik(1≤i；k≤n)。每一次路径的抽样都需要N个从多元正态分布中提取的εi(1≤i≤n)样本。将这些样本代入式(21-18)后可产生θi的模拟路径，由此我们可以计算衍生产品的抽样值。</p><h3 id=chapter_298.xhtml_A95500186-7f0e-4da2-bf6c-8f7e369bbd63 class=thirdTitle>21.6.2 从正态分布中产生随机样本<a class=anchor href=#chapter_298.xhtml_A95500186-7f0e-4da2-bf6c-8f7e369bbd63>#</a></h3><p>如业界事例21-2所示，Excel里的指令=NORMSINV(RAND())可以用来产生一标准正态分布的随机样本。当需要产生二元相关标准正态随机变量ε1、ε2的随机样本时，我们可以采取如下步骤。我们首先像上面讲过的那样生成两个相互独立的一元随机标准正态样本x1和x2，然后利用以下关系式即可生成我们所需要的随机样本</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_391_01.jpg alt>
-{ratio="0.376"
-w="407px" w-new="153px"
-style="max-width:407px;max-height:153px;width:100%"}</p><p>其中ρ为相关系数。</p><p>我们现在考虑如何产生n元联合正态分布的随机样本，这里变量i和j之间的相关系数为ρij。首先由一元标准正态分布生成n个相互独立的随机样本xi(1≤i≤n)，然后我们可以将所需要的随机样本εi(1≤i≤n)定义成</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_391_02.jpg alt>
-{ratio="0.191"
-w="1105px" w-new="211px"
-style="max-width:1105px;max-height:211px;width:100%"}</p><p>等。在这里我们选取系数αij使得这些变量有正确的相关系数和方差。这些系数可以通过递推方式得到：令α11=1；选择α21使α21α11=ρ21；选择α22使
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_391_03.jpg alt>
-{.content-image-class
-ratio="0.442" w="147px" w-new="65px"
-style="max-width:147px;max-height:65px"}
-=1；选择α31使α31α11=ρ31；选择α32使α31α21+α32α22=ρ32；选择α33使
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_391_04.jpg alt>
-{.content-image-class
-ratio="0.256" w="242px" w-new="62px"
-style="max-width:242px;max-height:62px"} =1；依此类推。 [ ㊟
-]{.zuixiaoyao_zhushi} [
-【如果关于α的方程没有实数解，那么所选的相关性结构不具有内部一致性，第23.7节将进一步讨论这一点。】
-]{.zuixiaoyao_zhushi_text} 这里描述的过程叫乔里斯基分解(Cholesky
-decomposition)。</p><h3 id=chapter_298.xhtml_A73070186-1023-4373-8cf5-1afa43f4f796 class=thirdTitle>21.6.3 模拟次数<a class=anchor href=#chapter_298.xhtml_A73070186-1023-4373-8cf5-1afa43f4f796>#</a></h3><p>蒙特卡罗模拟法计算结果的精度依赖模拟的次数。在蒙特卡罗模拟法中，我们通常在计算收益贴现的期望值外，还要计算标准差。将期望值和标准差分别由μ和ω表示。变量μ即为衍生产品价值的估计值，这一估计值的标准误差为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_391_05.jpg alt>
-{ratio="1.222"
-w="90px" w-new="110px"
-style="max-width:90px;max-height:110px;width:30%"}</p><p>其中M为模拟次数。衍生产品价格f的95%置信区间为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_391_06.jpg alt>
-{ratio="0.225"
-w="538px" w-new="121px"
-style="max-width:538px;max-height:121px;width:100%"}</p><p>这说明衍生产品价格的不确定性与模拟次数的平方根成反比。如果想将精度提高一倍，我们必须将模拟次数提高4倍；如果想将精度提高10倍，我们必须将模拟次数提高100倍；并依此类推。</p><p>【例21-7】
-在表21-1中，π是100个数字的平均值，标准差为1.69。这时，ω=1.69，M=100。因此计算结果的标准误差为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_391_07.jpg alt>
-{.content-image-class
-ratio="0.306" w="216px" w-new="66px"
-style="max-width:216px;max-height:66px"}
-=0.169。计算表给出关于π的95%置信区间为(3.04-1.96×0.169)至(3.04+1.96×0.169)，即2.71～3.37（精确值3.14159落在置信区间内）。</p><p>【例21-8】
-在表21-2中，期权价格是1000个数字的平均值，标准差为7.68。这时，ω=7.68，M=1000，因此计算结果的标准误差为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_392_01.jpg alt>
-{.content-image-class
-ratio="0.233" w="253px" w-new="59px"
-style="max-width:253px;max-height:59px"}
-=0.24。计算表给出的关于期权价格的95%置信区间为(4.68-1.96×0.24)至(4.68+1.96×0.24)，即4.51～5.45（布莱克-斯科尔斯-默顿价格为4.817，这个值落在置信区间内）。</p><h3 id=chapter_298.xhtml_A06ca0187-7a07-48cc-b051-6fe300eb8bd3 class=thirdTitle>21.6.4 通过树形抽样<a class=anchor href=#chapter_298.xhtml_A06ca0187-7a07-48cc-b051-6fe300eb8bd3>#</a></h3><p>在实现蒙特卡罗模拟时，除了从假设标的变量所服从的随机过程上抽取样本外，我们也可以从N步二叉树上的2N条可能路径产生样本。假设在一个二叉树上向上变化的概率是0.6。通过二叉树抽取随机路径样本的步骤如下：在每个节点上，我们抽取一个0～1的随机数。当这个随机数小于0.4时，我们选取向下的树枝，如果大于0.4，我们选向上的树枝。一旦有了从最初的节点到树形末尾的完整路径，我们就可以计算收益。这样就完成了一次抽样。利用类似的程序可以得到更多的样本。收益均值按无风险利率贴现后的值就是我们对衍生产品价格的估计。
-[ ㊟ ]{.zuixiaoyao_zhushi} [ 【关于如何更为高效地通过树形进行模拟，见D.
-Mintz，"Less is More"，Risk, July 1997:42-45。】
-]{.zuixiaoyao_zhushi_text}</p><p>【例21-9】
-假定用图21-3所示的树形结构计算收益等于max(Save-50,0)的期权价格，其中Save为今后5个月内股票的平均价格（平均值包括股票初始和最终价格）。这种期权叫亚式期权(Asian
-option)。当进行10次抽样后，表21-3显示了一种可能的结果。期权的价值等于平均收益按无风险利率贴现后的值。这时，收益平均值为7.08美元，无风险利率为10%，因此期权价值为7.08e-0.1×5/12=6.79（这里的讨论只是为了说明问题。在实际中，为了取得更加精确的结果，应采用更多的时间步数和更多次的模拟试验）。</p><p>表21-3
-由图21-3中二叉树并利用蒙特卡罗模拟计算亚式期权的价格（收益等于平均价格高于50美元的数量（U代表价格上涨；D代表价格下跌））</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_392_02.jpg alt>
-{ratio="0.730"
-w="843px" w-new="615px"
-style="max-width:843px;max-height:615px;width:100%"}</p><h3 id=chapter_298.xhtml_Addda0187-c3ac-4d0c-b6a7-fa828a368b69 class=thirdTitle>21.6.5 计算希腊值<a class=anchor href=#chapter_298.xhtml_Addda0187-c3ac-4d0c-b6a7-fa828a368b69>#</a></h3><p>我们可以采用蒙特卡罗模拟法计算第19章中讨论的希腊值。假定我们想计算f对于x的偏导数，其中f为衍生产品的价格，x为标的变量的价格或某个参数。首先，我们可以采取一般的蒙特卡罗法计算衍生产品的价格
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_392_03.jpg alt>
-{.content-image-class
-ratio="1.941" w="34px" w-new="66px"
-style="max-width:34px;max-height:66px"}
-，然后我们将x值增加Δx，并采用与计算
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_392_04.jpg alt>
-{.content-image-class
-ratio="1.757" w="37px" w-new="65px"
-style="max-width:37px;max-height:65px"} 类似的方式得出新价格
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_392_05.jpg alt>
-{.content-image-class
-ratio="1.364" w="44px" w-new="60px"
-style="max-width:44px;max-height:60px"} ，对冲参数可由以下方程计算</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_392_06.jpg alt>
-{ratio="0.661"
-w="180px" w-new="119px"
-style="max-width:180px;max-height:119px;width:50%"}</p><p>为了减小标准误差，在计算
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_392_07.jpg alt>
-{.content-image-class
-ratio="1.694" w="36px" w-new="61px"
-style="max-width:36px;max-height:61px"} 和
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_392_08.jpg alt>
-{.content-image-class
-ratio="1.354" w="48px" w-new="65px"
-style="max-width:48px;max-height:65px"}
-时，我们选用的时间区间的个数N、所用的随机样本、模拟运算的次数M都应当相同。</p><h3 id=chapter_298.xhtml_Ac2d80188-a0b8-43d8-9286-05985971f66b class=thirdTitle>21.6.6 应用<a class=anchor href=#chapter_298.xhtml_Ac2d80188-a0b8-43d8-9286-05985971f66b>#</a></h3><p>当衍生产品涉及3个或更多的随机变量时，蒙特卡罗模拟法比其他数值方法的效率更高。这是因为蒙特卡罗模拟法的运算量与随机变量的数量呈线性关系，而其他数值方法的运算量与随机变量的数量呈指数关系。蒙特卡罗模拟法的一个优点是可以给出估计值的标准误差，另一个优点是可以处理复杂的收益形式以及复杂的随机过程。再有，蒙特卡罗模拟法可用于收益为标的变量所遵循的整个路径（而不只是标的变量终端值）函数的情形。</p><h2 id=217-方差缩减程序>21.7 方差缩减程序<a class=anchor href=#217-%e6%96%b9%e5%b7%ae%e7%bc%a9%e5%87%8f%e7%a8%8b%e5%ba%8f>#</a></h2><p>假如像式(21-13)~式(21-18)所述的那样对衍生产品标的变量的随机过程进行模拟，在一般情况下，我们需要做很多次抽样才会将估计值达到合理的精确度。这从计算时间上讲是非常昂贵的。在这一节里，我们将介绍几种方差缩减程序(variance
-reduction procedure)，利用这些程序可以大大减少计算时间。</p><h3 id=chapter_299.xhtml_A919f0188-27e6-4fe3-a9ef-c3466c7c6ccc class=thirdTitle>21.7.1 对偶变量技巧<a class=anchor href=#chapter_299.xhtml_A919f0188-27e6-4fe3-a9ef-c3466c7c6ccc>#</a></h3><p>对偶变量技巧(antithetic variable
-technique)是指在每一次模拟抽样时，都要计算衍生产品的两个值。第一个值f1是按通常的方式计算得出的；第二个值f2是通过改变所有标准正态分布样本的符号而得出的（如果ε是用来计算f1的一个抽样，那么-ε则是计算f2时相应的抽样）。由此计算出的衍生产品的抽样值等于f1和f2的平均值。因为在以上两个值中当一个高于真实值时，另一个一般会低于真实值，反之亦然，这使得这一方法很有效。</p><p>定义
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_393_01.jpg alt>
-{.content-image-class
-ratio="1.971" w="35px" w-new="69px"
-style="max-width:35px;max-height:69px"} 为f1和f2的平均值</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_393_02.jpg alt>
-{ratio="0.470"
-w="215px" w-new="101px"
-style="max-width:215px;max-height:101px;width:50%"}</p><p>衍生产品价格的估值是所有
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_393_03.jpg alt>
-{.content-image-class
-ratio="2.027" w="37px" w-new="75px"
-style="max-width:37px;max-height:75px"} 的平均值。如果
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_393_04.jpg alt>
-{.content-image-class
-ratio="1.250" w="44px" w-new="55px"
-style="max-width:44px;max-height:55px"}
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_393_05.jpg alt>
-{.content-image-class
-ratio="1.974" w="38px" w-new="75px"
-style="max-width:38px;max-height:75px"}
-为的标准差，M为模拟运算的次数（即所计算的衍生产品价格的次数），估计值的标准误差为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_393_06.jpg alt>
-{ratio="0.395"
-w="157px" w-new="62px"
-style="max-width:157px;max-height:62px;width:50%"}</p><p>以上的误差量一般会远远小于由2M个随机试验所对应的标准误差。</p><h3 id=chapter_299.xhtml_A6e5a0188-875e-410c-9834-f20607d8b8bf class=thirdTitle>21.7.2 控制变量技巧<a class=anchor href=#chapter_299.xhtml_A6e5a0188-875e-410c-9834-f20607d8b8bf>#</a></h3><p>在对美式期权定价时，我们已经给出了与树形结构并用的控制变量技巧(control
-variate
-technique)例子（见第21.3节）。控制变量技巧适应于有两个相似衍生产品A和B的情形。衍生产品A是我们想定价的衍生产品，衍生产品B与A相似并有解析解。计算过程将使用同样的随机样本和Δt同时计算这两个产品的值。第1项模拟得到对于A的估计值
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_393_07.jpg alt>
-{.content-image-class
-ratio="1.292" w="48px" w-new="62px"
-style="max-width:48px;max-height:62px"} ；第2项模拟得到对于B的估计值
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_393_08.jpg alt>
-{.content-image-class
-ratio="1.375" w="48px" w-new="66px"
-style="max-width:48px;max-height:66px"}
-。以下公式会给出一个对于A更好的估计</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_393_09.jpg alt>
-{ratio="0.066"
-w="1016px" w-new="67px"
-style="max-width:1016px;max-height:67px;width:100%"}</p><p>其中fB是由解析公式算出的B的真实值。Hull和White在研究随机波动率(stochastic
-volatil-ity)对于欧式期权价格的影响时给出了一个使用控制变量技巧的应用例子，
-[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See J. C. Hull and A. White, "The Pricing
-of Options on Assets with Stochastic Volatilities," Journal of Finance,
-42(June 1987): 281-300.】 ]{.zuixiaoyao_zhushi_text}
-在这里，A为在随机波动率假设下的期权，B为在常数波动率假设下的期权。</p><h3 id=chapter_299.xhtml_Ad8f10189-a1eb-424a-ab6f-5c07a54accc9 class=thirdTitle>21.7.3 重点抽样法<a class=anchor href=#chapter_299.xhtml_Ad8f10189-a1eb-424a-ab6f-5c07a54accc9>#</a></h3><p>解释重点抽样法(importance
-sampling)的最好方法是通过实例。假设我们要为一个执行价格为K、期限为T的深度虚值欧式看涨期权定价。如果我们按通常的办法对标的资产价格在T的值进行抽样，我们得出的大部分路径的终端值都是0。因为0终端值对于期权价格的影响很小，这样做会浪费很多计算时间。因此，我们想尽量选取股票价格在到期日大于K的重要路径。</p><p>假定F是股票价格在到期日T的无条件概率分布函数，q为在到期日股票价格大于K的概率，而且已知这一概率的解析式，那么G=F/q即为股票价格在股票价格大于K时的条件概率分布。为了实施重点抽样法，我们在G（而不是F）中进行抽样，期权价格的估计值等于收益贴现后的均值乘以q。</p><h3 id=chapter_299.xhtml_A82c20189-6657-4f5e-b6a7-134ddddbda7b class=thirdTitle>21.7.4 间隔抽样法<a class=anchor href=#chapter_299.xhtml_A82c20189-6657-4f5e-b6a7-134ddddbda7b>#</a></h3><p>当我们从概率分布中抽取具有代表性的取值（而不是随机取值时），一般会得到更高的精确度。间隔抽样法(stratified
-sampling)属于这类处理方法。假定我们想从概率分布中抽取1000个样本，我们可以将分布分割成1000个具有同样概率的区间，然后从这些小区间中选取具有代表性的数值（均值或中位数(median)）。</p><p>对分成n个区间的标准正态分布情形，我们可以在第i个区间选取代表值</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_394_01.jpg alt>
-{ratio="0.425"
-w="261px" w-new="111px"
-style="max-width:261px;max-height:111px;width:70%"}</p><p>其中N-1为累计正态分布函数的逆函数。例如，当n=4时，4个区间的代表值分别为N-1(0.125)、N-1(0.375)、N-1(0.625)、N-1(0.875)。函数N-1可以利用Excel的NORMSINV函数进行计算。</p><h3 id=chapter_299.xhtml_A404b0189-1cfa-44d2-b302-1643cea853f1 class=thirdTitle>21.7.5 矩匹配法<a class=anchor href=#chapter_299.xhtml_A404b0189-1cfa-44d2-b302-1643cea853f1>#</a></h3><p>矩匹配法(moment
-matching)是指对标准正态分布中抽取的样本进行调整，以便使样本与第1阶矩、第2阶矩甚至更高阶矩相匹配。假设为了计算一个变量在一段时间里的变化时需要从均值为0、标准差为1.0的标准正态分布中进行抽样。假定所取的样本值为εi(1≤i≤n)。为了使前两阶矩相匹配，我们首先计算样本值的均值m和标准差s，然后我们定义调整后的样本
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_394_02.jpg alt>
-{.content-image-class
-ratio="1.051" w="59px" w-new="62px"
-style="max-width:59px;max-height:62px"} 如下</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_394_03.jpg alt>
-{ratio="0.420"
-w="250px" w-new="105px"
-style="max-width:250px;max-height:105px;width:70%"}</p><p>经调整的样本具有正确的均值0与正确的标准差1.0。最后我们采用这些经调整后的样本进行所有的计算。</p><p>矩匹配法会节省计算时间，但这种方法加重了存储的负担，这是因为所有的样本值均要存储到模拟过程的最后阶段。矩匹配法有时也被称作为二次再抽样法(quadratic
-resampling)。这一方法常常与对偶变量技巧结合使用。因为对偶变量技巧自动会使所有的奇数矩相匹配，因此我们只需要在矩匹配法中使得第2节矩和（或许）第4节矩相匹配即可。</p><h3 id=chapter_299.xhtml_Ab517018a-0858-46c8-bf15-ce63dc551468 class=thirdTitle>21.7.6 利用伪随机数序列<a class=anchor href=#chapter_299.xhtml_Ab517018a-0858-46c8-bf15-ce63dc551468>#</a></h3><p>伪随机数序列(quasi-random sequence)（也称为低差异序列(low-discrepancy
-sequence)）是由概率分布中得出的具有代表性样本组成的序列。 [ ㊟
-]{.zuixiaoyao_zhushi} [
-【伪随机(quasi-random)这一术语是个误称，伪随机序列实际上是很确定的。】
-]{.zuixiaoyao_zhushi_text}
-读者可以在Brotherton-Ratcliffe以及Press等人的文献中找到关于伪随机数序列的描述和应用。
-[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See R. Brotherton-Ratcliffe, "Monte Carlo
-Motoring," Risk, December 1994:53-58；W. H. Press, S. A. Teu-kolsky, W.
-T. Vetterling, and B. P. Flannery, Numerical Recipes in C: The Art of
-Scientific Computing, 2nd edn. Cambridge University Press, 1992.】
-]{.zuixiaoyao_zhushi_text}
-伪随机数序列具有以下优点：由伪随机数序列所得模拟结果的标准差与1/M（而不是
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_395_01.jpg alt>
-{.content-image-class
-ratio="0.534" w="116px" w-new="62px"
-style="max-width:116px;max-height:62px"} ）成正比，这里的M代表模拟次数。</p><p>伪随机数抽样与间隔抽样法相似，其目的是寻求具有代表意义的标的变量样本值。在间隔抽样法中，我们假定事先已经知道需要抽取样本的确切数量，而伪随机数抽样过程则更加灵活。这种抽样的方式总可以不断地在已经存在的样本之间的间隔里加入更多的样本。因此，在模拟过程的每个阶段，样本点都会大体上均匀地分布在整个概率空间中。</p><p>图21-14显示了由索博尔提议的方法而产生的二维伪随机数点。 [ ㊟
-]{.zuixiaoyao_zhushi} [ 【See I. M. Sobol', USSR Computational
-Mathematics and Mathematical Physics, 7, 4(1967): 86-112.A de-scription
-of Sobol's procedure is in W. H. Press, S. A. Teukolsky, W. T.
-Vetterling, and B. P. Flannery, Numeri-cal Recipes in C: The Art of
-Scientific Computing, 2nd edn. Cambridge University Press, 1992.】
-]{.zuixiaoyao_zhushi_text}
-我们可以看出，后来抽取的样本总是弥补前面样本所留下的空隙。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_395_02.jpg alt>
-{ratio="1.013"
-w="1251px" w-new="1267px"
-style="max-width:1251px;max-height:1267px;width:100%"}</p><p>图21-14 一个索博尔序列的前1024个点</p><h2 id=218-有限差分法>21.8 有限差分法<a class=anchor href=#218-%e6%9c%89%e9%99%90%e5%b7%ae%e5%88%86%e6%b3%95>#</a></h2><p>有限差分法(finite
-difference)通过求解衍生产品价格所满足的微分方程达到定价的目的，在求解过程中，微分方程被转换成一组差分方程。我们可以通过迭代的方式求出差分方程的解。</p><p>为了说明这种方法，我们考虑如何用它对一个股息收益率为q的美式股票看跌期权定价。由式(17-6)得出，期权价格满足微分方程</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_396_01.jpg alt>
-{ratio="0.095"
-w="1175px" w-new="112px"
-style="max-width:1175px;max-height:112px;width:100%"}</p><p>假设期权的期限为T。我们将期限分成N个等间隔、长度为Δt=T/N的时间区间。因此我们需要考虑N+1个时间点</p><p>0,Δt,2Δt,...,T</p><p>假设Smax为足够大的股票价格，一旦股票达到这一价格时，看跌期权的价值几乎为0。定义ΔS=Smax/M，并考虑M+1个具有同样间隔的股票价格</p><p>0,ΔS,2ΔS,...,Smax</p><p>在选取Smax时保证这些值中有一个刚好对应于股票的当前价格。</p><p>如图21-15所示，选取的股票价格和时间构成了一个共(M+1)(N+1)个点的网格。网格上的(i,j)所对应的时间为iΔt，股票价格为jΔS。我们用变量fi,j代(i,j)点的期权价格。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_396_02.jpg alt>
-{ratio="0.964"
-w="878px" w-new="846px"
-style="max-width:878px;max-height:846px;width:100%"}</p><p>图21-15 有限差分网格</p><h3 id=chapter_300.xhtml_A83af018b-71cd-4c3d-a07f-54810e3455b1 class=thirdTitle>21.8.1 隐式有限差分法<a class=anchor href=#chapter_300.xhtml_A83af018b-71cd-4c3d-a07f-54810e3455b1>#</a></h3><p>对于网格内部的(i,j)，∂f/∂S可近似为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_396_03.jpg alt>
-{ratio="0.115"
-w="1001px" w-new="115px"
-style="max-width:1001px;max-height:115px;width:100%"}</p><p>或者</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_396_04.jpg alt>
-{ratio="0.116"
-w="1001px" w-new="116px"
-style="max-width:1001px;max-height:116px;width:100%"}</p><p>式(21-22)叫作向前差分近似(forward difference
-approximation)；式(21-23)叫作向后差分近似(backward difference
-approximation)。将以上两种差分加以平均，我们可以得出一个对称的差分方程</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_396_05.jpg alt>
-{ratio="0.120"
-w="1002px" w-new="120px"
-style="max-width:1002px;max-height:120px;width:100%"}</p><p>对于∂f/∂t，我们将采用向前差分近似，从而iΔt时刻的值(i+1)Δt的值有关</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_396_06.jpg alt>
-{ratio="0.115"
-w="1001px" w-new="115px"
-style="max-width:1001px;max-height:115px;width:100%"}</p><p>下面考虑∂2f/∂S2。(i,j)点的∂f/∂S向后差分近似地由式(21-23)给出。(i,j+1)点的∂f/∂S向后差分近似为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_01.jpg alt>
-{ratio="0.590"
-w="188px" w-new="111px"
-style="max-width:188px;max-height:111px;width:50%"}</p><p>因此(i,j)点∂2f/∂S2的有限差分近似为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_02.jpg alt>
-{ratio="0.184"
-w="626px" w-new="115px"
-style="max-width:626px;max-height:115px;width:100%"}</p><p>或者</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_03.jpg alt>
-{ratio="0.113"
-w="1066px" w-new="120px"
-style="max-width:1066px;max-height:120px;width:100%"}</p><p>将式(21-24)、式(21-25)和式(21-26)代入微分方程式(21-21)，并且注意S=jΔS，得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_04.jpg alt>
-{ratio="0.086"
-w="1287px" w-new="111px"
-style="max-width:1287px;max-height:111px;width:100%"}</p><p>其中j=1,2,...,M-1；i=0,1,...,N-1。将方程进行整理，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_05.jpg alt>
-{ratio="0.067"
-w="1125px" w-new="75px"
-style="max-width:1125px;max-height:75px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_06.jpg alt>
-{ratio="0.520"
-w="565px" w-new="294px"
-style="max-width:565px;max-height:294px;width:100%"}</p><p>看跌期权在时间T的值为max(K-ST,0)，其中ST为股票在T时刻的价格，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_07.jpg alt>
-{ratio="0.054"
-w="1222px" w-new="66px"
-style="max-width:1222px;max-height:66px;width:100%"}</p><p>当股票价格为0时，看跌期权的价格为K，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_08.jpg alt>
-{ratio="0.061"
-w="1085px" w-new="66px"
-style="max-width:1085px;max-height:66px;width:100%"}</p><p>我们假定当S=Smax时，期权价格为0，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_09.jpg alt>
-{ratio="0.061"
-w="1086px" w-new="66px"
-style="max-width:1086px;max-height:66px;width:100%"}</p><p>式(21-28)、式(21-29)和式(21-30)定义了看跌期权在图21-15所示网格的三个边上的取值，这三个边分别对应S=0,S=Smax，和t=T。接下来，我们要利用式(21-27)计算f在其他节点的值。当i=N-1时，式(21-27)可写为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_10.jpg alt>
-{ratio="0.058"
-w="1157px" w-new="67px"
-style="max-width:1157px;max-height:67px;width:100%"}</p><p>其中j=1,2,...,M-1。由式(21-28)，我们知道方程右端的值。此外，由式(21-29)和式(21-30)我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_397_11.jpg alt>
-{ratio="0.143"
-w="948px" w-new="136px"
-style="max-width:948px;max-height:136px;width:100%"}</p><p>式(21-31)同时给出了关于M-1个未知量的M-1个方程，这些未知量为fN-1，1，fN-1，2,...,fN-1，M-1。
-<a href=/digital-library/index.html>[7]</a>{#chapter_300.xhtml_B7}
-一旦以上未知量确定后，我们将fN-1，j与K-jΔS进行比较。如果fN-1，j＜K-jΔS，那么在时间T-Δt行使期权是最优的，这时我们将fN-1，j设定为K-jΔS。在时间T-2Δt的节点可用相似的方式处理，等等。最终，我们可以得出f0，1，f0，2，f0，3,...,f0，M-1，其中的一个价格即为我们寻求的期权价格。</p><p>控制变量技巧可以与有限差分法并用。在定价过程中，一旦设定时间和标的资产的网格后，我们采用同样的网格对于一个类似的但具有解析解的期权进行定价，然后利用式(21-20)。</p><p>【例21-10】
-表21-4显示了由隐式有限差分方法求出的例21-1中美式看跌期权的数值解。在这里，参数M、N和ΔS分别等于20美元、10美元和5美元。因此，在定价过程中，我们将0美元和100美元之间分成了每5美元一个的价格区间，并同时将期权期限分成了每半个月一步的时间段。由这一网格得出的期权的价格为4.07美元，由同一网格给出的欧式期权价格为3.91美元，布莱克-斯科尔斯-默顿公式给出的欧式期权准确值为4.08美元。因此，由控制变量技巧得出的美式期权价格近似值为</p><p>4.07+(4.08-3.91)=4.24（美元）</p><p>表21-4 采用隐式有限差分来计算例21-1中美式期权价格的网格</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_398_01.jpg alt>
-{ratio="0.734"
-w="1280px" w-new="940px"
-style="max-width:1280px;max-height:940px;width:100%"}</p><h3 id=chapter_300.xhtml_Ad5e3018d-18e7-4ebc-8e29-709310171283 class=thirdTitle>21.8.2 显式有限差分法<a class=anchor href=#chapter_300.xhtml_Ad5e3018d-18e7-4ebc-8e29-709310171283>#</a></h3><p>隐式有限差分方法的优点在于其稳定性：当ΔS和Δt趋于0时，由隐式有限差分方法得出的数值解总是收敛于微分方程的解。
-<a href=/digital-library/index.html>[8]</a>{#chapter_300.xhtml_B8}
-但其中一个缺点是由fi+1，j的值计算fi,j时，我们必须同时对M-1个方程求解。当假设∂f/∂S和∂2f/∂S2的值在(i,j)上(i+1,j)上相等时，可以将有限差分法简化。这时式(21-24)和式(21-26)变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_399_01.jpg alt>
-{ratio="0.451"
-w="530px" w-new="239px"
-style="max-width:530px;max-height:239px;width:100%"}</p><p>差分方程变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_399_02.jpg alt>
-{ratio="0.084"
-w="1422px" w-new="119px"
-style="max-width:1422px;max-height:119px;width:100%"}</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_399_03.jpg alt>
-{ratio="0.076"
-w="1182px" w-new="90px"
-style="max-width:1182px;max-height:90px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_399_04.jpg alt>
-{ratio="0.438"
-w="788px" w-new="345px"
-style="max-width:788px;max-height:345px;width:100%"}</p><p>这样我们就产生了所谓的显式有限差分法(explicit finite difference
-method)。 [ ㊟ ]{.zuixiaoyao_zhushi} [
-【对∂f/∂t采用向后差分近似（而不是向前差分近似），我们同样可以得出显式有限差分法。】
-]{.zuixiaoyao_zhushi_text}
-图21-16展示了隐式有限差分法与显式有限差分法的区别：由式(21-27)定义的隐式差分给出了iΔt时刻的3个不同期权值（即fi,j-1、fi,j和fi,j+1）(i+1)Δt时刻的1个期权值（即fi+1，j）之间的关系；由式(21-34)定义的显式有限差分给出了iΔt时刻的1个期权值（即fi,j）(i+1)Δt时刻的3个不同期权值（即fi+1，j-1、fi+1，j和fi+1，j+1）之间的关系。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_399_05.jpg alt>
-{ratio="0.581"
-w="899px" w-new="522px"
-style="max-width:899px;max-height:522px;width:100%"}</p><p>图21-16 隐式有限差分法和显式有限差分法的区别</p><p>【例21-11】
-表21-5给出了通过显式有限差分为例21-1中的美式看跌期权定价的结果。同例21-10中一样，参数M、N和ΔS分别等于20美元、10美元和5美元。由网格所得出的期权价格为4.26美元。
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【稍后我们将解释造成网格左上边出现负数和其他矛盾的原因。】
-]{.zuixiaoyao_zhushi_text}</p><p>表21-5 通过显式有限差分法计算例21-1中美式期权价格的网格</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_399_06.jpg alt>
-{ratio="0.134"
-w="1692px" w-new="226px"
-style="max-width:1692px;max-height:226px;width:100%"}</p><p>（续）</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_400_01.jpg alt>
-{ratio="0.672"
-w="1682px" w-new="1131px"
-style="max-width:1682px;max-height:1131px;width:100%"}</p><h3 id=chapter_300.xhtml_A76c5018f-8496-41ac-bbac-5bc3dcc8f038 class=thirdTitle>21.8.3 变量替换<a class=anchor href=#chapter_300.xhtml_A76c5018f-8496-41ac-bbac-5bc3dcc8f038>#</a></h3><p>如果利用几何布朗运动描述标的资产价格，在应用有限差分法时以lnS作为标的变量比以S作为标的变量会更有效。定义Z=lnS，式(21-21)变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_400_02.jpg alt>
-{ratio="0.152"
-w="741px" w-new="113px"
-style="max-width:741px;max-height:113px;width:100%"}</p><p>这时，为了给衍生产品定价，我们应该针对Z设定等距离网格（而不是针对S设定等距离网格）。在隐式有限差分法中，微分方程变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_400_03.jpg alt>
-{ratio="0.095"
-w="1248px" w-new="119px"
-style="max-width:1248px;max-height:119px;width:100%"}</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_400_04.jpg alt>
-{ratio="0.070"
-w="1126px" w-new="79px"
-style="max-width:1126px;max-height:79px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_400_05.jpg alt>
-{ratio="0.537"
-w="656px" w-new="352px"
-style="max-width:656px;max-height:352px;width:100%"}</p><p>在显式有限差分法中，差分方程为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_400_06.jpg alt>
-{ratio="0.086"
-w="1387px" w-new="119px"
-style="max-width:1387px;max-height:119px;width:100%"}</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_401_01.jpg alt>
-{ratio="0.069"
-w="1184px" w-new="82px"
-style="max-width:1184px;max-height:82px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_401_02.jpg alt>
-{ratio="0.091"
-w="1288px" w-new="117px"
-style="max-width:1288px;max-height:117px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_401_03.jpg alt>
-{ratio="0.090"
-w="1285px" w-new="116px"
-style="max-width:1285px;max-height:116px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_401_04.jpg alt>
-{ratio="0.091"
-w="1282px" w-new="117px"
-style="max-width:1282px;max-height:117px;width:100%"}</p><p>经过变量替换后，参数αj、βj和γj以及
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_401_05.jpg alt>
-{.content-image-class
-ratio="0.454" w="141px" w-new="64px"
-style="max-width:141px;max-height:64px"} 和
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_401_06.jpg alt>
-{.content-image-class
-ratio="1.280" w="50px" w-new="64px"
-style="max-width:50px;max-height:64px"}
-都有独立于j的特征。在大多数情况下，
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_401_07.jpg alt>
-{.content-image-class
-ratio="0.267" w="251px" w-new="67px"
-style="max-width:251px;max-height:67px"} 是个很好的选择。</p><h3 id=chapter_300.xhtml_A38410190-85be-429a-a321-122e0d7b3570 class=thirdTitle>21.8.4 与三叉树法的关系<a class=anchor href=#chapter_300.xhtml_A38410190-85be-429a-a321-122e0d7b3570>#</a></h3><p>显式有限差分法与三叉树法等价。 [ ㊟ ]{.zuixiaoyao_zhushi} [
-【我们可以证明隐式与多叉树(multinomial
-tree)等价，在多叉树的每个节点上，股票总共有M+1个价格变动。】
-]{.zuixiaoyao_zhushi_text} 式(21-34)中参数
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_401_08.jpg alt>
-{.content-image-class
-ratio="0.475" w="141px" w-new="67px"
-style="max-width:141px;max-height:67px"} 和
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_401_09.jpg alt>
-{.content-image-class
-ratio="1.413" w="46px" w-new="65px"
-style="max-width:46px;max-height:65px"} 可以理解为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_401_10.jpg alt>
-{.content-image-class1
-ratio="0.212" w="480px" w-new="102px"
-style="max-width:480px;max-height:102px"}
-：在Δt时间内，股票价格由jΔS跌(j-1)ΔS的概率</p><p>1-σ2j2Δt：在Δt时间内，股票价格jΔS保持不变的概率</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_401_11.jpg alt>
-{.content-image-class1
-ratio="0.219" w="439px" w-new="96px"
-style="max-width:439px;max-height:96px"}
-：在Δt时间内，股票价格由jΔS升(j+1)ΔS的概率</p><p>这种解释展示在图21-17中。这三个概率的和等于1。这些概率保证在Δt时间后股票价格的增长期望(r-q)jΔSΔt=(r-q)SΔt，这恰恰是股票价格在风险中性世界的增长值期望。当Δt很小时，这些概率同时也保证在Δt时间内股票价格变动的方差为σ2j2ΔS2Δt=σ2S2Δt，这恰恰对应于S所服从的随机过程。f在iΔt时刻的值等于(i+1)Δt时刻的f值在风险中性世界里的期望以无风险利率加以贴现。</p><p>为了保证能够使用显式有限差分法，以下3个"概率"必须为正</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_401_12.jpg alt>
-{ratio="0.590"
-w="483px" w-new="285px"
-style="max-width:483px;max-height:285px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_401_13.jpg alt>
-{ratio="0.802"
-w="663px" w-new="532px"
-style="max-width:663px;max-height:532px;width:100%"}</p><p>图21-17 将显式有限差分法解释为三叉树</p><p>在例21-11中，当j≥13时（即当S≥65时），1-σ2j2Δt为负。这给出了在表21-5的左上角期权价格为负和其他矛盾的原因。这个例子说明了显式有限差分法的主要问题：因为树形结构中的概率可能为负，由此得出的数值解不一定收敛于微分方程的解。
-[ ㊟ ]{.zuixiaoyao_zhushi} [ 【J. C. Hull and A. White，"Valuing
-Derivative Securities Using the Explicit Finite Difference Method,"
-Journal ofFinancial and Quantitative Analysis，25(March 1990):
-87-100，这篇文章提出了如何克服这一问题的方法。对这里所考虑的情况，只要构造关于lnS而不是S的网格，就可以保证算法的收敛性。】
-]{.zuixiaoyao_zhushi_text}</p><p>当利用变量替换时（见式(21-36)~式(21-39)），变量Z=lnS减少ΔZ、保持不变、增加ΔZ的概率分别为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_402_01.jpg alt>
-{ratio="0.623"
-w="559px" w-new="348px"
-style="max-width:559px;max-height:348px;width:100%"}</p><p>Z的这些变化值分别对应于由S到Se-ΔZ，S和SeΔZ的S变化值。如果取
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_402_02.jpg alt>
-{.content-image-class
-ratio="0.286" w="252px" w-new="72px"
-style="max-width:252px;max-height:72px"}
-，这里得出的树形和概率与第21.4节中的三叉树结果相同。</p><h3 id=chapter_300.xhtml_Ae6420191-b0f5-4b00-9409-f1f1ba96472d class=thirdTitle>21.8.5 其他差分法<a class=anchor href=#chapter_300.xhtml_Ae6420191-b0f5-4b00-9409-f1f1ba96472d>#</a></h3><p>研究人员提出了其他许多种关于求解微分方程的有限差分方法，在很多情况下，这些方法比纯粹的显式有限差分法或者纯粹的隐式计算效率更高。</p><p>在所谓的跳格法(hopscotch
-method)中，当从一个节点转向另一个节点时，我们交替地使用隐式格式和显式格式，图21-18说明了这一方法。在每个时刻，我们首先按通常的显式方法在显式节点(E)完成计算，然后我们可以不需要求解方程组就可以得到在隐式节点(I)上的数值解，这是因为我们已经得出了与隐式节点相邻节点上的值。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_402_03.jpg alt>
-{ratio="0.674"
-w="672px" w-new="453px"
-style="max-width:672px;max-height:453px;width:100%"}</p><p>图21-18 跳格差分法（I代表隐式节点；E代表显式节点）</p><p>在Crank-Nicolson法(Crank-Nicolson method)中，
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_402_04.jpg alt>
-{.content-image-class1
-ratio="0.651" w="169px" w-new="110px"
-style="max-width:169px;max-height:110px"} 设定为隐式法与显式法的平均。</p><h3 id=chapter_300.xhtml_Af92c0191-ba91-472d-824e-a23cc394cd61 class=thirdTitle>21.8.6 有限差分法的应用<a class=anchor href=#chapter_300.xhtml_Af92c0191-ba91-472d-824e-a23cc394cd61>#</a></h3><p>有限差分法何以用于任何适合树形方法的衍生产品类型，它们既可以用来处理欧式期权，也可以用来处理美式期权。但当衍生产品收益依赖标的变量历史时，使用有限差分法就会很困难。有限差分可用于多标的变量的情形，但计算时间会大大增加。因为这时图21-15的网格会变成多维的形式。</p><p>在有限差分法中，计算希腊值的方法与树形法类似，delta、gamma和theta可以直接由fi、j在网格上的值得出。对于vega，我们需要对波动率做一个很小的变化，然后再由同一个网格计算衍生产品的数值解。</p><h2 id=小结>小结<a class=anchor href=#%e5%b0%8f%e7%bb%93>#</a></h2><p>对于不存在解析解的衍生产品，我们列举了计算它们价格的三种数值方法，包括树形法、蒙特卡罗模拟法和有限差分法。</p><p>在二叉树法中，我们假设在每个很短时间区间Δt内，股票价格或按比例u上升，或按比率d下降。在选择u和d以及它们所对应的概率时，我们保证在风险中性世界里股票价格的变化具有正确的期望值和标准差。衍生产品的价格可以从二叉树的末端开始倒退计算得出。对于美式期权，在每个节点上的价格等于以下数值中的最大值：①期权立即行使后的价格；②期权被再持有Δt时间的价格期望值的贴现。</p><p>蒙特卡罗模拟法是利用随机数对衍生产品标的变量在风险中性世界里的不同路径进行模拟的一种方法。对于每一条路径，我们均可以得出衍生产品收益的贴现值，贴现值的算术平均即衍生产品价格的近似值。</p><p>有限差分法是将衍生产品价格所满足的微分方程转换为差分方程后再求解。与树形法类似，计算衍生产品的价格是从期限的最后时刻开始，再倒推到期限的初始时刻。显式法在功能上与三叉树等价，隐式有限差分比显式有限差分更为复杂，但其优点是用户不需要为取得收敛性而进行任何特殊处理。</p><p>在实际中，选择哪种方法取决于被估价的衍生产品的特性，以及用户对所得数值解的精确度要求。蒙特卡罗模拟法从衍生产品的期限开始运作到期限的结束。蒙特卡罗模拟法可用于对欧式期权定价，但也能用来处理复杂的收益形式。当标的资产数量增加时，这一方法的相对效率较高。树形法和有限差分法的计算从期限的末端开始，倒退到期限的开始，而且这两种方法均既可用于欧式期权，也可用于美式期权。但对于最终收益既依赖标的变量历史值，也依赖当前值的情形，应用树形法和有限差分法会很困难。此外，当衍生产品包括3个或更多的标的变量时，树形法和有限差分法的计算量会很大。</p><h2 id=推荐阅读>推荐阅读<a class=anchor href=#%e6%8e%a8%e8%8d%90%e9%98%85%e8%af%bb>#</a></h2><p>一般性文献</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_403_01.jpg alt>
-{ratio="0.097"
-w="1570px" w-new="152px"
-style="max-width:1570px;max-height:152px;width:100%"}</p><p>关于树形算法</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_403_02.jpg alt>
-{ratio="0.237"
-w="1574px" w-new="373px"
-style="max-width:1574px;max-height:373px;width:100%"}</p><p>关于蒙特卡罗模拟法</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_403_03.jpg alt>
-{ratio="0.178"
-w="1569px" w-new="280px"
-style="max-width:1569px;max-height:280px;width:100%"}</p><p>关于有限差分</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_403_04.jpg alt>
-{ratio="0.119"
-w="1562px" w-new="186px"
-style="max-width:1562px;max-height:186px;width:100%"}</p><h2 id=练习题>练习题<a class=anchor href=#%e7%bb%83%e4%b9%a0%e9%a2%98>#</a></h2><p>21.1
-在美式期权的希腊值delta、gamma、vega、theta和rho中，哪一个可以通过构造单个二叉树来估计？</p><p>21.2
-计算一个3个月期限的美式看跌期权价格，这里的标的股票不支付股息，当前价格为60美元，执行价格为60美元，无风险利率为每年10%，波动率为每年45%。构造时间段为1个月的二叉树为这一期权定价。</p><p>21.3 解释当采用树形结构对美式期权定价时，如何应用控制变量技巧。</p><p>21.4
-计算9个月期限的玉米期货欧式看涨期权价格，玉米期货的当前价格为198美分，执行价格为200美分，年化无风险利率为8%，年化波动率为30%。构造一个时长3个月的二叉树为这个期权定价。</p><p>21.5
-考虑一个期权，其最终收益等于股票最终价格与期限内股票平均价格的差额，这一期权能否用二叉树定价？解释你的答案。</p><p>21.6
-"对于支付股息的股票，股价的树形不重合，但从股价中减去股息的贴现值后，其树形重合。"解释这一论点。</p><p>21.7 说明在第21.4节脚注所示的情况下，应用CRR二叉树时，将出现负概率值。</p><p>21.8
-利用间隔抽样抽取100个样本来改善业界事例21-1和表21-1中关于π近似值的精度。</p><p>21.9 说明为什么蒙特卡罗模拟法不能很容易地用来对美式衍生产品定价。</p><p>21.10
-考虑某个9个月期限的无股息股票美式看跌期权，执行价格为49美元，股票的当前价格为50美元，年化无风险利率为5%，年化波动率为30%。采用三步二叉树对期权定价。</p><p>21.11
-采用三步二叉树对一个9个月期限的小麦期货美式看涨期权定价。期货的当前价格为400美分，执行价格为420美分，无风险利率为每年6%，波动率为每年35%。由二叉树估计期权的delta。</p><p>21.12
-某股票上3个月期限的美式看涨期权的执行价格为20美元，股票价格为20美元，无风险利率为每年3%，波动率为每年25%，在1.5个月时，股票将支付2美元股息。定价时采用三步二叉树。</p><p>21.13
-某1年期无股息股票美式看跌期权的执行价格为18美元，股票的当前价格为20美元，无风险利率为每年15%，股票价格的波动率为每年40%。通过Deri-vaGem软件并采用4步、步长为3个月的二叉树为期权定价。展示树形结构，并验证树的最后一步以及倒数第2步的期权价格的正确性。采用DerivaGem对相应的欧式期权定价。利用控制变量技巧提高美式期权近似值的精度。</p><p>21.14
-考虑某2个月期限的美式股指看跌期权，期权的执行价格为480，股指的当前值为484，年化无风险利率为10%，年化股指股息收益率为3%，年化波动率为25%。将期权期限分为4个步长为半个月的区间。采用树形结构为这一期权进行定价。</p><p>21.15 当采用树形方法时，如何应用控制变量技巧改进美式期权的delta估计值？</p><p>21.16
-假设我们采用蒙特卡罗模拟法为某无股息股票的欧式看涨期权定价，股价的波动率为随机。解释如何应用控制变量技巧和对偶变量技巧改进计算效率。解释在同时应用控制变量技巧和对偶变量技巧时，为什么需要计算6个期权值？</p><p>21.17
-说明当采用隐式有限差分法对美式看涨期权定价时式(21-27)~式(21-30)的变化情况。</p><p>21.18
-考虑某4个月期限的无股息股票美式看跌期权，期权的执行价格为21美元，股票的当前价格为20美元，无风险利率为每年10%，波动率为每年30%。采用显式有限差分法对期权定价，在计算中采用4美元的价格间隔和1个月的时间间隔。</p><p>21.19
-黄铜的即期价格为每磅0.60美元。假定期货价格（每磅的美元数量）如下所示。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_404_01.jpg alt>
-{ratio="0.289"
-w="774px" w-new="224px"
-style="max-width:774px;max-height:224px;width:100%"}</p><p>黄铜价格的年化波动率为40%，年化无风险利率为6%。采用二叉树对执行价格为0.60美元，期限为1年的美式看涨期权定价。在计算过程中将期限分成4个长度为3个月的时间区间（提示：如第18.6节所示，在风险中性世界里，期货价格等于将来价格的期望值）。</p><p>21.20
-采用练习题21.19的二叉树对以下证券定价：该证券在一年后的收益为x2，其中x为黄铜价格。</p><p>21.21
-在显式有限差分法中，在什么时候边界条件S=0和S→∞会影响衍生产品价格的估计值？</p><p>21.22
-你应如何采用对偶变量法改善业界事例21-2和表21-2中欧式期权近似值的精度？</p><p>21.23
-一家公司发行了3年期的可转换债券，面值为25美元。证券持有者可在任何时刻将债券转换为两股公司股票。当股票价格高于或等于18美元时，公司可提前赎回债券，从而强制转换。假定公司将会在最早的时刻强制转换债券，可转换债券所满足的边界条件是什么？假定利率为常数，你将如何利用有限差分法对可转换债券定价？假定公司无违约风险。</p><p>21.24
-假定样本i和样本j之间的相关系数为ρi,j，提供通过标准正态分布抽取3个随机样本的公式。</p><p>21.25
-考虑一美式看跌期权，期权持有者有权在1年末以每瑞士法郎0.80美元的价格卖出瑞士法郎。瑞士法郎汇率的年化波动率为10%，美元的无风险利率为6%，瑞士法郎的无风险利率为3%，当前的汇率为0.81。采用三步二叉树给这一期权定价。利用你所构造的树形估计期权的delta。</p><p>21.26
-白银期货上1年期的美式看跌期权执行价格为9美元。期货的当前价格为8.50美元，年化无风险利率为12%，期货价格的年化波动率为25%。使用DerivaGem软件，并以步长为3个月的4步二叉树对期权定价。显示树形结果并验证最后一步与倒数第2步节点上期权价格的正确性。采用DerivaGem对相应的欧式期权定价，并采用控制变量技巧改善美式期权价格的精度。</p><p>21.27 当采用第21.4节里给出的其他构造树形结构的方法对期权定价时：</p><p>(a)在第21.4节里给出的二叉树与股票价格的对数在Δt时间段变化的均值和方差一致。</p><p>(b)证明当Δt2等高阶项被忽略时，第21.4节中给出的三叉树与股票价格的对数在Δt时间区间里的变化均值和方差一致。</p><p>(c)采用第21.4节里的另一种方式构造三叉树，在每个节点上，股票价格上升、取中间值、下降的概率分别为1/6、2/3、1/6，假定价格由S分别可以变化为Su、Sm、Sd，其中m2=ud。在构造树形结构时，使股票价格对数变化的均值和方差得以匹配。</p><p>21.28 利用软件DerivaGem的Application
-Builder功能检验由二叉树所得出的期权结果在步数增大时趋向于真解的收敛性（见图21-4和DerivaGem的Sample
-Application
-A）。考虑关于某股指的看跌期权，股值取值为900，执行价格为900，无风险利率为5%，股指股息收益率为2%，期限为2年：</p><p>(a)对于波动率等于20%的欧式期权，生成类似于Sample Application
-A中关于收敛性的结果。</p><p>(b)对于波动率等于20%的美式期权，生成类似于Sample Application
-A中关于收敛性的结果。</p><p>(c)波动率等于20%，采用控制变量技巧，画出美式期权价格与二叉树步数之间函数关系的图形。</p><p>(d)假定美式期权的市场价格为85.0。画出由二叉树估计的隐含波动率与二叉树步数之间函数关系的图形。</p><p>21.29 从例21-3的树形上估计delta、gamma和theta。解释如何理解这些参数。</p><p>21.30 在例21-4中，在第9个月最下面的节点上提前行使期权有多大益处？</p><p><a href=/digital-library/index.html>[1]</a>{#chapter_303.xhtml_BT1}
-为了说明这一点，我们需要注意式(21-4)和式(21-7)应严格满足式(21-1)和式(21-3)中的条件。指数函数ex可以展开为1+x+x2/2+...。当我们忽略Δt的高阶项时，式(21-5)意味着u=1+σ
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_375_06.jpg alt>
-{.content-image-class
-ratio="0.344" w="163px" w-new="56px"
-style="max-width:163px;max-height:56px"} ，式(21-6)意味着
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_375_07.jpg alt>
-{.content-image-class
-ratio="0.219" w="256px" w-new="56px"
-style="max-width:256px;max-height:56px"}
-，再有e(r-q)Δt=1+(r-q)Δt和e2(r-q)Δt=1+2(r-q)Δt。将这些表达式代入后，我们可以看到当忽略Δt的高阶项后，式(21-2)成立。</p><p><a href=/digital-library/index.html>[2]</a>{#chapter_303.xhtml_BT2}
-如果我们要计算更精确的delta及gamma，我们可以建立在-2Δt开始的二叉树上，并假定在那一刻股票价格为S0。对应于0时刻，我们也因此会得出3个对应于不同股价的期权价格。</p><p><a href=/digital-library/index.html>[3]</a>{#chapter_303.xhtml_BT3}
-如第15.12节所示，在实践中，由于分析人员常常使用通过他们的模型而由市场价格所隐含的波动率（所得出的即σ*------波动率），所以没有必要明确地考虑σ和σ*之间的区别。</p><p><a href=/digital-library/index.html>[4]</a>{#chapter_303.xhtml_BT4} 当时间步骤很大，并使得
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_385_04.jpg alt>
-{.content-image-class
-ratio="0.202" w="292px" w-new="59px"
-style="max-width:292px;max-height:59px"}
-。考克斯、罗斯和鲁宾斯坦二叉树将会有负的概率。但在这里描述的方法没有这些缺点。</p><p><a href=/digital-library/index.html>[5]</a>{#chapter_303.xhtml_BT5} 如果S为无股息股票的价格，
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_389_10.jpg alt>
-{.content-image-class
-ratio="0.552" w="67px" w-new="37px"
-style="max-width:67px;max-height:37px"} ；如果S为汇率，
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_389_11.jpg alt>
-{.content-image-class
-ratio="0.330" w="115px" w-new="38px"
-style="max-width:115px;max-height:38px"}
-等。注意，如第13.7节所述，波动率在风险中性世界里和现实世界里是一样的。</p><p><a href=/digital-library/index.html>[6]</a>{#chapter_303.xhtml_BT6} 注意，变量si、
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_390_04.jpg alt>
-{.content-image-class
-ratio="1.139" w="36px" w-new="41px"
-style="max-width:36px;max-height:41px"}
-、和ρik并不一定为常数，它们可以依赖θi。</p><p><a href=/digital-library/index.html>[7]</a>{#chapter_303.xhtml_BT7}
-解方程时并不需要对矩阵求逆。式(21-31)在j=1时可将fN-1，2由fN-1，1表达；在j=2时，与j=1时的方程一起可将fN-1，3由fN-1，1表达等。在j=M-2时与前面的方程一起，可将fN-1，M-1由fN-1，1表达。最终对应j=M-1的方程可用来对fN-1，1求解。一旦fN-1，1确定后，我们可以得出其他fN-1，j。</p><p><a href=/digital-library/index.html>[8]</a>{#chapter_303.xhtml_BT8}
-有限差分法的一个通用规则是当ΔS和Δt趋于0时，应保证ΔS与
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_398_02.jpg alt>
-{.content-image-class
-ratio="0.667" w="60px" w-new="40px"
-style="max-width:60px;max-height:40px"} 成一定比例。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><nav class=book-nav><div class="flex justify-between"><div class=book-nav-prev><a href=/digital-library/books/options-futures-derivatives/ch20.html class=book-nav-link>← 第20章</a></div><div class=book-nav-next><a href=/digital-library/books/options-futures-derivatives/ch22.html class=book-nav-link>第22章 →</a></div></div></nav><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#211-二叉树>21.1 二叉树</a><ul><li><a href=#chapter_293.xhtml_Ae3360175-51a3-4eae-b8f0-65783dcd3ad3>21.1.1 风险中性定价</a></li><li><a href=#chapter_293.xhtml_Af2670175-66da-41a3-a80c-b42854cafd52>21.1.2 确定p、u和d</a></li><li><a href=#chapter_293.xhtml_A01cb0176-58c7-4e33-b779-a47ee9112a31>21.1.3 资产价格的树形</a></li><li><a href=#chapter_293.xhtml_A73b60176-83b3-41cc-b55f-665e1512aab7>21.1.4 在树形上倒推计算</a></li><li><a href=#chapter_293.xhtml_Aca9d0178-5a14-4bde-9c7a-9f7d881f9a6c>21.1.5 代数表达式</a></li><li><a href=#chapter_293.xhtml_Aaefc0179-a8b6-4f5f-acfb-377948fb0624>21.1.6 估计delta与其他希腊值</a></li></ul></li><li><a href=#212-利用二叉树对股指货币与期货合约上的期权定价>21.2 利用二叉树对股指、货币与期货合约上的期权定价</a></li><li><a href=#213-支付股息股票的二叉树模型>21.3 支付股息股票的二叉树模型</a><ul><li><a href=#chapter_295.xhtml_Aa19a017c-6af3-4541-bb44-18b66882ce4c>21.3.1 股息收益率是已知的情形</a></li><li><a href=#chapter_295.xhtml_A929d017d-e161-44e9-a079-506d3df69055>21.3.2 已知股息金额数量的情形</a></li><li><a href=#chapter_295.xhtml_A012f017f-89bb-48e0-a648-1c1959bf1a1b>21.3.3 控制变量技巧</a></li></ul></li><li><a href=#214-构造树形的其他方法>21.4 构造树形的其他方法</a></li><li><a href=#215-依赖时间的参数>21.5 依赖时间的参数</a></li><li><a href=#216-蒙特卡罗模拟法>21.6 蒙特卡罗模拟法</a><ul><li><a href=#chapter_298.xhtml_Ad5db0185-221f-4040-b1f7-4b965abe6eee>21.6.1 依赖多个市场变量的衍生产品</a></li><li><a href=#chapter_298.xhtml_A95500186-7f0e-4da2-bf6c-8f7e369bbd63>21.6.2 从正态分布中产生随机样本</a></li><li><a href=#chapter_298.xhtml_A73070186-1023-4373-8cf5-1afa43f4f796>21.6.3 模拟次数</a></li><li><a href=#chapter_298.xhtml_A06ca0187-7a07-48cc-b051-6fe300eb8bd3>21.6.4 通过树形抽样</a></li><li><a href=#chapter_298.xhtml_Addda0187-c3ac-4d0c-b6a7-fa828a368b69>21.6.5 计算希腊值</a></li><li><a href=#chapter_298.xhtml_Ac2d80188-a0b8-43d8-9286-05985971f66b>21.6.6 应用</a></li></ul></li><li><a href=#217-方差缩减程序>21.7 方差缩减程序</a><ul><li><a href=#chapter_299.xhtml_A919f0188-27e6-4fe3-a9ef-c3466c7c6ccc>21.7.1 对偶变量技巧</a></li><li><a href=#chapter_299.xhtml_A6e5a0188-875e-410c-9834-f20607d8b8bf>21.7.2 控制变量技巧</a></li><li><a href=#chapter_299.xhtml_Ad8f10189-a1eb-424a-ab6f-5c07a54accc9>21.7.3 重点抽样法</a></li><li><a href=#chapter_299.xhtml_A82c20189-6657-4f5e-b6a7-134ddddbda7b>21.7.4 间隔抽样法</a></li><li><a href=#chapter_299.xhtml_A404b0189-1cfa-44d2-b302-1643cea853f1>21.7.5 矩匹配法</a></li><li><a href=#chapter_299.xhtml_Ab517018a-0858-46c8-bf15-ce63dc551468>21.7.6 利用伪随机数序列</a></li></ul></li><li><a href=#218-有限差分法>21.8 有限差分法</a><ul><li><a href=#chapter_300.xhtml_A83af018b-71cd-4c3d-a07f-54810e3455b1>21.8.1 隐式有限差分法</a></li><li><a href=#chapter_300.xhtml_Ad5e3018d-18e7-4ebc-8e29-709310171283>21.8.2 显式有限差分法</a></li><li><a href=#chapter_300.xhtml_A76c5018f-8496-41ac-bbac-5bc3dcc8f038>21.8.3 变量替换</a></li><li><a href=#chapter_300.xhtml_A38410190-85be-429a-a321-122e0d7b3570>21.8.4 与三叉树法的关系</a></li><li><a href=#chapter_300.xhtml_Ae6420191-b0f5-4b00-9409-f1f1ba96472d>21.8.5 其他差分法</a></li><li><a href=#chapter_300.xhtml_Af92c0191-ba91-472d-824e-a23cc394cd61>21.8.6 有限差分法的应用</a></li></ul></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#练习题>练习题</a></li></ul></nav></div></aside></main></body></html>
+</label><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#211-二叉树>21.1 二叉树</a></li><li><a href=#2111-风险中性定价>21.1.1 风险中性定价</a></li><li><a href=#2112-确定pu和d>21.1.2 确定p、u和d</a></li><li><a href=#2113-资产价格的树形>21.1.3 资产价格的树形</a></li><li><a href=#2114-在树形上倒推计算>21.1.4 在树形上倒推计算</a></li><li><a href=#2115-代数表达式>21.1.5 代数表达式</a></li><li><a href=#2116-估计delta与其他希腊值>21.1.6 估计delta与其他希腊值</a></li><li><a href=#212-利用二叉树对股指货币与期货合约上的期权定价>21.2 利用二叉树对股指、货币与期货合约上的期权定价</a></li><li><a href=#213-支付股息股票的二叉树模型>21.3 支付股息股票的二叉树模型</a></li><li><a href=#2131-股息收益率是已知的情形>21.3.1 股息收益率是已知的情形</a></li><li><a href=#2132-已知股息金额数量的情形>21.3.2 已知股息金额数量的情形</a></li><li><a href=#2133-控制变量技巧>21.3.3 控制变量技巧</a></li><li><a href=#214-构造树形的其他方法>21.4 构造树形的其他方法</a></li><li><a href=#三叉树>三叉树</a></li><li><a href=#215-依赖时间的参数>21.5 依赖时间的参数</a></li><li><a href=#216-蒙特卡罗模拟法>21.6 蒙特卡罗模拟法</a></li><li><a href=#2161-依赖多个市场变量的衍生产品>21.6.1 依赖多个市场变量的衍生产品</a></li><li><a href=#2162-从正态分布中产生随机样本>21.6.2 从正态分布中产生随机样本</a></li><li><a href=#2163-模拟次数>21.6.3 模拟次数</a></li><li><a href=#1691001-097--100>1.69/√1001. 097 √ 100</a></li><li><a href=#76810007087-1000>7.68/√10007.087 √1000</a></li><li><a href=#2164-通过树形抽样>21.6.4 通过树形抽样</a></li><li><a href=#2165-计算希腊值>21.6.5 计算希腊值</a></li><li><a href=#2166-应用>21.6.6 应用</a></li><li><a href=#217-方差缩减程序>21.7 方差缩减程序</a></li><li><a href=#2171-对偶变量技巧>21.7.1 对偶变量技巧</a></li><li><a href=#2172-控制变量技巧>21.7.2 控制变量技巧</a></li><li><a href=#2173-重点抽样法>21.7.3 重点抽样法</a></li><li><a href=#2174-间隔抽样法>21.7.4 间隔抽样法</a></li><li><a href=#2175-矩匹配法>21.7.5 矩匹配法</a></li><li><a href=#2176-利用伪随机数序列>21.7.6 利用伪随机数序列</a></li><li><a href=#218-有限差分法>21.8 有限差分法</a></li><li><a href=#2181-隐式有限差分法>21.8.1 隐式有限差分法</a></li><li><a href=#2182-显式有限差分法>21.8.2 显式有限差分法</a></li><li><a href=#2183-变量替换>21.8.3 变量替换</a></li><li><a href=#2184-与三叉树法的关系>21.8.4 与三叉树法的关系</a></li><li><a href=#2185-其他差分法>21.8.5 其他差分法</a></li><li><a href=#2186-有限差分法的应用>21.8.6 有限差分法的应用</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#关于树形算法>关于树形算法</a></li><li><a href=#关于蒙特卡罗模拟法>关于蒙特卡罗模拟法</a></li><li><a href=#关于有限差分>关于有限差分</a></li><li><a href=#练习题>练习题</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=第21章-基本数值方法>第21章 基本数值方法<a class=anchor href=#%e7%ac%ac21%e7%ab%a0-%e5%9f%ba%e6%9c%ac%e6%95%b0%e5%80%bc%e6%96%b9%e6%b3%95>#</a></h1><p>在这一章里，我们将讨论3种用于期权定价的数值方法，这些方法一般是在没有类似于布莱克-斯科尔斯-默顿模型这样的解析解时才会采用。第1种方法是在第13章里介绍的涉及构造树形结构表达资产变化的方式；第2种方法是蒙特卡罗模拟方法，在第14章里解释随机过程时，我们曾对这一方法进行过简单的讨论；第3种方法涉及有限差分法。</p><p>蒙特卡罗方法主要适用于当衍生产品的收益依赖标的资产的历史价格，或者依赖多个标的资产的情形；树形法和有限差分法主要适用于期权持有者可以提前行权的美式期权，或者当持有者需要在到期日之前做出某种决定的衍生产品。除了对产品定价，本章所讨论的数值方法也都可以用来计算delta、gamma、vega等希腊值。</p><p>这里所讨论的基本数值方法可用来处理我们在实际中所遇到的大多数问题，但有时需要将这些方法进行改进后才能用来解决一些特殊的问题。在第27章里，我们将讨论如何处理。</p><h2 id=211-二叉树>21.1 二叉树<a class=anchor href=#211-%e4%ba%8c%e5%8f%89%e6%a0%91>#</a></h2><p>我们在第13章中介绍了二叉树方法。这种方法既可以用于对欧式期权定价，也可用于对美式期权定价。在第15章、第17章和第18章中给出的布莱克-斯科尔斯-默顿模型及其推广形式为欧式期权提供了解析定价公式， ㊟ 【布莱克-斯科尔斯-默顿模型基于与二叉树相同的假设。正如在附录13A里所示，当步数逐渐增大时，由二叉树给出的欧式期权价格收敛于由布莱克-斯科尔斯-默顿模型给出的价格。】 但美式期权价格的解析公式不存在。二叉树最有用的地方正是对美式期权定价。 ㊟ 【有人提出了求解美式期权的近似解析公式，网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes里的Technical Note8描述了这种二阶近似法。】</p><p>如第13章所述，在二叉树方法中，我们首先将期权的期限分成许多长度为Δt的很小时间区间，并假定在每一个时间区间里股票价格从开始的价格S变为两个新价格Su与Sd中的一个。这一模型如图21-1所示。一般来讲，u＞1，d＜1。因此，我们称S到Su的变化为价格上涨，S到Sd的变化为价格下跌。价格上涨的概率记为p，价格下跌的概率为1-p。</p><h2 id=2111-风险中性定价>21.1.1 风险中性定价<a class=anchor href=#2111-%e9%a3%8e%e9%99%a9%e4%b8%ad%e6%80%a7%e5%ae%9a%e4%bb%b7>#</a></h2><p>第13章与第15章中所讨论的风险中性定价原理说明，对期权（或其他衍生产品）定价时，我们可以假定世界是风险中性的。这意味着出于定价的目的，我们可以采用以下步骤：</p><p><img src=images/9dfdaf221aa2e35ce45c9651b3e034443dfb062c680f0ac294f8af5b34c3c86a.jpg alt><br>图21-1 在二叉树模型中，经过时间Δt后资产价格的变化</p><p>(1)假定所有交易证券的期望收益率均为无风险利率；</p><p>(2)计算衍生产品收益的期望值，并以无风险利率对其贴现。</p><p>以上描述的过程是采取树形定价的基础。</p><h2 id=2112-确定pu和d>21.1.2 确定p、u和d<a class=anchor href=#2112-%e7%a1%ae%e5%ae%9apu%e5%92%8cd>#</a></h2><p>参数p、u和d的选择必须保证股票价格在时间Δt内变化的均值与方差都给出正确的值。由于我们假定了风险中性世界，股票的期望收益率为无风险利率 $. \mathrm{~ r ~} _{\circ}$ 。如果资产提供收益率q的收入，那么资本增值部分的期望收益率必须是 $\mathrm{\Delta ~ . - q .}$ 这意味着在时间区间 $\Delta$ t末，资产价格的期望值为 $\mathrm{S e ( r^{-} q )} \ \Delta \mathrm{t}$ ，其中S为资产在时间区间开始时的价格。为了保证二叉树与回报均值相吻合，我们有</p>$$
+\mathrm{Se} (\mathrm{r-q}) \Delta \mathrm{t = pSu^{+} (1 - p)Sd}
+$$<p>即</p>$$
+\mathrm{e} ^{(r - q) \Delta t} = p u + (1 - p) d\tag{21-1}
+$$<p>一个变量Q的方差等于E $( \mathsf{Q 2} ) - [ \mathrm{E} \left( \mathsf{Q} \right) ] \mathrm{2}$ 。将资产价格在Δt时间内的百分比变化记为R，那么1+R等于u的概率为 $\mathrm{\Delta \Omega / p}$ ，等于d的概率为 $1 {-} \mathrm{p}$ 。从式(21-1)可知，1+R的方差为</p>$$
+\mathrm{pu} 2^{+} (1 - \mathrm{p}) \mathrm{d} 2 - \mathrm{e} 2 (\mathrm{r} - \mathrm{q}) \Delta t
+$$<p>因为任何一个变量加上一个常数并不改变该变量的方差，1+R的方差与R的方差是一样的。如第15.4节所述，这个值等于σ2Δt，因此</p>$$
+\mathrm{pu} 2^{+} (1 - \mathrm{p}) \mathrm{d} 2 - \mathrm{e} 2 (\mathrm{r} - \mathrm{q}) \Delta t = \sigma 2 \Delta t
+$$<p>由式(21-1)， $\mathrm{{e} \left( \mathrm{{r} - \mathrm{{q}}} \right) \Delta t \left( u + \mathrm{{d}} \right) = \mathrm{{p u} 2 + \left( \mathrm{{1 - p}} \right) \mathrm{{d} 2 + \mathrm{{u d}}}}}$ ，因此</p>$$
+\mathrm{e} ^{(r - q) \Delta t} (u + d) - u d - \mathrm{e} ^{2 (r - q) \Delta t} = \sigma^{2} \Delta t\tag{21-2}
+$$<p>式(21-1)及式(21-2)给出了决定p、u和d的两个条件。考克斯、罗斯和鲁宾斯坦(1979)选取的第3个条件为 ㊟ 【See J. C. Cox, S. A.Ross, and M. Rubinstein, “Option Pricing: A SimplifiedApproach,” Journal of FinancialEconomics, 7(October 1979),229-264.】</p>$$
+u = \frac{1}{d}\tag{21-3}
+$$<p>当忽略Δt的高阶项时，式(21-1)～式(21-3)的解为 [1]</p>$$
+p = \frac{a - d}{u - d}\tag{21-4}
+$$$$
+u = \mathrm{e} ^{\sigma \sqrt{\Delta t}}\tag{21-5}
+$$<div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>S0ujdi-j, j=0, 1, …, i</span></span></code></pre></div>$$
+d = \mathrm{e} ^{- \sigma \sqrt{\Delta t}}\tag{21-6}
+$$<p>其中</p>$$
+a = \mathrm{e} ^{(r - q) \Delta t}\tag{21-7}
+$$<p>变量a有时被称为增长因子(growth factor)。注意，式(21-4)~式(21-7)与第13.8节和第13.11节里的结果是一致的。</p><h2 id=2113-资产价格的树形>21.1.3 资产价格的树形<a class=anchor href=#2113-%e8%b5%84%e4%ba%a7%e4%bb%b7%e6%a0%bc%e7%9a%84%e6%a0%91%e5%bd%a2>#</a></h2><p>图21-2展示了资产价格4步树形的完整结构。在时间0，价格S0为已知；在时刻Δt，价格有两种可能的值：S0u、S0d；在时刻2Δt，价格有三种可能的值：S0u2、S0、S0d2；依此类推。在一般情形下，在时刻iΔt，价格有i+1种可能取值，它们是</p><p>注意在图21-2中，在计算节点上资产价格时我们采用了关系式u=1/d。例如，当j=2和i=3时，资产价格为S0u2d=S0u。还应注意，树中节点是重合的(recombine)，也就是说资产价格先上涨后下跌与先下跌再上涨所得出的值是一样的。</p><p><img src=images/5020fc01b90df8b8beaf1e61882a2feabf5299969482eff577a844ca8222e280.jpg alt><br>图21-2 用于期权定价的树形</p><h2 id=2114-在树形上倒推计算>21.1.4 在树形上倒推计算<a class=anchor href=#2114-%e5%9c%a8%e6%a0%91%e5%bd%a2%e4%b8%8a%e5%80%92%e6%8e%a8%e8%ae%a1%e7%ae%97>#</a></h2><p>通过在时间T（即树的末端）的期权价格由反向归纳(backwardinduction)的方式可以对期权定价。期权在时刻T的价值是已知的，例如，看跌期权的价值为max(K-ST,0)，而看涨期权的价格为max(ST-K,0)，其中ST为股票在时刻T的价格，K为执行价格。因为我们假定了风险中性世界，在T-Δt时刻，每个节点上的期权价值等于将T时刻期权价值的期望值以无风险利率r贴现。类似地，在T-2Δt时刻，每个节点上的期权价值可以将T-Δt时刻期权价值的期望值以无风险利率贴现求得，并依此类推。如果期权为美式，在二叉树的每个节点上我们需要检验在这一节点行使期权是否比再继续持有Δt时间的期权更有利。以倒推的形式我们可以最后得出期权在0时刻的价格。</p><p>【例21-1】 考虑一个无股息股票上5个月期限的美式看跌期权，股票的当前价格为50美元，执行价格为50美元，无风险利率为每年</p><p>10%，波动率为每年40%。采用我们常用的符号，这意味着S0=50、K=50、r=0.10、σ=0.40、T=0.4167和q=0。假如在构造二叉树时，我们将期权期限分为5个时间段，每段为1个月（=0.0833年）。这时Δt=0.0833，利用式(21-4)~式(21-7)得出</p>$$
+\begin{array}{r l} u & = \mathrm{e} ^{\sigma \sqrt{\Delta t}} = 1. 1224, \quad d = \mathrm{e} ^{- \sigma \sqrt{\Delta t}} = 0. 8909, \quad a = \mathrm{e} ^{r \Delta t} = 1. 0084 \\ p & = \frac{a - d}{u - d} = 0. 5073, \quad 1 - p = 0. 4927 \end{array}
+$$<p>图21-3展示了由DerivaGem产生的二叉树。在每一个节点上有两个数值：上面的数值表示该节点所对应的股票价格，下面的数值代表节点所对应的期权价值。股价上涨的概率总是等于0.5073，而股价下跌的概率总是等于0.4927。</p><p><img src=images/fbfc25c419470719623d09aa4c0118848ce3ec1df45a68ee881487f2f31e8778.jpg alt><br>图21-3 DerivaGem产生的关于无股息股票上美式看跌期权的二叉树（例21-1）</p><p>在iΔt时(i=0,1,…,5)，股票在第j个节(j=0,1,…,i)上的价格为$\mathrm{S O u j d i^{-} j}$ 。例如，股票在节点A(i=4,j=1)（即树的第4步从下面数起第2个节点）上的价格为50×1.1224×0.89093=39.69（美元）。在最后面的节点上，期权价格为max(K-ST,0)。例如，期权在节点G上的价格为50-35.36=14.64（美元）。期权在倒数第2步上的价格可由最后节点上的价格计算得出。首先我们假定在这些节点上不行使期权，这意味着期权价格等于在下一步节点上价格期望值的贴现值。例如，在节点E上，期权价格的计算式为</p>$$
+(0. 5073 \times 0 + 0. 4927 \times 5. 45) \mathrm{e} ^{- 0. 10 \times 0. 0833 = 2. 66}
+$$<p>而在节点A上，期权价格的计算式为</p>$$
+(0. 5073 \times 5. 45 + 0. 4927 \times 14. 64) \mathrm{e} - 0. 10 \times 0. 0833 = 9. 90
+$$<p>然后我们检验提前行使期权是否比持有期权更为有利。在节点E上，提前行使期权带来的收益为0，因为股价与执行价格均为50美元，很显然我们应该等待，即持有期权，因此在节点E的期权价格为2.66美元。在节点A上，情形会有所不同。如在该节点行使期权，价值为50-39.69，即10.31美元，这一价值大于9.90美元。如果股票价格到达节点A，期权应该被行使，因此A点的期权价值为10.31美元。</p><p>前面节点上的期权价值可以采用类似的方式计算。注意，当期权处于实值状态时，提前行使并不总是最佳的。考虑节点B，如果期权被行使，其价值为50-39.69=10.31美元。但是，如果没有提前行使期权，其价值则为</p>$$
+(0. 5073 \times 6. 38 + 0. 4927 \times 14. 64) \mathrm{e} - 0. 10 \times 0. 0833 = 10. 36
+$$<p>因此，在这一节点上不应该提前行使期权。该节点上期权的正确价格为10.36美元。</p><p>从树的最后向前倒推，我们得出在初始节点上期权的价格为4.49美元。这一数量是对期权当前价格的估计。在实际中，我们应采用更小的时间步长Δt和更多的节点。DerivaGem显示30步、50步、100步和500步二叉树所得的期权价格分别为4.263美元、4.272美元、4.278美元和4.283美元。</p><h2 id=2115-代数表达式>21.1.5 代数表达式<a class=anchor href=#2115-%e4%bb%a3%e6%95%b0%e8%a1%a8%e8%be%be%e5%bc%8f>#</a></h2><p>假定将一个美式期权的期限分成了N个长度为Δt的时间区间。我们称在时间iΔt的第j个节点(i,j)节点，其中0≤i≤N，0≤j≤i。这意味着在时间iΔt，树形上最低的节点(i,0)，次低的节点(i,1)，并依此类推。令fi,j为期权(i,j)节点上的值，标的资产(i,j)节点上的价格为S0ujdi-j。如果期权是看涨期权，它在时间T（到期日）的值为max(ST-K,0)，因此</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>fN, $j=\max(S0ujdN-j-K,0)$ , $j=0,1,\cdots,N$</div><p>如果期权是看跌期权，它在时间T的值为max(K-ST,0)，因此</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>fN, $j=\max\left(K-S0ujdN-j,0\right)$ , $j=0,1,\cdots,N$</div><p>在iΔt时，(i,j)节点移动到(i+1)Δt时(i+1,j+1)节点的概率为p；在iΔt时刻(i,j)节点移动(i+1)Δt时(i+1,j)节点的概率为1-p。假定期权没有被提前行使，由风险中性定价原理可以得出，对0≤i≤N-1和0≤j≤i</p><p>fi,j=e-rΔt[pfi+1,j+1+(1-p)fi+1,j]</p><p>当考虑提前行使期权时，这个fi,j必须同期权的内含价值进行比较，因此对于看涨期权</p>$$
+f i, j = \max \left\{S 0 u j d i - j - K, e - r \Delta t [ p f i + 1, j + 1 + (1 - p) f i + 1, j ] \right\}
+$$<p>对于看跌期权</p>$$
+f i, j = \max \left\{K - S 0 u j d i - j, e - r \Delta t [ p f i + 1, j + 1 + (1 - p) f i + 1, j ] \right\}
+$$<p>注意，由于定价计算从T时刻开始并以倒推的形式进行，所以在iΔt时刻的期权价值不仅反映了在iΔt时刻提前行使期权的可能性对于期权价值的影响，而且也反映了在将来提前行使期权对于期权价值的影响。</p><p>当Δt趋向于0时，我们可以得到美式期权的精确价值。在实际中，N=30的树形结构通常会给出一个合理的价格。图21-4显示了例21-</p><p>1中期权价格的收敛性，这一图形是由DerivaGem软件的应用工具计算而得出的。</p><p><img src=images/42d37bc44095008b767cec8e1ad46fa3168c116ca7b1f1e7d586b35a985131bb.jpg alt><br>图21-4 由DerivaGem软件计算的例21-1中期权价格的收敛性</p><h2 id=2116-估计delta与其他希腊值>21.1.6 估计delta与其他希腊值<a class=anchor href=#2116-%e4%bc%b0%e8%ae%a1delta%e4%b8%8e%e5%85%b6%e4%bb%96%e5%b8%8c%e8%85%8a%e5%80%bc>#</a></h2><p>根据前面的定义，期权的delta(Δ)为期权价格变化与标的股票价格变化的比率，即</p>$$
+\frac{\Delta f}{\Delta S}
+$$<p>其中ΔS为股票价格的微小变化，Δf为相应期权价格的微小变化。在Δt时刻，当股票价格为S0u时，期权价格估计值为f1，1；当股票价格为S0d时，期权价格的估计值为f1， $0_{\circ}$ 。这说明当 $\Delta \mathrm{\ S =} \mathrm{S 0 u - S 0 d}$ 时，Δf=f1，1-f1，0，因此在Δt的Δ近似值为</p>$$
+\Delta = \frac{f_{1 , 1} - f_{1 , 0}}{S_{0} u - S_{0} d}\tag{21-8}
+$$<p>为了确定gamma(Γ)，我们注意在2Δt时刻有两个Δ的估计。当股票价格(S0u2+S0)/2时（2Δt时刻的第2个与第3个节点的中间值），Δ(f2,2-f2,1)/(S0u2-S0)；当股票价格(S0+S0d2)/2时（2Δt时刻的第1个与第2个节点的中间值），Δ(f2,1-f2,0)/(S0-S0d2)。两个股票价格的差为h，其中</p>$$
+\mathrm{h=0.5(S0u2-S0d2)}
+$$<p>gamma等于delta的变化除以h，即</p>$$
+\Gamma = \frac{\left[ \left(f_{2 , 2} - f_{2 , 1}\right) / \left(S_{0} u^{2} - S_{0}\right) \right] - \left[ \left(f_{2 , 1} - f_{2 , 0}\right) / \left(S_{0} - S_{0} d^{2}\right) \right]}{h}\tag{21-9}
+$$<p>这些计算给出了在Δt时刻的delta估计值和2Δt时刻的gamma估计值。在实际中，这些估计值也用来作为在0时刻的delta和gamma估计值。 [2]</p><p>从二叉树中另一个可以进一步直接估计的对冲参数为theta(Θ)，这一参数代表在其他条件不变时期权价格变化与时间变化的比率。期权在时刻0的价值是f0，0，时刻2 $\Delta{\ t}$ 的价值是f2，1。theta的一个估计值为</p>$$
+\Theta = \frac{f_{2 , 1} - f_{0 , 0}}{2 \Delta t}\tag{21-10}
+$$<p>对于vega的计算，我们可以从对波动率做一个微小的变化而得出。当σ的变动量为 $\Delta \textbf{\sigma}$ 时，我们可以重新构造二叉树（Δt的数量应该不变），并对期权重新定价。vega的估计值为</p>$$
+\nu = \frac{f^{*} - f}{\Delta \sigma}
+$$<p>其中f及f*分别为由最初的二叉树和重建的二叉树得出的期权价值。我们也可以采用类似的方法计算rho。</p><p>【例21-2】 再一次考虑例21-1，由图21-3得出f1，0=6.96和f1，1=2.16。式(21-8)给出的delta估计值为</p>$$
+\frac{2 . 16 - 6 . 96}{56 . 12 - 44 . 55} = - 0. 41
+$$<p>利用式(21-9)，我们可以由在节点B、C及F上的期权价值估计期权的gamma</p>$$
+\frac{\left[ (0 . 64 - 3 . 77) / (62 . 99 - 50 . 00) \right] - \left[ (3 . 77 - 10 . 36) / (50 . 00 - 39 . 69) \right]}{11 . 65} = 0. 03
+$$<p>利用式(21-10)，可以由在节点D及C上的期权价值估计期权的theta，结果为每年</p>$$
+\frac{3 . 77 - 4 . 49}{0 . 1667} = - 4. 3
+$$<p>或每日历天为-0.012。当然，这些结果只是粗略的估计。当采用的步数增加时，这些估计值会越来越精确。当步数取为50时，DerivaGem给出的delta、gamma和theta值分别为-0.415、0.034及-0.0117。改变参数并重新计算期权价格，我们可以得出vega和rho的估计值分别为0.123和-0.072。</p><h2 id=212-利用二叉树对股指货币与期货合约上的期权定价>21.2 利用二叉树对股指、货币与期货合约上的期权定价<a class=anchor href=#212-%e5%88%a9%e7%94%a8%e4%ba%8c%e5%8f%89%e6%a0%91%e5%af%b9%e8%82%a1%e6%8c%87%e8%b4%a7%e5%b8%81%e4%b8%8e%e6%9c%9f%e8%b4%a7%e5%90%88%e7%ba%a6%e4%b8%8a%e7%9a%84%e6%9c%9f%e6%9d%83%e5%ae%9a%e4%bb%b7>#</a></h2><p>像在第13章、第17章和第18章中解释过的那样，当对股指、货币和期货上的期权定价时，我们可以将这些标的资产看成是提供的已知收益率的资产。对于股指，收益率等于股指中股票组合的股息收益率；对于货币，收益率等于外币无风险利率；对于期货合约，收益率等于本国无风险利率。因此只要适当地选择式(21-7)中的q值，我们就可以将二叉树应用于对股指、货币和期货上的期权定价。</p><p>【例21-3】 考虑一个股指期货上4个月期的美式看涨期权，当前期货的价格为300，执行价格为300，年化无风险利率为8%，年化股指波动率为30%。为了构造二叉树，我们将期权期限分成4个长度为1个月的时间段。这时， $ {\mathrm{F 0 = 300 , ~ K = 300 , ~ r = 0 . ~ 08 , ~ o = 0 . ~ 3 , ~ T = 0 . ~ 333347}}$ $\Delta ~ \mathrm{t =} 0 . ~ 0833$ 。因为可以将期货合同当成一个支付连续股息收益率r的股票，在式(21-7)中应当将q取成r，因此a=1。其他构造二叉树的参数为</p>$$
+u = \mathrm{e} ^{\sigma \sqrt{\Delta t}} = 1. 0905, d = \frac{1}{u} = 0. 9170
+$$$$
+p = \frac{a - d}{u - d} = 0. 4784, \quad 1 - p = 0. 5216
+$$<p><img src=images/6db3c986ec1808866a6238574b7df3ac3ea41a19ae46aa13ac6c6740185655b0.jpg alt><br>图21-5 DerivaGem产生的对于美式股指期货期权定价的二叉树（例21-3）</p><p>【例21-4】 考虑英镑上的1年期美式看跌期权。当前汇率为1.6100，执行价格为1.6000，美元无风险利率为每年8%，英镑利率为每年9%，英镑汇率的波动率为每年12%。在这里S0=1.61，K=1.60,r=0.08，rf=0.09，σ=0.12和T=1.0。为了构造二叉树，我们将期权期限分成4个长度为3个月的时间段，因此Δt=0.25。这时q=rf，由式(21-7)得出</p>$$
+\mathrm{a} = \mathrm{e} (0. 08 - 0. 09) \times 0. 25 = 0. 9975
+$$<p>构造二叉树所用的其他参数为</p>$$
+u = \mathrm{e} ^{\sigma \sqrt{\Delta t}} = 1. 0618, d = \frac{1}{u} = 0. 9418
+$$$$
+p = \frac{a - d}{u - d} = 0. 4642, \quad 1 - p = 0. 5358
+$$<p>我们将用DerivaGem产生的二叉树展示在图21-6中（节点上面的值代表汇率，下面的值代表期权价值）。期权的估计值为0.0710美元（采用50步二叉树，DerivaGem计算的期权价格为0.0738；采用100步二叉树，DerivaGem计算的期权价格也是0.0738）。</p><p>在每个节点上：上方数值=标的资产价格下方数值=期权价格阴影部分表示期权已被行使执行价格=1.6每步的贴现因子=0.9802时间步长，dt=0.2500年，即91.25天每步的增长因子，a=0.9975价格上涨概率，p=0.4642价格上涨幅度，u=1.0618价格下跌幅度，d=0.9418</p><p><img src=images/38321a86472c4f1821694cbd6b878a9ed0a78333c64980ff75f586877cabfa62.jpg alt><br>图21-6 DerivaGem产生的对于美式货币看跌期权定价的二叉树（例21-4）</p><h2 id=213-支付股息股票的二叉树模型>21.3 支付股息股票的二叉树模型<a class=anchor href=#213-%e6%94%af%e4%bb%98%e8%82%a1%e6%81%af%e8%82%a1%e7%a5%a8%e7%9a%84%e4%ba%8c%e5%8f%89%e6%a0%91%e6%a8%a1%e5%9e%8b>#</a></h2><p>我们现在考虑一个较为棘手的问题，即如何用二叉树对支付股息的股票期权定价。像在第15章中指出的那样，为了方便我们讨论，“股息”一词是指在除息日由于股息而导致股票价格下跌的数量。</p><h2 id=2131-股息收益率是已知的情形>21.3.1 股息收益率是已知的情形<a class=anchor href=#2131-%e8%82%a1%e6%81%af%e6%94%b6%e7%9b%8a%e7%8e%87%e6%98%af%e5%b7%b2%e7%9f%a5%e7%9a%84%e6%83%85%e5%bd%a2>#</a></h2><p>在考虑长期限股票期权时，有时为了方便而假定股票支付连续收益率为q的股息。对这种期权可以采用与股指期权同样的方法定价。</p><p>为了取得更精确的结果，我们可以假设已知股息收益率是以离散形式支付的。假定股票只付一次股息，而且股息收益率（即股息为股票价格的百分比）是已知的。参数u、d和p与没有股息情形下一样。如果iΔt在除息日之前的时间，二叉树上对应这个时间的节点上股票价格为</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>S0ujdi-j, j=0, 1, …, i</span></span></code></pre></div><p>如果iΔt在除息日之后，那么相应节点上的股票价格为</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>$S0(1-\delta)$ u j di - j, j = 0, 1, $\cdots$ , i</div><p>其中δ为股息收益率。树形如图21-7所示。对于期权有效期内有多个已知股息收益率的情形，我们可以采用同样的办法处理。如果δi为0时刻到iΔt时刻之间所有除息日的总股息收益率，那么iΔt时刻节点上的股票价格为</p>$$
+\mathrm{S0(1-} \delta \mathrm{i}) \mathrm{ujdi-j}
+$$<p><img src=images/be8dc3dc43b26a74615f6c63a60afa5832019efec8cd6bb65de6f1c640f1b527.jpg alt><br>图21-7 在指定时刻支付已知股息收益率的股票二叉树</p><h2 id=2132-已知股息金额数量的情形>21.3.2 已知股息金额数量的情形<a class=anchor href=#2132-%e5%b7%b2%e7%9f%a5%e8%82%a1%e6%81%af%e9%87%91%e9%a2%9d%e6%95%b0%e9%87%8f%e7%9a%84%e6%83%85%e5%bd%a2>#</a></h2><p>在某些情形下，尤其是当期权的期限很短时，最符合现实的做法是假设已知支付的股息金额数量（而不是股息收益率）。假设股票波动率σ为常数，这时二叉树的形状会像图21-8显示的那样。二叉树将不再会重合，这意味着所要估算的节点数量将会变得很大。假设只有一次股息，而且除息日τ介于k $\Delta \mathrm{t} \left( \mathrm{k} {+} 1 \right) \Delta$ t之间，股息金额数量为D。当i≤k时，在iΔt时刻节点上的股票价格为</p><p>S0ujdi-j,j=0,1,2,…,i</p><p>这与以前所述的股价相同；当i=k+1时，相应节点上的股票价格为$\mathrm{S O u j d i^{-} j^{-} D , j = 0 , 1 , 2 , \cdots , i}$</p><p>当i=k+2时，相应节点上的股票价格为</p>$$
+(S 0 u j d i - 1 - j - D) u (S 0 u j d i - 1 - j - D) d
+$$<p>其中j=0,1,2,…,i-1。因此，在iΔt时刻总共有2i个（而不是i+1个）节点。当i=k+m时，在iΔt时刻总共有m(k+2)个节点，而不是k+m+1个节点。如果在期权期限内有多个除息日的话，那么节点数量会增长得更快。</p><p>第15.12节说明了在对支付股息的股票上期权进行定价时，可以假定股票价格具有两个组成部分：一部分为不确定，另一部分为期权期限内股息的贴现值。我们还给出了从业者认为这样假设是合理的几个原因。显然，美式期权的定价方法应该完全与欧式期权的定价等同（否则，不应该被提前行使的美式期权的价格不会与欧式期权价格相等）。因此在实践中对支付已知股息的股票上美式期权定价时，所使用的就是第15.12节里所描述的方法。这样做可以解决图21-8所示的节点泛滥问题。</p><p>假定在期权期限内只有一个除息日τ，并且k $\Delta \mathrm{t} \leqslant \tau \leqslant \left( \mathrm{k} {+} 1 \right) \Delta \mathrm{t}$ 。在iΔt时刻，股票的不确定部分价格S*为</p><p>${\mathrm{S}} \ * {=} {\mathrm{S}} _{\mathrm{i}}$ ,当i $\Delta \mathrm{\ t > \tau}$</p><p><img src=images/735c434e572d1c16a5ffcbeafe8e09ca565fbe1d3bea098052ad4b4f72510aeb.jpg alt><br>图21-8 已知股息金额数量并且假设波动率为常数的股票二叉树以及</p><p>$\mathrm{S} \ * {=} \mathrm{S {\mathrm{-}} D e {\mathrm{-}} r \left( \tau{\mathrm{-}} i \Delta t \right)}$ ,当i $\Delta \mathrm{\ t} \leqslant \tau$</p><p>其中D为股息。令σ*为S*的波动率，并假设为常数。参数p、u和d可由式 $( 21 - 4 ) \sim \vec{\pm} \{( 21 - 7 )$ 计算（用σ*替代σ）。这样我们可以采用通常的方式构造模拟S*的二叉树。 [3] 通过在每个节点上把将来股息（如果有的话）的贴现值加回到股票价格上，我们可以将二叉树转化</p><p>成模拟原股票价格S的二叉树。假定 S0 为S*在时刻0的值，在iΔt时刻，如i $\Delta \mathrm{\ t} < \tau$ ，股票价格为</p><p><img src=images/d98fc5654d599fc303a82b75017e572131e826c71176d1e9a0c60b8fa255c2b8.jpg alt></p><p>S $\ast \mathrm{u j d i^{-} j^{+} D e^{-} r \left( \tau - i \Delta t \right) , j = 0 , 1 , \cdots ,}$ i</p><p>如iΔt＞τ，股票价格为</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-csv data-lang=csv><span class=line><span class=cl><span class=s>S *ujdi-j</span><span class=p>,</span><span class=s> j=0</span><span class=p>,</span><span class=s> 1</span><span class=p>,</span><span class=s> …</span><span class=p>,</span><span class=s> i</span></span></span></code></pre></div><p>这种方法将二叉树变成了重合状态，即在iΔt时刻只有i+1个节点。我们可以把这种方法推广到存在多个股息的情形中。</p><p>【例21-5】 考虑一个某股票上期限为5个月的看跌期权，预计在期权期限内股票将支付2.06美元的股息。股票初始价格为52美元，执行价格为50美元，无风险利率为每年10%，波动率为每年40%，股票除息日在3个半月后。</p><p>我们首先构造关于S*的二叉树，这里S*等于原股票价格减去期权有效期内股息的贴现值。股息的贴现值为</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>2.06e-0.2917×0.1=2.00</span></span></code></pre></div><p>因此，S*的初始值为50。假定所给的每年40%的波动率是关于S*的波动率。图21-3给出了S*的二叉树（S*的初始值与波动率与构成图21-3的股票价格的初始值及波动率相同）。在每个节点上加上股息的现值就可以得到图21-9中关于股票价格S的二叉树。与图21-3一样，树上每个节点上涨的概率为0.5073，下跌的概率为0.4927。按通常的方式在二叉树上向后反推，即可得出期权价格，即4.44美元（利用50步二叉树，DerivaGem给出的期权值是4.208；利用100步二叉树，给出的值是4.214）。</p><p><img src=images/5933ef6297f62a3758cdfee191ff719b338e82a4f43158c575ba767f5aa5506e.jpg alt><br>图21-9 DerivaGem产生的二叉树（例21-5）</p><h2 id=2133-控制变量技巧>21.3.3 控制变量技巧<a class=anchor href=#2133-%e6%8e%a7%e5%88%b6%e5%8f%98%e9%87%8f%e6%8a%80%e5%b7%a7>#</a></h2><p>对美式期权定价时，我们可以采用控制变量技巧(controlvariate technique)方法提高计算精度， ㊟ 【See J. C. Hull andA. White, “The Use of the Control Variate Technique inOption Pricing,” Journal of Financialand QuantitativeAnalysis, 23(September 1988): 237-251.】 这一方法使用同一个树形计算美式期权价值fA，以及相应的欧式期权价格fE。我们同时也采用布莱克-斯科尔斯-默顿模型计算欧式期权价格fBSM。假设由树形得出的欧式期权误差fBSM-fE与树形所得出的美式期权误差是相同的。因此，美式期权的估计值为</p>$$
+\mathrm{fA} + (\mathrm{fBSM} - \mathrm{fE})
+$$<p>为了说明这一方法，我们利用图21-10对图21-3中的例子定价。计算求得的fE为4.32美元。由布莱克-斯科尔斯-默顿公式计算出的欧式期权fBSM价格为4.08美元，图21-3给出的美式期权估计值为4.49美元，因此由控制变量技巧所估计的美式期权价格为</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>4. $49 + (4.08 - 4.32) = 4.25$</div><p>利用100步的二叉树可以得出美式期权一个比较精确的估计值为4.278。因此在这个例子中，控制变量技巧所得结果的精确度确实比二叉树（估计值为4.49）有了显著的提高。</p><p>控制变量技巧实际上是采用树形计算欧式与美式期权的差值，而非美式期权本身的价格。我们在本章后面讨论蒙特卡罗模拟法时将给出控制变量技巧的进一步的应用。</p><p>在每个节点上：上方值=标的资产价格下方值=期权价格阴影表示在节点上行使期权执行价格=50每步贴现因子=0.9917步长dt=0.0833年，即30.42天每步的增长因子a=1.0084上移概率p=0.5073上涨幅度u=1.1224下跌幅度d=0.8909</p><p><img src=images/50fd83ec29ab0943825d885612e728be7cfb148ac910a0f40311b6059fd685d6.jpg alt><br>图21-10 DerivaGem产生的二叉树，这里的期权为图21-3里的欧式期权（在每个节点上，上面数值为股票价格，下面数值为期权价格）</p><h2 id=214-构造树形的其他方法>21.4 构造树形的其他方法<a class=anchor href=#214-%e6%9e%84%e9%80%a0%e6%a0%91%e5%bd%a2%e7%9a%84%e5%85%b6%e4%bb%96%e6%96%b9%e6%b3%95>#</a></h2><p>迄今为止所描述的考克斯、罗斯和鲁宾斯坦方法并不是构造二叉树的唯一方法。在风险中性世界里，变量lnS在时间Δt内变化的均值$\left( \mathrm{r} - \mathrm{q} - \mathrm{~ o ~} 2 / 2 \right) \Delta \mathrm{t}$ ，标准差为 $\mathrm{~ \scriptsize ~ \mathfrak ~ {~ O ~} ~} \Delta \mathfrak{t}$ 。这些均值与标准差可通过令p=0.5和</p>$$
+u = \mathrm{e} ^{(r - q - \sigma^{2} / 2) \Delta t + \sigma \sqrt{\Delta t}}, d = \mathrm{e} ^{(r - q - \sigma^{2} / 2) \Delta t - \sigma \sqrt{\Delta t}}
+$$<p>相吻合。这种构造树形的方法与考克斯、罗斯和鲁宾斯坦的方法相比具有许多的优点：无论σ取什么值或步长是多少，树形上的概率总是p=0.5。 [4] 缺点是通过这种树形计算delta、gamma、rho不是那么容易，这是因为最初的股票价格并不再是树形的中心。</p><p>【例21-6】 某个9个月期限、执行价格为0.7950的美式外汇期权。当前的汇率为0.7900，国内无风险利率为每年6%，外国无风险利率为每年10%，汇率的波动率为4%，这时S0=0.79，K=0.795，r=0.06，rf=0.10,σ=0.04与T=0.75。我们取 $\Delta ~ \mathrm{t} {=} 0 . 25 ~ ( \equiv_{/ \mathrm{v}} ^{} )$ ，而且树形上每个分支的概率为0.5，因此</p>$$
+u = \mathrm{e} ^{(0. 06 - 0. 10 - 0. 0016 / 2) \times 0. 25 + 0. 04 \sqrt{0 . 25}} = 1. 0098
+$$$$
+d = \mathrm{e} ^{(0. 06 - 0. 10 - 0. 0016 / 2) \times 0. 25 - 0. 04 \sqrt{0 . 25}} = 0. 9703
+$$<p>汇率二叉树如图21-11所示。由二叉树得出的期权价格为0.0026。</p><p>在每个节点上：上方值=标的资产价格下方值=期权价格阴影表示在节点上行使期权执行价格=0.795每步贴现因子=0.9851步长dt=0.2500年，即91.25天上移概率p=0.5000</p><p><img src=images/c74aff3f85e6899f3c83852e39f6f5c9db6b854cea76bd85fed893787f7a29d1.jpg alt><br>图21-11 美式外汇看涨期权定价的二叉树（节点上面的数值为汇率，下面的数值为期权价格，所有的概率均为0.5）</p><h2 id=三叉树>三叉树<a class=anchor href=#%e4%b8%89%e5%8f%89%e6%a0%91>#</a></h2><p>三叉树可用来代替二叉树。三叉树的一般形式如图21-12所示。假定在树形的每个节点上价格变化为上升、取中间值、下降的概率分别为pu、pm和pd，树形的时间步长为Δt。假定股票支付股息收益率q，与InS的均值和标准差相吻合的参数为</p>$$
+\begin{array}{l} u = \mathrm{e} ^{\sigma \sqrt{3 \Delta t}}, \quad d = 1 / u \\ p_{d} = - \sqrt{\frac{\Delta t}{12 \sigma^{2}}} \left(r - q - \frac{\sigma^{2}}{2}\right) + \frac{1}{6}, \quad p_{m} = \frac{2}{3}, \quad p_{u} = \sqrt{\frac{\Delta t}{12 \sigma^{2}}} \left(r - q - \frac{\sigma^{2}}{2}\right) + \frac{1}{6} \end{array}
+$$<p><img src=images/dc5bc12bf92b38819b2f62b96f08de3a79912ddc590a4c94f4862b00a509fc9b.jpg alt><br>图21-12 股票价格的三叉树</p><p>三叉树的计算过程与二叉树类似：计算由树尾倒推到树的起点。在每一个节点上，我们需要计算行使期权的价值与继续持有期权的价值。继续持有期权的价值等于</p>$$
+\mathrm{e} ^{- r} \Delta t (\mathrm{pufu^{+} pmfm^{+} pdfd})
+$$<p>其中fu、fm和fd分别为对应于下一步价格上升、取中间值和下降时的节点上的期权价格。可以证明，三叉树与第21.8节中讨论的显式差分方法等价。</p><p>Figlewski和Gao提出了一种改进三叉树的方法，他们称此方法为自适应网格模型(adaptive mesh model)。该模型在粗网格（Δt较大）的树形里加入细网格（Δt较小）的树形。 ㊟ 【See S.Figlewski and B. Gao, “The Adaptive Mesh Model: A NewApproach to Efficient Option Pricing,” Journalof Financial</p><p>Economics, 53(1999): 313-351.】 对于一般美式期权定价，在期权接近满期、资产价格接近执行价格的区域里加入细网格是最有效的。</p><h2 id=215-依赖时间的参数>21.5 依赖时间的参数<a class=anchor href=#215-%e4%be%9d%e8%b5%96%e6%97%b6%e9%97%b4%e7%9a%84%e5%8f%82%e6%95%b0>#</a></h2><p>到目前为止，我们一直假定r、q、rf和σ均为常数。在实际中往往假设这些参数与时间有关。一般假设这些参数在时间t与t+Δt之间等于其远期值。 ㊟ 【远期收益率和远期方差率的计算方式与远期利率类似（方差率为波动率的平方）。】</p><p>在CRR二叉树上，为了使r和q（或rf）成为时间的函数，我们在时间t的节点上令</p>$$
+a = \mathrm{e} ^{[ f (t) - g (t) ] \Delta t}\tag{21-11}
+$$<p>其中f(t)为介于t与t+Δt之间的远期利率，g(t)为q介于t与t+Δt之间的远期值。因为u和d与a无关，所以这样的假设并不改变二叉树的形状。从时刻t节点上所生出树叉的概率是 ㊟ 【对于足够大的时间步数，这些概率永远为正。】</p>$$
+\begin{array}{r l} p & = \frac{\mathrm{e} ^{[ f (t) - g (t) ] \Delta t} - d}{u - d} \\ 1 - p & = \frac{u - \mathrm{e} ^{[ f (t) - g (t) ] \Delta t}}{u - d} \end{array}\tag{21-12}
+$$<p>二叉树方法中的其他步骤和前面所介绍的一样，唯一不同之处是在t与t+Δt之间贴现时我们要用f(t)。</p><p>当σ为时间函数时，建立二叉树会比较困难。假设σ(t)为期限等于t的期权定价时所用的波动率。一种方法是使时间步长与时间区间内的平均方差率成反比。这时在树形上u和d保持不变，从而保证了树形的再重合。定义 $V {=} ~ \sigma ~ \left( \mathrm{T} \right)$ 2T，其中T为树形的期限。定义ti为第i步末所对应的时间。树形共有N步，我们可以选择ti而保证 $\mathrm{~ o ~} \left( \mathrm{t i} \right) 2 \mathrm{t i} {=} \mathrm{i} \mathrm{V} / \mathrm{N}$</p>$$
+u = \mathrm{e} ^{\sqrt{V / N}}
+$$<p>并令 u = e ${\mathrm{d}} {=} 1 / {\mathrm{u}}$ ，p由u、d、r和q表达，其表达形式类似于常数波动率的情形。这里的计算过程可以与处理非常数利率的过程并用，以此我们可以建立利率和波动率均非常数的二叉树。</p><h2 id=216-蒙特卡罗模拟法>21.6 蒙特卡罗模拟法<a class=anchor href=#216-%e8%92%99%e7%89%b9%e5%8d%a1%e7%bd%97%e6%a8%a1%e6%8b%9f%e6%b3%95>#</a></h2><p>我们现在介绍蒙特卡罗模拟法，这与二叉树法有很大不同。通过一个估计π的简单Excel程序，例子21-1展示了蒙特卡罗随机抽样的思路。</p><p>业界事例21-1</p><p>利用蒙特卡罗方法计算π</p><p>假定图21-13中正方形的边长为1。设想你向这一方块随机地投掷飞镖，并随后计算飞镖落在圆圈中的比率。你会取得什么结果呢？方块的面积为1.0，圆圈的半径为0.5，圆圈的面积为π乘以半径的平方，即π/4。因此，飞镖落在圆圈的比率应等于π/4。将飞镖落在圆圈的比率乘以4即可得到π的估计值。</p><p>我们可以利用Excel计算表模拟表21-1中投掷飞镖的情形。我们将计算表的元素A1和B1分别定义为=RAND()。A1和B1为介于0与1之间的随机数，这两个随机数分别定义了飞镖落下的靠右以及靠上的位置，随后我们将计算表的元素C1定义为</p><p><img src=images/aced642c16cc41ae4369123e8bacdb4b782a659084d0c64ff603b258fbbbde30.jpg alt><br>图21-13 通过掷飞镖计算π</p>$$
+= \text{IF} ((A 1 - 0. 5) ^{2} + (B 1 - 0. 5) ^{2} < 0. 5^{2}, 4, 0)
+$$<p>当飞镖落在圆圈内时，C1=4；否则C1=0。</p><p>表21-1 业界事例21-1中的计算表样本</p><table><tr><td></td><td>A</td><td>B</td><td>C</td></tr><tr><td>1</td><td>0.207</td><td>0.690</td><td>4</td></tr><tr><td>2</td><td>0.271</td><td>0.520</td><td>4</td></tr><tr><td>3</td><td>0.007</td><td>0.221</td><td>0</td></tr><tr><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td></tr><tr><td>100</td><td>0.198</td><td>0.403</td><td>4</td></tr><tr><td>101</td><td></td><td></td><td></td></tr><tr><td>102</td><td></td><td></td><td>均值:3.04</td></tr><tr><td>103</td><td></td><td></td><td>标准差:1.69</td></tr></table><p>计算表里接下来的99行的定义与第1行类似（这是Excel里的选择和拖动操作）。定义C102为=AVERAGE(C1:C100)，C103为=STDEV(C1:C100)，C102（在表21-1中为3.04）是由100次随机抽样计算出的π估计值，C103是估算值的标准差。在例21-7中我们将会看到，标准差可以被用来检测估计值的精确度。增加抽样次数会改进精确度，但收敛到准确值3.14159的速度很慢。</p><p>在计算期权价格时，蒙特卡罗模拟法利用了风险中性理论。我们首先在风险中性世界里随机地产生标的资产价格的路径，并由此取得收益的期望值，然后再对其按无风险利率贴现。考虑依赖某单个市场变量S并在T时刻产生收益的衍生产品。假定利率为常数，我们可以通过以下步骤对衍生产品定价：</p><p>(1)在风险中性世界里对S的随机路径进行抽样；</p><p>(2)计算衍生产品的收益；</p><p>(3)重复第1步和第2步，从而取得许多在风险中性世界里该衍生产品收益的样本；</p><p>(4)计算收益的平均值，这是衍生产品在风险中性世界里期望收益值的估计值；</p><p>(5)以无风险利率对期望收益值贴现，所得结果即为衍生产品价格 的估计值。</p><p>以上过程显示在DerivaGem的蒙特卡罗计算表中。</p><p>假定在风险中性世界里标的市场变量服从以下过程</p>$$
+\mathrm{d} S = \hat{\mu} S \mathrm{d} t + \sigma S \mathrm{d} z\tag{21-13}
+$$<p>其中dz为维纳过程， p 为标的变量在风险中性世界里的期望收益率，σ为波动率。 [5] 为了模拟变量S的路径，我们可以将期权的期限分割成N个长度为Δt的小区间，并将式(21-13)近似为</p>$$
+S (t + \Delta t) - S (t) = \hat{\mu} S (t) \Delta t + \sigma S (t) \varepsilon \sqrt{\Delta t}\tag{21-14}
+$$<p>其中S(t)是S在t时的值，ε是从期望值为0、标准差为1.0正态分布中的抽样。这可以使得我们从S的初始值计算出S在Δt时的值，并通过 $\Delta{\ t}$ 的值计算出S在2 $\Delta{\ t}$ 的值，等等。在第14.3节里我们曾对这一过程进行过描述。每个模拟样本都需要通过对正态分布进行N次抽样构造S的整个路径。</p><p>在实际中，对lnS进行抽样通常比对S进行抽样要更为准确。由伊藤引理得出，lnS服从的过程为</p>$$
+d \ln S = \left(\hat{\mu} - \frac{\sigma^{2}}{2}\right) d t + \sigma d z\tag{21-15}
+$$<p>因此</p>$$
+\ln S (t + \Delta t) - \ln S (t) = \left(\hat{\mu} - \frac{\sigma^{2}}{2}\right) \Delta t + \sigma \varepsilon \sqrt{\Delta t}
+$$<p>其等价形式为</p>$$
+S (t + \Delta t) = S (t) \exp \left[ (\hat{\mu} - \frac{\sigma^{2}}{2}) \Delta t + \sigma \varepsilon \sqrt{\Delta t} \right]\tag{21-16}
+$$<p>以上方程可用于产生S的路径。</p><p>对lnS（而不是S）进行模拟的结果会更加精确，而且如果 pc和σ是常数，那么对于任何期限T ㊟ 【与之相比，式(21-14)只有在Δt趋于0时才正确。】</p>$$
+\ln S (T) - \ln S (0) = \left(\hat{\mu} - \frac{\sigma^{2}}{2}\right) T + \sigma \varepsilon \sqrt{T}
+$$<p>因此</p>$$
+S (T) = S (0) \exp \left[ (\hat{\mu} - \frac{\sigma^{2}}{2}) T + \sigma \varepsilon \sqrt{T} \right]\tag{21-17}
+$$<p>以上方程可用于对在T时刻提供非标准收益形式的衍生产品定价。如业界事例21-2所示，它也可用来检验布莱克-斯科尔斯-默顿模型。</p><p>蒙特卡罗模拟法的主要优点在于这一方法既可用于当收益只依赖标的变量S终端值的情形，也可用于当收益依赖标的变量S路径的情形（例如，该方法可用于收益依赖S在0和T之间平均值的情形）。衍生产品的收益可能发生在期限内的若干时间点上（而不是只是期限的末尾）。对任何关于S的随机过程均可以采用这一方法。我们接下来将要说明，这里所描述的方法可推广到收益依赖若干标的变量的情形。蒙特卡罗模拟法的缺点在于该方法的计算速度较慢，并且当可以提前行使期权时，不太容易采用这种方法。 ㊟ 【如第27章所述，一些研究人员已经提出了一些将蒙特卡罗模拟用于美式期权定价的方法。】</p><p>业界事例21-2</p><p>在Excel上检验布莱克-斯科尔斯-默顿公式</p><p>对于欧式看涨期权，我们可以采用很多步数的二叉树检验布莱克-斯科尔斯-默顿公式的正确性。另外一种检验布莱克-斯科尔斯-默顿公式正确性的方法是蒙特卡罗模拟。表21-2是一个Excel计算表，计算表的元素C2、D2、E2、F2和G2分别代表S0、K、r、σ和T。元素D4、E4和F4分别用于计算d1、d2和期权价格（计算表中布莱克-斯科尔斯-默顿价格为4.817）。</p><p>表21-2 利用蒙特卡罗法检验布莱克-斯科尔斯-默顿公式</p><table><tr><td></td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td></tr><tr><td>1</td><td>45.95</td><td>0</td><td>$S_0$</td><td>K</td><td>r</td><td>σ</td><td>T</td></tr><tr><td>2</td><td>54.49</td><td>4.38</td><td>50</td><td>50</td><td>0.05</td><td>0.3</td><td>0.5</td></tr><tr><td>3</td><td>50.09</td><td>0.09</td><td></td><td>$d_1$</td><td>$d_2$</td><td>BSM 价格</td><td></td></tr><tr><td>4</td><td>47.46</td><td>0</td><td></td><td>0.2239</td><td>0.0118</td><td>4.817</td><td></td></tr><tr><td>5</td><td>44.93</td><td>0</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>⋮</td><td>⋮</td><td>⋮</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1000</td><td>68.27</td><td>17.82</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1001</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1002</td><td></td><td>均值:4.98</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>1003</td><td></td><td>标准差:7.68</td><td></td><td></td><td></td><td></td><td></td></tr></table><p>NORMSINV为标准正态分布的逆分布函数，因此，</p><p>NORMSINV(RAND())给出了一个服从标准正态分布的随机抽样。我们令A1为</p><p>=$C$2＊EXP($E$2-$F$2＊$F$2/2)＊$G$2+$F$2＊</p><p>NORMSINV(RAND())＊SQRT($G$2)）这是按式(21-17)所做的计算，得出的是股票在T时刻的随机抽样值。我们将B1设成=EXP(-$E$2＊$G$2)＊MAX(A1-$D$2，0)，这是看涨期权收益的贴现值。我们在接下来的999行进行类似的操作。定义B1002=AVERAGE(B1: B1000)，在计算表中，该值为4.98，这是对期权价格的估计，这一估计应该与布莱克-斯科尔斯-默顿价格的差别不大。B1003定义为STDEV(B1:B1000)，由例21-8我们可以知道，B1003可用于检验估计的精确性。</p><h2 id=2161-依赖多个市场变量的衍生产品>21.6.1 依赖多个市场变量的衍生产品<a class=anchor href=#2161-%e4%be%9d%e8%b5%96%e5%a4%9a%e4%b8%aa%e5%b8%82%e5%9c%ba%e5%8f%98%e9%87%8f%e7%9a%84%e8%a1%8d%e7%94%9f%e4%ba%a7%e5%93%81>#</a></h2><p>在第14.5节里，我们曾讨论过相关的随机过程。考虑收益依赖n个</p>$$
+\hat{m} _{i}
+$$<p>变量θ $\mathrm{i} \left( 1 {\leqslant} \mathrm{i} {\leqslant} \mathrm{n} \right)$ 的衍生产品。定义si为θi的波动率， 为θi在风险中性世界里的期望增长率，ρik为θi与θk之间的相关系数(correlation)。 [6] 与单个标的变量的情形相似，我们将期权的期限分割成N个长度为 $\Delta$ t的子时间。θi的离散形式为</p>$$
+\theta_{i} (t + \Delta t) - \theta_{i} (t) = \hat{m} _{i} \theta_{i} (t) \Delta t + s_{i} \theta_{i} (t) \varepsilon_{i} \sqrt{\Delta t}\tag{21-18}
+$$<p>其中εi为标准正态分布的随机样本。εi与εk的相关系数为ρik $( 1 {\leqslant} \mathrm{i} ; ~ \mathrm{k} {\leqslant} \mathrm{n} )$ 。每一次路径的抽样都需要N个从多元正态分布中提取的 $\mathfrak{c} \mathrm{~ i ~} ( 1 {\leqslant} \mathrm{i} {\leqslant} \mathrm{n} )$ 样本。将这些样本代入式(21-18)后可产生θi的模拟路径，由此我们可以计算衍生产品的抽样值。</p><h2 id=2162-从正态分布中产生随机样本>21.6.2 从正态分布中产生随机样本<a class=anchor href=#2162-%e4%bb%8e%e6%ad%a3%e6%80%81%e5%88%86%e5%b8%83%e4%b8%ad%e4%ba%a7%e7%94%9f%e9%9a%8f%e6%9c%ba%e6%a0%b7%e6%9c%ac>#</a></h2><p>如业界事例21-2所示，Excel里的指令=NORMSINV(RAND())可以用来产生一标准正态分布的随机样本。当需要产生二元相关标准正态随机变量ε1、ε2的随机样本时，我们可以采取如下步骤。我们首先像上面讲过的那样生成两个相互独立的一元随机标准正态样本x1和x2，然后利用以下关系式即可生成我们所需要的随机样本</p>$$
+\varepsilon_{1} = x_{1}
+$$$$
+\varepsilon_{2} = \rho x_{1} + x_{2} \sqrt{1 - \rho^{2}}
+$$<p>其中ρ为相关系数。</p><p>我们现在考虑如何产生n元联合正态分布的随机样本，这里变量i和j之间的相关系数为ρij。首先由一元标准正态分布生成n个相互独立的随机样本 $\mathrm{x i} \left( 1 {\leqslant} \mathrm{i} {\leqslant} \mathrm{n} \right)$ ，然后我们可以将所需要的随机样本$\mathfrak{c} \mathrm{~ i ~} ( 1 {\leqslant} \mathrm{i} {\leqslant} \mathrm{n} )$ 定义成</p>$$
+\left. \begin{array}{l} \varepsilon_{1} = \alpha_{11} x_{1} \\ \varepsilon_{2} = \alpha_{21} x_{1} + \alpha_{22} x_{2} \\ \varepsilon_{3} = \alpha_{31} x_{1} + \alpha_{32} x_{2} + \alpha_{33} x_{3} \end{array} \right\}\tag{21-19}
+$$<p>等。在这里我们选取系数αij使得这些变量有正确的相关系数和方差。这些系数可以通过递推方式得到：令α11=1；选择α21使</p><p>α21α11=ρ21；选择α22使 $\alpha_{21} ^{2} + \alpha_{22} ^{2} {\mathrm{\Omega}} _{= 1} {\mathrm{.}}$ 选择α31使α31α11=ρ31；选择α32使 $\mathrm{~ a ~} 31 \mathrm{~ a ~} 21 + \mathrm{~ a ~} 32 \mathrm{~ a ~} 22 = \mathrm{~ p ~} 32$ ；选择α33使$\alpha_{31} ^{2} + \alpha_{32} ^{2} + \alpha_{33} ^{2} \ _{= 1}$ ；依此类推。 ㊟ 【如果关于α的方程没有实数解，那么所选的相关性结构不具有内部一致性，第23.7节将进一步讨论这一点。】 这里描述的过程叫乔里斯基分解(Cholesky$\mathrm{d e c o m p o s i t i o n} )$</p><h2 id=2163-模拟次数>21.6.3 模拟次数<a class=anchor href=#2163-%e6%a8%a1%e6%8b%9f%e6%ac%a1%e6%95%b0>#</a></h2><p>蒙特卡罗模拟法计算结果的精度依赖模拟的次数。在蒙特卡罗模拟法中，我们通常在计算收益贴现的期望值外，还要计算标准差。将期望值和标准差分别由μ和ω表示。变量μ即为衍生产品价值的估计值，这一估计值的标准误差为</p>$$
+\frac{\omega}{\sqrt{M}}
+$$<p>其中M为模拟次数。衍生产品价格f的95%置信区间为</p>$$
+\mu - \frac{1 . 96 \omega}{\sqrt{M}} < f < \mu + \frac{1 . 96 \omega}{\sqrt{M}}
+$$<p>这说明衍生产品价格的不确定性与模拟次数的平方根成反比。如果想将精度提高一倍，我们必须将模拟次数提高4倍；如果想将精度提高10倍，我们必须将模拟次数提高100倍；并依此类推。</p><p>【例21-7】 在表21-1中，π是100个数字的平均值，标准差为1.69。这时，ω=1.69，M=100。因此计算结果的标准误差为</p><h2 id=1691001-097--100>1.69/√1001. 097 √ 100<a class=anchor href=#1691001-097--100>#</a></h2><p>=0.169。计算表给出关于π的95%置信区间为(3.04-1.96×0.169)至(3.04+1.96×0.169)，即2.71～3.37（精确值3.14159落在置信区间内）。</p><p>【例21-8】 在表21-2中，期权价格是1000个数字的平均值，标准差为7.68。这时，ω=7.68，M=1000，因此计算结果的标准误差为</p><h2 id=76810007087-1000>7.68/√10007.087 √1000<a class=anchor href=#76810007087-1000>#</a></h2><p>=0.24。计算表给出的关于期权价格的95%置信区间为(4.68-1.96×0.24)至(4.68+1.96×0.24)，即4.51～5.45（布莱克-斯科尔斯-默顿价格为4.817，这个值落在置信区间内）。</p><h2 id=2164-通过树形抽样>21.6.4 通过树形抽样<a class=anchor href=#2164-%e9%80%9a%e8%bf%87%e6%a0%91%e5%bd%a2%e6%8a%bd%e6%a0%b7>#</a></h2><p>在实现蒙特卡罗模拟时，除了从假设标的变量所服从的随机过程上抽取样本外，我们也可以从N步二叉树上的2N条可能路径产生样本。假设在一个二叉树上向上变化的概率是0.6。通过二叉树抽取随机路径样本的步骤如下：在每个节点上，我们抽取一个0～1的随机数。当这个随机数小于0.4时，我们选取向下的树枝，如果大于0.4，我们选向上的树枝。一旦有了从最初的节点到树形末尾的完整路径，我们就可以计算收益。这样就完成了一次抽样。利用类似的程序可以得到更多的样本。收益均值按无风险利率贴现后的值就是我们对衍生产品价格的估计。 ㊟ 【关于如何更为高效地通过树形进行模拟，见D.Mintz，“Less is More”，Risk, July 1997:42-45。】</p><p>【例21-9】 假定用图21-3所示的树形结构计算收益等于max(Save-50,0)的期权价格，其中Save为今后5个月内股票的平均价格（平均值包括股票初始和最终价格）。这种期权叫亚式期权(Asianoption)。当进行10次抽样后，表21-3显示了一种可能的结果。期权的价值等于平均收益按无风险利率贴现后的值。这时，收益平均值为7.08美元，无风险利率为10%，因此期权价值为7.08e-0.1×5/12=6.79（这里的讨论只是为了说明问题。在实际中，为了取得更加精确的结果，应采用更多的时间步数和更多次的模拟试验）。</p><p>表21-3 由图21-3中二叉树并利用蒙特卡罗模拟计算亚式期权的价格（收益等于平均价格高于50美元的数量（U代表价格上涨；D代表价格下跌））</p><table><tr><td>抽样</td><td>路径</td><td>股票价格的平均值</td><td>期权收益</td></tr><tr><td>1</td><td>UUUUD</td><td>64.98</td><td>14.98</td></tr><tr><td>2</td><td>UUUDD</td><td>59.82</td><td>9.82</td></tr><tr><td>3</td><td>DDDUU</td><td>42.31</td><td>0.00</td></tr><tr><td>4</td><td>UUUUU</td><td>68.04</td><td>18.04</td></tr><tr><td>5</td><td>UUDDU</td><td>55.22</td><td>5.22</td></tr><tr><td>6</td><td>UDUUD</td><td>55.22</td><td>5.22</td></tr><tr><td>7</td><td>DDUDD</td><td>42.31</td><td>0.00</td></tr><tr><td>8</td><td>UUDDU</td><td>55.22</td><td>5.22</td></tr><tr><td>9</td><td>UUUDU</td><td>62.25</td><td>12.25</td></tr><tr><td>10</td><td>DDUUD</td><td>45.56</td><td>0.00</td></tr><tr><td>平均</td><td></td><td></td><td>7.08</td></tr></table><h2 id=2165-计算希腊值>21.6.5 计算希腊值<a class=anchor href=#2165-%e8%ae%a1%e7%ae%97%e5%b8%8c%e8%85%8a%e5%80%bc>#</a></h2><p>我们可以采用蒙特卡罗模拟法计算第19章中讨论的希腊值。假定我们想计算f对于x的偏导数，其中f为衍生产品的价格，x为标的变量的价格或某个参数。首先，我们可以采取一般的蒙特卡罗法计算衍生产品的价格 f ，然后我们将x值增加 $\Delta \ v {x}$ ，并采用与计算 &lt;f 类似的方式得出新价格 ，对冲参数可由以下方程计算</p>$$
+\frac{\hat{f} ^{*} - \hat{f}}{\Delta x}
+$$<p>为了减小标准误差，在计算 &lt;f 和 时，我们选用的时间区间的个数N、所用的随机样本、模拟运算的次数M都应当相同。</p><p><img src=images/51d3722f432caf3d9d900c0e646934e094f3ae1ffd17c0baa3d82dfb4dd2bfac.jpg alt></p><h2 id=2166-应用>21.6.6 应用<a class=anchor href=#2166-%e5%ba%94%e7%94%a8>#</a></h2><p>当衍生产品涉及3个或更多的随机变量时，蒙特卡罗模拟法比其他数值方法的效率更高。这是因为蒙特卡罗模拟法的运算量与随机变量的数量呈线性关系，而其他数值方法的运算量与随机变量的数量呈指数关系。蒙特卡罗模拟法的一个优点是可以给出估计值的标准误差，另一个优点是可以处理复杂的收益形式以及复杂的随机过程。再有，蒙特卡罗模拟法可用于收益为标的变量所遵循的整个路径（而不只是标的变量终端值）函数的情形。</p><h2 id=217-方差缩减程序>21.7 方差缩减程序<a class=anchor href=#217-%e6%96%b9%e5%b7%ae%e7%bc%a9%e5%87%8f%e7%a8%8b%e5%ba%8f>#</a></h2><p>假如像式(21-13)~式(21-18)所述的那样对衍生产品标的变量的随机过程进行模拟，在一般情况下，我们需要做很多次抽样才会将估计值达到合理的精确度。这从计算时间上讲是非常昂贵的。在这一节里，我们将介绍几种方差缩减程序(variance reductionprocedure)，利用这些程序可以大大减少计算时间。</p><h2 id=2171-对偶变量技巧>21.7.1 对偶变量技巧<a class=anchor href=#2171-%e5%af%b9%e5%81%b6%e5%8f%98%e9%87%8f%e6%8a%80%e5%b7%a7>#</a></h2><p>对偶变量技巧(antithetic variable technique)是指在每一次模拟抽样时，都要计算衍生产品的两个值。第一个值f1是按通常的方式计算得出的；第二个值f2是通过改变所有标准正态分布样本的符号而得出的（如果ε是用来计算f1的一个抽样，那么-ε则是计算f2时相应的抽样）。由此计算出的衍生产品的抽样值等于f1和f2的平均值。因为在以上两个值中当一个高于真实值时，另一个一般会低于真实值，反之亦然，这使得这一方法很有效。</p><p>定义 -f 为f1和f2的平均值</p>$$
+\bar{f} = \frac{f_{1} + f_{2}}{2}
+$$<p>衍生产品价格的估值是所有 -f 的平均值。如果 ω f 为的标准差，M为模拟运算的次数（即所计算的衍生产品价格的次数），估计值的标准误差为</p>$$
+\overline{{\omega}} / \sqrt{M}
+$$<p>以上的误差量一般会远远小于由2M个随机试验所对应的标准误差。</p><h2 id=2172-控制变量技巧>21.7.2 控制变量技巧<a class=anchor href=#2172-%e6%8e%a7%e5%88%b6%e5%8f%98%e9%87%8f%e6%8a%80%e5%b7%a7>#</a></h2><p>在对美式期权定价时，我们已经给出了与树形结构并用的控制变量技巧(control variate technique)例子（见第21.3节）。控制变量技巧适应于有两个相似衍生产品A和B的情形。衍生产品A是我们想定价的衍生产品，衍生产品B与A相似并有解析解。计算过程将使用同样的随机样本和Δt同时计算这两个产品的值。第1项模拟得到对于A的估计</p>$$
+\begin{array}{r l} & f_{A} ^{*} \quad ; \text{第2项模拟得到对于B的估计值} \quad f_{B} ^{*} \quad \text{。以下公式会给出一个对于A更好的估计} \end{array}
+$$$$
+f_{A} = f_{A} ^{*} - f_{B} ^{*} + f_{B}\tag{21-20}
+$$<p>其中fB是由解析公式算出的B的真实值。Hull和White在研究随机波动率(stochastic volatil-ity)对于欧式期权价格的影响时给出了一个使用控制变量技巧的应用例子， ㊟ 【See J. C. Hull and A.White, “The Pricing of Options on Assets with StochasticVolatilities,” Journal of Finance, 42(June 1987): 281-300.】在这里，A为在随机波动率假设下的期权，B为在常数波动率假设下的期权。</p><h2 id=2173-重点抽样法>21.7.3 重点抽样法<a class=anchor href=#2173-%e9%87%8d%e7%82%b9%e6%8a%bd%e6%a0%b7%e6%b3%95>#</a></h2><p>解释重点抽样法(importance sampling)的最好方法是通过实例。假设我们要为一个执行价格为K、期限为T的深度虚值欧式看涨期权定价。如果我们按通常的办法对标的资产价格在T的值进行抽样，我们得出的大部分路径的终端值都是0。因为0终端值对于期权价格的影响很小，这样做会浪费很多计算时间。因此，我们想尽量选取股票价格在到期日大于K的重要路径。</p><p>假定F是股票价格在到期日T的无条件概率分布函数，q为在到期日股票价格大于K的概率，而且已知这一概率的解析式，那么 $\mathrm{G = F / q}$ 即为股票价格在股票价格大于K时的条件概率分布。为了实施重点抽样法，我们在G（而不是F）中进行抽样，期权价格的估计值等于收益贴现后的均值乘以q。</p><h2 id=2174-间隔抽样法>21.7.4 间隔抽样法<a class=anchor href=#2174-%e9%97%b4%e9%9a%94%e6%8a%bd%e6%a0%b7%e6%b3%95>#</a></h2><p>当我们从概率分布中抽取具有代表性的取值（而不是随机取值时），一般会得到更高的精确度。间隔抽样法(stratified sampling)属于这类处理方法。假定我们想从概率分布中抽取1000个样本，我们可以将分布分割成1000个具有同样概率的区间，然后从这些小区间中选取具有代表性的数值（均值或中位数(median)）。</p><p>对分成n个区间的标准正态分布情形，我们可以在第i个区间选取代表值</p>$$
+N^{- 1} \left(\frac{i - 0 . 5}{n}\right)
+$$<p>其中N-1为累计正态分布函数的逆函数。例如，当n=4时，4个区间的代表值分别为N-1(0.125)、N-1(0.375)、N-1(0.625)、N-1(0.875)。函数N-1可以利用Excel的NORMSINV函数进行计算。</p><h2 id=2175-矩匹配法>21.7.5 矩匹配法<a class=anchor href=#2175-%e7%9f%a9%e5%8c%b9%e9%85%8d%e6%b3%95>#</a></h2><p>矩匹配法(moment matching)是指对标准正态分布中抽取的样本进行调整，以便使样本与第1阶矩、第2阶矩甚至更高阶矩相匹配。假设为了计算一个变量在一段时间里的变化时需要从均值为0、标准差为1.0的标准正态分布中进行抽样。假定所取的样本值为 $\mathfrak{c} \mathrm{~ i ~} ( 1 {\leqslant} \mathrm{i} {\leqslant} \mathrm{n} )$ 为了使前两阶矩相匹配，我们首先计算样本值的均值m和标准差s，然</p>$$
+\mathcal{\mathrm{后我们定义调整后的样本}} \quad \varepsilon_{i} ^{*} \quad \text{如下}
+$$$$
+\varepsilon_{i} ^{*} = \frac{\varepsilon_{i} - m}{s}
+$$<p>经调整的样本具有正确的均值0与正确的标准差1.0。最后我们采用这些经调整后的样本进行所有的计算。</p><p>矩匹配法会节省计算时间，但这种方法加重了存储的负担，这是因为所有的样本值均要存储到模拟过程的最后阶段。矩匹配法有时也被称作为二次再抽样法(quadratic resampling)。这一方法常常与对偶变量技巧结合使用。因为对偶变量技巧自动会使所有的奇数矩相匹配，因此我们只需要在矩匹配法中使得第2节矩和（或许）第4节矩相匹配即可。</p><h2 id=2176-利用伪随机数序列>21.7.6 利用伪随机数序列<a class=anchor href=#2176-%e5%88%a9%e7%94%a8%e4%bc%aa%e9%9a%8f%e6%9c%ba%e6%95%b0%e5%ba%8f%e5%88%97>#</a></h2><p>伪随机数序列(quasi-random sequence)（也称为低差异序列(low-discrepancy sequence)）是由概率分布中得出的具有代表性样本组成的序列。 ㊟ 【伪随机(quasi-random)这一术语是个误称，伪随机序列实际上是很确定的。】 读者可以在Brotherton-Ratcliffe以及Press等人的文献中找到关于伪随机数序列的描述和应用。 ㊟【See R. Brotherton-Ratcliffe, “Monte Carlo Motoring, Risk, December 1994:53-58；W. H. Press, S. A. Teu-kolsky, W.T. Vetterling, and B. P. Flannery, Numerical Recipes in C:The Art of Scientific Computing, 2nd edn. CambridgeUniversity Press, 1992.】 伪随机数序列具有以下优点：由伪随机数序列所得模拟结果的标准差与1/M（而不是 1/√M ）成正比，这里的M代表模拟次数。</p><p>伪随机数抽样与间隔抽样法相似，其目的是寻求具有代表意义的标的变量样本值。在间隔抽样法中，我们假定事先已经知道需要抽取样本的确切数量，而伪随机数抽样过程则更加灵活。这种抽样的方式总可以不断地在已经存在的样本之间的间隔里加入更多的样本。因此，在模拟过程的每个阶段，样本点都会大体上均匀地分布在整个概率空间中。</p><p>图21-14显示了由索博尔提议的方法而产生的二维伪随机数点。 ㊟ 【See I. M. Sobol', USSR Computational Mathematics and Mathematical Physics, 7, 4(1967): 86-112.A de-scription of Sobol's procedure is in W. H. Press, S. A. Teukolsky, W. T. Vetterling, and B. P. Flannery, Numeri-cal Recipes in C: The Art of Scientific Computing, 2nd edn. Cambridge University Press, 1992.】 我们可以看出，后来抽取的样本总是弥补前面样本所 留下的空隙。</p><p><img src=images/36fc0090ee3c690d0fa05b3cbba9b0aff358fa0342ea9ad7e30e8fd86989cd2d.jpg alt></p><p><img src=images/4fd3080bc169faf01b136000eb49a967f049225e1a92540565e542aab462e9f7.jpg alt></p><p><img src=images/2b61f070f32529313eb207684ba0e0af1b039a6a270b8712b013ca9d5f34ea74.jpg alt><br>图21-14 一个索博尔序列的前1024个点</p><p><img src=images/f26196f6f6561c1003bfe15f2fbd07efd48f8593ad000f0ef46536f4f5d6b31f.jpg alt></p><h2 id=218-有限差分法>21.8 有限差分法<a class=anchor href=#218-%e6%9c%89%e9%99%90%e5%b7%ae%e5%88%86%e6%b3%95>#</a></h2><p>有限差分法(finite difference)通过求解衍生产品价格所满足的微分方程达到定价的目的，在求解过程中，微分方程被转换成一组差分方程。我们可以通过迭代的方式求出差分方程的解。</p><p>为了说明这种方法，我们考虑如何用它对一个股息收益率为q的美式股票看跌期权定价。由式(17-6)得出，期权价格满足微分方程</p>$$
+\frac{\partial f}{\partial t} + (r - q) S \frac{\partial f}{\partial S} + \frac{1}{2} \sigma^{2} S^{2} \frac{\partial^{2} f}{\partial S^{2}} = r f\tag{21-21}
+$$<p>假设期权的期限为T。我们将期限分成N个等间隔、长度为 $\Delta \mathrm{t} {=} \mathrm{T} / \mathrm{N}$ 的时间区间。因此我们需要考虑N+1个时间点</p>$$
+0, \Delta t, 2 \Delta t, \dots , T
+$$<p>假设Smax为足够大的股票价格，一旦股票达到这一价格时，看跌期权的价值几乎为0。定义 $\Delta \mathrm{\ S {=} S m a x / M}$ ，并考虑M+1个具有同样间隔的股票价格</p>$$
+0, \Delta S, 2 \Delta S, \dots , \mathrm{Smax}
+$$<p>在选取Smax时保证这些值中有一个刚好对应于股票的当前价格。</p><p>如图21-15所示，选取的股票价格和时间构成了一个共(M+1)(N+1)个点的网格。网格上的(i,j)所对应的时间为i $\Delta{\ t}$ ，股票价格为j $\Delta \mathrm{S}$ 我们用变量fi,j代(i,j)点的期权价格。</p>$$
+\begin{array}{r l} & \text{股票价格,} S \\ & S_{\max} \\ & 2 \Delta S \\ & \Delta S \\ & 0 \end{array}
+$$<p>图21-15 有限差分网格</p><h2 id=2181-隐式有限差分法>21.8.1 隐式有限差分法<a class=anchor href=#2181-%e9%9a%90%e5%bc%8f%e6%9c%89%e9%99%90%e5%b7%ae%e5%88%86%e6%b3%95>#</a></h2><p>对于网格内部的(i,j)，∂f/∂S可近似为</p>$$
+\frac{\partial f}{\partial S} = \frac{f_{i , j + 1} - f_{i , j}}{\Delta S}\tag{21-22}
+$$<p>或者</p>$$
+\frac{\partial f}{\partial S} = \frac{f_{i , j} - f_{i , j - 1}}{\Delta S}\tag{21-23}
+$$<p>式(21-22)叫作向前差分近似(forward differenceapproximation)；式(21-23)叫作向后差分近似(backward differenceapproximation)。将以上两种差分加以平均，我们可以得出一个对称的差分方程</p>$$
+\frac{\partial f}{\partial S} = \frac{f_{i , j + 1} - f_{i , j - 1}}{2 \Delta S}\tag{21-24}
+$$<p>对于 $\partial \mathrm{f} / \partial \mathrm{t}$ ，我们将采用向前差分近似，从而i $\Delta$ t时刻的值(i+1)Δt的值有关</p>$$
+\frac{\partial f}{\partial t} = \frac{f_{i + 1 , j} - f_{i , j}}{\Delta t}\tag{21-25}
+$$<p>下面考虑∂2f/∂S2。(i,j)点的 $\partial \mathrm{f} / \partial \mathrm{S}$ 向后差分近似地由式(21-23)给出。(i,j+1)点的 $\partial \mathrm{f} / \partial \mathrm{S}$ 向后差分近似为</p>$$
+\frac{f_{i , j + 1} - f_{i , j}}{\Delta S}
+$$<p>因此(i,j)点∂2f/∂S2的有限差分近似为</p>$$
+\frac{\partial^{2} f}{\partial S^{2}} = \frac{1}{\Delta S} \left(\frac{f_{i , j + 1} - f_{i , j}}{\Delta S} - \frac{f_{i , j} - f_{i , j - 1}}{\Delta S}\right)
+$$<p>或者</p>$$
+\frac{\partial^{2} f}{\partial S^{2}} = \frac{f_{i , j + 1} + f_{i , j - 1} - 2 f_{i , j}}{\Delta S^{2}}\tag{21-26}
+$$<p>将式(21-24)、式(21-25)和式(21-26)代入微分方程式(21-21)，并且注意 $S {=} \mathrm{j} \Delta \mathrm{S}$ ，得出</p>$$
+\frac{f_{i + 1 , j} - f_{i , j}}{\Delta t} + (r - q) j \Delta S \frac{f_{i , j + 1} - f_{i , j - 1}}{2 \Delta S} + \frac{1}{2} \sigma^{2} j^{2} \Delta S^{2} \frac{f_{i , j + 1} + f_{i , j - 1} - 2 f_{i , j}}{\Delta S^{2}} = r f_{i, j}
+$$<p>其中 $\mathrm{j = 1} , 2 , \cdots , \mathrm{M - 1} ; \enspace \mathrm{i = 0} , 1 , \cdots , \mathrm{N - 1}$ 。将方程进行整理，我们得出</p>$$
+a_{j} f_{i, j - 1} + b_{j} f_{i, j} + c_{j} f_{i, j + 1} = f_{i + 1, j}\tag{21-27}
+$$<p>其中</p>$$
+a_{j} = \frac{1}{2} (r - q) j \Delta t - \frac{1}{2} \sigma^{2} j^{2} \Delta t
+$$$$
+b_{j} = 1 + \sigma^{2} j^{2} \Delta t + r \Delta t
+$$$$
+c_{j} = - \frac{1}{2} (r - q) j \Delta t - \frac{1}{2} \sigma^{2} j^{2} \Delta t
+$$<p>看跌期权在时间T的值为max(K-ST,0)，其中ST为股票在T时刻的价格，因此</p>$$
+f_{N, j} = \max (K - j \Delta S, 0), \quad j = 0, 1, \dots , M\tag{21-28}
+$$<p>当股票价格为0时，看跌期权的价格为K，因此</p>$$
+f_{i, 0} = K, \quad i = 0, 1, \dots , N\tag{21-29}
+$$<p>我们假定当S=Smax时，期权价格为0，因此</p>$$
+f_{i, M} = 0, \quad i = 0, 1, \dots , N\tag{21-30}
+$$<p>式(21-28)、式(21-29)和式(21-30)定义了看跌期权在图21-15所示网格的三个边上的取值，这三个边分别对应S=0,S=Smax，和t=T。接下来，我们要利用式(21-27)计算f在其他节点的值。当i=N-1时，式(21-27)可写为</p>$$
+a_{j} f_{N - 1, j - 1} + b_{j} f_{N - 1, j} + c_{j} f_{N - 1, j + 1} = f_{N, j}\tag{21-31}
+$$<p>其中j=1,2,…,M-1。由式(21-28)，我们知道方程右端的值。此外，由式(21-29)和式(21-30)我们得出</p>$$
+f_{N - 1, 0} = K\tag{21-32}
+$$$$
+f_{N - 1, M} = 0\tag{21-33}
+$$<p>式(21-31)同时给出了关于M-1个未知量的M-1个方程，这些未知量为fN-1，1，fN-1，2,…,fN-1，M-1。 [7] 一旦以上未知量确定后，我们将fN-1，j与K-jΔS进行比较。如果fN-1，j＜K-jΔS，那么在时间T-Δt行使期权是最优的，这时我们将fN-1，j设定为K-jΔS。在时间T-2Δt的节点可用相似的方式处理，等等。最终，我们可以得出f0，1，f0，2，f0，3,…,f0，M-1，其中的一个价格即为我们寻求的期权价格。</p><p>控制变量技巧可以与有限差分法并用。在定价过程中，一旦设定时间和标的资产的网格后，我们采用同样的网格对于一个类似的但具有解析解的期权进行定价，然后利用式(21-20)。</p><p>【例21-10】 表21-4显示了由隐式有限差分方法求出的例21-1中美式看跌期权的数值解。在这里，参数M、N和ΔS分别等于20美元、10美元和5美元。因此，在定价过程中，我们将0美元和100美元之间分成了每5美元一个的价格区间，并同时将期权期限分成了每半个月一步的时间段。由这一网格得出的期权的价格为4.07美元，由同一网格给出的欧式期权价格为3.91美元，布莱克-斯科尔斯-默顿公式给出的欧式期权准确值为4.08美元。因此，由控制变量技巧得出的美式期权价格近似值为</p>$$
+4. 07 + (4. 08 - 3. 91) = 4. 24 (\text{美元})
+$$<p>表21-4 采用隐式有限差分来计算例21-1中美式期权价格的网格</p><table><tr><td rowspan=2>股票价格(美元)</td><td colspan=11>距离到期日的时间(月)</td></tr><tr><td>5</td><td>4.5</td><td>4</td><td>3.5</td><td>3</td><td>2.5</td><td>2</td><td>1.5</td><td>1</td><td>0.5</td><td>0</td></tr><tr><td>100</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>95</td><td>0.02</td><td>0.02</td><td>0.01</td><td>0.01</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>90</td><td>0.05</td><td>0.04</td><td>0.03</td><td>0.02</td><td>0.01</td><td>0.01</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>85</td><td>0.09</td><td>0.07</td><td>0.05</td><td>0.03</td><td>0.02</td><td>0.01</td><td>0.01</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>80</td><td>0.16</td><td>0.12</td><td>0.09</td><td>0.07</td><td>0.04</td><td>0.03</td><td>0.02</td><td>0.01</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>75</td><td>0.27</td><td>0.22</td><td>0.17</td><td>0.13</td><td>0.09</td><td>0.06</td><td>0.03</td><td>0.02</td><td>0.01</td><td>0.00</td><td>0.00</td></tr><tr><td>70</td><td>0.47</td><td>0.39</td><td>0.32</td><td>0.25</td><td>0.18</td><td>0.13</td><td>0.08</td><td>0.04</td><td>0.02</td><td>0.00</td><td>0.00</td></tr><tr><td>65</td><td>0.82</td><td>0.71</td><td>0.60</td><td>0.49</td><td>0.38</td><td>0.28</td><td>0.19</td><td>0.11</td><td>0.05</td><td>0.02</td><td>0.00</td></tr><tr><td>60</td><td>1.42</td><td>1.27</td><td>1.11</td><td>0.95</td><td>0.78</td><td>0.62</td><td>0.45</td><td>0.30</td><td>0.16</td><td>0.05</td><td>0.00</td></tr><tr><td>55</td><td>2.43</td><td>2.24</td><td>2.05</td><td>1.83</td><td>1.61</td><td>1.36</td><td>1.09</td><td>0.81</td><td>0.51</td><td>0.22</td><td>0.00</td></tr><tr><td>50</td><td>4.07</td><td>3.88</td><td>3.67</td><td>3.45</td><td>3.19</td><td>2.91</td><td>2.57</td><td>2.17</td><td>1.66</td><td>0.99</td><td>0.00</td></tr><tr><td>45</td><td>6.58</td><td>6.44</td><td>6.29</td><td>6.13</td><td>5.96</td><td>5.77</td><td>5.57</td><td>5.36</td><td>5.17</td><td>5.02</td><td>5.00</td></tr><tr><td>40</td><td>10.15</td><td>10.10</td><td>10.05</td><td>10.01</td><td>10.00</td><td>10.00</td><td>10.00</td><td>10.00</td><td>10.00</td><td>10.00</td><td>10.00</td></tr><tr><td>35</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td></tr><tr><td>30</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td></tr><tr><td>25</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td></tr><tr><td>20</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td></tr><tr><td>15</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td></tr><tr><td>10</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td></tr><tr><td>5</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td></tr><tr><td>0</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td></tr></table><h2 id=2182-显式有限差分法>21.8.2 显式有限差分法<a class=anchor href=#2182-%e6%98%be%e5%bc%8f%e6%9c%89%e9%99%90%e5%b7%ae%e5%88%86%e6%b3%95>#</a></h2><p>隐式有限差分方法的优点在于其稳定性：当ΔS和Δt趋于0时，由隐式有限差分方法得出的数值解总是收敛于微分方程的解。 [8] 但其中一个缺点是由fi+1，j的值计算fi,j时，我们必须同时对M-1个方程求解。当假设∂f/∂S和∂2f/∂S2的值在(i,j)上(i+1,j)上相等时，可以将有限差分法简化。这时式(21-24)和式(21-26)变为</p>$$
+\begin{array}{l} \frac{\partial f}{\partial S} = \frac{f_{i + 1 , j + 1} - f_{i + 1 , j - 1}}{2 \Delta S} \\ \frac{\partial^{2} f}{\partial S^{2}} = \frac{f_{i + 1 , j + 1} + f_{i + 1 , j - 1} - 2 f_{i + 1 , j}}{\Delta S^{2}} \end{array}
+$$<p>差分方程变为</p>$$
+\frac{f_{i + 1 , j} - f_{i , j}}{\Delta t} + (r - q) j \Delta S \frac{f_{i + 1 , j + 1} - f_{i + 1 , j - 1}}{2 \Delta S} + \frac{1}{2} \sigma^{2} j^{2} \Delta S^{2} \frac{f_{i + 1 , j + 1} + f_{i + 1 , j - 1} - 2 f_{i + 1 , j}}{\Delta S^{2}} = r f_{i, j}
+$$<p>即</p>$$
+f_{i, j} = a_{j} ^{*} f_{i + 1, j - 1} + b_{j} ^{*} f_{i + 1, j} + c_{j} ^{*} f_{i + 1, j + 1}\tag{21-34}
+$$<p>其中</p>$$
+\begin{array}{l} a_{j} ^{*} = \frac{1}{1 + r \Delta t} \left(- \frac{1}{2} (r - q) j \Delta t + \frac{1}{2} \sigma^{2} j^{2} \Delta t\right) \\ b_{j} ^{*} = \frac{1}{1 + r \Delta t} (1 - \sigma^{2} j^{2} \Delta t) \\ c_{j} ^{*} = \frac{1}{1 + r \Delta t} \left(\frac{1}{2} (r - q) j \Delta t + \frac{1}{2} \sigma^{2} j^{2} \Delta t\right) \end{array}
+$$<p>这样我们就产生了所谓的显式有限差分法(explicit finitedifference method)。 ㊟ 【对∂f/∂t采用向后差分近似（而不是向前差分近似），我们同样可以得出显式有限差分法。】 图21-16展示了隐式有限差分法与显式有限差分法的区别：由式(21-27)定义的隐式差分给出了iΔt时刻的3个不同期权值（即fi,j-1、fi,j和fi,j+1）(i+1)Δt时刻的1个期权值（即fi+1，j）之间的关系；由式(21-34)定义的显式有限差分给出了iΔt时刻的1个期权值（即fi,j）(i+1)Δt时刻的3个不同期权值（即fi+1，j-1、fi+1，j和fi+1，j+1）之间的关系。</p><p><img src=images/635bc1da6841029baacd532ecf4fa667d8b745d2eba15e3250b6baeb8ab30198.jpg alt><br>图21-16 隐式有限差分法和显式有限差分法的区别</p><p>【例21-11】 表21-5给出了通过显式有限差分为例21-1中的美式看跌期权定价的结果。同例21-10中一样，参数M、N和ΔS分别等于20美元、10美元和5美元。由网格所得出的期权价格为4.26美元。 ㊟【稍后我们将解释造成网格左上边出现负数和其他矛盾的原因。】</p><p>表21-5 通过显式有限差分法计算例21-1中美式期权价格的网格</p><table><tr><td rowspan=2>股票价格(美元)</td><td colspan=11>距离到期日的时间(月)</td></tr><tr><td>5</td><td>4.5</td><td>4</td><td>3.5</td><td>3</td><td>2.5</td><td>2</td><td>1.5</td><td>1</td><td>0.5</td><td>0</td></tr><tr><td>100</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>95</td><td>0.06</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr></table><p>（续）</p><table><tr><td rowspan=2>股票价格(美元)</td><td colspan=11>距离到期日的时间(月)</td></tr><tr><td>5</td><td>4.5</td><td>4</td><td>3.5</td><td>3</td><td>2.5</td><td>2</td><td>1.5</td><td>1</td><td>0.5</td><td>0</td></tr><tr><td>90</td><td>-0.11</td><td>0.05</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>85</td><td>0.28</td><td>-0.05</td><td>0.05</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>80</td><td>-0.13</td><td>0.20</td><td>0.00</td><td>0.05</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>75</td><td>0.46</td><td>0.06</td><td>0.20</td><td>0.04</td><td>0.06</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>70</td><td>0.32</td><td>0.46</td><td>0.23</td><td>0.25</td><td>0.10</td><td>0.09</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>65</td><td>0.91</td><td>0.68</td><td>0.63</td><td>0.44</td><td>0.37</td><td>0.21</td><td>0.14</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>60</td><td>1.48</td><td>1.37</td><td>1.17</td><td>1.02</td><td>0.81</td><td>0.65</td><td>0.42</td><td>0.27</td><td>0.00</td><td>0.00</td><td>0.00</td></tr><tr><td>55</td><td>2.59</td><td>2.39</td><td>2.21</td><td>1.99</td><td>1.77</td><td>1.50</td><td>1.24</td><td>0.90</td><td>0.59</td><td>0.00</td><td>0.00</td></tr><tr><td>50</td><td>4.26</td><td>4.08</td><td>3.89</td><td>3.68</td><td>3.44</td><td>3.18</td><td>2.87</td><td>2.53</td><td>2.07</td><td>1.56</td><td>0.00</td></tr><tr><td>45</td><td>6.76</td><td>6.61</td><td>6.47</td><td>6.31</td><td>6.15</td><td>5.96</td><td>5.75</td><td>5.50</td><td>5.24</td><td>5.00</td><td>5.00</td></tr><tr><td>40</td><td>10.28</td><td>10.20</td><td>10.13</td><td>10.06</td><td>10.01</td><td>10.00</td><td>10.00</td><td>10.00</td><td>10.00</td><td>10.00</td><td>10.00</td></tr><tr><td>35</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td><td>15.00</td></tr><tr><td>30</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td><td>20.00</td></tr><tr><td>25</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td><td>25.00</td></tr><tr><td>20</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td><td>30.00</td></tr><tr><td>15</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td><td>35.00</td></tr><tr><td>10</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td><td>40.00</td></tr><tr><td>5</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td><td>45.00</td></tr><tr><td>0</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td><td>50.00</td></tr></table><h2 id=2183-变量替换>21.8.3 变量替换<a class=anchor href=#2183-%e5%8f%98%e9%87%8f%e6%9b%bf%e6%8d%a2>#</a></h2><p>如果利用几何布朗运动描述标的资产价格，在应用有限差分法时以lnS作为标的变量比以S作为标的变量会更有效。定义Z=lnS，式(21-21)变为</p>$$
+\frac{\partial f}{\partial t} + \left(r - q - \frac{\sigma^{2}}{2}\right) \frac{\partial f}{\partial Z} + \frac{1}{2} \sigma^{2} \frac{\partial^{2} f}{\partial Z^{2}} = r f
+$$<p>这时，为了给衍生产品定价，我们应该针对Z设定等距离网格（而不是针对S设定等距离网格）。在隐式有限差分法中，微分方程变为</p>$$
+\begin{array}{r l} & {\frac{f_{i + 1 , j} - f_{i , j}}{\Delta t} + \left(r - q - \frac{\sigma^{2}}{2}\right) \frac{f_{i , j + 1} - f_{i , j - 1}}{2 \Delta Z} + \frac{1}{2} \sigma^{2} \frac{f_{i , j + 1} + f_{i , j - 1} - 2 f_{i , j}}{\Delta Z^{2}} = r f_{i, j}} \\ & {\text{即}} \end{array}
+$$$$
+\alpha_{j} f_{i, j - 1} + \beta_{j} f_{i, j} + \gamma_{j} f_{i, j + 1} = f_{i + 1, j}\tag{21-35}
+$$<p>其中</p>$$
+\begin{array}{l} \alpha_{j} = \frac{\Delta t}{2 \Delta Z} \left(r - q - \frac{\sigma^{2}}{2}\right) - \frac{\Delta t}{2 \Delta Z^{2}} \sigma^{2} \\ \beta_{j} = 1 + \frac{\Delta t}{\Delta Z^{2}} \sigma^{2} + r \Delta t \\ \gamma_{j} = - \frac{\Delta t}{2 \Delta Z} \left(r - q - \frac{\sigma^{2}}{2}\right) - \frac{\Delta t}{2 \Delta Z^{2}} \sigma^{2} \end{array}
+$$<p>在显式有限差分法中，差分方程为</p>$$
+\frac{f_{i + 1 , j} - f_{i , j}}{\Delta t} + \left(r - q - \frac{\sigma^{2}}{2}\right) \frac{f_{i + 1 , j + 1} - f_{i + 1 , j - 1}}{2 \Delta Z} + \frac{1}{2} \sigma^{2} \frac{f_{i + 1 , j + 1} + f_{i + 1 , j - 1} - 2 f_{i + 1 , j}}{\Delta Z^{2}} = r f_{i, j}
+$$<p>即</p>$$
+\alpha_{j} ^{*} f_{i + 1, j - 1} + \beta_{j} ^{*} f_{i + 1, j} + \gamma_{j} ^{*} f_{i + 1, j + 1} = f_{i, j}\tag{21-36}
+$$<p>其中</p>$$
+\alpha_{j} ^{*} = \frac{1}{1 + r \Delta t} \left[ - \frac{\Delta t}{2 \Delta Z} (r - q - \frac{\sigma^{2}}{2}) + \frac{\Delta t}{2 \Delta Z^{2}} \sigma^{2} \right]\tag{21-37}
+$$$$
+\beta_{j} ^{*} = \frac{1}{1 + r \Delta t} \left(1 - \frac{\Delta t}{\Delta Z^{2}} \sigma^{2}\right)\tag{21-38}
+$$$$
+\gamma_{j} ^{*} = \frac{1}{1 + r \Delta t} \left[ \frac{\Delta t}{2 \Delta Z} \left(r - q - \frac{\sigma^{2}}{2}\right) + \frac{\Delta t}{2 \Delta Z^{2}} \sigma^{2} \right]\tag{21-39}
+$$<p>经过变量替换后，参数αj、βj和γj以及 αj、βj * * 和*γj 都有独立于j的特征。在大多数情况下，</p>$$
+\Delta Z = \sigma \sqrt{3 \Delta t}
+$$<p>是个很好的选择。</p><h2 id=2184-与三叉树法的关系>21.8.4 与三叉树法的关系<a class=anchor href=#2184-%e4%b8%8e%e4%b8%89%e5%8f%89%e6%a0%91%e6%b3%95%e7%9a%84%e5%85%b3%e7%b3%bb>#</a></h2><p>显式有限差分法与三叉树法等价。 ㊟ 【我们可以证明隐式与多叉树(multinomial tree)等价，在多叉树的每个节点上，股票总共有</p>$$
+a_{j} ^{*} 、 b_{j} ^{*} \text{和} c_{j} ^{*}
+$$<p>以理解为</p><p>$$</p><ul><li>\frac{1}{2} (r - q) j \Delta t + \frac{1}{2} \sigma^{2} j^{2} \Delta t
+$$</li></ul><p>：在 $\Delta{\ t}$</p><p>时间内，股票价格由j $\Delta \mathrm{S} .$ 跌(j-1)ΔS的概率</p><p>1-σ2j2 $\Delta{\ t}$ ：在 $\Delta$ t时间内，股票价格j $\Delta \mathrm{S}$ 保持不变的概率</p>$$
+\frac{1}{2} (r - q) j \Delta t + \frac{1}{2} \sigma^{2} j^{2} \Delta t
+$$<p>：在Δt时间</p><p>内，股票价格由jΔS升(j+1)ΔS的概率</p><p>这种解释展示在图21-17中。这三个概率的和等于1。这些概率保证在 $\Delta$ t时间后股票价格的增长期望 $( \mathrm{r - q} ) \mathrm{j} \Delta \mathrm{S} \Delta \mathrm{t} = ( \mathrm{r - q} ) \mathrm{S} \Delta$ t，这恰恰是股票价格在风险中性世界的增长值期望。当 $\Delta$ t很小时，这些概率同时也保证在 $\Delta$ t时间内股票价格变动的方差为</p><p>$\mathrm{~ o ~ 2 j 2 ~} \Delta \mathrm{~ S 2 ~} \Delta \mathrm{~ t = ~ o ~ 2 S 2 ~} \Delta \mathrm{~ t ~}$ ，这恰恰对应于S所服从的随机过程。f在i $\Delta{\ t}$ 时刻的值等于 $( \mathrm{i} {+} 1 ) ~ \Delta$ t时刻的f值在风险中性世界里的期望以无风险利率加以贴现。</p><p>为了保证能够使用显式有限差分法，以下3个“概率”必须为正</p>$$
+\begin{array}{c} - \frac{1}{2} (r - q) j \Delta t + \frac{1}{2} \sigma^{2} j^{2} \Delta t \\ 1 - \sigma^{2} j^{2} \Delta t \\ \frac{1}{2} (r - q) j \Delta t + \frac{1}{2} \sigma^{2} j^{2} \Delta t \end{array}
+$$<p><img src=images/b6580aaa56a73b757994ba56fbcc1f951e1364b3bc4f78fccde068a35ea463ab.jpg alt><br>图21-17 将显式有限差分法解释为三叉树</p><p>在例21-11中，当j≥13时（即当S≥65时），1-σ2j2Δt为负。这给出了在表21-5的左上角期权价格为负和其他矛盾的原因。这个例子说明了显式有限差分法的主要问题：因为树形结构中的概率可能为负，由此得出的数值解不一定收敛于微分方程的解。 ㊟ 【J. C.Hull and A. White，“Valuing Derivative Securities Using theExplicit Finite Difference Method,” Journal ofFinancial andQuantitative Analysis，25(March 1990): 87-100，这篇文章提出了如何克服这一问题的方法。对这里所考虑的情况，只要构造关于lnS而不是S的网格，就可以保证算法的收敛性。】</p><p>当利用变量替换时（见式(21-36)~式(21-39)），变量Z=lnS减少ΔZ、保持不变、增加ΔZ的概率分别为</p><p>$$</p><ul><li>\frac{\Delta t}{2 \Delta Z} \left(r - q - \frac{\sigma^{2}}{2}\right) + \frac{\Delta t}{2 \Delta Z^{2}} \sigma^{2}
+$$</li></ul>$$
+1 - \frac{\Delta t}{\Delta Z^{2}} \sigma^{2}
+$$$$
+\frac{\Delta t}{2 \Delta Z} \left(r - q - \frac{\sigma^{2}}{2}\right) + \frac{\Delta t}{2 \Delta Z^{2}} \sigma^{2}
+$$<p>Z的这些变化值分别对应于由S到 $\mathrm{S e} ^{-} \Delta{Z}$ ，S和 $\mathrm{{1 S e}} \Delta \mathrm{{Z}}$ 的S变化值。如</p><p>∆Z = σ√3∆t果取 ，这里得出的树形和概率与第21.4节中的三叉树结果相同。</p><h2 id=2185-其他差分法>21.8.5 其他差分法<a class=anchor href=#2185-%e5%85%b6%e4%bb%96%e5%b7%ae%e5%88%86%e6%b3%95>#</a></h2><p>研究人员提出了其他许多种关于求解微分方程的有限差分方法，在很多情况下，这些方法比纯粹的显式有限差分法或者纯粹的隐式计算效率更高。</p><p>在所谓的跳格法(hopscotch method)中，当从一个节点转向另一个节点时，我们交替地使用隐式格式和显式格式，图21-18说明了这一方法。在每个时刻，我们首先按通常的显式方法在显式节点(E)完成计算，然后我们可以不需要求解方程组就可以得到在隐式节点(I)上的数值解，这是因为我们已经得出了与隐式节点相邻节点上的值。</p><p><img src=images/b8fd44f92e871de31448534b62968814bc9c27b87840ce97904fffa93a87c5d8.jpg alt><br>图21-18 跳格差分法（I代表隐式节点；E代表显式节点）<br>在Crank-Nicolson法(Crank-Nicolson method)中，</p>$$
+\frac{f_{i + 1 , j} - f_{i , j}}{\Delta t}
+$$<p>设定为隐式法与显式法的平均。</p><h2 id=2186-有限差分法的应用>21.8.6 有限差分法的应用<a class=anchor href=#2186-%e6%9c%89%e9%99%90%e5%b7%ae%e5%88%86%e6%b3%95%e7%9a%84%e5%ba%94%e7%94%a8>#</a></h2><p>有限差分法何以用于任何适合树形方法的衍生产品类型，它们既可以用来处理欧式期权，也可以用来处理美式期权。但当衍生产品收益依赖标的变量历史时，使用有限差分法就会很困难。有限差分可用于多标的变量的情形，但计算时间会大大增加。因为这时图21-15的网格会变成多维的形式。</p><p>在有限差分法中，计算希腊值的方法与树形法类似，delta、gamma和theta可以直接由fi、j在网格上的值得出。对于vega，我们需要对波动率做一个很小的变化，然后再由同一个网格计算衍生产品的数值解。</p><h2 id=小结>小结<a class=anchor href=#%e5%b0%8f%e7%bb%93>#</a></h2><p>对于不存在解析解的衍生产品，我们列举了计算它们价格的三种数值方法，包括树形法、蒙特卡罗模拟法和有限差分法。</p><p>在二叉树法中，我们假设在每个很短时间区间Δt内，股票价格或按比例u上升，或按比率d下降。在选择u和d以及它们所对应的概率时，我们保证在风险中性世界里股票价格的变化具有正确的期望值和标准差。衍生产品的价格可以从二叉树的末端开始倒退计算得出。对于美式期权，在每个节点上的价格等于以下数值中的最大值：①期权立即行使后的价格；②期权被再持有Δt时间的价格期望值的贴现。</p><p>蒙特卡罗模拟法是利用随机数对衍生产品标的变量在风险中性世界里的不同路径进行模拟的一种方法。对于每一条路径，我们均可以得出衍生产品收益的贴现值，贴现值的算术平均即衍生产品价格的近似值。</p><p>有限差分法是将衍生产品价格所满足的微分方程转换为差分方程后再求解。与树形法类似，计算衍生产品的价格是从期限的最后时刻开始，再倒推到期限的初始时刻。显式法在功能上与三叉树等价，隐式有限差分比显式有限差分更为复杂，但其优点是用户不需要为取得收敛性而进行任何特殊处理。</p><p>在实际中，选择哪种方法取决于被估价的衍生产品的特性，以及用户对所得数值解的精确度要求。蒙特卡罗模拟法从衍生产品的期限开始运作到期限的结束。蒙特卡罗模拟法可用于对欧式期权定价，但也能用来处理复杂的收益形式。当标的资产数量增加时，这一方法的相对效率较高。树形法和有限差分法的计算从期限的末端开始，倒退到期限的开始，而且这两种方法均既可用于欧式期权，也可用于美式期权。但对于最终收益既依赖标的变量历史值，也依赖当前值的情形，应用树形法和有限差分法会很困难。此外，当衍生产品包括3个或更多的标的变量时，树形法和有限差分法的计算量会很大。</p><h2 id=推荐阅读>推荐阅读<a class=anchor href=#%e6%8e%a8%e8%8d%90%e9%98%85%e8%af%bb>#</a></h2><p>一般性文献</p><p>Clewlow, L., and C. Strickland, Implementing Derivatives Models. Chichester: Wiley, 1998.</p><p>Press, W. H., S. A. Teukolsky, W. T. Vetterling, and B. P. Flannery, Numerical Recipes in C: The Art of Scientific Computing, 3rd edn. Cambridge University Press, 2007.</p><h2 id=关于树形算法>关于树形算法<a class=anchor href=#%e5%85%b3%e4%ba%8e%e6%a0%91%e5%bd%a2%e7%ae%97%e6%b3%95>#</a></h2><p>Cox, J.C, S. A. Ross, and M. Rubinstein. "Option Pricing: A Simplified Approach," Journal of Financial Economics, 7 (October 1979): 229–264.</p><p>Figlewski, S., and B. Gao. “The Adaptive Mesh Model: A New Approach to Efficient Option Pricing," Journal of Financial Economics, 53 (1999): 313–351.</p><p>Hull, J.C., and A. White, "The Use of the Control Variate Technique in Option Pricing," Journal of Financial and Quantitative Analysis, 23 (September 1988): 237–251.</p><p>Rendleman, R., and B. Bartter, “Two State Option Pricing," Journal of Finance, 34 (1979): 1092-1110.</p><h2 id=关于蒙特卡罗模拟法>关于蒙特卡罗模拟法<a class=anchor href=#%e5%85%b3%e4%ba%8e%e8%92%99%e7%89%b9%e5%8d%a1%e7%bd%97%e6%a8%a1%e6%8b%9f%e6%b3%95>#</a></h2><p>Boyle, P.P., “Options: A Monte Carlo Approach," Journal of Financial Economics, 4 (1977): 323-338.</p><p>Boyle, P.P., M. Broadie, and P. Glasserman. “Monte Carlo Methods for Security Pricing," Journal of Economic Dynamics and Control, 21 (1997): 1267–1322.</p><p>Broadie, M., P. Glasserman, and G. Jain. “Enhanced Monte Carlo Estimates for American Option Prices," Journal of Derivatives, 5 (Fall 1997): 25–44.</p><h2 id=关于有限差分>关于有限差分<a class=anchor href=#%e5%85%b3%e4%ba%8e%e6%9c%89%e9%99%90%e5%b7%ae%e5%88%86>#</a></h2><p>Hull, J.C., and A. White, “Valuing Derivative Securities Using the Explicit Finite Difference Method," Journal of Financial and Quantitative Analysis, 25 (March 1990): 87–100.</p><p>Wilmott, P., Derivatives: The Theory and Practice of Financial Engineering. Chichester: Wiley, 1998.</p><h2 id=练习题>练习题<a class=anchor href=#%e7%bb%83%e4%b9%a0%e9%a2%98>#</a></h2><p>21.1 在美式期权的希腊值delta、gamma、vega、theta和rho中，哪一个可以通过构造单个二叉树来估计？</p><p>21.2 计算一个3个月期限的美式看跌期权价格，这里的标的股票不支付股息，当前价格为60美元，执行价格为60美元，无风险利率为每年10%，波动率为每年45%。构造时间段为1个月的二叉树为这一期权定价。</p><p>21.3 解释当采用树形结构对美式期权定价时，如何应用控制变量技巧。</p><p>21.4 计算9个月期限的玉米期货欧式看涨期权价格，玉米期货的当前价格为198美分，执行价格为200美分，年化无风险利率为8%，年化波动率为30%。构造一个时长3个月的二叉树为这个期权定价。</p><p>21.5 考虑一个期权，其最终收益等于股票最终价格与期限内股票平均价格的差额，这一期权能否用二叉树定价？解释你的答案。</p><p>21.6 “对于支付股息的股票，股价的树形不重合，但从股价中减去股息的贴现值后，其树形重合。”解释这一论点。</p><p>21.7 说明在第21.4节脚注所示的情况下，应用CRR二叉树时，将出现负概率值。</p><p>21.8 利用间隔抽样抽取100个样本来改善业界事例21-1和表21-1中关于π近似值的精度。</p><p>21.9 说明为什么蒙特卡罗模拟法不能很容易地用来对美式衍生产品定价。</p><p>21.10 考虑某个9个月期限的无股息股票美式看跌期权，执行价格为49美元，股票的当前价格为50美元，年化无风险利率为5%，年化波动率为30%。采用三步二叉树对期权定价。</p><p>21.11 采用三步二叉树对一个9个月期限的小麦期货美式看涨期权定价。期货的当前价格为400美分，执行价格为420美分，无风险利率为每年6%，波动率为每年35%。由二叉树估计期权的delta。</p><p>21.12 某股票上3个月期限的美式看涨期权的执行价格为20美元，股票价格为20美元，无风险利率为每年3%，波动率为每年25%，在1.5个月时，股票将支付2美元股息。定价时采用三步二叉树。</p><p>21.13 某1年期无股息股票美式看跌期权的执行价格为18美元，股票的当前价格为20美元，无风险利率为每年15%，股票价格的波动率为每年40%。通过Deri-vaGem软件并采用4步、步长为3个月的二叉树为期权定价。展示树形结构，并验证树的最后一步以及倒数第2步的期权价格的正确性。采用DerivaGem对相应的欧式期权定价。利用控制变量技巧提高美式期权近似值的精度。</p><p>21.14 考虑某2个月期限的美式股指看跌期权，期权的执行价格为480，股指的当前值为484，年化无风险利率为10%，年化股指股息收益率为3%，年化波动率为25%。将期权期限分为4个步长为半个月的区间。采用树形结构为这一期权进行定价。</p><p>21.15 当采用树形方法时，如何应用控制变量技巧改进美式期权的delta估计值？</p><p>21.16 假设我们采用蒙特卡罗模拟法为某无股息股票的欧式看涨期权定价，股价的波动率为随机。解释如何应用控制变量技巧和对偶变量技巧改进计算效率。解释在同时应用控制变量技巧和对偶变量技巧时，为什么需要计算6个期权值？</p><p>21.17 说明当采用隐式有限差分法对美式看涨期权定价时式(21-27)~式(21-30)的变化情况。</p><p>21.18 考虑某4个月期限的无股息股票美式看跌期权，期权的执行价格为21美元，股票的当前价格为20美元，无风险利率为每年10%，波动率为每年30%。采用显式有限差分法对期权定价，在计算中采用4美元的价格间隔和1个月的时间间隔。</p><p>21.19 黄铜的即期价格为每磅0.60美元。假定期货价格（每磅的美元数量）如下所示。</p><table><tr><td>3 个月</td><td>0.59</td></tr><tr><td>6 个月</td><td>0.57</td></tr><tr><td>9 个月</td><td>0.54</td></tr><tr><td>12 个月</td><td>0.50</td></tr></table><p>黄铜价格的年化波动率为40%，年化无风险利率为6%。采用二叉树对执行价格为0.60美元，期限为1年的美式看涨期权定价。在计算过程中将期限分成4个长度为3个月的时间区间（提示：如第18.6节所示，在风险中性世界里，期货价格等于将来价格的期望值）。</p><p>21.20 采用练习题21.19的二叉树对以下证券定价：该证券在一年后的收益为x2，其中x为黄铜价格。</p><p>21.21 在显式有限差分法中，在什么时候边界条件S=0和S→∞会影响衍生产品价格的估计值？</p><p>21.22 你应如何采用对偶变量法改善业界事例21-2和表21-2中欧式期权近似值的精度？</p><p>21.23 一家公司发行了3年期的可转换债券，面值为25美元。证券持有者可在任何时刻将债券转换为两股公司股票。当股票价格高于或等于18美元时，公司可提前赎回债券，从而强制转换。假定公司将会在最早的时刻强制转换债券，可转换债券所满足的边界条件是什么？假定利率为常数，你将如何利用有限差分法对可转换债券定价？假定公司无违约风险。</p><p>21.24 假定样本i和样本j之间的相关系数为ρi,j，提供通过标准正态分布抽取3个随机样本的公式。</p><p>21.25 考虑一美式看跌期权，期权持有者有权在1年末以每瑞士法郎0.80美元的价格卖出瑞士法郎。瑞士法郎汇率的年化波动率为10%，美元的无风险利率为6%，瑞士法郎的无风险利率为3%，当前的汇率为0.81。采用三步二叉树给这一期权定价。利用你所构造的树形估计期权的delta。</p><p>21.26 白银期货上1年期的美式看跌期权执行价格为9美元。期货的当前价格为8.50美元，年化无风险利率为12%，期货价格的年化波动率为25%。使用DerivaGem软件，并以步长为3个月的4步二叉树对期权定价。显示树形结果并验证最后一步与倒数第2步节点上期权价格的正确性。采用DerivaGem对相应的欧式期权定价，并采用控制变量技巧改善美式期权价格的精度。</p><p>21.27 当采用第21.4节里给出的其他构造树形结构的方法对期权定价时：</p><p>(a)在第21.4节里给出的二叉树与股票价格的对数在Δt时间段变化的均值和方差一致。</p><p>(b)证明当Δt2等高阶项被忽略时，第21.4节中给出的三叉树与股票价格的对数在Δt时间区间里的变化均值和方差一致。</p><p>(c)采用第21.4节里的另一种方式构造三叉树，在每个节点上，股票价格上升、取中间值、下降的概率分别为1/6、2/3、1/6，假定价格由S分别可以变化为Su、Sm、Sd，其中m2=ud。在构造树形结构时，使股票价格对数变化的均值和方差得以匹配。</p><p>21.28 利用软件DerivaGem的Application Builder功能检验由二叉树所得出的期权结果在步数增大时趋向于真解的收敛性（见图21-4和DerivaGem的Sample Application A）。考虑关于某股指的看跌期权，股值取值为900，执行价格为900，无风险利率为5%，股指股息收益率为2%，期限为2年：</p><p>(a)对于波动率等于20%的欧式期权，生成类似于SampleApplication A中关于收敛性的结果。</p><p>(b)对于波动率等于20%的美式期权，生成类似于SampleApplication A中关于收敛性的结果。</p><p>(c)波动率等于20%，采用控制变量技巧，画出美式期权价格与二叉树步数之间函数关系的图形。</p><p>(d)假定美式期权的市场价格为85.0。画出由二叉树估计的隐含波动率与二叉树步数之间函数关系的图形。</p><p>21.29 从例21-3的树形上估计delta、gamma和theta。解释如何理解这些参数。</p><p>21.30 在例21-4中，在第9个月最下面的节点上提前行使期权有多大益处？</p><p>[1] 为了说明这一点，我们需要注意式(21-4)和式(21-7)应严格满足式(21-1)和式(21-3)中的条件。指数函数ex可以展开为$1 + \mathrm{x} + \mathrm{x} 2 / 2 + \cdots$ 。当我们忽略 $\Delta$ t的高阶项时，式(21-5)意味着 $\mathtt{u} {=} 1 + \mathtt{o}$ ${\sqrt{\Delta t}} + {\frac{1} {2}} \sigma^{2} \Delta t$ ，式(21-6)意味着 $d = 1 - \sigma \ \sqrt{\Delta t} \ + \frac{1} {2} \sigma^{2} \Delta t$ ，再有 $\mathrm{{e ( r^{-} q )} ~} \Delta \mathrm{{t} = 1 + ( r^{-} q )} \Delta \mathrm{{}}$ t和 $\mathrm{e 2 ( r \mathrm{-} q ) ~} \Delta \mathrm{t} \mathrm{=} 1 + 2 ( r \mathrm{-} \mathrm{q} ) \Delta \mathrm{t} \mathrm{~} _{\circ}$ 将这些表达式代入后，我们可以看到当忽略 $\Delta$ t的高阶项后，式(21-2)成立。</p><p>[2] 如果我们要计算更精确的delta及gamma，我们可以建立在- $- 2 \Delta$ t开始的二叉树上，并假定在那一刻股票价格为S0。对应于0时刻，我们也因此会得出3个对应于不同股价的期权价格。</p><p>[3] 如第15.12节所示，在实践中，由于分析人员常常使用通过他们的模型而由市场价格所隐含的波动率（所得出的即σ*——波动率），所以没有必要明确地考虑σ和σ*之间的区别。</p><p>[4] 当时间步骤很大，并使得 $\sigma < \ \left| \ \left( \boldsymbol{r} - \boldsymbol{q} \right) \ \sqrt{\Delta t} \ \right|$ 。考克斯、罗斯和鲁宾斯坦二叉树将会有负的概率。但在这里描述的方法没有这些缺点。</p><p>[5] 如果S为无股息股票的价格， $\hat{\mu} = r$ ；如果S为汇率，$\hat{\mu} = r - r_{f}$ 等。注意，如第13.7节所述，波动率在风险中性世界里和现实世界里是一样的。</p><p>$\hat{\ b {m}} _{i}$ $\frac{\left[ 6 \right]} {\theta \textrm{i}}$ 注意，变量si、 、和ρik并不一定为常数，它们可以 依赖</p><p>[7] 解方程时并不需要对矩阵求逆。式(21-31)在j=1时可将fN-1，2由fN-1，1表达；在j=2时，与j=1时的方程一起可将fN-1，3由fN-1，1表达等。在j=M-2时与前面的方程一起，可将fN-1，M-1由fN-1，1表达。最终对应j=M-1的方程可用来对fN-1，1求解。一旦fN-1，1确定后，我们可以得出其他fN-1，j。</p><p>[8] 有限差分法的一个通用规则是当ΔS和Δt趋于0时，应保证$\Delta \ S \ F \ \sqrt{\Delta t}$ 成一定比例。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><nav class=book-nav><div class="flex justify-between"><div class=book-nav-prev><a href=/digital-library/books/options-futures-derivatives/ch20.html class=book-nav-link>← 第20章</a></div><div class=book-nav-next><a href=/digital-library/books/options-futures-derivatives/ch22.html class=book-nav-link>第22章 →</a></div></div></nav><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#211-二叉树>21.1 二叉树</a></li><li><a href=#2111-风险中性定价>21.1.1 风险中性定价</a></li><li><a href=#2112-确定pu和d>21.1.2 确定p、u和d</a></li><li><a href=#2113-资产价格的树形>21.1.3 资产价格的树形</a></li><li><a href=#2114-在树形上倒推计算>21.1.4 在树形上倒推计算</a></li><li><a href=#2115-代数表达式>21.1.5 代数表达式</a></li><li><a href=#2116-估计delta与其他希腊值>21.1.6 估计delta与其他希腊值</a></li><li><a href=#212-利用二叉树对股指货币与期货合约上的期权定价>21.2 利用二叉树对股指、货币与期货合约上的期权定价</a></li><li><a href=#213-支付股息股票的二叉树模型>21.3 支付股息股票的二叉树模型</a></li><li><a href=#2131-股息收益率是已知的情形>21.3.1 股息收益率是已知的情形</a></li><li><a href=#2132-已知股息金额数量的情形>21.3.2 已知股息金额数量的情形</a></li><li><a href=#2133-控制变量技巧>21.3.3 控制变量技巧</a></li><li><a href=#214-构造树形的其他方法>21.4 构造树形的其他方法</a></li><li><a href=#三叉树>三叉树</a></li><li><a href=#215-依赖时间的参数>21.5 依赖时间的参数</a></li><li><a href=#216-蒙特卡罗模拟法>21.6 蒙特卡罗模拟法</a></li><li><a href=#2161-依赖多个市场变量的衍生产品>21.6.1 依赖多个市场变量的衍生产品</a></li><li><a href=#2162-从正态分布中产生随机样本>21.6.2 从正态分布中产生随机样本</a></li><li><a href=#2163-模拟次数>21.6.3 模拟次数</a></li><li><a href=#1691001-097--100>1.69/√1001. 097 √ 100</a></li><li><a href=#76810007087-1000>7.68/√10007.087 √1000</a></li><li><a href=#2164-通过树形抽样>21.6.4 通过树形抽样</a></li><li><a href=#2165-计算希腊值>21.6.5 计算希腊值</a></li><li><a href=#2166-应用>21.6.6 应用</a></li><li><a href=#217-方差缩减程序>21.7 方差缩减程序</a></li><li><a href=#2171-对偶变量技巧>21.7.1 对偶变量技巧</a></li><li><a href=#2172-控制变量技巧>21.7.2 控制变量技巧</a></li><li><a href=#2173-重点抽样法>21.7.3 重点抽样法</a></li><li><a href=#2174-间隔抽样法>21.7.4 间隔抽样法</a></li><li><a href=#2175-矩匹配法>21.7.5 矩匹配法</a></li><li><a href=#2176-利用伪随机数序列>21.7.6 利用伪随机数序列</a></li><li><a href=#218-有限差分法>21.8 有限差分法</a></li><li><a href=#2181-隐式有限差分法>21.8.1 隐式有限差分法</a></li><li><a href=#2182-显式有限差分法>21.8.2 显式有限差分法</a></li><li><a href=#2183-变量替换>21.8.3 变量替换</a></li><li><a href=#2184-与三叉树法的关系>21.8.4 与三叉树法的关系</a></li><li><a href=#2185-其他差分法>21.8.5 其他差分法</a></li><li><a href=#2186-有限差分法的应用>21.8.6 有限差分法的应用</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#关于树形算法>关于树形算法</a></li><li><a href=#关于蒙特卡罗模拟法>关于蒙特卡罗模拟法</a></li><li><a href=#关于有限差分>关于有限差分</a></li><li><a href=#练习题>练习题</a></li></ul></nav></div></aside></main></body></html>

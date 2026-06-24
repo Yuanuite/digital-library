@@ -1,482 +1,229 @@
-<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="BSM定价公式"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch15.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="第15章"><meta property="og:description" content="BSM定价公式"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-25T00:38:50+08:00"><meta itemprop=name content="第15章"><meta itemprop=description content="BSM定价公式"><meta itemprop=dateModified content="2026-06-25T00:38:50+08:00"><meta itemprop=wordCount content="1169"><title>第15章 • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch15.html><link rel=stylesheet href=/digital-library/book.min.3e23691350be517993d48d54e83ad8cdb3ba65cbe241510666b8cea7648f70d1.css integrity="sha256-PiNpE1C+UXmT1I1U6DrYzbO6ZcviQVEGZrjOp2SPcNE=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.47665ac3627003a65d3d940453d201c36bbd431e78e2a3055c82577347046dd2.js integrity="sha256-R2Zaw2JwA6ZdPZQEU9IBw2u9Qx544qMFXIJXc0cEbdI=" crossorigin=anonymous></script><script>(function(){var e,t=localStorage.getItem("book-theme");if(!t)return;e=document.documentElement,e.dataset.theme=t,e.style.colorScheme=t,t==="dark"?(e.style.setProperty("--body-background","#1a1a1a"),e.style.setProperty("--body-font-color","#e0e0e0"),e.style.setProperty("--color-link","#4db6ac"),e.style.setProperty("--gray-100","#2d2d2d"),e.style.setProperty("--gray-200","#3d3d3d"),e.style.setProperty("--gray-500","#a0a0a0"),e.style.setProperty("--text-primary","#f5f5f7"),e.style.setProperty("--text-secondary","#a1a1a6"),e.style.setProperty("--surface","rgba(255,255,255,0.06)"),e.style.setProperty("--hairline","rgba(255,255,255,0.14)"),e.style.setProperty("--hairline-strong","rgba(255,255,255,0.24)")):(e.style.setProperty("--body-background","#fff"),e.style.setProperty("--body-font-color","#000"),e.style.setProperty("--color-link","#00897b"),e.style.setProperty("--gray-100","#f0f0f0"),e.style.setProperty("--gray-200","#d0d0d0"),e.style.setProperty("--gray-500","#707070"),e.style.setProperty("--text-primary","#1d1d1f"),e.style.setProperty("--text-secondary","#6e6e73"),e.style.setProperty("--surface","#f5f5f7"),e.style.setProperty("--hairline","rgba(0,0,0,0.1)"),e.style.setProperty("--hairline-strong","rgba(0,0,0,0.18)"))})()</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script defer src=/digital-library/code-copy.js></script><script defer src=/digital-library/abbr-tooltip.js></script><script defer src=/digital-library/katex-init.js></script><script defer src=/digital-library/theme-toggle.js></script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="BSM定价模型"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch15.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="第15章"><meta property="og:description" content="BSM定价模型"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-25T01:25:59+08:00"><meta itemprop=name content="第15章"><meta itemprop=description content="BSM定价模型"><meta itemprop=dateModified content="2026-06-25T01:25:59+08:00"><meta itemprop=wordCount content="3192"><title>第15章 • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch15.html><link rel=stylesheet href=/digital-library/book.min.3e23691350be517993d48d54e83ad8cdb3ba65cbe241510666b8cea7648f70d1.css integrity="sha256-PiNpE1C+UXmT1I1U6DrYzbO6ZcviQVEGZrjOp2SPcNE=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.d2946a832021f7e9858c14b364ee46037eda966c3a5284b187db9e863a8b319a.js integrity="sha256-0pRqgyAh9+mFjBSzZO5GA37almw6UoSxh9uehjqLMZo=" crossorigin=anonymous></script><script>(function(){var e,t=localStorage.getItem("book-theme");if(!t)return;e=document.documentElement,e.dataset.theme=t,e.style.colorScheme=t,t==="dark"?(e.style.setProperty("--body-background","#1a1a1a"),e.style.setProperty("--body-font-color","#e0e0e0"),e.style.setProperty("--color-link","#4db6ac"),e.style.setProperty("--gray-100","#2d2d2d"),e.style.setProperty("--gray-200","#3d3d3d"),e.style.setProperty("--gray-500","#a0a0a0"),e.style.setProperty("--text-primary","#f5f5f7"),e.style.setProperty("--text-secondary","#a1a1a6"),e.style.setProperty("--surface","rgba(255,255,255,0.06)"),e.style.setProperty("--hairline","rgba(255,255,255,0.14)"),e.style.setProperty("--hairline-strong","rgba(255,255,255,0.24)")):(e.style.setProperty("--body-background","#fff"),e.style.setProperty("--body-font-color","#000"),e.style.setProperty("--color-link","#00897b"),e.style.setProperty("--gray-100","#f0f0f0"),e.style.setProperty("--gray-200","#d0d0d0"),e.style.setProperty("--gray-500","#707070"),e.style.setProperty("--text-primary","#1d1d1f"),e.style.setProperty("--text-secondary","#6e6e73"),e.style.setProperty("--surface","#f5f5f7"),e.style.setProperty("--hairline","rgba(0,0,0,0.1)"),e.style.setProperty("--hairline-strong","rgba(0,0,0,0.18)"))})()</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script defer src=/digital-library/code-copy.js></script><script defer src=/digital-library/abbr-tooltip.js></script><script defer src=/digital-library/katex-init.js></script><script defer src=/digital-library/theme-toggle.js></script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/digital-library/index.html><span>Yuan's Library</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=搜索 aria-label=搜索 maxlength=64>
 <kbd class=book-search-kbd>⌘K</kbd><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><button id=theme-toggle class=theme-toggle aria-label=切换深色/浅色模式 title=切换深色/浅色模式>
 <span class=theme-icon>🌙</span></button><ul><li><a href=/digital-library/books/index.html>书架</a><li><span class=menu-category>机器学习</span><ul><li><a href=/digital-library/books/stanford-ml-notes/index.html>斯坦福机器学习教程笔记</a></li></ul></li><li><span class=menu-category>灵性</span><ul><li><a href=/digital-library/books/conversations-with-god/index.html>与神对话</a></li></ul></li><li><span class=menu-category>工程</span><ul><li><a href=/digital-library/books/lun-system-engineering/index.html>论系统工程（新世纪版）</a></li></ul></li><li><span class=menu-category>金融</span><ul><li><a href=/digital-library/books/why-stock-markets-crash/index.html>Why Stock Markets Crash</a></li><li><a href=/digital-library/books/trading-and-exchanges/index.html>Trading and Exchanges</a></li><li><a href=/digital-library/books/options-futures-derivatives/index.html>期权、期货及其他衍生产品</a><ul><li><a href=/digital-library/books/options-futures-derivatives/preface.html>前言与导览</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch01.html>第1章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch02.html>第2章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch03.html>第3章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch04.html>第4章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch05.html>第5章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch06.html>第6章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch07.html>第7章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch08.html>第8章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch09.html>第9章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch10.html>第10章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch11.html>第11章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch12.html>第12章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch13.html>第13章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch14.html>第14章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch15.html class=active>第15章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch16.html>第16章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch17.html>第17章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch18.html>第18章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch19.html>第19章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch20.html>第20章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch21.html>第21章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch22.html>第22章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch23.html>第23章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch24.html>第24章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch25.html>第25章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch26.html>第26章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch27.html>第27章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch28.html>第28章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch29.html>第29章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch30.html>第30章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch31.html>第31章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch32.html>第32章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch33.html>第33章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch34.html>第34章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch35.html>第35章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch36.html>第36章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch37.html>第37章</a></li></ul></li></ul></li></li><li><a href=/digital-library/notes.html>欢迎</a></li><li><a href=/digital-library/papers/index.html>论文</a></li><li><a href=/digital-library/reference/index.html>元素模板</a></li><li><a href=/digital-library/tags/index.html>Tags</a></li><li><a href=/digital-library/about.html>关于本站</a></li></ul><ul><li><a href=https://github.com/yuanuite/digital-library target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/digital-library/icons/menu.svg class=book-icon alt=Menu></label><h3>第15章</h3><div class=header-actions><label for=menu-control class=mobile-search-trigger onclick='setTimeout(()=>document.querySelector("#book-search-input")?.focus(),350)' aria-label=搜索><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-</label><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#151-股票价格的对数正态分布性质>15.1 股票价格的对数正态分布性质</a></li><li><a href=#152-收益率的分布>15.2 收益率的分布</a></li><li><a href=#153-期望收益>15.3 期望收益</a></li><li><a href=#154-波动率>15.4 波动率</a><ul><li><a href=#chapter_207.xhtml_A33d50111-77f3-4d19-8441-33ada8e3b398>15.4.1 由历史数据所估计的波动率</a></li><li><a href=#chapter_207.xhtml_A52020113-5592-4b9f-a0a9-6987db35456a>15.4.2 交易日天数与日历天数</a></li></ul></li><li><a href=#155-布莱克-斯科尔斯-默顿微分方程的概念>15.5 布莱克-斯科尔斯-默顿微分方程的概念</a></li><li><a href=#156-布莱克-斯科尔斯-默顿微分方程的推导>15.6 布莱克-斯科尔斯-默顿微分方程的推导</a><ul><li><a href=#chapter_209.xhtml_A227b0117-0e11-4653-a65c-d7f358ecce13>15.6.1 永续衍生产品</a></li><li><a href=#chapter_209.xhtml_Ae4e50117-37be-4eca-bf99-b37162803133>15.6.2 可交易衍生产品的价格</a></li></ul></li><li><a href=#157-风险中性定价>15.7 风险中性定价</a></li><li><a href=#158-布莱克-斯科尔斯-默顿定价公式>15.8 布莱克-斯科尔斯-默顿定价公式</a><ul><li><a href=#chapter_211.xhtml_A01bb011a-95e9-4706-bf23-784e8b58b4ce>15.8.1 如何理解N(d1)和N(d2)</a></li><li><a href=#chapter_211.xhtml_A73c2011a-0ac6-46b0-8f73-96336082549e>15.8.2 布莱克-斯科尔斯-默顿公式的性质</a></li></ul></li><li><a href=#159-累积正态分布函数>15.9 累积正态分布函数</a></li><li><a href=#1510-权证与雇员股票期权>15.10 权证与雇员股票期权</a></li><li><a href=#1511-隐含波动率>15.11 隐含波动率</a></li><li><a href=#1512-股息>15.12 股息</a><ul><li><a href=#chapter_215.xhtml_A2777011f-e4ff-4a03-bed8-d75a3156e516>15.12.1 欧式期权</a></li><li><a href=#chapter_215.xhtml_Ab4400120-e5b6-48aa-aace-22f72639db60>15.12.2 美式期权</a></li><li><a href=#chapter_215.xhtml_A39ef0121-0ed0-4eb1-a7c5-8c98e6602bb9>15.12.3 布莱克近似法</a></li></ul></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#概念思考题>概念思考题</a></li><li><a href=#练习题>练习题</a></li><li><a href=#附录15-a布莱克-斯科尔斯-默顿公式的证明>附录15 A布莱克-斯科尔斯-默顿公式的证明</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=第15章>第15章<a class=anchor href=#%e7%ac%ac15%e7%ab%a0>#</a></h1><p>20世纪70年代初，费希尔·布莱克、迈伦·斯科尔斯和罗伯特·默顿在对欧式期权定价上取得了重大突破，
-[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See F. Black and M. Scholes, "The Pricing
-of Options and Corporate Liabilities," Journal of PoliticalEconomy
-81(May/June 1973): 637-659；R. C. Merton, "Theory of Rational Option
-Pricing," Bell Journal of Economics and Management Science, 4(Spring
-1973): 141-183.】 ]{.zuixiaoyao_zhushi_text}
-他们发展了后来被称为布莱克-斯科尔斯或布莱克-斯科尔斯-默顿的模型。该模型对于交易员如何对期权定价与对冲都产生了重大影响。这一模型的重要性在1997年得到了肯定：迈伦·斯科尔斯与罗伯特·默顿也因此获得了诺贝尔经济学奖。不幸的是费希尔·布莱克在1995年去世，否则，毫无疑问他也会成为这项诺贝尔奖的得主之一。</p><p>布莱克、斯科尔斯和默顿是如何取得突破的呢？在他们之前，研究人员也做了类似的假设，并且正确地计算了欧式期权的期望收益，但是如第13.2节所述，选取正确的贴现率是非常困难的。布莱克和斯科尔斯利用资本资产定价模型（见附录3A）确定了市场对期权所要求的回报与对股票所要求的回报之间的关系。由于这种关系既取决于股票价格又取决于时间，所以这样做并不容易。默顿的处理方式与布莱克和斯科尔斯不同，他的方法涉及由期权与股票组成的无风险组合，因而在一个很短的时间区间内，组合的收益率必须是无风险利率。这与我们在第13.1节里的讲述类似，但是更为复杂，原因是组合的价值随时间连续变化。默顿的方法比布莱克和斯科尔斯的方法更通用，因为这种方法不依赖于资本资产定价模型的假设。</p><p>在这一章里，我们将谈到如何用默顿的方法推导布莱克-斯科尔斯-默顿模型，并解释如何从历史数据估计波动率或由期权价格计算隐含波动率。本章还将说明如何使用在第13章中引进的风险中性定价方法，以及如何推广布莱克-斯科尔斯-默顿模型为支付股息的股票期权（包括欧式和美式期权）定价。</p><h2 id=151-股票价格的对数正态分布性质>15.1 股票价格的对数正态分布性质<a class=anchor href=#151-%e8%82%a1%e7%a5%a8%e4%bb%b7%e6%a0%bc%e7%9a%84%e5%af%b9%e6%95%b0%e6%ad%a3%e6%80%81%e5%88%86%e5%b8%83%e6%80%a7%e8%b4%a8>#</a></h2><p>布莱克、斯科尔斯和默顿用来描述股票价格行为的模型正是我们在第14章中建立的模型。该模型假设无股息股票在短时间内的百分比变化具有正态分布。定义</p><p>μ：股票年化的短期期望收益率；</p><p>σ：股票价格的波动率。</p><p>在Δt时间内股票收益的均值和标准差分别近似地等于μΔt和σ
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_271_01.jpg alt>
-{.content-image-class
-ratio="0.700" w="90px" w-new="63px"
-style="max-width:90px;max-height:63px"} ，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_271_02.jpg alt>
-{ratio="0.102"
-w="1046px" w-new="107px"
-style="max-width:1046px;max-height:107px;width:100%"}</p><p>其中ΔS为股票价格在Δt时间内的变化，ϕ(m,v)代表均值为m，方差为v的正态分布。[这正是式(14-9)]。</p><p>在第14.7节中我们曾证明</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_271_03.jpg alt>
-{ratio="0.171"
-w="654px" w-new="112px"
-style="max-width:654px;max-height:112px;width:100%"}</p><p>因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_271_04.jpg alt>
-{ratio="0.109"
-w="1107px" w-new="121px"
-style="max-width:1107px;max-height:121px;width:100%"}</p><p>和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_271_05.jpg alt>
-{ratio="0.096"
-w="1161px" w-new="111px"
-style="max-width:1161px;max-height:111px;width:100%"}</p><p>其中ST是在未来时间T时的股票价格，S0是在时间0的股票价格。在这里没有做任何近似。lnST服从正态分布，所以ST服从对数正态分布。lnST的均值是lnS0+(μ-σ2/2)T，标准差是
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_271_06.jpg alt>
-{.content-image-class
-ratio="0.568" w="95px" w-new="54px"
-style="max-width:95px;max-height:54px"} 。</p><p>【例15-1】
-考虑一个初始价格为40美元的股票，该股票的期望收益为每年16%，波动率为每年20%。由式(15-3)我们知道，股票价格ST在6个月内的概率分布是</p><p>lnST～ϕ[ln 40+(0.16-0.22/2)×0.5,0.22×0.5]</p><p>lnST～ϕ(3.759,0.02)</p><p>一个服从正态分布的变量取值落在与均值的距离小于1.96倍标准差范围内的概率为95%。在本例中，标准差为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_271_07.jpg alt>
-{.content-image-class
-ratio="0.465" w="127px" w-new="59px"
-style="max-width:127px;max-height:59px"}
-=0.141，因此在95%的置信度下，我们有</p><p>3.759-1.96×0.141&lt;lnST&lt;3.759+1.96×0.141</p><p>这可以写成</p><p>e3.759-1.96×0.141&lt;ST&lt;e3.759+1.96×0.141</p><p>或</p><p>32.55&lt;ST&lt;56.56</p><p>因此，在6个月内股票价格介于32.55～56.56范围内的概率为95%。</p><p>具有对数正态分布的变量可以取零与无穷大之间的任何值，图15-1展示了对数正态分布的形状。与正态分布不同的是，它呈偏态。因此它的均值(mean)、中位数(median)以及众数(mode)均不相等。由式(15-3)以及对数正态分布的性质，我们可以证明ST的期望值E(ST)为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_271_08.jpg alt>
-{ratio="0.533"
-w="589px" w-new="314px"
-style="max-width:589px;max-height:314px;width:100%"}</p><p>图15-1 对数正态分布</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_272_01.jpg alt>
-{ratio="0.076"
-w="999px" w-new="76px"
-style="max-width:999px;max-height:76px;width:100%"}</p><p>ST的方差var(ST)可以表示为 [ ㊟ ]{.zuixiaoyao_zhushi} [
-【关于式(15-4)和式(15-5)的证明可以在网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes里的Technical
-Note 2中找到。关于对数正态分布性质更详细的讨论，见J. Aitchison和J. A. C.
-Brown，The Log-normal Distribution. Cambridge University Press, 1966。】
-]{.zuixiaoyao_zhushi_text}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_272_02.jpg alt>
-{ratio="0.070"
-w="1108px" w-new="78px"
-style="max-width:1108px;max-height:78px;width:100%"}</p><p>【例15-2】
-假设某股票，其当前价格为20美元，期望收益为每年20%，波动率为每年40%。股票在1年内的价格期望和方差由下面的式子给出</p><p>E(ST)=20e0.2×1=24.43和var(ST)=400e2×0.2×1(e0.42×1-1)=103.54</p><p>1年内股票价格的标准差为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_272_03.jpg alt>
-{.content-image-class
-ratio="0.366" w="161px" w-new="59px"
-style="max-width:161px;max-height:59px"} ，即10.18。</p><h2 id=152-收益率的分布>15.2 收益率的分布<a class=anchor href=#152-%e6%94%b6%e7%9b%8a%e7%8e%87%e7%9a%84%e5%88%86%e5%b8%83>#</a></h2><p>由股票价格服从对数正态分布的性质出发，我们可以得出0与T之间连续复利收益率的概率分布。将0与T之间以连续复利的收益率记为x，那么</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_272_04.jpg alt>
-{ratio="0.195"
-w="966px" w-new="188px"
-style="max-width:966px;max-height:188px;width:100%"}</p><p>由式(15-2)得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_272_05.jpg alt>
-{ratio="0.108"
-w="1026px" w-new="111px"
-style="max-width:1026px;max-height:111px;width:100%"}</p><p>因此，连续复利收益率服从正态分布，其均值与标准差分别为μ-σ2/2和
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_272_06.jpg alt>
-{.content-image-class
-ratio="0.545" w="110px" w-new="60px"
-style="max-width:110px;max-height:60px"}
-。当T增大时，标准差x减小。为了理解这一点，我们可以考虑T=1和T=20两种情形：与1年的年平均收益估计相比，我们估计20年内的年平均收益比估计任意一年的平均收益更能确定。</p><p>【例15-3】
-假设某一股票，其期望收益为每年17%，波动率为每年20%，在3年内实现的平均收益（以连续复利计算）服从正态分布，均值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_272_07.jpg alt>
-{ratio="0.291"
-w="368px" w-new="107px"
-style="max-width:368px;max-height:107px;width:70%"}</p><p>即每年15%，标准差为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_272_08.jpg alt>
-{ratio="0.361"
-w="335px" w-new="121px"
-style="max-width:335px;max-height:121px;width:70%"}</p><p>即每年11.55%。因为一个服从正态分布的变量有95%的机会落在与其均值距离小于1.96倍标准方差的范围之内，因此，我们有95%的把握肯定在今后3年内实现的平均年收益率将会介于15-1.96×11.55=-7.6%与15+1.96×11.55=+37.6%之间。</p><h2 id=153-期望收益>15.3 期望收益<a class=anchor href=#153-%e6%9c%9f%e6%9c%9b%e6%94%b6%e7%9b%8a>#</a></h2><p>投资者从股票中所寻求的期望收益率μ与该股票的风险有关。风险越大，期望收益率也会越高。它还依赖于经济中的利率：当利率越高时，投资者对股票所要求的期望收益率也会越高。庆幸的是，我们不需要关心决定μ的任何细节。事实上，当利用标的股票价格表示期权价格时，期权价格与μ毫不相干。尽管如此，股票期望收益率的一个性质常常引起混淆，因此我们会特别解释这个性质。</p><p>我们的股票定价模型定义μΔt是股票在较短时间段Δt内的平均回报，由此我们可能会很自然地假设μ是股票以连续复利的期望收益。但事实并非如此。在一段长度为T的时间内，真正实现的连续复利的收益x是根据式(15-6)得出的</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_273_01.jpg alt>
-{ratio="0.483"
-w="232px" w-new="112px"
-style="max-width:232px;max-height:112px;width:50%"}</p><p>而且由式(15-7)，我们知道期望值E(x)=μ-σ2/2。</p><p>以连续复利形式计算的期望收益不等于μ的原因并不是那么一目了然，但十分重要。假定我们考虑大量长度为Δt的很短时间区间。定义Si为股票在第i个时间区间末的股票价格，ΔSi为Si+1-Si。在我们对股票价格所做的假设下，在每个小区间上股票价格的算术平均收益率大约为μ。换句话说，μΔt很接近于ΔSi/Si的算术平均值。然而，当表示成以区间Δt复利时，在数据所覆盖的总区间上收益的期望接近于μ-σ2/2，而不是μ。
-<a href=/digital-library/index.html>[1]</a>{#chapter_206.xhtml_B1}
-业界事例15-1描述的有关共同基金的数值例子对此进行了说明。</p><p>业界事例15-1</p><p>共同基金的收益率可能会令人误解</p><p>μ与μ-σ2/2的不同与共同基金收益报告存在的一个问题有密切关系。假定某共同基金经理报告过去5年内的年收益（以年复利计算）依次为15%、20%、30%、-20%和25%。</p><p>这些收益的算术平均值等于以上5个数值的总和除以5，即14%。但是如果一个投资者将资金投入该共同基金，并投资5年，那么其收益率会小于每年14%。100美元的投资在5年后的价值为</p><p>100×1.15×1.20×1.30×0.80×1.25=179.40（美元）</p><p>而以年复利14%的收益率计算，相应值将为</p><p>100×1.145=192.54（美元）</p><p>在5年后，终值179.40美元所对应的收益率为12.4%，这是因为</p><p>100×1.1245=179.40</p><p>那么，基金经理应该报告哪一个收益率呢？基金经理可能想做出以下陈述："在过去5年，我们平均每年的收益率为14%。"虽然这种说法没有错，但它会令人产生误解，而以下陈述就不太会使人产生误解："投资者在过去5年中将资金投入我们共同基金所得收益率为每年12.4%。"在某些地区，监管当局要求基金经理以第2种形式报告其收益率。</p><p>以上现象是数学中的一个著名结论：一组数据（不全部相等）的几何平均值总是小于算术平均值。在我们的例子中，收益每年的乘数项为1.15、1.20、1.30、0.8和1.25。这些数字的算术平均为1.140，而它们的几何平均值为1.124，即1加上年收益率在5年内的几何平均值。</p><p>为了以数学的方式解释原因，我们首先由式(15-4)开始</p><p>E(ST)=S0eμT</p><p>取对数，我们得出</p><p>ln[E(ST)]= ln(S0)+μT</p><p>我们可能会认为ln[E(ST)]=E[ln(ST)]，并由此得出E[ln(ST)]-ln(S0)=μT，即E[ln(ST/S0)]=μT，这也就得出了E(x)=μ。但是，因为ln是非线性函数。事实上ln[E(ST)]＞E[ln(ST)]，因此E[ln(ST/S0)]＜μT，从而E(x)＜μ（如上所述，E(x)=μ-σ2/2）。</p><h2 id=154-波动率>15.4 波动率<a class=anchor href=#154-%e6%b3%a2%e5%8a%a8%e7%8e%87>#</a></h2><p>股票的波动率σ用于度量股票收益所产生的不确定性。股票的波动率通常介于15%～60%。</p><p>由式(15-7)可知股票价格的波动率可以定义成按连续复利时股票在1年内所提供收益率的标准差。</p><p>当Δt很小时，式(15-1)显示σ2Δt近似地等于在Δt时间内股票价格变化百分比的方差。这说明
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_274_01.jpg alt>
-{.content-image-class
-ratio="0.473" w="129px" w-new="61px"
-style="max-width:129px;max-height:61px"}
-近似地等于在Δt时间内股票价格变化百分比的标准差。例如，一家公司股票的价格为50美元，波动率σ=0.3，即每年30%。对应于每周价格百分比变化的标准差近似地等于</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_274_02.jpg alt>
-{ratio="0.299"
-w="378px" w-new="113px"
-style="max-width:378px;max-height:113px;width:70%"}</p><p>在1周内股票价格有一个标准差的变化为50×0.0416，即2.08美元。</p><p>由标准差描述股票价格变化不定性的增长速度大约为时间持有期长度的平方根（至少在近似意义下）。例如，股票价格在4周内的标准差大约为股票价格在1周内标准差的两倍。</p><h3 id=chapter_207.xhtml_A33d50111-77f3-4d19-8441-33ada8e3b398 class=thirdTitle>15.4.1 由历史数据所估计的波动率<a class=anchor href=#chapter_207.xhtml_A33d50111-77f3-4d19-8441-33ada8e3b398>#</a></h3><p>为了以实证的方式估计股票价格的波动率，对股票价格的观察通常是在固定的区间内（如每天、每周或每个月）。定义</p><p>n+1：观测次数；</p><p>Si：第i个时间区间末的股票价格，i=0,1,...,n；</p><p>τ：时间区间的长度，以年为单位。</p><p>令</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_274_03.jpg alt>
-{ratio="0.207"
-w="579px" w-new="120px"
-style="max-width:579px;max-height:120px;width:100%"}</p><p>ui标准差的估计值s为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_275_01.jpg alt>
-{ratio="0.251"
-w="506px" w-new="127px"
-style="max-width:506px;max-height:127px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_275_02.jpg alt>
-{ratio="0.166"
-w="736px" w-new="122px"
-style="max-width:736px;max-height:122px;width:100%"}</p><p>其中
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_275_03.jpg alt>
-{.content-image-class
-ratio="1.562" w="32px" w-new="50px"
-style="max-width:32px;max-height:50px"} 为ui的均值。
-<a href=/digital-library/index.html>[2]</a>{#chapter_207.xhtml_B2}</p><p>由式(15-2)我们知道ui的标准差为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_275_04.jpg alt>
-{.content-image-class
-ratio="0.765" w="85px" w-new="65px"
-style="max-width:85px;max-height:65px"} 。因此，变量s是
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_275_05.jpg alt>
-{.content-image-class
-ratio="0.721" w="86px" w-new="62px"
-style="max-width:86px;max-height:62px"} 的估计值。所以σ本身可以被估计为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_275_06.jpg alt>
-{.content-image-class
-ratio="1.244" w="41px" w-new="51px"
-style="max-width:41px;max-height:51px"} ，其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_275_07.jpg alt>
-{ratio="0.718"
-w="163px" w-new="117px"
-style="max-width:163px;max-height:117px;width:50%"}</p><p>可以证明以上估计式的标准误差大约为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_275_08.jpg alt>
-{.content-image-class
-ratio="0.393" w="140px" w-new="55px"
-style="max-width:140px;max-height:55px"} 。</p><p>主动交易期权的价格通常不是根据基于历史数据的波动率计算的。本章后面看到，交易员使用隐含波动率。然而，基于历史数据的波动率估计被广泛用于风险管理。风险经理通常将τ设置为一天。
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【有趣的是，对波动率的估计往往会随着时间段t的缩短而增加。例如，τ等于一小时的值通常导致波动率估计高τ等于一天的值。】
-]{.zuixiaoyao_zhushi_text}
-风险经理必须处理的一个问题是：波动率往往会随着时间的推移而变化，有高波动时期和低波动时期，这将影响用于估计波动率的数据量（即n的选择）。如果波动率是恒定的，数据越多，估计的精确度也会越高，但σ确实会随时间变化，太老的历史数据对于预测将来波动率可能不太相干。一个折中的办法是采用最近90～180天内每天的收盘价数据。另外一种约定俗成的方法是将n设定为波动率所用于的天数。因此，如果波动率是用于计算两年期的期权，在计算中我们可以采用最近两年的日收益数据。估计波动率比较复杂的方法涉及GARCH模型，在第23章中我们将对此进行讨论。</p><p>【例15-4】 表15-1给出了在21个连续交易日里的股票价格序列。这时n=20</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_275_09.jpg alt>
-{ratio="0.143"
-w="796px" w-new="114px"
-style="max-width:796px;max-height:114px;width:100%"}</p><p>表15-1 波动率计算</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_275_10.jpg alt>
-{ratio="0.420"
-w="1682px" w-new="707px"
-style="max-width:1682px;max-height:707px;width:100%"}</p><p>日收益率标准差的估计值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_276_01.jpg alt>
-{ratio="0.180"
-w="650px" w-new="117px"
-style="max-width:650px;max-height:117px;width:100%"}</p><p>即1.216%。假设每年有252个交易日，τ=1/252，以上数据给出的波动率估计值为每年
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_276_02.jpg alt>
-{.content-image-class
-ratio="0.225" w="280px" w-new="63px"
-style="max-width:280px;max-height:63px"}
-=0.193，即19.3%。估计值的标准误差为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_276_03.jpg alt>
-{ratio="0.369"
-w="339px" w-new="125px"
-style="max-width:339px;max-height:125px;width:50%"}</p><p>即每年3.1%。</p><p>在以上的分析中假定了股票不付股息，但这里的分析同样也适用于支付股息的股票。对应于一个包含除息日在内的时间区间，股票的收益率为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_276_04.jpg alt>
-{ratio="0.433"
-w="270px" w-new="117px"
-style="max-width:270px;max-height:117px;width:70%"}</p><p>其中D为股息的数量，在其他时间区间内，股票的收益率仍为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_276_05.jpg alt>
-{ratio="0.548"
-w="219px" w-new="120px"
-style="max-width:219px;max-height:120px;width:70%"}</p><p>但是，由于税收因素可能会对收益率在除息日附近的计算起一定的作用，所以当我们利用每天或每周的数据进行计算时，也许最好的做法是除去包含除息日在内的时间区间里的数据。</p><h3 id=chapter_207.xhtml_A52020113-5592-4b9f-a0a9-6987db35456a class=thirdTitle>15.4.2 交易日天数与日历天数<a class=anchor href=#chapter_207.xhtml_A52020113-5592-4b9f-a0a9-6987db35456a>#</a></h3><p>在计算和使用波动率参数时，一个很重要的问题是在度量时间时，我们究竟应该采用日历天数还是交易日天数。如业界事例15-2所示，研究结果表明交易所开盘交易时的波动率比休市时的波动率要高很多。因此，在使用历史数据计算波动率以及期权期限时，市场参与者往往会去掉交易所休市的日期。由以下公式我们可以从每个交易日的波动率来计算每年的波动率</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_276_06.jpg alt>
-{ratio="0.065"
-w="1054px" w-new="68px"
-style="max-width:1054px;max-height:68px;width:100%"}</p><p>这也正是在例15-4中利用表15-1里的数据来计算波动率时采用的公式。对于股票，每年的股票交易日天数通常假设为252天。</p><p>期权期限通常也是由交易日天数（而不是由日历天数）来度量的。结果用T年来表达，其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_276_07.jpg alt>
-{ratio="0.184"
-w="526px" w-new="97px"
-style="max-width:526px;max-height:97px;width:100%"}</p><p>业界事例15-2</p><p>为什么价格会波动</p><p>我们很自然地假设股票的波动率是由市场所接收到的新信息引起的。这些新信息会使投资者对股票价值的观点产生改变，从而引起股票价格变化，产生波动。但是这种观点并没有得到研究结果的支持。利用连续几年中每天的股票数据，研究人员可以计算：</p><p>(1)在中间不包含非交易日时，一个交易日结束时与下一个交易日结束时股票价格收益率的方差。</p><p>(2)在星期五交易结束时与下星期一交易结束时股票价格收益率的方差。</p><p>第2项方差为3天之间收益率的方差。第1项方差对应于1天。我们也许很自然地认为第2项方差为第1项方差的3倍。法玛(1965)、弗伦奇(1980)以及弗伦奇和罗尔(1980)都证明了事实并非如此。这3项研究结果所估计的第2项方差只是分别比第1项方差高22%、19%和10.7%。</p><p>这时，你也许会说这些结果的起因是由于在交易开盘时有更多信息，但是罗尔(1984)的研究结果并不支持这一观点，罗尔检测了橙汁期货的价格：对于橙汁期货价格而言，最重要的决定因素是气候，而有关气候的信息对于任何时间都有同样的可能性。当罗尔做了一个类似于我们刚刚描述的有关股票的分析时，他发现橙汁期货的第2项（星期五至星期一）方差只是第1项方差的1.54倍。</p><p>唯一合理的结论是，在很大程度上，波动率是由交易本身引起的（交易员一般并不认为这一结论难以接受）。</p><h2 id=155-布莱克-斯科尔斯-默顿微分方程的概念>15.5 布莱克-斯科尔斯-默顿微分方程的概念<a class=anchor href=#155-%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%be%ae%e5%88%86%e6%96%b9%e7%a8%8b%e7%9a%84%e6%a6%82%e5%bf%b5>#</a></h2><p>布莱克-斯科尔斯-默顿微分方程是每一个依赖于无股息股票的衍生产品价格必须满足的方程式。我们将在下一节中推导这个方程，在这里我们考虑布莱克-斯科尔斯-默顿方法的特性。</p><p>布莱克-斯科尔斯-默顿微分方程与第13章中利用二叉树描述股票价格时的无套利方法类似。在定价的过程中需要构造一个由衍生产品与标的股票所组成的无套利的交易组合。在无套利的条件下，这一交易组合的收益率必须为无风险利率r，由此我们可以得出布莱克-斯科尔斯-默顿微分方程。</p><p>我们之所以可以建立无风险交易组合是由于股票价格与期权价格均受同一种不定性的影响，即股票价格的变动。在任意一段短时期内，衍生产品的价格与股票价格有完美的相关性；在建立了一个适当的股票与期权的组合后，由股票所带来的盈亏总是可以抵消由期权所带来的盈亏。这样一来，交易组合在一个短时间内的价值变化也就成为已知且确定的。</p><p>例如，假定在某一特定时刻，股票价格的一个微小变动ΔS与由此所引起的欧式看涨期权价格变动Δc之间有以下关系</p><p>Δc=0.4ΔS</p><p>这意味着代表Δc与ΔS之间关系的切线斜率为0.4，如图15-2所示。无风险交易组合构造如下：</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_277_01.jpg alt>
-{ratio="0.504"
-w="930px" w-new="469px"
-style="max-width:930px;max-height:469px;width:100%"}</p><p>图15-2 期权价格与股票价格的关系，股票的当前价格为S0</p><p>(1)40手股票的多头。</p><p>(2)100手看涨期权的空头。</p><p>假定股票价格上涨了10美分，期权价格将增长4美分。交易组合中股票的增长为40×0.1=4美元利得，这恰好等于期权短空头的100×0.04=4美元的损失。</p><p>布莱克-斯科尔斯-默顿分析与第13章里二叉树法的分析之间的一个重要的区别是：这里所建立的头寸只是在一个非常短的时间内是无风险的（从理论上讲，这种无风险只是在瞬间成立）。为了保持无风险状态，交易组合必须被频繁地调整或再平衡(rebalance)。
-[ ㊟ ]{.zuixiaoyao_zhushi} [ 【我们在第19章中将讨论再平衡的更多细节。】
-]{.zuixiaoyao_zhushi_text}
-例如，Δc与ΔS之间的关系也许会从今天的Δc=0.4ΔS变为明天的Δc=0.5ΔS。如果这种情况发生，为了保持交易组合为无风险形态，对卖出的每100手看涨期权，我们必须再买入10手股票。尽管如此，在短时间内无风险交易组合的收益率必须等于无风险利率。这是布莱克-斯科尔斯-默顿分析的关键，由此即可得出他们的定价公式。</p><p>假设</p><p>在推导布莱克-斯科尔斯-默顿微分方程时，我们采用以下假设：</p><p>(1)股票价格服从在第14章中所建立的过程，其中μ和σ为常数。</p><p>(2)可以卖空证券，并且可以完全使用所得收入。</p><p>(3)无交易费用和税收，所有证券均可无限分割。</p><p>(4)在期权期限内，股票不支付股息。</p><p>(5)不存在无风险套利机会。</p><p>(6)证券交易为连续进行。</p><p>(7)短期无风险利率r为常数，并对所有期限都是相同的。</p><p>我们将在后面的章节中讨论如何放宽其中一些假设。例如，σ和r可以是时间函数。只要股票价格在期权到期时的分布是对数正态，我们甚至可以让r也是随机的。</p><h2 id=156-布莱克-斯科尔斯-默顿微分方程的推导>15.6 布莱克-斯科尔斯-默顿微分方程的推导<a class=anchor href=#156-%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%be%ae%e5%88%86%e6%96%b9%e7%a8%8b%e7%9a%84%e6%8e%a8%e5%af%bc>#</a></h2><p>在本节里的定义与书中其他地方不一样，我们考虑衍生产品在一时间t（而不是时间0）时的价格。如果T是到期日，那么期权的期限是T-t。</p><p>我们假设股票价格服从在第14.3节里所建立的过程，即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_278_01.jpg alt>
-{ratio="0.060"
-w="1037px" w-new="62px"
-style="max-width:1037px;max-height:62px;width:100%"}</p><p>假定f为关于S的看涨期权（或其他取决于S的衍生产品价格）。变量f必须是S和t的函数。因此，由式(14-14)得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_278_02.jpg alt>
-{ratio="0.094"
-w="1282px" w-new="121px"
-style="max-width:1282px;max-height:121px;width:100%"}</p><p>式(15-8)和式(15-9)的离散形式为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_278_03.jpg alt>
-{ratio="0.067"
-w="1043px" w-new="70px"
-style="max-width:1043px;max-height:70px;width:100%"}</p><p>和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_278_04.jpg alt>
-{ratio="0.094"
-w="1292px" w-new="121px"
-style="max-width:1292px;max-height:121px;width:100%"}</p><p>其中ΔS与Δf为S与f在一个短时间区间Δt内的变化量。回忆在第14.6节里有关伊藤引理的讨论可知f和S中的维纳过程是一样的。换句话讲，式(15-10)和式(15-11)中的Δz
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_278_05.jpg alt>
-{.content-image-class
-ratio="0.303" w="218px" w-new="66px"
-style="max-width:218px;max-height:66px"}
-项是一样的。因此，我们可以适当地选择股票与衍生产品期权组合来消除维纳过程。选取的证券组合为</p><p>-1：衍生产品</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_279_01.jpg alt>
-{.content-image-class
-ratio="1.058" w="86px" w-new="91px"
-style="max-width:86px;max-height:91px"} ：股票</p><p>以上组合含有一个衍生产品的空头与∂f/∂S数量的股票。定义Π为组合的价值，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_279_02.jpg alt>
-{ratio="0.102"
-w="987px" w-new="101px"
-style="max-width:987px;max-height:101px;width:100%"}</p><p>证券组合的价格在Δt时间区间内的变化由以下式子给出 [ ㊟
-]{.zuixiaoyao_zhushi} [
-【这里对于式(15-16)的推导并不是非常严格，严格来讲，我们需要说明在式(15-13)中可以忽略∂f/∂S在Δt时间段的变化，对于该表达式的更为严格的证明会涉及构造自融资投资组合（self-financing
-port-folio，指没有外部资金注入或资金撤回的资产组合）。】
-]{.zuixiaoyao_zhushi_text}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_279_03.jpg alt>
-{ratio="0.102"
-w="1029px" w-new="105px"
-style="max-width:1029px;max-height:105px;width:100%"}</p><p>将式(15-10)和式(15-11)代入式(15-13)得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_279_04.jpg alt>
-{ratio="0.102"
-w="1144px" w-new="117px"
-style="max-width:1144px;max-height:117px;width:100%"}</p><p>因为上面方程的右端不含Δz项，所以证券组合在Δt时间内一定是无风险的。前一节列举的假设意味着该证券组合必须赚取与其他短期无风险证券相同的瞬时收益率。如果该组合赚取的比这个收益率高，套利者可以通过借入资金买入组合而取得无风险收益；如果比这个收益率低，套利者可以卖空组合并同时买入无风险投资证券取得无风险收益。因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_279_05.jpg alt>
-{ratio="0.066"
-w="978px" w-new="65px"
-style="max-width:978px;max-height:65px;width:100%"}</p><p>其中r为无风险利率。将式(15-12)和式(15-14)代入式(15-15)会得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_279_06.jpg alt>
-{ratio="0.160"
-w="732px" w-new="117px"
-style="max-width:732px;max-height:117px;width:100%"}</p><p>因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_279_07.jpg alt>
-{ratio="0.109"
-w="1115px" w-new="121px"
-style="max-width:1115px;max-height:121px;width:100%"}</p><p>式(15-16)就是布莱克-斯科尔斯-默顿微分方程。对应于以S为标的变量的不同衍生产品，这一方程有不同的解。对于某一特定衍生产品，以上方程的解与方程的边界条件(boundary
-conditions)有关：边界条件定义了衍生产品在S和t的边界上的取值范围。欧式看涨期权的关键边界条件为</p><p>当t=T时，f=max(S-K,0)</p><p>欧式看跌期权的关键边界条件为</p><p>当t=T时，f=max(K-S,0)</p><p>【例15-5】
-在无股息股票上的远期合约是一种依赖于这个股票的衍生产品，因此，其价格应满足式(15-16)。由式(5-5)得出，在时间t的远期合约价值与股票价格S之间关系满足</p><p>f=S-Ke-r(T-t)</p><p>其中K为交割价格。这意味着</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_279_08.jpg alt>
-{ratio="0.151"
-w="721px" w-new="109px"
-style="max-width:721px;max-height:109px;width:100%"}</p><p>将以上方程代入式(15-6)的左端，我们得出</p><p>-rKe-r(T-t)+rS</p><p>这正好等于rf。因此，对于远期合约式(15-16)确实成立。</p><h3 id=chapter_209.xhtml_A227b0117-0e11-4653-a65c-d7f358ecce13 class=thirdTitle>15.6.1 永续衍生产品<a class=anchor href=#chapter_209.xhtml_A227b0117-0e11-4653-a65c-d7f358ecce13>#</a></h3><p>某永续衍生产品：当股票价格第一次达到价值H时，该衍生产品收益为一个固定量Q。在这个例子中，对于任何值S，该衍生产品的价值与时间t无关，因此∂f/∂t量为零，偏微分方程式(15-16)也就变成了常微分方程。</p><p>首先假定S&lt;H。衍生产品的边界条件是当S=0时，f=0，而当S=H时，f=Q。表达式f=QS/H满足边界条件和微分方程，因此，该表达式也就给出了衍生产品价值。</p><p>接下来假定S>H。衍生产品的边界条件是当S趋向无穷时，f=0，而当S=H时，表达式
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_280_01.jpg alt>
-{.content-image-class
-ratio="0.423" w="253px" w-new="107px"
-style="max-width:253px;max-height:107px"}
-满足边界条件，其中α为一个正常数，并且满足边界条件。当α满足以下方程时</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_280_02.jpg alt>
-{ratio="0.195"
-w="553px" w-new="108px"
-style="max-width:553px;max-height:108px;width:100%"}</p><p>即α=2r/σ2时，以上表达式也满足微分方程。衍生产品的价值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_280_03.jpg alt>
-{ratio="0.111"
-w="1017px" w-new="113px"
-style="max-width:1017px;max-height:113px;width:100%"}</p><p>练习题15.31证明了式(15-17)可以用于对永续美式看跌期权定价。我们在第26.2节中将此处的分析推广到了当标的资产支付股息收益率为q时，如何对美式永续看涨和看跌期权定价。</p><h3 id=chapter_209.xhtml_Ae4e50117-37be-4eca-bf99-b37162803133 class=thirdTitle>15.6.2 可交易衍生产品的价格<a class=anchor href=#chapter_209.xhtml_Ae4e50117-37be-4eca-bf99-b37162803133>#</a></h3><p>任何满足式(15-16)的微分函数f(S,t)均可以作为某种可交易衍生产品(tradable
-derivative)的理论价格。如果以函数f(S,t)为价格的衍生产品确实存在，这个价格将不会造成任何套利机会。反之，如果函数f(S,t)不满足微分方程式(15-16)，那么在不给交易员制造套利机会的前提下，这一函数不会是衍生产品的价格。</p><p>为了说明这一点，我们首先考虑函数eS，该函数不满足式(15-16)。它因此也不是股票价格上衍生产品的价格。如果一个价格等于eS的产品确实存在，那么将一定会触发套利机会。在第2个例子里，函数</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_280_04.jpg alt>
-{ratio="0.545"
-w="200px" w-new="109px"
-style="max-width:200px;max-height:109px;width:50%"}</p><p>该函数满足微分方程式(15-16)，因此，从理论上讲，这一函数是某个可交易产品的价格（该衍生产品在T时刻的收益为1/ST）。关于其他可交易产品，参见练习题15.19、练习题15.20、练习题15.31。</p><h2 id=157-风险中性定价>15.7 风险中性定价<a class=anchor href=#157-%e9%a3%8e%e9%99%a9%e4%b8%ad%e6%80%a7%e5%ae%9a%e4%bb%b7>#</a></h2><p>在第13章中，我们曾利用二叉树模型引入风险中性定价的方法。毫无疑问，这是在衍生产品定价分析中一个最重要的工具。这个结果是由布莱克-斯科尔斯-默顿微分方程的一个关键性质而来的：布莱克-斯科尔斯-默顿微分方程不涉及任何受投资者风险偏好影响的变量，在方程中出现的变量包括股票的当前价格、时间、股票价格波动率和无风险利率，而它们均与风险选择无关。</p><p>如果布莱克-斯科尔斯-默顿微分方程涉及期望收益μ，那么它将不会与风险选择无关，这是因为μ的值确实与风险选择有关：投资者对风险的厌恶程度越高，对任何股票，相应的μ值也会越高。幸运的是在推导微分方程时，μ正好消失了。</p><p>由于布莱克-斯科尔斯-默顿微分方程与风险选择无关，我们可以利用下面的巧妙方法：如果风险选择在方程中不出现，那么它不会影响方程的解。因此，在计算f时，我们可以使用任何一组风险选择，尤其可以假设所有的投资者都是风险中性的。</p><p>在每一个投资者都是风险中性的世界里，所有投资的期望收益率均为无风险利率r，原因是对风险中性的投资者而言，不需要额外的回报而使他们承受风险。另外，在一个风险中性世界里，任何现金流的现值都可以通过对其期望值以无风险利率贴现得到。因此，在假设世界是风险中性时，能够大大地简化对衍生产品的分析。</p><p>考虑在某个时刻提供收益的衍生产品，我们可以利用风险中性定价原理对其定价，过程如下：</p><p>(1)假定标的资产的期望收益率为无风险利率（即假定μ=r）。</p><p>(2)计算衍生产品收益的期望。</p><p>(3)用无风险利率对期望收益进行贴现。</p><p>风险中性定价（或假设所有投资者都是风险中性）仅仅是获得期权定价公式的一个人为的工具，认识到这一点是非常重要的。我们所得到的解不仅在投资者是风险中性时成立，而且在所有世界里也都是成立的。当我们从风险中性世界换到风险厌恶世界时，两种情况将会发生：股票价格变动的增长率期望以及对衍生产品收益所必需使用的贴现率都将会变化，而这两种变化刚好相互抵消。</p><p>应用于股票远期合约</p><p>在第5.7节中，我们对不支付股息的股票上的远期合约做了定价，并且在例15-5中验证了定价公式满足布莱克-斯科尔斯-默顿微分方程。在这一节中，我们将利用风险中性定价方法来推导这个定价公式。我们假设利率是等于r的常数。这比第5章中的假设更强。</p><p>考虑一个期限为T的远期合约多头，交割价格为K。如图1-2所示，在合约到期时，远期合约的价值为</p><p>ST-K</p><p>其中ST是股票在时间T的价格。由风险中性定价方法我们知道，远期合约在时间0的价值是其风险中性世界里在时间T的期望值以无风险利率加以贴现后的现值。将远期合约在时间0的价值记为f，这意味着</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_281_01.jpg alt>
-{ratio="0.197"
-w="385px" w-new="76px"
-style="max-width:385px;max-height:76px;width:100%"}</p><p>其中
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_281_02.jpg alt>
-{.content-image-class
-ratio="1.528" w="36px" w-new="55px"
-style="max-width:36px;max-height:55px"}
-为风险中性世界里的期望值。由于K是常数，这个方程可以写成</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_281_03.jpg alt>
-{ratio="0.064"
-w="1063px" w-new="68px"
-style="max-width:1063px;max-height:68px;width:100%"}</p><p>在风险中性世界里，股票的收益率μ变成了r。因此，由式(15-4)我们有</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_281_04.jpg alt>
-{ratio="0.068"
-w="993px" w-new="68px"
-style="max-width:993px;max-height:68px;width:100%"}</p><p>将式(15-19)代入式(15-18)得到</p><p>f=S0-Ke-rT</p><p>这一结果同式(5-5)是一致的。</p><h2 id=158-布莱克-斯科尔斯-默顿定价公式>15.8 布莱克-斯科尔斯-默顿定价公式<a class=anchor href=#158-%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%ae%9a%e4%bb%b7%e5%85%ac%e5%bc%8f>#</a></h2><p>微分方程式(15-16)最著名的解是关于看涨期权与看跌期权的定价公式。这些公式为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_282_01.jpg alt>
-{ratio="0.072"
-w="1118px" w-new="81px"
-style="max-width:1118px;max-height:81px;width:100%"}</p><p>和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_282_02.jpg alt>
-{ratio="0.070"
-w="1160px" w-new="81px"
-style="max-width:1160px;max-height:81px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_282_03.jpg alt>
-{ratio="0.326"
-w="801px" w-new="261px"
-style="max-width:801px;max-height:261px;width:100%"}</p><p>函数N(x)为标准正态分布的累积概率分布函数。换言之，这一函数等于服从标准正态分布ϕ(0,1)的随机变量小于x的概率（见图15-3）。我们对方程中的其他记号应当很熟悉：c与p分别为欧式看涨与看跌期权的价格，S0为股票在时间0的价格，K为执行价格，r为连续复利的无风险利率，σ为股票价格的波动率，T为期权的期限。</p><p>一种推导布莱克-斯科尔斯-默顿公式的方法是解微分方程式(15-16)满足在第15.6节中提到过的边界条件。
-<a href=/digital-library/index.html>[3]</a>{#chapter_211.xhtml_B3}
-（为了证明式(15-20)中的看涨期权价格满足微分方程，见练习题15.25）。另一种方法是利用风险中性定价。考虑欧式看涨期权，在风险中性世界里期权到期时的期望值是</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_282_04.jpg alt>
-{ratio="0.185"
-w="373px" w-new="69px"
-style="max-width:373px;max-height:69px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_282_05.jpg alt>
-{ratio="0.523"
-w="816px" w-new="427px"
-style="max-width:816px;max-height:427px;width:100%"}</p><p>图15-3 阴影区域代表N(x)</p><p>与前面相同，其中
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_282_06.jpg alt>
-{.content-image-class
-ratio="2.000" w="30px" w-new="60px"
-style="max-width:30px;max-height:60px"}
-为在风险中性世界里的期望值。从风险中性定价方法我们知道，欧式看涨期权的价格c等于这个期望值以无风险利率贴现后的现值，也就是说</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_282_07.jpg alt>
-{ratio="0.061"
-w="1113px" w-new="68px"
-style="max-width:1113px;max-height:68px;width:100%"}</p><p>在本章的附录中，我们证明了由这个式子可以得出式(15-20)中的结果。</p><p>由于提前行使不支付股息股票上美式看涨期权永远不会是最优的（见第11.5节），所以式(15-20)也是不付股息股票上美式看涨期权的价值。不幸的是，还没有不付股息股票上美式看跌期权价值的精确解析公式。在第21章中，我们将讨论计算美式看跌期权的数值方法。</p><p>在实际中应用布莱克-斯科尔斯-默顿公式时，采用的利率r等于期限为T的无风险利率。在后面的章节中，我们将证明：当r是时间的已知函数时，在理论上公式仍然是成立的，而且只要股票价格在时间T服从对数正态分布，并且波动率参数取值适当，那么当r是随机时，这个公式也是成立的。我们在前面提到过，一般来讲，时间是按期权有效期内的交易天数除以1年内的交易天数来度量的。</p><h3 id=chapter_211.xhtml_A01bb011a-95e9-4706-bf23-784e8b58b4ce class=thirdTitle>15.8.1 如何理解N(d1)和N(d2)<a class=anchor href=#chapter_211.xhtml_A01bb011a-95e9-4706-bf23-784e8b58b4ce>#</a></h3><p>我们对式(15-20)中的N(d2)有一个简单解释：它是在风险中性世界里期权被行使的概率。而我们对N(d1)却没有一个简单解释，表达式S0N(d1)erT是一个在ST>K时等于ST，在其他情（ST≤K时）等于零的变量在风险中性世界里的期望值。只有当股票价格大于执行价格K时，执行价格才会被支付，相应的概率为N(d2)，在风险中性世界里，期权在时间T的期望值等于</p><p>S0N(d1)erT-KN(d2)</p><p>将以上表达式由时间T到时间0进行贴现，得出欧式看涨期权的布莱克-斯科尔斯-默顿公式</p><p>c=S0N(d1)-Ke-rTN(d2)</p><p>对于布莱克-斯科尔斯-默顿公式，我们还有另外一种解释。我们注意到布莱克-斯科尔斯-默顿公式也可以写成</p><p>c=e-rTN(d2)[S0erTN(d1)/N(d2)-K]</p><p>以上公式的各项有以下解释：</p><p>e-rT：贴现因子；</p><p>N(d2)：期权被行使的概率；</p><p>S0erTN(d1)/N(d2)：如果期权被行使，在风险中性世界里预期股票价格；</p><p>K：期权被行使时，相应的执行价格。</p><h3 id=chapter_211.xhtml_A73c2011a-0ac6-46b0-8f73-96336082549e class=thirdTitle>15.8.2 布莱克-斯科尔斯-默顿公式的性质<a class=anchor href=#chapter_211.xhtml_A73c2011a-0ac6-46b0-8f73-96336082549e>#</a></h3><p>通过考虑给一些参数取极端值，我们现在证明布莱克-斯科尔斯-默顿公式具有正确的一般性质。</p><p>当股票价格S0很大时，看涨期权几乎肯定会被执行，这时期权与执行价格为K的远期合约非常相似。根据式(5-5)得出看涨期权价格应该为</p><p>S0-Ke-rT</p><p>事实上，以上公式正好是式(15-20)所给出的期权价格：因为当S0很大时，d1及d2均很大，因此N(d1)与N(d2)均接近于1.0。当股票价格很大时，欧式看跌期权的价格接近于0，这与式(15-21)是一致的，因为在这种情形下N(-d1)与N(-d2)均接近于0。</p><p>接着我们考虑当波动率接近于0的情形。因为股票价格几乎是无风险的，其价格在时间T将会增长到S0erT，看涨期权的收益为</p><p>max(S0erT-K,0)</p><p>以利率r贴现，看涨期权在今天的价格是</p><p>e-rTmax(S0erT-K,0)=max(S0-Ke-rT,0)</p><p>为了证明这与式(15-20)一致，首先考虑当S0＞Ke-rT的情况，这意味着ln(S0/K)+rT＞0。当σ趋于0时，d1和d2均趋向于+∞，因此N(d1)与N(d2)均趋向于1.0，式(15-20)变成了</p><p>c=S0-Ke-rT</p><p>当S0＜Ke-rT时，将有ln(S0/K)+rT＜0。当σ趋向于0时，d1和d2均趋向于-∞，所以N(d1)与N(d2)均趋向于0，方程所给的看涨期权价格为0。我们可以类似地证明当σ趋于0时，看跌期权的价格总是max(Ke-rT-S0,0)。</p><h2 id=159-累积正态分布函数>15.9 累积正态分布函数<a class=anchor href=#159-%e7%b4%af%e7%a7%af%e6%ad%a3%e6%80%81%e5%88%86%e5%b8%83%e5%87%bd%e6%95%b0>#</a></h2><p>在计算式(15-20)与式(15-21)时，我们需要计算标准正态分布的累积函数N(x)。本书在结尾部分提供了N(x)的表格。Excel中的NORMSDIST函数提供了一种计算N(x)的简便方式。</p><p>【例15-6】
-考虑一份6个月期限的期权。股票当前价格为42美元，执行价格为40美元，无风险利率为每年10%，波动率为每年20%，也就是说S0=42，K=40,r=0.1，σ=0.2，T=0.5，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_284_01.jpg alt>
-{ratio="0.260"
-w="950px" w-new="247px"
-style="max-width:950px;max-height:247px;width:100%"}</p><p>以及</p><p>Ke-rT=40e-0.05=38.049</p><p>如果该期权为欧式看涨期权，其价格c为</p><p>c=42N(0.7693)-38.049N(0.6278)</p><p>如果该期权为欧式看跌期权，其价格p为</p><p>p=38.049N(-0.6278)-42N(-0.7693)</p><p>采用以上多项式近似或Excel中的NORMSDIST函数</p><p>N(0.7693)=0.7791,N(-0.7693)=0.2209</p><p>N(0.6278)=0.7349,N(-0.6278)=0.2651</p><p>由此得出</p><p>c=4.76,p=0.81</p><p>当忽略货币的时间价值时，股票价格至少上涨2.76美元才能使得看涨期权的持有者盈亏均衡。类似地，股票价格至少下跌2.81美元才能使得看跌期权的持有者盈亏均衡。</p><h2 id=1510-权证与雇员股票期权>15.10 权证与雇员股票期权<a class=anchor href=#1510-%e6%9d%83%e8%af%81%e4%b8%8e%e9%9b%87%e5%91%98%e8%82%a1%e7%a5%a8%e6%9c%9f%e6%9d%83>#</a></h2><p>行使一家公司的普通看涨期权对于在市场上交易的公司股票数量没有任何影响。如果期权承约者不拥有公司的股票，那么他在期权被行使时必须在市场上按通常的方式买入股票，然后按执行价格卖给期权的持有者。如在第10章中解释过的那样，权证与雇员股票期权和一般看涨期权的不同之处是在权证与雇员股票期权被行使时，公司必须首先发行更多的股票，然后再以执行价格卖给期权持有者。由于执行价格低于股票的市场价格，这些期权的行使会对市场上现有股票持有者的利益产生稀释效应。</p><p>这种潜在的稀释效应是否会影响我们对既存权证与雇员股票期权的定价方式呢？答案是否定的。假定市场是有效的，那么股票价格已经反映了已有的权证与雇员股票期权的稀释效应。业界事例15-3解释了这一点。
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【分析员常常假定权证与股权价值的总和（而非股权价值的总和）服从对数正态分布。这种假设的结果是权证价格满足一个以权证价格为变量而类似于布莱克-斯科尔斯公式的方程。关于这一模型的细节，参见网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes上的Technical
-Note 3。】 ]{.zuixiaoyao_zhushi_text}</p><p>业界事例15-3</p><p>认股权证、雇员期权和稀释效应</p><p>考虑一家公司，该公司发行了100000股股票，每股股票的价格为50美元。公司发布了一个市场没有预料到的消息：公司将发行100000份股票期权给其雇员，期权执行价格为50美元。如果市场认为公司为了削减雇员工资而发行的期权对股东没有带来好处，并且对那些较为上进的经理也没有好处，那么股票价格会很快下跌。如果股票价格跌至45美元，期权给股东带来的稀释费用为每股5美元，整体费用为500000美元。</p><p>假定公司在3年后表现很好，届时股票价格为每股100美元。假定所有的期权将在3年末行使，雇员期权每份的收益为50美元。这时人们可能会认为期权行使会带来更多稀释效应，即100000股每股价格为100美元的股票会与100000股每股价格为50美元的股票进行合并，因此股票价格会跌至75美元，期权持有人的每份收益只有25美元。但是，以上说法是有问题的。市场预料股票期权会被行使，股票价格已经反映了这一预期。因此，每份期权的收益仍为50美元。</p><p>这个例子反映了一个普遍现象，即当市场有效时，雇员期权和认股权证被发行后，股票价格中很快会体现出这些产品的稀释效应。</p><p>接下来，我们考虑某家想发行新权证（或雇员股票期权）公司的情形。在发行新权证没能增加公司价值的假设下，公司想计算发行权证的费用。我们假定这家公司总共已经发行了数量为N的股票，每股的价格为S0，公司考虑发行M份新期权，每份期权可以使期权持有者以K的价格买入1股股票。公司在今天的市值为NS0，这一价值不受发行新权证的影响。假设在没有发行权证的前提下，股票价格在权证满期时刻T的价格为ST。这意味着，在时刻T股权和权证的价值（无论发行权证或不发行权证）的总和为NST。如果权证被行使，由执行价格所带来的资金流会使股权和权证的价值总和变为NST+MK，这一价值会在N+M股股票进行分配，因此，在权证被行使后，股票价格变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_285_01.jpg alt>
-{ratio="0.524"
-w="208px" w-new="109px"
-style="max-width:208px;max-height:109px;width:50%"}</p><p>期权持有者行使期权所得收益为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_285_02.jpg alt>
-{ratio="0.424"
-w="278px" w-new="118px"
-style="max-width:278px;max-height:118px;width:50%"}</p><p>上式等于</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_286_01.jpg alt>
-{ratio="0.324"
-w="318px" w-new="103px"
-style="max-width:318px;max-height:103px;width:50%"}</p><p>这里讨论的期权价格等于</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_286_02.jpg alt>
-{ratio="0.800"
-w="140px" w-new="112px"
-style="max-width:140px;max-height:112px;width:30%"}</p><p>乘以公司股票上的普通看涨期权价格。因此，期权的总费用等于M乘以上式。由于我们假设公司并没有由于发行权证而受益，这时一旦市场知道了发行权证的决定，公司股票总值将会马上下降，下降的数量为期权的总费用。这意味着股票价格将会下降</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_286_03.jpg alt>
-{ratio="0.743"
-w="144px" w-new="107px"
-style="max-width:144px;max-height:107px;width:30%"}</p><p>乘以公司股票上期限为T、执行价格为K的普通看涨期权价格。</p><p>【例15-7】
-某公司共现有100万股股票，每股价格为40美元，该公司正在考虑发行200000份权证，每份权证给持有者在5年后可以按每股60美元的价格买入股票的权利。公司想知道发行这样权证的费用。假定利率为每年3%，波动率为每年30%，公司不支付股息。由式(15-20)得出，5年期的期权价格为7.04美元。这时，N=1000000,M=200000，因此，每份权证的价格为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_286_04.jpg alt>
-{ratio="0.158"
-w="651px" w-new="103px"
-style="max-width:651px;max-height:103px;width:100%"}</p><p>即5.87美元，发行权证的总费用为200000×5.87=117万美元。如果市场认为公司不会由于发行权证而收益，我们预计股票价格将会下降1.17美元，到38.83美元。</p><h2 id=1511-隐含波动率>15.11 隐含波动率<a class=anchor href=#1511-%e9%9a%90%e5%90%ab%e6%b3%a2%e5%8a%a8%e7%8e%87>#</a></h2><p>在布莱克-斯科尔斯-默顿定价公式中，不能直接观察到的参数只有股票价格的波动率。在第15.4节中，我们已经讨论了如何由股票的历史价格来估计波动率。在实际中，交易员通常使用所谓的隐含波动率(implied
-volatility)。这一波动率是指由期权的市场价格所隐含的波动率。 [ ㊟
-]{.zuixiaoyao_zhushi} [
-【DerivaGem可以用来计算欧式和美式期权的隐含波动率。】
-]{.zuixiaoyao_zhushi_text}</p><p>为了说明隐含波动率是如何计算的，假设一个不付股息股票的欧式看涨期权价格为1.875，而S0=21，K=20,r=0.1和T=0.25。隐含波动率是使得式(15-20)所给期权价格c=1.875时对应的σ值。不幸的是，我们不能靠直接反解式(15-20)将σ表示成期权价格与其他变量S0、K、r、T和c的函数，但是我们可以用迭代的方式求解所隐含的值σ。例如，开始时我们令σ=0.20，对应这一波动率，期权价格c为1.76美元，这一价格太低。由于期权价格为σ的递增函数，我们需要一个较大的σ值。我们再令σ=0.30，对应的期权价格c为2.10美元，此值高于市价，这意味着σ一定介于0.2～0.3。接下来，我们令σ=0.25，此值所对应的期权价格仍太高，所以σ应该在0.20～0.25。这样继续下去，每次迭代都使σ所在的区间减半，因此我们可以计算出满足任何精确度的σ近似值。
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【这一方法只是为了说明问题，在实际中往往采用其他更有力的方法，像Newton-Raphson方法（见第4.6节中的脚注）。DerivaGem可以用来计算隐含波动率。】
-]{.zuixiaoyao_zhushi_text}
-在本例中，隐含波动率σ=0.235，即每年23.5%。与二叉树结合，利用类似的方法可以计算美式期权的隐含波动率。</p><p>隐含波动率可以用来衡量市场对于某一股票波动率的观点。历史波动率（见第15.4节）是回望型(backward
-looking)，而隐含波动率则为前瞻型(forward
-looking)。通常，交易员对于期权所报出的是隐含波动率，而不是期权的价格。这样做会带来许多方便，因为波动率的变化比期权价格变化更加稳定。市场上交易较为活跃的期权隐含波动率常被交易员用来估算其他期权的隐含波动率。</p><p>VIX指数</p><p>芝加哥期权交易所(CBOE)编制发布隐含波动率的指数。最流行的指数是SPX
-VIX，这是由包括标准普尔500上许多30天期限的看涨和看跌期权计算的。这一指数也被称为"恐惧指数"(fear
-factor)，VIX取值为15意味着对标准普尔500指数上30天期限的期权隐含波动率估计为15%。在第26.16节中有关于该指数计算方式的内容。在VIX上的期货交易是从2004年开始的，而在VIX上的期权交易是从2006年开始的，一份合约等于1000乘以指数值。</p><p>【例15-8】
-假设一个交易员买了一份VIX上4月的期权合约，当时的期货价格是18.5（相当于30天标准普尔500指数波动率为18.5%），并当期货价格为19.3（相当于30天标准普尔500指数波动率为19.3%）时平仓。交易员赚了800美元。</p><p>涉及标准普尔500指数的期权是在将来的标准普尔500指数水平以及标准普尔500指数波动率两方面下赌注，与此相反，VIX上的期货或期权只是在波动率上下注。图15-4显示了在2004年1月～2020年6月的VIX指数。在2004～2007年年中，VIX指数通常保持在10～20；在2007年下半年，指数达到30；而在2008年10月与11月雷曼兄弟破产后，指数有高达80的纪录。在2010年年初，指数逐渐降到通常的水平，自2010年以来，由于金融市场的不确定性，指数出现了数次高峰。2020年，由于新冠肺炎疫情的暴发，指数又一次大幅增长。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_287_01.jpg alt>
-{ratio="0.653"
-w="1038px" w-new="678px"
-style="max-width:1038px;max-height:678px;width:100%"}</p><p>图15-4 VIX指数（2004年1月～2020年6月）</p><p>VIX指数监控的是标准普尔500指数的波动率。芝加哥期权交易所还编制发布了其他一些波动率指数，包括股票指数、商品指数、利率、外汇以及一些股票（例如，亚马逊与高盛）上的波动率，甚至还有一个VIX上的波动率指数(VVIX)。</p><h2 id=1512-股息>15.12 股息<a class=anchor href=#1512-%e8%82%a1%e6%81%af>#</a></h2><p>到目前为止，我们一直假设期权的标的股票不付任何股息。在本节中，我们对布莱克-斯科尔斯-默顿模型加以修改，以便考虑股息。我们假设可以准确地预测在期权有效期内股息的数量与付出时间。对于短期限的期权，这个假设并不是不合理（对于长期限的期权，我们通常假设已知的是股息率，而不是股息的现金数量，这时可以按我们在第17章中所述的方法对期权定价）。股息付出日期应当是除息日，在这个日期上，股票价格下跌的幅度为股息的数量。
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【由于税收的原因，股票下跌的数量会比股息的现金数量要少。为了考虑这个现象，我们将期权情形下的"股息"理解成由于股息而引起股票在除息日下跌的数量。因此，如果预计1美元的股息而股票价格通常在除息日下跌股息数量的80%，那么为了分析期权的目的，股息应当被假设成0.80美元。】
-]{.zuixiaoyao_zhushi_text}</p><h3 id=chapter_215.xhtml_A2777011f-e4ff-4a03-bed8-d75a3156e516 class=thirdTitle>15.12.1 欧式期权<a class=anchor href=#chapter_215.xhtml_A2777011f-e4ff-4a03-bed8-d75a3156e516>#</a></h3><p>为了分析欧式期权，我们假设股票价格由以下两部分组成：对应于在期权有效期内所付股息的无风险部分与有风险部分。在任意给定时刻，无风险部分等于在期权有效期内的所有股息以无风险利率从除息日贴现到今天的现值。当期权到期时，这些股息已经被付出，从而无风险部分不再存在。因此，当S0表示为有风险部分的价格、σ为有风险部分所服从过程的波动率时，布莱克-斯科尔斯-默顿公式仍然正确。
-<a href=/digital-library/index.html>[4]</a>{#chapter_215.xhtml_B4}</p><p>在运作上，这意味着只要在股票价格中除去所有在期权有效期限内股息的贴现值，我们仍然可以采用布莱克-斯科尔斯-默顿模型对期权定价。在计算股息贴现值时，我们采用的贴现日期为除息日，贴现利率等于无风险利率。像已经讲过的那样，只有除息日在期权有效期内的股息才用于计算。</p><p>【例15-9】
-考虑1份欧式股票看涨期权，股票在2个月与5个月后分别有一个除息日。预计在每个除息日的股息都为0.5美元。股票目前的价格为40美元，执行价格为40美元，股票价格波动率为每年30%，无风险利率为每年9%，期权期限为6个月。股息的贴现值为</p><p>0.5e-0.09×2/12+0.5e-0.09×5/12=0.9742</p><p>因此，期权价格可由布莱克-斯科尔斯-默顿公式求出，在公式中输入的参数为S0=40-0.9742=39.0258，K=40,r=0.09,σ=0.3和T=0.5，由此得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_288_01.jpg alt>
-{ratio="0.224"
-w="1081px" w-new="242px"
-style="max-width:1081px;max-height:242px;width:100%"}</p><p>利用Excel中的NORMSDIST函数可以得出</p><p>N(d1)=0.5800及N(d2)=0.4959</p><p>由式(15-20)得出期权价格为</p><p>39.0258×0.5800-40e-0.09×0.5×0.4959=3.67</p><p>即3.67美元。</p><p>有些研究人员对于以上给出的计算有股息股票上欧式期权价格的方法提出了批评。他们认为波动率应该是适用于股票价格，而不是剔除了股息贴现值以后的股票价格。研究人员也提出了一些具体的做法。
-[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See N. Areal and A. Rodrigues, "Fast
-Trees for Options with Discrete Dividends," Journal of Derivatives, 21,
-1(Fall 2013), 49-63.】 ]{.zuixiaoyao_zhushi_text}
-当波动率是由历史数据来估计时，采用这些做法比较合理，但是，在实践中，计算期权时所使用的波动率几乎总是由第20章讲述的由其他期权价格隐含得出。如果一个交易员采用同一个模型计算隐含波动率和期权价格，计算结果也会准确，但并不会与模型高度相关。另外重要的一点是在实践中，如第18章所述，市场参与者通常采用标的资产远期价格计算欧式期权价格，这样做可以避免直接计算资产的预期收入，远期价格的波动率等于股票价格扣除股息贴现值后的波动率。</p><p>在我们这里讨论的模型中，股票价格被分成了两个部分，这种做法是内在一致的，并在业界广泛应用。在第21章中对于美式期权定价时，我们也会采用同样的方法。</p><h3 id=chapter_215.xhtml_Ab4400120-e5b6-48aa-aace-22f72639db60 class=thirdTitle>15.12.2 美式期权<a class=anchor href=#chapter_215.xhtml_Ab4400120-e5b6-48aa-aace-22f72639db60>#</a></h3><p>下面我们考虑美式期权。在第11章里我们看到，在没有股息的情况下，永远不应该在到期日之前行使这个期权。将论证推广后可以证明，对于一个支付股息的美式期权，其最优行使时间可能为刚好在股票除息日之前的时刻。我们假定股票将预计在时间t1,t2,...,tn（其中t1&lt;t2&lt;...&lt;tn）分发股息，在每个除息日相应的股息量分别为D1,D2,...,Dn。</p><p>我们首先考虑在最后一个除息日（即tn）前提前行使期权的可能性。如果在tn行使期权，投资者的收益为</p><p>S(tn)-K</p><p>其中S(t)为股票在时间t的价格。如果没有行使期权，股票价格下跌到S(tn)-Dn。如式(11-4)所示，期权的值将大于</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_289_01.jpg alt>
-{ratio="0.154"
-w="449px" w-new="69px"
-style="max-width:449px;max-height:69px;width:100%"}</p><p>因此，如果</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_289_02.jpg alt>
-{ratio="0.102"
-w="678px" w-new="69px"
-style="max-width:678px;max-height:69px;width:100%"}</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_289_03.jpg alt>
-{ratio="0.068"
-w="1075px" w-new="73px"
-style="max-width:1075px;max-height:73px;width:100%"}</p><p>那么在tn时刻行使期权将不会是最优。反之，如果</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_289_04.jpg alt>
-{ratio="0.068"
-w="1075px" w-new="73px"
-style="max-width:1075px;max-height:73px;width:100%"}</p><p>那么在对股票价格服从随机过程所做的任何合理假设之下，当S(tn)足够大时，在tn行使期权是最优的。当最后一个除息日接近期权到期日（即当T-tn很小）而且股息很大时，不等式(15-24)往往会被满足。</p><p>接下来考虑tn-1时刻，就是倒数第2个除息日。如果在tn-1时行使期权，投资者会收到</p><p>S(tn-1)-K</p><p>如果在tn-1时刻没有行使期权，股票价格降至S(tn-1)-Dn-1，之后最近一个可行使期权的时刻为tn。根据式(11-4)，如果在tn-1不行使期权，期权价格的下限为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_289_05.jpg alt>
-{ratio="0.135"
-w="540px" w-new="73px"
-style="max-width:540px;max-height:73px;width:100%"}</p><p>因此，如果</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_289_06.jpg alt>
-{ratio="0.093"
-w="797px" w-new="74px"
-style="max-width:797px;max-height:74px;width:100%"}</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_290_01.jpg alt>
-{ratio="0.139"
-w="498px" w-new="69px"
-style="max-width:498px;max-height:69px;width:100%"}</p><p>在tn-1时行使期权不会是最优选择。与此类似，对于任意i&lt;n，如果</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_290_02.jpg alt>
-{ratio="0.061"
-w="1083px" w-new="66px"
-style="max-width:1083px;max-height:66px;width:100%"}</p><p>那么在ti时行使期权不会是最优选择。</p><p>不等式(15-25)近似地等价于以下不等式</p><p>Di≤Kr(ti+1-ti)</p><p>假如K与当前股票价格十分接近，股息率小于无风险利率时以上不等式将会成立。通常情况是这样的。</p><p>由这一分析我们可以得出，在许多情形下，美式期权可能被提前行使的时间往往是最后一个除息日tn。再有，如果不等式(15-25)对于i=1,2,...,n-1均成立，并且不等式(15-23)也成立，那么我们可以确认提前行使期权不会为最优选择，因此美式期权也可以被看作欧式期权。</p><h3 id=chapter_215.xhtml_A39ef0121-0ed0-4eb1-a7c5-8c98e6602bb9 class=thirdTitle>15.12.3 布莱克近似法<a class=anchor href=#chapter_215.xhtml_A39ef0121-0ed0-4eb1-a7c5-8c98e6602bb9>#</a></h3><p>布莱克建议采用一种计算美式看涨期权的近似方法。 [ ㊟
-]{.zuixiaoyao_zhushi} [ 【See F. Black, "Fact and Fantasy in the Use of
-Options," Financial Analysts Journal, 31(July/August 1975): 36-41,
-61-72.】 ]{.zuixiaoyao_zhushi_text}
-这种方法考虑了可能提前行使期权的特征。这种近似方法包括按本节前面所述的方法计算在T和tn到期的欧式期权价格，然后令美式期权价格等于两者的最大值。
-[ ㊟ ]{.zuixiaoyao_zhushi} [
-【对于只有一个除息日的情形，Roll、Geske和Whaley给出了一个准确公式，见网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes上的Technical
-Note 4。这一公式涉及二元正态分布函数，同一网页上的Technical Note
-5给出了计算这一分布函数的程序。】 ]{.zuixiaoyao_zhushi_text}
-这一方法是一种近似，其效果相当于期权持有人在起始时刻就要决定是否在T或tn行使期权。</p><h2 id=小结>小结<a class=anchor href=#%e5%b0%8f%e7%bb%93>#</a></h2><p>在这一章里，我们首先考虑了在第14章中引入的股票价格过程的性质，这意味着在给定当前价格的前提下，股票价格在将来时刻的分布为对数正态分布。这也意味着在一段时间内股票连续复利的收益为正态分布。持有的时间越远，未来股票价格的不确定性越大。股票价格对数值的标准差与持有时间长度的平方根成比例。</p><p>为了以实证的形式估计股票价格波动率σ，我们应当以固定的时间区间观测股票价格（例如，每天、每周或每月）。对于每个时间段，计算该时间段末的股票价格与该时间初的股票价格之比的自然对数，然后求出这些数值的标准差，再除以时间长度（以年计）的平方根，这样即可得出波动率的估计值。通常在计算波动率时，我们应该忽略那些交易所休市的天数。</p><p>通过构造由期权与股票所组成的无风险交易组合可以得出用于衍生产品定价的微分方程。由于期权与股票价格只依赖于同一项不确定性因素，所以这种无风险头寸总是可以构造出来的。但是，这里所建立的头寸只能在很短的一段时间内为无风险状态。在没有套利的前提下，无风险组合的收益率等于无风险利率。</p><p>股票的期望收益率并没有进入布莱克-斯科尔斯-默顿微分方程中，由此产生了很有用的风险中性定价方法。这个结果说明，当对一个依赖于股票价格的衍生产品定价时，我们可以假设世界是风险中性的，也就是说可以假定股票的期望收益率等于无风险利率，然后以无风险利率对收益的期望值进行贴现。对于欧式看涨和看跌期权的布莱克-斯科尔斯-默顿公式既可以通过求解微分方程得到，也可以通过风险中性定价得到。</p><p>隐含波动率是指使得由布莱克-斯科尔斯-默顿期权定价公式计算出的期权价格等于市场价格的波动率。交易员在交易中观察隐含波动率并常常对隐含波动率（而不是对期权价格）提供报价。交易员会利用市场交易活跃的期权隐含波动率从而对其他期权的波动率进行估计。</p><p>布莱克-斯科尔斯-默顿模型可以推广到支付股息的欧式股票期权上，其过程是将布莱克-斯科尔斯-默顿公式中的股票价格由原股票价格减去在期权有效期内预期股息的贴现值来代替，而波动率为股票价格减去这些股息的现值后的波动率。</p><p>从理论上讲，在任何除息日前夕行使美式看涨期权都有可能是最优的选择。在实际中，常常仅需考虑最后一个除息日。费希尔·布莱克提出了一种近似方法：将美式看涨期权设成两个欧式看涨期权的最大值，第一个欧式看涨期权的到期日与美式期权相同，第二个欧式期权在最后一个除息日前夕到期。</p><h2 id=推荐阅读>推荐阅读<a class=anchor href=#%e6%8e%a8%e8%8d%90%e9%98%85%e8%af%bb>#</a></h2><p>关于股票价格变化的分布</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_291_01.jpg alt>
-{ratio="0.237"
-w="1573px" w-new="373px"
-style="max-width:1573px;max-height:373px;width:100%"}</p><p>关于布莱克-斯科尔斯-默顿分析</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_291_02.jpg alt>
-{ratio="0.243"
-w="1562px" w-new="379px"
-style="max-width:1562px;max-height:379px;width:100%"}</p><p>关于风险中性定价</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_291_03.jpg alt>
-{ratio="0.098"
-w="1565px" w-new="154px"
-style="max-width:1565px;max-height:154px;width:100%"}</p><p>关于波动率</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_291_04.jpg alt>
-{ratio="0.196"
-w="1567px" w-new="307px"
-style="max-width:1567px;max-height:307px;width:100%"}</p><h2 id=概念思考题>概念思考题<a class=anchor href=#%e6%a6%82%e5%bf%b5%e6%80%9d%e8%80%83%e9%a2%98>#</a></h2><p>15.1 布莱克-斯科尔斯-默顿模型对短期股票收益的假设是什么？</p><p>15.2
-根据布莱克-斯科尔斯-默顿模型，在时间T时股票价格对数的平均值和标准差是多少？</p><p>15.3
-在布莱克-斯科尔斯-默顿模型中，随着测量的时间段的增加，连续复利收益率的标准差会发生什么变化？</p><p>15.4 计算波动率时如何处理周末和节假日？</p><p>15.5 如何建立一个无风险的投资组合来推导布莱克-斯科尔斯-默顿微分方程？</p><p>15.6
-根据布莱克-斯科尔斯-默顿模型，无收益资产的欧式看涨期权和看跌期权的价格是多少？</p><p>15.7 解释风险中性定价原理。</p><p>15.8 购买认股权证和场内交易的股票期权有什么区别？</p><p>15.9 如何计算隐含波动率？</p><p>15.10 考虑已知股息后，如何调整布莱克-斯科尔斯-默顿模型？</p><h2 id=练习题>练习题<a class=anchor href=#%e7%bb%83%e4%b9%a0%e9%a2%98>#</a></h2><p>15.11
-布莱克-斯科尔斯-默顿股票期权定价模型中对于1年后股票价格概率分布的假设是什么？对于1年内连续复利收益率的假设是什么？</p><p>15.12
-股票价格的波动率为每年30%，在一个交易日内价格百分比变化的标准差是多少？</p><p>15.13
-计算一个3个月期的无股息股票欧式看跌期权的价格，期权执行价格为50美元，股票的当前价格为50美元，无风险利率为每年10%，波动率为每年30%。</p><p>15.14
-如果预计股票在2个月后将支付股息1.5美元，练习题15.13中的结果会如何变化？</p><p>15.15
-股票的当前价格为40美元，假定其期望收益率为15%，波动率为25%。在2年内的股票收益率（连续复利）的概率分布是什么？</p><p>15.16
-某股票价格服从几何布朗运动，其中期望收益率为16%，波动率为35%，股票的当前价格为38美元。</p><p>(a)一份该股票上具有执行价格为40美元，期限为6个月的欧式看涨期权被行使的概率为多少？</p><p>(b)一份该股票上具有同样执行价格及期限的欧式看跌期权被行使的概率为多少？</p><p>15.17 采用本章中的记号，证明ST的95%置信区间介于
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_292_01.jpg alt>
-{.content-image-class1
-ratio="0.230" w="304px" w-new="70px"
-style="max-width:304px;max-height:70px"} 与
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_292_02.jpg alt>
-{.content-image-class1
-ratio="0.210" w="305px" w-new="64px"
-style="max-width:305px;max-height:64px"} 之间。</p><p>15.18
-一位组合经理声称自己在过去10年中平均每年的收益率为20%，这种说法在什么方面会引起误解？</p><p>15.19
-假定无股息股票的期望收益率为μ，波动率为σ。一个具有创新意识的金融机构刚刚宣布将交易在时刻T收益为lnST的衍生产品，其中ST为股票在T时刻的价格。</p><p>(a)采用风险中性定价理论将衍生产品价格表达为股票价格S与时间t的函数。</p><p>(b)验证你得出的价格满足微分方程式(15-16)。</p><p>15.20 考虑一种在时间T提供收益为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_292_03.jpg alt>
-{.content-image-class
-ratio="1.235" w="51px" w-new="63px"
-style="max-width:51px;max-height:63px"}
-的衍生产品，其中ST为股票在T时刻的价格。当股票价格服从几何布朗运动时，可以证明该衍生产品在时间t(t≤T)的价格具有以下形式</p><p>h(t,T)Sn</p><p>其中S为股票在时间t的价格，h为t和T的函数。</p><p>(a)将以上形式的解代入布莱克-斯科尔斯-默顿微分方程，推导h(t,T)满足的常微分方程。</p><p>(b)h(t,T)所满足的边界条件是什么？</p><p>(c)证明</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_292_04.jpg alt>
-{ratio="0.130"
-w="546px" w-new="71px"
-style="max-width:546px;max-height:71px;width:100%"}</p><p>其中r为无风险利率，σ为股票价格的波动率。</p><p>15.21
-计算以下无股息股票上欧式看涨期权的价格，其中股票价格为52美元，执行价格为50美元，无风险利率为每年12%，波动率为每年30%，期限为3个月。</p><p>15.22
-计算以下无股息股票上欧式看跌期权的价格，其中股票价格为69美元，执行价格为70美元，无风险利率为每年5%，波动率为每年35%，期限为6个月。</p><p>15.23
-考虑关于一个股票上的美式看涨期权，股票价格为70美元，期限为8个月，无风险利率为每年10%，执行价格为65美元，波动率为32%。在3个月及6个月时预计各有1美元的股息，证明在两个除息日行使期权永远不会是最佳选择。采用DerivaGem计算期权的价格。</p><p>15.24
-一个无股息股票上看涨期权的市场价格为2.5美元，股票价格为15美元，执行价格为13美元，期限为3个月，无风险利率为每年5%，隐含波动率为多少？</p><p>15.25 采用本章中的记号</p><p>(a)N′(x)等于什么？</p><p>(b)证明SN′(d1)=Ke-r(T-t)N′(d2)，其中S为股票在时间t的价格，以及
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_293_01.jpg alt>
-{.content-image-class1
-ratio="0.186" w="644px" w-new="120px"
-style="max-width:644px;max-height:120px"} ，
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_293_02.jpg alt>
-{.content-image-class1
-ratio="0.183" w="652px" w-new="119px"
-style="max-width:652px;max-height:119px"}</p><p>(c)计算∂d1/∂S和∂d2/∂S。</p><p>(d)证明当c=SN(d1)-Ke-r(T-t)N(d2)时，以下方程成立</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_293_03.jpg alt>
-{ratio="0.466"
-w="491px" w-new="229px"
-style="max-width:491px;max-height:229px;width:100%"}</p><p>其中c为无股息股票上欧式看涨期权的价格。</p><p>(e)证明∂c/∂S=N(d1)。</p><p>(f)证明c满足布莱克-斯科尔斯-默顿微分方程。</p><p>(g)证明c满足欧式看涨期权的边界条件，即t→T时，c=max(S-K,0)。</p><p>15.26
-证明由布莱克-斯科尔斯-默顿给出的期权公式满足看跌-看涨期权平价关系式。</p><p>15.27
-股票的当前价格为50美元，无风险利率为5%，利用DerivaGem将以下欧式期权价格表转换为隐含波动率表，在计算中假设股票无股息。这些期权价格与布莱克-斯科尔斯-默顿的假设一致吗？</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_293_04.jpg alt>
-{ratio="0.393"
-w="750px" w-new="295px"
-style="max-width:750px;max-height:295px;width:100%"}</p><p>15.28
-仔细解释为什么即使一个股票预期只发放一次股息时，布莱克方法只是对支付期息股票上美式期权的一个近似。由布莱克近似法得出的估计值会高估还是会低估期权价格？解释你的答案。</p><p>15.29
-考虑关于某股票上的美式看涨期权，股票价格为50美元，期权期限为15个月，无风险利率为每年8%，执行价格为55美元，波动率为25%。股票在4个月与10个月时预计各有1.5美元的股息，证明在两个除息日行使期权不会是最佳选择，并计算期权价格。</p><p>15.30
-采用本章中的记号，证明在风险中性世界里，一个欧式看涨期权被执行的概率为N(d2)。在T时刻，股票价格大于K时收益为100美元的衍生产品价格表达式是什么？</p><p>15.31
-利用式(15-17)中的结果确定美式看跌期权的价值，期权标的股票不支付任何股息，当股票价格达到价格H时，期权回报为K，其中H&lt;K。假定股票的当前价格S高于H，H取什么值时，期权价值为最大？推导具有执行价格K的美式永续看跌期权的价值。</p><p>15.32
-某公司已经发行了管理人股票期权，当对期权进行定价时，是否应考虑稀释效应？解释你的答案。</p><p>15.33
-某公司的股票价格为50美元，市场上共有1000万股。公司计划向其雇员发行300万5年期的平价看涨期权。在期权行使时，公司需要发行更多的股票，股票价格的波动率为25%，5年的无风险利率为每年5%，公司不发放股息。估算公司发行管理人期权的费用。</p><p>15.34
-某股票的波动率为每年18%，计算在以下时间段价格变动的标准差：(a)1天；(b)1周；(c)1个月。</p><p>15.35
-某股票的当前价格为50美元。假定股票的期望收益率为18%，波动率为30%，在2年后股票价格的概率分布是什么？计算分布的期望值与标准方差，并确定95%的置信区间。</p><p>15.36 假定在连续15个周末所观察的股票价格（以美元计）为：</p><p>30.2，32.0，31.1，30.1，30.2，30.3，30.6，33.0，32.9，33.0，33.5，33.5，33.7，33.5，33.2</p><p>估计股票价格的波动率，你所估计结果的标准差为多少？</p><p>15.37 附录15A给出了一个重要结果</p><p>E[max(V-K,0)]=E(V)N(d1)-KN(d2)</p><p>求证</p><p>E[max(K-V,0)]=KN(-d2)-E(V)N(-d1)</p><p>并以此结果推导关于一个无股息股票的欧式看跌期权的布莱克-斯科尔斯-默顿公式。</p><h2 id=附录15-a布莱克-斯科尔斯-默顿公式的证明>附录15 A布莱克-斯科尔斯-默顿公式的证明<a class=anchor href=#%e9%99%84%e5%bd%9515-a%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%85%ac%e5%bc%8f%e7%9a%84%e8%af%81%e6%98%8e>#</a></h2><p>在证明布莱克-斯科尔斯-默顿公式之前，我们先证明一个重要关系式，在今后的章节中我们也将会用到这一结论。</p><p>关键结果</p><p>如果V服从对数正态分布，lnV的标准差为w，那么</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_294_01.jpg alt>
-{ratio="0.056"
-w="1277px" w-new="72px"
-style="max-width:1277px;max-height:72px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_294_02.jpg alt>
-{ratio="0.472"
-w="489px" w-new="231px"
-style="max-width:489px;max-height:231px;width:100%"}</p><p>这里E代表期望值。</p><p>关系式的证明</p><p>定义g(V)为V的概率密度函数，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_294_03.jpg alt>
-{ratio="0.082"
-w="1222px" w-new="100px"
-style="max-width:1222px;max-height:100px;width:100%"}</p><p>lnV服从正态分布，标准差为w，由正态分布的性质得知lnV的均值为m，其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_294_04.jpg alt>
-{ratio="0.069"
-w="1077px" w-new="74px"
-style="max-width:1077px;max-height:74px;width:100%"}</p><p>定义一个新的变量</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_294_05.jpg alt>
-{ratio="0.116"
-w="988px" w-new="115px"
-style="max-width:988px;max-height:115px;width:100%"}</p><p>Q服从正态分布，均值为0，方差为1.0。将Q的密度函数记为h(Q)，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_295_01.jpg alt>
-{ratio="0.315"
-w="356px" w-new="112px"
-style="max-width:356px;max-height:112px;width:100%"}</p><p>利用式(15A-4)将式(15A-2)关于V的积分转换为关于Q的积分，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_295_02.jpg alt>
-{ratio="0.121"
-w="917px" w-new="111px"
-style="max-width:917px;max-height:111px;width:100%"}</p><p>或者</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_295_03.jpg alt>
-{ratio="0.080"
-w="1425px" w-new="114px"
-style="max-width:1425px;max-height:114px;width:100%"}</p><p>现在我们有</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_295_04.jpg alt>
-{ratio="0.748"
-w="606px" w-new="453px"
-style="max-width:606px;max-height:453px;width:100%"}</p><p>这意味着式(15A-5)变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_295_05.jpg alt>
-{ratio="0.072"
-w="1475px" w-new="106px"
-style="max-width:1475px;max-height:106px;width:100%"}</p><p>定义N(x)为均值为0，方差为1的标准正态分布变量小于x的概率，式(15A-6)的第一项积分变为</p><p>1-N[(lnK-m)/w-w]=N[(-lnK+m)/w+w]</p><p>将式(15A-3)中的m代入以上表达式，得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_295_06.jpg alt>
-{ratio="0.160"
-w="670px" w-new="107px"
-style="max-width:670px;max-height:107px;width:100%"}</p><p>类似地，式(15A-6)中的第二项积分等于N(d2)。因此，式(15A-6)变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_295_07.jpg alt>
-{ratio="0.084"
-w="838px" w-new="70px"
-style="max-width:838px;max-height:70px;width:100%"}</p><p>代入(15A-3)定义的m项即可得出上面的结果。</p><p>布莱克-斯科尔斯-默顿公式的结果</p><p>我们现在考虑一个在时刻T到期的欧式看涨期权，标的股票不支付股息，期权的执行价格为K，无风险利率为r，股票的当前价格为S0，股票价格的波动率为σ。由式(15-22)得出看涨期权价格c满足</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_295_08.jpg alt>
-{ratio="0.065"
-w="1114px" w-new="72px"
-style="max-width:1114px;max-height:72px;width:100%"}</p><p>其中ST为股票在T时刻的价格，
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_295_09.jpg alt>
-{.content-image-class
-ratio="1.686" w="35px" w-new="59px"
-style="max-width:35px;max-height:59px"}
-代表风险中性世界里的期望值。在布莱克-斯科尔斯-默顿对随机过程的假设下，ST服从对数正态分布。由式(15-3)和式(15-4)又得出
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_295_10.jpg alt>
-{.content-image-class
-ratio="0.575" w="113px" w-new="65px"
-style="max-width:113px;max-height:65px"} =S0erT，lnST的标准差为
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_295_11.jpg alt>
-{.content-image-class
-ratio="0.643" w="98px" w-new="63px"
-style="max-width:98px;max-height:63px"} 。</p><p>由以上证明的关键结果，我们可以将式(15A-7)变为</p><p>c=e-rT[S0erTN(d1)-KN(d2)]</p><p>或</p><p>=S0N(d1)-Ke-rTN(d2)</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_296_01.jpg alt>
-{ratio="0.266"
-w="1036px" w-new="276px"
-style="max-width:1036px;max-height:276px;width:100%"}</p><p>这正是布莱克-斯科尔斯-默顿公式的结果。</p><p><a href=/digital-library/index.html>[1]</a>{#chapter_220.xhtml_BT1}
-期望收益率的意义不是很明确，它既可以是μ，也可以是μ-σ2/2。除非特别说明，本书所指的期望收益率为μ。</p><p><a href=/digital-library/index.html>[2]</a>{#chapter_220.xhtml_BT2} 当利用历史数据估计波动率时，常常将
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_275_11.jpg alt>
-{.content-image-class
-ratio="1.679" w="28px" w-new="47px"
-style="max-width:28px;max-height:47px"} 假设为0。</p><p><a href=/digital-library/index.html>[3]</a>{#chapter_220.xhtml_BT3}
-微分方程给出了看涨与看跌期权在时间t的价格。例如，满足方程的看涨期权价格是c=SN(d1)-Ke-r(T-t)N(d2)，其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_228_08.jpg alt>
-{ratio="0.226"
-w="274px" w-new="62px"
-style="max-width:274px;max-height:62px;width:70%"}</p><p>和
-<img src=out/options-futures-derivatives/images/img/CB_3300065639_228_09.jpg alt>
-{.content-image-class
-ratio="0.180" w="150px" w-new="27px"
-style="max-width:150px;max-height:27px"} 。</p><p><a href=/digital-library/index.html>[4]</a>{#chapter_220.xhtml_BT4}
-从理论上讲，这与股票整体价格的波动率不完全一样。有风险部分的波动率大概等于股票整体价格波动率乘以S0/(S0-D)，其中D为股息的现值。然而，只有在利用历史数据估计波动率时，才有必要做这种调整。在计算隐含波动率时是先将股息的贴现值从股票价格中去掉，从而是风险部分的波动率。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><nav class=book-nav><div class="flex justify-between"><div class=book-nav-prev><a href=/digital-library/books/options-futures-derivatives/ch14.html class=book-nav-link>← 第14章</a></div><div class=book-nav-next><a href=/digital-library/books/options-futures-derivatives/ch16.html class=book-nav-link>第16章 →</a></div></div></nav><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#151-股票价格的对数正态分布性质>15.1 股票价格的对数正态分布性质</a></li><li><a href=#152-收益率的分布>15.2 收益率的分布</a></li><li><a href=#153-期望收益>15.3 期望收益</a></li><li><a href=#154-波动率>15.4 波动率</a><ul><li><a href=#chapter_207.xhtml_A33d50111-77f3-4d19-8441-33ada8e3b398>15.4.1 由历史数据所估计的波动率</a></li><li><a href=#chapter_207.xhtml_A52020113-5592-4b9f-a0a9-6987db35456a>15.4.2 交易日天数与日历天数</a></li></ul></li><li><a href=#155-布莱克-斯科尔斯-默顿微分方程的概念>15.5 布莱克-斯科尔斯-默顿微分方程的概念</a></li><li><a href=#156-布莱克-斯科尔斯-默顿微分方程的推导>15.6 布莱克-斯科尔斯-默顿微分方程的推导</a><ul><li><a href=#chapter_209.xhtml_A227b0117-0e11-4653-a65c-d7f358ecce13>15.6.1 永续衍生产品</a></li><li><a href=#chapter_209.xhtml_Ae4e50117-37be-4eca-bf99-b37162803133>15.6.2 可交易衍生产品的价格</a></li></ul></li><li><a href=#157-风险中性定价>15.7 风险中性定价</a></li><li><a href=#158-布莱克-斯科尔斯-默顿定价公式>15.8 布莱克-斯科尔斯-默顿定价公式</a><ul><li><a href=#chapter_211.xhtml_A01bb011a-95e9-4706-bf23-784e8b58b4ce>15.8.1 如何理解N(d1)和N(d2)</a></li><li><a href=#chapter_211.xhtml_A73c2011a-0ac6-46b0-8f73-96336082549e>15.8.2 布莱克-斯科尔斯-默顿公式的性质</a></li></ul></li><li><a href=#159-累积正态分布函数>15.9 累积正态分布函数</a></li><li><a href=#1510-权证与雇员股票期权>15.10 权证与雇员股票期权</a></li><li><a href=#1511-隐含波动率>15.11 隐含波动率</a></li><li><a href=#1512-股息>15.12 股息</a><ul><li><a href=#chapter_215.xhtml_A2777011f-e4ff-4a03-bed8-d75a3156e516>15.12.1 欧式期权</a></li><li><a href=#chapter_215.xhtml_Ab4400120-e5b6-48aa-aace-22f72639db60>15.12.2 美式期权</a></li><li><a href=#chapter_215.xhtml_A39ef0121-0ed0-4eb1-a7c5-8c98e6602bb9>15.12.3 布莱克近似法</a></li></ul></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#概念思考题>概念思考题</a></li><li><a href=#练习题>练习题</a></li><li><a href=#附录15-a布莱克-斯科尔斯-默顿公式的证明>附录15 A布莱克-斯科尔斯-默顿公式的证明</a></li></ul></nav></div></aside></main></body></html>
+</label><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#151-股票价格的对数正态分布性质>15.1 股票价格的对数正态分布性质</a></li><li><a href=#152-收益率的分布>15.2 收益率的分布</a></li><li><a href=#153-期望收益>15.3 期望收益</a></li><li><a href=#154-波动率>15.4 波动率</a></li><li><a href=#1541-由历史数据所估计的波动率>15.4.1 由历史数据所估计的波动率</a></li><li><a href=#1542-交易日天数与日历天数>15.4.2 交易日天数与日历天数</a></li><li><a href=#距到期日的交易日天数-t--252>距到期日的交易日天数 T = 252</a></li><li><a href=#155-布莱克-斯科尔斯-默顿微分方程的概念>15.5 布莱克-斯科尔斯-默顿微分方程的概念</a></li><li><a href=#156-布莱克-斯科尔斯-默顿微分方程的推导>15.6 布莱克-斯科尔斯-默顿微分方程的推导</a></li><li><a href=#1561-永续衍生产品>15.6.1 永续衍生产品</a></li><li><a href=#1562-可交易衍生产品的价格>15.6.2 可交易衍生产品的价格</a></li><li><a href=#157-风险中性定价>15.7 风险中性定价</a></li><li><a href=#158-布莱克-斯科尔斯-默顿定价公式>15.8 布莱克-斯科尔斯-默顿定价公式</a></li><li><a href=#1581-如何理解nd1和nd2>15.8.1 如何理解N(d1)和N(d2)</a></li><li><a href=#1582-布莱克-斯科尔斯-默顿公式的性质>15.8.2 布莱克-斯科尔斯-默顿公式的性质</a></li><li><a href=#159-累积正态分布函数>15.9 累积正态分布函数</a></li><li><a href=#1510-权证与雇员股票期权>15.10 权证与雇员股票期权</a></li><li><a href=#1511-隐含波动率>15.11 隐含波动率</a></li><li><a href=#1512-股息>15.12 股息</a></li><li><a href=#15121-欧式期权>15.12.1 欧式期权</a></li><li><a href=#15122-美式期权>15.12.2 美式期权</a></li><li><a href=#15123-布莱克近似法>15.12.3 布莱克近似法</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#关于股票价格变化的分布>关于股票价格变化的分布</a></li><li><a href=#关于布莱克-斯科尔斯-默顿分析>关于布莱克-斯科尔斯-默顿分析</a></li><li><a href=#关于风险中性定价>关于风险中性定价</a></li><li><a href=#关于波动率>关于波动率</a></li><li><a href=#概念思考题>概念思考题</a></li><li><a href=#练习题>练习题</a></li><li><a href=#1525-采用本章中的记号>15.25 采用本章中的记号</a></li><li><a href=#附录15-a布莱克-斯科尔斯-默顿公式的证明>附录15 A布莱克-斯科尔斯-默顿公式的证明</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=第15章-布莱克-斯科尔斯-默顿模型>第15章 布莱克-斯科尔斯-默顿模型<a class=anchor href=#%e7%ac%ac15%e7%ab%a0-%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e6%a8%a1%e5%9e%8b>#</a></h1><p>20世纪70年代初，费希尔·布莱克、迈伦·斯科尔斯和罗伯特·默顿在对欧式期权定价上取得了重大突破， ㊟ 【See F. Black andM. Scholes, “The Pricing of Options and CorporateLiabilities,” Journal of PoliticalEconomy 81(May/June 1973):637-659；R. C. Merton, “Theory of Rational Option Pricing, ，Bell Journal of Economics and Management Science, 4(Spring1973): 141-183.】 他们发展了后来被称为布莱克-斯科尔斯或布莱克-斯科尔斯-默顿的模型。该模型对于交易员如何对期权定价与对冲都产生了重大影响。这一模型的重要性在1997年得到了肯定：迈伦·斯科尔斯与罗伯特·默顿也因此获得了诺贝尔经济学奖。不幸的是费希尔·布莱克在1995年去世，否则，毫无疑问他也会成为这项诺贝尔奖的得主之一。</p><p>布莱克、斯科尔斯和默顿是如何取得突破的呢？在他们之前，研究人员也做了类似的假设，并且正确地计算了欧式期权的期望收益，但是如第13.2节所述，选取正确的贴现率是非常困难的。布莱克和斯科尔斯利用资本资产定价模型（见附录3A）确定了市场对期权所要求的回报与对股票所要求的回报之间的关系。由于这种关系既取决于股票价格又取决于时间，所以这样做并不容易。默顿的处理方式与布莱克和斯科尔斯不同，他的方法涉及由期权与股票组成的无风险组合，因而在一个很短的时间区间内，组合的收益率必须是无风险利率。这与我们在第13.1节里的讲述类似，但是更为复杂，原因是组合的价值随时间连续变化。默顿的方法比布莱克和斯科尔斯的方法更通用，因为这种方法不依赖于资本资产定价模型的假设。</p><p>在这一章里，我们将谈到如何用默顿的方法推导布莱克-斯科尔斯-默顿模型，并解释如何从历史数据估计波动率或由期权价格计算隐含波动率。本章还将说明如何使用在第13章中引进的风险中性定价方法，以及如何推广布莱克-斯科尔斯-默顿模型为支付股息的股票期权（包括欧式和美式期权）定价。</p><p><img src=images/819d6dfea470cc6b501ccf6615a3dc573fe152d7072d087c962ab6a60773b748.jpg alt></p><h2 id=151-股票价格的对数正态分布性质>15.1 股票价格的对数正态分布性质<a class=anchor href=#151-%e8%82%a1%e7%a5%a8%e4%bb%b7%e6%a0%bc%e7%9a%84%e5%af%b9%e6%95%b0%e6%ad%a3%e6%80%81%e5%88%86%e5%b8%83%e6%80%a7%e8%b4%a8>#</a></h2><p>布莱克、斯科尔斯和默顿用来描述股票价格行为的模型正是我们在第14章中建立的模型。该模型假设无股息股票在短时间内的百分比变化具有正态分布。定义</p><p>μ：股票年化的短期期望收益率；</p><p>$\sigma$ ：股票价格的波动率。</p><p>在 $\Delta$ t时间内股票收益的均值和标准差分别近似地等于 $\mu \textrm{{\Delta}}$ t和 $\sigma$ √∆t ，因此</p>$$
+\frac{\Delta S}{S} \sim \phi (\mu \Delta t, \sigma^{2} \Delta t)\tag{15-1}
+$$<p>其中 $\Delta \mathrm{S}$ 为股票价格在 $\Delta$ t时间内的变化， $\phi \left( \mathrm{m} , \mathrm{v} \right)$ 代表均值为m，方差为v的正态分布。[这正是式(14-9)]。</p><p>在第14.7节中我们曾证明</p>$$
+\ln S_{T} - \ln S_{0} \sim \phi \left[ \left(\mu - \frac{\sigma^{2}}{2}\right) T, \sigma^{2} T \right]
+$$<p>因此</p>$$
+\ln \frac{S_{T}}{S_{0}} \sim \phi \left[ \left(\mu - \frac{\sigma^{2}}{2}\right) T, \sigma^{2} T \right]\tag{15-2}
+$$<p>和</p>$$
+\ln S_{T} \sim \phi \left[ \ln S_{0} + \left(\mu - \frac{\sigma^{2}}{2}\right) T, \sigma^{2} T \right]\tag{15-3}
+$$<p>其中ST是在未来时间T时的股票价格，S0是在时间0的股票价格。在这里没有做任何近似。lnST服从正态分布，所以ST服从对数正态分布。lnST的均值是lnS0+(μ-σ2/2)T，标准差是 σ√T</p><p>【例15-1】 考虑一个初始价格为40美元的股票，该股票的期望收益为每年16%，波动率为每年20%。由式(15-3)我们知道，股票价格ST在6个月内的概率分布是</p><p>lnST～ϕ[ln 40+(0.16-0.22/2)×0.5,0.22×0.5]</p><p>lnST～ϕ(3.759,0.02)</p><p>一个服从正态分布的变量取值落在与均值的距离小于1.96倍标准</p><p>差范围内的概率为95%。在本例中，标准差为=0.141，因此在95%的置信度下，我们有</p><p>√0.02</p>$$
+3. 759 - 1. 96 \times 0. 141 < \ln \mathrm{ST} < 3. 759 + 1. 96 \times 0. 141
+$$<p>这可以写成</p>$$
+\mathrm{e} 3. 759 - 1. 96 \times 0. 141 < \mathrm{ST} < \mathrm{e} 3. 759 + 1. 96 \times 0. 141
+$$<p>或</p><p>32.55&lt;ST&lt;56.56</p><p>因此，在6个月内股票价格介于32.55～56.56范围内的概率为95%。</p><p>具有对数正态分布的变量可以取零与无穷大之间的任何值，图15-1展示了对数正态分布的形状。与正态分布不同的是，它呈偏态。因此它的均值(mean)、中位数(median)以及众数(mode)均不相等。由式(15-3)以及对数正态分布的性质，我们可以证明ST的期望值E(ST)为</p><p><img src=images/0c73bfe90e7017c8453bf8537ef3b8864a8f735f99eb263f4bcec0c638ec3877.jpg alt><br>图15-1 对数正态分布</p>$$
+E (S_{T}) = S_{0} \mathrm{e} ^{\mu T}\tag{15-4}
+$$<p>ST的方差var(ST)可以表示为 ㊟ 【关于式(15-4)和式(15-5)的证明可以在网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes里的Technical Note 2中找到。关于对数正态分布性质更详细的讨论，见J. Aitchison和J. A. C. Brown，The Log-normal Distribution.Cambridge University Press, 1966。】</p>$$
+\operatorname{var} \left(S_{T}\right) = S_{0} ^{2} \mathrm{e} ^{2 \mu T} \left(\mathrm{e} ^{\sigma^{2} T} - 1\right)\tag{15-5}
+$$<p>【例15-2】 假设某股票，其当前价格为20美元，期望收益为每年20%，波动率为每年40%。股票在1年内的价格期望和方差由下面的式子给出</p>$$
+\begin{array}{l} \mathrm{E(ST)} = 20 \mathrm{e} 0. 2 \times 1 = 24. 43 \text{和var(ST)} = 400 \mathrm{e} 2 \times 0. 2 \times 1 (\mathrm{e} 0. 42 \times 1 - \\ 1) = 103. 54 \end{array}
+$$<p>√103.541年内股票价格的标准差为</p><p>，即10.18。</p><h2 id=152-收益率的分布>15.2 收益率的分布<a class=anchor href=#152-%e6%94%b6%e7%9b%8a%e7%8e%87%e7%9a%84%e5%88%86%e5%b8%83>#</a></h2><p>由股票价格服从对数正态分布的性质出发，我们可以得出0与T之间连续复利收益率的概率分布。将0与T之间以连续复利的收益率记为x，那么</p>$$
+S_{T} = S_{0} \mathrm{e} ^{x T}
+$$$$
+x = \frac{1}{T} \ln{\frac{S_{T}}{S_{0}}}\tag{15-6}
+$$<p>由式(15-2)得出</p>$$
+x \sim \phi \left(\mu - \frac{\sigma^{2}}{2}, \frac{\sigma^{2}}{T}\right)\tag{15-7}
+$$<p>因此，连续复利收益率服从正态分布，其均值与标准差分别为 $\mu -$</p>$$
+\sigma / \sqrt{T}
+$$<p>$\sigma \ 2 / 2$ 和 07√1 。当T增大时，标准差x减小。为了理解这一点，我们可以考虑T=1和T=20两种情形：与1年的年平均收益估计相比，我们估计20年内的年平均收益比估计任意一年的平均收益更能确定。</p><p>【例15-3】 假设某一股票，其期望收益为每年17%，波动率为每年20%，在3年内实现的平均收益（以连续复利计算）服从正态分布，均值为</p>$$
+0. 17 - \frac{0 . 2^{2}}{2} = 0. 15
+$$<p>即每年15%，标准差为</p>$$
+\sqrt{\frac{0 . 2^{2}}{3}} = 0. 1155
+$$<p>即每年11.55%。因为一个服从正态分布的变量有95%的机会落在与其均值距离小于1.96倍标准方差的范围之内，因此，我们有95%的把握肯定在今后3年内实现的平均年收益率将会介于15-1.96×11.55=-7.6%与 $15 + 1 . 96 \times 11 . 55 = + 37$ .6%之间。</p><h2 id=153-期望收益>15.3 期望收益<a class=anchor href=#153-%e6%9c%9f%e6%9c%9b%e6%94%b6%e7%9b%8a>#</a></h2><p>投资者从股票中所寻求的期望收益率μ与该股票的风险有关。风险越大，期望收益率也会越高。它还依赖于经济中的利率：当利率越高时，投资者对股票所要求的期望收益率也会越高。庆幸的是，我们不需要关心决定μ的任何细节。事实上，当利用标的股票价格表示期权价格时，期权价格与μ毫不相干。尽管如此，股票期望收益率的一个性质常常引起混淆，因此我们会特别解释这个性质。</p><p>我们的股票定价模型定义 $\mu \textrm{{\Delta t}}$ 是股票在较短时间段 $\Delta{\ t}$ 内的平均回报，由此我们可能会很自然地假设 $\mu$ 是股票以连续复利的期望收益。但事实并非如此。在一段长度为T的时间内，真正实现的连续复利的收益x是根据式(15-6)得出的</p>$$
+x = \frac{1}{T} \ln \frac{S_{T}}{S_{0}}
+$$<p>而且由式(15-7)，我们知道期望值E $\mathrm{( x ) = \mu - \sigma 2 / 2}$ o</p><p>以连续复利形式计算的期望收益不等于μ的原因并不是那么一目了然，但十分重要。假定我们考虑大量长度为 $\Delta{\ t}$ 的很短时间区间。定义Si为股票在第i个时间区间末的股票价格， $\Delta \mathrm{S i}$ 为Si+1-Si。在我们对股票价格所做的假设下，在每个小区间上股票价格的算术平均收益率大约为 $\mu$ 。换句话说， $\mu \textrm{{\Delta}}$ t很接近于 $\Delta \mathrm{S i} / \mathrm{S i}$ 的算术平均值。然而，当表示成以区间 $\Delta$ t复利时，在数据所覆盖的总区间上收益的期望接近于 $\mu - \sigma \ 2 / 2$ ，而不是 $\mu$ 。 [1] 业界事例15-1描述的有关共同基金的数值例子对此进行了说明。</p><p>业界事例15-1</p><p>共同基金的收益率可能会令人误解</p><p>μ与μ-σ2/2的不同与共同基金收益报告存在的一个问题有密切关系。假定某共同基金经理报告过去5年内的年收益（以年复利计算）依次为15%、20%、30%、-20%和25%。</p><p>这些收益的算术平均值等于以上5个数值的总和除以5，即14%。但是如果一个投资者将资金投入该共同基金，并投资5年，那么其收益率会小于每年14%。100美元的投资在5年后的价值为</p>$$
+100 \times 1. 15 \times 1. 20 \times 1. 30 \times 0. 80 \times 1. 25 = 179. 40 (\text{美元})
+$$<p>而以年复利14%的收益率计算，相应值将为</p><p>100×1.145=192.54（美元）</p><p>在5年后，终值179.40美元所对应的收益率为12.4%，这是因为</p>$$
+100 \times 1. 1245 = 179. 40
+$$<p>那么，基金经理应该报告哪一个收益率呢？基金经理可能想做出以下陈述：“在过去5年，我们平均每年的收益率为14%。”虽然这种说法没有错，但它会令人产生误解，而以下陈述就不太会使人产生误解：“投资者在过去5年中将资金投入我们共同基金所得收益率为每年12.4%。”在某些地区，监管当局要求基金经理以第2种形式报告其收益率。</p><p>以上现象是数学中的一个著名结论：一组数据（不全部相等）的几何平均值总是小于算术平均值。在我们的例子中，收益每年的乘数项为1.15、1.20、1.30、0.8和1.25。这些数字的算术平均为1.140，而它们的几何平均值为1.124，即1加上年收益率在5年内的几何平均值。</p><p>为了以数学的方式解释原因，我们首先由式(15-4)开始</p>$$
+\mathrm{E(ST)} = \mathrm{S0e} \mu \mathrm{T}
+$$<p>取对数，我们得出</p>$$
+\ln [ \mathrm{E} (\mathrm{ST}) ] = \ln (\mathrm{S0}) + \mu \mathrm{T}
+$$<p>我们可能会认为 $\ln \left[ \mathrm{E} \left( \mathrm{S T} \right) \right] {\mathrm{= E}} \left[ \ln \left( \mathrm{S T} \right) \right]$ ，并由此得出E $\left[ \mathrm{l n} \left( \mathrm{S T} \right) \right] -$ $\ln \left( \mathrm{S 0} \right) = \mu \mathrm{~ T ~}$ ，即E $[ \ln \left( \mathrm{S T / S 0} \right) ] = \mu \mathrm{~ T ~}$ ，这也就得出了 $\operatorname{E} \left( \mathrm{x} \right) = \mu$ 。但是，因为ln是非线性函数。事实 $\operatorname{E l n} \left[ \operatorname{E} \left( \operatorname{S T} \right) \right] > \operatorname{E} \left[ \ln \left( \operatorname{S T} \right) \right]$ ，因此$\mathrm{E} \left[ \mathrm{l n} \left( \mathrm{S T / S 0} \right) \right] < \mu \mathrm{~ T ~}$ ，从而E $\mathrm{( x ) < \mu}$ （如上所述， $\operatorname{E} \left( \mathrm{x} \right) = \mu - \sigma \ 2 / 2 )$</p><h2 id=154-波动率>15.4 波动率<a class=anchor href=#154-%e6%b3%a2%e5%8a%a8%e7%8e%87>#</a></h2><p>股票的波动率σ用于度量股票收益所产生的不确定性。股票的波动率通常介于15%～60%。</p><p>由式(15-7)可知股票价格的波动率可以定义成按连续复利时股票在1年内所提供收益率的标准差。</p><p>当 $\Delta$ t很小时，式(15-1)显示 $\sigma \nobreakspace{} 2 \nobreakspace{} \Delta$ t近似地等于在Δt时间内股票</p>$$
+\sigma \sqrt{\Delta t}
+$$<p>价格变化百分比的方差。这说明 σ√∆t 近似地等于在Δt时间内股票价格变化百分比的标准差。例如，一家公司股票的价格为50美元，波动率 $\sigma = 0 . 3$ ，即每年30%。对应于每周价格百分比变化的标准差近似地等于</p>$$
+30 \times \sqrt{\frac{1}{52}} = 4.16 \%
+$$<p>在1周内股票价格有一个标准差的变化为 $50 \times 0 . 0416$ ，即2.08美元。</p><p>由标准差描述股票价格变化不定性的增长速度大约为时间持有期长度的平方根（至少在近似意义下）。例如，股票价格在4周内的标准差大约为股票价格在1周内标准差的两倍。</p><h2 id=1541-由历史数据所估计的波动率>15.4.1 由历史数据所估计的波动率<a class=anchor href=#1541-%e7%94%b1%e5%8e%86%e5%8f%b2%e6%95%b0%e6%8d%ae%e6%89%80%e4%bc%b0%e8%ae%a1%e7%9a%84%e6%b3%a2%e5%8a%a8%e7%8e%87>#</a></h2><p>为了以实证的方式估计股票价格的波动率，对股票价格的观察通常是在固定的区间内（如每天、每周或每个月）。定义</p><p>n+1：观测次数；</p><p>Si：第i个时间区间末的股票价格， $\mathrm{i = 0 , 1 , \cdots , n}$</p><p>τ：时间区间的长度，以年为单位。</p><p>令</p>$$
+u_{i} = \ln \left(\frac{S_{i}}{S_{i - 1}}\right), \quad i = 1, 2, \dots , n
+$$<p>ui标准差的估计值s为</p>$$
+s = \sqrt{\frac{1}{n - 1} \sum_{i = 1} ^{n} \left(u_{i} - \bar{u}\right) ^{2}}
+$$<p>或</p>$$
+s = \sqrt{\frac{1}{n - 1} \sum_{i = 1} ^{n} u_{i} ^{2} - \frac{1}{n (n - 1)} \left(\sum_{i = 1} ^{n} u_{i}\right) ^{2}}
+$$<p>其中 $\overset{-} {u}$ 为ui的均值。 [2]</p><p>由式(15-2)我们知道ui的标准差为 $\sigma{\sqrt{\tau}}$ 。因此，变量s是$\sigma{\sqrt{\tau}}$ 的估计值。所以σ本身可以被估计为 $\hat{\sigma}$ ，其中</p>$$
+\hat{\sigma} = \frac{s}{\sqrt{\tau}}
+$$<p>可以证明以上估计式的标准误差大约为 ô/√2n</p><p>主动交易期权的价格通常不是根据基于历史数据的波动率计算的。本章后面看到，交易员使用隐含波动率。然而，基于历史数据的波动率估计被广泛用于风险管理。风险经理通常将τ设置为一天。 ㊟【有趣的是，对波动率的估计往往会随着时间段t的缩短而增加。例如，τ等于一小时的值通常导致波动率估计高τ等于一天的值。】 风险经理必须处理的一个问题是：波动率往往会随着时间的推移而变化，有高波动时期和低波动时期，这将影响用于估计波动率的数据量（即n的选择）。如果波动率是恒定的，数据越多，估计的精确度也会越高，但σ确实会随时间变化，太老的历史数据对于预测将来波动率可能不太相干。一个折中的办法是采用最近90～180天内每天的收盘价数据。另外一种约定俗成的方法是将n设定为波动率所用于的天数。因此，如果波动率是用于计算两年期的期权，在计算中我们可以采用最近两年的日收益数据。估计波动率比较复杂的方法涉及GARCH模型，在第23章中我们将对此进行讨论。</p><p>【例15-4】 表15-1给出了在21个连续交易日里的股票价格序列。这时n=20</p>$$
+\sum_{i = 1} ^{n} u_{i} = 0. 09531 \qquad{\text{及}} \qquad \sum_{i = 1} ^{n} u_{i} ^{2} = 0. 00326
+$$<p>表15-1 波动率计算</p><table><tr><td>天数</td><td>收盘价(美元)</td><td>价格比率 $(S_i/S_{i-1})$</td><td>日收益 $u_i = \ln(S_i/S_{i-1})$</td><td>天数</td><td>收盘价(美元)</td><td>价格比率 $(S_i/S_{i-1})$</td><td>日收益 $u_i = \ln(S_i/S_{i-1})$</td></tr><tr><td>0</td><td>20.00</td><td></td><td></td><td>11</td><td>21.00</td><td>1.01205</td><td>0.01198</td></tr><tr><td>1</td><td>20.10</td><td>1.00500</td><td>0.00499</td><td>12</td><td>21.10</td><td>1.00476</td><td>0.00475</td></tr><tr><td>2</td><td>19.90</td><td>0.99005</td><td>-0.01000</td><td>13</td><td>20.90</td><td>0.99052</td><td>-0.00952</td></tr><tr><td>3</td><td>20.00</td><td>1.00503</td><td>0.00501</td><td>14</td><td>20.90</td><td>1.00000</td><td>0.00000</td></tr><tr><td>4</td><td>20.50</td><td>1.02500</td><td>0.02469</td><td>15</td><td>21.25</td><td>1.01675</td><td>0.01661</td></tr><tr><td>5</td><td>20.25</td><td>0.98780</td><td>-0.01227</td><td>16</td><td>21.40</td><td>1.00706</td><td>0.00703</td></tr><tr><td>6</td><td>20.90</td><td>1.03210</td><td>0.03159</td><td>17</td><td>21.40</td><td>1.00000</td><td>0.00000</td></tr><tr><td>7</td><td>20.90</td><td>1.00000</td><td>0.00000</td><td>18</td><td>21.25</td><td>0.99299</td><td>-0.00703</td></tr><tr><td>8</td><td>20.90</td><td>1.00000</td><td>0.00000</td><td>19</td><td>21.75</td><td>1.02353</td><td>0.02326</td></tr><tr><td>9</td><td>20.75</td><td>0.99282</td><td>-0.00720</td><td>20</td><td>22.00</td><td>1.01149</td><td>0.01143</td></tr><tr><td>10</td><td>20.75</td><td>1.00000</td><td>0.00000</td><td></td><td></td><td></td><td></td></tr></table><p>日收益率标准差的估计值为</p>$$
+\sqrt{\frac{0 . 00326}{19} - \frac{0 . 09531^{2}}{20 \times 19}} = 0. 01216
+$$<p>即1.216%。假设每年有252个交易日， $\tau = 1 / 252$ ，以上数据给出的</p><p>0.01216√252波动率估计值为每年 =0.193，即19.3%。估计值的标准误差为</p>$$
+\frac{0 . 193}{\sqrt{2 \times 20}} = 0. 031
+$$<p>即每年3.1%。</p><p>在以上的分析中假定了股票不付股息，但这里的分析同样也适用于支付股息的股票。对应于一个包含除息日在内的时间区间，股票的收益率为</p>$$
+u_{i} = \ln \frac{S_{i} + D}{S_{i - 1}}
+$$<p>其中D为股息的数量，在其他时间区间内，股票的收益率仍为</p>$$
+u_{i} = \ln{\frac{S_{i}}{S_{i - 1}}}
+$$<p>但是，由于税收因素可能会对收益率在除息日附近的计算起一定的作用，所以当我们利用每天或每周的数据进行计算时，也许最好的做法是除去包含除息日在内的时间区间里的数据。</p><h2 id=1542-交易日天数与日历天数>15.4.2 交易日天数与日历天数<a class=anchor href=#1542-%e4%ba%a4%e6%98%93%e6%97%a5%e5%a4%a9%e6%95%b0%e4%b8%8e%e6%97%a5%e5%8e%86%e5%a4%a9%e6%95%b0>#</a></h2><p>在计算和使用波动率参数时，一个很重要的问题是在度量时间时，我们究竟应该采用日历天数还是交易日天数。如业界事例15-2所示，研究结果表明交易所开盘交易时的波动率比休市时的波动率要高很多。因此，在使用历史数据计算波动率以及期权期限时，市场参与者往往会去掉交易所休市的日期。由以下公式我们可以从每个交易日的波动率来计算每年的波动率</p>$$
+\mathrm{年波动率} = \mathrm{每个交易日的波动率} \times \sqrt{\mathrm{每年的交易日天数}}
+$$<p>这也正是在例15-4中利用表15-1里的数据来计算波动率时采用的公式。对于股票，每年的股票交易日天数通常假设为252天。</p><p>期权期限通常也是由交易日天数（而不是由日历天数）来度量的。结果用T年来表达，其中</p><h2 id=距到期日的交易日天数-t--252>距到期日的交易日天数 T = 252<a class=anchor href=#%e8%b7%9d%e5%88%b0%e6%9c%9f%e6%97%a5%e7%9a%84%e4%ba%a4%e6%98%93%e6%97%a5%e5%a4%a9%e6%95%b0-t--252>#</a></h2><p>业界事例15-2</p><p>为什么价格会波动</p><p>我们很自然地假设股票的波动率是由市场所接收到的新信息引起的。这些新信息会使投资者对股票价值的观点产生改变，从而引起股票价格变化，产生波动。但是这种观点并没有得到研究结果的支持。利用连续几年中每天的股票数据，研究人员可以计算：</p><p>(1)在中间不包含非交易日时，一个交易日结束时与下一个交易日结束时股票价格收益率的方差。</p><p>(2)在星期五交易结束时与下星期一交易结束时股票价格收益率的方差。</p><p>第2项方差为3天之间收益率的方差。第1项方差对应于1天。我们也许很自然地认为第2项方差为第1项方差的3倍。法玛(1965)、弗伦奇(1980)以及弗伦奇和罗尔(1980)都证明了事实并非如此。这3项研究结果所估计的第2项方差只是分别比第1项方差高22%、19%和10.7%。</p><p>这时，你也许会说这些结果的起因是由于在交易开盘时有更多信息，但是罗尔(1984)的研究结果并不支持这一观点，罗尔检测了橙汁期货的价格：对于橙汁期货价格而言，最重要的决定因素是气候，而有关气候的信息对于任何时间都有同样的可能性。当罗尔做了一个类似于我们刚刚描述的有关股票的分析时，他发现橙汁期货的第2项（星期五至星期一）方差只是第1项方差的1.54倍。</p><p>唯一合理的结论是，在很大程度上，波动率是由交易本身引起的（交易员一般并不认为这一结论难以接受）。</p><h2 id=155-布莱克-斯科尔斯-默顿微分方程的概念>15.5 布莱克-斯科尔斯-默顿微分方程的概念<a class=anchor href=#155-%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%be%ae%e5%88%86%e6%96%b9%e7%a8%8b%e7%9a%84%e6%a6%82%e5%bf%b5>#</a></h2><p>布莱克-斯科尔斯-默顿微分方程是每一个依赖于无股息股票的衍生产品价格必须满足的方程式。我们将在下一节中推导这个方程，在这里我们考虑布莱克-斯科尔斯-默顿方法的特性。</p><p>布莱克-斯科尔斯-默顿微分方程与第13章中利用二叉树描述股票价格时的无套利方法类似。在定价的过程中需要构造一个由衍生产品与标的股票所组成的无套利的交易组合。在无套利的条件下，这一交易组合的收益率必须为无风险利率r，由此我们可以得出布莱克-斯科尔斯-默顿微分方程。</p><p>我们之所以可以建立无风险交易组合是由于股票价格与期权价格均受同一种不定性的影响，即股票价格的变动。在任意一段短时期内，衍生产品的价格与股票价格有完美的相关性；在建立了一个适当的股票与期权的组合后，由股票所带来的盈亏总是可以抵消由期权所带来的盈亏。这样一来，交易组合在一个短时间内的价值变化也就成为已知且确定的。</p><p>例如，假定在某一特定时刻，股票价格的一个微小变动 $\Delta \mathrm{S}$ 与由此所引起的欧式看涨期权价格变动Δc之间有以下关系</p>$$
+\Delta \mathrm{c} = 0. 4 \Delta \mathrm{S}
+$$<p>这意味着代表 $\Delta \mathrm{~ c ~}$ 与 $\Delta \mathrm{S} .$ 之间关系的切线斜率为0.4，如图15-2所示。无风险交易组合构造如下：</p><p><img src=images/53b58074a9ae6b9ece1bb218e7e9d416fdf5d8b1fa8eaa804c278720a409472f.jpg alt><br>图15-2 期权价格与股票价格的关系，股票的当前价格为S0</p><p>(1)40手股票的多头。</p><p>(2)100手看涨期权的空头。</p><p>假定股票价格上涨了10美分，期权价格将增长4美分。交易组合中股票的增长为 $40 \times 0 . 1 {=} 4$ 美元利得，这恰好等于期权短空头的$100 \times 0 . 04 {=} 4$ 美元的损失。</p><p>布莱克-斯科尔斯-默顿分析与第13章里二叉树法的分析之间的一个重要的区别是：这里所建立的头寸只是在一个非常短的时间内是无风险的（从理论上讲，这种无风险只是在瞬间成立）。为了保持无风险状态，交易组合必须被频繁地调整或再平衡(rebalance)。 ㊟ 【我们在第19章中将讨论再平衡的更多细节。】 例如，Δc与ΔS之间的关系也许会从今天的 $\Delta \mathrm{\ c = 0 .}$ .4 $\Delta \mathrm{S}$ 变为明天的 $\Delta ~ \mathrm{c} {=} 0 . 5 \Delta \mathrm{S} _{\circ}$ 如果这种情况发生，为了保持交易组合为无风险形态，对卖出的每100手看涨期权，我们必须再买入10手股票。尽管如此，在短时间内无风险交易组合的收益率必须等于无风险利率。这是布莱克-斯科尔斯-默顿分析的关键，由此即可得出他们的定价公式。</p><p>假设</p><p>在推导布莱克-斯科尔斯-默顿微分方程时，我们采用以下假设：</p><p>(1)股票价格服从在第14章中所建立的过程，其中μ和σ为常数。</p><p>(2)可以卖空证券，并且可以完全使用所得收入。</p><p>(3)无交易费用和税收，所有证券均可无限分割。</p><p>(4)在期权期限内，股票不支付股息。</p><p>(5)不存在无风险套利机会。</p><p>(6)证券交易为连续进行。</p><p>(7)短期无风险利率r为常数，并对所有期限都是相同的。</p><p>我们将在后面的章节中讨论如何放宽其中一些假设。例如，σ和r可以是时间函数。只要股票价格在期权到期时的分布是对数正态，我们甚至可以让r也是随机的。</p><h2 id=156-布莱克-斯科尔斯-默顿微分方程的推导>15.6 布莱克-斯科尔斯-默顿微分方程的推导<a class=anchor href=#156-%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%be%ae%e5%88%86%e6%96%b9%e7%a8%8b%e7%9a%84%e6%8e%a8%e5%af%bc>#</a></h2><p>在本节里的定义与书中其他地方不一样，我们考虑衍生产品在一时间t（而不是时间0）时的价格。如果T是到期日，那么期权的期限是T-t。</p><p>我们假设股票价格服从在第14.3节里所建立的过程，即</p>$$
+\mathrm{d} S = \mu S \mathrm{d} t + \sigma S \mathrm{d} z\tag{15-8}
+$$<p>假定f为关于S的看涨期权（或其他取决于S的衍生产品价格）。变量f必须是S和t的函数。因此，由式(14-14)得出</p>$$
+\mathrm{d} f = \left(\frac{\partial f}{\partial S} \mu S + \frac{\partial f}{\partial t} + \frac{1}{2} \frac{\partial^{2} f}{\partial S^{2}} \sigma^{2} S^{2}\right) \mathrm{d} t + \frac{\partial f}{\partial S} \sigma S \mathrm{d} z\tag{15-9}
+$$<p>式(15-8)和式(15-9)的离散形式为</p>$$
+\Delta S = \mu S \Delta t + \sigma S \Delta z\tag{15-10}
+$$<p>和</p>$$
+\Delta f = \left(\frac{\partial f}{\partial S} \mu S + \frac{\partial f}{\partial t} + \frac{1}{2} \frac{\partial^{2} f}{\partial S^{2}} \sigma^{2} S^{2}\right) \Delta t + \frac{\partial f}{\partial S} \sigma S \Delta z\tag{15-11}
+$$<p>其中ΔS与Δf为S与f在一个短时间区间Δt内的变化量。回忆在第14.6节里有关伊藤引理的讨论可知f和S中的维纳过程是一样的。换句</p>$$
+\left( \begin{array}{c} = \varepsilon \sqrt{\Delta t} \end{array} \right)
+$$$$
+\Delta z\tag{项是}
+$$<p>一样的。因此，我们可以适当地选择股票与衍生产品期权组合来消除维纳过程。选取的证券组合为</p><p>-1：衍生产品</p><p>$$</p><ul><li>\frac{\partial f}{\partial S} _{\text{股票}}
+$$</li></ul><p>以上组合含有一个衍生产品的空头与∂f/∂S数量的股票。定义Π为组合的价值，因此</p>$$
+\Pi = - f + \frac{\partial f}{\partial S} S\tag{15-12}
+$$<p>证券组合的价格在Δt时间区间内的变化由以下式子给出 ㊟ 【这里对于式(15-16)的推导并不是非常严格，严格来讲，我们需要说明在式(15-13)中可以忽略∂f/∂S在Δt时间段的变化，对于该表达式的更为严格的证明会涉及构造自融资投资组合（self-financing port-folio，指没有外部资金注入或资金撤回的资产组合）。】</p>$$
+\Delta \Pi = - \Delta f + \frac{\partial f}{\partial S} \Delta S\tag{15-13}
+$$<p>将式(15-10)和式(15-11)代入式(15-13)得出</p>$$
+\Delta \Pi = \left(- \frac{\partial f}{\partial t} - \frac{1}{2} \frac{\partial^{2} f}{\partial S^{2}} \sigma^{2} S^{2}\right) \Delta t\tag{15-14}
+$$<p>因为上面方程的右端不含Δz项，所以证券组合在Δt时间内一定是无风险的。前一节列举的假设意味着该证券组合必须赚取与其他短期无风险证券相同的瞬时收益率。如果该组合赚取的比这个收益率高，套利者可以通过借入资金买入组合而取得无风险收益；如果比这个收益率低，套利者可以卖空组合并同时买入无风险投资证券取得无风险收益。因此</p>$$
+\Delta \Pi = r \Pi \Delta t\tag{15-15}
+$$<p>其中r为无风险利率。将式(15-12)和式(15-14)代入式(15-15)会得出</p>$$
+\left(\frac{\partial f}{\partial t} + \frac{1}{2} \frac{\partial^{2} f}{\partial S^{2}} \sigma^{2} S^{2}\right) \Delta t = r \left(f - \frac{\partial f}{\partial S} S\right) \Delta t
+$$<p>因此</p>$$
+\frac{\partial f}{\partial t} + r S \frac{\partial f}{\partial S} + \frac{1}{2} \sigma^{2} S^{2} \frac{\partial^{2} f}{\partial S^{2}} = r f\tag{15-16}
+$$<p>式(15-16)就是布莱克-斯科尔斯-默顿微分方程。对应于以S为标的变量的不同衍生产品，这一方程有不同的解。对于某一特定衍生产品，以上方程的解与方程的边界条件(boundary conditions)有关：边界条件定义了衍生产品在S和t的边界上的取值范围。欧式看涨期权的关键边界条件为</p><p>当t=T时，f=max(S-K,0)</p><p>欧式看跌期权的关键边界条件为</p><p>当t=T时，f=max(K-S,0)</p><p>【例15-5】 在无股息股票上的远期合约是一种依赖于这个股票的衍生产品，因此，其价格应满足式(15-16)。由式(5-5)得出，在时间t的远期合约价值与股票价格S之间关系满足</p>$$
+\mathrm{f} = \mathrm{S} - \mathrm{Ke} - \mathrm{r(T-t)}
+$$<p>其中K为交割价格。这意味着</p>$$
+\frac{\partial f}{\partial t} = - r \mathrm{Ke} ^{- r (T - t)}, \quad \frac{\partial f}{\partial S} = 1, \quad \frac{\partial^{2} f}{\partial S^{2}} = 0
+$$<p>将以上方程代入式(15-6)的左端，我们得出</p><p>$$</p><ul><li>\mathrm{rKe} - \mathrm{r(T-t)} + \mathrm{rS}
+$$</li></ul><p>这正好等于rf。因此，对于远期合约式(15-16)确实成立。</p><h2 id=1561-永续衍生产品>15.6.1 永续衍生产品<a class=anchor href=#1561-%e6%b0%b8%e7%bb%ad%e8%a1%8d%e7%94%9f%e4%ba%a7%e5%93%81>#</a></h2><p>某永续衍生产品：当股票价格第一次达到价值H时，该衍生产品收益为一个固定量Q。在这个例子中，对于任何值S，该衍生产品的价值与时间t无关，因此∂f/∂t量为零，偏微分方程式(15-16)也就变成了常微分方程。</p><p>首先假定S&lt;H。衍生产品的边界条件是当S=0时，f=0，而当S=H时，f=Q。表达式f=QS/H满足边界条件和微分方程，因此，该表达式也就给出了衍生产品价值。</p><p>接下来假定S>H。衍生产品的边界条件是当S趋向无穷时，f=0，而</p>$$
+f = Q \left(\frac{S}{H}\right) ^{- \alpha}
+$$<p>当S=H时，表达式 \ π 7 满足边界条件，其中α为一个正常数，并且满足边界条件。当α满足以下方程时</p><p>$$</p><ul><li>r \alpha + \frac{1}{2} \sigma^{2} \alpha (\alpha + 1) - r = 0
+$$</li></ul><p>即 $\mathrm{~ a ~} = 2 \mathrm{r} / \mathrm{~ o ~}$ 2时，以上表达式也满足微分方程。衍生产品的价值为</p>$$
+f = Q \left(\frac{S}{H}\right) ^{- 2 r / \sigma^{2}}\tag{15-17}
+$$<p>练习题15.31证明了式(15-17)可以用于对永续美式看跌期权定价。我们在第26.2节中将此处的分析推广到了当标的资产支付股息收益率为q时，如何对美式永续看涨和看跌期权定价。</p><h2 id=1562-可交易衍生产品的价格>15.6.2 可交易衍生产品的价格<a class=anchor href=#1562-%e5%8f%af%e4%ba%a4%e6%98%93%e8%a1%8d%e7%94%9f%e4%ba%a7%e5%93%81%e7%9a%84%e4%bb%b7%e6%a0%bc>#</a></h2><p>任何满足式(15-16)的微分函数f(S,t)均可以作为某种可交易衍生产品(tradable derivative)的理论价格。如果以函数f(S,t)为价格的衍生产品确实存在，这个价格将不会造成任何套利机会。反之，如果函数f(S,t)不满足微分方程式(15-16)，那么在不给交易员制造套利机会的前提下，这一函数不会是衍生产品的价格。</p><p>为了说明这一点，我们首先考虑函数eS，该函数不满足式(15-16)。它因此也不是股票价格上衍生产品的价格。如果一个价格等于eS的产品确实存在，那么将一定会触发套利机会。在第2个例子里，函数</p>$$
+\frac{\mathrm{e} ^{(\sigma^{2} - 2 r) (T - t)}}{S}
+$$<p>该函数满足微分方程式(15-16)，因此，从理论上讲，这一函数是某个可交易产品的价格（该衍生产品在T时刻的收益为1/ST）。关于其他可交易产品，参见练习题15.19、练习题15.20、练习题15.31。</p><h2 id=157-风险中性定价>15.7 风险中性定价<a class=anchor href=#157-%e9%a3%8e%e9%99%a9%e4%b8%ad%e6%80%a7%e5%ae%9a%e4%bb%b7>#</a></h2><p>在第13章中，我们曾利用二叉树模型引入风险中性定价的方法。毫无疑问，这是在衍生产品定价分析中一个最重要的工具。这个结果是由布莱克-斯科尔斯-默顿微分方程的一个关键性质而来的：布莱克-斯科尔斯-默顿微分方程不涉及任何受投资者风险偏好影响的变量，在方程中出现的变量包括股票的当前价格、时间、股票价格波动率和无风险利率，而它们均与风险选择无关。</p><p>如果布莱克-斯科尔斯-默顿微分方程涉及期望收益μ，那么它将不会与风险选择无关，这是因为μ的值确实与风险选择有关：投资者对风险的厌恶程度越高，对任何股票，相应的μ值也会越高。幸运的是在推导微分方程时，μ正好消失了。</p><p>由于布莱克-斯科尔斯-默顿微分方程与风险选择无关，我们可以利用下面的巧妙方法：如果风险选择在方程中不出现，那么它不会影响方程的解。因此，在计算f时，我们可以使用任何一组风险选择，尤其可以假设所有的投资者都是风险中性的。</p><p>在每一个投资者都是风险中性的世界里，所有投资的期望收益率均为无风险利率r，原因是对风险中性的投资者而言，不需要额外的回报而使他们承受风险。另外，在一个风险中性世界里，任何现金流的现值都可以通过对其期望值以无风险利率贴现得到。因此，在假设世界是风险中性时，能够大大地简化对衍生产品的分析。</p><p>考虑在某个时刻提供收益的衍生产品，我们可以利用风险中性定价原理对其定价，过程如下：</p><p>(1)假定标的资产的期望收益率为无风险利率（即假定μ=r）。</p><p>(2)计算衍生产品收益的期望。</p><p>(3)用无风险利率对期望收益进行贴现。</p><p>风险中性定价（或假设所有投资者都是风险中性）仅仅是获得期权定价公式的一个人为的工具，认识到这一点是非常重要的。我们所得到的解不仅在投资者是风险中性时成立，而且在所有世界里也都是成立的。当我们从风险中性世界换到风险厌恶世界时，两种情况将会发生：股票价格变动的增长率期望以及对衍生产品收益所必需使用的贴现率都将会变化，而这两种变化刚好相互抵消。</p><p>应用于股票远期合约</p><p>在第5.7节中，我们对不支付股息的股票上的远期合约做了定价，并且在例15-5中验证了定价公式满足布莱克-斯科尔斯-默顿微分方程。在这一节中，我们将利用风险中性定价方法来推导这个定价公式。我们假设利率是等于r的常数。这比第5章中的假设更强。</p><p>考虑一个期限为T的远期合约多头，交割价格为K。如图1-2所示，在合约到期时，远期合约的价值为</p><p>ST-K</p><p>其中ST是股票在时间T的价格。由风险中性定价方法我们知道，远期合约在时间0的价值是其风险中性世界里在时间T的期望值以无风险利率加以贴现后的现值。将远期合约在时间0的价值记为f，这意味着</p>$$
+f = \mathrm{e} ^{- r T} \hat{E} (S_{T} - K)
+$$<p>其中 E 为风险中性世界里的期望值。由于K是常数，这个方程可以写成</p>$$
+f = \mathrm{e} ^{- r T} \hat{E} (S_{T}) - K \mathrm{e} ^{- r T}\tag{15-18}
+$$<p>在风险中性世界里，股票的收益率μ变成了r。因此，由式(15-4)我们有</p>$$
+\hat{E} (S_{T}) = S_{0} \mathrm{e} ^{r T}\tag{15-19}
+$$<p>将式(15-19)代入式(15-18)得到</p><p>f=S0-Ke-rT</p><p>这一结果同式(5-5)是一致的。</p><h2 id=158-布莱克-斯科尔斯-默顿定价公式>15.8 布莱克-斯科尔斯-默顿定价公式<a class=anchor href=#158-%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%ae%9a%e4%bb%b7%e5%85%ac%e5%bc%8f>#</a></h2><p>微分方程式(15-16)最著名的解是关于看涨期权与看跌期权的定价公式。这些公式为</p>$$
+c = S_{0} N (d_{1}) - K \mathrm{e} ^{- r T} N (d_{2})\tag{15-20}
+$$<p>和</p>$$
+p = K \mathrm{e} ^{- r T} N (- d_{2}) - S_{0} N (- d_{1})\tag{15-21}
+$$<p>其中</p>$$
+\begin{array}{l} d_{1} = \frac{\ln (S_{0} / K) + (r + \sigma^{2} / 2) T}{\sigma \sqrt{T}} \\ d_{2} = \frac{\ln (S_{0} / K) + (r - \sigma^{2} / 2) T}{\sigma \sqrt{T}} = d_{1} - \sigma \sqrt{T} \end{array}
+$$<p>函数N(x)为标准正态分布的累积概率分布函数。换言之，这一函数等于服从标准正态分布ϕ(0,1)的随机变量小于x的概率（见图15-3）。我们对方程中的其他记号应当很熟悉：c与p分别为欧式看涨与看跌期权的价格，S0为股票在时间0的价格，K为执行价格，r为连续复利的无风险利率，σ为股票价格的波动率，T为期权的期限。</p><p>一种推导布莱克-斯科尔斯-默顿公式的方法是解微分方程式(15-16)满足在第15.6节中提到过的边界条件。 [3] （为了证明式(15-20)中的看涨期权价格满足微分方程，见练习题15.25）。另一种方法是利用风险中性定价。考虑欧式看涨期权，在风险中性世界里期权到期时的期望值是</p><p><img src=images/4b4e66541ffd624a5c4a70544c6822b437843c568558560058d0a867f8124ce4.jpg alt><br>图15-3 阴影区域代表N(x)</p>$$
+\hat{E}
+$$<p>与前面相同，其中 为在风险中性世界里的期望值。从风险中性定价方法我们知道，欧式看涨期权的价格c等于这个期望值以无风险利率贴现后的现值，也就是说</p>$$
+c = \mathrm{e} ^{- r T} \hat{E} [ \max (S_{T} - K, 0) ]\tag{15-22}
+$$<p>在本章的附录中，我们证明了由这个式子可以得出式(15-20)中的结果。</p><p>由于提前行使不支付股息股票上美式看涨期权永远不会是最优的（见第11.5节），所以式(15-20)也是不付股息股票上美式看涨期权的价值。不幸的是，还没有不付股息股票上美式看跌期权价值的精确解析公式。在第21章中，我们将讨论计算美式看跌期权的数值方法。</p><p>在实际中应用布莱克-斯科尔斯-默顿公式时，采用的利率r等于期限为T的无风险利率。在后面的章节中，我们将证明：当r是时间的已知函数时，在理论上公式仍然是成立的，而且只要股票价格在时间T服从对数正态分布，并且波动率参数取值适当，那么当r是随机时，这个公式也是成立的。我们在前面提到过，一般来讲，时间是按期权有效期内的交易天数除以1年内的交易天数来度量的。</p><h2 id=1581-如何理解nd1和nd2>15.8.1 如何理解N(d1)和N(d2)<a class=anchor href=#1581-%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3nd1%e5%92%8cnd2>#</a></h2><p>我们对式(15-20)中的N(d2)有一个简单解释：它是在风险中性世界里期权被行使的概率。而我们对N(d1)却没有一个简单解释，表达式S0N(d1)erT是一个在ST>K时等于ST，在其他情（ST≤K时）等于零的变量在风险中性世界里的期望值。只有当股票价格大于执行价格K时，执行价格才会被支付，相应的概率为N(d2)，在风险中性世界里，期权在时间T的期望值等于</p><p>S0N(d1)erT-KN(d2)</p><p>将以上表达式由时间T到时间0进行贴现，得出欧式看涨期权的布莱克-斯科尔斯-默顿公式</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>$\mathrm{c = S0N(d1) - Ke - rTN(d2)}$</div><p>对于布莱克-斯科尔斯-默顿公式，我们还有另外一种解释。我们注意到布莱克-斯科尔斯-默顿公式也可以写成</p><div class=mineru-algorithm style=white-space:pre-wrap;font-family:monospace>$\mathrm{c = e - rTN(d2)[S0erTN(d1) / N(d2) - K]}$</div><p>以上公式的各项有以下解释：</p><p>e-rT：贴现因子；</p><p>N(d2)：期权被行使的概率；</p><p>S0erTN(d1)/N(d2)：如果期权被行使，在风险中性世界里预期股票价格；</p><p>K：期权被行使时，相应的执行价格。</p><h2 id=1582-布莱克-斯科尔斯-默顿公式的性质>15.8.2 布莱克-斯科尔斯-默顿公式的性质<a class=anchor href=#1582-%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%85%ac%e5%bc%8f%e7%9a%84%e6%80%a7%e8%b4%a8>#</a></h2><p>通过考虑给一些参数取极端值，我们现在证明布莱克-斯科尔斯-默顿公式具有正确的一般性质。</p><p>当股票价格S0很大时，看涨期权几乎肯定会被执行，这时期权与执行价格为K的远期合约非常相似。根据式(5-5)得出看涨期权价格应该为</p><p>S0-Ke-rT</p><p>事实上，以上公式正好是式(15-20)所给出的期权价格：因为当S0很大时，d1及d2均很大，因此N(d1)与N(d2)均接近于1.0。当股票价格很大时，欧式看跌期权的价格接近于0，这与式(15-21)是一致的，因为在这种情形下N(-d1)与N(-d2)均接近于0。</p><p>接着我们考虑当波动率接近于0的情形。因为股票价格几乎是无风险的，其价格在时间T将会增长到S0erT，看涨期权的收益为</p>$$
+\max \left(\mathrm{S0erT-K,0}\right)
+$$<p>以利率r贴现，看涨期权在今天的价格是</p>$$
+\mathrm{e} - \mathrm{rTmax(S0erT-K,0)} = \max (\mathrm{S0-Ke-rT,0})
+$$<p>为了证明这与式(15-20)一致，首先考虑当S0＞Ke-rT的情况，这意味着 $\ln{( \mathrm{S 0 / K} )} + \mathrm{r T} {>} 0 \mathfrak{c}$ 。当σ趋于0时，d1和d2均趋向于+∞，因此N(d1)与N(d2)均趋向于1.0，式(15-20)变成了</p>$$
+\mathrm{c=S0-Ke-rT}
+$$<p>当S0＜Ke-rT时，将有ln(S0/K)+rT＜0。当σ趋向于0时，d1和d2均趋向于-∞，所以N(d1)与N(d2)均趋向于0，方程所给的看涨期权价格为0。我们可以类似地证明当σ趋于0时，看跌期权的价格总是max(Ke-rT-S0,0)。</p><h2 id=159-累积正态分布函数>15.9 累积正态分布函数<a class=anchor href=#159-%e7%b4%af%e7%a7%af%e6%ad%a3%e6%80%81%e5%88%86%e5%b8%83%e5%87%bd%e6%95%b0>#</a></h2><p>在计算式(15-20)与式(15-21)时，我们需要计算标准正态分布的累积函数N(x)。本书在结尾部分提供了N(x)的表格。Excel中的NORMSDIST函数提供了一种计算N(x)的简便方式。</p><p>【例15-6】 考虑一份6个月期限的期权。股票当前价格为42美元，执行价格为40美元，无风险利率为每年10%，波动率为每年20%，也就是说S0=42，K=40,r=0.1，σ=0.2，T=0.5，因此</p>$$
+d_{1} = \frac{\ln (42 / 40) + (0 . 1 + 0 . 2^{2} / 2) \times 0 . 5}{0 . 2 \times \sqrt{0 . 5}} = 0. 7693
+$$$$
+d_{2} = \frac{\ln (42 / 40) + (0 . 1 - 0 . 2^{2} / 2) \times 0 . 5}{0 . 2 \times \sqrt{0 . 5}} = 0. 6278
+$$<p>以及</p><p>Ke-rT=40e-0.05=38.049</p><p>如果该期权为欧式看涨期权，其价格c为c=42N(0.7693)-38.049N(0.6278)</p><p>如果该期权为欧式看跌期权，其价格p为</p>$$
+\mathrm{p} = 38. 049 \mathrm{N} (- 0. 6278) - 42 \mathrm{N} (- 0. 7693)
+$$<p>采用以上多项式近似或Excel中的NORMSDIST函数</p>$$
+\mathrm{N(0.7693)=0.7791,N(-0.7693)=0.2209}
+$$$$
+\mathrm{N(0.6278)=0.7349,N(-0.6278)=0.2651}
+$$<p>由此得出</p>$$
+\mathrm{c} = 4. 76, \mathrm{p} = 0. 81
+$$<p>当忽略货币的时间价值时，股票价格至少上涨2.76美元才能使得看涨期权的持有者盈亏均衡。类似地，股票价格至少下跌2.81美元才能使得看跌期权的持有者盈亏均衡。</p><h2 id=1510-权证与雇员股票期权>15.10 权证与雇员股票期权<a class=anchor href=#1510-%e6%9d%83%e8%af%81%e4%b8%8e%e9%9b%87%e5%91%98%e8%82%a1%e7%a5%a8%e6%9c%9f%e6%9d%83>#</a></h2><p>行使一家公司的普通看涨期权对于在市场上交易的公司股票数量没有任何影响。如果期权承约者不拥有公司的股票，那么他在期权被行使时必须在市场上按通常的方式买入股票，然后按执行价格卖给期权的持有者。如在第10章中解释过的那样，权证与雇员股票期权和一般看涨期权的不同之处是在权证与雇员股票期权被行使时，公司必须首先发行更多的股票，然后再以执行价格卖给期权持有者。由于执行价格低于股票的市场价格，这些期权的行使会对市场上现有股票持有者的利益产生稀释效应。</p><p>这种潜在的稀释效应是否会影响我们对既存权证与雇员股票期权的定价方式呢？答案是否定的。假定市场是有效的，那么股票价格已经反映了已有的权证与雇员股票期权的稀释效应。业界事例15-3解释了这一点。 ㊟ 【分析员常常假定权证与股权价值的总和（而非股权价值的总和）服从对数正态分布。这种假设的结果是权证价格满足一个以权证价格为变量而类似于布莱克-斯科尔斯公式的方程。关于这一模型的细节，参见网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes上的Technical Note 3。】</p><p>业界事例15-3</p><p>认股权证、雇员期权和稀释效应</p><p>考虑一家公司，该公司发行了100000股股票，每股股票的价格为50美元。公司发布了一个市场没有预料到的消息：公司将发行100000份股票期权给其雇员，期权执行价格为50美元。如果市场认为公司为了削减雇员工资而发行的期权对股东没有带来好处，并且对那些较为上进的经理也没有好处，那么股票价格会很快下跌。如果股票价格跌至45美元，期权给股东带来的稀释费用为每股5美元，整体费用为500000美元。</p><p>假定公司在3年后表现很好，届时股票价格为每股100美元。假定所有的期权将在3年末行使，雇员期权每份的收益为50美元。这时人们可能会认为期权行使会带来更多稀释效应，即100000股每股价格为100美元的股票会与100000股每股价格为50美元的股票进行合并，因此股票价格会跌至75美元，期权持有人的每份收益只有25美元。但是，以上说法是有问题的。市场预料股票期权会被行使，股票价格已经反映了这一预期。因此，每份期权的收益仍为50美元。</p><p>这个例子反映了一个普遍现象，即当市场有效时，雇员期权和认股权证被发行后，股票价格中很快会体现出这些产品的稀释效应。</p><p>接下来，我们考虑某家想发行新权证（或雇员股票期权）公司的情形。在发行新权证没能增加公司价值的假设下，公司想计算发行权证的费用。我们假定这家公司总共已经发行了数量为N的股票，每股的价格为S0，公司考虑发行M份新期权，每份期权可以使期权持有者以K的价格买入1股股票。公司在今天的市值为NS0，这一价值不受发行新权证的影响。假设在没有发行权证的前提下，股票价格在权证满期时刻T的价格为ST。这意味着，在时刻T股权和权证的价值（无论发行权证或不发行权证）的总和为NST。如果权证被行使，由执行价格所带来的资金流会使股权和权证的价值总和变为NST+MK，这一价值会在N+M股股票进行分配，因此，在权证被行使后，股票价格变为</p>$$
+\frac{N S_{T} + M K}{N + M}
+$$<p>期权持有者行使期权所得收益为</p>$$
+\frac{N S_{T} + M K}{N + M} - K
+$$<p>上式等于</p>$$
+\frac{N}{N + M} (S_{T} - K)
+$$<p>这里讨论的期权价格等于</p>$$
+\frac{N}{N + M}
+$$<p>乘以公司股票上的普通看涨期权价格。因此，期权的总费用等于M乘以上式。由于我们假设公司并没有由于发行权证而受益，这时一旦市场知道了发行权证的决定，公司股票总值将会马上下降，下降的数量为期权的总费用。这意味着股票价格将会下降</p>$$
+\frac{M}{N + M}
+$$<p>乘以公司股票上期限为T、执行价格为K的普通看涨期权价格。</p><p>【例15-7】 某公司共现有100万股股票，每股价格为40美元，该公司正在考虑发行200000份权证，每份权证给持有者在5年后可以按每股60美元的价格买入股票的权利。公司想知道发行这样权证的费用。假定利率为每年3%，波动率为每年30%，公司不支付股息。由式(15-20)得出，5年期的期权价格为7.04美元。这时，N=1000000,M=200000，因此，每份权证的价格为</p>$$
+\frac{1000000}{1000000 + 200000} \times 7. 04 = 5. 87
+$$<p>即5.87美元，发行权证的总费用为200000×5.87=117万美元。如果市场认为公司不会由于发行权证而收益，我们预计股票价格将会下降1.17美元，到38.83美元。</p><h2 id=1511-隐含波动率>15.11 隐含波动率<a class=anchor href=#1511-%e9%9a%90%e5%90%ab%e6%b3%a2%e5%8a%a8%e7%8e%87>#</a></h2><p>在布莱克-斯科尔斯-默顿定价公式中，不能直接观察到的参数只有股票价格的波动率。在第15.4节中，我们已经讨论了如何由股票的历史价格来估计波动率。在实际中，交易员通常使用所谓的隐含波动率(implied volatility)。这一波动率是指由期权的市场价格所隐含的波动率。 ㊟ 【DerivaGem可以用来计算欧式和美式期权的隐含波动率。】</p><p>为了说明隐含波动率是如何计算的，假设一个不付股息股票的欧式看涨期权价格为1.875，而S0=21，K=20,r=0.1和T=0.25。隐含波动率是使得式(15-20)所给期权价格c=1.875时对应的σ值。不幸的是，我们不能靠直接反解式(15-20)将σ表示成期权价格与其他变量S0、K、r、T和c的函数，但是我们可以用迭代的方式求解所隐含的值σ。例如，开始时我们令σ=0.20，对应这一波动率，期权价格c为1.76美元，这一价格太低。由于期权价格为σ的递增函数，我们需要一个较大的σ值。我们再令σ=0.30，对应的期权价格c为2.10美元，此值高于市价，这意味着σ一定介于0.2～0.3。接下来，我们令σ=0.25，此值所对应的期权价格仍太高，所以σ应该在0.20～0.25。这样继续下去，每次迭代都使σ所在的区间减半，因此我们可以计算出满足任何精确度的σ近似值。 ㊟ 【这一方法只是为了说明问题，在实际中往往采用其他更有力的方法，像Newton-Raphson方法（见第4.6节中的脚注）。DerivaGem可以用来计算隐含波动率。】 在本例中，隐含波动率σ=0.235，即每年23.5%。与二叉树结合，利用类似的方法可以计算美式期权的隐含波动率。</p><p>隐含波动率可以用来衡量市场对于某一股票波动率的观点。历史波动率（见第15.4节）是回望型(backward looking)，而隐含波动率则为前瞻型(forward looking)。通常，交易员对于期权所报出的是隐含波动率，而不是期权的价格。这样做会带来许多方便，因为波动率的变化比期权价格变化更加稳定。市场上交易较为活跃的期权隐含波动率常被交易员用来估算其他期权的隐含波动率。</p><p>VIX指数</p><p>芝加哥期权交易所(CBOE)编制发布隐含波动率的指数。最流行的指数是SPX VIX，这是由包括标准普尔500上许多30天期限的看涨和看跌期权计算的。这一指数也被称为“恐惧指数”(fear factor)，VIX取值为15意味着对标准普尔500指数上30天期限的期权隐含波动率估计为15%。在第26.16节中有关于该指数计算方式的内容。在VIX上的期货交易是从2004年开始的，而在VIX上的期权交易是从2006年开始的，一份合约等于1000乘以指数值。</p><p>【例15-8】 假设一个交易员买了一份VIX上4月的期权合约，当时的期货价格是18.5（相当于30天标准普尔500指数波动率为18.5%），并当期货价格为19.3（相当于30天标准普尔500指数波动率为19.3%）时平仓。交易员赚了800美元。</p><p>涉及标准普尔500指数的期权是在将来的标准普尔500指数水平以及标准普尔500指数波动率两方面下赌注，与此相反，VIX上的期货或期权只是在波动率上下注。图15-4显示了在2004年1月～2020年6月的VIX指数。在2004～2007年年中，VIX指数通常保持在10～20；在2007年下半年，指数达到30；而在2008年10月与11月雷曼兄弟破产后，指数有高达80的纪录。在2010年年初，指数逐渐降到通常的水平，自2010年以来，由于金融市场的不确定性，指数出现了数次高峰。2020年，由于新冠肺炎疫情的暴发，指数又一次大幅增长。</p><p><img src=images/f3c6536e5b13e230b3b07cf58a14be9d4dfab64cfa5461040276a62706cbaeaa.jpg alt><br>图15-4 VIX指数（2004年1月～2020年6月）</p><p>VIX指数监控的是标准普尔500指数的波动率。芝加哥期权交易所还编制发布了其他一些波动率指数，包括股票指数、商品指数、利率、外汇以及一些股票（例如，亚马逊与高盛）上的波动率，甚至还有一个VIX上的波动率指数(VVIX)。</p><h2 id=1512-股息>15.12 股息<a class=anchor href=#1512-%e8%82%a1%e6%81%af>#</a></h2><p>到目前为止，我们一直假设期权的标的股票不付任何股息。在本节中，我们对布莱克-斯科尔斯-默顿模型加以修改，以便考虑股息。我们假设可以准确地预测在期权有效期内股息的数量与付出时间。对于短期限的期权，这个假设并不是不合理（对于长期限的期权，我们通常假设已知的是股息率，而不是股息的现金数量，这时可以按我们在第17章中所述的方法对期权定价）。股息付出日期应当是除息日，在这个日期上，股票价格下跌的幅度为股息的数量。 ㊟ 【由于税收的原因，股票下跌的数量会比股息的现金数量要少。为了考虑这个现象，我们将期权情形下的“股息”理解成由于股息而引起股票在除息日下跌的数量。因此，如果预计1美元的股息而股票价格通常在除息日下跌股息数量的80%，那么为了分析期权的目的，股息应当被假设成0.80美元。】</p><h2 id=15121-欧式期权>15.12.1 欧式期权<a class=anchor href=#15121-%e6%ac%a7%e5%bc%8f%e6%9c%9f%e6%9d%83>#</a></h2><p>为了分析欧式期权，我们假设股票价格由以下两部分组成：对应于在期权有效期内所付股息的无风险部分与有风险部分。在任意给定时刻，无风险部分等于在期权有效期内的所有股息以无风险利率从除息日贴现到今天的现值。当期权到期时，这些股息已经被付出，从而无风险部分不再存在。因此，当S0表示为有风险部分的价格、σ为有风险部分所服从过程的波动率时，布莱克-斯科尔斯-默顿公式仍然正确。 [4]</p><p>在运作上，这意味着只要在股票价格中除去所有在期权有效期限内股息的贴现值，我们仍然可以采用布莱克-斯科尔斯-默顿模型对期权定价。在计算股息贴现值时，我们采用的贴现日期为除息日，贴现利率等于无风险利率。像已经讲过的那样，只有除息日在期权有效期内的股息才用于计算。</p><p>【例15-9】 考虑1份欧式股票看涨期权，股票在2个月与5个月后分别有一个除息日。预计在每个除息日的股息都为0.5美元。股票目前的价格为40美元，执行价格为40美元，股票价格波动率为每年30%，无风险利率为每年9%，期权期限为6个月。股息的贴现值为</p>$$
+0. 5 \mathrm{e} - 0. 09 \times 2 / 12 + 0. 5 \mathrm{e} - 0. 09 \times 5 / 12 = 0. 9742
+$$<p>因此，期权价格可由布莱克-斯科尔斯-默顿公式求出，在公式中输入的参数为S0=40-0.9742=39.0258，K=40,r=0.09,σ=0.3和T=0.5，由此得出</p>$$
+\begin{array}{l} d_{1} = \frac{\ln (39 . 0258 / 40) + (0 . 09 + 0 . 3^{2} / 2) \times 0 . 5}{0 . 3 \times \sqrt{0 . 5}} = 0. 2020 \\ d_{2} = \frac{\ln (39 . 0258 / 40) + (0 . 09 - 0 . 3^{2} / 2) \times 0 . 5}{0 . 3 \times \sqrt{0 . 5}} = - 0. 0102 \end{array}
+$$<p>利用Excel中的NORMSDIST函数可以得出</p><p>N(d1)=0.5800及N(d2)=0.4959</p><p>由式(15-20)得出期权价格为</p>$$
+39. 0258 \times 0. 5800 - 40 \mathrm{e} - 0. 09 \times 0. 5 \times 0. 4959 = 3. 67
+$$<p>即3.67美元。</p><p>有些研究人员对于以上给出的计算有股息股票上欧式期权价格的方法提出了批评。他们认为波动率应该是适用于股票价格，而不是剔除了股息贴现值以后的股票价格。研究人员也提出了一些具体的做法。 ㊟ 【See N. Areal and A. Rodrigues, “Fast Trees forOptions with Discrete Dividends,” Journal of Derivatives,21, 1(Fall 2013), 49-63.】 当波动率是由历史数据来估计时，采用这些做法比较合理，但是，在实践中，计算期权时所使用的波动率几乎总是由第20章讲述的由其他期权价格隐含得出。如果一个交易员采用同一个模型计算隐含波动率和期权价格，计算结果也会准确，但并不会与模型高度相关。另外重要的一点是在实践中，如第18章所述，市场参与者通常采用标的资产远期价格计算欧式期权价格，这样做可以避免直接计算资产的预期收入，远期价格的波动率等于股票价格扣除股息贴现值后的波动率。</p><p>在我们这里讨论的模型中，股票价格被分成了两个部分，这种做法是内在一致的，并在业界广泛应用。在第21章中对于美式期权定价时，我们也会采用同样的方法。</p><h2 id=15122-美式期权>15.12.2 美式期权<a class=anchor href=#15122-%e7%be%8e%e5%bc%8f%e6%9c%9f%e6%9d%83>#</a></h2><p>下面我们考虑美式期权。在第11章里我们看到，在没有股息的情况下，永远不应该在到期日之前行使这个期权。将论证推广后可以证明，对于一个支付股息的美式期权，其最优行使时间可能为刚好在股票除息日之前的时刻。我们假定股票将预计在时间t1,t2,…,tn（其中$\mathrm{t} 1 {<} \mathrm{t} 2 {<} \cdots{<} \mathrm{t n} )$ 分发股息，在每个除息日相应的股息量分别为D1,D2,…,Dn。</p><p>我们首先考虑在最后一个除息日（即tn）前提前行使期权的可能性。如果在tn行使期权，投资者的收益为</p>$$
+\mathrm{S} (\mathrm{tn}) - \mathrm{K}
+$$<p>其中S(t)为股票在时间t的价格。如果没有行使期权，股票价格下跌到S(tn)-Dn。如式(11-4)所示，期权的值将大于</p>$$
+S (t_{n}) - D_{n} - K \mathrm{e} ^{- r (T - t_{n})}
+$$<p>因此，如果</p>$$
+S (t_{n}) - D_{n} - K \mathrm{e} ^{- r (T - t_{n})} \geqslant S (t_{n}) - K
+$$<p>即</p>$$
+D_{n} \leqslant K [ 1 - \mathrm{e} ^{- r (T - t_{n})} ]\tag{15-23}
+$$<p>那么在tn时刻行使期权将不会是最优。反之，如果</p>$$
+D_{n} > K \left[ 1 - \mathrm{e} ^{- r (T - t_{n})} \right]\tag{15-24}
+$$<p>那么在对股票价格服从随机过程所做的任何合理假设之下，当$\mathrm{S} \left( \mathrm{t n} \right)$ 足够大时，在tn行使期权是最优的。当最后一个除息日接近期权到期日（即当T-tn很小）而且股息很大时，不等式(15-24)往往会被满足。</p><p>接下来考虑tn-1时刻，就是倒数第2个除息日。如果在tn-1时行使期权，投资者会收到</p>$$
+\mathrm{S} (\mathrm{tn-1}) - \mathrm{K}
+$$<p>如果在tn-1时刻没有行使期权，股票价格降至S $: ( \mathrm{t n - 1} ) \mathrm{- D n - 1}$ ，之后最近一个可行使期权的时刻为tn。根据式(11-4)，如果在tn-1不行使期权，期权价格的下限为</p>$$
+S (t_{n - 1}) - D_{n - 1} - K \mathrm{e} ^{- r (t_{n} - t_{n - 1})}
+$$<p>因此，如果</p>$$
+S (t_{n - 1}) - D_{n - 1} - K \mathrm{e} ^{- r (t_{n} - t_{n - 1})} \geqslant S (t_{n - 1}) - K
+$$<p>即</p>$$
+D_{n - 1} \leqslant K [ 1 - \mathrm{e} ^{- r (t_{n} - t_{n - 1})} ]
+$$<p>在tn-1时行使期权不会是最优选择。与此类似，对于任意 $\mathrm{i} \langle \mathrm{n}$ ，如果</p>$$
+D_{i} \leqslant K \left[ 1 - \mathrm{e} ^{- r \left(t_{i + 1} - t_{i}\right)} \right]\tag{15-25}
+$$<p>那么在ti时行使期权不会是最优选择。</p><p>不等式(15-25)近似地等价于以下不等式Di≤Kr(ti+1-ti)</p><p>假如K与当前股票价格十分接近，股息率小于无风险利率时以上不等式将会成立。通常情况是这样的。</p><p>由这一分析我们可以得出，在许多情形下，美式期权可能被提前行使的时间往往是最后一个除息日tn。再有，如果不等式(15-25)对于i=1,2,…,n-1均成立，并且不等式(15-23)也成立，那么我们可以确认提前行使期权不会为最优选择，因此美式期权也可以被看作欧式期权。</p><h2 id=15123-布莱克近似法>15.12.3 布莱克近似法<a class=anchor href=#15123-%e5%b8%83%e8%8e%b1%e5%85%8b%e8%bf%91%e4%bc%bc%e6%b3%95>#</a></h2><p>布莱克建议采用一种计算美式看涨期权的近似方法。 ㊟ 【SeeF. Black, “Fact and Fantasy in the Use of Options, ,Financial Analysts Journal, 31(July/August 1975): 36-41, 61-72.】 这种方法考虑了可能提前行使期权的特征。这种近似方法包括按本节前面所述的方法计算在T和tn到期的欧式期权价格，然后令美式期权价格等于两者的最大值。 ㊟ 【对于只有一个除息日的情形，Roll、Geske和Whaley给出了一个准确公式，见网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes上的Technical Note4。这一公式涉及二元正态分布函数，同一网页上的Technical Note 5给出了计算这一分布函数的程序。】 这一方法是一种近似，其效果相当于期权持有人在起始时刻就要决定是否在T或tn行使期权。</p><h2 id=小结>小结<a class=anchor href=#%e5%b0%8f%e7%bb%93>#</a></h2><p>在这一章里，我们首先考虑了在第14章中引入的股票价格过程的性质，这意味着在给定当前价格的前提下，股票价格在将来时刻的分布为对数正态分布。这也意味着在一段时间内股票连续复利的收益为正态分布。持有的时间越远，未来股票价格的不确定性越大。股票价格对数值的标准差与持有时间长度的平方根成比例。</p><p>为了以实证的形式估计股票价格波动率σ，我们应当以固定的时间区间观测股票价格（例如，每天、每周或每月）。对于每个时间段，计算该时间段末的股票价格与该时间初的股票价格之比的自然对数，然后求出这些数值的标准差，再除以时间长度（以年计）的平方根，这样即可得出波动率的估计值。通常在计算波动率时，我们应该忽略那些交易所休市的天数。</p><p>通过构造由期权与股票所组成的无风险交易组合可以得出用于衍生产品定价的微分方程。由于期权与股票价格只依赖于同一项不确定性因素，所以这种无风险头寸总是可以构造出来的。但是，这里所建立的头寸只能在很短的一段时间内为无风险状态。在没有套利的前提下，无风险组合的收益率等于无风险利率。</p><p>股票的期望收益率并没有进入布莱克-斯科尔斯-默顿微分方程中，由此产生了很有用的风险中性定价方法。这个结果说明，当对一个依赖于股票价格的衍生产品定价时，我们可以假设世界是风险中性的，也就是说可以假定股票的期望收益率等于无风险利率，然后以无风险利率对收益的期望值进行贴现。对于欧式看涨和看跌期权的布莱克-斯科尔斯-默顿公式既可以通过求解微分方程得到，也可以通过风险中性定价得到。</p><p>隐含波动率是指使得由布莱克-斯科尔斯-默顿期权定价公式计算出的期权价格等于市场价格的波动率。交易员在交易中观察隐含波动率并常常对隐含波动率（而不是对期权价格）提供报价。交易员会利用市场交易活跃的期权隐含波动率从而对其他期权的波动率进行估计。</p><p>布莱克-斯科尔斯-默顿模型可以推广到支付股息的欧式股票期权上，其过程是将布莱克-斯科尔斯-默顿公式中的股票价格由原股票价格减去在期权有效期内预期股息的贴现值来代替，而波动率为股票价格减去这些股息的现值后的波动率。</p><p>从理论上讲，在任何除息日前夕行使美式看涨期权都有可能是最优的选择。在实际中，常常仅需考虑最后一个除息日。费希尔·布莱克提出了一种近似方法：将美式看涨期权设成两个欧式看涨期权的最大值，第一个欧式看涨期权的到期日与美式期权相同，第二个欧式期权在最后一个除息日前夕到期。</p><h2 id=推荐阅读>推荐阅读<a class=anchor href=#%e6%8e%a8%e8%8d%90%e9%98%85%e8%af%bb>#</a></h2><h2 id=关于股票价格变化的分布>关于股票价格变化的分布<a class=anchor href=#%e5%85%b3%e4%ba%8e%e8%82%a1%e7%a5%a8%e4%bb%b7%e6%a0%bc%e5%8f%98%e5%8c%96%e7%9a%84%e5%88%86%e5%b8%83>#</a></h2><p>Blattberg, R., and N. Gonedes, “A Comparison of the Stable and Student Distributions as Statistical Models for Stock Prices," Journal of Business, 47 (April 1974): 244–280.</p><p>Fama, E.F., “The Behavior of Stock Market Prices," Journal of Business, 38 (January 1965): 34–105.</p><p>Kon, S. J., "Models of Stock Returns—A Comparison," Journal of Finance, 39 (March 1984): 147-165.</p><p>Richardson, M., and T. Smith, “A Test for Multivariate Normality in Stock Returns," Journal of Business, 66 (1993): 295–321</p><h2 id=关于布莱克-斯科尔斯-默顿分析>关于布莱克-斯科尔斯-默顿分析<a class=anchor href=#%e5%85%b3%e4%ba%8e%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%88%86%e6%9e%90>#</a></h2><p>Black, F. “Fact and Fantasy in the Use of Options and Corporate Liabilities," Financial Analysts Journal, 31 (July/August 1975): 36–41, 61–72.</p><p>Black, F. “How We Came Up with the Option Pricing Formula," Journal of Portfolio Management, 15, 2 (1989): 4–8.</p><p>Black, F., and M. Scholes, “The Pricing of Options and Corporate Liabilities," Journal of Political Economy, 81 (May/June 1973): 637–659.</p><p>Merton, R. C., “Theory of Rational Option Pricing," Bell Journal of Economics and Management Science, 4 (Spring 1973): 141–183.</p><h2 id=关于风险中性定价>关于风险中性定价<a class=anchor href=#%e5%85%b3%e4%ba%8e%e9%a3%8e%e9%99%a9%e4%b8%ad%e6%80%a7%e5%ae%9a%e4%bb%b7>#</a></h2><p>Cox, J.C., and S. A. Ross, “The Valuation of Options for Alternative Stochastic Processes," Journal of Financial Economics, 3 (1976): 145–166.</p><p>Smith, C. W., “Option Pricing: A Review," Journal of Financial Economics, 3 (1976): 3–54.</p><h2 id=关于波动率>关于波动率<a class=anchor href=#%e5%85%b3%e4%ba%8e%e6%b3%a2%e5%8a%a8%e7%8e%87>#</a></h2><p>Fama, E. F. “The Behavior of Stock Market Prices." Journal of Business, 38 (January 1965): 34–105.</p><p>French, K. R. “Stock Returns and the Weekend Effect." Journal of Financial Economics, 8 (March 1980): 55–69.</p><p>French, K. R., and R. Roll “"Stock Return Variances: The Arrival of Information and the Reaction of Traders." Journal of Financial Economics, 17 (September 1986): 5–26</p><p>Roll R.“Orange Juice and Weather,"American Economic Review, 74, 5 (December 1984): 861–880.</p><h2 id=概念思考题>概念思考题<a class=anchor href=#%e6%a6%82%e5%bf%b5%e6%80%9d%e8%80%83%e9%a2%98>#</a></h2><p>15.1 布莱克-斯科尔斯-默顿模型对短期股票收益的假设是什么？</p><p>15.2 根据布莱克-斯科尔斯-默顿模型，在时间T时股票价格对数的平均值和标准差是多少？</p><p>15.3 在布莱克-斯科尔斯-默顿模型中，随着测量的时间段的增加，连续复利收益率的标准差会发生什么变化？</p><p>15.4 计算波动率时如何处理周末和节假日？</p><p>15.5 如何建立一个无风险的投资组合来推导布莱克-斯科尔斯-默顿微分方程？</p><p>15.6 根据布莱克-斯科尔斯-默顿模型，无收益资产的欧式看涨期权和看跌期权的价格是多少？</p><p>15.7 解释风险中性定价原理。</p><p>15.8 购买认股权证和场内交易的股票期权有什么区别？</p><p>15.9 如何计算隐含波动率？</p><p>15.10 考虑已知股息后，如何调整布莱克-斯科尔斯-默顿模型？</p><h2 id=练习题>练习题<a class=anchor href=#%e7%bb%83%e4%b9%a0%e9%a2%98>#</a></h2><p>15.11 布莱克-斯科尔斯-默顿股票期权定价模型中对于1年后股票价格概率分布的假设是什么？对于1年内连续复利收益率的假设是什么？</p><p>15.12 股票价格的波动率为每年30%，在一个交易日内价格百分比变化的标准差是多少？</p><p>15.13 计算一个3个月期的无股息股票欧式看跌期权的价格，期权执行价格为50美元，股票的当前价格为50美元，无风险利率为每年10%，波动率为每年30%。</p><p>15.14 如果预计股票在2个月后将支付股息1.5美元，练习题15.13中的结果会如何变化？</p><p>15.15 股票的当前价格为40美元，假定其期望收益率为15%，波动率为25%。在2年内的股票收益率（连续复利）的概率分布是什么？</p><p>15.16 某股票价格服从几何布朗运动，其中期望收益率为16%，波动率为35%，股票的当前价格为38美元。</p><p>(a)一份该股票上具有执行价格为40美元，期限为6个月的欧式看涨期权被行使的概率为多少？</p><p>(b)一份该股票上具有同样执行价格及期限的欧式看跌期权被行使的概率为多少？</p><p>15.17 采用本章中的记号，证明ST的95%置信区间介于</p>$$
+\begin{array}{l} {S_{0} \mathrm{e} ^{(\mu - \sigma^{2} / 2) T - 1. 96 \sigma \sqrt{T}}} \\ {S_{0} \mathrm{e} ^{(\mu - \sigma^{2} / 2) T + 1. 96 \sigma \sqrt{T}}} \end{array} \text{与} \text{之间。}
+$$<p>15.18 一位组合经理声称自己在过去10年中平均每年的收益率为20%，这种说法在什么方面会引起误解？</p><p>15.19 假定无股息股票的期望收益率为μ，波动率为σ。一个具有创新意识的金融机构刚刚宣布将交易在时刻T收益为lnST的衍生产品，其中ST为股票在T时刻的价格。</p><p>(a)采用风险中性定价理论将衍生产品价格表达为股票价格S与时间t的函数。</p><p>(b)验证你得出的价格满足微分方程式(15-16)。</p><p>15.20 考虑一种在时间T提供收益为 ST 的衍生产品，其中ST为股票在T时刻的价格。当股票价格服从几何布朗运动时，可以证明该衍生产品在时间t(t≤T)的价格具有以下形式h(t,T)Sn</p><p>其中S为股票在时间t的价格，h为t和T的函数。</p><p>(a)将以上形式的解代入布莱克-斯科尔斯-默顿微分方程，推导h(t,T)满足的常微分方程。</p><p>(b)h(t,T)所满足的边界条件是什么？</p><p>(c)证明</p>$$
+h (t, T) = \mathrm{e} ^{[ 0. 5 \sigma^{2} n (n - 1) + r (n - 1) ] (T - t)}
+$$<p>其中r为无风险利率，σ为股票价格的波动率。</p><p>15.21 计算以下无股息股票上欧式看涨期权的价格，其中股票价格为52美元，执行价格为50美元，无风险利率为每年12%，波动率为每年30%，期限为3个月。</p><p>15.22 计算以下无股息股票上欧式看跌期权的价格，其中股票价格为69美元，执行价格为70美元，无风险利率为每年5%，波动率为每年35%，期限为6个月。</p><p>15.23 考虑关于一个股票上的美式看涨期权，股票价格为70美元，期限为8个月，无风险利率为每年10%，执行价格为65美元，波动率为32%。在3个月及6个月时预计各有1美元的股息，证明在两个除息日行使期权永远不会是最佳选择。采用DerivaGem计算期权的价格。</p><p>15.24 一个无股息股票上看涨期权的市场价格为2.5美元，股票价格为15美元，执行价格为13美元，期限为3个月，无风险利率为每年5%，隐含波动率为多少？</p><h2 id=1525-采用本章中的记号>15.25 采用本章中的记号<a class=anchor href=#1525-%e9%87%87%e7%94%a8%e6%9c%ac%e7%ab%a0%e4%b8%ad%e7%9a%84%e8%ae%b0%e5%8f%b7>#</a></h2><p>(a) $\mathrm{~ N ~} ^{\prime}$ (x)等于什么？</p><p>(b)证明 $\mathrm{S N^{\prime} \quad ( d 1 ) {=} K e {-} r ( \mathrm{T - t} ) N^{\prime}}$ (d2)，其中S为股票在时间t的价格，以及</p>$$
+d_{1} = \frac{\ln (S / K) + (r + \sigma^{2} / 2) (T - t)}{\sigma \sqrt{T - t}}
+$$$$
+d_{2} = \frac{\ln (S / K) + (r - \sigma^{2} / 2) (T - t)}{\sigma \sqrt{T - t}}
+$$<p>(c)计算∂d1/∂S和∂d2/∂S。</p><p>(d)证明当 $\mathrm{c} {=} \mathrm{S N} \left( \mathrm{d} 1 \right) {-} \mathrm{K e -} \mathrm{r} \left( \mathrm{T - t} \right) \mathrm{N} \left( \mathrm{d} 2 \right)$ 时，以下方程成立</p>$$
+\begin{array}{r l} \frac{\partial c}{\partial t} & = - r K e^{- r (T - t)} N (d_{2}) \\ & - S N^{\prime} (d_{1}) \frac{\sigma}{2 \sqrt{T - t}} \end{array}
+$$<p>其中c为无股息股票上欧式看涨期权的价格。</p><p>(e)证明∂c/∂S=N(d1)。</p><p>(f)证明c满足布莱克-斯科尔斯-默顿微分方程。</p><p>(g)证明c满足欧式看涨期权的边界条件，即t→T时， $\mathrm{{c = m a x} \left( S {-} K , 0 \right)}$</p><p>15.26 证明由布莱克-斯科尔斯-默顿给出的期权公式满足看跌-看涨期权平价关系式。</p><p>15.27 股票的当前价格为50美元，无风险利率为5%，利用DerivaGem将以下欧式期权价格表转换为隐含波动率表，在计算中假设股票无股息。这些期权价格与布莱克-斯科尔斯-默顿的假设一致吗？</p><table><tr><td rowspan=2>执行价格
+(美元)</td><td colspan=3>期限（月）</td></tr><tr><td>3</td><td>6</td><td>12</td></tr><tr><td>45</td><td>7.0</td><td>8.3</td><td>10.5</td></tr><tr><td>50</td><td>3.7</td><td>5.2</td><td>7.5</td></tr><tr><td>55</td><td>1.6</td><td>2.9</td><td>5.1</td></tr></table><p>15.28 仔细解释为什么即使一个股票预期只发放一次股息时，布莱克方法只是对支付期息股票上美式期权的一个近似。由布莱克近似法得出的估计值会高估还是会低估期权价格？解释你的答案。</p><p>15.29 考虑关于某股票上的美式看涨期权，股票价格为50美元，期权期限为15个月，无风险利率为每年8%，执行价格为55美元，波动率为25%。股票在4个月与10个月时预计各有1.5美元的股息，证明在两个除息日行使期权不会是最佳选择，并计算期权价格。</p><p>15.30 采用本章中的记号，证明在风险中性世界里，一个欧式看涨期权被执行的概率为N(d2)。在T时刻，股票价格大于K时收益为100美元的衍生产品价格表达式是什么？</p><p>15.31 利用式(15-17)中的结果确定美式看跌期权的价值，期权标的股票不支付任何股息，当股票价格达到价格H时，期权回报为K，其中H&lt;K。假定股票的当前价格S高于H，H取什么值时，期权价值为最大？推导具有执行价格K的美式永续看跌期权的价值。</p><p>15.32 某公司已经发行了管理人股票期权，当对期权进行定价时，是否应考虑稀释效应？解释你的答案。</p><p>15.33 某公司的股票价格为50美元，市场上共有1000万股。公司计划向其雇员发行300万5年期的平价看涨期权。在期权行使时，公司需要发行更多的股票，股票价格的波动率为25%，5年的无风险利率为每年5%，公司不发放股息。估算公司发行管理人期权的费用。</p><p>15.34 某股票的波动率为每年18%，计算在以下时间段价格变动的标准差：(a)1天；(b)1周；(c)1个月。</p><p>15.35 某股票的当前价格为50美元。假定股票的期望收益率为18%，波动率为30%，在2年后股票价格的概率分布是什么？计算分布的期望值与标准方差，并确定95%的置信区间。</p><p>15.36 假定在连续15个周末所观察的股票价格（以美元计）为：</p><p>30.2，32.0，31.1，30.1，30.2，30.3，30.6，33.0，32.9，33.0， 33.5，33.5，33.7，33.5，33.2</p><p>估计股票价格的波动率，你所估计结果的标准差为多少？</p><p>15.37 附录15A给出了一个重要结果</p>$$
+\mathrm{E} \left[ \max (\mathrm{V} - \mathrm{K}, 0) \right] = \mathrm{E} (\mathrm{V}) \mathrm{N} (\mathrm{d} 1) - \mathrm{KN} (\mathrm{d} 2)
+$$<p>求证</p>$$
+\mathrm{E} [ \max (\mathrm{K} - \mathrm{V}, 0) ] = \mathrm{KN} (- \mathrm{d} 2) - \mathrm{E} (\mathrm{V}) \mathrm{N} (- \mathrm{d} 1)
+$$<p>并以此结果推导关于一个无股息股票的欧式看跌期权的布莱克-斯科尔斯-默顿公式。</p><h2 id=附录15-a布莱克-斯科尔斯-默顿公式的证明>附录15 A布莱克-斯科尔斯-默顿公式的证明<a class=anchor href=#%e9%99%84%e5%bd%9515-a%e5%b8%83%e8%8e%b1%e5%85%8b-%e6%96%af%e7%a7%91%e5%b0%94%e6%96%af-%e9%bb%98%e9%a1%bf%e5%85%ac%e5%bc%8f%e7%9a%84%e8%af%81%e6%98%8e>#</a></h2><p>在证明布莱克-斯科尔斯-默顿公式之前，我们先证明一个重要关系式，在今后的章节中我们也将会用到这一结论。</p><p>关键结果</p><p>如果V服从对数正态分布，lnV的标准差为w，那么</p>$$
+E [ \max (V - K, 0) ] = E (V) N (d_{1}) - K N (d_{2})\tag{15A-1}
+$$<p>其中</p>$$
+\begin{array}{l} d_{1} = \frac{\ln [ E (V) / K ] + w^{2} / 2}{w} \\ d_{2} = \frac{\ln [ E (V) / K ] - w^{2} / 2}{w} \end{array}
+$$<p>这里E代表期望值。</p><p>关系式的证明</p><p>定义 ${\bf \nabla} . {\bf g} \left( {\sf V} \right)$ 为V的概率密度函数，因此</p>$$
+E [ \max (V - K, 0) ] = \int_{K} ^{\infty} (V - K) g (V) \mathrm{d} V\tag{15A-2}
+$$<p>lnV服从正态分布，标准差为w，由正态分布的性质得知lnV的均值为m，其中</p>$$
+m = \ln [ E (V) ] - w^{2} / 2\tag{15A-3}
+$$<p>定义一个新的变量</p>$$
+Q = \frac{\ln V - m}{w}\tag{15A-4}
+$$<p>Q服从正态分布，均值为0，方差为1.0。将Q的密度函数记为h(Q)，因此</p>$$
+h (Q) = \frac{1}{\sqrt{2 \pi}} \mathrm{e} ^{- Q^{2} / 2}
+$$<p>利用式(15A-4)将式(15A-2)关于V的积分转换为关于Q的积分，我们得出</p>$$
+E [ \max (V - K, 0) ] = \int_{(\ln K - m) / w} ^{\infty} (\mathrm{e} ^{Q w + m} - K) h (Q) \mathrm{d} Q
+$$<p>或者</p>$$
+E \left[ \max (V - K, 0) \right] = \int_{(\ln K - m) / w} ^{\infty} \mathrm{e} ^{Q w + m} h (Q) \mathrm{d} Q - K \int_{(\ln K - m) / w} ^{\infty} h (Q) \mathrm{d} Q\tag{15A-5}
+$$<p>现在我们有</p>$$
+\begin{array}{r l} \mathrm{e} ^{Q w + m} h (Q) & = \frac{1}{\sqrt{2 \pi}} \mathrm{e} ^{(- Q^{2} + 2 Q w + 2 m) / 2} \\ & = \frac{1}{\sqrt{2 \pi}} \mathrm{e} ^{[ - (Q - w) ^{2} + 2 m + w^{2} ] / 2} \\ & = \frac{\mathrm{e} ^{m + w^{2} / 2}}{\sqrt{2 \pi}} \mathrm{e} ^{[ - (Q - w) ^{2} ] / 2} \\ & = \mathrm{e} ^{m + w^{2} / 2} h (Q - w) \end{array}
+$$<p>这意味着式(15A-5)变为</p>$$
+E \left[ \max (V - K, 0) \right] = \mathrm{e} ^{m + w^{2} / 2} \int_{(\ln K - m) / w} ^{\infty} h (Q - w) \mathrm{d} Q - K \int_{(\ln K - m) / w} ^{\infty} h (Q) \mathrm{d} Q\tag{15A-6}
+$$<p>定义 $\mathrm{{N} ( \mathrm{{x} )}}$ 为均值为0，方差为1的标准正态分布变量小于x的概率，式 $\left( 15 \mathrm{A - 6} \right)$ 的第一项积分变为</p>$$
+1 - \mathrm{N} [ (\ln \mathrm{K} - \mathrm{m}) / \mathrm{w} - \mathrm{w} ] = \mathrm{N} [ (- 1 \ln \mathrm{K} + \mathrm{m}) / \mathrm{w} + \mathrm{w} ]
+$$<p>将式(15A-3)中的m代入以上表达式，得出</p>$$
+N \left(\frac{\ln [ E (V) / K ] + w^{2} / 2}{w}\right) = N (d_{1})
+$$<p>类似地，式(15A-6)中的第二项积分等于N(d2)。因此，式(15A-6)变为</p>$$
+E \left[ \max (V - K, 0) \right] = e^{m + w^{2} / 2} N \left(d_{1}\right) - K N \left(d_{2}\right)
+$$<p>代入(15A-3)定义的m项即可得出上面的结果。</p><p>布莱克-斯科尔斯-默顿公式的结果</p><p>我们现在考虑一个在时刻T到期的欧式看涨期权，标的股票不支付股息，期权的执行价格为K，无风险利率为r，股票的当前价格为S0，股票价格的波动率为σ。由式(15-22)得出看涨期权价格c满足</p>$$
+c = \mathrm{e} ^{- r T} \hat{E} [ \max (S_{T} - K, 0) ]\tag{15A-7}
+$$<p>其中ST为股票在T时刻的价格， $\hat{\boldsymbol{{\cal E}}}$ 代表风险中性世界里的期望值。在布莱克-斯科尔斯-默顿对随机过程的假设下，ST服从对数正态分布。由式(15-3)和式(15-4)又得出 ${\hat{E}} ( S_{T} ) _{\mathrm{{\Omega = S 0 e r T}}}$ ，lnST的标准差为 $\sigma{\sqrt{T}}$ o</p><p>由以上证明的关键结果，我们可以将式(15A-7)变为</p>$$
+\mathrm{c} = \mathrm{e} - \mathrm{rT} [ \mathrm{S0erTN(d1)} - \mathrm{KN(d2)} ]
+$$<p>或</p><p>=S0N(d1)-Ke-rTN(d2)</p><p>其中</p>$$
+\begin{array}{l} d_{1} = \frac{\ln [ \hat{E} (S_{T}) / K ] + \sigma^{2} T / 2}{\sigma \sqrt{T}} = \frac{\ln (S_{0} / K) + (r + \sigma^{2} / 2) T}{\sigma \sqrt{T}} \\ d_{2} = \frac{\ln [ \hat{E} (S_{T}) / K ] - \sigma^{2} T / 2}{\sigma \sqrt{T}} = \frac{\ln (S_{0} / K) + (r - \sigma^{2} / 2) T}{\sigma \sqrt{T}} \end{array}
+$$<p>这正是布莱克-斯科尔斯-默顿公式的结果。</p><p>[1] 期望收益率的意义不是很明确，它既可以是μ，也可以是 $\mu -$ $\sigma \nobreakspace 2 / 2 \nobreakspace$ 。除非特别说明，本书所指的期望收益率为μ。</p><p>[2] 当利用历史数据估计波动率时，常常将 $\overset{-} {\mu}$ 假设为0。</p><p>[3] 微分方程给出了看涨与看跌期权在时间t的价格。例如，满足方程的看涨期权价格是 $\mathrm{c} {=} \mathrm{S N} \left( \mathrm{d} 1 \right) {-} \mathrm{K e -} \mathrm{r} \left( \mathrm{T - t} \right) \mathrm{N} \left( \mathrm{d} 2 \right)$ ，其中</p>$$
+d_{1} \frac{\ln (S / K) + (r + \sigma^{2} / 2) (T - t)}{\sigma \sqrt{T - t}}
+$$<p>和 $d_{2} = d_{1} - \sigma \sqrt{T - t}$ o</p><p>[4] 从理论上讲，这与股票整体价格的波动率不完全一样。有风险部分的波动率大概等于股票整体价格波动率乘以S0/(S0-D)，其中D为股息的现值。然而，只有在利用历史数据估计波动率时，才有必要做这种调整。在计算隐含波动率时是先将股息的贴现值从股票价格中去掉，从而是风险部分的波动率。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><nav class=book-nav><div class="flex justify-between"><div class=book-nav-prev><a href=/digital-library/books/options-futures-derivatives/ch14.html class=book-nav-link>← 第14章</a></div><div class=book-nav-next><a href=/digital-library/books/options-futures-derivatives/ch16.html class=book-nav-link>第16章 →</a></div></div></nav><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#151-股票价格的对数正态分布性质>15.1 股票价格的对数正态分布性质</a></li><li><a href=#152-收益率的分布>15.2 收益率的分布</a></li><li><a href=#153-期望收益>15.3 期望收益</a></li><li><a href=#154-波动率>15.4 波动率</a></li><li><a href=#1541-由历史数据所估计的波动率>15.4.1 由历史数据所估计的波动率</a></li><li><a href=#1542-交易日天数与日历天数>15.4.2 交易日天数与日历天数</a></li><li><a href=#距到期日的交易日天数-t--252>距到期日的交易日天数 T = 252</a></li><li><a href=#155-布莱克-斯科尔斯-默顿微分方程的概念>15.5 布莱克-斯科尔斯-默顿微分方程的概念</a></li><li><a href=#156-布莱克-斯科尔斯-默顿微分方程的推导>15.6 布莱克-斯科尔斯-默顿微分方程的推导</a></li><li><a href=#1561-永续衍生产品>15.6.1 永续衍生产品</a></li><li><a href=#1562-可交易衍生产品的价格>15.6.2 可交易衍生产品的价格</a></li><li><a href=#157-风险中性定价>15.7 风险中性定价</a></li><li><a href=#158-布莱克-斯科尔斯-默顿定价公式>15.8 布莱克-斯科尔斯-默顿定价公式</a></li><li><a href=#1581-如何理解nd1和nd2>15.8.1 如何理解N(d1)和N(d2)</a></li><li><a href=#1582-布莱克-斯科尔斯-默顿公式的性质>15.8.2 布莱克-斯科尔斯-默顿公式的性质</a></li><li><a href=#159-累积正态分布函数>15.9 累积正态分布函数</a></li><li><a href=#1510-权证与雇员股票期权>15.10 权证与雇员股票期权</a></li><li><a href=#1511-隐含波动率>15.11 隐含波动率</a></li><li><a href=#1512-股息>15.12 股息</a></li><li><a href=#15121-欧式期权>15.12.1 欧式期权</a></li><li><a href=#15122-美式期权>15.12.2 美式期权</a></li><li><a href=#15123-布莱克近似法>15.12.3 布莱克近似法</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#关于股票价格变化的分布>关于股票价格变化的分布</a></li><li><a href=#关于布莱克-斯科尔斯-默顿分析>关于布莱克-斯科尔斯-默顿分析</a></li><li><a href=#关于风险中性定价>关于风险中性定价</a></li><li><a href=#关于波动率>关于波动率</a></li><li><a href=#概念思考题>概念思考题</a></li><li><a href=#练习题>练习题</a></li><li><a href=#1525-采用本章中的记号>15.25 采用本章中的记号</a></li><li><a href=#附录15-a布莱克-斯科尔斯-默顿公式的证明>附录15 A布莱克-斯科尔斯-默顿公式的证明</a></li></ul></nav></div></aside></main></body></html>
