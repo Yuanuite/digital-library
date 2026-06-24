@@ -17,6 +17,10 @@
 <link rel="stylesheet" href="{{ "pseudocode.min.css" | relURL }}">
 <script defer src="{{ "pseudocode.min.js" | relURL }}"></script>
 
+{{- /* 代码复制按钮 + 缩写 tooltip */ -}}
+<script defer src="{{ "code-copy.js" | relURL }}"></script>
+<script defer src="{{ "abbr-tooltip.js" | relURL }}"></script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     // 1. KaTeX 自动渲染（处理 $...$ 和 $$...$$）

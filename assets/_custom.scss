@@ -198,6 +198,31 @@ body {
   color: var(--text-primary);
 }
 
+// === 代码块复制按钮 ===
+.markdown pre {
+  position: relative;
+}
+.markdown pre .copy-btn {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  padding: 2px 8px;
+  font-size: .75rem;
+  color: var(--text-secondary);
+  background: var(--body-background);
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.markdown pre:hover .copy-btn {
+  opacity: 1;
+}
+.markdown pre .copy-btn:hover {
+  background: var(--surface);
+}
+
 // === 书架（首页）：整行式列表，非卡片网格 ===
 .bookshelf {
   margin: 1rem 0 2rem;
