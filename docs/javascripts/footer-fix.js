@@ -8,12 +8,13 @@ document$.subscribe(() => {
     if (!link) return
     const cur = window.location.pathname.replace(/\/$/, '').split('/').filter(Boolean)
     const tgt = new URL(link.href).pathname.replace(/\/$/, '').split('/').filter(Boolean)
-    const scope = cur.length - 1 // 当前页所在目录深度
+    const scope = cur.length - 1
     let common = 0
     while (common < scope && common < tgt.length && cur[common] === tgt[common]) common++
     if (common < scope) {
-      // 跳出分支 → 指向上级目录的 index.html
-      const parent = '/' + cur.slice(0, scope).join('/') + '/index.html'
+      const isIndex = cur[cur.length - 1] === 'index.html'
+      const parentDepth = isIndex ? scope - 1 : scope
+      const parent = '/' + cur.slice(0, parentDepth).join('/') + '/index.html'
       link.href = parent
     }
   }
