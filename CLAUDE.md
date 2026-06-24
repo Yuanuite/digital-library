@@ -36,6 +36,7 @@ themes/hugo-book/          # Git submodule
 
 ## 内容约定
 
+- **书籍 frontmatter 白名单** — `_index.md` 允许字段：`title`, `description`, `weight`, `BookCollapseSection`, `categories`, `tags`。不得删除已有 `categories` 或 `tags`。`categories` 用于侧栏分组，`tags` 作为回退。
 - **章节标题统一格式** — 全部书籍的章标题使用 `第X章 · 主题`（空格+中点+空格分隔），description 控制在 4-8 字。序言保留"序言"，附录用 `附件 · ...`。此规则已写入 add-book-to-library skill 的 Phase 4。
 - **书籍简介用原文** — `_index.md` 的 `.book-intro` 优先使用原书封底/简介原文。仅当原文过长（如 600+ 行出版商标语）才截断。AI 摘要质量显著低于原书文案。
 - **中文 OCR 空格修复** — VLM 提取中文后字间可能插入空格（`多 变 量` → `多变量`）。修复方式：递归 `re.sub(r'([一-鿿])\s+([一-鿿])', r'\1\2', text)` 直到无匹配。
