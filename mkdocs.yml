@@ -30,6 +30,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.prune
+    - navigation.footer
     - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
@@ -165,5 +166,6 @@ extra_javascript:
   - javascripts/pseudocode-render.js
   - javascripts/translate-toggle.js
   - javascripts/abbr-tooltip.js
+  - javascripts/footer-fix.js
 extra:
   generator: false
