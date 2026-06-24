@@ -102,6 +102,12 @@ RAW --extract--> EXTRACTED --clean+split--> STRUCTURED --wire+build--> LIVE
 
 **Hugo 主题覆盖** — 修改主题功能时，一律用项目级文件覆盖，不动子模块 `themes/hugo-book/`。优先级：`assets/` > `layouts/` > `i18n/` > CI deploy.yml patch。
 
+**侧栏分组回退** — 侧栏按 `categories` frontmatter 分组，缺失时自动取 `tags` 第一项作为分类。书籍 `_index.md` 只需设置 `tags` 即可，不再强制要求 `categories`。
+
+**中文搜索** — CI deploy.yml 在构建前 patch `themes/hugo-book/i18n/zh.yaml` 注入双语分词器，否则中文搜索整词匹配不返回结果。详见 `deploy.yml` 中 `Patch Chinese search tokenizer` 步骤。
+
+**章节权重** — 每章 frontmatter 使用 `weight: 10, 20, 30`（步长 10），便于在已有章节间插入新章无需重新编号。
+
 **暗色模式三条铁律**：
 
 1. **选择器用 `html[data-theme]` 前缀** — 特异性 (0,1,1) 碾压主题 `:root` (0,1,0) 和 `@media`。任何时候不能只用 `[data-theme]` 或依赖 `@media (prefers-color-scheme)`。

@@ -180,6 +180,10 @@ mkdir -p content/<type>/<category>/<book-slug>/images
 
 页码 ≤ 15 的薄书不拆分，合并为一个文件。
 
+**章节 weight 约定** — 每章 frontmatter `weight` 使用 10, 20, 30 递增值（步长 10），便于在已有章节间插入新章无需重新编号。
+
+**丛书结构（多卷本）** — 父级 `_index.md` 用 `BookCollapseSection: true` + 手动目录表，每卷建子目录 `vol1/_index.md` + `vol1/ch*.md`。
+
 **修复代码注释被误识别为标题**：遍历所有 `ch*.md`，将代码块（` ``` ` 包裹区域内）中以 `# ` 开头的行降级为 `## `，防止 Python 注释 `# 这是一段说明` 被渲染为 H1。
 
 **失败分支**：`## Chapter` 模式匹配不到 → 改用 `# Chapter` 或 `### Chapter` 匹配；仍失败则让用户提供章节边界关键词。

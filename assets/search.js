@@ -73,8 +73,8 @@ import Fuse from '{{ "fuse.min.mjs" | relURL }}'
     var content = page.item.content || '';
     var m = findMatches(page, 'content');
     if (!m.length) return esc(content.substring(0, 100)) + '…';
-    // Expand snippet around first match
-    var first = m[0], radius = 60;
+    // Expand snippet ~3-5 words around first match (Chinese: ~10 chars)
+    var first = m[0], radius = 10;
     var start = Math.max(0, first[0] - radius);
     var end = Math.min(content.length, first[1] + radius);
     var snippet = (start > 0 ? '…' : '') + content.substring(start, end) + (end < content.length ? '…' : '');
@@ -98,7 +98,7 @@ import Fuse from '{{ "fuse.min.mjs" | relURL }}'
     for (var i = 0; i < indices.length; i++) {
       var s = Math.max(pos, indices[i][0]), e = indices[i][1];
       if (s > pos) out += esc(text.substring(pos, s));
-      out += '<mark>' + esc(text.substring(s, e)) + '</mark>';
+      out += '<span class="search-match">' + esc(text.substring(s, e)) + '</span>';
       pos = e;
     }
     if (pos < text.length) out += esc(text.substring(pos));

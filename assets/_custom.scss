@@ -686,6 +686,13 @@ body {
   pointer-events: none;
 }
 
+// === 搜索结果匹配关键词 ===
+.search-match {
+  color: var(--accent);
+  background: none;
+  font-weight: 500;
+}
+
 // === 侧栏分类标签 ===
 .menu-category {
   display: block;
