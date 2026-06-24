@@ -41,6 +41,12 @@ weight: 1
     <span class="book-row-desc">市场微观结构经典教材，覆盖交易行业、订单属性、市场结构、流动性、波动性、交易成本等 29 个主题。</span>
     <span class="book-row-arrow">›</span>
   </a>
+  <a class="book-row" href="{{< relref "/books/options-futures-derivatives/_index.md" >}}">
+    <span class="book-row-title">期权、期货及其他衍生产品</span>
+    <span class="book-row-meta">John C. Hull</span>
+    <span class="book-row-desc">金融工程经典教材，第11版。期货、期权、互换、信用衍生品、利率模型，37 章。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
 </div>
 
 ## 最近笔记
