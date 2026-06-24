@@ -55,16 +55,19 @@ body {
 .markdown h1 {
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--body-font-color);
   border-bottom: 2px solid var(--gray-200);
   padding-bottom: 0.3rem;
 }
 .markdown h2 {
   margin-top: 2.4em;
   font-weight: 700;
+  color: var(--body-font-color);
 }
 .markdown h3 {
   font-weight: 600;
   margin-top: 2rem;
+  color: var(--body-font-color);
   padding: 0.4rem 0.8rem;
   border-left: 4px solid var(--color-link);
   background: var(--gray-100);
