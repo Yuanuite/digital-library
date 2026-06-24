@@ -62,4 +62,4 @@ themes/hugo-book/          # Git submodule
 ## fix 流程
 1. fix 之后需要询问用户是否 push
 2. 纠错、push 等简单内容采用 haiku agent 处理
-3. push之后主动整理提炼fix过程中预计在维护过程中的经验，加入到CLAUDE.md中
+3. push之后整理提炼fix过程中预计在维护过程中的经验，加入到CLAUDE.md中。需得用户授权。
