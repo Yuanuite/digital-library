@@ -15,16 +15,20 @@
   {{- end -}}
 {{- end -}}
 
-{{- $prev := false -}}{{- $next := false -}}{{- $nextLabel := "→" -}}{{- $isLast := false -}}{{- $isFirst := false -}}
+{{- $prev := false -}}{{- $next := false -}}{{- $nextLabel := "" -}}{{- $isLast := false -}}{{- $isFirst := false -}}
 
 {{- if $isSection -}}
-  {{- /* 书封面：prev=分类页(优先) 否则书架，next=开始阅读 */ -}}
-  {{- $prev = .Site.GetPage "/books" -}}
-  {{- with .Params.categories -}}
-    {{- $cat := index . 0 -}}
-    {{- range $.Site.Taxonomies.categories -}}
-      {{- if eq .Page.Title $cat -}}
-        {{- $prev = .Page -}}
+  {{- /* 书封面：prev=父级section(优先) > 分类页 > 书架，next=开始阅读 */ -}}
+  {{- if and $parent $parent.IsSection (ne $parent .Site.Home) (ne $parent (.Site.GetPage "/books")) -}}
+    {{- $prev = $parent -}}
+  {{- else -}}
+    {{- $prev = .Site.GetPage "/books" -}}
+    {{- with .Params.categories -}}
+      {{- $cat := index . 0 -}}
+      {{- range $.Site.Taxonomies.categories -}}
+        {{- if eq .Page.Title $cat -}}
+          {{- $prev = .Page -}}
+        {{- end -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
@@ -66,7 +70,11 @@
     </div>
     <div class="book-nav-next">
     {{- with $next -}}
-      <a href="{{ .RelPermalink }}" class="book-nav-link {{ if $isLast }}book-nav-finish{{ end }}">{{ $nextLabel }}</a>
+      {{- if $nextLabel -}}
+        <a href="{{ .RelPermalink }}" class="book-nav-link {{ if $isLast }}book-nav-finish{{ end }}">{{ $nextLabel }}</a>
+      {{- else -}}
+        <a href="{{ .RelPermalink }}" class="book-nav-link ">{{ partial "docs/title" . }} →</a>
+      {{- end -}}
     {{- end -}}
     </div>
   </div>
