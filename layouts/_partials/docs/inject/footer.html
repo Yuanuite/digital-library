@@ -19,9 +19,16 @@
 {{- $prev := false -}}{{- $next := false -}}{{- $nextLabel := "→" -}}{{- $isLast := false -}}
 
 {{- if $isSection -}}
-  {{- /* 书封面：prev=书架，next=开始阅读(第一章) */ -}}
-  {{- $booksSection := .Site.GetPage "/books" -}}
-  {{- if $booksSection -}}{{- $prev = $booksSection -}}{{- end -}}
+  {{- /* 书封面：prev=分类页(优先) 否则书架，next=开始阅读 */ -}}
+  {{- $prev = .Site.GetPage "/books" -}}
+  {{- with .Params.categories -}}
+    {{- $cat := index . 0 -}}
+    {{- range $.Site.Taxonomies.categories -}}
+      {{- if eq .Page.Title $cat -}}
+        {{- $prev = .Page -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
   {{- with .RegularPages.ByWeight -}}
     {{- if gt (len .) 0 -}}{{- $next = index . 0 -}}{{- $nextLabel = "开始阅读 →" -}}{{- end -}}
   {{- end -}}
