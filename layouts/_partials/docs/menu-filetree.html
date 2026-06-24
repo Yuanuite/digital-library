@@ -1,6 +1,6 @@
 {{/*
   侧栏：主题切换 + 分区→书籍两级树 + 静态入口
-  使用 categories frontmatter 分组（如 "机器学习"/"金融"/"灵性"/"工程"）。
+  优先使用 categories frontmatter，缺失时以 tags 第一项作为分类。
 */}}
 {{ $currentPage := . }}
 {{ $booksSection := .Site.GetPage "/books" }}
@@ -8,7 +8,6 @@
 {{ $papersSection := .Site.GetPage "/papers" }}
 {{ $tagsPage := .Site.GetPage "/tags" }}
 
-{{/* 按 weight 排序的书籍列表 */}}
 {{ $books := sort $booksSection.Sections "Params.weight" }}
 
 <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式" title="切换深色/浅色模式">
@@ -16,28 +15,35 @@
 </button>
 
 <ul>
-  {{/* 书架入口 */}}
   {{ with $booksSection }}
     <li>
       <a href="{{ .RelPermalink }}" class="{{ if eq $currentPage . }}active{{ end }}">
         {{ partial "docs/title" . }}
       </a>
 
-      {{/* 在书架页或任何书内时，显示分类→书籍两级树 */}}
       {{ if or (eq $currentPage .) (.IsAncestor $currentPage) }}
-        {{/* 按 categories 分组 */}}
+        {{/* 收集分类：优先 categories，回退 tags[0] */}}
         {{ $allCats := slice }}
         {{ range $books }}
-          {{ with .Params.categories }}
-            {{ $allCats = $allCats | append (index . 0) }}
-          {{ end }}
+          {{ $cat := "" }}
+          {{ with .Params.categories }}{{ $cat = index . 0 }}{{ end }}
+          {{ if not $cat }}{{ with .Params.tags }}{{ $cat = index . 0 }}{{ end }}{{ end }}
+          {{ if $cat }}{{ $allCats = $allCats | append $cat }}{{ end }}
         {{ end }}
         {{ $allCats = $allCats | uniq }}
 
-        {{/* 如果所有书都有 categories，按分组显示；否则扁平显示 */}}
         {{ if gt (len $allCats) 0 }}
           {{ range $catName := $allCats }}
-            {{ $catBooks := where $books "Params.categories" "intersect" (slice $catName) }}
+            {{/* 筛选属于当前分类的书籍 */}}
+            {{ $catBooks := slice }}
+            {{ range $books }}
+              {{ $bookCat := "" }}
+              {{ with .Params.categories }}{{ $bookCat = index . 0 }}{{ end }}
+              {{ if not $bookCat }}{{ with .Params.tags }}{{ $bookCat = index . 0 }}{{ end }}{{ end }}
+              {{ if eq $bookCat $catName }}
+                {{ $catBooks = $catBooks | append . }}
+              {{ end }}
+            {{ end }}
             {{ if gt (len $catBooks) 0 }}
               <li>
                 <span class="menu-category">{{ $catName }}</span>
@@ -46,7 +52,6 @@
                   {{ $bookPage := . }}
                   <li>
                     {{ template "book-page-link" (dict "Page" $bookPage "CurrentPage" $currentPage) }}
-                    {{/* 在当前书内时展开章节 */}}
                     {{ if or (eq $currentPage $bookPage) ($bookPage.IsAncestor $currentPage) }}
                       <ul>
                       {{ range (where $bookPage.Pages "Params.bookHidden" "ne" true) }}
@@ -73,7 +78,6 @@
     </li>
   {{ end }}
 
-  {{/* 静态入口 */}}
   {{ $refSection := .Site.GetPage "/reference" }}
   {{ with $notesSection }}
     <li>{{ template "menu-static-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
