@@ -3,6 +3,7 @@ title: "Why Stock Markets Crash"
 description: "复杂金融系统中的临界事件，从物理学家视角剖析股市崩盘的机制与预兆。"
 weight: 4
 BookCollapseSection: true
+categories: ["金融"]
 tags: ['金融', '复杂系统']
 ---
 
