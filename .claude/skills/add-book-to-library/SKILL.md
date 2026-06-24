@@ -335,35 +335,29 @@ V*(s) = max_a [ R(s,a) + γ ∑ P(s'|s,a) V*(s') ]
 
 ### Phase 6：接入导航和首页
 
-#### hugo.toml nav
+#### 分类设置
 
-在对应分类位置插入：
+在书籍 `_index.md` frontmatter 中填入 `categories`，用于侧栏分组和 footer 导航：
+
 ```yaml
-nav:
-  - 首页: index.md
-  - 书籍:
-    - <分类名>:
-      - <书名>:
-        - 封面: books/<category>/<book-slug>/index.md
-        - 第1章 · <标题>: books/<category>/<book-slug>/ch01.md
-        - ...
+categories: ["机器学习"]
 ```
 
-章节标题从每个 `ch*.md` 的 `#` 行提取，>50 字符则截断。
+#### Footer 导航约定
 
-#### 首页卡片
+书封面 `_index.md` 的 prev 链接优先指向分类页；第一章的 prev 回退至书封面（不循环到末章）——由 `layouts/_partials/docs/inject/footer.html` 自动处理，无需手动配置。
 
-在 `content/index.md` 的对应分类区域添加卡片：
-```markdown
--   :material-book-open-variant: __书名__
+#### 书架卡片
 
-    ---
+在 `content/_index.md` 的 bookshelf 区域和对应分类 `_index.md` 中添加：
 
-    *作者 · 语言*
-
-    简介
-
-    [:octicons-arrow-right-24: 开始阅读](books/<category>/<book-slug>/index.md)
+```html
+<a class="book-row" href="/books/<category>/<slug>/">
+  <span class="book-row-title">书名</span>
+  <span class="book-row-meta">作者</span>
+  <span class="book-row-desc">一句话简介</span>
+  <span class="book-row-arrow">›</span>
+</a>
 ```
 
 **Phase 6 完成后**：写入 `state: "phase_6_done"`，`phase_6.status: "done"`。
