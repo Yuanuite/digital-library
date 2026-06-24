@@ -1,38 +1,59 @@
-{{/* 上一页/下一页（模拟 mkdocs navigation.footer） */}}
+{{/* 层级感知 prev/next：封面→章节间→完结 */}}
 {{- $pages := slice -}}
-{{- if .Parent -}}
-  {{- $pages = .Parent.Pages.ByWeight -}}
-{{- else if .CurrentSection -}}
-  {{- $pages = .CurrentSection.RegularPages.ByWeight -}}
+{{- $parent := .Parent -}}
+{{- $isSection := .IsSection -}}
+
+{{- /* 获取同级页面列表 */ -}}
+{{- if $parent -}}
+  {{- if $isSection -}}
+    {{- /* 书封面：在 books/ 下，同级是其他书 */ -}}
+    {{- $pages = $parent.Pages.ByWeight -}}
+  {{- else -}}
+    {{- /* 章节页：同级是同一本书的其他章节 */ -}}
+    {{- $pages = $parent.RegularPages.ByWeight -}}
+    {{- if not $pages -}}
+      {{- $pages = $parent.Pages.ByWeight -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
 
 {{- if gt (len $pages) 1 -}}
-{{- $prev := false -}}{{- $next := false -}}{{- $found := false -}}
-{{- range $pages -}}
+{{- $prev := false -}}{{- $next := false -}}{{- $found := false -}}{{- $isLast := false -}}
+{{- $lastIdx := sub (len $pages) 1 -}}
+
+{{- range $idx, $p := $pages -}}
   {{- if $found -}}
-    {{- if not $next -}}{{- $next = . -}}{{- end -}}
+    {{- if not $next -}}{{- $next = $p -}}{{- end -}}
   {{- end -}}
-  {{- if eq . $ -}}
+  {{- if eq $p $ -}}
     {{- $found = true -}}
+    {{- if eq $idx $lastIdx -}}{{- $isLast = true -}}{{- end -}}
   {{- else -}}
-    {{- $prev = . -}}
+    {{- $prev = $p -}}
   {{- end -}}
 {{- end -}}
 
-{{- if or $prev $next -}}
+{{- /* 特殊处理：书封面页的 prev 指向书架 */ -}}
+{{- if and $isSection (not $prev) -}}
+  {{- $booksSection := .Site.GetPage "/books" -}}
+  {{- if $booksSection -}}{{- $prev = $booksSection -}}{{- end -}}
+{{- end -}}
+
 <nav class="book-nav">
   <div class="flex justify-between">
-    <div>
+    <div class="book-nav-prev">
     {{- with $prev -}}
       <a href="{{ .RelPermalink }}" class="book-nav-link">← {{ partial "docs/title" . }}</a>
     {{- end -}}
     </div>
-    <div>
-    {{- with $next -}}
-      <a href="{{ .RelPermalink }}" class="book-nav-link">{{ partial "docs/title" . }} →</a>
+    <div class="book-nav-next">
+    {{- if $isLast -}}
+      {{- /* 最后一页：完结 */ -}}
+      <a href="{{ $parent.RelPermalink }}" class="book-nav-link book-nav-finish">完结 · 返回书籍界面 →</a>
+    {{- else if $next -}}
+      <a href="{{ $next.RelPermalink }}" class="book-nav-link">{{ partial "docs/title" $next }} →</a>
     {{- end -}}
     </div>
   </div>
 </nav>
-{{- end -}}
 {{- end -}}
