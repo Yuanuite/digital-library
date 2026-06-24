@@ -1,0 +1,38 @@
+{{/* 上一页/下一页（模拟 mkdocs navigation.footer） */}}
+{{- $pages := slice -}}
+{{- if .Parent -}}
+  {{- $pages = .Parent.Pages.ByWeight -}}
+{{- else if .CurrentSection -}}
+  {{- $pages = .CurrentSection.RegularPages.ByWeight -}}
+{{- end -}}
+
+{{- if gt (len $pages) 1 -}}
+{{- $prev := false -}}{{- $next := false -}}{{- $found := false -}}
+{{- range $pages -}}
+  {{- if $found -}}
+    {{- if not $next -}}{{- $next = . -}}{{- end -}}
+  {{- end -}}
+  {{- if eq . $ -}}
+    {{- $found = true -}}
+  {{- else -}}
+    {{- $prev = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if or $prev $next -}}
+<nav class="book-nav">
+  <div class="flex justify-between">
+    <div>
+    {{- with $prev -}}
+      <a href="{{ .RelPermalink }}" class="book-nav-link">← {{ partial "docs/title" . }}</a>
+    {{- end -}}
+    </div>
+    <div>
+    {{- with $next -}}
+      <a href="{{ .RelPermalink }}" class="book-nav-link">{{ partial "docs/title" . }} →</a>
+    {{- end -}}
+    </div>
+  </div>
+</nav>
+{{- end -}}
+{{- end -}}

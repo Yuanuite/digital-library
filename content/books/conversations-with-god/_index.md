@@ -3,6 +3,7 @@ title: "与神对话"
 description: "一场人与神的深度对话，五卷灵性经典，探讨个人生活、全球议题与宇宙真相。"
 weight: 3
 BookCollapseSection: true
+categories: ["灵性"]
 tags: ['灵性', '哲学']
 ---
 # 与神对话

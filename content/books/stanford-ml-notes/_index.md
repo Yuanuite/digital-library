@@ -3,6 +3,7 @@ title: "斯坦福机器学习教程笔记"
 description: "吴恩达 (Andrew Ng) 机器学习课程中文笔记，涵盖监督学习、无监督学习、神经网络、SVM、推荐系统等。"
 weight: 1
 BookCollapseSection: true
+categories: ["机器学习"]
 tags: ['机器学习', '笔记']
 ---
 # 斯坦福大学 2014 机器学习教程 · 个人笔记

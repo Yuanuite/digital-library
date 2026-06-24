@@ -3,6 +3,7 @@ title: "论系统工程（新世纪版）"
 description: "系统科学与系统工程的经典文集，收录钱学森等学者关于系统工程、社会工程、军事系统工程等 50 余篇开创性文章。"
 weight: 2
 BookCollapseSection: true
+categories: ["工程"]
 tags: ['系统工程', '钱学森']
 ---
 ![](images/cover00308.jpeg)
