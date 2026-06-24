@@ -1,0 +1,19 @@
+{{/* 分类列表：每个分类链接到 /categories/<name>/  */}}
+{{ $categories := .Site.Taxonomies.categories }}
+{{ if $categories }}
+<div class="bookshelf">
+{{ range $name, $taxonomy := $categories }}
+  {{ $count := len $taxonomy }}
+  {{ $desc := "" }}
+  {{ range $taxonomy.Pages }}
+    {{ if .Params.description }}{{ $desc = .Params.description }}{{ end }}
+  {{ end }}
+  <a class="book-row" href="{{ $taxonomy.Page.RelPermalink }}">
+    <span class="book-row-title">{{ $taxonomy.Page.LinkTitle }}</span>
+    <span class="book-row-meta">{{ $count }} 本</span>
+    <span class="book-row-desc">{{ $desc }}</span>
+    <span class="book-row-arrow">›</span>
+  </a>
+{{ end }}
+</div>
+{{ end }}
