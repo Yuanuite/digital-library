@@ -1,18 +1,19 @@
-{{/* 分类列表：每个分类链接到 /categories/<name>/  */}}
+{{/* 分类卡片：使用 card-grid 元素模板 */}}
 {{ $categories := .Site.Taxonomies.categories }}
 {{ if $categories }}
-<div class="bookshelf">
+<div class="card-grid">
 {{ range $name, $taxonomy := $categories }}
   {{ $count := len $taxonomy }}
   {{ $desc := "" }}
   {{ range $taxonomy.Pages }}
     {{ if .Params.description }}{{ $desc = .Params.description }}{{ end }}
   {{ end }}
-  <a class="book-row" href="{{ $taxonomy.Page.RelPermalink }}">
-    <span class="book-row-title">{{ $taxonomy.Page.LinkTitle }}</span>
-    <span class="book-row-meta">{{ $count }} 本</span>
-    <span class="book-row-desc">{{ $desc }}</span>
-    <span class="book-row-arrow">›</span>
+  <a class="card" href="{{ $taxonomy.Page.RelPermalink }}">
+    <h2 class="card-title">{{ $taxonomy.Page.LinkTitle }}</h2>
+    <p class="card-desc">{{ $desc }}</p>
+    <div class="card-meta">
+      <span>{{ $count }} 本书</span>
+    </div>
   </a>
 {{ end }}
 </div>
