@@ -113,11 +113,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch01.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 1: Introduction&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Overview of markets, trading, and market microstructure&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch02.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 2: Trading Stories&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Real trading stories across stocks, bonds, futures, and currencies&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -125,11 +129,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch03.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 3: The Trading Industry&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Exchanges, brokers, dealers, and trading instruments overview&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch04.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 4: Orders and Order Properties&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Order types, properties, and the limit order book&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -137,11 +145,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch05.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 5: Market Structures&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Continuous, call, quote-driven, and order-driven market structures&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch06.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 6: Order-Driven Markets&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Oral auctions, order matching, and pricing rules in order-driven markets&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -149,11 +161,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch07.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 7: Brokers&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Broker roles, agency trading, and commission structures&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch08.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 8: Why People Trade&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Why people trade: invest, hedge, speculate, arbitrage, and gamble&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -161,11 +177,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch09.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 9: Good Markets&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Market quality: liquidity, efficiency, fairness, and stability&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch10.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 10: Informed Traders and Market Efficiency&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Informed traders, market efficiency, and adverse selection&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -173,11 +193,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch11.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 11: Order Anticipators&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Order anticipators, front-running, and quote matching strategies&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch12.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 12: Bluffers and Market Manipulation&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Bluffers, market manipulation, corners, and squeezes&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -185,11 +209,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch13.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 13: Dealers&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Dealers, market making, inventory management, and dealer profits&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch14.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 14: Bid/Ask Spreads&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Bid-ask spreads, components, determinants, and spread economics&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -197,11 +225,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch15.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 15: Block Traders&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Block trading, upstairs markets, and dark pool strategies&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch16.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 16: Value Traders&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Value traders, fundamental analysis, and valuation strategies&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -209,17 +241,23 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch17.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 17: Arbitrageurs&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Arbitrageurs, risk-free profits, and convergence trading&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch18.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 18: Buy-Side Traders&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;Buy-side traders: mutual funds, pensions, and institutional trading&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch19.html"&gt;
  &lt;span class="toc-row-title"&gt;Chapter 19: Liquidity&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Liquidity dimensions, measurement, and determinants&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;

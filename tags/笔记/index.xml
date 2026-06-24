@@ -25,11 +25,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch01.html"&gt;
  &lt;span class="toc-row-title"&gt;第 1 周&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;引言、线性回归与线性代数基础&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch02.html"&gt;
  &lt;span class="toc-row-title"&gt;第 2 周&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;多变量线性回归与Octave教程&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -37,11 +41,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch03.html"&gt;
  &lt;span class="toc-row-title"&gt;第 3 周&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;逻辑回归与正则化&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch04.html"&gt;
  &lt;span class="toc-row-title"&gt;第 4 周&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;神经网络结构与表示&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -49,11 +57,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch05.html"&gt;
  &lt;span class="toc-row-title"&gt;第 5 周&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;神经网络代价函数与学习&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch06.html"&gt;
  &lt;span class="toc-row-title"&gt;第 6 周&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;机器学习诊断与性能优化&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -61,11 +73,15 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch07.html"&gt;
  &lt;span class="toc-row-title"&gt;第 7 周&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;支持向量机原理与应用&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch08.html"&gt;
  &lt;span class="toc-row-title"&gt;第 8 周&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;聚类与降维算法&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -73,17 +89,23 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch09.html"&gt;
  &lt;span class="toc-row-title"&gt;第 9 周&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;异常检测与推荐系统&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch10.html"&gt;
  &lt;span class="toc-row-title"&gt;第 10 周&lt;/span&gt;
  
+ &lt;span class="toc-row-desc"&gt;大规模机器学习与OCR总结&lt;/span&gt;
+ 
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/appendix.html"&gt;
  &lt;span class="toc-row-title"&gt;附件&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;CS229线性代数与概率论复习&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
