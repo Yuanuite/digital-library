@@ -30,7 +30,6 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.prune
-    - navigation.footer
     - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
