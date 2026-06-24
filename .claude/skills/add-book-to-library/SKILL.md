@@ -208,13 +208,31 @@ mkdir -p content/<type>/<category>/<book-slug>/images
 
 ### Phase 5：格式化
 
-#### 封面 + 目录（`index.md`）
+#### 封面 + 目录（`_index.md`）
 
-用 HTML + markdown 混排：
-- 居中书名、作者、封面图片
-- 双栏目录表格：左列章节链接，右列小节链接
+统一模板，三块结构：
 
-#### 符号说明（`notations.md`）
+```html
+<section class="book-cover">
+  <h1 class="book-cover-title">书名</h1>
+  <p class="book-cover-subtitle">英文原标题 / 版本</p>
+  <p class="book-cover-author">作者 · 译者</p>
+</section>
+
+<section class="book-intro">
+  <h2>简介</h2>
+  <p>优先用原书封底/简介原文。2-4 句，不宜过长。</p>
+</section>
+
+## 目录
+{{< book-toc >}}
+```
+
+`{{< book-toc >}}` 自动列出当前 section 下所有章节（按 weight 排序，显示 title + description）。
+
+**丛书结构（多卷本）**：父级 `_index.md` 用手动表格替代 `{{< book-toc >}}`（短代码不列子 section），每卷建 `vol1/_index.md` + `vol1/ch*.md`。
+
+#### 符号说明（`notations.md`，如有）
 
 **强制**：4 栏 markdown 表格：
 
