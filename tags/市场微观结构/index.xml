@@ -1,18 +1,207 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>市场微观结构 on Yuan's Library</title><link>https://yuanuite.github.io/digital-library/tags/%E5%B8%82%E5%9C%BA%E5%BE%AE%E8%A7%82%E7%BB%93%E6%9E%84.html</link><description>Recent content in 市场微观结构 on Yuan's Library</description><generator>Hugo</generator><language>zh-CN</language><copyright>© Yuanuite</copyright><atom:link href="https://yuanuite.github.io/digital-library/tags/%E5%B8%82%E5%9C%BA%E5%BE%AE%E8%A7%82%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml"/><item><title>Trading and Exchanges</title><link>https://yuanuite.github.io/digital-library/books/trading-and-exchanges/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/trading-and-exchanges/index.html</guid><description>&lt;h1 id="trading-and-exchanges"&gt;Trading and Exchanges&lt;a class="anchor" href="#trading-and-exchanges"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Larry Harris&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Oxford University Press&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;market microstructure for Practitioners&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;[LARRY HARRIS]&lt;/p&gt;
-&lt;p&gt;&lt;img src="images/00002.jpeg" alt="Image" /&gt;
-&lt;/p&gt;
-&lt;p&gt;&lt;img src="images/00003.jpeg" alt="Image" /&gt;
-&lt;/p&gt;
-&lt;p&gt;Oxford New York&lt;br&gt;
-Auckland Bangkok Buenos Aires Cape Town Chennai Dar es Salaam Delhi Hong
-Kong Istanbul Karachi Kolkata Kuala Lumpur Madrid Melbourne Mexico City
-Mumbai Nairobi São Paulo Shanghai Singapore Taipei Tokyo Toronto&lt;/p&gt;
-&lt;p&gt;Copyright © 2003 by Oxford University Press, Inc.&lt;/p&gt;
-&lt;p&gt;Published by Oxford University Press, Inc.&lt;br&gt;
-198 Madison Avenue, New York, New York, 10016&lt;br&gt;
-[&lt;a href="http://www.oup.com"&gt;www.oup.com&lt;/a&gt;]&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>市场微观结构 on Yuan's Library</title><link>https://yuanuite.github.io/digital-library/tags/%E5%B8%82%E5%9C%BA%E5%BE%AE%E8%A7%82%E7%BB%93%E6%9E%84.html</link><description>Recent content in 市场微观结构 on Yuan's Library</description><generator>Hugo</generator><language>zh-CN</language><copyright>© Yuanuite</copyright><atom:link href="https://yuanuite.github.io/digital-library/tags/%E5%B8%82%E5%9C%BA%E5%BE%AE%E8%A7%82%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml"/><item><title>Trading and Exchanges</title><link>https://yuanuite.github.io/digital-library/books/trading-and-exchanges/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/trading-and-exchanges/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;Trading and Exchanges&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;Market Microstructure for Practitioners&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Larry Harris · Oxford University Press, 2003&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;市场微观结构经典教材，全面覆盖交易行业运作机制：订单属性、市场结构、做市商、流动性、波动性、交易成本测量，共29章。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 1: Introduction&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 2: Trading Stories&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 3: The Trading Industry&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 4: Orders and Order Properties&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 5: Market Structures&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 6: Order-Driven Markets&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 7: Brokers&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 8: Why People Trade&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 9: Good Markets&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 10: Informed Traders and Market Efficiency&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch11.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 11: Order Anticipators&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch12.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 12: Bluffers and Market Manipulation&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch13.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 13: Dealers&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch14.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 14: Bid/Ask Spreads&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch15.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 15: Block Traders&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch16.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 16: Value Traders&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch17.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 17: Arbitrageurs&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch18.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 18: Buy-Side Traders&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch19.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 19: Liquidity&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch20.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 20: Volatility&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch21.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 21: Liquidity and Transaction Cost measurement&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch22.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 22: Performance Evaluation and Prediction&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch23.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 23: Index and Portfolio Markets&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch24.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 24: Specialists&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch25.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 25: Internalization, Preferencing, and Crossing&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch26.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 26: Competition Within and Among Markets&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch27.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 27: Floor Versus Automated Trading Systems&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch28.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 28: Bubbles, Crashes, and Circuit Breakers&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch29.html"&gt;
+ &lt;span class="toc-row-title"&gt;Chapter 29: Insider Trading&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/index_term.html"&gt;
+ &lt;span class="toc-row-title"&gt;Index&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/references.html"&gt;
+ &lt;span class="toc-row-title"&gt;References&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item></channel></rss>
