@@ -1,0 +1,595 @@
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="GARCH、EWMA"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch23.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="第23章"><meta property="og:description" content="GARCH、EWMA"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-25T00:38:50+08:00"><meta itemprop=name content="第23章"><meta itemprop=description content="GARCH、EWMA"><meta itemprop=dateModified content="2026-06-25T00:38:50+08:00"><meta itemprop=wordCount content="1135"><title>第23章 • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch23.html><link rel=stylesheet href=/digital-library/book.min.3e23691350be517993d48d54e83ad8cdb3ba65cbe241510666b8cea7648f70d1.css integrity="sha256-PiNpE1C+UXmT1I1U6DrYzbO6ZcviQVEGZrjOp2SPcNE=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.47665ac3627003a65d3d940453d201c36bbd431e78e2a3055c82577347046dd2.js integrity="sha256-R2Zaw2JwA6ZdPZQEU9IBw2u9Qx544qMFXIJXc0cEbdI=" crossorigin=anonymous></script><script>(function(){var e,t=localStorage.getItem("book-theme");if(!t)return;e=document.documentElement,e.dataset.theme=t,e.style.colorScheme=t,t==="dark"?(e.style.setProperty("--body-background","#1a1a1a"),e.style.setProperty("--body-font-color","#e0e0e0"),e.style.setProperty("--color-link","#4db6ac"),e.style.setProperty("--gray-100","#2d2d2d"),e.style.setProperty("--gray-200","#3d3d3d"),e.style.setProperty("--gray-500","#a0a0a0"),e.style.setProperty("--text-primary","#f5f5f7"),e.style.setProperty("--text-secondary","#a1a1a6"),e.style.setProperty("--surface","rgba(255,255,255,0.06)"),e.style.setProperty("--hairline","rgba(255,255,255,0.14)"),e.style.setProperty("--hairline-strong","rgba(255,255,255,0.24)")):(e.style.setProperty("--body-background","#fff"),e.style.setProperty("--body-font-color","#000"),e.style.setProperty("--color-link","#00897b"),e.style.setProperty("--gray-100","#f0f0f0"),e.style.setProperty("--gray-200","#d0d0d0"),e.style.setProperty("--gray-500","#707070"),e.style.setProperty("--text-primary","#1d1d1f"),e.style.setProperty("--text-secondary","#6e6e73"),e.style.setProperty("--surface","#f5f5f7"),e.style.setProperty("--hairline","rgba(0,0,0,0.1)"),e.style.setProperty("--hairline-strong","rgba(0,0,0,0.18)"))})()</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script defer src=/digital-library/code-copy.js></script><script defer src=/digital-library/abbr-tooltip.js></script><script defer src=/digital-library/katex-init.js></script><script defer src=/digital-library/theme-toggle.js></script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/digital-library/index.html><span>Yuan's Library</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=搜索 aria-label=搜索 maxlength=64>
+<kbd class=book-search-kbd>⌘K</kbd><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><button id=theme-toggle class=theme-toggle aria-label=切换深色/浅色模式 title=切换深色/浅色模式>
+<span class=theme-icon>🌙</span></button><ul><li><a href=/digital-library/books/index.html>书架</a><li><span class=menu-category>机器学习</span><ul><li><a href=/digital-library/books/stanford-ml-notes/index.html>斯坦福机器学习教程笔记</a></li></ul></li><li><span class=menu-category>灵性</span><ul><li><a href=/digital-library/books/conversations-with-god/index.html>与神对话</a></li></ul></li><li><span class=menu-category>工程</span><ul><li><a href=/digital-library/books/lun-system-engineering/index.html>论系统工程（新世纪版）</a></li></ul></li><li><span class=menu-category>金融</span><ul><li><a href=/digital-library/books/why-stock-markets-crash/index.html>Why Stock Markets Crash</a></li><li><a href=/digital-library/books/trading-and-exchanges/index.html>Trading and Exchanges</a></li><li><a href=/digital-library/books/options-futures-derivatives/index.html>期权、期货及其他衍生产品</a><ul><li><a href=/digital-library/books/options-futures-derivatives/preface.html>前言与导览</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch01.html>第1章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch02.html>第2章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch03.html>第3章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch04.html>第4章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch05.html>第5章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch06.html>第6章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch07.html>第7章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch08.html>第8章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch09.html>第9章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch10.html>第10章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch11.html>第11章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch12.html>第12章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch13.html>第13章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch14.html>第14章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch15.html>第15章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch16.html>第16章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch17.html>第17章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch18.html>第18章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch19.html>第19章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch20.html>第20章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch21.html>第21章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch22.html>第22章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch23.html class=active>第23章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch24.html>第24章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch25.html>第25章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch26.html>第26章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch27.html>第27章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch28.html>第28章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch29.html>第29章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch30.html>第30章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch31.html>第31章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch32.html>第32章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch33.html>第33章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch34.html>第34章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch35.html>第35章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch36.html>第36章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch37.html>第37章</a></li></ul></li></ul></li></li><li><a href=/digital-library/notes.html>欢迎</a></li><li><a href=/digital-library/papers/index.html>论文</a></li><li><a href=/digital-library/reference/index.html>元素模板</a></li><li><a href=/digital-library/tags/index.html>Tags</a></li><li><a href=/digital-library/about.html>关于本站</a></li></ul><ul><li><a href=https://github.com/yuanuite/digital-library target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/digital-library/icons/menu.svg class=book-icon alt=Menu></label><h3>第23章</h3><div class=header-actions><label for=menu-control class=mobile-search-trigger onclick='setTimeout(()=>document.querySelector("#book-search-input")?.focus(),350)' aria-label=搜索><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+</label><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#231-估计波动率>23.1 估计波动率</a></li><li><a href=#232-指数加权移动平均模型>23.2 指数加权移动平均模型</a></li><li><a href=#233-garch11模型>23.3 GARCH(1，1)模型</a><ul><li><a href=#chapter_320.xhtml_A74ba01ae-88c3-46a5-9e15-596e3d0b6898>23.3.1 权重</a></li><li><a href=#chapter_320.xhtml_Adb9601ae-13e2-490c-b155-f7ab621107a7>23.3.2 均值回归</a></li></ul></li><li><a href=#234-模型选择>23.4 模型选择</a></li><li><a href=#235-极大似然估计法>23.5 极大似然估计法</a><ul><li><a href=#chapter_322.xhtml_A25a001af-2a47-42d9-89b3-c50ea60de94e>23.5.1 估计常数方差</a></li><li><a href=#chapter_322.xhtml_Aaefe01af-5b89-46fb-90f0-1fe1f397f9a4>23.5.2 估计EWMA或GARCH(1，1)模型中的参数</a></li><li><a href=#chapter_322.xhtml_Aa5c601b2-428f-4198-846f-c1187401e09c>23.5.3 模型表现如何</a></li></ul></li><li><a href=#236-利用garch11模型预测波动率>23.6 利用GARCH(1，1)模型预测波动率</a><ul><li><a href=#chapter_323.xhtml_A2e5801b4-f2aa-496c-bde5-0b5c9bab21cc>23.6.1 波动率期限结构</a></li><li><a href=#chapter_323.xhtml_A486801b4-d2f5-4e85-b269-413bbc6f42cb>23.6.2 波动率变化的影响</a></li></ul></li><li><a href=#237-相关系数>23.7 相关系数</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#练习题>练习题</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=第23章>第23章<a class=anchor href=#%e7%ac%ac23%e7%ab%a0>#</a></h1><p>在本章中，我们将解释如何利用历史数据估计当前和未来的波动率与相关系数。这一章的内容与利用模型构建法计算在险价值以及对衍生产品定价有密切的关系：在计算在险价值时，我们对当前波动率和相关系数最感兴趣，这是因为我们要对交易组合在一个较短时间内的价值变化进行估计；在对衍生产品定价时，我们往往需要对衍生产品整个期限内的波动率和相关系数进行预测。</p><p>这一章将介绍一些名称令人印象深刻的波动率估计方法，包括指数加权移动平均(exponentially
+weighted moving average, EWMA)、自回归条件异方差(auto-regressive
+conditional heteroscedasticity,
+ARCH)，以及广义自回归条件异方差(generalized auto-regressive conditional
+heteroscedasticity,
+GARCH)等。这些方法的一个显著特点是它们都假设波动率和相关系数不是常数：在某些时间段内波动率和相关系数可能相对较低，而在其他时间段内可能相对很高。这些方法试图记录波动率或相关系数随时间的变化。</p><h2 id=231-估计波动率>23.1 估计波动率<a class=anchor href=#231-%e4%bc%b0%e8%ae%a1%e6%b3%a2%e5%8a%a8%e7%8e%87>#</a></h2><p>定义σn为第n-1天末所估计的市场变量在第n天的波动率，第n天波动率的平方
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_427_01.jpg alt>
+{.content-image-class
+ratio="1.245" w="53px" w-new="66px"
+style="max-width:53px;max-height:66px"} 为方差率(variance
+rate)。在第15.4节中，我们曾描述了如何从历史数据估计σn的标准处理方法。假定市场变量在i天末的值为Si，变量ui定义为在第i天（第i-1天末至第i天末）连续复利收益率</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_427_02.jpg alt>
+{ratio="0.550"
+w="211px" w-new="116px"
+style="max-width:211px;max-height:116px;width:70%"}</p><p>利用ui在最近m天的观察数据，日方差率
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_427_03.jpg alt>
+{.content-image-class
+ratio="1.204" w="54px" w-new="65px"
+style="max-width:54px;max-height:65px"} 的无偏估计为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_427_04.jpg alt>
+{ratio="0.111"
+w="1052px" w-new="117px"
+style="max-width:1052px;max-height:117px;width:100%"}</p><p>其中
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_427_05.jpg alt>
+{.content-image-class
+ratio="1.697" w="33px" w-new="56px"
+style="max-width:33px;max-height:56px"} 为这些ui的平均值</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_428_01.jpg alt>
+{ratio="0.423"
+w="267px" w-new="113px"
+style="max-width:267px;max-height:113px;width:70%"}</p><p>为了监视日方差率的变化，式(23-1)中的公式通常会有一些变动：</p><p>(1)ui定义为市场变量值在第i-1天末到第i天末的百分比变化 [ ㊟
+]{.zuixiaoyao_zhushi} [ 【这与第22.3节计算VaR时所定义的波动率一致。】
+]{.zuixiaoyao_zhushi_text}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_428_02.jpg alt>
+{ratio="0.118"
+w="982px" w-new="116px"
+style="max-width:982px;max-height:116px;width:100%"}</p><p>(2)假设
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_428_03.jpg alt>
+{.content-image-class
+ratio="1.486" w="35px" w-new="52px"
+style="max-width:35px;max-height:52px"} 为0。 [ ㊟ ]{.zuixiaoyao_zhushi}
+[
+【如第22.3节解释的那样，这种假设对于方差估计的影响不大，这是因为市场变量在1天内变化的期望值远远小于市场变量变化的标准差。】
+]{.zuixiaoyao_zhushi_text}</p><p>(3)用m代替m-1。 [ ㊟ ]{.zuixiaoyao_zhushi} [
+【用m来代替m-1将波动率从无偏差估计变成了极大似然估计。本章后面的部分将讨论极大似然估计。】
+]{.zuixiaoyao_zhushi_text}</p><p>以上三个变化对计算结果影响不大，但这些变化会使方差公式简化成</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_428_04.jpg alt>
+{ratio="0.116"
+w="1017px" w-new="118px"
+style="max-width:1017px;max-height:118px;width:100%"}</p><p>其中ui由式(23-2)给出 <a href=/digital-library/index.html>[1]</a>{#chapter_318.xhtml_B1} 。</p><p>选择权重的方式</p><p>在式(23-3)中，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_428_05.jpg alt>
+{.content-image-class
+ratio="0.163" w="398px" w-new="65px"
+style="max-width:398px;max-height:65px"}
+中的所有项都有相同的权重。我们的目标是估计当前波动率σn的水平，因此将较大的权重用在最近的数据更有意义。这样模型的一种形式为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_428_06.jpg alt>
+{ratio="0.109"
+w="996px" w-new="109px"
+style="max-width:996px;max-height:109px;width:100%"}</p><p>变量αi为之前i天观察值所对应的权重（这些α都取正值）。当选择这些变量时，如果对i＞j选择αi＜αj，也就是对于较旧的数据我们设定较小的权重。权重之和必须为1，即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_428_07.jpg alt>
+{ratio="0.540"
+w="202px" w-new="109px"
+style="max-width:202px;max-height:109px;width:70%"}</p><p>对于式(23-4)可以做以下推广。假定存在某一长期平均方差，并且应当给予该方差一定权重，这将导致以下形式的模型</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_428_08.jpg alt>
+{ratio="0.104"
+w="1053px" w-new="109px"
+style="max-width:1053px;max-height:109px;width:100%"}</p><p>其中VL为长期方差率，γ为VL所对应的权重。因为权重之和仍为1，我们有</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_428_09.jpg alt>
+{ratio="0.415"
+w="272px" w-new="113px"
+style="max-width:272px;max-height:113px;width:70%"}</p><p>这一模型就是最先由Engle提出的ARCH(m)模型。 [ ㊟ ]{.zuixiaoyao_zhushi} [
+【See R. Engle "Autoregressive Conditional Heteroscedasticity with
+Estimates of the Variance of U. K. Inflation," Econometrica, 50(1982):
+987-1008.】 ]{.zuixiaoyao_zhushi_text}
+方差的估计值是基于长期平均方差以及m个观察值，观察数据越陈旧所对应的权重就越小。令ω=γVL，我们可以将式(23-5)写为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_429_01.jpg alt>
+{ratio="0.105"
+w="1035px" w-new="109px"
+style="max-width:1035px;max-height:109px;width:100%"}</p><p>在接下的两节中，我们将讨论两种观察波动率的重要方法，这两种方法均采用了式(23-4)及式(23-5)中的想法。</p><h2 id=232-指数加权移动平均模型>23.2 指数加权移动平均模型<a class=anchor href=#232-%e6%8c%87%e6%95%b0%e5%8a%a0%e6%9d%83%e7%a7%bb%e5%8a%a8%e5%b9%b3%e5%9d%87%e6%a8%a1%e5%9e%8b>#</a></h2><p>指数加权移动平均模型(EWMA)是式(23-4)的一个特殊形式，其中权重αi随着时间以指数速度递减。具体地讲，在这里αi+1=λαi，其中λ是介于0于1之间的常数。</p><p>在以上假设下可以发现更新波动率公式具有非常简单的形式</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_429_02.jpg alt>
+{ratio="0.065"
+w="1101px" w-new="72px"
+style="max-width:1101px;max-height:72px;width:100%"}</p><p>变量在第n天的波动率估计值（在第n-1天末估计）σn由第n-1天的波动率估计值σn-1（在第n-2天末估计）和变量在最近一天内变化的百分比un-1决定。</p><p>为了说明式(23-7)中的权重以指数速度下降，我们将
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_03.jpg alt>
+{.content-image-class
+ratio="0.815" w="81px" w-new="66px"
+style="max-width:81px;max-height:66px"} 代入公式之中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_429_04.jpg alt>
+{ratio="0.079"
+w="814px" w-new="64px"
+style="max-width:814px;max-height:64px;width:100%"}</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_429_05.jpg alt>
+{ratio="0.109"
+w="696px" w-new="76px"
+style="max-width:696px;max-height:76px;width:100%"}</p><p>代入
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_06.jpg alt>
+{.content-image-class
+ratio="0.771" w="83px" w-new="64px"
+style="max-width:83px;max-height:64px"} 项，我们进一步得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_429_07.jpg alt>
+{ratio="0.090"
+w="853px" w-new="77px"
+style="max-width:853px;max-height:77px;width:100%"}</p><p>依此类推，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_429_08.jpg alt>
+{ratio="0.175"
+w="647px" w-new="113px"
+style="max-width:647px;max-height:113px;width:100%"}</p><p>当m很大时，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_09.jpg alt>
+{.content-image-class
+ratio="0.496" w="133px" w-new="66px"
+style="max-width:133px;max-height:66px"}
+项小到可以忽略，所以当αi=(1-λ)λi-1时，式(23-7)与式(23-4)相同。对应于ui的权重以λ的速度随时间推移而递减，每一项的权重是前一项权重与λ的乘积。</p><p>【例23-1】
+假如λ为0.90，市场变量的波动率在第n-1天的估计值为每天1%。在第n-1天，市场变量增长了2%，这意味着
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_10.jpg alt>
+{.content-image-class
+ratio="0.776" w="85px" w-new="66px"
+style="max-width:85px;max-height:66px"} =0.012=0.0001以及
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_11.jpg alt>
+{.content-image-class
+ratio="0.766" w="77px" w-new="59px"
+style="max-width:77px;max-height:59px"}
+=0.022=0.0004，由式(23-7)我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_429_12.jpg alt>
+{ratio="0.077"
+w="880px" w-new="68px"
+style="max-width:880px;max-height:68px;width:100%"}</p><p>因此，第n天波动率σn的估计为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_13.jpg alt>
+{.content-image-class
+ratio="0.310" w="200px" w-new="62px"
+style="max-width:200px;max-height:62px"} ，即每天1.14%。注意，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_14.jpg alt>
+{.content-image-class
+ratio="0.840" w="75px" w-new="63px"
+style="max-width:75px;max-height:63px"} 的期望值为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_15.jpg alt>
+{.content-image-class
+ratio="0.670" w="88px" w-new="59px"
+style="max-width:88px;max-height:59px"} ，也就是0.0001。在本例中，变量
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_16.jpg alt>
+{.content-image-class
+ratio="0.831" w="77px" w-new="64px"
+style="max-width:77px;max-height:64px"}
+的实际值比期望值要大，因此我们对波动率的估计也会增加。当
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_17.jpg alt>
+{.content-image-class
+ratio="0.865" w="74px" w-new="64px"
+style="max-width:74px;max-height:64px"}
+的实际数值小于期望值时，我们对波动率的估计值将会减小。</p><p>EWMA模型的优点是这一方法仅需要存储相对较少的数据。在任何时刻，我们只需要记忆对当前波动率的估计值以及市场变量的最新观察值。当得到市场变量的最新观察值后，我们可以计算当天价格变化的百分比，然后利用式(23-7)更新对方差的估计。旧的方差估计值与旧的市场变量值可以被丢掉。</p><p>EWMA模型的目的是对波动率变化进行跟踪监测。假定市场变量在n-1天有一个较大的变化，即
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_429_18.jpg alt>
+{.content-image-class
+ratio="0.818" w="77px" w-new="63px"
+style="max-width:77px;max-height:63px"}
+很大，由式(23-7)可以看出，这时对当前变化率的估计将会增加。数值λ决定了日波动率估计对于最新市场变量百分比变化的反应。在计算σn时，较低的λ将会给
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_01.jpg alt>
+{.content-image-class
+ratio="0.825" w="80px" w-new="66px"
+style="max-width:80px;max-height:66px"}
+较大的权重，这时每天所估计的日波动率本身的变化也会很大。较大的λ（接近于1.0）将会使日波动率的估计对市场变量每天百分比变化所提供的信息有较慢的反应。</p><p>最初由J.P.摩根建立并于1994年公开的RiskMetrics数据库中采用了λ=0.94的EWMA模型更新对日波动率的估计。摩根大通发现对应于许多市场变量，这样选定的λ所对应的方差预测与方差最接近，
+[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See J.P.Morgan，RiskMetrics
+Monitor，Fourth
+Quarter，1995。在这一章后面，我们将介绍另一种方法（极大似然估计）估计参数。】
+]{.zuixiaoyao_zhushi_text} 这里的实际方差是在随后25天内所观察的
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_02.jpg alt>
+{.content-image-class
+ratio="1.311" w="45px" w-new="59px"
+style="max-width:45px;max-height:59px"}
+数值的等权平均值（见练习题23.19）。</p><h2 id=233-garch11模型>23.3 GARCH(1，1)模型<a class=anchor href=#233-garch11%e6%a8%a1%e5%9e%8b>#</a></h2><p>我们现在讨论由Bollerslev在1986年提出的GARCH(1，1)模型。 [ ㊟
+]{.zuixiaoyao_zhushi} [ 【See T. Bollerslev, "Generalized Autoregressive
+Conditional Heteroscedasticity," Journal of Econometrics, 31(1986):
+307-327.】 ]{.zuixiaoyao_zhushi_text}
+GARCH(1，1)模型和EWMA模型之间的区别与式(23-4)和式(23-5)之间的区别类似。在GARCH(1，1)中，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_03.jpg alt>
+{.content-image-class
+ratio="1.038" w="53px" w-new="55px"
+style="max-width:53px;max-height:55px"}
+是由长期平均方差VL、un-1和σn-1计算得出的。GARCH(1，1)表达式为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_430_04.jpg alt>
+{ratio="0.062"
+w="1090px" w-new="68px"
+style="max-width:1090px;max-height:68px;width:100%"}</p><p>其中γ为对应于VL的权重，α为对应于
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_05.jpg alt>
+{.content-image-class
+ratio="0.829" w="76px" w-new="63px"
+style="max-width:76px;max-height:63px"} 的权重，β为对应于
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_06.jpg alt>
+{.content-image-class
+ratio="0.810" w="79px" w-new="64px"
+style="max-width:79px;max-height:64px"} 的权重。因为权重之和为1，我们有</p><p>γ+α+β=1</p><p>EWMA模型是GARCH(1，1)模型对应于γ=0,α=1-λ及β=λ的特例。</p><p>GARCH(1，1)模型的(1，1)表示
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_07.jpg alt>
+{.content-image-class
+ratio="1.167" w="54px" w-new="63px"
+style="max-width:54px;max-height:63px"}
+是由最新的u2观察值和最新的方差率估计而得出的。在更广义的GARCH(p,q)模型中，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_08.jpg alt>
+{.content-image-class
+ratio="1.204" w="54px" w-new="65px"
+style="max-width:54px;max-height:65px"}
+是由最新的p个u2观察值和最新的q个方差率估计而得出的。
+<a href=/digital-library/index.html>[2]</a>{#chapter_320.xhtml_B2} GARCH(1，1)是迄今最流行的GARCH模型。</p><p>令ω=γVL，我们也可以将GARCH(1，1)模型写成</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_430_09.jpg alt>
+{ratio="0.067"
+w="1069px" w-new="72px"
+style="max-width:1069px;max-height:72px;width:100%"}</p><p>在估计模型的参数时，通常会采用这种形式。一旦估计出ω、α和β后，我们可由γ=1α-β计算γ，而长期方差VL=ω/γ。为了保证GARCH(1，1)模型的稳定，我们需要α+β＜1，否则对应于长期方差的权重会为负值。</p><p>【例23-2】 假设一个通过日观测数据估计出的GARCH(1，1)模型为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_430_10.jpg alt>
+{ratio="0.093"
+w="690px" w-new="64px"
+style="max-width:690px;max-height:64px;width:100%"}</p><p>这对应于α=0.13，β=0.86和ω=0.000002。这时γ=1-α-β=0.01。由ω=γVL，我们得出VL=0.0002。换句话讲，由模型隐含的长期日方差平均值为0.0002，对应的波动率为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_11.jpg alt>
+{.content-image-class
+ratio="0.379" w="174px" w-new="66px"
+style="max-width:174px;max-height:66px"} =0.014，即每天1.4%。</p><p>假设对于第n-1天的日波动率估计为1.6%，因此
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_430_12.jpg alt>
+{.content-image-class
+ratio="0.785" w="79px" w-new="62px"
+style="max-width:79px;max-height:62px"}
+=0.0162=0.000256，又假设在第n-1天内市场变量降低了1%，即
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_01.jpg alt>
+{.content-image-class
+ratio="0.808" w="78px" w-new="63px"
+style="max-width:78px;max-height:63px"} =0.012=0.0001，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_431_02.jpg alt>
+{ratio="0.055"
+w="1242px" w-new="68px"
+style="max-width:1242px;max-height:68px;width:100%"}</p><p>对于波动率的最新估计为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_03.jpg alt>
+{.content-image-class
+ratio="0.210" w="271px" w-new="57px"
+style="max-width:271px;max-height:57px"} =0.0153，即每天1.53%。</p><h3 id=chapter_320.xhtml_A74ba01ae-88c3-46a5-9e15-596e3d0b6898 class=thirdTitle>23.3.1 权重<a class=anchor href=#chapter_320.xhtml_A74ba01ae-88c3-46a5-9e15-596e3d0b6898>#</a></h3><p>将
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_04.jpg alt>
+{.content-image-class
+ratio="0.768" w="82px" w-new="63px"
+style="max-width:82px;max-height:63px"} 的表达式代入式(23-9)中，我们可得</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_431_05.jpg alt>
+{ratio="0.092"
+w="738px" w-new="68px"
+style="max-width:738px;max-height:68px;width:100%"}</p><p>即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_431_06.jpg alt>
+{ratio="0.101"
+w="710px" w-new="72px"
+style="max-width:710px;max-height:72px;width:100%"}</p><p>代入
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_07.jpg alt>
+{.content-image-class
+ratio="0.742" w="89px" w-new="66px"
+style="max-width:89px;max-height:66px"} 的表达式</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_431_08.jpg alt>
+{ratio="0.064"
+w="999px" w-new="64px"
+style="max-width:999px;max-height:64px;width:100%"}</p><p>以这种形式继续下去，我们可以看到对应于
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_09.jpg alt>
+{.content-image-class
+ratio="0.776" w="76px" w-new="59px"
+style="max-width:76px;max-height:59px"}
+的权重为αβi-1。权重以β指数速度下降：参数β可解释为衰减率(decay
+rate)，这与EWMA模型中的λ系数近似。在决定最新方差时，此系数决定了u观察值的相对重要性。例如，β=0.9说明
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_10.jpg alt>
+{.content-image-class
+ratio="0.816" w="76px" w-new="62px"
+style="max-width:76px;max-height:62px"} 的重要性只是
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_11.jpg alt>
+{.content-image-class
+ratio="0.760" w="75px" w-new="57px"
+style="max-width:75px;max-height:57px"} 的90%；
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_12.jpg alt>
+{.content-image-class
+ratio="0.778" w="81px" w-new="63px"
+style="max-width:81px;max-height:63px"} 的重要性只是
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_13.jpg alt>
+{.content-image-class
+ratio="0.827" w="75px" w-new="62px"
+style="max-width:75px;max-height:62px"}
+的81%，等等。GARCH(1，1)模型与EWMA模型类似，其不同之处是除了对过去的u2权重按指数下降外，GARCH(1，1)模型对于长期平均波动率赋予了一定的权重。</p><h3 id=chapter_320.xhtml_Adb9601ae-13e2-490c-b155-f7ab621107a7 class=thirdTitle>23.3.2 均值回归<a class=anchor href=#chapter_320.xhtml_Adb9601ae-13e2-490c-b155-f7ab621107a7>#</a></h3><p>随着时间的变化，GARCH(1，1)模型中的方差率会被拉回到其长期平均水平VL。对应于VL的权重为γ=1-α-β。GARCH(1，1)模型与以下关于V的随机过程等价</p><p>dV=a(VL-V)dt+ξVdz</p><p>其中时间是以天数为计量，a=1-α-β，以及
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_431_14.jpg alt>
+{.content-image-class
+ratio="0.433" w="150px" w-new="65px"
+style="max-width:150px;max-height:65px"}
+（见练习题23.14）。以上模型具有均值回归的特性：方差以a的速度被拉回到VL。当V＞VL时，方差的漂移项为负；当V＜VL时，方差的漂移项为正。模型在漂移项上附加了波动率ξ。第27章进一步讨论了这种模型。</p><h2 id=234-模型选择>23.4 模型选择<a class=anchor href=#234-%e6%a8%a1%e5%9e%8b%e9%80%89%e6%8b%a9>#</a></h2><p>在实际中，方差值确实常常会具有均值回归的性质。GARCH(1，1)模型具有均值回归的特性，而EWMA模型却没有这种特性，因此从理论上讲，GARCH(1，1)模型比EWMA模型更吸引人。</p><p>在下一节里，我们将讨论如何估计GARCH(1，1)模型中参数ω、α、β的最佳匹配(best
+fit)。当参数ω为零时，GARCH(1，1)模型退化为EWMA模型。在某些情况下，最佳匹配参数ω为负，这时对应的GARCH(1，1)模型不稳定。在这种情况下采用EWMA模型更为合理。</p><h2 id=235-极大似然估计法>23.5 极大似然估计法<a class=anchor href=#235-%e6%9e%81%e5%a4%a7%e4%bc%bc%e7%84%b6%e4%bc%b0%e8%ae%a1%e6%b3%95>#</a></h2><p>我们现在讨论如何由历史数据估计以上所讨论模型中的参数。这里将要讨论的是极大似然估计法(maximum
+likelihood
+method)。在参数估计过程中，这一方法会涉及选择使数据发生的概率达到最大的参数。</p><p>我们用一个很简单的例子说明这种方法。在某一天我们随机地抽取10个股票的价格，发现其中一个股票价格在这一天下跌了，而其他9个股票的价格没有变化或有所上涨。这时，对随机选取的一个股票，其价格在今天下跌的概率的最好估计是什么？很自然的答案是0.1。让我们看一下这一结果是否就是极大似然估计所给出的结果。</p><p>将股票价格下降的概率计为p，对应只有一种股票价格下降，而其他股票价格不下降的概率为p(1-p)9。应用极大似然估计方法，最好的估计值p会使得p(1-p)9取得最大值。将以上表达式对p求导，并令导数为0，我们得出p=0.1时会使得表达式取得最大值，这说明极大似然估计值为0.1，正是所期望的结果。</p><h3 id=chapter_322.xhtml_A25a001af-2a47-42d9-89b3-c50ea60de94e class=thirdTitle>23.5.1 估计常数方差<a class=anchor href=#chapter_322.xhtml_A25a001af-2a47-42d9-89b3-c50ea60de94e>#</a></h3><p>在下一个有关极大似然方法的例子中，我们考虑如何由服从正态分布并且期望值为0的变量X的m个观察值估计这一变量的方差。我们假定观察值为u1，u2,...,um，将方差记为v，将观察值出现在X=ui的概率定义成X的概率密度函数在ui的取值，即</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_432_01.jpg alt>
+{ratio="0.374"
+w="350px" w-new="131px"
+style="max-width:350px;max-height:131px;width:100%"}</p><p>m个观察值按u1，u2,...,um顺序出现的概率为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_432_02.jpg alt>
+{ratio="0.119"
+w="1093px" w-new="130px"
+style="max-width:1093px;max-height:130px;width:100%"}</p><p>应用最大似然方法，v的最好估计是使得以上表达式达到最大值。</p><p>以上表达式的最大化与其对应的对数最大化等价，对式(23-10)取对数并且忽略常数项后可以得出我们想最大化的目标函数</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_432_03.jpg alt>
+{ratio="0.116"
+w="1043px" w-new="121px"
+style="max-width:1043px;max-height:121px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_432_04.jpg alt>
+{ratio="0.339"
+w="369px" w-new="125px"
+style="max-width:369px;max-height:125px;width:100%"}</p><p>将以上表达式对v求导，并令导数为0，我们可以得到v的极大似然估计 [ ㊟
+]{.zuixiaoyao_zhushi} [ 【这一点证实了第23.1节第3个脚注的结论。】
+]{.zuixiaoyao_zhushi_text}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_432_05.jpg alt>
+{ratio="0.673"
+w="162px" w-new="109px"
+style="max-width:162px;max-height:109px;width:50%"}</p><h3 id=chapter_322.xhtml_Aaefe01af-5b89-46fb-90f0-1fe1f397f9a4 class=thirdTitle>23.5.2 估计EWMA或GARCH(1，1)模型中的参数<a class=anchor href=#chapter_322.xhtml_Aaefe01af-5b89-46fb-90f0-1fe1f397f9a4>#</a></h3><p>我们现在考虑如何用极大似然方法估计EWMA模型，GARCH(1，1)模型或其他更新波动率方法中的参数，定义
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_432_06.jpg alt>
+{.content-image-class
+ratio="0.488" w="123px" w-new="60px"
+style="max-width:123px;max-height:60px"}
+为第i天方差的估计值。假设在给定方差的条件下，ui的概率分布为正态。与上面类似，我们得出的最佳参数应使得以下表达式达到最大</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_432_07.jpg alt>
+{ratio="0.277"
+w="466px" w-new="129px"
+style="max-width:466px;max-height:129px;width:100%"}</p><p>取对数后，我们可以看到这与对下面表达式求最大值是等价的</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_433_01.jpg alt>
+{ratio="0.118"
+w="1049px" w-new="124px"
+style="max-width:1049px;max-height:124px;width:100%"}</p><p>除了v被代替为vi，这一表达式与式(23-11)相同。我们可以采用迭代法求取使得式(23-12)达到最大的解。</p><p>表23-1中所示的计算表给出了估计GARCH(1，1)模型中参数的过程。这个表格分析了2015年7月10日～2020年7月19日标准普尔500指数的数据。
+[ ㊟ ]{.zuixiaoyao_zhushi} [
+【数据与计算过程可从www-2.rotman.utoronto.ca/～hull/OFOD/GarchExample上找到。】
+]{.zuixiaoyao_zhushi_text}
+表中第1列对应日期；第2列对应天数；第3列显示了标准普尔500指数在第i天结束时的值Si；第4列显示了由第i-1天结束时至第i天结束时标准普尔500指数的百分比变化，即ui=(Si-Si-1)/Si-1。我们首先将初始值记录在表中，然后利用迭代的方式使这些值逐渐趋于最优。第5列显示了第i-1天结束时对第i天方差率的估计，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_433_02.jpg alt>
+{.content-image-class
+ratio="0.529" w="121px" w-new="64px"
+style="max-width:121px;max-height:64px"} 。从第3天开始，我们将方差设为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_433_03.jpg alt>
+{.content-image-class
+ratio="1.364" w="44px" w-new="60px"
+style="max-width:44px;max-height:60px"}
+，在接下去的每一天，应用式(23-9)时使用参数ω、α和β的最新值。第6列记录的是似然性测度
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_433_04.jpg alt>
+{.content-image-class
+ratio="0.241" w="274px" w-new="66px"
+style="max-width:274px;max-height:66px"} 。通过迭代搜索， [ ㊟
+]{.zuixiaoyao_zhushi} [
+【就像在今后会讨论的那样，像微软软件Excel中的Solver程序可以用来对问题求解。其他像诸如Leven-berg-Marguardt的特殊算法也可以用来对问题求解。关于求解算法参考W.
+H. Press，B. P. Flannery，S. A. Teukolsky, and W. T.
+Vetterling，Numerical Recipes in C：The Art of Scientific
+Computing，Cambridge Uni-versity Press, 1988。】
+]{.zuixiaoyao_zhushi_text}
+可以选取使第6列中数值的和达到最大值的ω、α和β。在我们的例子中，参数的最优解为</p><p>ω=0.0000039818,α=0.223793,β=0.747577</p><p>式(23-12)的最大值为10837.4227。在表23-1中所显示的数字对应于参数ω、α及β的最终迭代解。</p><p>表23-1
+估计标准普尔500指数在2015年7月10日到2020年7月9日之间GARCH(1，1)模型中的参数</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_433_05.jpg alt>
+{ratio="0.358"
+w="1689px" w-new="605px"
+style="max-width:1689px;max-height:605px;width:100%"}</p><p>在我们的例子中，长期方差VL为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_433_06.jpg alt>
+{ratio="0.137"
+w="795px" w-new="109px"
+style="max-width:795px;max-height:109px;width:100%"}</p><p>长期波动率为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_433_07.jpg alt>
+{.content-image-class
+ratio="0.236" w="246px" w-new="58px"
+style="max-width:246px;max-height:58px"} ，也就是每天1.179%。</p><p>图23-1和图23-2展示了标准普尔500指数与它的GARCH(1，1)波动率在数据所覆盖的5年内的变化。在大多数时间里波动率小于2%，但在2020年3月波动率经历了高达每天8%的情形。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_434_01.jpg alt>
+{ratio="0.612"
+w="1184px" w-new="725px"
+style="max-width:1184px;max-height:725px;width:100%"}</p><p>图23-1 标准普尔500指数：2015年7月10日～2020年7月9日</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_434_02.jpg alt>
+{ratio="0.614"
+w="1047px" w-new="643px"
+style="max-width:1047px;max-height:643px;width:100%"}</p><p>图23-2 标准普尔500指数的日波动率：2015年7月10日~2020年7月9日</p><p>另一种有时会更可靠的估计GARCH(1，1)参数的做法是所谓的方差目标法(variance
+targeting)。 [ ㊟ ]{.zuixiaoyao_zhushi} [ 【See R. Engle and J. Mezrich
+"GARCH for Groups", Risk, August 1996:36-40.】
+]{.zuixiaoyao_zhushi_text}
+这种方法将长期平均方差VL设定为由数据计算出的样本方差（或其他合理的估计），因为ω等于VL(1-α-β)，因此在模型中只需要估计两个参数，表23-1中的数据所对应的样本方差为0.0001490，对应的日波动率为1.2208%，令VL等于样本方差，我们可以找出使得目标函数式(23-12)达到最大化的α和β分别为0.22636和0.74704，相应的目标函数值为10837.4047，这一数字只是稍稍低于前面计算的极值10837.4227。</p><p>当使用EWMA模型时，参数的估计过程就相对简单一些。因为ω=0、α=1-λ和β=λ，因此我们只需要估计一个参数，使用表23-1中的数据，我们可以求得使目标函数式(23-12)取得极大值的λ为0.9182，对应的目标函数取值为10692.6213。</p><p>对GARCH(1，1)模型和EWMA模型，我们都可以通过Excel软件中的Solver程序找到使得似然函数达到最大的参数值。当计算表格的结构使得寻求的参数值大体在同一级别时，Solver程序的表现会令人满意。例如，在GARCH(1，1)模型中，我们可以将计算表中的单元A1、A2、A3与数据ω×105、10α和β相对应。然后我们可以使单元B1=A1/100000、B2=A2/10以及B3=A3，我们通过B1、B2、B3计算似然函数。我们可以让Solver计算A1、A2、A3上使似然函数得到最大的值。因为有时Solver会给出一个局部解，所以我们应当对于参数设定一些不同的初始值。</p><h3 id=chapter_322.xhtml_Aa5c601b2-428f-4198-846f-c1187401e09c class=thirdTitle>23.5.3 模型表现如何<a class=anchor href=#chapter_322.xhtml_Aa5c601b2-428f-4198-846f-c1187401e09c>#</a></h3><p>在GARCH模型中所做的假设是波动率随时间变化：在某些时间里波动率会相对较高，而在其他时间里会相对较低。换一种形式讲，当
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_01.jpg alt>
+{.content-image-class
+ratio="1.154" w="52px" w-new="60px"
+style="max-width:52px;max-height:60px"} 较高时，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_02.jpg alt>
+{.content-image-class
+ratio="0.344" w="186px" w-new="64px"
+style="max-width:186px;max-height:64px"} ,...,会有增大的趋势；当
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_03.jpg alt>
+{.content-image-class
+ratio="1.400" w="45px" w-new="63px"
+style="max-width:45px;max-height:63px"} 较低时，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_04.jpg alt>
+{.content-image-class
+ratio="0.364" w="187px" w-new="68px"
+style="max-width:187px;max-height:68px"}
+,...,会有降低的趋势，我们可以通过检验自相关结构(auto-correlation
+structure)来检验这些结论的正确性。</p><p>我们假定
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_05.jpg alt>
+{.content-image-class
+ratio="1.283" w="46px" w-new="59px"
+style="max-width:46px;max-height:59px"}
+确实具有自相关性，如果GARCH模型是有效的，自相关性就会被清除。我们可以通过计算变量
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_06.jpg alt>
+{.content-image-class
+ratio="0.564" w="110px" w-new="62px"
+style="max-width:110px;max-height:62px"}
+的自相关系数验证这一结论。如果它们的自相关系数很小，那么我们可以说σi模型确实解释了
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_07.jpg alt>
+{.content-image-class
+ratio="1.312" w="48px" w-new="63px"
+style="max-width:48px;max-height:63px"} 中的自相关性。</p><p>表23-2给出的是关于上面所用的标准普尔500指数的数据结果。第1列显示了计算自相关系数所用的时滞(time
+lag)；第2列对应于
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_08.jpg alt>
+{.content-image-class
+ratio="1.277" w="47px" w-new="60px"
+style="max-width:47px;max-height:60px"} 自相关系数；第3列展示了
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_09.jpg alt>
+{.content-image-class
+ratio="0.596" w="104px" w-new="62px"
+style="max-width:104px;max-height:62px"} 的自相关系数。
+<a href=/digital-library/index.html>[3]</a>{#chapter_322.xhtml_B3} 表中结果显示对应于1与15之间的所有时滞，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_10.jpg alt>
+{.content-image-class
+ratio="1.277" w="47px" w-new="60px"
+style="max-width:47px;max-height:60px"} 的自相关系数均为正值。而对于
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_11.jpg alt>
+{.content-image-class
+ratio="0.621" w="103px" w-new="64px"
+style="max-width:103px;max-height:64px"}
+，有些自相关系数为正，有些为负，而且它们的幅度比原来
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_12.jpg alt>
+{.content-image-class
+ratio="1.422" w="45px" w-new="64px"
+style="max-width:45px;max-height:64px"} 的自相关系数要小得多。</p><p>表23-2 标准普尔500指数数据采用GARCH模型之前与之后的自相关系数</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_435_13.jpg alt>
+{ratio="0.293"
+w="1688px" w-new="494px"
+style="max-width:1688px;max-height:494px;width:100%"}</p><p>看来GARCH模型对于解释这些数据确实很有效。我们可以采用所谓的Ljung-Box统计量做更为科学的检验。
+[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See G. M. Ljung and G. E. P. Box, "On a
+Measure of Lack of Fit in Time Series Models," Biometrica, 65(1978):
+297-303.】 ]{.zuixiaoyao_zhushi_text}
+如果一个数列中有m个观察值，Ljung-Box统计量定义为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_435_14.jpg alt>
+{ratio="0.565"
+w="193px" w-new="109px"
+style="max-width:193px;max-height:109px;width:60%"}</p><p>其中ηk对应于时滞为k的自相关系数，K为所考虑时滞的数量，以及</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_435_15.jpg alt>
+{ratio="0.460"
+w="224px" w-new="103px"
+style="max-width:224px;max-height:103px;width:60%"}</p><p>对于K=15，当Ljung-Box统计量大于25时，我们可以有95%的把握拒绝自相关系数为0这一假设。</p><p>在表23-2中，关于
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_16.jpg alt>
+{.content-image-class
+ratio="1.244" w="45px" w-new="56px"
+style="max-width:45px;max-height:56px"}
+数列的Ljung-Box统计值大约为2170，这说明确实存在很强的自相关性。关于数列
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_435_17.jpg alt>
+{.content-image-class
+ratio="0.527" w="112px" w-new="59px"
+style="max-width:112px;max-height:59px"}
+的Ljung-Box统计值为13.2，这说明GARCH模型确实清除了数据中的大部分自相关性。</p><h2 id=236-利用garch11模型预测波动率>23.6 利用GARCH(1，1)模型预测波动率<a class=anchor href=#236-%e5%88%a9%e7%94%a8garch11%e6%a8%a1%e5%9e%8b%e9%a2%84%e6%b5%8b%e6%b3%a2%e5%8a%a8%e7%8e%87>#</a></h2><p>当使用GARCH(1，1)模型时，在n-1天末所估计的第n天方差率为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_436_01.jpg alt>
+{ratio="0.097"
+w="663px" w-new="64px"
+style="max-width:663px;max-height:64px;width:100%"}</p><p>因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_436_02.jpg alt>
+{ratio="0.091"
+w="746px" w-new="68px"
+style="max-width:746px;max-height:68px;width:100%"}</p><p>在将来第n+t天，我们有</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_436_03.jpg alt>
+{ratio="0.084"
+w="807px" w-new="68px"
+style="max-width:807px;max-height:68px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_436_04.jpg alt>
+{.content-image-class
+ratio="0.596" w="109px" w-new="65px"
+style="max-width:109px;max-height:65px"} 的期望值为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_436_05.jpg alt>
+{.content-image-class
+ratio="0.561" w="114px" w-new="64px"
+style="max-width:114px;max-height:64px"} ，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_436_06.jpg alt>
+{ratio="0.085"
+w="737px" w-new="63px"
+style="max-width:737px;max-height:63px;width:100%"}</p><p>其中E表示期望值。重复应用这一方程，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_436_07.jpg alt>
+{ratio="0.102"
+w="667px" w-new="68px"
+style="max-width:667px;max-height:68px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_436_08.jpg alt>
+{ratio="0.061"
+w="1190px" w-new="72px"
+style="max-width:1190px;max-height:72px;width:100%"}</p><p>以上方程采用了在n-1天末所有可以利用的数据以预测第n+t天的波动率。在EWMA模型中，α+β=1，式(23-13)说明将来方差率的期望值与目前方差率相等。当α+β＜1时，方程中的最后一项随时间的推移而逐渐减小。图23-3展示了当目前方差率与VL不同时，方差率在将来的预期路径。如前面所述，方差率具有均值回归的性质：均值回归水平为VL，回归速度为1-α-β。我们对将来方差率的预测会随着持有时间的延长而逐渐趋向于VL。这一分析强调了为保证GARCH(1，1)模型的稳定性，我们必须有α+β＜1这一条件。当α+β＞1时，对应于长期平均方差的权重为负，这时方差不具备均值回归性质，事实上此时的模型是"均值逃离"(mean
+fleeing)的。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_436_09.jpg alt>
+{ratio="0.492"
+w="1224px" w-new="602px"
+style="max-width:1224px;max-height:602px;width:100%"}</p><p>图23-3 对应于两种情形下预期方差率的曲线</p><p>在我们之前考虑的标准普尔500指数数据中，α+β=0.9714，VL=0.0001391。假定我们对于当前方差率的估计为每天0.0003（这对应于每天1.732%的波动率），10天之后的方差率期望值为</p><p>0.0001391+0.971410(0.0003-0.0001391)=0.0002594</p><p>波动率的期望值为每天1.61%，这仍然远远高于长期波动率(1.18%)，但是100天后的预期方差</p><p>0.0001391+0.9714100(0.0003-0.0001391)= 0.0001479</p><p>波动率的期望值为每天1.22%，这同长期波动率已经非常接近。</p><h3 id=chapter_323.xhtml_A2e5801b4-f2aa-496c-bde5-0b5c9bab21cc class=thirdTitle>23.6.1 波动率期限结构<a class=anchor href=#chapter_323.xhtml_A2e5801b4-f2aa-496c-bde5-0b5c9bab21cc>#</a></h3><p>假定今天为第n天，定义</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_437_01.jpg alt>
+{ratio="0.212"
+w="321px" w-new="68px"
+style="max-width:321px;max-height:68px;width:70%"}</p><p>与</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_437_02.jpg alt>
+{ratio="0.454"
+w="249px" w-new="113px"
+style="max-width:249px;max-height:113px;width:70%"}</p><p>式(23-13)变为</p><p>V(t)=VL+e-at[V(0)-VL]</p><p>这里的V(t)为第t天瞬时方差率(instantaneous variance
+rate)的估计值。介于今天与时间T之间的方差率平均值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_437_03.jpg alt>
+{ratio="0.140"
+w="772px" w-new="108px"
+style="max-width:772px;max-height:108px;width:100%"}</p><p>T越大，这个数值越接近VL。定义σ(T)为利用GARCH(1，1)模型对一个期限为T天的期权定价时所采用的年波动率，假定每年中有252天，σ(T)2是每天方差平均值的252倍，因此</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_437_04.jpg alt>
+{ratio="0.089"
+w="1248px" w-new="111px"
+style="max-width:1248px;max-height:111px;width:100%"}</p><p>如在第20章中的讨论，对于同一标的资产，我们常常采用不同期权的市场价格计算波动率期限结构(volatility
+term
+structure)，这一期限结构就是期权隐含波动率与期限之间的关系。式(23-14)可以用来估计基于GARCH(1，1)模型的波动率期限结构。由此所估计的期限结构同实际的期限结构往往是有区别的。但这种方法确实常常用来预测隐含波动率期限结构随波动率变化的形式。</p><p>当目前波动率高于长期波动率时，GARCH(1，1)模型预测的波动率结构为下降形式，而当目前波动率低于长期波动率时，GARCH(1，1)模型预测的波动率期限为上升形式。对于前面的标准普尔500指数数据，a=ln(1/0.97137)=0.02905和VL=0.0001391。假定目前的每天方差率估计为V(0)=0.0003，由式(23-14)得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_437_05.jpg alt>
+{ratio="0.087"
+w="1236px" w-new="107px"
+style="max-width:1236px;max-height:107px;width:100%"}</p><p>其中时间T以天计算，表23-3给出了对应于不同时间T的年波动率。</p><p>表23-3 由GARCH(1，1)模型预测的标准普尔500指数波动率期限结构</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_437_06.jpg alt>
+{ratio="0.070"
+w="1688px" w-new="119px"
+style="max-width:1688px;max-height:119px;width:100%"}</p><h3 id=chapter_323.xhtml_A486801b4-d2f5-4e85-b269-413bbc6f42cb class=thirdTitle>23.6.2 波动率变化的影响<a class=anchor href=#chapter_323.xhtml_A486801b4-d2f5-4e85-b269-413bbc6f42cb>#</a></h3><p>式(23-14)可以写为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_437_07.jpg alt>
+{ratio="0.134"
+w="829px" w-new="111px"
+style="max-width:829px;max-height:111px;width:100%"}</p><p>当σ(0)的变化量为Δσ(0)时，σ(T)的变化量大约为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_438_01.jpg alt>
+{ratio="0.112"
+w="1062px" w-new="119px"
+style="max-width:1062px;max-height:119px;width:100%"}</p><p>对于上面所考虑的标准普尔500指数数据，表23-4显示了波动率的变化对于不同期限期权的影响。与前面一样，我们假设V(0)=0.0003，因而
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_438_02.jpg alt>
+{.content-image-class
+ratio="0.128" w="484px" w-new="62px"
+style="max-width:484px;max-height:62px"}
+=27.50%。表中考虑的情形为瞬时波动率由每年27.50%变为每年28.50%，即100个基点的变化，这意味着Δσ(0)=0.01，即1%。</p><p>表23-4 当瞬时波动率增加1%时由GARCH(1，1)模型预测的效应</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_438_03.jpg alt>
+{ratio="0.071"
+w="1680px" w-new="119px"
+style="max-width:1680px;max-height:119px;width:100%"}</p><p>当确定交易组合对波动率变化的风险敞口时，许多金融机构采用与此类似的分析方法。在计算vega时，与其考虑将所有期限的隐含波动率都增加1%，不如将波动率的变化量与期限联系起来。在表23-4中，10天期权的波动率增加量为0.90%，30天期权的波动率增加量为0.74%，50天期权的波动率增加量为0.61%，等等。</p><h2 id=237-相关系数>23.7 相关系数<a class=anchor href=#237-%e7%9b%b8%e5%85%b3%e7%b3%bb%e6%95%b0>#</a></h2><p>迄今为止，我们是围绕对波动率的估计与预测进行讨论。如第22章所示，在计算VaR时，相关性也起着很重要的作用。在这一节里，我们将说明如何采用一种类似于对波动率进行更新的方法估计相关系数。</p><p>两个变量X和Y之间的相关系数可以定义为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_438_04.jpg alt>
+{ratio="0.509"
+w="216px" w-new="110px"
+style="max-width:216px;max-height:110px;width:50%"}</p><p>其中σX和σY分别为X和Y的标准差，cov(X,Y)为X和Y之间的协方差。X和Y之间协方差的定义为</p><p>E[(X-μX)(Y-μY)]</p><p>其中μX和μY分别为X和Y的均值，E代表期望值。虽然直观上我们更容易理解相关系数，但协方差才真正是我们需要分析的基本变量。
+[ ㊟ ]{.zuixiaoyao_zhushi} [
+【这就像在EWMA及GARCH模型中，虽然波动率更容易被人理解，但方差才是真正的基础变量。】
+]{.zuixiaoyao_zhushi_text}</p><p>定义xi和yi分别为变量X与Y在第i-1天与第i天之间的百分比变化</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_438_05.jpg alt>
+{ratio="0.217"
+w="572px" w-new="124px"
+style="max-width:572px;max-height:124px;width:100%"}</p><p>Xi和Yi分别为变量X和Y在第i天结束时的值。我们同时定义以下变量</p><p>σx,n：在第n天对变量X日波动率的估计值；</p><p>σy,n：在第n天对变量Y日波动率的估计值；</p><p>covn：在第n天对变量X日变化量与变量Y日变化量之间协方差的估计值。</p><p>在第n天，变量X与变量Y之间相关系数的估计值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_438_06.jpg alt>
+{ratio="0.753"
+w="158px" w-new="119px"
+style="max-width:158px;max-height:119px;width:50%"}</p><p>采用同样的权重，并假定xi和yi的均值都为0，从式(23-3)我们可以得出由最近m个观察值计算出的变量X和Y之间的方差分别为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_439_01.jpg alt>
+{ratio="0.174"
+w="657px" w-new="114px"
+style="max-width:657px;max-height:114px;width:100%"}</p><p>类似地，变量X和Y之间协方差的估计式为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_439_02.jpg alt>
+{ratio="0.109"
+w="1039px" w-new="113px"
+style="max-width:1039px;max-height:113px;width:100%"}</p><p>另外一种更新协方差的方法是类似于式(23-7)中的EWMA模型，这时对协方差估计的更新公式为</p><p>covn=λcovn-1+(1-λ)xn-1yn-1</p><p>与EWMA模型中的分析相似，我们可以证明对应于数据xiyi的权重随着时间向后推移而逐渐降低。λ的值越小，给予近期数据的权重越大。</p><p>【例23-3】
+假设λ=0.95，在n-1天变量X与Y之间相关系数的估计值为0.6，同时我们假设变量X与Y在n-1天的波动率估计分别为1%和2%。由协方差和相关系数的关系式可以得出在第n-1天X与Y之间协方差的估计为</p><p>0.6×0.01×0.02=0.00012</p><p>假设变量X和Y在n-1天的百分比变化分别为0.5%与2.5%，在第n天方差与协方差的估计应当被更新为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_439_03.jpg alt>
+{ratio="0.185"
+w="1148px" w-new="212px"
+style="max-width:1148px;max-height:212px;width:100%"}</p><p>变量X的最新波动率估计为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_439_04.jpg alt>
+{.content-image-class
+ratio="0.236" w="267px" w-new="63px"
+style="max-width:267px;max-height:63px"}
+=0.981%，变量Y的最新波动率估计为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_439_05.jpg alt>
+{.content-image-class
+ratio="0.226" w="270px" w-new="61px"
+style="max-width:270px;max-height:61px"}
+=2.028%，X及Y之间的最新相关系数为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_439_06.jpg alt>
+{ratio="0.190"
+w="567px" w-new="108px"
+style="max-width:567px;max-height:108px;width:100%"}</p><p>GARCH模型可用于对协方差进行更新，以及对未来协方差进行预测。例如，对协方差更新的GARCH(1，1)模型为</p><p>covn=ω+αxn-1yn-1+βcovn-1</p><p>其中长期协方差平均值为ω/(1-α-β)。我们可以推导出与式(23-13)和式(23-14)类似的方程以预测未来的协方差以及计算期权期限内的平均方差。
+[ ㊟ ]{.zuixiaoyao_zhushi} [
+【本章的想法可以推广到多元变量GARCH模型的情形，其中整个方差-协方差矩阵被一致地加以更新。关于其他的方法，见R.
+Engle and J. Mezrich，"GARCH for Groups，"Risk，August 1996，36-40。】
+]{.zuixiaoyao_zhushi_text}</p><p>协方差的一致性条件</p><p>当计算出所有的方差和协方差之后，我们可以生成一个方差-协方差矩阵。当i≠j时，矩阵的(i,j)个元素对应于变量i与变量j之间的协方差；当i=j时，(i,j)个元素对应于变量i的方差。</p><p>并不是所有的方差-协方差矩阵都是内部一致的。一个N×N方差-协方差矩阵Ω满足内部一致性的条件是：对于所有的N×1向量w</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_440_01.jpg alt>
+{ratio="0.069"
+w="948px" w-new="65px"
+style="max-width:948px;max-height:65px;width:100%"}</p><p>其中wT是w的转置。满足以上条件的矩阵称为半正定(positive-semidefinite)矩阵。</p><p>为了理解为什么不等式(23-17)必须成立，我们假定wT=[w1，w2,...,wn]，表达式wTΩw为变量w1x1+w2x2+...+wnxn的方差（其中xi代表变量i的值），因此自然不能为负。</p><p>为了保证矩阵的半正定性，我们在计算方差及协方差时必须保持一致性。例如，如果我们采用最新的m个历史数据并以均等的权重计算方差，那么我们在计算协方差时也应当采用同样的数据与权重。如果在更新方差时采用了λ=0.94的EWMA模型，那么在更新协方差时也应该采用同样的方式。</p><p>以下方差-协方差矩阵是不满足内部一致性条件的例子</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_440_02.jpg alt>
+{ratio="0.656"
+w="349px" w-new="229px"
+style="max-width:349px;max-height:229px;width:100%"}</p><p>这时每个变量的标准差均为1.0，协方差与相关系数相等。第1变量同第3变量高度相关，第2变量同第3变量也高度相关，但是第1变量同第2变量之间没有相关性。这看起来有些奇怪。令w=(1，1，-1)，我们可以验证式(23-17)不成立，从而证明了矩阵不满足半正定条件。
+<a href=/digital-library/index.html>[4]</a>{#chapter_324.xhtml_B4}</p><h2 id=小结>小结<a class=anchor href=#%e5%b0%8f%e7%bb%93>#</a></h2><p>大多数流行的期权定价模型里（例如布莱克-斯科尔斯-默顿模型）都假定标的资产的波动率为常数。这一假定绝非完美。在实际中，波动率就如同标的资产本身一样，也是一个随机变量。但是与标的资产不同，这一变量并不能在市场上直接观测到。本章里描述的方法就是关于如何跟踪目前的波动率大小。</p><p>我们定义ui为第i-1天末到第i天末市场变量的百分比变化，市场变量的方差率（即波动率的平方）为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_440_03.jpg alt>
+{.content-image-class
+ratio="1.341" w="44px" w-new="59px"
+style="max-width:44px;max-height:59px"}
+的加权平均。这里所讨论模型的一个关键特征是对应于不同的
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_440_04.jpg alt>
+{.content-image-class
+ratio="1.341" w="41px" w-new="55px"
+style="max-width:41px;max-height:55px"}
+，模型赋予不同的权重：数据越新，所对应的权重越大。在EWMA模型和GARCH(1，1)模型中，权重随着数据变旧而以指数比例下降。GARCH(1，1)模型与EWMA模型的不同之处在于GARCH(1，1)模型给长期平均方差也赋予了一定的权重。EWMA模型与GARCH(1，1)模型的结构都使我们能够比较容易地预测将来方差的水平。</p><p>极大似然法通常利用历史数据估计EWMA模型、GARCH(1，1)模型以及其他类似模型中的参数。这些方法采用数值迭代找到使历史数据得以重现的可能性达到最大的参数。当参数确定之后，我们可以通过检验模型是否可以清除
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_440_05.jpg alt>
+{.content-image-class
+ratio="1.234" w="47px" w-new="58px"
+style="max-width:47px;max-height:58px"}
+的自相关性判断GARCH(1，1)的效果。</p><p>对应于每个跟踪方差的模型都会有一个相应的模型跟踪协方差。本章所描述的方法可用于更新计算风险价值度的完整方差-协方差矩阵。</p><h2 id=推荐阅读>推荐阅读<a class=anchor href=#%e6%8e%a8%e8%8d%90%e9%98%85%e8%af%bb>#</a></h2><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_441_01.jpg alt>
+{ratio="0.379"
+w="1628px" w-new="617px"
+style="max-width:1628px;max-height:617px;width:100%"}</p><h2 id=练习题>练习题<a class=anchor href=#%e7%bb%83%e4%b9%a0%e9%a2%98>#</a></h2><p>23.1 解释如何用指数加权移动平均(EWMA)模型和历史数据估算波动率。</p><p>23.2 采用EWMA模型及GARCH(1，1)模型对波动率进行更新的不同之处是什么？</p><p>23.3
+某一资产波动率的最新估计值为1.5%，资产在昨天交易结束时的价格为30.00美元。EWMA模型中的参数λ为0.94，假定在今天交易结束时资产价格为30.50美元，如何使用EWMA模型对波动率更新？</p><p>23.4
+某一公司采用EWMA模型预测波动率，公司决定将参数λ由0.95变为0.85，解释这一变化的影响。</p><p>23.5
+某市场变量的波动率为每年30%，计算该变量在一天内的百分比变化大小对应的99%的置信区间。</p><p>23.6
+一个公司采用GARCH(1，1)模型更新波动率，模型中的参数为ω、α及β。描述稍稍增加某一参数（并同时保持其他参数不变）所产生的影响。</p><p>23.7
+美元/英镑汇率波动率的最新估计为每天0.6%，在昨天下午4点，汇率为1.5000，在EWMA模型中参数λ为0.9，假定在今天下午4点汇率为1.4950，这时应该如何更新对汇率日波动率的估计？</p><p>23.8
+假定标准普尔500指数在昨天交易结束时为3040，在昨天，指数的日波动率估计值为每天1%。GARCH(1，1)模型中的参数ω=0.000002，α=0.06和β=0.92，如果指数在今天交易结束时的取值为3060，今天新的波动率估计为多少？</p><p>23.9
+假定在昨天交易日末所估计的资产A和B的日波动率分别为1.6%和2.5%，资产A和B在昨天交易日末的价格分别为20美元和40美元，资产收益相关系数的估计值为0.25，EWMA模型中的λ参数为0.95：</p><p>(a)计算目前资产之间的协方差；</p><p>(b)假定在今天交易结束时，资产价格分别为20.50美元和40.50美元，更新相关系数的估计。</p><p>23.10
+某GARCH(1，1)模型的参数为ω=0.000004，α=0.05以及β=0.92，长期平均波动率为多少？描述波动率会收敛到长期平均值的方程是什么？如果目前波动率为20%，20天后波动率的期望值为多少？</p><p>23.11
+假定目前资产X和Y每天的波动率分别为1.0%及1.2%，昨天在交易日结束时资产价格分别为30美元及50美元，资产收益的相关系数为0.5，在这里我们采用GARCH(1，1)模型更新相关系数与波动率，GARCH(1，1)模型中的参数估计为α=0.04及β=0.94，在相关系数估计中采用ω=0.000001，在波动率估计中采用ω=0.000003，假如在今天休市时资产的价格分别为31美元及51美元，相关系数的最新估计为多少？</p><p>23.12
+假设富时100股指（以英镑计）的日波动率为1.8%，美元/英镑汇率的日波动率为0.9%，我们进一步假定富时100与美元/英镑汇率的相关系数为0.4，富时100被转换成美元后的波动率为多少？这里假定美元/英镑汇率被表达为1英镑所对应的美元数量（提示：当Z=X·Y时，Z所对应的百分比价格变化大约等于X的百分比价格变化加上Y的百分比价格变化。）</p><p>23.13
+假定在练习题23.12中，标准普尔500指数（以美元计）与富时100指数（以英镑计）的相关系数为0.7，标准普尔500指数（以美元计）与美元/英镑的汇率的相关系数为0.3，标准普尔500指数的日波动率为1.6%，将富时100指数转换为美元后与标准普尔500指数（以美元计）的相关系数为多少？（提示：对于3个变量X、Y及Z，X+Y同Z的协方差等于X与Z的协方差加上Y与Z的协方差。）</p><p>23.14 证明由式(23-9)所表达的GARCH(1，1)模型
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_442_01.jpg alt>
+{.content-image-class
+ratio="0.253" w="285px" w-new="72px"
+style="max-width:285px;max-height:72px"} +
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_442_02.jpg alt>
+{.content-image-class
+ratio="0.545" w="110px" w-new="60px"
+style="max-width:110px;max-height:60px"}
+与随机波动率模型dV=a(VL-V)dt+ξVdz等价，其中时间以天计算，V为资产价格波动率的平方，以及</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_442_03.jpg alt>
+{ratio="0.140"
+w="736px" w-new="103px"
+style="max-width:736px;max-height:103px;width:100%"}</p><p>当时间以年计算时，随机波动率模型是什么？（提示：变量un-1为资产价格在Δt时间内的收益，假定其分布为正态，均值为0，标准差为σn-1。可以证明，从正态分布的矩可以得出变量
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_442_04.jpg alt>
+{.content-image-class
+ratio="0.811" w="74px" w-new="60px"
+style="max-width:74px;max-height:60px"} 的均值和方差分别为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_442_05.jpg alt>
+{.content-image-class
+ratio="0.750" w="84px" w-new="63px"
+style="max-width:84px;max-height:63px"} 和
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_442_06.jpg alt>
+{.content-image-class
+ratio="0.596" w="104px" w-new="62px"
+style="max-width:104px;max-height:62px"} 。）</p><p>23.15
+与EWMA模型结合，使用建模法计算当时第22章里4个指数例子中的VaR与ES，其中λ=0.94。</p><p>23.16 当λ从0.94改为0.97时，对练习题23.15的计算有什么影响？</p><p>23.17
+假定黄金价格在昨天收盘时为600美元，估计的波动率为每天1.3%，今天黄金的收盘价为596美元。采用以下模型更新波动率</p><p>(a)EWMA模型，其中λ=0.94；</p><p>(b)GARCH(1，1)模型，其中参数选择为ω=0.000002，α=0.04和β=0.94。</p><p>23.18
+假定在练习题23.17中，昨天交易结束时的银价为16美元，价格波动率为每天1.5%，银价与黄金价格的相关系数为0.8，今天在交易结束时银价同昨天相同，即16美元。采用练习题23.17中的两个模型更新黄金价格与白银价格的波动率以及它们之间的相关系数。在实际中，对于黄金价格及白银价格采用的ω参数是否会相同？</p><p>23.19
+读者可以从网页www-2.rotman.utoronto.ca/~hull/data上下载一个计算表，其中含有至少900天的不同汇率与股指数据。选择一个汇率与一个股指，估计EWMA模型中的λ，以使得</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_442_07.jpg alt>
+{ratio="0.366"
+w="265px" w-new="97px"
+style="max-width:265px;max-height:97px;width:50%"}</p><p>达到最小。其中vi为在第i-1天末所做的方差预测，βi是由第i天至第i+25天数据所计算出的方差，在计算中采用Excel中的Solver功能，在开始EWMA模型计算时，令第1天的方差预测值等于第1天收益的平方。</p><p>23.20
+根据作者网站(www-2.rotman.utoronto.ca/~hull/data)欧元对美元汇率的数据估计EWMA和GARCH(1，1)的参数。</p><p><a href=/digital-library/index.html>[1]</a>{#chapter_327.xhtml_BT1}
+注意，这一章中的变量u所起的作用与第22章中的Δx作用一样，它们均为市场变量在1天内的百分比变化。对于u来讲，其下标代表关于同一市场变量在不同天里的观察值；对于Δx来讲，其下标代表在同一天内不同变量的取值。在这两章中，σn下标的区别与此类似，在本章下标代表天数，在第22章里下标代表不同的市场变量。</p><p><a href=/digital-library/index.html>[2]</a>{#chapter_327.xhtml_BT2}
+有人已经提出有关公司非对称信息的GARCH模型，在这些模型设计中σn与un-1的符号有关。对应于股票价格而言，也许这种模型比GARCH(1，1)更合适。如第20章所述，股票的波动率常常与价格有反向关系，因此一个符号为负的un-1比一个符号为正的un-1对于σn的影响更大。关于处理非对称信息的模型，读者可参考D.Nelson，"Conditional
+Heteroscedasticity and Asset Returns：A New
+Approach，"Econ-ometrica，59(1990)：347-370以及R.F.Engle and
+V.Ng，"Measuring and Testing the Impact of News on Vol-atility，"Journal
+of Finance，48(1993)：1749-1778。</p><p><a href=/digital-library/index.html>[3]</a>{#chapter_327.xhtml_BT3}
+数列x1对应于时滞k的自相关系数等于xi与xi+k的相关系数。</p><p><a href=/digital-library/index.html>[4]</a>{#chapter_327.xhtml_BT4}
+可以证明一个3×3矩阵满足内部一致性的条件为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_440_06.jpg alt>
+{.content-image-class
+ratio="0.146" w="426px" w-new="62px"
+style="max-width:426px;max-height:62px"}
+，其中ρij为变量i与j之间的相关系数。</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><nav class=book-nav><div class="flex justify-between"><div class=book-nav-prev><a href=/digital-library/books/options-futures-derivatives/ch22.html class=book-nav-link>← 第22章</a></div><div class=book-nav-next><a href=/digital-library/books/options-futures-derivatives/ch24.html class=book-nav-link>第24章 →</a></div></div></nav><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#231-估计波动率>23.1 估计波动率</a></li><li><a href=#232-指数加权移动平均模型>23.2 指数加权移动平均模型</a></li><li><a href=#233-garch11模型>23.3 GARCH(1，1)模型</a><ul><li><a href=#chapter_320.xhtml_A74ba01ae-88c3-46a5-9e15-596e3d0b6898>23.3.1 权重</a></li><li><a href=#chapter_320.xhtml_Adb9601ae-13e2-490c-b155-f7ab621107a7>23.3.2 均值回归</a></li></ul></li><li><a href=#234-模型选择>23.4 模型选择</a></li><li><a href=#235-极大似然估计法>23.5 极大似然估计法</a><ul><li><a href=#chapter_322.xhtml_A25a001af-2a47-42d9-89b3-c50ea60de94e>23.5.1 估计常数方差</a></li><li><a href=#chapter_322.xhtml_Aaefe01af-5b89-46fb-90f0-1fe1f397f9a4>23.5.2 估计EWMA或GARCH(1，1)模型中的参数</a></li><li><a href=#chapter_322.xhtml_Aa5c601b2-428f-4198-846f-c1187401e09c>23.5.3 模型表现如何</a></li></ul></li><li><a href=#236-利用garch11模型预测波动率>23.6 利用GARCH(1，1)模型预测波动率</a><ul><li><a href=#chapter_323.xhtml_A2e5801b4-f2aa-496c-bde5-0b5c9bab21cc>23.6.1 波动率期限结构</a></li><li><a href=#chapter_323.xhtml_A486801b4-d2f5-4e85-b269-413bbc6f42cb>23.6.2 波动率变化的影响</a></li></ul></li><li><a href=#237-相关系数>23.7 相关系数</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#练习题>练习题</a></li></ul></nav></div></aside></main></body></html>

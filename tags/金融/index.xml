@@ -382,4 +382,328 @@
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
  
+&lt;/div&gt;</description></item><item><title>期权、期货及其他衍生产品</title><link>https://yuanuite.github.io/digital-library/books/options-futures-derivatives/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/options-futures-derivatives/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;期权、期货及其他衍生产品&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;Options, Futures, and Other Derivatives · 原书第11版&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;约翰·赫尔（John C. Hull） · 王勇 索吾林 张翔 译&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;衍生产品领域公认的"圣经"。John C. Hull 以直观的语言和严谨的数学，全面覆盖期货、期权、互换、信用衍生品、利率模型等核心主题。第11版新增隔夜参考利率取代LIBOR、分数布朗运动、粗糙波动率模型等前沿内容。被全球商学院用作教材，也是从业人员案头必备参考书。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/preface.html"&gt;
+ &lt;span class="toc-row-title"&gt;前言与导览&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;译者序、前言与作者简介&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;衍生品市场导论&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期货与清算机制&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期货对冲策略&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;利率基础分析&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;远期与期货定价&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;利率期货与久期&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;互换合约解析&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第8章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;证券化与金融危机&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;第9章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;价值调节量&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;第10章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期权市场机制&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch11.html"&gt;
+ &lt;span class="toc-row-title"&gt;第11章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期权价格因素&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch12.html"&gt;
+ &lt;span class="toc-row-title"&gt;第12章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期权交易策略&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch13.html"&gt;
+ &lt;span class="toc-row-title"&gt;第13章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期权定价数值方法&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch14.html"&gt;
+ &lt;span class="toc-row-title"&gt;第14章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;随机微积分基础&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch15.html"&gt;
+ &lt;span class="toc-row-title"&gt;第15章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;BSM定价公式&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch16.html"&gt;
+ &lt;span class="toc-row-title"&gt;第16章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;激励薪酬与估值&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch17.html"&gt;
+ &lt;span class="toc-row-title"&gt;第17章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;指数与外汇期权&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch18.html"&gt;
+ &lt;span class="toc-row-title"&gt;第18章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期货期权定价&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch19.html"&gt;
+ &lt;span class="toc-row-title"&gt;第19章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Delta、Gamma、Vega等风险指标&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch20.html"&gt;
+ &lt;span class="toc-row-title"&gt;第20章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;隐含波动率曲面&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch21.html"&gt;
+ &lt;span class="toc-row-title"&gt;第21章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;蒙特卡洛、有限差分&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch22.html"&gt;
+ &lt;span class="toc-row-title"&gt;第22章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;风险度量&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch23.html"&gt;
+ &lt;span class="toc-row-title"&gt;第23章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;GARCH、EWMA&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch24.html"&gt;
+ &lt;span class="toc-row-title"&gt;第24章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;违约概率、信用评级&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch25.html"&gt;
+ &lt;span class="toc-row-title"&gt;第25章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;信用衍生产品定价&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch26.html"&gt;
+ &lt;span class="toc-row-title"&gt;第26章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;奇异期权定价&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch27.html"&gt;
+ &lt;span class="toc-row-title"&gt;第27章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;模型与数值算法&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch28.html"&gt;
+ &lt;span class="toc-row-title"&gt;第28章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;鞅与测度&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch29.html"&gt;
+ &lt;span class="toc-row-title"&gt;第29章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;利率市场模型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch30.html"&gt;
+ &lt;span class="toc-row-title"&gt;第30章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;凸性时间调整&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch31.html"&gt;
+ &lt;span class="toc-row-title"&gt;第31章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;短期利率均衡模型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch32.html"&gt;
+ &lt;span class="toc-row-title"&gt;第32章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;无套利利率模型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch33.html"&gt;
+ &lt;span class="toc-row-title"&gt;第33章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;远期利率模型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch34.html"&gt;
+ &lt;span class="toc-row-title"&gt;第34章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;互换再探讨&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch35.html"&gt;
+ &lt;span class="toc-row-title"&gt;第35章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;能源商品衍生品&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch36.html"&gt;
+ &lt;span class="toc-row-title"&gt;第36章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;实物期权&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch37.html"&gt;
+ &lt;span class="toc-row-title"&gt;第37章&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;衍生产品损失&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
 &lt;/div&gt;</description></item></channel></rss>

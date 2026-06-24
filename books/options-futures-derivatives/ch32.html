@@ -1,0 +1,279 @@
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="无套利利率模型"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch32.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="第32章"><meta property="og:description" content="无套利利率模型"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-25T00:38:50+08:00"><meta itemprop=name content="第32章"><meta itemprop=description content="无套利利率模型"><meta itemprop=dateModified content="2026-06-25T00:38:50+08:00"><meta itemprop=wordCount content="853"><title>第32章 • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/options-futures-derivatives/ch32.html><link rel=stylesheet href=/digital-library/book.min.3e23691350be517993d48d54e83ad8cdb3ba65cbe241510666b8cea7648f70d1.css integrity="sha256-PiNpE1C+UXmT1I1U6DrYzbO6ZcviQVEGZrjOp2SPcNE=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.47665ac3627003a65d3d940453d201c36bbd431e78e2a3055c82577347046dd2.js integrity="sha256-R2Zaw2JwA6ZdPZQEU9IBw2u9Qx544qMFXIJXc0cEbdI=" crossorigin=anonymous></script><script>(function(){var e,t=localStorage.getItem("book-theme");if(!t)return;e=document.documentElement,e.dataset.theme=t,e.style.colorScheme=t,t==="dark"?(e.style.setProperty("--body-background","#1a1a1a"),e.style.setProperty("--body-font-color","#e0e0e0"),e.style.setProperty("--color-link","#4db6ac"),e.style.setProperty("--gray-100","#2d2d2d"),e.style.setProperty("--gray-200","#3d3d3d"),e.style.setProperty("--gray-500","#a0a0a0"),e.style.setProperty("--text-primary","#f5f5f7"),e.style.setProperty("--text-secondary","#a1a1a6"),e.style.setProperty("--surface","rgba(255,255,255,0.06)"),e.style.setProperty("--hairline","rgba(255,255,255,0.14)"),e.style.setProperty("--hairline-strong","rgba(255,255,255,0.24)")):(e.style.setProperty("--body-background","#fff"),e.style.setProperty("--body-font-color","#000"),e.style.setProperty("--color-link","#00897b"),e.style.setProperty("--gray-100","#f0f0f0"),e.style.setProperty("--gray-200","#d0d0d0"),e.style.setProperty("--gray-500","#707070"),e.style.setProperty("--text-primary","#1d1d1f"),e.style.setProperty("--text-secondary","#6e6e73"),e.style.setProperty("--surface","#f5f5f7"),e.style.setProperty("--hairline","rgba(0,0,0,0.1)"),e.style.setProperty("--hairline-strong","rgba(0,0,0,0.18)"))})()</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script defer src=/digital-library/code-copy.js></script><script defer src=/digital-library/abbr-tooltip.js></script><script defer src=/digital-library/katex-init.js></script><script defer src=/digital-library/theme-toggle.js></script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/digital-library/index.html><span>Yuan's Library</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=搜索 aria-label=搜索 maxlength=64>
+<kbd class=book-search-kbd>⌘K</kbd><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><button id=theme-toggle class=theme-toggle aria-label=切换深色/浅色模式 title=切换深色/浅色模式>
+<span class=theme-icon>🌙</span></button><ul><li><a href=/digital-library/books/index.html>书架</a><li><span class=menu-category>机器学习</span><ul><li><a href=/digital-library/books/stanford-ml-notes/index.html>斯坦福机器学习教程笔记</a></li></ul></li><li><span class=menu-category>灵性</span><ul><li><a href=/digital-library/books/conversations-with-god/index.html>与神对话</a></li></ul></li><li><span class=menu-category>工程</span><ul><li><a href=/digital-library/books/lun-system-engineering/index.html>论系统工程（新世纪版）</a></li></ul></li><li><span class=menu-category>金融</span><ul><li><a href=/digital-library/books/why-stock-markets-crash/index.html>Why Stock Markets Crash</a></li><li><a href=/digital-library/books/trading-and-exchanges/index.html>Trading and Exchanges</a></li><li><a href=/digital-library/books/options-futures-derivatives/index.html>期权、期货及其他衍生产品</a><ul><li><a href=/digital-library/books/options-futures-derivatives/preface.html>前言与导览</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch01.html>第1章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch02.html>第2章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch03.html>第3章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch04.html>第4章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch05.html>第5章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch06.html>第6章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch07.html>第7章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch08.html>第8章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch09.html>第9章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch10.html>第10章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch11.html>第11章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch12.html>第12章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch13.html>第13章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch14.html>第14章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch15.html>第15章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch16.html>第16章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch17.html>第17章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch18.html>第18章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch19.html>第19章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch20.html>第20章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch21.html>第21章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch22.html>第22章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch23.html>第23章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch24.html>第24章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch25.html>第25章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch26.html>第26章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch27.html>第27章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch28.html>第28章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch29.html>第29章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch30.html>第30章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch31.html>第31章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch32.html class=active>第32章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch33.html>第33章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch34.html>第34章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch35.html>第35章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch36.html>第36章</a></li><li><a href=/digital-library/books/options-futures-derivatives/ch37.html>第37章</a></li></ul></li></ul></li></li><li><a href=/digital-library/notes.html>欢迎</a></li><li><a href=/digital-library/papers/index.html>论文</a></li><li><a href=/digital-library/reference/index.html>元素模板</a></li><li><a href=/digital-library/tags/index.html>Tags</a></li><li><a href=/digital-library/about.html>关于本站</a></li></ul><ul><li><a href=https://github.com/yuanuite/digital-library target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/digital-library/icons/menu.svg class=book-icon alt=Menu></label><h3>第32章</h3><div class=header-actions><label for=menu-control class=mobile-search-trigger onclick='setTimeout(()=>document.querySelector("#book-search-input")?.focus(),350)' aria-label=搜索><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+</label><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#321-均衡模型的推广>32.1 均衡模型的推广</a><ul><li><a href=#chapter_427.xhtml_A0e600249-47fc-4e5b-8a35-dd1a7c0c4349>32.1.1 Ho-Lee模型</a></li><li><a href=#chapter_427.xhtml_A0e3e024a-72f4-4642-91ed-01b0109051df>32.1.2 Hull-White单因子模型</a></li><li><a href=#chapter_427.xhtml_Acd89024b-d2d6-4f44-ba1d-70bf40c33dd9>32.1.3 Black-Derman-Toy模型</a></li><li><a href=#chapter_427.xhtml_Aa720024b-7172-4dfa-9ae5-2dc870f2315e>32.1.4 Black-Karasinski模型</a></li><li><a href=#chapter_427.xhtml_Abf7a024b-c28e-4ca9-9cde-b50a241ca3a6>32.1.5 Hull-White两因子模型</a></li></ul></li><li><a href=#322-债券期权>32.2 债券期权</a></li><li><a href=#323-波动率结构>32.3 波动率结构</a></li><li><a href=#324-利率树形>32.4 利率树形</a><ul><li><a href=#chapter_430.xhtml_A33c1024d-69ae-468c-92d5-552c5efa6188>32.4.1 三叉树应用例解</a></li><li><a href=#chapter_430.xhtml_A00d3024e-3e23-4026-8d54-704516864a40>32.4.2 非标准树枝</a></li></ul></li><li><a href=#325-建立树形的步骤>32.5 建立树形的步骤</a><ul><li><a href=#chapter_431.xhtml_A7065024f-b56d-46c9-9570-5bf0fc4f3f94>32.5.1 第1步</a></li><li><a href=#chapter_431.xhtml_A3d5a0251-7e47-40c1-a488-44849df7c674>32.5.2 第2步</a></li><li><a href=#chapter_431.xhtml_A87b30251-aaa6-4331-82fe-7ccd5d701a13>32.5.3 第2步数值例解</a></li><li><a href=#chapter_431.xhtml_A798c0252-88f2-4078-98f7-d6bdecc4afa2>32.5.4 计算α和Q的公式</a></li><li><a href=#chapter_431.xhtml_Aff4b0253-793e-407f-b88f-682072bd1630>32.5.5 推广到其他模型</a></li><li><a href=#chapter_431.xhtml_Ad8ca0254-1692-4423-a269-db51ac38fc80>32.5.6 负利率</a></li><li><a href=#chapter_431.xhtml_Ab13d0255-a227-4c5e-9dea-eb2311e91f05>32.5.7 多种利率曲线</a></li><li><a href=#chapter_431.xhtml_A85db0255-52ea-47f1-b849-490af868eb63>32.5.8 解析结果和树形并用</a></li><li><a href=#chapter_431.xhtml_A5cf10256-e517-41fb-bb30-2cf8d96daf37>32.5.9 美式债券期权树形</a></li></ul></li><li><a href=#326-校正>32.6 校正</a></li><li><a href=#327-利用单因子模型进行对冲>32.7 利用单因子模型进行对冲</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#练习题>练习题</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=第32章>第32章<a class=anchor href=#%e7%ac%ac32%e7%ab%a0>#</a></h1><p>第31章中所述均衡模型的缺点是这些模型无法与今天的利率期限结构达到自动匹配。通过审慎地选择参数，这些模型可以近似地匹配在实际中遇到的许多期限结构，但这些匹配不是完美的。在对衍生产品定价时，大多数交易员都对此不太满意。这种不满并不是没有道理，因为如果所用的模型连标的证券都不能给出正确价格的话，人们很难对模型给出的债券期权价格有多大信心。在债券价格上1%的误差有可能会导致其上期权25%的价格误差！</p><p>无套利模型(no-arbitrage
+model)的设计是为了做到与今天的利率期限结构完全匹配。因此，均衡模型与无套利模型的本质区别如下：在均衡模型下，今天的利率期限结构是模型所输出的结果；而对无套利模型，今天的利率期限结构则是模型的输入。</p><p>在均衡模型中，短期利率的漂移项（即dt系数）通常不是时间的函数，但是在无套利模型中，漂移项一般与时间t有关，这是因为在无套利模型下，初始零息利率曲线的形状决定了将来短期利率变化所取的平均路径。如果零息利率曲线在时间t1和t2之间呈现急剧上升的形状，那么r在这两个时间之间的漂移项将为正；反过来，如果零息利率曲线在这两个时间之间呈现急剧下降的形状，那么r在这两个时间之间的漂移项将为负。</p><h2 id=321-均衡模型的推广>32.1 均衡模型的推广<a class=anchor href=#321-%e5%9d%87%e8%a1%a1%e6%a8%a1%e5%9e%8b%e7%9a%84%e6%8e%a8%e5%b9%bf>#</a></h2><p>我们将会发现，在短期利率的漂移项中引入一个时间t的函数时，可以将一些均衡模型转换为无套利模型。在这里我们讨论Ho-Lee、Hull-White（单因子和双因子）、Black-Derman-Toy以及Black-Karasinski模型。</p><h3 id=chapter_427.xhtml_A0e600249-47fc-4e5b-8a35-dd1a7c0c4349 class=thirdTitle>32.1.1 Ho-Lee模型<a class=anchor href=#chapter_427.xhtml_A0e600249-47fc-4e5b-8a35-dd1a7c0c4349>#</a></h3><p>Ho和Lee在1986年的一篇文章里第一次提出了关于期限结构的无套利模型。 [ ㊟
+]{.zuixiaoyao_zhushi} [ 【See T. S. Y. Ho and S.-B. Lee, "Term Structure
+Movements and Pricing Interest Rate Contingent Claims," Jour-nal of
+Finance, 41(December 1986): 1011-1029.】 ]{.zuixiaoyao_zhushi_text}
+他们通过假定债券价格的变化规律为具有两个参数的二叉树形式来描述模型，这里的两个参数为短期利率的标准差和短期利率的风险市场价格。可以证明，在传统的风险中性世界中，Ho-Lee模型在连续时间的极限为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_586_01.jpg alt>
+{ratio="0.059"
+w="1030px" w-new="61px"
+style="max-width:1030px;max-height:61px;width:100%"}</p><p>其中短期利率的瞬时标准差σ为常数，θ(t)为时间t的函数，其选取的标准是确保模型与初始期限结构相吻合。变量θ(t)定义了r随时间t移动的平均方向，它与r的大小无关。当该模型用于利率衍生产品定价时，Ho-Lee模型与刻画风险市场价格的参数是没有关系的。</p><p>在网页www-2.rotman.utoronto.ca/~hull/TechnicalNotes里的Technical Note
+31中证明了</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_586_02.jpg alt>
+{ratio="0.064"
+w="1055px" w-new="68px"
+style="max-width:1055px;max-height:68px;width:100%"}</p><p>其中F(0,t)为时间0所观察的在时刻t的瞬时远期利率，下标t表示对于t的偏导数。θ(t)近似地等于Ft(0,t)，这说明短期利率在将来移动的平均方向近似地等于瞬时远期利率曲线的斜率。Ho-Lee模型如图32-1所示，在短期利率平均变动上附加的是按正态分布的随机项。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_586_03.jpg alt>
+{ratio="0.628"
+w="1096px" w-new="688px"
+style="max-width:1096px;max-height:688px;width:100%"}</p><p>图32-1 Ho-Lee模型</p><p>在Technical Note 31里还证明了</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_586_04.jpg alt>
+{ratio="0.067"
+w="1098px" w-new="74px"
+style="max-width:1098px;max-height:74px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_586_05.jpg alt>
+{ratio="0.106"
+w="1051px" w-new="111px"
+style="max-width:1051px;max-height:111px;width:100%"}</p><p>由第4.8节中我们知道，F(0,t)=-∂lnP(0,t)/∂t。从今天的利率期限结构可得到对所有时刻t的零息债券价格P(0,t)。因此式(32-3)给出了以时刻t的短期利率与债券在今天的价格所表示的零息债券在将来时间t的价格。</p><h3 id=chapter_427.xhtml_A0e3e024a-72f4-4642-91ed-01b0109051df class=thirdTitle>32.1.2 Hull-White单因子模型<a class=anchor href=#chapter_427.xhtml_A0e3e024a-72f4-4642-91ed-01b0109051df>#</a></h3><p>Hull和White在1990年发表的一篇文章中讨论了如何将Vasicek模型推广到与初始期限结构完全相匹配的情形
+[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See J. C. Hull and A. White, "Pricing
+Interest Rate Derivative Securities," The Review of Financial Studies,
+3, 4(1990): 573-592.】 ]{.zuixiaoyao_zhushi_text}
+。他们所考虑Vasicek模型推广形式的其中一种是</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_587_01.jpg alt>
+{ratio="0.056"
+w="1099px" w-new="62px"
+style="max-width:1099px;max-height:62px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_587_02.jpg alt>
+{ratio="0.234"
+w="482px" w-new="113px"
+style="max-width:482px;max-height:113px;width:100%"}</p><p>其中a和σ为常数。这个模型称为Hull-White模型。它既可以刻画为具有均值回归速度a的Ho-Lee模型，也可以被刻画成具有依赖时间回归水平的Vasicek模型。在时间t，短期利率以a的速度回归到θ(t)/a。Ho-Lee模型是Hull-White模型对应于a=0时的特例。</p><p>Hull-White模型具有Ho-Lee模型同样的解析性质。在Technical Note 31里证明了</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_587_03.jpg alt>
+{ratio="0.093"
+w="1241px" w-new="116px"
+style="max-width:1241px;max-height:116px;width:100%"}</p><p>这个等式的最后一项一般很小，如果我们将其忽略，则r的漂移项在时间t等于Ft(0,t)+a[F(0,t)-r]。这说明了在平均意义下，r沿初始瞬时远期利率曲线的斜率方向变动。当利率离这一曲线太远时，均值回归会使利率以a的速度返回到该曲线。模型如图32-2所示。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_587_04.jpg alt>
+{ratio="0.659"
+w="1102px" w-new="726px"
+style="max-width:1102px;max-height:726px;width:100%"}</p><p>图32-2 Hull-White模型</p><p>Technical Note31里证明了在Hull-White模型下，在时间t的债券价格为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_587_05.jpg alt>
+{ratio="0.059"
+w="1102px" w-new="65px"
+style="max-width:1102px;max-height:65px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_587_06.jpg alt>
+{ratio="0.115"
+w="1068px" w-new="123px"
+style="max-width:1068px;max-height:123px;width:100%"}</p><p>和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_587_07.jpg alt>
+{ratio="0.071"
+w="1508px" w-new="107px"
+style="max-width:1508px;max-height:107px;width:100%"}</p><p>在下一节里我们将证明，欧式债券期权的价格可以利用Hull-White模型与Ho-Lee模型的解析形式来计算。在本章的后面部分里我们将给出利用三叉树来表示这些模型的方法，这对美式期权或其他不能用解析公式定价的衍生产品是很有用的。</p><h3 id=chapter_427.xhtml_Acd89024b-d2d6-4f44-ba1d-70bf40c33dd9 class=thirdTitle>32.1.3 Black-Derman-Toy模型<a class=anchor href=#chapter_427.xhtml_Acd89024b-d2d6-4f44-ba1d-70bf40c33dd9>#</a></h3><p>1990年，Black、Derman和Toy提出了针对对数正态短期利率过程的二叉树模型。 [
+㊟ ]{.zuixiaoyao_zhushi} [ 【See F. Black, E. Derman, and W. Toy, "A
+One-Factor Model of Interest Rates and Its Application to Treasury Bond
+Prices," Financial Analysts Journal, January/Febuary(1990): 33-39.】
+]{.zuixiaoyao_zhushi_text}
+在网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes里的Technical Note
+23中解释了他们建立二叉树的过程。可以证明对应于模型的随机过程是</p><p>dlnr=[θ(t)-a(t)lnr]dt+σ(t)dz</p><p>且有</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_588_01.jpg alt>
+{ratio="0.354"
+w="316px" w-new="112px"
+style="max-width:316px;max-height:112px;width:70%"}</p><p>其中σ′(t)是σ(t)对于t的导数。相对于Ho-Lee模型和Hull-White模型而言，Black-Der-man-Toy模型的优点是利率不会取负值。维纳过程dz会使lnr取负值，但r本身永远是正的。模型的缺点是缺少解析性质。这个模型的一个更严重的缺点是在构造树形时，在波动率参数σ(t)与回归速度参数a(t)之间强加上了一种关系。只有当短期利率波动率是时间的递减函数时，回归速度才会是正的。</p><p>在实践中，这个模型最有用的是当σ(t)为常数时的特殊情形。这时参数a为0，所以在模型里没有均值回归性质。这时的模型为</p><p>dlnr=θ(t)dt+σdz</p><p>这可以刻画成对数正态版的Ho-Lee模型。</p><h3 id=chapter_427.xhtml_Aa720024b-7172-4dfa-9ae5-2dc870f2315e class=thirdTitle>32.1.4 Black-Karasinski模型<a class=anchor href=#chapter_427.xhtml_Aa720024b-7172-4dfa-9ae5-2dc870f2315e>#</a></h3><p>1991年，Black和Karasinski建立了一种Black-Derman-Toy模型的扩展形式，其中回归率与波动率由相互独立的方式确定。
+[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See F. Black and P. Karasinski, "Bond and
+Option Pricing When Short Rates are Lognormal," Financial
+AnalystsJournal, July/August(1991): 52-59.】 ]{.zuixiaoyao_zhushi_text}
+模型的最一般形式是</p><p>dlnr=[θ(t)-a(t)lnr]dt+σ(t)dz</p><p>这个模型与Black-Derman-Toy模型的形式是一样的，但不同之处是在a(t)与σ(t)之间没有关系。在实践中常常将a(t)与σ(t)假设成常数，因此模型变为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_588_02.jpg alt>
+{ratio="0.057"
+w="1131px" w-new="65px"
+style="max-width:1131px;max-height:65px;width:100%"}</p><p>与我们前面考虑的模型一样，函数θ(t)的选取是为了使模型与初始利率期限结构完全吻合。模型没有解析性质，但在本章的后面部分里我们将会看到，利用三叉树可以在确定θ(t)的同时也描述r的过程。</p><h3 id=chapter_427.xhtml_Abf7a024b-c28e-4ca9-9cde-b50a241ca3a6 class=thirdTitle>32.1.5 Hull-White两因子模型<a class=anchor href=#chapter_427.xhtml_Abf7a024b-c28e-4ca9-9cde-b50a241ca3a6>#</a></h3><p>在第31.4节里，我们给出过作为Vasicek模型扩展形式的一种两因子均衡模型。Hull和White说明了如何通过在r漂移项中加上θ(t)后将其转变成无套利模型
+[ ㊟ ]{.zuixiaoyao_zhushi} [ 【See J. C. Hull and A. White, "Numerical
+Procedures for Implementing Term Structure Models II: Two-Factor
+Models," Journal of Derivatives, 2, 2(Winter 1994): 37-48.】
+]{.zuixiaoyao_zhushi_text} 。</p><p>与单因子模型相比，这个模型能够提供更为丰富的期限结构形状和波动率形状。在网页www-2.rotman.utoronto.ca/~hull/TechnicalNotes里的Technical
+Note 14中可以找到更多关于这个模型的结果以及树的构造方法。</p><h2 id=322-债券期权>32.2 债券期权<a class=anchor href=#322-%e5%80%ba%e5%88%b8%e6%9c%9f%e6%9d%83>#</a></h2><p>在我们已经引进的模型中，在有的模型下可以通过解析的方式计算零息债券的欧式期权价格。对于Vasicek模型、Ho-Lee模型以及Hull-White单因子模型，在时间s到期的零息债券上、期限为T的欧式看涨期权在0时刻的价值为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_589_01.jpg alt>
+{ratio="0.054"
+w="1196px" w-new="64px"
+style="max-width:1196px;max-height:64px;width:100%"}</p><p>其中L为债券本金，K为执行价格，并且</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_589_02.jpg alt>
+{ratio="0.254"
+w="465px" w-new="118px"
+style="max-width:465px;max-height:118px;width:100%"}</p><p>相应的债券看跌期权价格为</p><p>KP(0,T)N(-h+σP)-LP(0,s)N(-h)</p><p>在Technical Note 31中证明了对于Vasicek和Hull-White模型</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_589_03.jpg alt>
+{ratio="0.196"
+w="621px" w-new="122px"
+style="max-width:621px;max-height:122px;width:100%"}</p><p>对于Ho-Lee模型</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_589_04.jpg alt>
+{ratio="0.203"
+w="355px" w-new="72px"
+style="max-width:355px;max-height:72px;width:100%"}</p><p>式(32-10)与第29.1节中讨论的对债券期权定价的Black模型是基本一致的，其中远期债券价格的波动率为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_589_05.jpg alt>
+{.content-image-class
+ratio="0.542" w="120px" w-new="65px"
+style="max-width:120px;max-height:65px"}
+。如第29.2节所示，我们可以将利率上限或下限表示为零息债券期权的组合，因此我们可以利用以上给出的方程以解析的形式来表达它们的价格。</p><p>对于在第31.2节中所讲过的Cox-Ingersoll-Ross模型，同样也存在计算零息债券期权的解析公式，但这些公式涉及非中心卡方分布的积分。</p><p>带券息的债券期权</p><p>在单因子模型下，当r下降时，所有零息债券的价格都会上涨；而当r上升时，所有零息债券的价格都会下降。因此，在单因子模型下，我们可以将关于带息债券的欧式期权表示成一些关于零息债券欧式期权的组合。具体程序如下。</p><p>(1)计算r的临界值r*，该值保证在期权到期时，相应的带息债券的价格等于债券期权执行价格。</p><p>(2)计算零息债券期权在T时刻的价格，这些零息债券构成了带息债券，其中每个期权的执行价格都等于在时间T，当r=r*时的零息债券价格。</p><p>(3)令带息债券的期权价格等于在第2步所计算出的所有零息债券欧式期权的价格总和。</p><p>这样，我们可以在Vasicek模型、Cox-Ingersoll-Ross模型、Ho-Lee模型以及Hull-White模型下计算关于带券息的债券期权价格。如业界事例29-2所述，一个欧式互换期权可以看成带券息债券上的欧式期权，因此，欧式互换期权也可以由以上描述的过程来定价。在网页www-2.rotman.utoronto.ca/~hull/TechnicalNotes上的Technical
+Note 15中有对计算过程更详细的介绍。</p><h2 id=323-波动率结构>32.3 波动率结构<a class=anchor href=#323-%e6%b3%a2%e5%8a%a8%e7%8e%87%e7%bb%93%e6%9e%84>#</a></h2><p>我们所讨论的模型可以产生不同的波动率结构。在图32-3中，我们展示了Ho-Lee模型、Hull-White单因子模型以及Hull-White两因子模型下3个月期的远期利率波动率与期限之间的函数关系。在图中假定利率期限结构是水平的。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_590_01.jpg alt>
+{ratio="0.305"
+w="1589px" w-new="484px"
+style="max-width:1589px;max-height:484px;width:100%"}</p><p>图32-3
+在以下模型中，3个月期的远期利率波动率与期限之间的函数关系（在合理地选择参数的情况下）</p><p>在Ho-Lee模型中，3个月期远期利率波动率对于所有期限都是相同的。在单因子Hull-White模型中，由于均值回归的影响，3个月期远期利率波动率随时间期限的增大而下降。在Hull-White两因子模型中，在合理地选择参数的情况下，3个月期远期利率波动率具有"驼峰"形状。这一现象与实证分析中由利率上限所隐含的波动率形状是一致的（见第29.2节）。</p><h2 id=324-利率树形>32.4 利率树形<a class=anchor href=#324-%e5%88%a9%e7%8e%87%e6%a0%91%e5%bd%a2>#</a></h2><p>利率树形是短期利率随机过程在离散时间下的表现形式，这与股票价格树形是对于股票价格所服从过程在离散时间下的表现形式基本是一样的。假如树形的时间步长为Δt，那么树形上的利率是Δt时间段按连续复利的利率。在构造树形时，通常的假设是Δt时间段上的利率R所服从的随机过程与相应瞬时利率r在连续时间下的随机过程是一样的。利率树形与股票树形的主要区别在于贴现的方式：在股票价格树形上，一般的假设是贴现率在每个节点上都是一样的（或为时间的函数），但在利率树形上，贴现率在不同节点上的值是不相同的。</p><p>我们常常会发现对利率而言，使用三叉树比二叉树更为方便。三叉树的主要优点是它为用户多提供了一项自由度，这样，利率过程的特点比如均值回归可以更方便地表达出来。如第21.8节所述，三叉树方法等价于显式有限差分法。</p><h3 id=chapter_430.xhtml_A33c1024d-69ae-468c-92d5-552c5efa6188 class=thirdTitle>32.4.1 三叉树应用例解<a class=anchor href=#chapter_430.xhtml_A33c1024d-69ae-468c-92d5-552c5efa6188>#</a></h3><p>我们考虑由图32-4所表示的一个简单例子来说明如何使用三叉树对利率衍生产品定价，这里的三叉树是一个2步树形，步长为1年，即Δt=1。假设在每个节点上，向上、保持不变、向下的概率分别为0.25、0.5、0.25。所假设的Δt时间段利率显示在节点上方。
+[ ㊟ ]{.zuixiaoyao_zhushi} [
+【在后面我们将解释利率树形上的利率和概率的确定方式。】
+]{.zuixiaoyao_zhushi_text}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_591_01.jpg alt>
+{ratio="0.671"
+w="1073px" w-new="720px"
+style="max-width:1073px;max-height:720px;width:100%"}</p><p>图32-4 利率三叉树的使用。节点上方数值为利率，下方数值为衍生产品的价格</p><p>我们将利用以上树形来计算一个在第2年年末提供收益为</p><p>max[100(R-0.11),0]</p><p>的衍生产品价值，其中R为Δt时间段利率。计算出的衍生产品价值显示在节点下方。在最后一步的节点上，衍生产品的价格等于其收益。例如，在节点E上，衍生产品价值为100×(0.14-0.11)=3，在前面的节点上，衍生产品价值是通过第13章和第21章里所描述的反向递推方式计算得出的。在节点B上，1年期利率为12%，它将用于贴现计算。由节点E、F和G上的值，我们可以求得衍生产品在节点B上的值为</p><p>[0.25×3+0.5×1+0.25×0]e-0.12×1=1.11</p><p>在节点C上，1年期利率为10%，由此可以得出衍生产品在节点C上的值为</p><p>[0.25×1+0.5×0+0.25×0]e-0.1×1=0.23</p><p>在初始节点A上，利率也是10%，因此衍生产品价值为</p><p>[0.25×1.11+0.5×0.23+0.25×0]e-0.1×1=0.35</p><h3 id=chapter_430.xhtml_A00d3024e-3e23-4026-8d54-704516864a40 class=thirdTitle>32.4.2 非标准树枝<a class=anchor href=#chapter_430.xhtml_A00d3024e-3e23-4026-8d54-704516864a40>#</a></h3><p>我们发现有时对图32-4中的标准树枝形状加以修改后会使得树形更易于使用。图32-5展示了3种不同的形式。通常的树枝形状显示在图32-5a中，其形状为"上升一格/平行/下降一格"；图32-5b所示的树枝形状为"上升两格/上升一格/平行"，这种形状在考虑均值回归而且利率很低时会用到；图32-5c所示的第3种树枝形状为"平行/下降一格/下降两格"。这种形状在考虑均值回归而且利率很高时会用到。在下一节，我们将讨论如何使用这些不同的树枝形状来建立树形。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_591_02.jpg alt>
+{ratio="0.416"
+w="743px" w-new="309px"
+style="max-width:743px;max-height:309px;width:100%"}</p><p>图32-5 三叉树中的不同树枝形状</p><h2 id=325-建立树形的步骤>32.5 建立树形的步骤<a class=anchor href=#325-%e5%bb%ba%e7%ab%8b%e6%a0%91%e5%bd%a2%e7%9a%84%e6%ad%a5%e9%aa%a4>#</a></h2><p>Hull和White提出了如何对一类广泛的单因子模型构造三叉树的两步程序。 [ ㊟
+]{.zuixiaoyao_zhushi} [ 【See J. C. Hull and A. White, "Numerical
+Procedures for Implementing Term Structure Models I: Single-Factor
+Models," Journal of Derivatives, 2, 1（1994): 7-16；and J. C. Hull and
+A. White, "Using Hull-White Interest Rate Trees," Journal of
+Derivatives, (Spring 1996): 26-36.】 ]{.zuixiaoyao_zhushi_text}
+在本节中，我们将解释如何将这种两步程序应用到式(32-4)所定义的Hull-White模型上，并同时说明如何将其推广到其他模型（比如Black-Karasinski模型）上。</p><h3 id=chapter_431.xhtml_A7065024f-b56d-46c9-9570-5bf0fc4f3f94 class=thirdTitle>32.5.1 第1步<a class=anchor href=#chapter_431.xhtml_A7065024f-b56d-46c9-9570-5bf0fc4f3f94>#</a></h3><p>刻画瞬时短期利率r的Hull-White模型为</p><p>dr=[θ(t)-ar]dt+σdz</p><p>假定树形的时间步长为常数，并等于Δt [ ㊟ ]{.zuixiaoyao_zhushi} [
+【关于使用非均匀步长的情形，见网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes里的Technical
+Note 16。】 ]{.zuixiaoyao_zhushi_text} 。</p><p>我们假定Δt时间段利率R服从与r相同的过程</p><p>dR=[θ(t)-aR]dt+σdz</p><p>显然，当Δt趋于0时，这是一个合理假设。构造关于这个模型三叉树的第1步是建立一个关于变量R*的三叉树，这里R*的初始值为0，并且服从过程</p><p>dR*=-aR*dt+σdz</p><p>这个过程关于R*=0为对称，变量R*(t+Δt)-R*(t)服从正态分布。如果忽略Δt的高阶项，那么R*(t+Δt)-R*(t)的期望值为-aR*(t)Δt，方差为σ2Δt。</p><p>定义ΔR为树形上利率之间的距离，并令</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_592_01.jpg alt>
+{ratio="0.236"
+w="276px" w-new="65px"
+style="max-width:276px;max-height:65px;width:70%"}</p><p>可以证明，从减小误差的角度来看，这是很好的选择。</p><p>程序第1步的目的是对R*构造一个类似于图32-6的树形。为了这个目的，在每个节点上我们都需要确定应该使用哪一种图32-5中所示树枝，这也就确定了整个树形的几何形状。一旦确定树枝形状，我们还要计算树枝所对应的概率。</p><p>将t=iΔt和R*=jΔR时所对应的节点记(i,j)（变量i为正整数，j为正或负整数）。在一个节点上所使用的树枝形状必须使所有3个树枝的概率均为正值。在大多数情况下，图32-5a所示的树枝形状是合适的。当a＞0时，对于充分大的j而言，有必要从图32-5a所示树枝换成图32-5c所示树枝；类似地，当j为充分大的负数时，有必要由图32-5a所示树枝换成图32-5b所示树枝。定义jmax为我们由图32-5a所示树枝换成图32-5c所示树枝时相应的j值；jmin为我们将图32-5a所示的树枝换成图32-5b所示的树枝时相应的j值。Hull和White证明了当我们令jmax为大于0.18/4(aΔt)的最小整数和jmin=-jmax时，所有的概率均为正值。
+<a href=/digital-library/index.html>[1]</a>{#chapter_431.xhtml_B1}
+定义pu、pm和pd为从节点所延伸出的上、中和下树枝所对应的概率。概率的选择保证了在下一时间段Δt中，R*变化的期望值和方差与其树形相吻合，这些概率的和等于1。对于3个概率，我们可以建立3个方程。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_593_01.jpg alt>
+{ratio="0.669"
+w="1350px" w-new="903px"
+style="max-width:1350px;max-height:903px;width:100%"}</p><p>图32-6 Hull-White模型中关于R*的树形（第1步）</p><p>前面已经提到过，在时间Δt内，R*变化的均值为-aR*Δt，方差为σ2Δt，在节(i，j)上，R*=jΔR。如果树枝的形状如图32-5a所示，节点上的概率pu、pm和pd满足以下关系式</p><p>puΔR-pdΔR=-ajΔRΔt</p><p>puΔR2+pdΔR2=σ2Δt+a2j2ΔR2Δt2</p><p>pu+pm+pd=1</p><p>令
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_593_02.jpg alt>
+{.content-image-class
+ratio="0.251" w="251px" w-new="63px"
+style="max-width:251px;max-height:63px"} ，则以上方程的解为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_593_03.jpg alt>
+{ratio="0.598"
+w="560px" w-new="335px"
+style="max-width:560px;max-height:335px;width:100%"}</p><p>类似地，如果所伸出的树枝如图32-5b所示，相应的概率为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_593_04.jpg alt>
+{ratio="0.582"
+w="576px" w-new="335px"
+style="max-width:576px;max-height:335px;width:100%"}</p><p>最后，如果所伸出的树枝如图32-5c所示，相应的概率为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_593_05.jpg alt>
+{ratio="0.393"
+w="572px" w-new="225px"
+style="max-width:572px;max-height:225px;width:100%"}</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_594_01.jpg alt>
+{ratio="0.194"
+w="552px" w-new="107px"
+style="max-width:552px;max-height:107px;width:100%"}</p><p>为了说明构造树形的第1步，假设σ=0.01，a=0.1，Δt=1。这时，
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_594_02.jpg alt>
+{.content-image-class
+ratio="0.256" w="238px" w-new="61px"
+style="max-width:238px;max-height:61px"}
+=0.0173，jmax为比0.184/0.1大的最小整数，以及jmin=-jmax。这意味着，jmax=2和jmin=-2。所得树形如图32-6所示。每个树枝所对应的概率显示在树下方的表中，它们是通过上面关于pu、pm和pd的方程计算得出的。</p><p>注意，图32-6中每个节点上概率仅仅取决于j。例如，节点B上的概率与节点F上的概率一样，树的形状为对称，节点D上的概率是节点B上的概率的镜像反射。</p><h3 id=chapter_431.xhtml_A3d5a0251-7e47-40c1-a488-44849df7c674 class=thirdTitle>32.5.2 第2步<a class=anchor href=#chapter_431.xhtml_A3d5a0251-7e47-40c1-a488-44849df7c674>#</a></h3><p>构造树形的第2步是将R*的树形转换为R的树形，这可以通过变动R*树形的节点而使初始利率期限结构与树形完全吻合。定义</p><p>α(t)=R(t)-R*(t)</p><p>当时间步长Δt为无穷小时，α(t)可以通过式(32-5)解析计算得出。 [ ㊟
+]{.zuixiaoyao_zhushi} [ 【α(t)可以通过解析公式来估计。由于】
+]{.zuixiaoyao_zhushi_text}
+但是，我们希望对固定的Δt，所构造的树形能够与期限结构完全吻合，因此，我们以递推的形式确定α。</p><p>定义αi为α(iΔt)，αi等于R在R-树形上时间iΔt的值减去R*-树形上在时间iΔt的相应值。定义Qi,j为如下证券的贴现值：当节(i，j)被达到时，支付1美元，否则支付为0。αi和Qi,j可以通过向前递推的形式来计算，递推过程保证了树形与初始期限结构保持吻合。</p><h3 id=chapter_431.xhtml_A87b30251-aaa6-4331-82fe-7ccd5d701a13 class=thirdTitle>32.5.3 第2步数值例解<a class=anchor href=#chapter_431.xhtml_A87b30251-aaa6-4331-82fe-7ccd5d701a13>#</a></h3><p>假设图32-6例子中的连续复利零息利率如表32-1所示。Q0，0的值为1.0。α0的选取使得在时间Δt到期的零息债券价格与树形吻合，也就是说，α0被设定为初始Δt时间段的利率。在本例中，Δt=1，α0=0.03824，这就定义了图32-7中R-树形在初始节点的位置。接下一步是计算Q1，1，Q1，0和Q1，-1的值。到达节(1，1)的概率为0.1667，而第1步的贴现率为3.82%，因此Q1，1等于0.1667e-0.0382=0.1604。类似地，Q1，0=0.6417和Q1，-1=0.1604。</p><p>表32-1 图32-6和图32-7中例子的零息利率</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_594_03.jpg alt>
+{ratio="0.136"
+w="1682px" w-new="229px"
+style="max-width:1682px;max-height:229px;width:100%"}</p><p>一旦确定了Q1，1、Q1，0和Q1，-1，我们就可以确定α1，它的选取使树形上在2Δt到期的零息债券价格取值正确。由于ΔR=0.01732和Δt=1，这个债券在节点B的价格为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_594_04.jpg alt>
+{.content-image-class
+ratio="0.290" w="207px" w-new="60px"
+style="max-width:207px;max-height:60px"} 。类似地，债券在节点C的价格为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_594_05.jpg alt>
+{.content-image-class
+ratio="0.767" w="73px" w-new="56px"
+style="max-width:73px;max-height:56px"} ，在节点D的价格为
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_594_06.jpg alt>
+{.content-image-class
+ratio="0.295" w="200px" w-new="59px"
+style="max-width:200px;max-height:59px"} 。因此，债券在初始节点的价格为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_595_01.jpg alt>
+{ratio="0.060"
+w="1239px" w-new="74px"
+style="max-width:1239px;max-height:74px;width:100%"}</p><p>从初始期限结构出发，我们知道债券的正确价格为e-0.04512×2=0.9137。在式(32-11)中代入相应的Q项，我们得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_595_02.jpg alt>
+{ratio="0.050"
+w="1144px" w-new="57px"
+style="max-width:1144px;max-height:57px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_595_03.jpg alt>
+{ratio="0.058"
+w="1046px" w-new="61px"
+style="max-width:1046px;max-height:61px;width:100%"}</p><p>或</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_595_04.jpg alt>
+{ratio="0.106"
+w="1134px" w-new="120px"
+style="max-width:1134px;max-height:120px;width:100%"}</p><p>这说明在时间Δt上，R的树形中间节点所对应的利率为5.205%（见图32-7）。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_595_05.jpg alt>
+{ratio="0.726"
+w="1308px" w-new="950px"
+style="max-width:1308px;max-height:950px;width:100%"}</p><p>图32-7 Hull-White模型中关于R的树形（第2步）</p><p>下一步我们将要计算Q2，2、Q2，1、Q2，0，Q2，-1和Q2，-2。我们可以利用前面已经得到的Q值来简化计算。以Q2，1为例，Q2，1的取值相当于一个证券的价值，若节点F能到达，此债券支付1美元，否则支付0美元。节点F只可能由节点B和C到达，而在这两个节点上的利率分别为6.937%和5.205%。与树枝B-F和C-F相关的概率为0.6566和0.1667。因此，一个在节点F支付1美元的证券在节点B的价格为0.6566e-0.06937，在节点C的价格为0.1667e-0.05205。因此Q2，1等于0.6566e-0.06937乘以在节点B收取1美元的贴现值，再加上0.1667e-0.05205乘上在节点C收取1美元的贴现值，也就是说</p><p>Q2,1=0.6566e-0.06937×0.1604+0.1667e-0.05205×0.6417=0.1998</p><p>类似地，Q2，2=0.0182，Q2，0=0.4736，Q2，-1=0.2033，和Q2，-2=0.0189。</p><p>构造图32-7中R-树形的下一步是计算α2。在此之后，可以计算Q3，j，然后再计算α3；等等。</p><h3 id=chapter_431.xhtml_A798c0252-88f2-4078-98f7-d6bdecc4afa2 class=thirdTitle>32.5.4 计算α和Q的公式<a class=anchor href=#chapter_431.xhtml_A798c0252-88f2-4078-98f7-d6bdecc4afa2>#</a></h3><p>为了更正式地表达这种方法，假定我们已经求得了所有当i≤m(m≥0)时的Qi,j。接下来是确定αm来保证R-树形可以正确地给出期限(m+1)Δt的零息债券价格。在节(m,j)上的利率为αm+jΔR，因此(m+1)Δt到期的零息债券价格为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_596_01.jpg alt>
+{ratio="0.096"
+w="1197px" w-new="115px"
+style="max-width:1197px;max-height:115px;width:100%"}</p><p>其中nm是在时间mΔt时在中间节点每边的节点个数，以上方程的解为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_596_02.jpg alt>
+{ratio="0.318"
+w="550px" w-new="175px"
+style="max-width:550px;max-height:175px;width:100%"}</p><p>一旦确定了αm，对于i=m+1，Qi,j可由以下方程计算得出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_596_03.jpg alt>
+{ratio="0.105"
+w="850px" w-new="89px"
+style="max-width:850px;max-height:89px;width:100%"}</p><p>其中q(k,j)为由节(m,k)移动到节(m+1,j)的概率，其中求和指标是所有使这个概率不为零的k值。</p><h3 id=chapter_431.xhtml_Aff4b0253-793e-407f-b88f-682072bd1630 class=thirdTitle>32.5.5 推广到其他模型<a class=anchor href=#chapter_431.xhtml_Aff4b0253-793e-407f-b88f-682072bd1630>#</a></h3><p>我们可以将刚刚描述的程序推广到具有以下形式的其他过程上</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_596_04.jpg alt>
+{ratio="0.053"
+w="1159px" w-new="62px"
+style="max-width:1159px;max-height:62px;width:100%"}</p><p>其中f是r的单调函数。这种模型具有可以和任何期限结构相吻合的性质。
+<a href=/digital-library/index.html>[2]</a>{#chapter_431.xhtml_B2}</p><p>同前面一样，我们假设Δt段利率R服从与r同样的过程</p><p>df(R)=[θ(t)-af(R)]dt+σdz</p><p>令x=f(R)，于是</p><p>dx=[θ(t)-ax]dt+σdz</p><p>第1阶段是对x*建立树形，其中x*服从与x同样的过程，但相应的θ(t)为0，而且初始值为0。这与建立图32-6中树形的程序完全一样。</p><p>如图32-7所示，我们接下来对时间iΔt的节点移动αi，并使得树形与初始期限结构相吻合。这里确定αi和Qi,j的递推方程与f(R)=R的情形略有不同。Q在第1个节点Q0，0被假设为1。假定对所有的i≤m(m≥0)，Qi,j都已经被确定，下一步是确定αm使树形可以正确地(m+1)Δt到期的零息债券定价。定义g为函数f的反函数，在时间mΔt，第j个节点上Δt时间段的利率为</p><p>g(αm+jΔx)</p><p>在时(m+1)Δt到期的零息债券价格为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_596_05.jpg alt>
+{ratio="0.096"
+w="1204px" w-new="115px"
+style="max-width:1204px;max-height:115px;width:100%"}</p><p>这个方程的数值解可以通过Newton-Raphson迭代法给出。当m=0时，α0等于f(R(0))。</p><p>一旦求出了αm，对于i=m+1，Qi,j可由以下方程来计算</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_596_06.jpg alt>
+{ratio="0.103"
+w="864px" w-new="89px"
+style="max-width:864px;max-height:89px;width:100%"}</p><p>其中q(k,j)为由节(m,k)移动到节(m+1,j)的概率，求和指标是对所有使概率q(k,j)不为零的k值。</p><p>图32-8展示了将上述程序应用于由式(32-9)定义的Black-Karasinski模型</p><p>dln(r)=[θ(t)-aln(r)]dt+σdz</p><p>所得出的结果，其中a=0.22，σ=0.25，Δt=0.5，零息利率如表32-1所示。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_597_01.jpg alt>
+{ratio="0.669"
+w="1450px" w-new="970px"
+style="max-width:1450px;max-height:970px;width:100%"}</p><p>图32-8 对数正态模型树形</p><p>当选取f(r)=r时，我们可以得到由式(32-4)定义的Hull-White模型；当f(r)=ln(r)时，我们可以得到由式(32-9)定义的Black-Karasinski模型。模型f(r)=r的主要优点是它的解析性质。</p><h3 id=chapter_431.xhtml_Ad8ca0254-1692-4423-a269-db51ac38fc80 class=thirdTitle>32.5.6 负利率<a class=anchor href=#chapter_431.xhtml_Ad8ca0254-1692-4423-a269-db51ac38fc80>#</a></h3><p>在通常情况下，Hull-White模型的主要缺点是存在出现负利率的可能。但有些分析员不愿意使用任何可能出现负利率的模型，因此即使模型f(r)=ln（r)没有解析性质，仍然有许多人喜欢这种模型。</p><p>近年来，对可能出现负利率的模型的反感态度有些改变，原因如我们在前面章节里提到的，在有些国家里负利率已经成为金融市场的一个特征。Ho-Lee模型与Hull-White模型在原则上与第29.2节里介绍的Bachelier正态模型相似，
+[ ㊟ ]{.zuixiaoyao_zhushi} [
+【稍微有些区别。假设所考虑利率的限期为τ，在Bachelier模型里，当用来度量利率的复合频率为τ时，利率服从正态分布。在Ho-Lee与Hull-White模型里利率为正态，但复合频率是连续的。】
+]{.zuixiaoyao_zhushi_text}
+这些模型可以用来对负利率环境下的非标准交易定价。另一种方法是使用"转移Black-Karasinski"模型：假定r+α服从式(32-9)中的过程</p><p>dln(r+α)=[θ(t)-aln(r+α)]dt+σdz</p><p>短期利率可以（几乎）低到-α。</p><h3 id=chapter_431.xhtml_Ab13d0255-a227-4c5e-9dea-eb2311e91f05 class=thirdTitle>32.5.7 多种利率曲线<a class=anchor href=#chapter_431.xhtml_Ab13d0255-a227-4c5e-9dea-eb2311e91f05>#</a></h3><p>用于贴现的利率曲线是通过隔夜指数互换市场得到的无风险零息利率。迄今为止，我们假设了确定衍生产品收益的曲线也是这种利率曲线，因此我们可以通过对这种利率建模来计算衍生产品价格。当衍生产品收益依赖于另一种利率曲线时（比如国债利率曲线或风险贷款利率曲线），分析师需要建立同时反映两种曲线上的利率变化模型。一种处理方式是利用本章的方法对短期无风险利率建模，然后将两种利率在未来的溢差设为由目前两种利率曲线计算的远期利率之间的溢差。一种比较高深的处理方法是使用对两种利率建模的三维树形。
+[ ㊟ ]{.zuixiaoyao_zhushi} [ 【J. C. Hull and A. White, "Multi-Curve
+Modeling Using Trees," In: Innovations in Derivatives Markets, edited by
+Kathrin Glau, Zorano Grbac, Matthias Scherer, and Rudi Zagst, Springer
+Proceedings in Mathematics and Statis-tics, 2016.Also SSRN 2601457.】
+]{.zuixiaoyao_zhushi_text}</p><h3 id=chapter_431.xhtml_A85db0255-52ea-47f1-b849-490af868eb63 class=thirdTitle>32.5.8 解析结果和树形并用<a class=anchor href=#chapter_431.xhtml_A85db0255-52ea-47f1-b849-490af868eb63>#</a></h3><p>当构造f(r)=r的Hull-White模型树形时，利用第32.1节中的解析结果可以求得每个节点上的期限结构和欧式期权价格。注意树形所给出的Δt时间段的利率R并不是瞬时利率r。了解这一点对于我们来说很重要。</p><p>由式(32-6)~式(32-8)，我们可以证明（见练习题32.15）</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_598_01.jpg alt>
+{ratio="0.065"
+w="1085px" w-new="70px"
+style="max-width:1085px;max-height:70px;width:100%"}</p><p>其中</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_598_02.jpg alt>
+{ratio="0.168"
+w="1360px" w-new="229px"
+style="max-width:1360px;max-height:229px;width:100%"}</p><p>和</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_598_03.jpg alt>
+{ratio="0.104"
+w="1072px" w-new="111px"
+style="max-width:1072px;max-height:111px;width:100%"}</p><p>［对Ho-Lee模型，在以上方程中我们令
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_598_04.jpg alt>
+{.content-image-class
+ratio="0.408" w="157px" w-new="64px"
+style="max-width:157px;max-height:64px"} =T-t。］</p><p>因此，在计算债券价格时，我们应该使用式(32-15)而不是式(32-6)。</p><p>【例32-1】
+假设零息利率如表32-2所示。对应于表中所示期限之间的利率是由线性插值来计算的。</p><p>表32-2 零息利率曲线，所有利率均按连续复利（实际天数/365）</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_598_05.jpg alt>
+{ratio="0.293"
+w="1684px" w-new="493px"
+style="max-width:1684px;max-height:493px;width:100%"}</p><p>我们考虑一个在9年（=9×365天）后支付100的零息债券上、期限为3年（=3×365天）的欧式看跌期权。假定利率服从Hull-White模型[f(r)=r]，执行价格为63，a=0.1和σ=0.01。我们构造一个3年的树形，在最后的节点上我们利用刚才描述的解析公式来计算债券价格。如表32-3所示，由树形上所得结果与期权的解析价格是一致的。</p><p>表32-3
+9年期零息债券上，期限为3年的看跌期权价值，执行价格为63，模型参数a=0.1和σ=0.01；零息利率曲线由表32-2给出</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_599_01.jpg alt>
+{ratio="0.136"
+w="1682px" w-new="229px"
+style="max-width:1682px;max-height:229px;width:100%"}</p><p>该例为模型的实现提供了一个很好的检验，这是因为在期权到期后，零息斜率曲线马上呈现剧烈变化。在构造和使用树形时，一个小的误差很可能会对价格产生很大的影响［DerivaGem软件里应用工具(Application
+Builder)的例G正是这个例子］。</p><h3 id=chapter_431.xhtml_A5cf10256-e517-41fb-bb30-2cf8d96daf37 class=thirdTitle>32.5.9 美式债券期权树形<a class=anchor href=#chapter_431.xhtml_A5cf10256-e517-41fb-bb30-2cf8d96daf37>#</a></h3><p>对于欧式和美式债券期权、上限/下限以及欧式互换期权，DerivaGem软件实现了正态和对数正态模型。图32-9显示了由软件生成的树形，这里的树形是关于10年期债券上、期限为1.5年的美式债券看涨期权定价而设定的，步数为4步，模型为对数正态(Black-Karasinski)模型，参数是a=5%，σ=20%。标的债券的期限为10年，面值为100，券息为每年5%，每半年支付一次，收益率曲线为水平，每年为5%，债券期权执行价格为105。在第29.1节里我们讲过，执行价格可以是现金价格，也可以是报价。本例中的执行价格为报价，在树形上所示的债券价格为现金价格。每个节点对应的累计利息显示在树的下方，现金执行价格等于报价加上累计利息。债券报价为其现金价格减去累计利息，期权收益为债券的现金价格减去现金执行价格，这与债券报价和执行价格（报价）的差是一样的。</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_599_02.jpg alt>
+{ratio="0.981"
+w="1280px" w-new="1256px"
+style="max-width:1280px;max-height:1256px;width:100%"}</p><p>图32-9 对美式债券期权定价的树形，该图由DerivaGem软件生成</p><p>树形上所给出的期权价格为0.672，一个100步树形给出的期权价格为0.703。注意：当假设对数正态模型时，我们无法利用解析公式来计算10年期债券的价格。这些价格是在一个比所显示的树形要大得多的另一个树形上通过倒推计算得出的。</p><h2 id=326-校正>32.6 校正<a class=anchor href=#326-%e6%a0%a1%e6%ad%a3>#</a></h2><p>迄今为止，我们都是假定参数a和σ是已知的。现在我们讨论如何确定这些参数，确定参数的过程通常称为对模型的校正。</p><p>波动率参数是由在市场上交易活跃的期权市场数据来确定的。这些市场上交易活跃的产品称为校正产品(calibrating
+instrument)。校正过程的第1步是选取一个衡量"拟合质量"(goodness-of-fit)的测度。假定有n个校正产品，一种流行的拟合质量测度是
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_600_01.jpg alt>
+{.content-image-class
+ratio="1.603" w="68px" w-new="109px"
+style="max-width:68px;max-height:109px"}
+(Ui-Vi)2，其中Ui为第i个校正产品的市场价格，Vi是由模型给出的这个产品的价格，模型校正的目标是选取参数来使得以上测度达到最小。</p><p>波动率参数的数量不应当多于校正产品的数量。如果a和σ为常数，那么我们只有两个波动率参数。我们可以将模型推广到a或σ或两个参数均为时间函数的情形，此时可以利用阶梯函数。假设a为常数，而σ为时间的函数。我们可以选取时间t1，t2,...,tn，并假设对t≤t1，σ(t)=σ0；对ti≤t≤ti+1，σ(t)=σi(1≤i≤n-1)，以及对t＞tn,σ(t)=σn。这样，我们共有n+2个波动率参数：a，σ0，σ1,...,σn。</p><p>对拟合测度求最小化可以通过Levenberg-Marquardt程序来完成。 [ ㊟
+]{.zuixiaoyao_zhushi} [ 【关于这个程序的描述，见W. H. Press, B. P.
+Flannery, S. A. Teukolsky, and W. T. Vetterling，Numerical Rec-ipes：The
+Art of Scientific Computing，3rd edn. Cambridge University Press,
+2007.】 ]{.zuixiaoyao_zhushi_text}
+当a或σ或两个参数均为时间的函数时，在拟合测度上常常需要加上一个惩罚函数(penalty
+function)以使得这些函数具备良好的性质。在刚才的例子中，σ为阶梯函数，我们可以将目标函数取成</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_600_02.jpg alt>
+{ratio="0.095"
+w="1227px" w-new="117px"
+style="max-width:1227px;max-height:117px;width:100%"}</p><p>第2项对在两步之间σ值大的变化提供了惩罚，第3项为对σ的高凸性提供了惩罚。通过试验可以选取适当的w1，i和w2，i值，以便使得σ函数具有一定的光滑程度。</p><p>用于校正模型的产品应当与被定价的产品相似。例如，假设要对一个百慕大式互换期权定价：这个期权将延续10年，并在第5年与第9年之间的任何支付日上都可以选择行使期权，从而签订一个10年后（从现在起）到期的互换。这时，最相关的校正产品为5×5，6×4，7×3，8×2和9×1欧式互换期权（n×m欧式期权是指在n年期权到期后进入m年互换的期权）。</p><p>将a或σ或两个参数都设成时间函数的优点是能够使模型更精确地与在市场上交易活跃的产品价格吻合，其缺点是波动率结构会因此变得不稳定。模型给出的将来波动率期限结构可能与今天市场上存在的波动率期限结构有很大差异。
+[ ㊟ ]{.zuixiaoyao_zhushi} [
+【关于当a和σ为时间函数时对模型的实现，见网页www-2.rotman.utoronto.ca/～hull/TechnicalNotes里的Technical
+Note 16。】 ]{.zuixiaoyao_zhushi_text}</p><p>一种与此处有所不同的校正方式是利用所有可用的校正产品来计算出"整体最优吻合"(global-best-fit)参数a和σ。将参数a固定为最优吻合值时，我们可以采用与布莱克-斯科尔斯-默顿同样的方法来使用模型，这时在期权价格和参数σ之间存在一一对应关系。我们可以利用模型计算隐含波动率σ，
+[ ㊟ ]{.zuixiaoyao_zhushi} [
+【注意，在一个期限结构模型下的隐含参数σ与布莱克模型所计算出的波动率是不一样的。计算隐含参数σ的过程如下：首先利用布莱克模型将布莱克波动率转换成价格，然后用迭代的方式计算由价格所隐含的期限结构模型中的参数σ。】
+]{.zuixiaoyao_zhushi_text} 这可以帮助我们选取最适合产品定价的参数σ。</p><h2 id=327-利用单因子模型进行对冲>32.7 利用单因子模型进行对冲<a class=anchor href=#327-%e5%88%a9%e7%94%a8%e5%8d%95%e5%9b%a0%e5%ad%90%e6%a8%a1%e5%9e%8b%e8%bf%9b%e8%a1%8c%e5%af%b9%e5%86%b2>#</a></h2><p>在第29.4节里我们曾大致描述了如何对利率衍生产品进行对冲。这些结论可以用在本章所讨论的期限结构模型上。在计算delta、gamma和vega时，我们需要对零息利率曲线或波动率做微小变化，然后重新计算组合的价值。</p><p>应当注意的是，在对利率衍生产品定价时，我们常常假设只有一个因子，但在进行对冲时，只有一个因子的假设却不太合适。例如，我们计算的delta应当是允许在零息利率曲线上有多种不同的变化，而不是仅仅局限于选定模型所提供的变化。在对冲时，实际中的做法是既考虑所选取模型下可能的变化，同时也考虑在模型下不可能的变化。这一做法叫模型外对冲(outside
+model hedging)，这是交易员的标准做法。 [ ㊟ ]{.zuixiaoyao_zhushi} [
+【模型外对冲的一个简单例子是布莱克-斯科尔斯-默顿模型的使用方式。布莱克-斯科尔斯-默顿模型假设波动率为常数，但交易员常常计算vega来对冲波动率的变化。】
+]{.zuixiaoyao_zhushi_text}
+实际上，当我们谨慎地使用一个单因子模型时，模型通常会给出合理的产品价格，但在设计一个好的对冲方案时，我们将有意或无意地假设有多个因子。</p><h2 id=小结>小结<a class=anchor href=#%e5%b0%8f%e7%bb%93>#</a></h2><p>当对衍生产品定价时，重要的一点是保证模型与市场所观察到的初始期限结构一致。无套利模型的设计正是为了满足这一性质，这类模型将初始期限结构取为已知，并定义了它的演变方式。</p><p>本章描述了几种单因子的无套利短期利率模型，这些模型非常稳定，并且可以与任何初始零息利率一起使用。这里最简单的模型为Ho-Lee模型，它的优点是具有解析性质，主要缺点是该模型意味着在任何时刻所有利率的变化都是一样的。Hull-White模型是Ho-Lee模型的一种变形，它考虑了利率均值回归的特性，该模型在保持了解析性质的同时，也提供了更丰富的波动率环境。对数正态单因子模型避免了负利率的产生，但这些模型不具有解析性质。</p><h2 id=推荐阅读>推荐阅读<a class=anchor href=#%e6%8e%a8%e8%8d%90%e9%98%85%e8%af%bb>#</a></h2><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_602_01.jpg alt>
+{ratio="0.489"
+w="1280px" w-new="626px"
+style="max-width:1280px;max-height:626px;width:100%"}</p><h2 id=练习题>练习题<a class=anchor href=#%e7%bb%83%e4%b9%a0%e9%a2%98>#</a></h2><p>32.1 均衡模型与无套利模型的区别是什么？</p><p>32.2
+在第32.2节里描述了带息债券上期权分解成一个零息债券上期权的组合。如果使用两个因子的模型，这种处理方式还成立吗？解释你的答案。</p><p>32.3
+假设在Vasicek模型中，a=0.1，b=0.08，σ=0.015，初始短期利率为5%。计算在3年期零息债券上期限为1年、执行价格为87美元的欧式看涨期权价格。零息债券本金为100美元。</p><p>32.4
+重复练习题32.3，考虑一个执行价格为87美元的欧式看跌期权。欧式看涨期权价格与欧式看跌期权价格之间的看跌-看涨平价关系式是什么？证明在这种情况下，看跌和看涨期权满足看跌-看涨平价关系式。</p><p>32.5
+假设在Vasicek模型中，a=0.05，b=0.08，σ=0.015，初始短期利率为6%，计算3年期债券上期限为2.1年的欧式看涨期权价格。假设债券每半年支付一次券息，年息为5%，债券的本金为100美元，期权执行价格为99美元，执行价格为现金价格（而非报价）。</p><p>32.6
+利用练习题32.5的结果与看跌-看涨平价关系式，计算一个与练习题32.5中看涨期权具有相同条件的看跌期权价格。</p><p>32.7
+在Hull-White模型下，a=0.08，σ=0.01，计算一个在5年期零息债券上期限为1年的欧式看涨期权的价格。利率期限结构呈水平状，利率为每年10%，债券本金为100美元，执行价格为68美元。</p><p>32.8
+假定在Hull-White模型下，a=0.05和σ=0.015，而且初始利率期限结构呈水平状，利率为6%，按半年复利。计算一个在3年期债券上期限为2.1年的欧式看涨期权价格。假设债券的券息为每年5%，每半年支付一次，债券本金为100美元，执行价格为99美元，其中执行价格为现金价格（而非报价）。</p><p>32.9
+假设a=0.05，σ=0.015，期限结构呈水平状，利率为10%。构造关于Hull-White模型步长为1年的两步三叉树。</p><p>32.10 由图32-4中的树形计算2年期零息债券的价格。</p><p>32.11
+由图32-7中的树形计算2年期零息债券的价格，并验证该价格与初始期限结构是一致的。</p><p>32.12
+由图32-8中的树形计算18个月期的零息债券价格，并验证该价格与初始期限结构是一致的。</p><p>32.13 单因子期限结构模型的校正都会涉及什么？</p><p>32.14 证明式(32-15)~式(32-17)。</p><p>32.15
+一位交易员想要计算一个本金为100美元、5年期债券上期限为1年的美式看涨期权价格。债券支付的券息为6%，每半年支付一次，期权执行价格（报价）为100美元。6个月、1年、2年、3年、4年和5年的连续复利零息利率分别为4.5%、5%、5.5%、5.8%、6.1%和6.3%。对正态模型和对数正态模型所估计的最优拟合回归率均为5%。该债券上1年期、执行价格为100（报价）的欧式看涨期权交易很活跃，市场价格为0.50美元。交易员决定利用这个价格对模型进行校正。利用DerivaGem和10步三叉树来回答下列问题。</p><p>(a)假设正态模型，计算欧式期权所隐含的σ。</p><p>(b)当期权为美式期权时，利用参数σ来计算其价格。</p><p>(c)假设对数正态模型，重复(a)和(b)。说明当用已知的欧式期权价格来做校正时，采用不同模型对价格并没有太大的影响。</p><p>(d)对于正态模型，显示树形，并计算发生负利率的概率。</p><p>(e)对于对数正态模型，显示树形，并验证节点i=9和j=-1（第32.4节里的记号）上期权价格的正确性。</p><p>32.16
+验证DerivaGem软件对所考虑例子所给出的图32-9。利用该软件，对正态和对数正态模型计算执行价格为95、100和105的美式债券期权价格。当使用正态模型时，假设a=5%和σ=1%。以第20章给出的关于肥尾分布的角度，讨论所得结果。</p><p>32.17 将DerivaGem软件里应用工具(App-lication
+Builder)的应用实例G加以修改来验证三叉树价格的收敛性。采用三叉树计算一个5年期、本金为100美元的债券上2年期看涨期权的价格。假设执行价格为100（报价），券息为7%，每年支付2次。假设零息利率曲线如表32-2所示，对以下情形进行比较。</p><p>(a)期权为欧式，正态模型，σ=0.01和a=0.05。</p><p>(b)期权为欧式，对数正态模型，σ=0.15和a=0.05。</p><p>(c)期权为美式，正态模型，σ=0.01和a=0.05。</p><p>(d)期权为美式，对数正态模型，σ=0.15和a=0.05。</p><p><a href=/digital-library/index.html>[1]</a>{#chapter_436.xhtml_BT1}
+对于任何介于0.184/(aΔt)和0.816/(aΔt)之间的jmax与对于任何介于-0.184/(aΔt)和-0.816/(aΔt)之间的jmin，相应的概率均为正值。在最早可能的情况下就将树枝形状加以改变，这样的计算效率最好。</p><p>dR=[θ(t)-aR]dt+σdz和dR*=-aR*dt+σdz</p><p>于是dα=[θ(t)-aα(t)]dt。利用式(32-7)，这个方程的解为</p><p><img src=out/options-futures-derivatives/images/img/CB_3300065639_594_07.jpg alt>
+{ratio="0.163"
+w="430px" w-new="70px"
+style="max-width:430px;max-height:70px;width:100%"}</p><p>就无法与远期利率急剧下降的利率曲线相吻合。这是因为当θ(t)为负时，以上所述过程无法定义。</p><p><a href=/digital-library/index.html>[2]</a>{#chapter_436.xhtml_BT2}
+并非所有的无套利模型都具有这个性质。比如，由Cox、Ingersoll和Ross(CIR)(1985)和Hull和White(1990)所考虑的CIR模型扩展形式
+<img src=out/options-futures-derivatives/images/img/CB_3300065639_596_07.jpg alt>
+{.content-image-class
+ratio="0.130" w="400px" w-new="52px"
+style="max-width:400px;max-height:52px"}</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><nav class=book-nav><div class="flex justify-between"><div class=book-nav-prev><a href=/digital-library/books/options-futures-derivatives/ch31.html class=book-nav-link>← 第31章</a></div><div class=book-nav-next><a href=/digital-library/books/options-futures-derivatives/ch33.html class=book-nav-link>第33章 →</a></div></div></nav><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#321-均衡模型的推广>32.1 均衡模型的推广</a><ul><li><a href=#chapter_427.xhtml_A0e600249-47fc-4e5b-8a35-dd1a7c0c4349>32.1.1 Ho-Lee模型</a></li><li><a href=#chapter_427.xhtml_A0e3e024a-72f4-4642-91ed-01b0109051df>32.1.2 Hull-White单因子模型</a></li><li><a href=#chapter_427.xhtml_Acd89024b-d2d6-4f44-ba1d-70bf40c33dd9>32.1.3 Black-Derman-Toy模型</a></li><li><a href=#chapter_427.xhtml_Aa720024b-7172-4dfa-9ae5-2dc870f2315e>32.1.4 Black-Karasinski模型</a></li><li><a href=#chapter_427.xhtml_Abf7a024b-c28e-4ca9-9cde-b50a241ca3a6>32.1.5 Hull-White两因子模型</a></li></ul></li><li><a href=#322-债券期权>32.2 债券期权</a></li><li><a href=#323-波动率结构>32.3 波动率结构</a></li><li><a href=#324-利率树形>32.4 利率树形</a><ul><li><a href=#chapter_430.xhtml_A33c1024d-69ae-468c-92d5-552c5efa6188>32.4.1 三叉树应用例解</a></li><li><a href=#chapter_430.xhtml_A00d3024e-3e23-4026-8d54-704516864a40>32.4.2 非标准树枝</a></li></ul></li><li><a href=#325-建立树形的步骤>32.5 建立树形的步骤</a><ul><li><a href=#chapter_431.xhtml_A7065024f-b56d-46c9-9570-5bf0fc4f3f94>32.5.1 第1步</a></li><li><a href=#chapter_431.xhtml_A3d5a0251-7e47-40c1-a488-44849df7c674>32.5.2 第2步</a></li><li><a href=#chapter_431.xhtml_A87b30251-aaa6-4331-82fe-7ccd5d701a13>32.5.3 第2步数值例解</a></li><li><a href=#chapter_431.xhtml_A798c0252-88f2-4078-98f7-d6bdecc4afa2>32.5.4 计算α和Q的公式</a></li><li><a href=#chapter_431.xhtml_Aff4b0253-793e-407f-b88f-682072bd1630>32.5.5 推广到其他模型</a></li><li><a href=#chapter_431.xhtml_Ad8ca0254-1692-4423-a269-db51ac38fc80>32.5.6 负利率</a></li><li><a href=#chapter_431.xhtml_Ab13d0255-a227-4c5e-9dea-eb2311e91f05>32.5.7 多种利率曲线</a></li><li><a href=#chapter_431.xhtml_A85db0255-52ea-47f1-b849-490af868eb63>32.5.8 解析结果和树形并用</a></li><li><a href=#chapter_431.xhtml_A5cf10256-e517-41fb-bb30-2cf8d96daf37>32.5.9 美式债券期权树形</a></li></ul></li><li><a href=#326-校正>32.6 校正</a></li><li><a href=#327-利用单因子模型进行对冲>32.7 利用单因子模型进行对冲</a></li><li><a href=#小结>小结</a></li><li><a href=#推荐阅读>推荐阅读</a></li><li><a href=#练习题>练习题</a></li></ul></nav></div></aside></main></body></html>
