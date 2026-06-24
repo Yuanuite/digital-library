@@ -5,7 +5,7 @@
 &lt;/section&gt;
 &lt;section class="book-intro"&gt;
  &lt;h2&gt;简介&lt;/h2&gt;
- &lt;p&gt;吴恩达斯坦福机器学习课程中文笔记，涵盖监督/无监督学习、神经网络、SVM、推荐系统。含 CS229 数学复习材料。&lt;/p&gt;
+ &lt;p&gt;本笔记是针对斯坦福大学 2014 年（Andrew Ng）机器学习课程的中文笔记，基于视频内容、中文字幕及 PPT 制作。课程涵盖监督学习、无监督学习等核心主题，含 CS229 数学复习材料。&lt;/p&gt;
  &lt;p class="book-intro-links"&gt;
  &lt;a href="https://www.bilibili.com/video/BV1W34y1i7xK"&gt;📺 课程视频&lt;/a&gt;
  &lt;a href="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes"&gt;📂 GitHub&lt;/a&gt;
