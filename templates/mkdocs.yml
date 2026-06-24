@@ -9,15 +9,13 @@ theme:
     text: Noto Sans SC
     code: JetBrains Mono
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: teal
       accent: teal
       toggle:
         icon: material/weather-night
         name: 切换深色模式
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: teal
       accent: teal
       toggle:

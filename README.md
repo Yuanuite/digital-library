@@ -13,7 +13,11 @@
 
 ```bash
 # 1. 初始化图书馆仓库
-cp -r templates/mkdocs.yml templates/extra.css templates/mathjax.js templates/deploy.yml my-library/
+cp templates/mkdocs.yml templates/deploy.yml my-library/
+mkdir -p my-library/docs/javascripts my-library/docs/stylesheets
+cp templates/mathjax.js my-library/docs/javascripts/
+cp templates/pseudocode-render.js my-library/docs/javascripts/
+cp templates/extra.css my-library/docs/stylesheets/
 # 改 mkdocs.yml 的 site_url 为你的 GitHub Pages 地址
 
 # 2. 在 Claude Code 中触发

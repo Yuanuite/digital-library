@@ -24,7 +24,7 @@ repo/
 │   │       └── <paper-slug>/
 │   ├── notes/                      # 笔记
 │   ├── stylesheets/extra.css
-│   └── javascripts/mathjax.js
+│   └── javascripts/{mathjax,pseudocode-render}.js
 ├── pdfs/                           # PDF 源文件（本地，不入库）
 └── .github/workflows/deploy.yml
 ```
