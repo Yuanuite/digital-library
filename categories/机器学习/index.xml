@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>机器学习 on Yuan's Library</title><link>https://yuanuite.github.io/digital-library/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</link><description>Recent content in 机器学习 on Yuan's Library</description><generator>Hugo</generator><language>zh-CN</language><copyright>© Yuanuite</copyright><atom:link href="https://yuanuite.github.io/digital-library/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml"/><item><title>斯坦福机器学习教程笔记</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;斯坦福机器学习教程笔记&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;Andrew Ng · Stanford CS229&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;黄海广 · V5.52 · 2018&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;本笔记是针对斯坦福大学 2014 年（Andrew Ng）机器学习课程的中文笔记，基于视频内容、中文字幕及 PPT 制作。课程涵盖监督学习、无监督学习等核心主题，含 CS229 数学复习材料。&lt;/p&gt;
+ &lt;p class="book-intro-links"&gt;
+ &lt;a href="https://www.bilibili.com/video/BV1W34y1i7xK"&gt;📺 课程视频&lt;/a&gt;
+ &lt;a href="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes"&gt;📂 GitHub&lt;/a&gt;
+ &lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1周 · 引言与线性回归&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;机器学习入门&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2周 · 多变量回归与Octave&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;多元回归&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3周 · 逻辑回归与正则化&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;分类与泛化&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4周 · 神经网络表述&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;网络结构&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5周 · 神经网络学习&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;反向传播&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6周 · 应用建议与系统设计&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;诊断优化&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7周 · 支持向量机&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;大边界分类&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第8周 · 聚类与降维&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;无监督学习&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;第9周 · 异常检测与推荐&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;检测与过滤&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;第10周 · 大规模ML与总结&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;规模化OCR&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/appendix.html"&gt;
+ &lt;span class="toc-row-title"&gt;附件 · CS229复习&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;线代概率&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item></channel></rss>
