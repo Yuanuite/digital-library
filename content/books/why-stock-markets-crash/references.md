@@ -1,5 +1,6 @@
 ---
 title: "References"
+description: "Key academic papers, sources, and data references"
 weight: 120
 ---
 # References

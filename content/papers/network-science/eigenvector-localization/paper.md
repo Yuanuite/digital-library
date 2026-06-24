@@ -1,6 +1,7 @@
 ---
 title: "SCIENTIFIC REPORTS"
 weight: 1
+description: "特征向量局域化的两种模式"
 ---
 # SCIENTIFIC REPORTS
 
