@@ -37,22 +37,22 @@
   {{- range $idx, $p := $pages -}}
     {{- if $found -}}
       {{- if not $next -}}{{- $next = $p -}}{{- end -}}
-    {{- end -}}
-    {{- if eq $p $ -}}
-      {{- $found = true -}}
-      {{- if eq $idx 0 -}}{{- $isFirst = true -}}{{- end -}}
-      {{- if eq $idx $lastIdx -}}{{- $isLast = true -}}{{- end -}}
     {{- else -}}
-      {{- $prev = $p -}}
+      {{- if eq $p $ -}}
+        {{- $found = true -}}
+        {{- if eq $idx 0 -}}{{- $isFirst = true -}}{{- end -}}
+        {{- if eq $idx $lastIdx -}}{{- $isLast = true -}}{{- end -}}
+      {{- else -}}
+        {{- $prev = $p -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
   {{- if $isFirst -}}
-    {{- $prev = $home -}}
+    {{- $prev = $parent -}}
   {{- end -}}
   {{- if $isLast -}}
-    {{- $next = $home -}}{{- $nextLabel = "完结 · 返回首页 →" -}}
+    {{- $next = $parent -}}{{- $nextLabel = "完结 · 返回封面 →" -}}
   {{- end -}}
-  {{- /* 第一页兜底：prev = 书封面 */ -}}
   {{- if not $prev -}}{{- $prev = $parent -}}{{- end -}}
 {{- end -}}
 
