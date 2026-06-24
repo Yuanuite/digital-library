@@ -714,6 +714,37 @@ body {
   font-weight: 400;
 }
 
+// === 移动端顶栏操作区 ===
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.mobile-search-trigger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--body-font-color);
+  padding: 0.25rem;
+  &:hover { color: var(--color-link); }
+}
+
+// === 移动端搜索适配 ===
+@media screen and (max-width: 896px) {
+  #book-search-results {
+    max-height: 50vh;
+    overflow-y: auto;
+    li { margin-bottom: 0.8rem; }
+    a { font-size: 0.9rem; }
+    small { font-size: 0.7rem; }
+    p { font-size: 0.75rem; }
+  }
+  .book-search input {
+    font-size: 16px; // 防止 iOS 缩放
+    min-height: 44px; // 触控目标最小尺寸
+  }
+}
+
 // === 侧栏分类标签 ===
 .menu-category {
   display: block;
