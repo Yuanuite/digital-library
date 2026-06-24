@@ -139,4 +139,4 @@ RAW --extract--> EXTRACTED --clean+split--> STRUCTURED --wire+build--> LIVE
 ## fix 流程
 1. fix 之后需要询问用户是否 push
 2. fix、push、添加内容等简单操作优先采用 Haiku 模型（Agent 工具设 `subagent_type: "general-purpose"`, `model: "haiku"`）
-3. push之后整理提炼fix过程中预计在维护过程中的经验，筛选出可复用的经验，加入到CLAUDE.md中。需得用户授权。
+3. push之后整理提炼fix过程中预计在维护过程中的经验，筛选出可复用的经验，针对其适用性分别加入CLAUDE.md和skill中。需得用户授权。
