@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>斯坦福机器学习教程笔记 on Yuan's Library</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/index.html</link><description>Recent content in 斯坦福机器学习教程笔记 on Yuan's Library</description><generator>Hugo</generator><language>zh-CN</language><copyright>© Yuanuite</copyright><atom:link href="https://yuanuite.github.io/digital-library/books/stanford-ml-notes/index.xml" rel="self" type="application/rss+xml"/><item><title>附件</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/appendix.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/appendix.html</guid><description>&lt;h1 id="附件"&gt;附件&lt;a class="anchor" href="#%e9%99%84%e4%bb%b6"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="cs229-机器学习课程复习材料-线性代数"&gt;CS229 机器学习课程复习材料-线性代数&lt;a class="anchor" href="#cs229-%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e8%af%be%e7%a8%8b%e5%a4%8d%e4%b9%a0%e6%9d%90%e6%96%99-%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;这部分是斯坦福大学 CS 229 机器学习课程的基础材料，原始文件下载原文作者：Zico Kolter，修改：Chuong Do， Tengyu Ma翻译：黄海广&lt;/p&gt;
+&lt;h2 id="1-基础概念和符号"&gt;1. 基础概念和符号&lt;a class="anchor" href="#1-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5%e5%92%8c%e7%ac%a6%e5%8f%b7"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;线性代数提供了一种紧凑地表示和操作线性方程组的方法。 例如，以下方程组：&lt;/p&gt;
+$$
+\begin{array}{r} 4 x_{1} - 5 x_{2} = - 13 \\ - 2 x_{1} + 3 x_{2} = 9 \end{array}
+$$&lt;p&gt;这是两个方程和两个变量，正如你从高中代数中所知，你可以找到 $x_{1}$ 和 $x_{2}$ 的唯一解（除非方程以某种方式退化，例如，如果第二个方程只是第一个的倍数，但在上面的情况下，实际上只有一个唯一解）。 在矩阵表示法中，我们可以更紧凑地表达：&lt;/p&gt;
+$$
+\begin{array}{c} {A x = b} \\ {\mathrm{with} A = \left[ \begin{array}{l l} 4 &amp; - 5 \\ - 2 &amp; 3 \end{array} \right], b = \left[ \begin{array}{l} - 13 \\ 9 \end{array} \right]} \end{array}
+$$&lt;p&gt;我们可以看到，这种形式的线性方程有许多优点（比如明显地节省空间）。&lt;/p&gt;</description></item><item><title>第 1 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch01.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch01.html</guid><description>&lt;h1 id="第-1-周"&gt;第 1 周&lt;a class="anchor" href="#%e7%ac%ac-1-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="1-引言introduction"&gt;1、 引言(Introduction)&lt;a class="anchor" href="#1-%e5%bc%95%e8%a8%80introduction"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="11-欢迎"&gt;1.1 欢迎&lt;a class="anchor" href="#11-%e6%ac%a2%e8%bf%8e"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-1---1---welcome-7-minmkv"&gt;参考视频: 1 - 1 - Welcome (7 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-1---1---welcome-7-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;第一个视频主要讲了什么是机器学习，机器学习能做些什么事情。&lt;/p&gt;
+&lt;p&gt;机器学习是目前信息技术中最激动人心的方向之一。在这门课中，你将学习到这门技术的前沿，并可以自己实现学习机器学习的算法。&lt;/p&gt;
+&lt;p&gt;你或许每天都在不知不觉中使用了机器学习的算法每次，你打开谷歌、必应搜索到你需要的内容，正是因为他们有良好的学习算法。谷歌和微软实现了学习算法来排行网页每次，你用 Facebook 或苹果的图片分类程序他能认出你朋友的照片，这也是机器学习。每次您阅读您的电子邮件垃圾邮件筛选器，可以帮你过滤大量的垃圾邮件这也是一种学习算法。对我来说，我感到激动的原因之一是有一天做出一个和人类一样聪明的机器。实现这个想法任重而道远，许多 AI 研究者认为，实现这个目标最好的方法是通过让机器试着模仿人的大脑学习我会在这门课中介绍一点这方面的内容。&lt;/p&gt;
+&lt;p&gt;在这门课中，你还讲学习到关于机器学习的前沿状况。但事实上只了解算法、数学并不能解决你关心的实际的问题。所以，我们将花大量的时间做练习，从而你自己能实现每个这些算法，从而了解内部机理。&lt;/p&gt;
+&lt;p&gt;那么，为什么机器学习如此受欢迎呢？原因是，机器学习不只是用于人工智能领域。&lt;/p&gt;
+&lt;p&gt;我们创造智能的机器，有很多基础的知识。比如，我们可以让机器找到 A 与 B 之间的最短路径，但我们仍然不知道怎么让机器做更有趣的事情，如 web 搜索、照片标记、反垃圾邮件。我们发现，唯一方法是让机器自己学习怎么来解决问题。所以，机器学习已经成为计算机的一个能力。&lt;/p&gt;
+&lt;p&gt;现在它涉及到各个行业和基础科学中。我从事于机器学习，但我每个星期都跟直升机飞行员、生物学家、很多计算机系统程序员交流（我在斯坦福大学的同事同时也是这样）和平均每个星期会从硅谷收到两、三个电子邮件，这些联系我的人都对将学习算法应用于他们自己的问题感兴趣。这表明机器学习涉及的问题非常广泛。有机器人、计算生物学、硅谷中大量的问题都收到机器学习的影响。&lt;/p&gt;
+&lt;p&gt;这里有一些机器学习的案例。比如说，数据库挖掘。机器学习被用于数据挖掘的原因之一是网络和自动化技术的增长，这意味着，我们有史上最大的数据集比如说，大量的硅谷公司正在收集web上的单击数据，也称为点击流数据，并尝试使用机器学习算法来分析数据，更好的了解用户，并为用户提供更好的服务。这在硅谷有巨大的市场。再比如，医疗记录。随着自动化的出现，我们现在有了电子医疗记录。如果我们可以把医疗记录变成医学知识，我们就可以更好地理解疾病。再如，计算生物学。还是因为自动化技术，生物学家们收集的大量基因数据序列、DNA序列和等等，机器运行算法让我们更好地了解人类基因组，大家都知道这对人类意味着什么。再比如，工程方面，在工程的所有领域，我们有越来越大、越来越大的数据集，我们试图使用学习算法，来理解这些数据。另外，在机械应用中，有些人不能直接操作。例如，我已经在无人直升机领域工作了许多年。我们不知道如何写一段程序让直升机自己飞。我们唯一能做的就是让计算机自己学习如何驾驶直升机。&lt;/p&gt;
+&lt;p&gt;手写识别：现在我们能够非常便宜地把信寄到这个美国甚至全世界的原因之一就是当你写一个像这样的信封，一种学习算法已经学会如何读你信封，它可以自动选择路径，所以我们只需要花几个美分把这封信寄到数千英里外。&lt;/p&gt;
+&lt;p&gt;事实上，如果你看过自然语言处理或计算机视觉，这些语言理解或图像理解都是属于 A领域。大部分的自然语言处理和大部分的计算机视觉，都应用了机器学习。学习算法还广泛用于自定制程序。每次你去亚马逊或 Netflix 或 iTunes Genius，它都会给出其他电影或产品或音乐的建议，这是一种学习算法。仔细想一想，他们有百万的用户；但他们没有办法为百万用户，编写百万个不同程序。软件能给这些自定制的建议的唯一方法是通过学习你的行为，来为你定制服务。&lt;/p&gt;
+&lt;p&gt;最后学习算法被用来理解人类的学习和了解大脑。&lt;/p&gt;
+&lt;p&gt;我们将谈论如何用这些推进我们的 AI 梦想。几个月前，一名学生给我一篇文章关于最顶尖的12 个 IT 技能。拥有了这些技能 HR 绝对不会拒绝你。这是稍显陈旧的文章，但在这个列表最顶部就是机器学习的技能。&lt;/p&gt;
+&lt;p&gt;在斯坦福大学，招聘人员联系我，让我推荐机器学习学生毕业的人远远多于机器学习的毕业生。所以我认为需求远远没有被满足现在学习“机器学习”非常好，在这门课中，我希望能告诉你们很多机器学习的知识。&lt;/p&gt;
+&lt;p&gt;在接下来的视频中，我们将开始给更正式的定义，什么是机器学习。然后我们会开始学习机器学习的主要问题和算法你会了解一些主要的机器学习的术语，并开始了解不同的算法，用哪种算法更合适。&lt;/p&gt;
+&lt;h2 id="12-机器学习是什么"&gt;1.2 机器学习是什么？&lt;a class="anchor" href="#12-%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e6%98%af%e4%bb%80%e4%b9%88"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-1---2---what-is-machine-learning_-7-minmkv"&gt;参考视频: 1 - 2 - What is Machine Learning_ (7 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-1---2---what-is-machine-learning_-7-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;机器学习是什么？在本视频中，我们会尝试着进行定义，同时让你懂得何时会使用机器学习。实际上，即使是在机器学习的专业人士中，也不存在一个被广泛认可的定义来准确定义机器学习是什么或不是什么，现在我将告诉你一些人们尝试定义的示例。第一个机器学习的定义来自于 Arthur Samuel。他定义机器学习为，在进行特定编程的情况下，给予计算机学习能力的领域。Samuel的定义可以回溯到50年代，他编写了一个西洋棋程序。这程序神奇之处在于，编程者自己并不是个下棋高手。但因为他太菜了，于是就通过编程，让西洋棋程序自己跟自己下了上万盘棋。通过观察哪种布局（棋盘位置）会赢，哪种布局会输，久而久之，这西洋棋程序明白了什么是好的布局，什么样是坏的布局。然后就牛逼大发了，程序通过学习后，玩西洋棋的水平超过了Samuel。这绝对是令人注目的成果。&lt;/p&gt;
+&lt;p&gt;尽管编写者自己是个菜鸟，但因为计算机有着足够的耐心，去下上万盘的棋，没有人有这耐心去下这么多盘棋。通过这些练习，计算机获得无比丰富的经验，于是渐渐成为了比Samuel 更厉害的西洋棋手。上述是个有点不正式的定义，也比较古老。另一个年代近一点的定义，由Tom Mitchell提出，来自卡内基梅隆大学，Tom定义的机器学习是，一个好的学习问题定义如下，他说，一个程序被认为能从经验E 中学习，解决任务T，达到性能度量值P，当且仅当，有了经验E后，经过P评判，程序在处理 T时的性能有所提升。我认为经验E 就是程序上万次的自我练习的经验而任务 T 就是下棋。性能度量值 P 呢，就是它在与一些新的对手比赛时，赢得比赛的概率。&lt;/p&gt;</description></item><item><title>第 2 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch02.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch02.html</guid><description>&lt;h1 id="第-2-周"&gt;第 2 周&lt;a class="anchor" href="#%e7%ac%ac-2-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="4-多变量线性回归-linear-regression-with-multiple-variables"&gt;4、 多变量线性回归 (Linear Regression with Multiple Variables)&lt;a class="anchor" href="#4-%e5%a4%9a%e5%8f%98%e9%87%8f%e7%ba%bf%e6%80%a7%e5%9b%9e%e5%bd%92-linear-regression-with-multiple-variables"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="41-多维特征"&gt;4.1 多维特征&lt;a class="anchor" href="#41-%e5%a4%9a%e7%bb%b4%e7%89%b9%e5%be%81"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-4---1---multiple-features-8-minmkv"&gt;参考视频: 4 - 1 - Multiple Features (8 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-4---1---multiple-features-8-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;目前为止，我们探讨了单变量/特征的回归模型，现在我们对房价模型增加更多的特征，例如房间数楼层等，构成一个含有多个变量的模型，模型中的特征为 $( x_{1} , x_{1} , \ldots , x_{n} )$ 。&lt;/p&gt;
+&lt;table&gt;&lt;tr&gt;&lt;td&gt;Size (feet2)&lt;/td&gt;&lt;td&gt;Number of bedrooms&lt;/td&gt;&lt;td&gt;Number of floors&lt;/td&gt;&lt;td&gt;Age of home (years)&lt;/td&gt;&lt;td&gt;Price ($1000)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2104&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;45&lt;/td&gt;&lt;td&gt;460&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;1416&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;40&lt;/td&gt;&lt;td&gt;232&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;1534&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;315&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;852&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt;178&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p&gt;增添更多特征后，我们引入一系列新的注释：&lt;/p&gt;
+&lt;p&gt;x 代表特征的数量&lt;/p&gt;
+&lt;p&gt;$x^{( i )}$ 代表第 m个训练实例，是特征矩阵中的第m行，是一个向量（vector）。&lt;/p&gt;
+&lt;p&gt;比方说，上图的&lt;/p&gt;
+$$
+x^{(2)} = \left[ \begin{array}{c} 1416 \\ 3 \\ 2 \\ 40 \end{array} \right],
+$$&lt;p&gt;$x_{j} ^{( i )} ,$ 代表特征矩阵中第 i 行的第 j 个特征，也就是第 m个训练实例的第 j 个特征。如上图的 $x_{2} ^{( 2 )} = 3 , x_{3} ^{( 2 )} = 2$&lt;/p&gt;</description></item><item><title>第 3 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch03.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch03.html</guid><description>&lt;h1 id="第-3-周"&gt;第 3 周&lt;a class="anchor" href="#%e7%ac%ac-3-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="6-逻辑回归logistic-regression"&gt;6、 逻辑回归(Logistic Regression)&lt;a class="anchor" href="#6-%e9%80%bb%e8%be%91%e5%9b%9e%e5%bd%92logistic-regression"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="61-分类问题"&gt;6.1 分类问题&lt;a class="anchor" href="#61-%e5%88%86%e7%b1%bb%e9%97%ae%e9%a2%98"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考文档-6---1---classification-8-minmkv"&gt;参考文档: 6 - 1 - Classification (8 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e6%96%87%e6%a1%a3-6---1---classification-8-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在这个以及接下来的几个视频中，开始介绍分类问题。&lt;/p&gt;
+&lt;p&gt;在分类问题中，你要预测的变量 $y$ 是离散的值，我们将学习一种叫做逻辑回归 (LogisticRegression) 的算法，这是目前最流行使用最广泛的一种学习算法。&lt;/p&gt;
+&lt;p&gt;在分类问题中，我们尝试预测的是结果是否属于某一个类（例如正确或错误）。分类问题的例子有：判断一封电子邮件是否是垃圾邮件；判断一次金融交易是否是欺诈；之前我们也谈到了肿瘤分类问题的例子，区别一个肿瘤是恶性的还是良性的。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-txt" data-lang="txt"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Classification
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;→ Email: Spam / Not Spam?
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;→ Online Transactions: Fraudulent (Yes / No)?
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;→ Tumor: Malignant / Benign ?&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们从二元的分类问题开始讨论。&lt;/p&gt;
+&lt;p&gt;我们将因变量(dependent variable)可能属于的两个类分别称为负向类（negative class）和正向类（positive class），则因变量 $y \in \ 0 , 1$ ，其中 0 表示负向类，1 表示正向类。&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/3f4ffb174d38bedece014186c7e12d37f997ab82320d7d22291dfb0c7268b3b7.jpg" alt="" /&gt;
+&lt;/p&gt;
+$$
+\text{Classification:} \quad y = 0 \text{or} 1
+$$$$
+\underbrace{h_{\theta} (x)} _{} \text{can be} &gt; 1 \text{or} &lt; 0
+$$$$
+\text{Logistic Regression:} \quad 0 \leq h_{\theta} (x) \leq 1
+$$&lt;p&gt;如果我们要用线性回归算法来解决一个分类问题，对于分类， $y$ 取值为 0 或者 1，但如果你使用的是线性回归，那么假设函数的输出值可能远大于 1，或者远小于 0，即使所有训练样本的标签 $y$ 都等于 0 或 1。尽管我们知道标签应该取值 0 或者 1，但是如果算法得到的值远大于1或者远小于0 的话，就会感觉很奇怪。所以我们在接下来的要研究的算法就叫做逻辑回归算法，这个算法的性质是：它的输出值永远在0到 1 之间。&lt;/p&gt;</description></item><item><title>第 4 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch04.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch04.html</guid><description>&lt;h1 id="第-4-周"&gt;第 4 周&lt;a class="anchor" href="#%e7%ac%ac-4-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="8-神经网络表述neural-networks-representation"&gt;8、 神经网络：表述(Neural Networks: Representation)&lt;a class="anchor" href="#8-%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e8%a1%a8%e8%bf%b0neural-networks-representation"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="81-非线性假设"&gt;8.1 非线性假设&lt;a class="anchor" href="#81-%e9%9d%9e%e7%ba%bf%e6%80%a7%e5%81%87%e8%ae%be"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-8---1---non-linear-hypotheses-10-minmkv"&gt;参考视频: 8 - 1 - Non-linear Hypotheses (10 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-8---1---non-linear-hypotheses-10-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;我们之前学的，无论是线性回归还是逻辑回归都有这样一个缺点，即：当特征太多时，计算的负荷会非常大。&lt;/p&gt;
+&lt;p&gt;下面是一个例子：&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/3c74abefa710371526c1375286665d2e1d0eb183f2bb2dc06ec6c72186c55515.jpg" alt="" /&gt;
+&lt;/p&gt;
+$$
+\begin{array}{l} \stackrel{{\check{\mathbf{g}}}} {{+}} (\theta_{0} + \theta_{1} x_{1} + \theta_{2} x_{2} \\ + \theta_{3} x_{1} x_{2} + \theta_{4} x_{1} ^{2} x_{2} \\ + \theta_{5} x_{1} ^{3} x_{2} + \overline{{\theta_{6} x_{1} x_{2} ^{2}}} + \dots) \end{array}
+$$&lt;p&gt;当我们使用 $x_{1}$ , $x_{2}$ 的多次项式进行预测时，我们可以应用的很好。&lt;/p&gt;
+&lt;p&gt;之前我们已经看到过，使用非线性的多项式项，能够帮助我们建立更好的分类模型。假设我们有非常多的特征，例如大于100个变量，我们希望用这 100 个特征来构建一个非线性的多项式模型，结果将是数量非常惊人的特征组合，即便我们只采用两两特征的组合 $( x_{1} x_{2} +$ $x_{1} x_{3} + x_{1} x_{4} + \ldots + x_{2} x_{3} + x_{2} x_{4} + \ldots + x_{99} x_{100} )$ ，我们也会有接近 5000 个组合而成的特征。这对于一般的逻辑回归来说需要计算的特征太多了。&lt;/p&gt;</description></item><item><title>第 5 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch05.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch05.html</guid><description>&lt;h1 id="第-5-周"&gt;第 5 周&lt;a class="anchor" href="#%e7%ac%ac-5-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="9-神经网络的学习neural-networks-learning"&gt;9、 神经网络的学习(Neural Networks: Learning)&lt;a class="anchor" href="#9-%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e7%9a%84%e5%ad%a6%e4%b9%a0neural-networks-learning"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="91-代价函数"&gt;9.1 代价函数&lt;a class="anchor" href="#91-%e4%bb%a3%e4%bb%b7%e5%87%bd%e6%95%b0"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-9---1---cost-function-7-minmkv"&gt;参考视频: 9 - 1 - Cost Function (7 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-9---1---cost-function-7-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;首先引入一些便于稍后讨论的新标记方法：&lt;/p&gt;
+&lt;p&gt;假设神经网络的训练样本有m个，每个包含一组输入x和一组输出信号y，L表示神经网络层数， $S_{I}$ 表示每层的 neuron个数 $( S_{l}$ 表示输出层神经元个数)， $S_{L}$ 代表最后一层中处理单元的个数。&lt;/p&gt;
+&lt;p&gt;将神经网络的分类定义为两种情况：二类分类和多类分类，&lt;/p&gt;
+&lt;p&gt;二类分类： $S_{L} = 0 , y = 0 o r$ 1表示哪一类；&lt;/p&gt;
+&lt;p&gt;K类分类： $S_{L} = k , y_{i} = 1$ 表示分到第i类； $( k &gt; 2 )$&lt;/p&gt;
+&lt;h2 id="neural-network-classification"&gt;Neural Network (Classification)&lt;a class="anchor" href="#neural-network-classification"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src="images/48615deee2f575f6ac624dfd180d34e9c9a90e3eeafa47fba134be58d8b71498.jpg" alt="" /&gt;
+&lt;/p&gt;
+&lt;p&gt;1 output unit&lt;/p&gt;
+$$
+\{(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), \dots , (x^{(m)}, y^{(m)}) \}
+$$$$
+\begin{array}{l l} s_{l} = &amp; \text{no. of units (not counting bias unit) in} \\ &amp; \text{layer} l \end{array}
+$$$$
+\begin{array}{l} \underline{{\text{Multi - class classification(K classes)}}} \\ y \in \mathbb{R} ^{K} \text{E.g.} \left[ \begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \end{array} \right], \left[ \begin{array}{c} 0 \\ 1 \\ 0 \\ 0 \end{array} \right], \left[ \begin{array}{c} 0 \\ 0 \\ 1 \\ 0 \end{array} \right], \left[ \begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \end{array} \right] \\ \text{pedestrian car motorcycle truck} \end{array}
+$$&lt;p&gt;K output units&lt;/p&gt;</description></item><item><title>第 6 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch06.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch06.html</guid><description>&lt;h1 id="第-6-周"&gt;第 6 周&lt;a class="anchor" href="#%e7%ac%ac-6-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="10-应用机器学习的建议-advice-for-applying-machine-learning"&gt;10、 应用机器学习的建议 (Advice for Applying Machine Learning)&lt;a class="anchor" href="#10-%e5%ba%94%e7%94%a8%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e7%9a%84%e5%bb%ba%e8%ae%ae-advice-for-applying-machine-learning"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="101-决定下一步做什么"&gt;10.1 决定下一步做什么&lt;a class="anchor" href="#101-%e5%86%b3%e5%ae%9a%e4%b8%8b%e4%b8%80%e6%ad%a5%e5%81%9a%e4%bb%80%e4%b9%88"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-10---1---deciding-what-to-try-next-6-minmkv"&gt;参考视频: 10 - 1 - Deciding What to Try Next (6 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-10---1---deciding-what-to-try-next-6-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;到目前为止，我们已经介绍了许多不同的学习算法，如果你一直跟着这些视频的进度学习，你会发现自己已经不知不觉地成为一个了解许多先进机器学习技术的专家了。&lt;/p&gt;
+&lt;p&gt;然而，在懂机器学习的人当中依然存在着很大的差距，一部分人确实掌握了怎样高效有力地运用这些学习算法。而另一些人他们可能对我马上要讲的东西，就不是那么熟悉了。他们可能没有完全理解怎样运用这些算法。因此总是把时间浪费在毫无意义的尝试上。我想做的是确保你在设计机器学习的系统时，你能够明白怎样选择一条最合适、最正确的道路。因此，在这节视频和之后的几段视频中，我将向你介绍一些实用的建议和指导，帮助你明白怎样进行选择。具体来讲，我将重点关注的问题是假如你在开发一个机器学习系统，或者想试着改进一个机器学习系统的性能，你应如何决定接下来应该选择哪条道路？为了解释这一问题，我想仍然使用预测房价的学习例子，假如你已经完成了正则化线性回归，也就是最小化代价函数J的值，假如，在你得到你的学习参数以后，如果你要将你的假设函数放到一组新的房屋样本上进行测试，假如说你发现在预测房价时产生了巨大的误差，现在你的问题是要想改进这个算法，接下来应该怎么办？&lt;/p&gt;
+&lt;p&gt;实际上你可以想出很多种方法来改进这个算法的性能，其中一种办法是使用更多的训练样本。具体来讲，也许你能想到通过电话调查或上门调查来获取更多的不同的房屋出售数据。遗憾的是，我看到好多人花费了好多时间想收集更多的训练样本。他们总认为，要是我有两倍甚至十倍数量的训练数据，那就一定会解决问题的是吧？但有时候获得更多的训练数据实际上并没有作用。在接下来的几段视频中，我们将解释原因。&lt;/p&gt;
+&lt;p&gt;我们也将知道怎样避免把过多的时间浪费在收集更多的训练数据上，这实际上是于事无补的。另一个方法，你也许能想到的是尝试选用更少的特征集。因此如果你有一系列特征比如 $\vert x_{1} , x_{2} , x_{3}$ 等等。也许有很多特征，也许你可以花一点时间从这些特征中仔细挑选一小部分来防止过拟合。或者也许你需要用更多的特征，也许目前的特征集，对你来讲并不是很有帮助。你希望从获取更多特征的角度来收集更多的数据，同样地，你可以把这个问题扩展为一个很大的项目，比如使用电话调查来得到更多的房屋案例，或者再进行土地测量来获得更多有关，这块土地的信息等等，因此这是一个复杂的问题。同样的道理，我们非常希望在花费大量时间完成这些工作之前，我们就能知道其效果如何。我们也可以尝试增加多项式特征的方法， $\mathbb{E} \mathbb{H} x_{1}$ 的平方， $x_{2}$ 的平方， $x_{1} , x_{2}$ 的乘积，我们可以花很多时间来考虑这一方法，我们也可以考虑其他方法减小或增大正则化参数λ的值。我们列出的这个单子，上面的很多方法都可以扩展开来扩展成一个六个月或更长时间的项目。遗憾的是，大多数人用来选择这些方法的标准是凭感觉的，也就是说，大多数人的选择方法是随便从这些方法中选择一种，比如他们会说“噢，我们来多找点数据吧”，然后花上六个月的时间收集了一大堆数据，然后也许另一个人说：“好吧，让我们来从这些房子的数据中多找点特征吧”。我很遗憾不止一次地看到很多人花了至少六个月时间来完成他们随便选择的一种方法，而在六个月或者更长时间后，他们很遗憾地发现自己选择的是一条不归路。幸运的是，有一系列简单的方法能让你事半功倍，排除掉单子上的至少一半的方法，留下那些确实有前途的方法，同时也有一种很简单的方法，只要你使用，就能很轻松地排除掉很多选择，从而为你节省大量不必要花费的时间。最终达到改进机器学习系统性能的目的假设我们需要用一个线性回归模型来预测房价，当我们运用训练好了的模型来预测未知数据的时候发现有较大的误差，我们下一步可以做什么？&lt;/p&gt;
+&lt;p&gt;获得更多的训练实例——通常是有效的，但代价较大，下面的方法也可能有效，可考虑先采用下面的几种方法。&lt;/p&gt;
+&lt;p&gt;1.尝试减少特征的数量&lt;/p&gt;
+&lt;p&gt;2.尝试获得更多的特征&lt;/p&gt;
+&lt;p&gt;3.尝试增加多项式特征&lt;/p&gt;
+&lt;p&gt;4.尝试减少正则化程度λ&lt;/p&gt;
+&lt;p&gt;5.尝试增加正则化程度λ&lt;/p&gt;
+&lt;p&gt;我们不应该随机选择上面的某种方法来改进我们的算法，而是运用一些机器学习诊断法来帮助我们知道上面哪些方法对我们的算法是有效的。&lt;/p&gt;
+&lt;p&gt;在接下来的两段视频中，我首先介绍怎样评估机器学习算法的性能，然后在之后的几段视频中，我将开始讨论这些方法，它们也被称为&amp;quot;机器学习诊断法&amp;quot;。“诊断法”的意思是：这是一种测试法，你通过执行这种测试，能够深入了解某种算法到底是否有用。这通常也能够告诉你，要想改进一种算法的效果，什么样的尝试，才是有意义的。在这一系列的视频中我们将介绍具体的诊断法，但我要提前说明一点的是，这些诊断法的执行和实现，是需要花些时间的，有时候确实需要花很多时间来理解和实现，但这样做的确是把时间用在了刀刃上，因为这些方法让你在开发学习算法时，节省了几个月的时间，因此，在接下来几节课中，我将先来介绍如何评价你的学习算法。&lt;/p&gt;
+&lt;p&gt;在此之后，我将介绍一些诊断法，希望能让你更清楚。在接下来的尝试中，如何选择更有意义的方法。&lt;/p&gt;
+&lt;h2 id="102-评估一个假设"&gt;10.2 评估一个假设&lt;a class="anchor" href="#102-%e8%af%84%e4%bc%b0%e4%b8%80%e4%b8%aa%e5%81%87%e8%ae%be"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-10---2---evaluating-a-hypothesis-8-minmkv"&gt;参考视频: 10 - 2 - Evaluating a Hypothesis (8 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-10---2---evaluating-a-hypothesis-8-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在本节视频中我想介绍一下怎样用你学过的算法来评估假设函数。在之后的课程中，我们将以此为基础来讨论如何避免过拟合和欠拟合的问题。&lt;/p&gt;
+&lt;p&gt;Evaluating your hypothesis&lt;br&gt;
+&lt;img src="images/3df03a4d14ded45f5c79c66e0741ac45d97a91d9d5091e48e0bda749e8a7849c.jpg" alt="" /&gt;
+&lt;/p&gt;</description></item><item><title>第 7 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch07.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch07.html</guid><description>&lt;h1 id="第-7-周"&gt;第 7 周&lt;a class="anchor" href="#%e7%ac%ac-7-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="12-支持向量机support-vector-machines"&gt;12、 支持向量机(Support Vector Machines)&lt;a class="anchor" href="#12-%e6%94%af%e6%8c%81%e5%90%91%e9%87%8f%e6%9c%basupport-vector-machines"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="121-优化目标"&gt;12.1 优化目标&lt;a class="anchor" href="#121-%e4%bc%98%e5%8c%96%e7%9b%ae%e6%a0%87"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-12---1---optimization-objective-15-minmkv"&gt;参考视频: 12 - 1 - Optimization Objective (15 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-12---1---optimization-objective-15-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;到目前为止,你已经见过一系列不同的学习算法。在监督学习中，许多学习算法的性能都非常类似，因此，重要的不是你该选择使用学习算法 A 还是学习算法 B，而更重要的是，应用这些算法时，所创建的大量数据在应用这些算法时，表现情况通常依赖于你的水平。比如：你为学习算法所设计的特征量的选择，以及如何选择正则化参数，诸如此类的事。还有一个更加强大的算法广泛的应用于工业界和学术界，它被称为支持向量机(Support VectorMachine)。与逻辑回归和神经网络相比，支持向量机，或者简称 SVM，在学习复杂的非线性方程时提供了一种更为清晰，更加强大的方式。因此，在接下来的视频中，我会探讨这一算法。在稍后的课程中，我也会对监督学习算法进行简要的总结。当然，仅仅是作简要描述。但对于支持向量机，鉴于该算法的强大和受欢迎度，在本课中，我会花许多时间来讲解它。它也是我们所介绍的最后一个监督学习算法。&lt;/p&gt;
+&lt;p&gt;正如我们之前开发的学习算法，我们从优化目标开始。那么，我们开始学习这个算法。为了描述支持向量机，事实上，我将会从逻辑回归开始展示我们如何一点一点修改来得到本质上的支持向量机。&lt;/p&gt;
+&lt;h2 id="alternative-view-of-logistic-regression"&gt;Alternative view of logistic regression&lt;a class="anchor" href="#alternative-view-of-logistic-regression"&gt;#&lt;/a&gt;&lt;/h2&gt;
+$$
+\rightarrow h_{\theta} (x) = \frac{1}{1 + e^{- \theta^{T} x}}
+$$&lt;p&gt;&lt;img src="images/2a1be2e3bc62cfdcb7f152f0ce19eb11b37c1d4883306247dc741069929f1129.jpg" alt="" /&gt;
+&lt;/p&gt;
+&lt;p&gt;If y = 1, we want $h_{\theta} ( x ) \approx 1 , \theta^{T} x \gg 0$&lt;/p&gt;
+&lt;p&gt;If y = 0, we want $h_{\theta} ( x ) \approx 0 , \theta^{T} x \ll 0$&lt;/p&gt;</description></item><item><title>第 8 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch08.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch08.html</guid><description>&lt;h1 id="第-8-周"&gt;第 8 周&lt;a class="anchor" href="#%e7%ac%ac-8-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="13-聚类clustering"&gt;13、 聚类(Clustering)&lt;a class="anchor" href="#13-%e8%81%9a%e7%b1%bbclustering"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="131-无监督学习简介"&gt;13.1 无监督学习：简介&lt;a class="anchor" href="#131-%e6%97%a0%e7%9b%91%e7%9d%a3%e5%ad%a6%e4%b9%a0%e7%ae%80%e4%bb%8b"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-13---1---unsupervised-learning_-introduction-3-minmkv"&gt;参考视频: 13 - 1 - Unsupervised Learning_ Introduction (3 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-13---1---unsupervised-learning_-introduction-3-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在这个视频中，我将开始介绍聚类算法。这将是一个激动人心的时刻，因为这是我们学习的第一个非监督学习算法。我们将要让计算机学习无标签数据，而不是此前的标签数据。&lt;/p&gt;
+&lt;p&gt;那么，什么是非监督学习呢？在课程的一开始，我曾简单地介绍过非监督学习，然而，我们还是有必要将其与监督学习做一下比较。&lt;/p&gt;
+&lt;p&gt;在一个典型的监督学习中，我们有一个有标签的训练集，我们的目标是找到能够区分正样本和负样本的决策边界，在这里的监督学习中，我们有一系列标签，我们需要据此拟合一个假设函数。与此不同的是，在非监督学习中，我们的数据没有附带任何标签，我们拿到的数据就是这样的：&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/e838ceb61b1351eedfb9cb86d1c8f0661f48c015a3ff0d93d887cd7dc35d1b0e.jpg" alt="" /&gt;
+&lt;/p&gt;
+$$
+\{x^{(1)}, x^{(2)}, x^{(3)}, \dots , x^{(m)} \} \leftarrow
+$$&lt;p&gt;在这里我们有一系列点，却没有标签。因此，我们的训练集可以写成只有 ${\bf \dot{\chi}} ^{( 1 )} , x^{( 2 )} . . . . . ^{-}$ 直到 $x^{(m)}$。我们没有任何标签$y$。因此，图上画的这些点没有标签信息。也就是说，在非监督学习中，我们需要将一系列无标签的训练数据，输入到一个算法中，然后我们告诉这个算法，快去为我们找找这个数据的内在结构给定数据。我们可能需要某种算法帮助我们寻找一种结构。图上的数据看起来可以分成两个分开的点集（称为簇），一个能够找到我圈出的这些点集的算法，就被称为聚类算法。&lt;/p&gt;
+&lt;h2 id="unsupervised-learning"&gt;Unsupervised learning&lt;a class="anchor" href="#unsupervised-learning"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src="images/f841879bd16b65c78e79a0af9f5de595d6645bd0330600aab96ef3ba7743ab2a.jpg" alt="" /&gt;
+&lt;br&gt;
+Training set: $\{x^{( 1 )} , x^{( 2 )} , x^{( 3 )} , \ldots , x^{( m )} \} \subset$&lt;/p&gt;</description></item><item><title>第 9 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch09.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch09.html</guid><description>&lt;h1 id="第-9-周"&gt;第 9 周&lt;a class="anchor" href="#%e7%ac%ac-9-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="15-异常检测anomaly-detection"&gt;15、 异常检测(Anomaly Detection)&lt;a class="anchor" href="#15-%e5%bc%82%e5%b8%b8%e6%a3%80%e6%b5%8banomaly-detection"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="151-问题的动机"&gt;15.1 问题的动机&lt;a class="anchor" href="#151-%e9%97%ae%e9%a2%98%e7%9a%84%e5%8a%a8%e6%9c%ba"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考文档-15---1---problem-motivation-8-minmkv"&gt;参考文档: 15 - 1 - Problem Motivation (8 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e6%96%87%e6%a1%a3-15---1---problem-motivation-8-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在接下来的一系列视频中，我将向大家介绍异常检测(Anomaly detection)问题。这是机器学习算法的一个常见应用。这种算法的一个有趣之处在于：它虽然主要用于非监督学习问题，但从某些角度看，它又类似于一些监督学习问题。&lt;/p&gt;
+&lt;p&gt;什么是异常检测呢？为了解释这个概念，让我举一个例子吧：&lt;/p&gt;
+&lt;p&gt;假想你是一个飞机引擎制造商，当你生产的飞机引擎从生产线上流出时，你需要进行QA(质量控制测试)，而作为这个测试的一部分，你测量了飞机引擎的一些特征变量，比如引擎运转时产生的热量，或者引擎的振动等等。&lt;/p&gt;
+&lt;div class="mineru-algorithm" style="white-space: pre-wrap; font-family:monospace;"&gt;
+Anomaly detection example
+Aircraft engine features:
+→ $x_{1}$ = heat generated
+→ $x_{2}$ = vibration intensity
+Dataset: $\{x^{(1)}, x^{(2)}, \ldots, x^{(m)}\}$
+&lt;/div&gt;
+&lt;p&gt;这样一来，你就有了一个数据集，从 $x^{(1)}$ 到 $x^{(m)}$，如果你生产了$m$个引擎的话，你将这些数据绘制成图表，看起来就是这个样子：&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/29eb8cb40f649aa270367c9222d646a126ae4f900ee3990875ac47f491400576.jpg" alt="" /&gt;
+&lt;/p&gt;
+&lt;p&gt;这里的每个点、每个叉，都是你的无标签数据。这样，异常检测问题可以定义如下：我们假设后来有一天，你有一个新的飞机引擎从生产线上流出，而你的新飞机引擎有特征变量$x_{t e s t}$ 。所谓的异常检测问题就是：我们希望知道这个新的飞机引擎是否有某种异常，或者说，我们希望判断这个引擎是否需要进一步测试。因为，如果它看起来像一个正常的引擎，那么我们可以直接将它运送到客户那里，而不需要进一步的测试。&lt;/p&gt;
+&lt;p&gt;给定数据集 ${x^{( 1 )} , x^{( 2 )} , . . , x^{( m )}}$ ，我们假使数据集是正常的，我们希望知道新的数据 $x_{t e s t}$ 是不是异常的，即这个测试数据不属于该组数据的几率如何。我们所构建的模型应该能根据该测试数据的位置告诉我们其属于一组数据的可能性 $p ( x )$&lt;/p&gt;</description></item><item><title>第 10 周</title><link>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch10.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stanford-ml-notes/ch10.html</guid><description>&lt;h1 id="第-10-周"&gt;第 10 周&lt;a class="anchor" href="#%e7%ac%ac-10-%e5%91%a8"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="17-大规模机器学习large-scale-machine-learning"&gt;17、 大规模机器学习(Large Scale Machine Learning)&lt;a class="anchor" href="#17-%e5%a4%a7%e8%a7%84%e6%a8%a1%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0large-scale-machine-learning"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="171-大型数据集的学习"&gt;17.1 大型数据集的学习&lt;a class="anchor" href="#171-%e5%a4%a7%e5%9e%8b%e6%95%b0%e6%8d%ae%e9%9b%86%e7%9a%84%e5%ad%a6%e4%b9%a0"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-17---1---learning-with-large-datasets-6-minmkv"&gt;参考视频: 17 - 1 - Learning With Large Datasets (6 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-17---1---learning-with-large-datasets-6-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;如果我们有一个低方差的模型，增加数据集的规模可以帮助你获得更好的结果。我们应该怎样应对一个有100万条记录的训练集？&lt;/p&gt;
+&lt;p&gt;以线性回归模型为例，每一次梯度下降迭代，我们都需要计算训练集的误差的平方和，如果我们的学习算法需要有 20次迭代，这便已经是非常大的计算代价。&lt;/p&gt;
+&lt;p&gt;首先应该做的事是去检查一个这么大规模的训练集是否真的必要，也许我们只用 1000个训练集也能获得较好的效果，我们可以绘制学习曲线来帮助判断。&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/c9b2e473060df597823290c19914d9fbf72671a908c751110d37cdc92ff8eaae.jpg" alt="" /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/16d84da8e2f654f32e8b436d42c580a92f4d1b6b6a8a9953419c0e480dbb665f.jpg" alt="" /&gt;
+&lt;/p&gt;
+&lt;h2 id="172-随机梯度下降法"&gt;17.2 随机梯度下降法&lt;a class="anchor" href="#172-%e9%9a%8f%e6%9c%ba%e6%a2%af%e5%ba%a6%e4%b8%8b%e9%99%8d%e6%b3%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-17---2---stochastic-gradient-descent-13-minmkv"&gt;参考视频: 17 - 2 - Stochastic Gradient Descent (13 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-17---2---stochastic-gradient-descent-13-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;如果我们一定需要一个大规模的训练集，我们可以尝试使用随机梯度下降法（SGD）来代替批量梯度下降法。&lt;/p&gt;
+&lt;p&gt;在随机梯度下降法中，我们定义代价函数为一个单一训练实例的代价：&lt;/p&gt;
+&lt;div class="mineru-algorithm" style="white-space: pre-wrap; font-family:monospace;"&gt;
+$cost\left(\theta,(x^{(i)},y^{(i)})\right)=\frac{1}{2}\left(h_{\theta}(x^{(i)})-y^{(i)}\right)^{2}$ 
+随机梯度下降算法为：首先对训练集随机“洗牌”，然后：
+Repeat (usually anywhere between 1-10){for i=1:m{θ:=θj-α(hθ(x(i))-y(i)xj(i)
+ (for j=0:n)}}
+&lt;/div&gt;
+&lt;p&gt;随机梯度下降算法在每一次计算之后便更新参数 θ ，而不需要首先将所有的训练集求和，在梯度下降算法还没有完成一次迭代时，随机梯度下降算法便已经走出了很远。但是这样的算法存在的问题是，不是每一步都是朝着”正确”的方向迈出的。因此算法虽然会逐渐走向全局最小值的位置，但是可能无法站到那个最小值的那一点，而是在最小值点附近徘徊。&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/b45757ffd54985fd0044d339d1edf60873cf1c2aa1be732e8cf2aae85cb8feb1.jpg" alt="" /&gt;
+&lt;/p&gt;
+&lt;h2 id="173-小批量梯度下降"&gt;17.3 小批量梯度下降&lt;a class="anchor" href="#173-%e5%b0%8f%e6%89%b9%e9%87%8f%e6%a2%af%e5%ba%a6%e4%b8%8b%e9%99%8d"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="参考视频-17---3---mini-batch-gradient-descent-6-minmkv"&gt;参考视频: 17 - 3 - Mini-Batch Gradient Descent (6 min).mkv&lt;a class="anchor" href="#%e5%8f%82%e8%80%83%e8%a7%86%e9%a2%91-17---3---mini-batch-gradient-descent-6-minmkv"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;小批量梯度下降算法是介于批量梯度下降算法和随机梯度下降算法之间的算法，每计算常数b次训练实例，便更新一次参数 θ 。&lt;/p&gt;</description></item></channel></rss>

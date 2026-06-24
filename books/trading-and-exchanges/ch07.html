@@ -1,0 +1,1501 @@
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Chapter 7: Brokers# Brokers are agents who arrange trades for their clients. Unlike dealers, who trade with their clients, brokers trade their clients' orders. Clients usually pay brokers commissions for their services.
+Many brokers are also financial advisers who advise their clients about their investments or their financial plans. They may also provide their clients with investment information. In these capacities, they often influence the trading decisions that their clients make.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch07.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="Chapter 7: Brokers"><meta property="og:description" content="Chapter 7: Brokers# Brokers are agents who arrange trades for their clients. Unlike dealers, who trade with their clients, brokers trade their clients' orders. Clients usually pay brokers commissions for their services.
+Many brokers are also financial advisers who advise their clients about their investments or their financial plans. They may also provide their clients with investment information. In these capacities, they often influence the trading decisions that their clients make."><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-24T12:05:09+08:00"><meta itemprop=name content="Chapter 7: Brokers"><meta itemprop=description content="Chapter 7: Brokers# Brokers are agents who arrange trades for their clients. Unlike dealers, who trade with their clients, brokers trade their clients' orders. Clients usually pay brokers commissions for their services.
+Many brokers are also financial advisers who advise their clients about their investments or their financial plans. They may also provide their clients with investment information. In these capacities, they often influence the trading decisions that their clients make."><meta itemprop=dateModified content="2026-06-24T12:05:09+08:00"><meta itemprop=wordCount content="18120"><title>Chapter 7: Brokers • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch07.html><link rel=stylesheet href=/digital-library/book.min.0ebbbe4438e0f38f4e45a977d6b9482eb2e03ce18bcc87c615e90789f13ae152.css integrity="sha256-Dru+RDjg849ORal31rlILrLgPOGLzIfGFekHifE64VI=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.e6e45bba8cd14952ab2084fbaf2fb195d14a78db06bea816dfe3b04960be6a41.js integrity="sha256-5uRbuozRSVKrIIT7ry+xldFKeNsGvqgW3+OwSWC+akE=" crossorigin=anonymous></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){window.renderMathInElement&&renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"\\(",right:"\\)",display:!1},{left:"$",right:"$",display:!1}],ignoredTags:["script","noscript","style","textarea","pre","code"],ignoredClasses:["pseudocode"],throwOnError:!1}),window.pseudocode&&document.querySelectorAll("pre.pseudocode").forEach(function(e){try{pseudocode.renderElement(e,{lineNumber:!1})}catch(t){console.error("pseudocode error:",t,e)}})})</script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/digital-library/index.html><span>Yuan's Library</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=搜索 aria-label=搜索 maxlength=64>
+<kbd class=book-search-kbd>⌘K</kbd><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/digital-library/books/index.html>书架</a></li><li><input type=checkbox id=section-b84eb733ddee6e8ed06bd1c62202d476 class=toggle checked>
+<label for=section-b84eb733ddee6e8ed06bd1c62202d476 class=flex><a href=/digital-library/books/trading-and-exchanges/index.html>Trading and Exchanges</a>
+<img src=/digital-library/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/digital-library/books/trading-and-exchanges/ch01.html>Chapter 1: Introduction</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch02.html>Chapter 2: Trading Stories</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch03.html>Chapter 3: The Trading Industry</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch04.html>Chapter 4: Orders and Order Properties</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch05.html>Chapter 5: Market Structures</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch06.html>Chapter 6: Order-Driven Markets</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch07.html class=active>Chapter 7: Brokers</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch08.html>Chapter 8: Why People Trade</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch09.html>Chapter 9: Good Markets</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch10.html>Chapter 10: Informed Traders and Market Efficiency</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch11.html>Chapter 11: Order Anticipators</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch12.html>Chapter 12: Bluffers and Market Manipulation</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch13.html>Chapter 13: Dealers</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch14.html>Chapter 14: Bid/Ask Spreads</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch15.html>Chapter 15: Block Traders</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch16.html>Chapter 16: Value Traders</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch17.html>Chapter 17: Arbitrageurs</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch18.html>Chapter 18: Buy-Side Traders</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch19.html>Chapter 19: Liquidity</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch20.html>Chapter 20: Volatility</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch21.html>Chapter 21: Liquidity and Transaction Cost measurement</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch22.html>Chapter 22: Performance Evaluation and Prediction</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch23.html>Chapter 23: Index and Portfolio Markets</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch24.html>Chapter 24: Specialists</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch25.html>Chapter 25: Internalization, Preferencing, and Crossing</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch26.html>Chapter 26: Competition Within and Among Markets</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch27.html>Chapter 27: Floor Versus Automated Trading Systems</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch28.html>Chapter 28: Bubbles, Crashes, and Circuit Breakers</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch29.html>Chapter 29: Insider Trading</a></li><li><a href=/digital-library/books/trading-and-exchanges/index_term.html>Index</a></li><li><a href=/digital-library/books/trading-and-exchanges/references.html>References</a></li></ul></li><li><a href=/digital-library/notes.html>欢迎</a></li><li><a href=/digital-library/papers/index.html>论文</a></li><li><a href=/digital-library/reference/index.html>元素模板</a></li><li><a href=/digital-library/tags/index.html>Tags</a></li></ul><ul><li><a href=https://github.com/yuanuite/digital-library target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/digital-library/icons/menu.svg class=book-icon alt=Menu></label><h3>Chapter 7: Brokers</h3><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#71-what-brokers-do>7.1 WHAT BROKERS DO</a><ul><li><a href=#711-clearing-and-settlement-among-traders>7.1.1 Clearing and Settlement Among Traders</a></li><li><a href=#712-brokers-provide-access-to-exchanges>7.1.2 Brokers Provide Access to Exchanges</a><ul><li><a href=#7121-clearing-and-settlement-at-exchanges>7.1.2.1 Clearing and Settlement at Exchanges</a></li><li><a href=#7122-floor-based-trading-skills>7.1.2.2 Floor-based Trading Skills</a></li></ul></li><li><a href=#713-brokers-provide-access-to-dealers>7.1.3 Brokers Provide Access to Dealers</a></li><li><a href=#714-brokers-are-expert-traders>7.1.4 Brokers Are Expert Traders</a><ul><li><a href=#7141-block-brokers>7.1.4.1 Block Brokers</a></li><li><a href=#7142-better-negotiators>7.1.4.2 Better Negotiators</a></li><li><a href=#7143-brokers-provide-order-exposure-management>7.1.4.3 Brokers Provide Order Exposure Management</a></li></ul></li><li><a href=#715-brokers-represent-limit-orders>7.1.5 Brokers Represent Limit Orders</a></li><li><a href=#716-summary>7.1.6 Summary</a></li></ul></li><li><a href=#72-the-structure-of-a-brokerage-firm>7.2 THE STRUCTURE OF A BROKERAGE FIRM</a><ul><li><a href=#721-front-office-operations>7.2.1 Front Office Operations</a></li><li><a href=#722-back-office-operations>7.2.2 Back Office Operations</a><ul><li><a href=#7221-accounting-systems>7.2.2.1 Accounting Systems</a></li><li><a href=#7222-corporate-reorganizations>7.2.2.2 Corporate Reorganizations</a></li><li><a href=#7223-market-data-and-order-routing-systems>7.2.2.3 Market Data and Order-routing Systems</a></li><li><a href=#7224-credit-management>7.2.2.4 Credit Management</a></li><li><a href=#7225-compliance>7.2.2.5 Compliance</a></li></ul></li><li><a href=#723-proprietary-operations>7.2.3 Proprietary Operations</a><ul><li><a href=#7231-cash-management-and-stock-lending-and-borrowing>7.2.3.1 Cash Management and Stock Lending and Borrowing</a></li><li><a href=#7232-risk-management>7.2.3.2 Risk Management</a></li></ul></li></ul></li><li><a href=#73-broker-profitability>7.3 BROKER PROFITABILITY</a><ul><li><a href=#731-revenues>7.3.1 Revenues</a><ul><li><a href=#7311-commissions>7.3.1.1 Commissions</a></li><li><a href=#7312-payments-for-order-flow>7.3.1.2 Payments for Order Flow</a></li><li><a href=#7313-interest>7.3.1.3 Interest</a></li><li><a href=#7314-short-interest-rebate>7.3.1.4 Short Interest Rebate</a></li><li><a href=#7315-underwriting-fees>7.3.1.5 Underwriting Fees</a></li><li><a href=#7316-merger-and-acquisition-fees>7.3.1.6 Merger and Acquisition Fees</a></li><li><a href=#7317-security-lending-fees>7.3.1.7 Security Lending Fees</a></li></ul></li><li><a href=#732-costs>7.3.2 Costs</a></li></ul></li><li><a href=#74-the-principal-agent-problem>7.4 THE PRINCIPAL-AGENT PROBLEM</a><ul><li><a href=#741-performance-measurement>7.4.1 Performance Measurement</a></li><li><a href=#742-best-execution>7.4.2 Best Execution</a></li><li><a href=#743-the-dual-trading-problem>7.4.3 The Dual Trading Problem</a></li><li><a href=#744-order-preferencing>7.4.4 Order Preferencing</a><ul><li><a href=#7441-the-order-preferencing-problem>7.4.4.1 The Order-Preferencing Problem</a></li><li><a href=#7442-best-execution-standards>7.4.4.2 Best Execution Standards</a></li></ul></li></ul></li><li><a href=#75-dishonest-brokers>7.5 DISHONEST BROKERS</a><ul><li><a href=#751-front-running>7.5.1 Front Running</a></li><li><a href=#752-inappropriate-order-exposure>7.5.2 Inappropriate Order Exposure</a></li><li><a href=#753-fraudulent-trade-assignment>7.5.3 Fraudulent Trade Assignment</a></li><li><a href=#754-prearranged-trading-and-kickback-schemes>7.5.4 Prearranged Trading and Kickback Schemes</a></li><li><a href=#755-unauthorized-trading-and-churning>7.5.5 Unauthorized Trading and Churning</a></li><li><a href=#756-securities-theft>7.5.6 Securities Theft</a><ul><li><a href=#7561-securities-in-street-name>7.5.6.1 Securities in Street Name</a></li><li><a href=#7562-brokerage-bankruptcies>7.5.6.2 Brokerage Bankruptcies</a></li></ul></li><li><a href=#757-summary>7.5.7 Summary</a></li></ul></li><li><a href=#76-summary>7.6 SUMMARY</a></li><li><a href=#77-some-points-to-remember>7.7 SOME POINTS TO REMEMBER</a></li><li><a href=#78-questions-for-thought>7.8 QUESTIONS FOR THOUGHT</a></li><li><a href=#part-ii-the-benefits-of-trade>Part II: The Benefits of Trade</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=chapter-7-brokers>Chapter 7: Brokers<a class=anchor href=#chapter-7-brokers>#</a></h1><p><em>Brokers</em> are agents who arrange trades for their clients. Unlike
+dealers, who trade with their clients, brokers trade their clients'
+orders. Clients usually pay brokers <em>commissions</em> for their services.</p><p>Many brokers are also <em>financial advisers</em> who advise their clients
+about their investments or their financial plans. They may also provide
+their clients with investment information. In these capacities, they
+often influence the trading decisions that their clients make.</p><p>Unless you arrange your own trades, you will use the services of a
+broker when you implement your trading strategies. You therefore must
+understand what brokers can do for you---and to you---in order to trade
+effectively. This chapter describes what brokers do and the problems
+that traders may have with lazy or dishonest brokers.</p><p>You also need to know what brokers do if you want to be a broker
+yourself. The discussions in this chapter will allow you to better
+understand how brokers compete with each other for business, and how the
+best brokers win these competitions.</p><p>You must understand what brokers do in order to predict when electronic
+order-matching systems will be successful. Automated order-driven
+execution systems are essentially electronic brokers. Since traditional
+brokers and electronic order-matching systems both match buyers to
+sellers, they compete with each other. To fully understand either
+system, you must understand the economics of both trading systems.</p><p>Finally, you must understand what brokers do if you are interested in
+the distinctions that regulators make between automated order-driven
+execution systems and traditional brokers. Some automated order-driven
+execution systems are regulated as exchanges, whereas other nearly
+identical systems are regulated as brokers. If you are interested in
+these distinctions, you must ask how the order matching done by
+traditional brokers differs from the order matching done by automated
+systems.</p><p>We begin this chapter by considering how brokers serve their clients,
+how they organize their operations, and what determines their profits.
+We then discuss how the most important management problem---the
+principal-agent problem---affects brokers and their clients. The chapter
+closes with a discussion of problems that traders can have with
+dishonest brokers, and how traders can prevent these problems.</p><h2 id=71-what-brokers-do>7.1 WHAT BROKERS DO<a class=anchor href=#71-what-brokers-do>#</a></h2><p>Brokers arrange trades for their clients. They search for traders who
+are willing to trade with their clients; they represent their clients at
+exchanges; they arrange for dealers to fill their clients' orders; they
+introduce their clients to electronic trading systems; and they match
+their clients' buy and sell orders.</p><p><strong>TABLE 7-1.</strong><br>Types of Brokered Transactions</p><p><img src=images/00056.jpeg alt=Image></p><p>Brokers conduct these activities in various types of markets. In <em>order
+flow markets</em>, brokers take orders that their clients give them and
+match them with orders and quotes made by other traders. Exchanges,
+dealers, or the brokers themselves may operate these markets. Brokers
+generally search for the best price only among traders who are willing
+to display their limit orders and quotes in these markets. In <em>block
+markets</em>, brokers take large client orders and try to find other traders
+to fill them. Brokers often must search among traders who have not
+expressed interest in trading to discover those traders who are willing
+to trade. In <em>offering markets</em>, brokers distribute new issues and
+seasoned issues to traders. Brokers often must market these securities
+to generate buyer interest. Finally, in <em>merger and acquisition
+markets</em>, brokers help firms buy other firms. Brokerage firms that
+engage in large capital transactions are called <em>investment banks.</em>
+<a href=#part0015.html_ch07tab1>Table 7-1</a> summarizes the different
+types of brokered transactions.</p><p>Only the largest investment banks operate in all types of markets. Most
+brokerage firms specialize in only one or two of these markets.</p><p>In all markets, brokers are their clients' agents. Their clients tell
+them what trades they want to make, and under what terms they will
+trade. The brokers then try to arrange the best trades that they can,
+subject to the constraints imposed upon them. Generally, clients expect
+that brokers will seek the lowest possible prices when buying and the
+highest possible prices when selling.</p><p>Clients use brokers to arrange their trades because brokers usually can
+arrange trades at a much lower cost than their clients can. The
+following reasons explain why brokers are low-cost traders:</p><p>• Brokers can solve clearing and settlement problems at a lower cost
+than their clients can.</p><p>• Brokers can access exchanges and dealers that their clients cannot
+access.</p><p>• Brokers generally know better than their clients who might be willing
+to trade.</p><p>• Brokers are often better negotiators than
+their clients are.</p><p>• Brokers can represent orders for their clients when their clients are
+unavailable to represent them themselves.</p><p>We examine these points in the remainder of this section.</p><h3 id=711-clearing-and-settlement-among-traders>7.1.1 Clearing and Settlement Among Traders<a class=anchor href=#711-clearing-and-settlement-among-traders>#</a></h3><p>The most important, but perhaps least appreciated, reason why traders
+use brokers to arrange their trades involves clearing and settlement.
+Clearing and settlement problems can arise whenever traders do not
+settle their trades immediately after they negotiate them. During the
+time between arrangement and final settlement, traders risk that their
+counterparts may not acknowledge their trades, may refuse to settle
+their trades, or may be financially unable to settle their trades.
+Traders therefore are reluctant to trade with people they do not know
+are trustworthy and creditworthy.</p><p>Without the assistance of brokers, traders would have to check the
+credit of every trader with whom they trade. Brokers assist traders by
+helping them avoid this expensive problem.</p><p>Brokers solve clearance problems by clearing their clients' trades. If a
+client fails to acknowledge a trade, the broker must resolve the problem
+with the client. The broker thus protects the trader on the other side
+of the trade.</p><p>Brokers solve the settlement problem either by guaranteeing that their
+clients will settle their trades, or by staking their business
+reputations on whether their clients will settle their trades. When
+brokers guarantee their clients' trades, the brokers settle trades that
+their clients will not. When the brokers simply vouch for their clients,
+they risk losing future business if they acquire a reputation for
+representing clients who do not settle their trades. In both cases,
+brokers must ensure that they represent only trustworthy and
+creditworthy clients. Otherwise, undesirable clients will impose
+significant costs upon them. The credit function that brokers provide is
+especially important in order-driven markets, since such markets
+generally arrange trades among total strangers.</p><p>Brokers are especially good at solving settlement credit problems
+because they know their clients. Brokers will not accept orders to buy
+more than they believe their clients can afford, or to sell more than
+they believe their clients have. To form these opinions, brokers
+consider what securities and money their clients have on deposit with
+them, and they consider their clients' past behavior. Brokers may also
+consider other information that they obtain from their clients or from
+credit agencies. Most brokers use electronic systems to manage this
+information.</p><p>Brokers also can efficiently solve settlement credit problems because
+they control assets that their clients deposit with them. When a broker
+settles a trade on behalf of a client, but the client fails to settle
+with the broker, the broker can liquidate assets in the client's account
+to cover the trade. For example, if a client does not pay for a stock
+that he bought, the broker can sell the stock and use the proceeds to
+settle the trade. The broker can then charge any loss on the round-trip
+to the client's account and, if necessary, liquidate assets in the
+account to settle the debt. Likewise, if a client does not deliver a
+security that she has sold, the broker can buy or borrow the security
+from another trader and use it to settle the trader's sale. The broker
+can then liquidate assets in the account to settle the debt.</p><hr><p><strong>Multiplying Credit
+Checks</strong></p><p>When traders arrange trades that they intend to settle in the future,
+they must be confident that their counterparts can and will perform.
+Traders routinely perform <em>credit checks</em> to determine whether their
+counterparts are creditworthy.</p><p>In a market with no brokers, each trader must be prepared to check the
+credit of every other trader. If exactly 1 million traders trade in such
+a market, the total number of potential credit relationships is
+999,999,000,000, or slightly less than one trillion. In such markets,
+traders will check the credit only of traders with whom they intend to
+trade. They will naturally prefer to arrange trades only with traders
+whose credit they have already checked.</p><p>Now suppose that this market has brokers who guarantee their clients'
+trades. Three types of credit relationships are present in this economy:</p><p>1. Brokers must check the credit of their clients to protect
+themselves.</p><p>2. The clients must check the credit of their brokers to ensure that
+they can trust them. These credit checks may be perfunctory if everyone
+knows that a broker is creditworthy.</p><p>3. Each broker must check the credit of every other broker with whom he
+or she arranges trades.</p><p>If the market has 100 brokers, each of whom serves 10,000 different
+clients, the total number of potential credit relationships is only
+2,009,900. This sum is 500,000 times smaller than the total number of
+potential credit relationships in the economy without brokers!</p><hr><hr><p><strong>Membership Has Its Benefits</strong></p><p>Some large traders become exchange members so that they do not have to
+trade through brokers. By employing their own traders, they obtain
+greater control over their trades, and they avoid exposing their orders
+to brokers they may not trust.</p><hr><h3 id=712-brokers-provide-access-to-exchanges>7.1.2 Brokers Provide Access to Exchanges<a class=anchor href=#712-brokers-provide-access-to-exchanges>#</a></h3><p>Traders also use brokers because brokers can provide access to exchanges
+that they cannot access themselves. Exchanges generally allow only their
+members to trade. Nonmembers who want to trade must have members arrange
+trades for them. The most important reasons why exchanges exclude
+nonmember traders involve clearing and settlement issues and the need to
+regulate traders on exchange floors.</p><h4 id=7121-clearing-and-settlement-at-exchanges>7.1.2.1 Clearing and Settlement at Exchanges<a class=anchor href=#7121-clearing-and-settlement-at-exchanges>#</a></h4><p>Since order-driven exchanges often arrange trades among strangers, they
+generally do not allow anyone to trade who does not have an approved
+credit relationship with the exchange clearinghouse or with a clearing
+member who will guarantee settlement of their trades. Since most traders
+do not have these relationships, they must trade through brokers who do.</p><p>Some brokers neither clear nor execute their own trades. Instead, these
+<em>introducing brokers</em> pass their order flow to another broker who is a
+clearing member. The clearing member is then responsible for execution,
+clearing, and settlement. Introducing brokers are so called because they
+introduce their clients to other brokers. Introducing brokers usually
+establish the commission rates that their clients pay, even though their
+clients' accounts are carried <em>on account</em> of a clearing member.
+Clearing members charge their introducing brokers for transaction
+services.</p><p>Many brokers allow their clients <em>direct access</em> to the electronic
+order-routing systems that exchanges, dealers, ECNs, and other brokers
+maintain. When these systems connect to automated order execution
+systems, the clients effectively become the traders. The brokers,
+however, usually remain responsible for guaranteeing settlement.</p><hr><p><strong>What's Happening
+Here?</strong></p><p>Most first-time visitors to the floor of an exchange---especially a
+futures exchange---are overwhelmed by sensory overload. Although the
+activity on exchange floors is highly organized, it appears very chaotic
+to infrequent visitors. Traders and clerks wearing multicolored jackets
+run everywhere, carrying papers. People yell loudly, gesture wildly, and
+pass hand signals among themselves. Brokers talk on their telephones and
+enter information into their handheld computers. Discarded paper litters
+the floor. Bells occasionally sound, personal pagers beep, and
+telephones ring constantly. Overhead monitors display constantly
+changing information, television screens present network talking heads
+pointing at lines and numbers, and electronic ticker tapes scroll
+continuously.</p><p>After visitors overcome their sense of awe, their next emotion is
+usually frustration. They generally cannot follow what is happening.
+They get confused about who is buying, who is selling, and what they are
+trading. They cannot distinguish between prices and quantities, and the
+prices they hear often do not make sense.</p><p>Trading is hard for novices to understand because traders use jargon,
+abbreviations, body language, and hand signals to save time and reduce
+trading errors. For example, most traders yell only the last digits when
+quoting a price. When they bid 10, they assume that everyone knows that
+they mean 147.10. They do not say 147.10 because it takes too long and
+because they do not want to confuse anyone with unnecessary digits. When
+they name an instrument, they often use nicknames or ticker symbols that
+a novice does not recognize. They may not even name the instrument when
+other traders know what they are talking about from the context. Trader
+jargon like "I'll take 30 at the figure" is hard to understand without
+knowing that take implies that I am a buyer, and the <em>figure</em> means the
+closest integer price.</p><p>No new trader walks in off the street and starts to trade in such
+markets. Instead, most traders start as clerks working for other traders
+or for the exchange. If they pay close attention and are reasonably
+sharp, they get the hang of things in a few weeks, and they master the
+language in a few months. At that point, they may not be able to trade
+well, but they will know what is going on, and they should not be a
+liability to other traders.</p><hr><p>Clients who have direct access to trading systems are often called
+<em>subscribers.</em> Public subscribers to a trading system must have a broker
+sponsor and authorize their trades. To help brokers manage credit
+relations with their sponsored subscribers, many electronic trading
+systems allow brokers to set real-time credit limits on their subscriber
+accounts.</p><h4 id=7122-floor-based-trading-skills>7.1.2.2 Floor-based Trading Skills<a class=anchor href=#7122-floor-based-trading-skills>#</a></h4><p>Floor-based exchanges exclude nonmember traders from their floors
+because orderly trading on floor-based exchanges requires skilled
+traders who know the trading rules, the trading protocols, the
+specialized jargon, and the sign languages that traders use to negotiate
+their trades. Traders use these skills to increase the speed and
+accuracy of their trading.</p><p>Most markets do not allow their members to trade until they pass an
+examination which demonstrates that they have mastered basic trading
+skills. The examination protects traders from
+unskilled traders who might slow the markets, confuse others, and
+generate mistakes.</p><h3 id=713-brokers-provide-access-to-dealers>7.1.3 Brokers Provide Access to Dealers<a class=anchor href=#713-brokers-provide-access-to-dealers>#</a></h3><p>Many traders use brokers to access dealers that they cannot access
+themselves. Brokers provide this service primarily to retail clients.
+Retail traders rarely trade directly with dealers because credit,
+clearance, and settlement relationships are expensive to establish.
+Neither retail traders nor dealers want to pay for creating
+relationships they will not use often. Retail clients also use brokers
+to trade with dealers because brokers usually have better information
+about which dealers are offering the best prices or will likely offer
+the best prices than do their clients.</p><p>Institutional clients often trade directly with dealers. Their large and
+frequent trades make the costs of establishing direct access
+relationships relatively small compared to the benefits of direct
+access. Institutional traders usually employ <em>buy-side traders</em> to
+negotiate trades with dealers. These traders typically have information
+systems that allow them to see all dealer quotes, and they can rely upon
+their experience to determine which dealers will most likely offer them
+the best prices. Buy-side traders generally do not pay commissions to
+dealers when they arrange their trades. Instead, they trade on a <em>net
+price basis.</em> The dealers price the trades to recover any expenses that
+commissions would otherwise fund. In the U.S. equity markets, this
+practice is changing as bid/ask spreads have narrowed in response to the
+2001 decimalization.</p><h3 id=714-brokers-are-expert-traders>7.1.4 Brokers Are Expert Traders<a class=anchor href=#714-brokers-are-expert-traders>#</a></h3><p>Many traders use brokers because brokers are experts at trading. Brokers
+generally know more about who wants to trade than do their clients, they
+are better negotiators than are their clients, and they are better able
+to manage order exposure than their clients can. In this subsection, we
+consider each of these areas of expertise.</p><h4 id=7141-block-brokers>7.1.4.1 Block Brokers<a class=anchor href=#7141-block-brokers>#</a></h4><p>The most successful block brokers know who wants to trade, and who would
+want to trade if they were presented with suitable trading
+opportunities. They can predict what securities will interest their
+clients and at what prices their clients will be interested. They use
+this information to arrange trades.</p><p>Brokers learn about their clients by paying close attention to them.
+They talk with them frequently, and they study their portfolios to
+determine what interests them. If their clients manage money for others,
+brokers will also consider the interests of their clients' clients.</p><h4 id=7142-better-negotiators>7.1.4.2 Better Negotiators<a class=anchor href=#7142-better-negotiators>#</a></h4><p>Traders use brokers to negotiate transactions---especially very large
+ones---on their behalf. Good negotiators must be careful about the
+information they reveal when negotiating. Depending on their negotiating
+strategy, they may want to hide information or they may want to bluff
+credibly. In either event, they must represent their positions clearly
+and convincingly. Good negotiators also must create relationships in
+which their counterparts are willing to compromise and accommodate.</p><p>Not everyone negotiates effectively. Many of us cannot adequately
+control our emotions when discussing issues about which we care deeply.
+We may be nervous about losing a valuable opportunity, desperate to
+avoid further loss, mad about our circumstances, too eager to please,
+too proud, too modest, or unable to control our egos. Our emotions often
+cloud our judgment and cause us to reveal information that does not
+further our goals. Many of us cannot convincingly represent our true
+positions or maintain a poker face when bluffing. Finally, and
+unfortunately, many of us do not have adequate social skills to develop
+productive relationships with people whose interests differ from our
+own.</p><hr><p><strong>How to Break into the
+Major Leagues</strong></p><p>Block brokers must know their clients well in order to serve them well.
+New brokers often have trouble establishing relationships because
+clients generally do not like to waste their time talking with brokers
+who are not <em>players.</em> A <em>player</em> can offer valuable services to his or
+her clients. Since new brokers usually do not know much about who would
+want to take the other side of a trade, they have little to offer their
+clients.</p><p>The problem that new brokers face involves a circularity. If they do not
+know their clients well, they cannot serve them well. If they cannot
+serve their clients well, their clients will not talk to them. If their
+clients will not talk to them, they will not know them well.</p><p>Established brokers benefit from the opposite side of this circularity.
+Since they know their clients well, they know who will trade what and at
+what price. They therefore can provide them with good service. Clients
+will talk with established brokers because they obtain good service from
+them. Established brokers thereby get to know their clients well.</p><p>This circularity is an example of a <em>network externality.</em> Brokers who
+have large networks of contacts can provide more service to their
+clients than can brokers with few contacts. The more service that
+brokers can provide to their clients, the more clients they will have,
+and the bigger will be their networks of contacts. The network
+externality allows the strong to get stronger, and it ensures that the
+weak have trouble competing.</p><p>To become players, new brokers must attract clients with something other
+than information about who wants to trade. They most often offer
+investment research. If their clients value their research, they will
+form relationships that will allow the brokers to learn more about their
+clients' trading interests.</p><p>New brokers also try to meet with their clients by entertaining them.
+They often take them to fancy dinners, to the Super Bowl, to the NBA
+finals, or to the theater. These contracts have a twofold purpose. The
+brokers want to learn more about their clients so that they can serve
+them better. They also want to generate goodwill so that their clients
+feel obliged to use them.</p><p>Since well-established brokers compete with new brokers, they also
+provide investment research and entertainment services to remain
+competitive. They do not need to provide as much to stay in business as
+they did to get established. Established brokers have an advantage
+simply because they know more about who will trade, what they will
+trade, and at what prices they will trade than do new brokers.</p><p>The economics of brokerage markets implies that the best brokers are
+those who work hardest to learn about their clients. The network
+externality ensures that their productivity per hour worked increases as
+the time they work increases. Accordingly, brokers often work long hours
+without much vacation. When they do vacation, they often do so at
+conferences where they can meet their clients. Brokers therefore host
+many client conferences at which they entertain them, educate them,
+generate goodwill, and, most important, learn about what trades might
+interest them. The need to continuously relate to their clients also
+explains why most brokers vacation during the same months that their
+clients do.</p><hr><hr><p><strong>Playing Poker on the
+Floor</strong></p><p>Floor traders scrutinize every mannerism of the brokers around them.
+They try to identify anomalous behaviors that might reveal information
+about the orders which brokers hold. Floor traders especially consider
+whether brokers appear nervous when they hold large orders.</p><p>Successful brokers therefore must be like good poker players. They must
+not reveal anything about their orders other than what they want to
+reveal. Not surprisingly, many brokers are very good poker players.</p><hr><p>Traders who recognize their shortcomings as negotiators often employ
+brokers to negotiate on their behalf. Since brokers usually do not have
+a stake in their negotiations other than in obtaining commissions for
+closing successful deals, they are often much less emotionally involved
+than their clients are. In addition, since brokers are merely agents,
+they often do not know their clients' final positions. Clients therefore
+can use their brokers to misrepresent their positions. If they later
+need to back down, the brokers can save face by claiming that they
+misunderstood their clients' instructions. If negotiations break down,
+clients often blame their brokers, assert a misunderstanding, and then
+start negotiations with new brokers. Although their adversaries may
+recognize these tactics, if enough credible doubt exists about what
+happened, productive negotiations may be renewed.</p><h4 id=7143-brokers-provide-order-exposure-management>7.1.4.3 Brokers Provide Order Exposure Management<a class=anchor href=#7143-brokers-provide-order-exposure-management>#</a></h4><p>Traders whose orders are likely to move the market significantly do not
+want to widely expose their orders. Traders either will stand out of the
+way until the order has its impact on the market price, or they will
+trade ahead of the order to profit from its expected price impact. Both
+strategies increase the costs of filling large orders.</p><p>The traders who are most concerned about these issues are those who are
+widely known to be well informed and are known to trade in large size.
+These traders would rather trade anonymously so that no one knows with
+whom they are trading. If their orders are large, they typically expose
+only parts of their orders so that no one knows their full sizes.</p><p>These traders employ brokers to represent them so that they can avoid
+showing who they are and how large their orders are. Their brokers
+display only to traders whom the brokers expect will be willing to fill
+the orders. They take special care to avoid traders who will front-run
+them. In markets where traders see all exposed orders, brokers break up
+their orders so that other traders cannot determine their full sizes.
+Large traders sometimes distribute their orders among several brokers so
+that nobody knows the full extent of their interests.</p><p>Brokers add value to the trade process by knowing how best to expose
+their clients' orders. Good brokers fill their large orders without
+moving the market much. Poor brokers allow information about the order
+to leak out so that its execution suffers.</p><h3 id=715-brokers-represent-limit-orders>7.1.5 Brokers Represent Limit Orders<a class=anchor href=#715-brokers-represent-limit-orders>#</a></h3><p>Many traders employ brokers to represent orders that they cannot, or do
+not want, to represent themselves. Clients who have other things to do
+besides monitoring the market often give limit orders and stop orders to
+their brokers to tell them what they want to do if market conditions
+change. The brokers then monitor the market for them. This brokerage
+function is more important for retail clients who do not spend much time
+trading than for institutional buy-side traders whose jobs require that
+they continuously pay attention to the markets.</p><h3 id=716-summary>7.1.6 Summary<a class=anchor href=#716-summary>#</a></h3><p>Brokers provide many services to their clients. They help them identify
+suitable counterparts, they help them negotiate their trades, they
+represent their interests when they are unable or unwilling to represent
+them themselves, and they help them clear and
+settle trades. Traders use brokers because brokers generally can trade
+more effectively and at a lower cost than they can.</p><h2 id=72-the-structure-of-a-brokerage-firm>7.2 THE STRUCTURE OF A BROKERAGE FIRM<a class=anchor href=#72-the-structure-of-a-brokerage-firm>#</a></h2><p>We now consider how brokerage firms structure their operations to
+provide transaction services to their clients. Since each brokerage
+organizes its operations differently, the discussion in this section
+cannot adequately represent all brokerage firms. The primary purposes of
+the discussion are to introduce you to the complexity of brokerage
+operations and to expose you to the jargon that brokers use to describe
+their operations.</p><p>The activities of a brokerage firm consist of <em>front office</em> operations,
+<em>back office</em> operations, and <em>proprietary</em> operations. All activities
+that involve client contact occur in the <em>front office.</em> These
+activities primarily involve soliciting and taking orders, executing
+trades, and advising clients. <em>Back office</em> operations include all
+activities that support the front office operations. Back office
+departments clear and settle trades; maintain accounts; produce
+investment research; and create and operate various information systems.
+<em>Proprietary</em> operations include the cash and risk management activities
+of the firm and any speculative trading that the firm conducts for its
+own accounts. These classifications are somewhat arbitrary. We will use
+them to organize our discussion of how brokers structure their firms.</p><hr><p><strong>Why Does the Archer Daniels Midland Company Broker Agency
+Orders?</strong></p><p>The Archer Daniels Midland Company (ADM) is a large agricultural dealer,
+shipper, and food processor. The company frequently trades in the
+futures markets to hedge risks inherent in its businesses. It also
+sometimes speculates in these markets, using information that it obtains
+about market conditions from its extensive operations.</p><p>ADM is a member of many futures exchanges. It employs many floor traders
+at these exchanges. The ADM traders trade proprietary ADM orders. They
+also trade agency orders introduced to them through a subsidiary, ADM
+Investor Services, that sells execution, clearing, and settlement
+services to introducing brokers.</p><p>ADM undoubtedly hopes to profit from the fees it obtains from its agency
+brokerage business. The subsidiary also provides ADM with an important
+secondary benefit: The agency order flow makes it difficult for other
+traders to determine when ADM is trading for its own accounts and when
+it is trading for other traders. Consequently, ADM probably obtains
+better execution for its proprietary orders.</p><hr><h3 id=721-front-office-operations>7.2.1 Front Office Operations<a class=anchor href=#721-front-office-operations>#</a></h3><p>Brokers solicit order flow by advertising and by contacting prospective
+clients. They also often give their clients extensive investment
+information and investment research to encourage them to use their
+brokerage services. To further develop their business, they may
+entertain their clients.</p><p><em>Sales brokers</em> primarily interact with clients. They work in the <em>Sales
+and Trading Department</em> of the firm. <em>Floor brokers</em> arrange trades at
+exchanges and on their firm's trading floors. Their division of the firm
+is often called <em>Floor Operations.</em></p><p>Brokers who help distribute large stock and bond offerings generally
+work in the <em>Corporate Finance Department</em> of the brokerage firm. They
+work closely with sales brokers to distribute the issues.</p><p>Many brokerage firms employ <em>financial analysts</em> to produce investment
+reports for their clients. The sales brokers use this information to
+develop relations with their clients. These analysts usually specialize
+in an industry or a commodity. Their primary responsibilities include
+forecasting future prices and earnings. At investment banks, equity
+analysts sometimes suggest mergers and acquisitions to brokers who work
+in the Corporate Finance Department. Financial analysts also help
+clients understand how they can use new trading instruments and
+techniques to achieve their objectives. The financial analysts usually
+work in the <em>Research Department</em> of the firm.</p><p>Most brokerages have <em>customer service agents</em> who help their clients
+manage their accounts. These agents establish, transfer, and close
+accounts; they take deposits and arrange withdrawals and transfers to
+and from accounts; and they help their customers interpret their account
+statements. They usually work in the <em>Customer Service Department.</em></p><hr><p><strong>The Wednesday Trading
+Halts of 1968</strong></p><p>By 1968, volumes in U.S. equity markets had grown to the point that
+brokerage firms could not keep up with their paperwork. Accounting,
+clearing, and settlement then still involved substantial manual efforts.
+From June through December 1968, exchanges closed on Wednesdays to give
+the back offices a chance to catch up. They also closed two hours early
+on the other weekdays. Firms ultimately solved the "paperwork crisis" by
+automating their accounts.</p><hr><h3 id=722-back-office-operations>7.2.2 Back Office Operations<a class=anchor href=#722-back-office-operations>#</a></h3><p>The back office of a brokerage is responsible for supporting the trading
+activities of the firm and its clients. The primary responsibilities of
+the back office include the following activities:</p><p>• Maintaining accounts.</p><p>• Clearing and settling trades.</p><p>• Providing the information systems that the firm uses to transmit
+market data, quotes, orders, and confirmations to employees, clients,
+dealers, exchanges, other brokers, clearing agents, settlement agents,
+and custodians.</p><p>• Ensuring that the firm extends credit only to good credit risks.</p><p>• Ensuring that the firm and its clients comply with all regulations to
+which they are subject.</p><p>Brokerage firms often place these activities under the supervision of a
+<em>chief information officer</em> (CIO) who oversees all information systems.</p><h4 id=7221-accounting-systems>7.2.2.1 Accounting Systems<a class=anchor href=#7221-accounting-systems>#</a></h4><p>Brokerage firms now universally use computerized accounting systems to
+keep track of their accounts and to clear and settle their trades. The
+benefits of such systems are obvious and need no further comment.</p><p>Small brokerage firms and many large firms buy their accounting systems
+"off the shelf" from system vendors. Some large brokers use their own
+systems, in part because they designed them to meet their special needs,
+but mostly because they built them before they could buy them cheaply.</p><h4 id=7222-corporate-reorganizations>7.2.2.2 Corporate Reorganizations<a class=anchor href=#7222-corporate-reorganizations>#</a></h4><p>Clients hold their securities in <em>street name</em> when they allow their
+brokers or their depositories to hold them on their behalf. Traders
+often hold their securities in street name to avoid losing them, to use
+them as collateral for margin loans, and to ensure that they are
+available for settlement when they want to sell them. When brokers hold
+securities on behalf of their clients, they legally own them. Their
+clients hold only corresponding interests in their accounts.</p><p>Brokers who hold securities in street name assume many responsibilities.
+They must collect dividends and interest payments, and properly assign
+them to the appropriate client accounts. They must keep track of and
+properly handle corporate name changes, stock splits, mergers,
+acquisitions, and liquidations. Finally, they must ensure that issuers
+can communicate with their clients, the <em>beneficial owners.</em> The
+<em>Corporate Reorganizations Department</em> of a brokerage firm generally
+handles these activities.</p><h4 id=7223-market-data-and-order-routing-systems>7.2.2.3 Market Data and Order-routing Systems<a class=anchor href=#7223-market-data-and-order-routing-systems>#</a></h4><p>Brokerage firms invest very heavily in data and voice systems that allow
+their brokers to communicate with their clients, with markets, with
+dealers, and with each other. Third party vendors now mostly provide
+these systems.</p><p>The simultaneous use of market data systems written by different vendors
+can create significant coordination problems when the systems need to
+exchange information. For example, clearing and settlement systems need
+to report trades to accounting systems, and accounting systems need to
+report positions to clearing and settlement systems.</p><p>Data systems are very hard to integrate when
+they use different protocols for sharing information. The trading
+software industry therefore developed several communications protocols
+that make it easier for systems developed by different vendors to
+exchange information with each other. The most important of these
+protocols are the <em>Financial Information eXchange</em> (FIX) protocol and
+the Open Financial Exchange (OFE) protocol. FIX primarily serves
+institutional traders, and OFE primarily serves Internet-based retail
+traders. These systems allow traders to route orders and other market
+information in standard formats that all FIX- or OFE-capable systems can
+interpret.</p><hr><p><strong>Squawk Boxes</strong></p><p>In many brokerages, traders need to talk with colleagues who may sit on
+the other side of the trading room, or in another trading room that may
+be thousands of miles away. To facilitate such communications, many
+brokerage firms place <em>squawk boxes</em> at each trader workstation. Squawk
+boxes are two-way intercoms that are always open.</p><hr><h4 id=7224-credit-management>7.2.2.4 Credit Management<a class=anchor href=#7224-credit-management>#</a></h4><p>Brokerage firms often extend credit to their clients, to other brokers,
+and to dealers. They extend credit to clients when they allow clients
+who have insufficient money in their account to buy securities, when
+clients sell securities that they do not have in their accounts, when
+they lend money to clients on margin, and when they guarantee that their
+clients will settle their contracts. Brokerage firms extend credit to
+other brokerage firms and to dealers when they settle their trades, and
+when they loan securities and money to them.</p><p>To ensure that they do not extend credit to poor credit risks, brokers
+must carefully evaluate all credit relationships in which they are
+exposed to potential loss. The <em>credit manager</em> of the firm is
+responsible for checking credit and for managing credit risks.</p><h4 id=7225-compliance>7.2.2.5 Compliance<a class=anchor href=#7225-compliance>#</a></h4><p>The <em>compliance officers</em> of a brokerage firm ensure that the firm and
+its clients comply with all applicable regulations. The regulations may
+concern margins, trading practices, and <em>client suitability.</em> The
+compliance officers of a brokerage firm usually reside in the
+<em>Compliance Department</em> or the <em>Margin Department</em> of the firm.</p><p>Many regulators do not permit brokers to arrange trades that are not
+suitable for their clients. A trade creates an unsuitable position if
+the client cannot afford the potential loss of the position or cannot
+reasonably appreciate the risk in the position. Brokers who allow their
+clients to make such trades risk civil lawsuits or criminal prosecution.
+To protect themselves from this risk, brokers must <em>know their
+customers.</em> To this end, brokers often require that their clients tell
+them about their finances and their trading experience. Questions about
+these issues usually appear on account applications. Brokers
+occasionally interview their clients when they become concerned about
+the suitability of their trades or positions. Most brokers have
+electronic systems that monitor their clients' accounts to ensure that
+their trades are suitable for them.</p><hr><p><strong>How to FIX Babble</strong></p><p>The FIX protocol grew out of a desire by Fidelity Investments and
+Salomon Brothers to link their information systems and thereby reduce
+their traders' dependence on telephone calls and handwritten records.
+Following their initial specification of the standard in 1992, they
+invited other firms to participate in its further development.</p><p>FIX is now a public-domain specification owned and maintained by FIX
+Protocol. The mission of the organization is "to improve the global
+trading process by defining, managing, and promoting an open protocol
+for real-time, electronic communication between industry participants,
+while complementing industry standards."</p><p><em>Source:
+[<a href=http://www.fixprotocol.org>www.fixprotocol.org</a>].</em></p><hr><h3 id=723-proprietary-operations>7.2.3 Proprietary Operations<a class=anchor href=#723-proprietary-operations>#</a></h3><p>The <em>proprietary trading operations</em> of a brokerage firm include all
+trading activities that the firm conducts for its <em>house account.</em> For
+pure brokers, these activities primarily include cash management and the
+borrowing and lending of securities. If the firm also engages in
+<em>principal trading</em> as a dealer, speculator, or arbitrageur, the
+proprietary trading operations of the firm include these activities.</p><hr><p><strong>Graduated College and
+Thought You'd Never Have to Take an Exam Again?</strong></p><p>Some brokerage firms give their clients a written examination to prove
+that they understand the risks inherent in their trades. Clients who do
+not pass the examination cannot trade.</p><p>These examinations will become more common as brokers and their clients
+increasingly relate to each other only through the Internet. The
+examinations allow the compliance officers to certify the competency of
+their clients.</p><hr><h4 id=7231-cash-management-and-stock-lending-and-borrowing>7.2.3.1 Cash Management and Stock Lending and Borrowing<a class=anchor href=#7231-cash-management-and-stock-lending-and-borrowing>#</a></h4><p>Brokerage firms that hold client assets generally invest the cash and
+often lend the securities. The cash managers of the firm try to keep all
+cash balances fully invested. Brokers usually house their cash
+management operations in the <em>Cashier's Department</em> under the
+supervision of the firm's <em>cashier.</em> The employees responsible for
+security lending operations are often those responsible for borrowing
+securities for short selling. They are often housed in the <em>Margin
+Department</em> or in the <em>Stock Loan Department.</em></p><h4 id=7232-risk-management>7.2.3.2 Risk Management<a class=anchor href=#7232-risk-management>#</a></h4><p>The <em>risk manager</em> of the firm monitors all activities of the firm to
+ensure that the firm does not lose control over the risks it assumes.
+The risk manager must ensure that large losses never surprise the firm's
+managers. In particular, the risk manager must make certain of the
+following:</p><p>• The firm's management is aware of all significant financial and legal
+risks to which the firm is exposed.</p><p>• Adequate controls are in place to prevent rogue traders from creating
+unauthorized positions.</p><p>• The financial implications of all its proprietary positions are well
+recognized and understood.</p><p>• The firm adequately understands the creditworthiness of those to whom
+it extends credit.</p><p>• The firm does not extend too much credit to poor credit risks.</p><p>The risk manager's job is not to prevent losses. Firms often lose money
+because they undertake risky activities that do not work out as they
+hope. Firms engage in these activities because they expect that the
+possible rewards are sufficiently large and sufficiently probable to
+more than compensate for the possible losses. The risk manager's job is
+to ensure that the managers of the firm adequately understand all
+possible losses and their probabilities of occurrence.</p><p>The risk manager often reports directly to the CEO of the firm. The firm
+usually gives the risk manager authority and power to investigate any
+potential source of risk within the firm. These arrangements are
+necessary to ensure that the risk manager has the independence and power
+to discover any serious problems.</p><p>In smaller brokerage firms, the risk manager and the compliance officer
+are often the same person. In larger firms, the compliance officer may
+work for the risk manager, or the two officers may work separately.</p><h2 id=73-broker-profitability>7.3 BROKER PROFITABILITY<a class=anchor href=#73-broker-profitability>#</a></h2><p>Like all firms, brokerages profit when their revenues exceed their
+expenses. Their revenues come primarily from commissions, while their
+expenses are primarily due to labor costs. Most brokerage firms have
+many other significant sources of revenue and cost. Their other income
+lines often explain why some brokers can charge low or no commissions
+and still stay in business. Their other costs help explain why large
+brokers often have significant competitive advantages over smaller
+brokers.</p><p>In this section, we will examine the
+determinants of profitability. Our discussion will help you understand
+how brokers compete with each other and what factors determine the sizes
+of their firms.</p><h3 id=731-revenues>7.3.1 Revenues<a class=anchor href=#731-revenues>#</a></h3><p>Most brokers obtain their primary revenue from commissions. Important
+secondary sources of revenue include payments for orders, interest on
+cash balances, margin interest on loans, underwriting fees, merger and
+acquisition consulting fees, and security lending fees.</p><h4 id=7311-commissions>7.3.1.1 Commissions<a class=anchor href=#7311-commissions>#</a></h4><p>Brokerage commissions are negotiable in most countries. A few countries
+have government or exchange regulations that specify <em>fixed commission
+rates</em> that brokers must charge. For example, the minimum stock
+brokerage commission in Hong Kong is 0.25 percent. Such regulations are
+becoming quite rare. Stock commissions were deregulated in 1975 in the
+United States, in 1987 in the United Kingdom, and in 1999 in Japan. As
+of this writing, the Hong Kong commissions are scheduled to be
+deregulated on April 1, 2003.</p><p>Commissions vary substantially across brokers. Commission rates usually
+depend on how much service the client wants. <em>Deep discount brokers</em>
+offer the cheapest commissions but usually provide the least service.
+<em>Full service brokers</em> charge the highest commissions but offer
+substantial service and advice. <a href=#part0015.html_ch07tab2>Table
+7-2</a> presents typical U.S. retail
+brokerage commissions for various instruments.</p><p>Discount and deep discount brokers typically specify standard commission
+schedules for their clients. They may further discount their commissions
+for their best clients. The commission schedules for full service
+brokers are generally just list prices. Although some clients pay these
+prices, most clients negotiate substantially lower commissions with
+their brokers.</p><p>Full service brokers increasingly charge a flat fee for accounts that
+they advise. The fee covers all trading commissions, investment research
+fees, portfolio management fees, and account maintenance fees that the
+client would otherwise pay. Clients prefer flat fee arrangements because
+they greatly reduce the incentives that brokers have to <em>churn</em> their
+accounts. Brokers churn accounts when they recommend trades primarily to
+produce commission revenue. The typical all-inclusive fees for managed
+accounts range between 1 and 3 percent of the total value of the
+account. Like straight commissions, they are negotiable. Fixed-fee
+accounts are sometimes called <em>wrap accounts</em> because the brokers wrap
+all commissions and expenses into a single fee.</p><p>In the United States, institutional stockbrokers typically charge a
+fixed price per share traded. The average U.S. institutional commission
+is about 5 to 6 cents per share, but can range between 1 cent and 12
+cents per share. In most other countries, institutional stockbrokers
+base their commissions on the value of the transaction. In almost all
+countries, commission rates are negotiable. They may vary by the size of
+the trade, the difficulty of arranging it, and the soft dollars that the
+trade generates. (We describe soft dollars below.) Institutional clients
+also sometimes get volume discounts based on the total volume they trade
+during a month, quarter, or year.</p><p>Stockbrokers usually also broker options trades. U.S. deep discount
+brokers typically charge 1.50 dollars per contract with a 20-dollar
+minimum. Full-service brokers charge substantially more per trade.</p><p><strong>TABLE 7-2.</strong><br>Typical Retail Brokerage Commissions in the U.S. (2001)</p><p><img src=images/00057.jpeg alt=Image></p><p><img src=images/00058.jpeg alt=Image></p><p>Brokerages in the futures markets are called <em>futures commission
+merchants</em> (FCMs). Discount FCMs typically charge about 30 dollars per
+contract for a round-turn (two trades). They charge by the turn because
+they expect that their clients will close their positions before
+delivery. Many FCMs, however, charge for each side so that they can
+advertise lower commissions.</p><p><em>Soft Commissions</em></p><p>In the United States, before the final deregulation of stock brokerage
+commissions on May 1, 1975, brokerage commissions were much higher than
+they would have been had commissions not been fixed by exchange
+regulations. By then, automation of trading processes and growth in
+institutional trading had significantly lowered broker costs. Brokers
+who could obtain order flow could profit handsomely from the fixed
+commission rates. Brokers, of course, competed intensely for the orders.</p><p>Brokers in unregulated commission markets obtain order flow by lowering
+their commissions and by offering better service. In price-regulated
+markets, they can only offer better service or give their clients other
+things that they value.</p><p>To obtain order flow, stockbrokers gave their institutional clients free
+services. These services primarily included investment research, but
+brokers also gave away accounting systems, communications systems,
+computing systems, and staff training. In addition, brokers provided
+their clients with marketing incentives such as tickets to major ball
+games and all-expenses-paid trips to investment conferences that they
+organized at expensive resorts. The clients paid high fixed commissions
+and received various services besides trade execution.</p><p>To promote fairness, brokers and clients started to keep track of the
+commissions they paid and the services they received. They ultimately
+created a system of soft dollar accounting in which clients earned one
+<em>soft dollar</em> for a certain number of <em>hard dollars</em> they spent on
+commissions. They then used their soft dollars to buy various services
+from their brokers. They even asked their brokers to buy services for
+them from third parties.</p><p>The soft dollar accounting system allowed brokers to compete for order
+flow despite the fixed commissions. Clients benefited from more
+competitive markets and lower net trading costs.</p><p>The soft dollar system hastened deregulation by undermining the system
+of fixed commissions set by exchange rules. Commission deregulation in
+the United States started in April 1971 with deregulation for trades
+larger than 500,000 dollars. It continued in steps until all commissions
+were deregulated by May 1, 1975. (Traders refer to the deregulation as
+<em>May Day.)</em> Commissions dropped significantly following deregulation.</p><p>Interestingly, soft dollar usage has increased since deregulation. The
+U.S. Securities and Exchange Commission estimates that the total value
+of research paid for with soft dollars exceeded 1 billion dollars in
+1998. To obtain soft dollars, many institutional traders willingly pay
+much higher commissions than they would otherwise have to pay for
+execution services. In 1998, soft dollar brokers offered an average of 1
+dollar of soft dollar services for every 1.7 dollars of hard dollar
+commissions that they received.</p><p>Soft dollars persist in large part because of the way that investment
+funds account for their expenses. When an investment fund pays hard
+dollars for anything but a trading commission, the cost appears as an
+expense in its financial accounts. Since many investors prefer
+investment funds that have low expense ratios, funds try to minimize
+their hard dollar expenses. Although investment funds pay commissions
+with hard dollars, they do not treat them as direct expenses in their
+financial accounts. Instead, funds record their purchases and sales on a
+net price basis. Commissions raise their purchase prices and lower their
+sales prices. High commissions therefore lower
+their reported investment returns. Many
+investment funds prefer to buy things with soft dollars so that they can
+avoid reporting direct expenses to investors who are highly cost
+sensitive. The high volatility of portfolio returns ensures that such
+investors cannot easily identify expenses which reduce their investment
+returns.</p><p>The U.S. Securities and Exchange Commission recognizes this problem. In
+1995, it adopted regulations that require investment companies
+(primarily mutual funds) to report the value of the goods and services
+that brokers pay on their behalf as expenses in their accounting
+statements. Many investment companies avoid the intention of this
+requirement by hiring investment advisers to manage their funds. The
+brokers allocate soft dollars to the advisers, who use them primarily to
+purchase research products. These soft dollars allow investment advisers
+to charge lower management fees to their investment company clients.</p><p>The SEC cannot close this loophole because Congress created a <em>safe
+harbor</em> in the 1975 amendments to the Securities and Exchange Act of
+1934 that specifically protects it. Section 28(e) of the amended Act
+allows investment advisers to cause their clients to pay more than the
+lowest available brokerage commissions if the advisers determine in good
+faith that the amount of the commission is reasonable in relation to the
+value of the brokerage and research services provided. What otherwise
+might appear to be an improper kickback---the use of client commissions
+to obtain investment research that benefits their investment
+advisers---is therefore legal in the United States.</p><p>The U.S. Securities and Exchange Commission periodically considers
+regulations that would require funds to provide more extensive reports
+of their soft dollar expenses. Its efforts invariably encounter
+opposition from funds, their soft dollar brokers, and the investment
+fund industry trade association, the Investment Company Institute.</p><p>Soft commissions are common in other national markets where the same
+players debate the same issues. For example, in Britain, the Financial
+Services Authority (the British equivalent of the U.S. Securities and
+Exchange Commission) frequently is at odds with the Fund Managers'
+Association over the regulation of soft commissions.</p><p><em>Directed Brokerage and Commission Recapture</em></p><p>Many institutional investment sponsors direct their investment advisers
+to use specific brokers when trading for their accounts. Sponsors create
+<em>direct brokerage</em> relationships to support specific brokers. For
+example, political considerations force many state and municipal pension
+funds to use in-state brokers. Some sponsors ask their managers to
+direct orders to specific brokers so that the sponsors can obtain
+services which those brokers offer in exchange for the order flow.</p><p>Sometimes pension plan sponsors negotiate <em>commission recapture
+agreements</em> with the brokers to whom they direct their orders. These
+agreements provide that the brokers will return to the investment
+sponsor some of the commissions paid to them by the sponsor. The
+recaptured commissions may reflect volume discounts or they may simply
+be rebates. State and municipal plan sponsors generally use the money to
+pay for investment consulting services for which they otherwise would
+have no budget.</p><p>The <em>Employee Retirement Income Security Act</em>
+requires that the trustees of U.S. private pension plans treat
+commissions as fund assets. They therefore would have to return to their
+funds any recaptured commissions that brokers pay them. Consequently,
+private pension plans do not generally negotiate commission recapture
+agreements.</p><h4 id=7312-payments-for-order-flow>7.3.1.2 Payments for Order Flow<a class=anchor href=#7312-payments-for-order-flow>#</a></h4><p><em>Payments for order flow</em> are payments that dealers make to brokers to
+obtain orders from their clients. For many retail-based securities
+brokers, payments for order are a very significant source of
+transaction-based revenue. For example, in 1997, they represented 24
+percent of total transaction revenue (commissions plus payments for
+order flow) at E*TRADE. Their importance has since dropped, however;
+dealers now pay less for order flow because decimalizaton has narrowed
+their spreads. In the second quarter of 2001, E*TRADE's payments for
+order flow had dropped to 15 percent of transaction revenue</p><h4 id=7313-interest>7.3.1.3 Interest<a class=anchor href=#7313-interest>#</a></h4><p>Brokers earn interest on the margin loans that they make to their
+clients. Most brokers base the rate they charge their clients on the
+<em>broker call money rate.</em> It is generally about two and a half points
+higher than short-term Treasury bill rates. Margin loan rates typically
+vary from two points above the broker call money rate for small loans of
+less than 5,000 dollars to one point below the rate for large loans of
+more than 1 million dollars. The rates are negotiable for large loans.</p><p>Brokers also earn interest on the cash that their clients deposit with
+them. The interest that they earn on these balances, however, is offset
+to a significant extent by the interest that they pay to their clients
+on these balances. On net, the brokers profit from these balances
+because the rates at which they pay interest are less than the rates at
+which they invest the balances. Moreover, many brokers do not pay
+interest on all funds they hold on deposit. For example, many brokers
+pay interest only on balances that exceed some minimum figure, such as
+1,000 dollars.</p><p>The interest that brokers can earn on cash balances can be quite
+significant. If the firm can invest money in margin loans at 7.0
+percent, it earns 70 dollars per year for every 1,000 dollars on which
+it pays no interest.</p><h4 id=7314-short-interest-rebate>7.3.1.4 Short Interest Rebate<a class=anchor href=#7314-short-interest-rebate>#</a></h4><p>When a trader wants to sell a security short, his broker must have the
+security to deliver to the buyer. Before brokers accept sell orders,
+they therefore must make an <em>affirmative determination</em> that the
+securities will be available to settle the trade. Brokers often can
+deliver securities that they hold in street name for their other
+clients. If they do not have the security, they must borrow it from
+someone who does.</p><p>When the broker delivers a security that he holds in street name, the
+broker keeps the cash proceeds of the sale as collateral to ensure that
+the short seller will be able to repurchase the security. The broker can
+invest these short proceeds and earn interest on them.</p><p>When the broker must borrow the security, the broker must deposit the
+cash proceeds of the sale (plus about 2 percent more) with the lender to
+collateralize the loan. The lender then can invest the cash and earn
+interest on it. Since the lending market is competitive, lenders must
+pay brokers interest on the cash collateral in order to obtain their
+business. This interest is called <em>short interest rebate.</em> In the United
+States, the short interest rebate rate is usually the federal funds rate
+or the LIBOR (London InterBank Offering Rate), less a small fee for
+borrowing the security. The borrowing fee depends on the availability of
+the security. If it is not difficult to borrow, the fee is only about 10
+basis points per year. If the security is difficult to borrow, traders
+say that it is <em>on special.</em> The borrowing fees for such securities
+depend on their scarcity.</p><hr><p><strong>Variation Margin and
+Cash Management in Futures Accounts</strong></p><p>Futures traders must maintain margin in their accounts to ensure that
+they can cover any losses in their positions. <em>Margin</em> is cash or
+securities that clients post as bonds to cover their potential losses.
+Futures brokers require that their clients post an <em>initial margin</em> when
+they open their positions. The exchange or its clearinghouse usually
+sets minimum initial margins. Brokers may require higher initial margins
+from their clients.</p><p>When futures positions lose money, brokers deduct the losses from their
+clients' accounts. When positions make money, brokers credit the gains
+to the accounts. These monies pass through the clearinghouse every day
+from losers to winners. The margin in futures accounts is called
+<em>variation margin</em> because it allows brokers to collect or credit any
+variation in the value of their clients' positions.</p><p>Brokers require that their clients maintain a minimum margin deposit in
+their accounts. The minimum, called the <em>maintenance margin</em>, is usually
+lower than the initial margin. Like the initial margin, the exchange or
+its clearinghouse sets the minimum maintenance margin, and brokers may
+require higher maintenance margins from their clients.</p><p>When brokers require additional margin, they place a <em>margin call</em> on
+the account. If the trader does not supply the margin within the
+prescribed time, the broker will close his or her position.</p><p>Brokers allow their clients to post their margins with Treasury bills.
+When brokers need to deduct losses from an account, they first use any
+available cash in the account. If no cash is available, they then sell,
+as necessary, any Treasury bills posted as margin. This practice is
+called <em>breaking a T-bill.</em> Some brokers may allow their clients to
+borrow against their Treasury bills if they have sufficient equity in
+their accounts. The interest rate, however, tends to be high.</p><p>Brokers usually charge a fee when they sell Treasury bills. For small
+accounts, the fee is large relative to the interest that traders could
+earn on their free balances. Traders therefore tend to hold cash in
+their accounts to accommodate their variation margin payments without
+selling their Treasury bills.</p><p>Futures brokers generally do not pay interest on the cash balances that
+their retail clients place on deposit with them. The interest that
+brokers earn on these balances can be a very significant source of
+revenue for retail futures brokers. For example, at 5.0 percent
+interest, a typical retail client with 20,000 dollars in free cash in
+her account will generate 1,000 dollars a year in income for her broker.
+This revenue is equivalent to 50 round-turn commissions at 20 dollars
+per round-turn.</p><p>Large institutional traders usually manage the cash in their futures
+accounts carefully. They buy and sell Treasury bills on a daily basis as
+necessary to keep their free cash fully invested. They also may wire
+money in and out of their accounts to keep their cash fully invested in
+interestbearing securities.</p><hr><hr><p><strong>Synthetic Short
+Positions</strong></p><p>Highly sophisticated retail short sellers can obtain some economic
+benefit from the short proceeds that they generate by constructing
+synthetic short positions instead of real ones. A <em>synthetic short
+position</em> is a position constructed from option contracts or from
+futures contracts that produces the same economic returns as an actual
+short position.</p><p>The <em>put-call parity theorem</em> proves that a long position in a put
+contract coupled with a short position in a call contract with the same
+strike and maturity, plus a long position in a bond with the same
+maturity, is economically equivalent to a short position in the
+underlying security. When options dealers receive short interest rebate
+on their short positions, and when competition forces them to price
+their contracts to reflect those rebates, traders who construct
+synthetic short positions in effect obtain short interest rebate. In
+practice, the transaction costs associated with constructing synthetic
+short positions can significantly reduce the economic benefits of this
+strategy. In any event, it can be used to short only securities for
+which option contracts trade.</p><p>Traders also can construct synthetic short positions by selling futures
+contracts and buying bonds with the same maturity. By a similar
+argument, this strategy also effectively produces short interest rebate.</p><hr><p>The interest that brokers directly or indirectly earn on the proceeds of
+short sales can be a very significant source of their revenue. For
+example, when interest rates are 5.0 percent, brokers receive 5,000
+dollars per year on a 100,000-dollar short position. These revenues
+dwarf the commissions that they charge their clients to put on and take
+off these short positions.</p><p>Large clients and professional traders demand that their brokers rebate
+some of the interest on the proceeds of their short sales. Such interest
+is also called short interest rebate.</p><p>Almost all retail brokers refuse to pay short interest rebate to their
+clients as a matter of firm policy. Their nearly universal reluctance is
+surprising, given the interest that brokers can earn from the short
+proceeds. Brokers who pay short interest rebate, and who appropriately
+advertise this fact, should be able to garner significant short
+proceeds. If such brokers pay out only half the interest that they
+receive on these balances as short interest rebate, they should have
+extremely lucrative businesses.</p><h4 id=7315-underwriting-fees>7.3.1.5 Underwriting Fees<a class=anchor href=#7315-underwriting-fees>#</a></h4><p><em>Investment banks</em> receive <em>underwriting fees</em> when they help issuers
+sell securities. The fees vary by whether the broker <em>underwrites</em> the
+issue or merely sells it on a <em>best efforts</em> basis. In an <em>underwritten
+offering</em>, the investment bank guarantees that the issuer will receive
+the offering price for all shares or bonds issued. If it cannot sell the
+entire issue, it will buy the remainder for its own account. In a <em>best
+efforts offering</em>, the investment bank makes its best effort to sell the
+security. Most offerings are underwritten offerings because investment
+banks have a greater incentive to sell securities when they risk losing
+if they fail.</p><p>In the United States, the fees in an underwritten initial public stock
+offering tend to be around 7 percent of the transaction. Brokers often
+receive additional compensation in the form of options to buy additional
+shares at the offering price. These options are quite valuable if the
+share price rises following the offering.</p><hr><p><strong>Brokerage
+Compensation</strong></p><p>Most brokerage firms are highly entrepreneurial operations in which
+different units of the firm operate as substantially independent
+businesses. Such firms often base the pay of their senior employees on
+the performance of their unit. These compensation schemes ensure that
+key personnel have strong incentives to work hard for the firm. They
+also reduce the probability that key personnel will leave to start their
+own firms.</p><p>Most firms pay their brokers on a commission basis when they are
+responsible for obtaining their order flow. The more trades the brokers
+arrange, the better paid they will be. Highly productive brokers can
+easily make millions of dollars per year.</p><p>Compensation for the professional staff at brokerage firms generally
+consists of a low base salary plus a significant year-end bonus if the
+employee has been productive and if the firm has been profitable. This
+compensation scheme tends to keep employees attached to their firms (at
+least until year-end), it provides them with strong incentives to work
+hard, and it ensures that the firm will stay solvent when business is
+slow.</p><p>At firms where brokers are essentially well-trained telephone clerks,
+they are paid accordingly. Most firms, however, give year-end bonuses to
+all workers when the firm has done well.</p><hr><p>The fees in underwritten offerings compensate brokers for their efforts
+and for the insurance that they provide issuers. Since brokers do not
+provide such insurance for best efforts offers, fees are usually lower
+for those transactions.</p><h4 id=7316-merger-and-acquisition-fees>7.3.1.6 Merger and Acquisition Fees<a class=anchor href=#7316-merger-and-acquisition-fees>#</a></h4><p>Investment banks also broker mergers and acquisitions. The brokers who
+suggest and help arrange these transactions generally receive fees for
+their services. The companies involved may hire them as consultants or
+as underwriters of new securities created in the merger.</p><h4 id=7317-security-lending-fees>7.3.1.7 Security Lending Fees<a class=anchor href=#7317-security-lending-fees>#</a></h4><p>Brokers who hold their clients' securities in street name often lend
+those securities to short sellers in exchange for security lending fees.
+The fees depend on the demand for short positions and on the
+availability of the shares. Security lending fees are highest for
+closely held securities that greatly interest short sellers. <em>Closely
+held securities</em> are securities for which a small number of investors
+hold a large majority of the shares or bonds. Such investors often will
+not lend their securities because they do not want short sellers to
+drive down their price. Widely held securities that do not interest
+short sellers generally command minimal lending fees.</p><h3 id=732-costs>7.3.2 Costs<a class=anchor href=#732-costs>#</a></h3><p>Labor costs generally are the most significant costs of running a
+brokerage. Other important costs include interest payments on client
+cash balances and on money borrowed to finance client margin loans,
+marketing costs, accounting costs, clearance and settlement costs, data
+fees, and communications costs. Most of these costs are obvious and need
+no further comment.</p><hr><p><strong>Economies of Scale in
+Trading Technologies</strong></p><p>The back offices of brokerage firms must be highly automated to reduce
+labor costs. Brokerages therefore spend a lot on information
+technologies.</p><p>Most information technologies are characterized by <em>economies of scale.</em>
+The average cost of building and operating systems, per unit of output,
+declines with system usage.</p><p>Large brokerage firms therefore have significant cost advantages over
+small firms. They can spread fixed costs of creating and operating their
+information systems over many accounts, and they can provide many
+services at a lower cost because of their size. These scale economies
+explain much of the consolidation that has occurred in the brokerage
+industry since the introduction of automated information-processing
+systems. To compete in the presence of such scale economies, most small
+brokerage firms are <em>introducing brokers</em> that purchase trade execution
+and back office services from larger firms.</p><hr><h2 id=74-the-principal-agent-problem>7.4 THE PRINCIPAL-AGENT PROBLEM<a class=anchor href=#74-the-principal-agent-problem>#</a></h2><p>Whenever someone works for someone else, a potential conflict of
+interest arises. This problem is the well-known <em>principal-agent
+problem.</em> It is the principal problem of management. Agents are supposed
+to do what their principals want them to do, but the agents often do
+what the agents want to do.</p><p>Brokers are agents who help their clients trade. The clients expect that
+their brokers will work hard and honestly. Brokers, however, may have
+other agendas. They may be lazy, they may cut corners, or they may even
+try to defraud their clients. Most brokers, of course, are honest and
+work hard on behalf of their clients.</p><p>Brokerage clients use several standard management techniques to solve
+the principal-agent problem. The techniques usually involve carrots and
+sticks. Clients reward their brokers for doing good work and penalize
+them for performing poorly.</p><p>Rewards may be explicit or implicit. Explicit rewards typically involve
+contractual payments that clients make to their brokers when they
+perform well. The formulas for these payments usually depend on explicit
+measures of productivity. Implicit rewards generally entail sending more
+orders to brokers who do better jobs.</p><p>Penalties likewise may be explicit or implicit. The most important
+explicit penalties that clients invoke are legal actions. Clients sue
+(or bring to arbitration) brokers who are negligent or dishonest. The
+most common penalty for poor performance is implicit: Clients take
+business away from brokers who serve them poorly.</p><h3 id=741-performance-measurement>7.4.1 Performance Measurement<a class=anchor href=#741-performance-measurement>#</a></h3><p>Clients must measure the performance of their brokers in order to manage
+them effectively. Otherwise, they cannot reward brokers who serve them
+well or penalize those who serve them poorly. In general, managers
+cannot solve principal-agent problems when they cannot measure the
+performance of their agents. Accurate performance measurement therefore
+is a prerequisite for successful management. You cannot manage what you
+cannot measure.</p><p>Measuring broker productivity is quite difficult. To measure their
+productivity, you must compare their product to their commissions.
+Measuring commissions is easy, but measuring the quality of the
+transaction services that brokers produce is
+much more difficult. Brokers provide good service when they buy at low
+prices, sell at high prices, do not fail to buy when prices subsequently
+rise, and do not fail to sell when prices subsequently fall. Measuring
+these attributes is difficult because clients generally cannot easily
+determine whether their brokers obtained the best available prices.
+Clients also cannot easily determine whether their brokers failed to
+trade because no one was willing to trade or because their brokers were
+not aggressive enough. Consequently, measures of broker productivity are
+invariably imprecise. We consider how clients evaluate brokerage
+services in <a href=#part0034.html_ch21>chapter 21</a>. Without good
+measures of quality of service, brokerage clients cannot accurately
+judge whether they obtain service commensurate with the commissions that
+they pay.</p><p>Although traders cannot easily measure the quality of service they
+obtain from their brokers, others may do it for them. Rating agencies
+evaluate brokerages and sell the results to interested parties.
+Consultants likewise evaluate the transaction costs of their clients and
+compare them against those of their other clients. Increasingly,
+government regulators and exchange officials require that dealers and
+brokers publish order-handling data and execution price data that
+analysts can use to make meaningful comparisons among them. Traders
+often use the reports produced by these analysts to determine to which
+brokers they should direct their orders.</p><p>Clients who face principal--agency problems also benefit from the
+regulation of brokers by governments, exchanges, and trader
+associations. These agencies often supervise brokers to ensure that they
+do not engage in abusive or dishonest business practices.</p><h3 id=742-best-execution>7.4.2 Best Execution<a class=anchor href=#742-best-execution>#</a></h3><p>When brokers take client orders, they assume an agency responsibility to
+obtain <em>best execution.</em> Unfortunately, best execution is not well
+defined. We devote much of <a href=#part0039.html_ch25>chapter 25</a>
+to understanding best execution.</p><p>"Best execution" means different things to different people. To
+unsophisticated clients, "best execution" may mean "get the best price
+possible" for a market order and "trade as quickly as possible" for a
+limit order. This definition suggests absolute standards for best
+execution. In the U.S. equity markets, the term "best execution"
+generally refers to these standards.</p><p>More sophisticated traders understand that execution quality depends on
+the resources (effort, skill, and systems) brokers employ to obtain it.
+They know that in competitive markets, you do not get something for
+nothing. When they pay their brokers well for execution services, they
+expect better executions, on average, than when they do not pay much.
+For such traders, "best execution" means "Get me the execution I am
+paying you to provide." These traders define "best execution" in the
+context of their brokerage relationships.</p><p>The most sophisticated clients understand they cannot buy something that
+they cannot measure well. If brokers believe that their clients cannot
+measure execution quality, they are unlikely to provide it, whether they
+are paid for it or not: Any broker who spends resources to provide
+unrecognized execution quality will be undercut by those who do not. In
+competitive brokerage markets, such brokers cannot compete. They must
+either go out of business or quit providing high-quality service. The
+most sophisticated clients therefore pay only for the level of execution
+quality that they can audit. For them, "best
+execution" means "Get me the execution that I expect you to provide,
+given what I pay you and the limitations of my ability to audit your
+performance." These traders define best execution relative to the costs
+of auditing it.</p><h3 id=743-the-dual-trading-problem>7.4.3 The Dual Trading Problem<a class=anchor href=#743-the-dual-trading-problem>#</a></h3><p><em>Dual traders</em> trade both as dealers and as brokers. When they trade as
+dealers, they buy and sell for their own account. When they trade as
+brokers, they buy and sell for other people's accounts. Dual traders are
+also known as <em>broker-dealers.</em></p><p>Dual traders face an unavoidable conflict of interest. The conflict is
+most obvious when they <em>internalize</em> orders. Dealer-brokers internalize
+orders when they fill client orders themselves. When internalizing
+client buy orders, broker-dealers want high sales prices and their
+clients want low purchase prices. When internalizing client sell orders,
+broker-dealers want low purchase prices and their clients want high
+sales prices. These price objectives are irreconcilable. What is best
+for the client is never what is best for the broker-dealer in the short
+run.</p><p>Dual traders also face a conflict of interest when both they and their
+clients want to trade on the same side of the market. Both want to trade
+first because the first traders usually get the best prices. They also
+want to trade first to benefit from the market impact of the others'
+trades. Traders who trade ahead of other traders to profit from the
+price impacts of their orders are known as <em>front runners.</em> We discuss
+the front-running strategy in section 7.5.1 below and in <a href=#part0021.html_ch11>chapter
+11</a>.</p><p>In the long run, dealers who do not provide good service to their
+clients will not keep those clients. Clients, however, must be able to
+evaluate the quality of the service they receive. To the extent that
+they cannot do so, they must rely upon their brokers to represent them.
+When their brokers are also their dealers, the conflict of interest may
+become troublesome.</p><p>Many markets closely regulate dual traders because of the conflict of
+interest problem. In the U.S. futures markets, regulations prohibit dual
+traders from filling their agency orders for their own accounts.
+Instead, they must offer them to other traders. At a given price, they
+also must fill their agency orders before they can fill their own
+orders. This public precedence rule helps ensure that they do not
+front-run their clients.</p><p>Some markets prohibit all dual trading. In such markets, traders must
+trade either exclusively for their accounts or exclusively for their
+clients. The markets that prohibit dual trading typically are large
+markets in which everyone can specialize. Prohibitions against dual
+trading in small markets may significantly decrease liquidity by
+preventing traders who otherwise would be willing to offer liquidity
+from doing so.</p><h3 id=744-order-preferencing>7.4.4 Order Preferencing<a class=anchor href=#744-order-preferencing>#</a></h3><p><em>Order preferencing</em> is the routing of order flow by a broker to a
+preferred dealer. Most brokers preference orders based on the relations
+they have with various dealers. The routing does not normally depend on
+the prices that dealers quote or on current market conditions. The most
+commonly preferenced orders are small retail orders to trade stocks and
+options.</p><p>Brokers route orders to dealers who provide them with good service, who
+provide good prices to their clients, and who pay them for the order
+flow. Brokers who own dealer subsidiaries
+often route orders to their subsidiary dealers when they internalize
+orders for execution. <em>Payments for order flow</em> are pecuniary and
+nonpecuniary inducements that dealers offer brokers in exchange for
+their order flows.</p><p>Sometimes in lieu of payments for order flow, two broker-dealers will
+exchange order flows. A broker whose dealer subsidiary does not deal in
+a particular instrument will route orders in that instrument to a
+broker-dealer who does. The other broker-dealer will reciprocate by
+sending orders that the first broker-dealer trades. The broker-dealers
+keep track of these reciprocal order flow exchanges to ensure that they
+are balanced.</p><p>In the U.S. stock markets, dealers often pay brokers about 1 cent per
+share for each market order that brokers send to them. Before the
+introduction of new order exposure rules in 1997 and decimalization in
+2000, these payments often were substantially higher. The payments
+declined because the new rules and the decimalization caused bid/ask
+spreads to narrow, especially in Nasdaq stocks.</p><h4 id=7441-the-order-preferencing-problem>7.4.4.1 The Order-Preferencing Problem<a class=anchor href=#7441-the-order-preferencing-problem>#</a></h4><p>Preferencing of order flow by brokers to dealers raises questions about
+whether brokers obtain best execution for their clients. To many people,
+payments for order flow seem like kickbacks. Likewise, the preferencing
+of order flow to a broker's own dealer subsidiary suggests an obvious
+conflict of interest, as does the exchange of order flows among
+brokerages and their dealer subsidiaries.</p><p>Since preferencing relationships generally benefit brokers directly,
+some clients and regulators suspect that preferencing brokers do not
+meet their agency obligations to their clients. In particular, since
+brokers rarely negotiate individual trade prices for preferenced order
+flows, and since the routing of preferenced orders rarely depends on the
+orders or on current market conditions, these clients and regulators
+question whether brokers actively search for best execution for their
+clients.</p><h4 id=7442-best-execution-standards>7.4.4.2 Best Execution Standards<a class=anchor href=#7442-best-execution-standards>#</a></h4><p>Dealers and brokers involved in order-preferencing arrangements are
+aware of the conflict of interest. Brokers therefore demand, and dealers
+generally promise, certain levels of service that depend on order type
+and size. Since brokers negotiate these promises with their dealers,
+these agreements implicitly represent the brokers' definition of best
+execution. In general, brokers provide best execution when they ensure
+that their clients' orders fill at the best prices their clients can
+reasonably expect. In U.S. equity markets, this generally means that
+dealers will execute market orders at the national best bid or offer, or
+better.</p><p>Although clients always want their brokers to actively negotiate for the
+best price when filling their orders, such negotiations are
+prohibitively expensive for small orders: The small commissions that
+traders pay for small orders simply do not justify the individual
+attention that every client desires. Instead, many brokers direct their
+orders to dealers who use complex algorithms to provide best execution
+under various market conditions. Such brokers obtain best execution for
+their clients when they ensure that their clients receive good prices
+and high-quality service on average.</p><p>Large institutional traders who actively participate in the negotiation
+of their trades are less concerned about best execution standards than
+are small traders who must trust their
+brokers to obtain best execution. Large traders personally negotiate
+with their dealers, or they insist that their brokers negotiate actively
+on their behalf. Regulators therefore generally presume that such large
+traders can fend for themselves.</p><h2 id=75-dishonest-brokers>7.5 DISHONEST BROKERS<a class=anchor href=#75-dishonest-brokers>#</a></h2><p>Although most brokers are honest, dishonest brokers occasionally exploit
+their clients. Markets therefore have developed mechanisms to detect and
+deter dishonest behavior among brokers. These mechanisms make dishonest
+broker problems uncommon in most places.</p><p>Brokers are most likely to be dishonest when their clients and their
+regulators cannot easily detect their frauds. The best way to deter
+fraud among brokers therefore is to have good mechanisms for monitoring
+their behavior. Markets detect dishonest brokers and deter dishonest
+behavior by having officials supervise their trading, by investigating
+suspicious trading practices reported by honest traders, and by
+maintaining reliable audit trails.</p><p>An <em>audit trail</em> records the submission and disposition of every order.
+A good audit trail includes detailed and unalterable information about
+everything that happens to each order. Complete audit trails also record
+market conditions at the times of submission and execution of every
+order. Regulators use audit trails to determine whether traders have
+violated trading rules. An accurate audit trail discourages dishonest
+behavior by brokers.</p><p>Brokers are most likely to engage in dishonest practices when the
+benefits of their fraudulent behavior are large compared to the expected
+costs of acting fraudulently. These costs include losing business from
+their defrauded clients, losing a reputation for honest dealings,
+acquiring a reputation for dishonest dealings, and suffering any
+criminal and civil sanctions that may ultimately arise out of their
+behavior.</p><p>These considerations suggest that traders will encounter dishonest
+brokers more often in unregulated markets than in well-regulated
+markets. They also suggest that brokers will be more honest in markets
+in which they have acquired valuable reputations for honest dealing than
+in markets in which they cannot develop---or have not yet
+developed---such reputations. Finally, brokers will be more honest in
+transparent markets with strong audit trails than in opaque markets in
+which traders cannot easily see what their brokers are doing.</p><hr><p><strong>Honesty Is the Best Policy</strong></p><p>The vast majority of brokers are honest. Nonetheless, brokers who work
+for large, well-established, and well-respected firms are more likely to
+behave honestly than are brokers who work for small, new firms. Firms
+with good reputations attract business because people trust them. The
+ability to attract and retain business makes these firms valuable. Their
+managers must be very vigilant to ensure that no rogue brokers exploit
+their reputations and thereby depreciate the values of their firms.</p><p>Since most newly established brokerages do not start with valuable
+reputations, their managers have less incentive to deploy resources to
+detect and prevent fraud by their employees than do the managers of
+firms with valuable reputations. Not surprisingly, most penny stock
+fraud takes place at small, relatively new brokerages rather than at
+large, well-established ones.</p><p>The value of a reputation for honesty makes it difficult to establish
+new brokerage firms. Clients naturally are wary of brokers who they do
+not know well and of firms they suspect could easily disappear tomorrow.</p><hr><hr><p><strong>How to Check on a U.S.
+Broker</strong></p><p>The regulatory arm of the National Association of Securities Dealers,
+<em>NASD Regulation</em>, or NASD-R for short, maintains a registration and
+licensing database called the <em>Central Registration Depository</em> (CRD).
+Regulators that collect data about securities firms and individual
+brokers deposit these data in the CRD. The data include information
+about employers; registrations; criminal events; actions taken by
+federal and state regulators and by self-regulating organizations such
+as exchanges; complaints; arbitrations; civil actions; bankruptcies; and
+unsatisfied judgments.</p><p>Anyone can access the public records in this database via the NASD-R
+Public Disclosure Program. Forms for conducting online research and for
+requesting disclosure reports appear at
+[<a href=http://www.nasdr.com/2000.htm>www.nasdr.com/2000.htm</a>].</p><p>The National Futures Association (NFA) maintains a similar database
+through its <em>Background Affiliation Status Information Center</em> (BASIC).
+Forms for accessing BASIC appear at
+[<a href=http://www.nfa.futures.org/basic/welcome.asp>www.nfa.futures.org/basic/welcome.asp</a>]..</p><hr><hr><p><strong>Front-Running Example</strong></p><p>Doug is a dishonest broker, Fran is Doug's friend, and Earl is a large
+client of Doug's. Both Earl and Fran have given Doug market buy orders
+to execute. Earl's order is quite large and will likely cause prices to
+rise. Fran's order arrived after Earl's order but before Doug had
+executed Earl's order. The time precedence rules of the market require
+that Doug execute Earl's order before Fran's order because Earl
+submitted his order earlier.</p><p>Doug illegally trades Fran's order first so that her order front-runs
+Earl's order. She then profits from the price impact of Earl's order.
+The average fill price of Earl's order is worse because Fran takes some
+of the liquidity that otherwise would have gone to Earl. As a rule,
+front running harms the trader before whose order the front runner
+trades.</p><hr><p><strong>Front Running in Silver Futures</strong></p><p>At a picnic hosted by a charitable organization, I met a wealthy man who
+told me the following story upon learning that I was writing this book.</p><p>In the mid-1960s, Jack (not his real name) traded silver futures for his
+own account on the floor of one of the two U.S. exchanges that trade
+silver futures contracts. He befriended a telephone clerk who worked for
+a large wirehouse that occasionally handled large orders for its
+industrial clients. He and the clerk conspired to front-run these large
+orders and share the profits.</p><p>By arrangement, the clerk would signal Jack that he had a large buy or
+sell order by how he carried the order when bringing it to his firm's
+floor broker. When Jack saw that the clerk was carrying a large order,
+he immediately bought or sold silver contracts according to the type of
+order the clerk was signaling. Jack said that they front-ran more than
+50 orders this way before they quit. They profited on all of their
+trades.</p><p>I pointed out to Jack that the activity he was describing to me was
+illegal. He countered that everyone was doing it. Whether it was true or
+not, I imagine that Jack would not have told me the story if the statute
+of limitations had not run out.</p><p>The FBI conducted sting operations in the 1990s to detect front-running
+abuses in the futures markets. Agents posing as floor traders caught,
+convicted, and expelled several traders from the markets.</p><p>Front running in the futures markets is now much more difficult because
+audit trails have been substantially improved and because exchanges and
+buy-side traders now use electronic systems to monitor the quality of
+their executions. When execution quality is especially poor, or when it
+drops precipitously, they initiate investigations to determine why.</p><hr><hr><p><strong>Inappropriate Order
+Exposure Example</strong></p><p>Dishonest broker Doug shows Earl's large buy order to his friend Rick,
+who is a small trader. Since Doug knows Rick cannot fill Earl's order,
+it is inappropriate for him to expose it to Rick. Rick then buys in
+front of Earl's order before Doug fills it. The inappropriate order
+exposure allows Rick to make a profitable trade that hurts Earl.</p><p>Doug also exposes the full size of Earl's order to his friend Todd, who
+is a small dealer. Todd then raises his offer price to avoid filling
+Earl's order at a low price. Since Doug knows that Earl's order is too
+large for Todd to fill by himself, Doug should have exposed only a
+portion of the order. The inappropriate exposure ultimately causes Earl
+to pay a higher average price to fill his order.</p><hr><p>The best way to avoid losing to dishonest brokers is to avoid doing
+business with them. Traders therefore should know their brokers well. In
+practice, many traders do not know much about their brokers. Most
+traders simply trust that brokers working for large, well-known firms
+will be honest.</p><p>If your broker proves to be dishonest, you may be able to avoid losses
+by recognizing the fraud before it gets out of hand. You therefore must
+be aware of how dishonest brokers can defraud their clients. The
+remainder of this section considers the most common ways that dishonest
+brokers defraud their clients.</p><hr><p><strong>Fraudulent Trade Assignment Example</strong></p><p>After dishonest broker Doug fills Earl's buy order, the market rises.
+Doug then receives another buy order of the same size from his friend
+Alex. Doug fills Alex's order at a higher average price than Earl's
+order. To favor his friend, Doug assigns Earl's purchase to Alex and
+Alex's purchase to Earl.</p><hr><h3 id=751-front-running>7.5.1 Front Running<a class=anchor href=#751-front-running>#</a></h3><p><em>Front running</em> occurs when a broker improperly allows one order to
+trade ahead of another. The order that goes first usually profits from
+the price impact of the following order. Front runners hurt the traders
+whose orders they front-run because they take liquidity that the
+front-running traders otherwise would have taken. These orders then fill
+at worse prices than those at which they would have filled.</p><p>Front running is most common when a broker holds a large order that will
+likely move the market. The broker then trades for his own account
+first, or he tips off a confederate who does the front running.</p><hr><p><strong>Prearranged Trading Example</strong></p><p>After dishonest broker Doug receives Earl's buy order, he arranges to
+trade it at a high price with his friend George. Although Doug could
+have obtained a lower price on the floor, Earl does not know this.</p><hr><p>Front running also hurts the brokers who represent the orders that are
+front-run. Brokerage clients who pay close attention to how well their
+brokers perform will discover that their brokers who knowingly or
+unknowingly allow others to trade in front of their orders do not trade
+effectively on their behalf. When their poor performance becomes
+apparent, the clients often direct their orders to other brokers. Firms
+that employ brokers therefore must be vigilant to ensure that their
+brokers do not cheat their clients and thereby lose future business for
+the firm.</p><h3 id=752-inappropriate-order-exposure>7.5.2 Inappropriate Order Exposure<a class=anchor href=#752-inappropriate-order-exposure>#</a></h3><p><em>Inappropriate order exposure</em> occurs when a broker shows an order to
+another trader for the other trader's benefit rather than for his
+client's benefit. The other trader will typically act on the
+information, either by front running the order or by refusing to trade
+with it. Brokers must expose orders only for their client's benefit.</p><h3 id=753-fraudulent-trade-assignment>7.5.3 Fraudulent Trade Assignment<a class=anchor href=#753-fraudulent-trade-assignment>#</a></h3><p><em>Fraudulent trade assignment</em> can occur when a broker executes orders on
+the same side of the market for more than one client. Each client should
+get the price at which his or her order filled. A dishonest broker,
+however, may assign the best prices to his favorite clients.</p><p>Fraudulent trade assignment may be especially problematic when brokers
+also act as dealers. Without appropriate safeguards, broker-dealers may
+be tempted to take the best trades for themselves and leave the worst
+trades for their clients.</p><h3 id=754-prearranged-trading-and-kickback-schemes>7.5.4 Prearranged Trading and Kickback Schemes<a class=anchor href=#754-prearranged-trading-and-kickback-schemes>#</a></h3><p><em>Prearranged trading</em> occurs when a broker arranges a trade without
+properly exposing her client's order to other traders who might be
+willing to offer better prices. Under such circumstances, the client
+often receives a worse price than he might have received if his broker
+had properly exposed the order.</p><p>Prearranged trading is illegal in floor-based futures markets. In such
+markets, traders must shout out their bids and offers so that all
+traders have an opportunity to trade. It is also illegal in most
+electronic futures exchanges.</p><p>Many equity markets and some futures markets allow block traders to
+prearrange trades that they want to print on the floor of the exchange.
+The matched trades must be brought to the floor to give floor traders an
+opportunity to offer better prices if they choose to. These special
+procedures allow brokers to profit when they have arranged both sides of
+a difficult transaction and at the same time protect both sides of the
+trade from potential abuse.</p><p>In a <em>kickback scheme</em>, a broker sends an order to a dealer with the
+understanding that the dealer will fill it at a poor price. The dealer
+gives the broker some consideration---the kickback---in exchange for the
+opportunity to cheat the client. The dealer may pay the kickback in cash
+or with nonmonetary considerations.</p><p>Brokers often arrange to send dealers order flow in exchange for
+monetary or nonmonetary payments. Although these <em>payments for order
+flow</em> arrangements appear a lot like kickback schemes, they generally
+are not. We discuss the economics of payments for order flow in <a href=#part0039.html_ch25>chapter
+25</a>.</p><h3 id=755-unauthorized-trading-and-churning>7.5.5 Unauthorized Trading and Churning<a class=anchor href=#755-unauthorized-trading-and-churning>#</a></h3><p>Brokers engage in <em>unauthorized trading</em> when they make trades for their
+clients that their clients have not authorized. Brokers generally make
+these trades to generate commissions or to manipulate prices. Not
+surprisingly, the problem is most serious among unsophisticated retail
+investors.</p><p>Clients must pay close attention to their accounts to ensure that their
+brokers are not making trades of which they do not approve. They must
+pay particular attention to the trade confirmations that they receive.</p><p>Unauthorized trading is especially difficult to detect if the broker has
+changed the mailing address on the defrauded account. In that case, the
+victim may not quickly detect the unauthorized trading. To prevent this
+problem, most brokerage firms do not allow their brokers access to the
+systems that maintain client mailing addresses. They also require signed
+instructions to change client mailing addresses, and they compare the
+signatures with those on file. Finally, they send letters to their
+clients to advise them whenever someone requests a change of address for
+their accounts. They address these letters to both the old and the new
+address to ensure that their clients have a chance to detect a
+fraudulent change of address. If a fraudulent change of address occurs,
+clients must respond immediately in order to protect their assets.</p><hr><p><strong>Churn 'em and Burn
+'em</strong></p><p>The term <em>churn</em> means to actively agitate in place. Brokers churn
+accounts when they trade frequently without accomplishing anything.
+Since the clients suffer, traders call the strategy <em>churn 'em and burn
+'em.</em></p><p>Brokerages that use churn 'em and burn 'em sales practices must
+constantly seek new clients as they exhaust the resources or patience of
+their existing clients. They therefore devote much more of their
+resources to client acquisition than to client retention.</p><p>Not surprisingly, firms with such aggressive sales practices often
+advertise extensively and engage in endless <em>cold calling.</em> Salespeople
+make <em>cold calls</em> when they call upon prospects who have never indicated
+any interest in the firm's products and services.</p><p>The targets of these sales efforts generally are unsophisticated people
+with money. Aggressive firms especially target lonely people who are
+eager to form trusting relationships, gamblers who are looking for some
+action, and envious people who want to catch up with their successful
+peers.</p><p>P. T. Barnum's famous quote, "A sucker is born every minute," well
+characterizes the prevailing attitude at churn 'em and burn 'em
+brokerages.</p><hr><p>Brokers <em>churn</em> accounts when they advise their clients to trade more
+often than is prudent. Brokers suggest these trades to take advantage of
+opportunities that, they argue, will benefit their clients. The primary
+purpose of these trades, however, is to generate brokerage commissions.
+To help prevent these problems, many brokers monitor their client
+accounts and carefully investigate instances where trading seems
+excessive.</p><p>If the primary beneficiaries of the trading activity are the brokers
+rather than their clients, the brokers are acting unethically,
+regardless of whether their clients authorize the trades. In most legal
+jurisdictions, brokers acting as investment advisers must place the
+interests of their clients ahead of their own.</p><p>Churning is most common when unsophisticated, trusting clients give
+their brokers authorization to trade their accounts. To prevent
+churning, regulators require that brokerages know their clients and
+ensure that their trading is appropriate for them. To prevent abuses,
+the <em>compliance officers</em> at many brokerage firms monitor the turnover
+in client accounts to identify clients who may be trading too often.</p><h3 id=756-securities-theft>7.5.6 Securities Theft<a class=anchor href=#756-securities-theft>#</a></h3><p>In extreme cases, dishonest brokers steal funds and securities that
+their clients entrust to them. Although the probability of theft is very
+small in most markets, the possibility of theft explains why many
+clearing and settlement procedures exist. These procedures ensure that
+securities theft is a small problem in well-developed markets.</p><p>Institutional traders prevent the theft of their assets primarily by
+contracting with <em>depositories</em> or <em>custodians</em> to hold them for them.
+When brokers arrange trades for clients who use depositories, the
+brokers report the trades both to their clients and to their clients'
+depositories. The clients then instruct their depositories to deliver or
+receive the securities, as necessary, to settle their trades.</p><hr><p><strong>Bearer Bonds</strong></p><p><em>Bearer bonds</em> are bonds for which the issuer does not register its
+bondholders. Like currency, whoever holds a bearer bond is its
+presumptive owner. Holders of bearer bonds obtain their interest
+payments and final principal repayments by presenting coupons clipped
+from their bonds to the bond issuer. Most banks help facilitate these
+redemptions.</p><p>In the past, almost all bonds were bearer bonds because keeping track of
+changes in bond ownership was quite costly. Now most new bonds are
+<em>registered bonds.</em> (U.S. government regulations now require that most
+bonds issued by public corporations in the United States be registered.)
+Investors like registered bonds because they can obtain new certificates
+if they lose the original ones and because the issuers can make their
+interest and principal payments by direct deposit or check. Tax
+authorities like registered bonds because they can compel issuers to
+report the interest payments that they make to investors.</p><p>Bearer bonds are popular with people who want to hide their assets or
+their income. Investors who hold these bonds must be especially careful
+not to lose them.</p><hr><p>The depository system protects traders from fraud by making it
+impossible for brokers to steal securities or funds, because brokers
+never hold them. Brokers simply arrange trades.</p><p>The depository system is attractive to institutional traders because it
+allows them to trade easily through any broker with whom they have an
+appropriate credit relationship. By relying upon a single agency to
+ultimately settle their trades, traders do not have to worry about
+whether they have adequately funded their brokerage accounts or whether
+the securities they want to sell are in their accounts with the
+brokerages that arranged their sales.</p><p>Almost all large institutional traders use depositories to hold their
+securities. In addition, most retail brokers place the securities that
+they hold on behalf of their clients in depositories. The brokers use
+depositories for the same reasons that institutions do. They want to
+protect themselves from rogues who might steal the securities or try to
+settle unauthorized trades. They also use the depositories to facilitate
+clearing and settlement.</p><p>Some investors guard their securities by holding them as paper
+certificates that represent their ownership. Most issuers employ
+<em>security registrars</em> to keep track of their shareholders and
+bondholders. The registrars issue and cancel certificates on behalf of
+their issuers. They also pay dividends and interest to security holders.
+When a paper certificate has been issued for a security, the certificate
+generally must be delivered to the registrar so that the registrar's
+record of who owns it can be changed. Investors therefore can protect
+their ownership by guarding their certificates. Traders who take
+certificates must be careful not to lose them because they can be
+expensive or impossible to replace.</p><p>Many issuers no longer issue certificates. Instead, their registrars
+keep electronic records of who owns their issues. This registration
+system is called <em>book entry registration.</em> Registrars have very strong
+procedures to secure their book entry records against loss and
+fraudulent changes.</p><hr><p><strong>Can Investors Vote More
+Than 100 Percent of the Shares Outstanding?</strong></p><p>When stocks are sold short, the number of shares that beneficial owners
+think they own is greater than the number of shares outstanding (not
+counting treasury stock). Consider an example.</p><p>BigBroker's client Cleo bought 100 shares of International Widgets, a
+perennial favorite of economists. Since Cleo leaves the stock in his
+brokerage account, BigBroker is the holder of record.</p><p>Shorty wants to sell short 100 shares of Widgets through his broker,
+SureBroker. Since SureBroker does not have the shares, it borrows them
+from BigBroker. Benny buys the shares from Shorty. Benny requests the
+certificate and holds them in his own name. Benny is now a shareholder
+of record for 100 shares. Cleo has no idea that BigBroker lent Widgets
+shares.</p><p>Benny and Cleo both believe that they own the stock and that they have a
+right to vote their shares in any matter that Widgets places before its
+shareholders. However, if they both could vote, more than 100 percent of
+the shares could be voted.</p><p>In fact, only shareholders of record have a right to vote their shares.
+Benny has an absolute right to vote his shares. As a beneficial owner,
+Cleo can only recommend to BigBroker how it should vote the shares.</p><p>Brokers usually follow the recommendations of their clients if they can
+do so. If they have not lent securities, they can vote exactly as their
+clients wish. Otherwise, they may have fewer shares to vote than their
+clients may direct them to vote. If this happens, brokers vote their
+shares in proportion to how their clients direct them to vote. In
+practice, since many clients do not issue voting instructions for their
+shares, brokers usually have enough shares to vote if they have not lent
+too many shares.</p><hr><h4 id=7561-securities-in-street-name>7.5.6.1 Securities in Street Name<a class=anchor href=#7561-securities-in-street-name>#</a></h4><p>When traders have their brokers or depositories hold their securities,
+they hold their securities in <em>street name.</em> The issuers then register
+the brokers or depositories as the <em>holders of record</em>, and the brokers
+or depositories become responsible for keeping track of their
+<em>beneficial owners</em>, who no longer legally own the securities. Instead,
+the beneficial owners own claims that their brokers or their
+depositories give them for their securities.</p><hr><p><strong>Cede & Co.</strong></p><p>The Depository Trust Co. (DTC) holds about 20 trillion dollars in assets
+for its participants and their customers. Most of these securities are
+registered in the name of Cede & Co. as nominee of The Depository Trust
+Co.</p><p>According to folklore, Cede was a clerk at DTC. When DTC started to hold
+securities in street name, its filing system required a name for the
+shareholder of record. Not knowing what name to provide, Cede used his
+own name. In fact, Cede stands for Central Depository.</p><hr><p>These distinctions are important only with respect to custodial issues.
+For tax purposes, the government does not care how you hold your
+securities. These distinctions explain why issuers correspond directly
+with you when you hold securities in your own name and through your
+broker when you hold securities in street name.</p><p>When you execute a <em>margin agreement</em> with your broker, you can use your
+securities as collateral to borrow money from your broker. When you
+pledge your securities as collateral for a loan, you <em>hypothecate</em> them.
+Your broker requires that you hold hypothecated securities in street
+name so that he can sell them if you cannot or will not repay the loan.</p><p>Margin agreements also allow brokers to lend securities to short
+sellers. Clients generally do not know whether their brokers have lent
+their securities, and they generally do not receive any lending fees.
+(Some large institutions hold securities in their own name so that they
+can obtain security-lending fees.) After the short sellers use the
+borrowed securities to settle their short sales, the lending brokers are
+no longer owners of record. The new purchasers become the holders of
+record on the issuer's registry.</p><hr><p><strong>Sunpoint Securities</strong></p><p>Sunpoint Securities was a full-service self-clearing broker-dealer based
+in Longview, Texas. It started its business in 1989. It ceased
+operations on November 18, 1999, when it became apparent that it did not
+have enough assets to cover liabilities owed to its clients.</p><p>In a civil lawsuit, the U.S. Securities and Exchange Commission charged
+the CEO and the CFO of Sunpoint with systematically stealing 25 million
+dollars from a money market account that the firm maintained for its
+clients. The SEC's complaint alleged that from December 1997 through
+November 18, 1999, Sunpoint illegally transferred money market funds,
+belonging to its clients, to the firm's clearing account. The firm then
+improperly transferred the funds to satisfy the firm's net capital
+requirements. The SEC further alleged that the firm's president and CEO
+also used the funds for their personal benefit. The diversion of client
+funds resulted in the firm having only 12 million dollars in its client
+money market account to cover 37 million dollars in money market
+obligations to its clients. Consequently, Sunpoint was grossly below its
+net capital and client reserve requirements.</p><p><em>For more information, see SEC Litigation Release no. 16366, dated
+November 19, 1999 at
+[<a href=http://www.sec.gov/enforce/litigrel/lr16366.htm>www.sec.gov/enforce/litigrel/lr16366.htm</a>].</em></p><hr><h4 id=7562-brokerage-bankruptcies>7.5.6.2 Brokerage Bankruptcies<a class=anchor href=#7562-brokerage-bankruptcies>#</a></h4><p>When a broker goes bankrupt, traders who deposited assets with the
+broker risk losing those assets. Bankruptcies often occur when the
+broker incurs significant trading losses on its own account, when one or
+more of its clients default on their obligations to the broker, or, most
+commonly, when someone steals assets from the broker. Traders therefore
+should carefully consider whether their brokers are creditworthy before
+they entrust their assets to them.</p><p>Brokers naturally want to assure their clients that they are trustworthy
+and creditworthy. To increase investor confidence, brokers publish their
+financial accounts for all to see. They may also take out <em>excess
+insurance</em> policies to protect their clients. The insurance companies
+help regulate brokers to ensure that they do not get into trouble.</p><p>Many other organizations subject brokers to regulatory oversight.
+Exchanges and clearinghouses regulate their members to ensure that they
+are financially viable, to minimize the costs that insolvent members can
+impose upon others, and to increase public confidence in their
+membership. Clearing members that clear for other broker-dealers
+regulate them to avoid losses that they may inherit if their
+broker-dealer clients go bankrupt. Broker-dealer associations and
+governments regulate brokers for similar reasons.</p><p>The various regulators ensure that brokers have adequate capital
+reserves to meet their obligations. They also ensure that brokers have
+well-functioning managerial controls in place to prevent unexpected
+losses due to negligence, stupidity, poor luck, or fraud. Finally, they
+require that brokers have accounting systems which can quickly detect
+such problems. Brokers accept these regulatory relationships in order to
+increase investor confidence in their financial integrity.</p><hr><p><strong>The SIPC</strong></p><p>The U.S. Congress created the Securities Investor Protection Corporation
+(SIPC) in 1970 to increase confidence in U.S. brokers. Almost all
+brokerdealers that register with the Securities and Exchange Commission
+are automatically members of the SIPC. (The only exempt brokers are
+those who exclusively distribute mutual fund shares, sell variable
+annuities or insurance, or conduct their business outside the United
+States.)</p><p>If a brokerage fails, the SIPC distributes all securities registered in
+clients' names and held by the firm to those clients. The remaining
+securities---those held in street name---and cash are then distributed
+on a pro rata basis to the clients. The SIPC will satisfy any remaining
+investor claims up to a maximum of 100,000 dollars for cash and a
+combined maximum of 500,000 dollars for securities and cash. The SIPC
+makes such distributions from a special fund it maintains for this
+purpose. The money comes from assessments that the SIPC levies on its
+members and from interest that the fund earns on its investments in U.S.
+Treasury securities. Should the SIPC need more money to satisfy claims,
+it can borrow up to a billion dollars from the U.S. Treasury.</p><p>The largest payout the SIPC has made was in the Sunpoint Securities
+liquidation. The SIPC paid 31 million dollars to restore stocks and cash
+that 9,738 investors apparently lost to theft at Sunpoint.</p><p>When a brokerage goes bankrupt, clients must quickly file their claims
+with the bankruptcy court. Most courts accept only claims filed within
+30 or 60 days of the publication date of the bankruptcy. In any event,
+the law prohibits the SIPC from satisfying any claims that it receives
+more than six months after the bankruptcy is published.</p><p>Clients should be notified by mail when a brokerage with which they do
+business goes bankrupt. In practice, clients may not receive notice
+because their broker's records are poor or because clients failed to
+notify their broker of a change of address.</p><p>If you maintain an account with a brokerage whose bankruptcy might not
+immediately come to your attention, you should regularly open your mail
+to make sure that your brokerage has not gone bankrupt. You should also
+inquire quickly into your brokerage's financial health if you fail to
+receive your monthly statement.</p><p><em>For more information, click on
+[<a href=http://www.SIPC.org>www.SIPC.org</a>].</em></p><hr><h3 id=757-summary>7.5.7 Summary<a class=anchor href=#757-summary>#</a></h3><p>Most brokers are honest, trustworthy, and creditworthy. They behave well
+because most brokers are good and honorable people; because they know
+that a good name is good for their business; and because regulators,
+markets, competitors, clients, and broker associations have established
+systems to deter bad behavior.</p><hr><p><strong>What Works Best When You Never Use It?</strong></p><p>All types of security systems---burglar alarms, guards, armies, criminal
+justice systems, and regulatory systems---work best when they deter bad
+behavior. Consequently, the better they work, the less necessary they
+seem. Unfortunately, many people do not fully appreciate the value of
+deterrence when confronted with its cost. The former is intangible,
+whereas the latter is concrete.</p><hr><p>Unfortunately, not all brokers behave well all the time. To weed out
+rogue brokers and to help traders recover losses, regulators maintain
+grievance programs.</p><p>Traders who suspect that they have been defrauded should complain to the
+appropriate regulator. Although many complaints are due to
+misunderstandings, some are due to dishonest or irresponsible behaviors
+that typically stop only when regulators take disciplinary actions. If
+you have been defrauded, your complaint may eventually lead to
+reparations. At a minimum, your complaint may prevent someone else from
+losing.</p><hr><p><strong>How to Complain
+Effectively</strong></p><p>Regulators offer several programs that collect and attempt to resolve
+complaints that the public may have about the firms and brokers who
+carry their accounts. Full descriptions of these programs appear on the
+following web pages:</p><hr><p>National Association of Securities Dealers Regulation [<a href=http://www.nasdr.com/2100.asp>http://www.nasdr.com/2100.asp</a>]
+Securities and Exchange Commission National Futures Association [<a href=http://www.sec.gov/complaint.shtml>http://www.sec.gov/complaint.shtml</a>]
+Commodity Futures Trading Commission [<a href=http://www.nfa.futures.org/dispute/index.html>http://www.nfa.futures.org/dispute/index.html</a>]
+Commodity Futures Trading Company [<a href=http://www.cftc.gov/cftc/cftccomplaints.htm>http://www.cftc.gov/cftc/cftccomplaints.htm</a>]</p><hr><p>In addition, most exchanges have grievance procedures.</p><hr><h2 id=76-summary>7.6 SUMMARY<a class=anchor href=#76-summary>#</a></h2><p>Brokers help their clients arrange trades. They match orders, they find
+traders willing to trade, and they clear and settle trades. Clients
+employ brokers for these tasks because brokers can do them more cheaply
+than they can themselves.</p><p>The principal-agent problem affects relations between brokers and their
+clients. Brokers may not always do what their clients pay them to do.
+Clients solve the problem by rewarding their brokers when they perform
+well and penalizing them when they do not.</p><p>Unfortunately, most brokerage clients cannot easily measure their
+brokers' performance. Regulators consequently concern themselves with
+best execution standards. These standards define minimum service
+guarantees that clients can expect from their brokers. The standards are
+meaningful only if clients or market regulators can audit broker
+behavior.</p><p>The structures of all mechanisms which facilitate trade reflect the
+unfortunate fact that not all traders are honest and reliable. Traders
+have created elaborate clearing, settlement, margin, custodial, and
+audit procedures to ensure that all negotiated trades settle, all
+parties honor their financial commitments, traders do not violate rules,
+and nobody steals assets that belong to others. In addition, government,
+exchange, and industry association regulators oversee trading to protect
+the integrity of the markets.</p><h2 id=77-some-points-to-remember>7.7 SOME POINTS TO REMEMBER<a class=anchor href=#77-some-points-to-remember>#</a></h2><p>• Brokers help arrange and settle trades for their clients.</p><p>• Brokers and exchanges compete with each other to arrange trades.</p><p>• Cash management is a significant source of profits for many brokers.</p><p>• The principal-agency problem can be a significant problem in the
+brokerage industry because quality of service is hard to measure.</p><p>• Soft commissions allow institutional funds to use trading commissions
+to finance their expenses and thereby report lower expense ratios.</p><p>• Many aspects of brokerage operations and of
+clearing and settlement mechanisms reduce the potential for fraud among
+traders.</p><h2 id=78-questions-for-thought>7.8 QUESTIONS FOR THOUGHT<a class=anchor href=#78-questions-for-thought>#</a></h2><p>• Do brokers work for their clients or for themselves?</p><p>• Are payments for order flow kickbacks?</p><p>• What is best execution?</p><p>• Why should a client value a broker's reputation?</p><p>• Can you buy services that you cannot measure?</p><p>• How can regulators distinguish between exchanges and brokers?</p><p>• How do you solve the settlement credit problem when you want to buy a
+used computer advertised by an individual in an eBay Internet auction?</p><p>• What is the difference, if any, between proprietary trading and
+dealing? Should we allow brokers or dealers to sell information about
+their order flows and their limit order books to proprietary traders?
+Should we allow dealers to use computers to process this information for
+their own benefit?</p><p>• What obligations do brokers have to their clients when they send
+orders to dealers who have large proprietary trading operations?</p><p>• Most people obtain advice about investments and about financial
+planning from brokers. The brokers usually do not charge them specific
+fees for these services. Instead, their clients pay them large brokerage
+commissions or annual fees based on their account balances. Why is this
+the case?</p><p>• Brokers in most trading markets guarantee that their clients' trades
+will settle. Brokers in real estate markets almost never guarantee trade
+settlement. What differences between these markets account for the
+difference in how brokers participate in the trade settlement process?</p><p>• Many exchanges limit the number of their members. Once the limit is
+reached, traders who want to become members must buy a seat from an
+existing member. Why would exchanges limit their memberships? Why might
+they expand the number of their members? What determines the value of an
+exchange seat?</p><p>• Of what value is a large entertainment budget to a new broker?</p><p>• How does a reputation for being a difficult negotiator affect trading
+profits?</p><p>• Of what importance is a broker's reputation when many traders cannot
+measure the quality of service they receive? What if no traders can
+measure execution quality?</p><p>• What is the practical difference, if any, between losing a reputation
+for honest dealings and acquiring a reputation for dishonest dealings?</p><p>• Suppose that your futures broker allows you to borrow against T-bills
+you hold in your account. The T-bill yield is 5 percent; the broker will
+lend to you at 10 percent; the broker will not pay you interest on the
+cash in your account; and the broker charges you 40 dollars to buy or
+sell any number of 10,000 dollar T-bills. You have 200,000 dollars of
+equity in the account and you have futures positions that require only
+100,000 dollars of margin. Your variation margin cash flows average
+about 10,000 dollars per day. How much of
+your equity should you invest in T-bills?</p><p>• Most investment advisers have many clients. What fairness problems
+arise when an adviser uses soft dollars funded by client commissions to
+purchase investment research?</p><p>• Can you explain why deep discount retail brokers typically charge a
+flat commission per stock trade, U.S. institutional equity brokers
+typically charge a fixed rate per share, and other institutional equity
+brokers base their commissions on the value of the transaction?</p><p>• Brokers have defrauded their clients and their employers by giving
+their clients false statements of their accounts. The brokers intercept
+or misdirect the official account statements and send out the fraudulent
+statements in their place. How can clients and brokerage firms detect
+such frauds?</p><h2 id=part-ii-the-benefits-of-trade>Part II: The Benefits of Trade<a class=anchor href=#part-ii-the-benefits-of-trade>#</a></h2><p>The two chapters in this part discuss how trading benefits individual
+traders and the entire economy. <a href=#part0017.html_ch08>Chapter
+8</a> explains why traders trade. We
+introduce 32 types of traders and identify the benefits that each
+obtains from trading. Remarkably, traders often do not clearly
+understand why they trade. They therefore often trade when they should
+not or fail to trade when they should. Traders who understand why they
+trade will generally trade more effectively.</p><p>In <a href=#part0018.html_ch09>chapter 9</a>, we consider how
+well-functioning markets benefit the entire economy. The primary
+benefits come from informative prices and from market liquidity. We
+explain how well-functioning markets help market-based economies use
+their resources most efficiently. We also consider a framework for
+evaluating public policy.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/digital-library/books/trading-and-exchanges/ch06.html class="flex align-center"><img src=/digital-library/icons/backward.svg class=book-icon alt=Backward>
+<span>Chapter 6: Order-Driven Markets</span>
+</a></span><span><a href=/digital-library/books/trading-and-exchanges/ch08.html class="flex align-center"><span>Chapter 8: Why People Trade</span>
+<img src=/digital-library/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#71-what-brokers-do>7.1 WHAT BROKERS DO</a><ul><li><a href=#711-clearing-and-settlement-among-traders>7.1.1 Clearing and Settlement Among Traders</a></li><li><a href=#712-brokers-provide-access-to-exchanges>7.1.2 Brokers Provide Access to Exchanges</a><ul><li><a href=#7121-clearing-and-settlement-at-exchanges>7.1.2.1 Clearing and Settlement at Exchanges</a></li><li><a href=#7122-floor-based-trading-skills>7.1.2.2 Floor-based Trading Skills</a></li></ul></li><li><a href=#713-brokers-provide-access-to-dealers>7.1.3 Brokers Provide Access to Dealers</a></li><li><a href=#714-brokers-are-expert-traders>7.1.4 Brokers Are Expert Traders</a><ul><li><a href=#7141-block-brokers>7.1.4.1 Block Brokers</a></li><li><a href=#7142-better-negotiators>7.1.4.2 Better Negotiators</a></li><li><a href=#7143-brokers-provide-order-exposure-management>7.1.4.3 Brokers Provide Order Exposure Management</a></li></ul></li><li><a href=#715-brokers-represent-limit-orders>7.1.5 Brokers Represent Limit Orders</a></li><li><a href=#716-summary>7.1.6 Summary</a></li></ul></li><li><a href=#72-the-structure-of-a-brokerage-firm>7.2 THE STRUCTURE OF A BROKERAGE FIRM</a><ul><li><a href=#721-front-office-operations>7.2.1 Front Office Operations</a></li><li><a href=#722-back-office-operations>7.2.2 Back Office Operations</a><ul><li><a href=#7221-accounting-systems>7.2.2.1 Accounting Systems</a></li><li><a href=#7222-corporate-reorganizations>7.2.2.2 Corporate Reorganizations</a></li><li><a href=#7223-market-data-and-order-routing-systems>7.2.2.3 Market Data and Order-routing Systems</a></li><li><a href=#7224-credit-management>7.2.2.4 Credit Management</a></li><li><a href=#7225-compliance>7.2.2.5 Compliance</a></li></ul></li><li><a href=#723-proprietary-operations>7.2.3 Proprietary Operations</a><ul><li><a href=#7231-cash-management-and-stock-lending-and-borrowing>7.2.3.1 Cash Management and Stock Lending and Borrowing</a></li><li><a href=#7232-risk-management>7.2.3.2 Risk Management</a></li></ul></li></ul></li><li><a href=#73-broker-profitability>7.3 BROKER PROFITABILITY</a><ul><li><a href=#731-revenues>7.3.1 Revenues</a><ul><li><a href=#7311-commissions>7.3.1.1 Commissions</a></li><li><a href=#7312-payments-for-order-flow>7.3.1.2 Payments for Order Flow</a></li><li><a href=#7313-interest>7.3.1.3 Interest</a></li><li><a href=#7314-short-interest-rebate>7.3.1.4 Short Interest Rebate</a></li><li><a href=#7315-underwriting-fees>7.3.1.5 Underwriting Fees</a></li><li><a href=#7316-merger-and-acquisition-fees>7.3.1.6 Merger and Acquisition Fees</a></li><li><a href=#7317-security-lending-fees>7.3.1.7 Security Lending Fees</a></li></ul></li><li><a href=#732-costs>7.3.2 Costs</a></li></ul></li><li><a href=#74-the-principal-agent-problem>7.4 THE PRINCIPAL-AGENT PROBLEM</a><ul><li><a href=#741-performance-measurement>7.4.1 Performance Measurement</a></li><li><a href=#742-best-execution>7.4.2 Best Execution</a></li><li><a href=#743-the-dual-trading-problem>7.4.3 The Dual Trading Problem</a></li><li><a href=#744-order-preferencing>7.4.4 Order Preferencing</a><ul><li><a href=#7441-the-order-preferencing-problem>7.4.4.1 The Order-Preferencing Problem</a></li><li><a href=#7442-best-execution-standards>7.4.4.2 Best Execution Standards</a></li></ul></li></ul></li><li><a href=#75-dishonest-brokers>7.5 DISHONEST BROKERS</a><ul><li><a href=#751-front-running>7.5.1 Front Running</a></li><li><a href=#752-inappropriate-order-exposure>7.5.2 Inappropriate Order Exposure</a></li><li><a href=#753-fraudulent-trade-assignment>7.5.3 Fraudulent Trade Assignment</a></li><li><a href=#754-prearranged-trading-and-kickback-schemes>7.5.4 Prearranged Trading and Kickback Schemes</a></li><li><a href=#755-unauthorized-trading-and-churning>7.5.5 Unauthorized Trading and Churning</a></li><li><a href=#756-securities-theft>7.5.6 Securities Theft</a><ul><li><a href=#7561-securities-in-street-name>7.5.6.1 Securities in Street Name</a></li><li><a href=#7562-brokerage-bankruptcies>7.5.6.2 Brokerage Bankruptcies</a></li></ul></li><li><a href=#757-summary>7.5.7 Summary</a></li></ul></li><li><a href=#76-summary>7.6 SUMMARY</a></li><li><a href=#77-some-points-to-remember>7.7 SOME POINTS TO REMEMBER</a></li><li><a href=#78-questions-for-thought>7.8 QUESTIONS FOR THOUGHT</a></li><li><a href=#part-ii-the-benefits-of-trade>Part II: The Benefits of Trade</a></li></ul></nav></div></aside></main></body></html>

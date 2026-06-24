@@ -1,0 +1,1519 @@
+<!doctype html><html lang=zh-CN dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Chapter 17: Arbitrageurs# Arbitrageurs are speculators who trade on information about relative values. They buy instruments that seem relatively cheap and sell those which seem relatively expensive. Arbitrageurs profit when prices converge so that their purchases appreciate relative to their sales.
+We introduced arbitrage trading strategies when we examined informed traders in chapter 10. There we described how arbitrageurs acquire information about relative values, how the price impacts of their trades cause prices to converge, and how they thereby unwittingly enforce the law of one price. This price characterization of arbitrage helps us understand how arbitrageurs trade as informed traders.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#2e3440"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch17.html"><meta property="og:site_name" content="Yuan's Library"><meta property="og:title" content="Chapter 17: Arbitrageurs"><meta property="og:description" content="Chapter 17: Arbitrageurs# Arbitrageurs are speculators who trade on information about relative values. They buy instruments that seem relatively cheap and sell those which seem relatively expensive. Arbitrageurs profit when prices converge so that their purchases appreciate relative to their sales.
+We introduced arbitrage trading strategies when we examined informed traders in chapter 10. There we described how arbitrageurs acquire information about relative values, how the price impacts of their trades cause prices to converge, and how they thereby unwittingly enforce the law of one price. This price characterization of arbitrage helps us understand how arbitrageurs trade as informed traders."><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="books"><meta property="article:modified_time" content="2026-06-24T12:05:09+08:00"><meta itemprop=name content="Chapter 17: Arbitrageurs"><meta itemprop=description content="Chapter 17: Arbitrageurs# Arbitrageurs are speculators who trade on information about relative values. They buy instruments that seem relatively cheap and sell those which seem relatively expensive. Arbitrageurs profit when prices converge so that their purchases appreciate relative to their sales.
+We introduced arbitrage trading strategies when we examined informed traders in chapter 10. There we described how arbitrageurs acquire information about relative values, how the price impacts of their trades cause prices to converge, and how they thereby unwittingly enforce the law of one price. This price characterization of arbitrage helps us understand how arbitrageurs trade as informed traders."><meta itemprop=dateModified content="2026-06-24T12:05:09+08:00"><meta itemprop=wordCount content="18291"><title>Chapter 17: Arbitrageurs • Yuan's Library</title><link rel=icon href=/digital-library/favicon.png><link rel=manifest href=/digital-library/manifest.json><link rel=canonical href=https://yuanuite.github.io/digital-library/books/trading-and-exchanges/ch17.html><link rel=stylesheet href=/digital-library/book.min.0ebbbe4438e0f38f4e45a977d6b9482eb2e03ce18bcc87c615e90789f13ae152.css integrity="sha256-Dru+RDjg849ORal31rlILrLgPOGLzIfGFekHifE64VI=" crossorigin=anonymous><script defer type=module src=/digital-library/zh.search.min.e6e45bba8cd14952ab2084fbaf2fb195d14a78db06bea816dfe3b04960be6a41.js integrity="sha256-5uRbuozRSVKrIIT7ry+xldFKeNsGvqgW3+OwSWC+akE=" crossorigin=anonymous></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"><link rel=stylesheet href=/digital-library/syntax.min.css><link rel=stylesheet href=/digital-library/katex/katex.min.css><script defer src=/digital-library/katex/katex.min.js></script><script defer src=/digital-library/katex/auto-render.min.js></script><link rel=stylesheet href=/digital-library/pseudocode.min.css><script defer src=/digital-library/pseudocode.min.js></script><script>document.addEventListener("DOMContentLoaded",function(){window.renderMathInElement&&renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"\\(",right:"\\)",display:!1},{left:"$",right:"$",display:!1}],ignoredTags:["script","noscript","style","textarea","pre","code"],ignoredClasses:["pseudocode"],throwOnError:!1}),window.pseudocode&&document.querySelectorAll("pre.pseudocode").forEach(function(e){try{pseudocode.renderElement(e,{lineNumber:!1})}catch(t){console.error("pseudocode error:",t,e)}})})</script></head><body dir=ltr class="book-kind-page book-type-books"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/digital-library/index.html><span>Yuan's Library</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=搜索 aria-label=搜索 maxlength=64>
+<kbd class=book-search-kbd>⌘K</kbd><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/digital-library/books/index.html>书架</a></li><li><input type=checkbox id=section-b84eb733ddee6e8ed06bd1c62202d476 class=toggle checked>
+<label for=section-b84eb733ddee6e8ed06bd1c62202d476 class=flex><a href=/digital-library/books/trading-and-exchanges/index.html>Trading and Exchanges</a>
+<img src=/digital-library/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/digital-library/books/trading-and-exchanges/ch01.html>Chapter 1: Introduction</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch02.html>Chapter 2: Trading Stories</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch03.html>Chapter 3: The Trading Industry</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch04.html>Chapter 4: Orders and Order Properties</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch05.html>Chapter 5: Market Structures</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch06.html>Chapter 6: Order-Driven Markets</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch07.html>Chapter 7: Brokers</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch08.html>Chapter 8: Why People Trade</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch09.html>Chapter 9: Good Markets</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch10.html>Chapter 10: Informed Traders and Market Efficiency</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch11.html>Chapter 11: Order Anticipators</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch12.html>Chapter 12: Bluffers and Market Manipulation</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch13.html>Chapter 13: Dealers</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch14.html>Chapter 14: Bid/Ask Spreads</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch15.html>Chapter 15: Block Traders</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch16.html>Chapter 16: Value Traders</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch17.html class=active>Chapter 17: Arbitrageurs</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch18.html>Chapter 18: Buy-Side Traders</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch19.html>Chapter 19: Liquidity</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch20.html>Chapter 20: Volatility</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch21.html>Chapter 21: Liquidity and Transaction Cost measurement</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch22.html>Chapter 22: Performance Evaluation and Prediction</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch23.html>Chapter 23: Index and Portfolio Markets</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch24.html>Chapter 24: Specialists</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch25.html>Chapter 25: Internalization, Preferencing, and Crossing</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch26.html>Chapter 26: Competition Within and Among Markets</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch27.html>Chapter 27: Floor Versus Automated Trading Systems</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch28.html>Chapter 28: Bubbles, Crashes, and Circuit Breakers</a></li><li><a href=/digital-library/books/trading-and-exchanges/ch29.html>Chapter 29: Insider Trading</a></li><li><a href=/digital-library/books/trading-and-exchanges/index_term.html>Index</a></li><li><a href=/digital-library/books/trading-and-exchanges/references.html>References</a></li></ul></li><li><a href=/digital-library/notes.html>欢迎</a></li><li><a href=/digital-library/papers/index.html>论文</a></li><li><a href=/digital-library/reference/index.html>元素模板</a></li><li><a href=/digital-library/tags/index.html>Tags</a></li></ul><ul><li><a href=https://github.com/yuanuite/digital-library target=_blank rel=noopener>GitHub</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/digital-library/icons/menu.svg class=book-icon alt=Menu></label><h3>Chapter 17: Arbitrageurs</h3><label for=toc-control><img src=/digital-library/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#171-definitions>17.1 DEFINITIONS</a></li><li><a href=#172-a-simple-characterization-of-arbitrage>17.2 A SIMPLE CHARACTERIZATION OF ARBITRAGE</a></li><li><a href=#173-types-of-arbitrage>17.3 TYPES OF ARBITRAGE</a><ul><li><a href=#1731-pure-arbitrages>17.3.1 Pure Arbitrages</a><ul><li><a href=#17311-shipping-arbitrages>17.3.1.1 Shipping Arbitrages</a></li><li><a href=#17312-delivery-arbitrages>17.3.1.2 Delivery Arbitrages</a></li><li><a href=#17313-conversion-arbitrages>17.3.1.3 Conversion Arbitrages</a></li></ul></li><li><a href=#1732-speculative-arbitrages>17.3.2 Speculative Arbitrages</a><ul><li><a href=#17321-spreads>17.3.2.1 Spreads</a></li><li><a href=#17322-pairs-trading>17.3.2.2 Pairs Trading</a></li><li><a href=#17323-statistical-arbitrage>17.3.2.3 Statistical Arbitrage</a></li><li><a href=#17324-risk-arbitrage>17.3.2.4 Risk Arbitrage</a></li></ul></li></ul></li><li><a href=#174-arbitrage-risks>17.4 ARBITRAGE RISKS</a><ul><li><a href=#1741-implementation-risk>17.4.1 Implementation Risk</a></li><li><a href=#1742-basis-risk-and-arbitrage-scale>17.4.2 Basis Risk and Arbitrage Scale</a></li><li><a href=#1743-model-risk>17.4.3 Model Risk</a></li><li><a href=#1744-carrying-cost-risk>17.4.4 Carrying Cost Risk</a><ul><li><a href=#17441-unexpected-costs-of-carry>17.4.4.1 Unexpected Costs of Carry</a></li><li><a href=#17442-unexpected-price-increases>17.4.4.2 Unexpected Price Increases</a></li><li><a href=#17443-slow-convergence>17.4.4.3 Slow Convergence</a></li><li><a href=#17444-unexpected-buy-ins>17.4.4.4 Unexpected Buy-ins</a></li></ul></li></ul></li><li><a href=#175-the-causes-of-arbitrage-opportunities>17.5 THE CAUSES OF ARBITRAGE OPPORTUNITIES</a></li><li><a href=#176-quantity-characterizations-of-arbitrage>17.6 QUANTITY CHARACTERIZATIONS OF ARBITRAGE</a></li><li><a href=#177-arbitrageurs-dealers-and-brokers>17.7 ARBITRAGEURS, DEALERS, AND BROKERS</a></li><li><a href=#178-competition-among-arbitrageurs-and-equilibrium-arbitrage-spreads>17.8 COMPETITION AMONG ARBITRAGEURS AND EQUILIBRIUM ARBITRAGE SPREADS</a></li><li><a href=#179-summary>17.9 SUMMARY</a></li><li><a href=#1710-some-points-to-remember>17.10 SOME POINTS TO REMEMBER</a></li><li><a href=#1711-questions-for-thought>17.11 QUESTIONS FOR THOUGHT</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=chapter-17-arbitrageurs>Chapter 17: Arbitrageurs<a class=anchor href=#chapter-17-arbitrageurs>#</a></h1><p><em>Arbitrageurs</em> are speculators who trade on information about relative
+values. They buy instruments that seem relatively cheap and sell those
+which seem relatively expensive. Arbitrageurs profit when prices
+converge so that their purchases appreciate relative to their sales.</p><p>We introduced arbitrage trading strategies when we examined informed
+traders in <a href=#part0020.html_ch10>chapter 10</a>. There we
+described how arbitrageurs acquire information about relative values,
+how the price impacts of their trades cause prices to converge, and how
+they thereby unwittingly enforce the law of one price. This price
+characterization of arbitrage helps us understand how arbitrageurs trade
+as informed traders.</p><p>This chapter continues our study of arbitrageurs. Besides being informed
+traders, we shall see that arbitrageurs supply liquidity, move
+liquidity, and produce financial products. This quantity
+characterization of arbitrage helps explain why arbitrage opportunities
+arise.</p><p>Successful arbitrageurs must understand both the price and the quantity
+characterizations of arbitrage. Although many arbitrageurs can trade
+successfully merely by responding to arbitrage opportunities as they
+arise, arbitrage is more profitable when arbitrageurs also can predict
+when and where those opportunities will arise. Arbitrageurs who consider
+the quantity characteristics of their arbitrages will make better
+decisions about when and at what prices to trade.</p><p>This chapter characterizes different types of arbitrages and discusses
+the risks that arbitrageurs face. If you intend to be an arbitrageur or
+if you trade with arbitrageurs, this discussion should greatly interest
+you.</p><p>We shall see that arbitrageurs sometimes compete with dealers to offer
+liquidity. Dealers often lose to arbitrageurs because arbitrageurs
+usually are better-informed traders. If you intend to be a dealer, you
+must understand how arbitrageurs can hurt your business. If you merely
+wish to understand the origins of market liquidity, you also must
+understand what arbitrageurs do.</p><p>In <a href=#part0040.html_ch26>chapter 26</a>, we show that arbitrage
+is one of three processes that keep fragmented markets together. If you
+are interested in how markets compete with each other to trade similar
+or identical instruments, you must thoroughly understand why
+arbitrageurs trade. You must particularly understand arbitrage to
+estimate the costs of competition among marketplaces.</p><p>Commentators sometimes blame arbitrageurs when markets crash. For
+example, some people believe that index arbitrageurs were at least
+partly responsible for the 1987 stock market crash. To understand how
+traders transmit volatility among markets, you must consider what
+arbitrageurs do.</p><p>Complaints about arbitrage have led to restrictions upon arbitrage
+trading strategies in some markets. These restrictions can be costly
+because arbitrage trading benefits more than just arbitrageurs. It also
+benefits other traders and the economy as a whole. To estimate the
+sometimes significant costs of arbitrage
+restrictions, you must appreciate the quantity characteristics of
+arbitrage.</p><hr><p><strong>Barter, Arbitrage, and Relative Values</strong></p><p>Modern economies use money as a <em>medium of exchange</em>. Almost all trades
+involve money. The buyer pays it, and the seller receives it. When a
+trader wants to dispose of one item and acquire another, the trader
+usually sells the first and buys the second. The nice thing about money
+is that it allows us to buy and sell from different people.</p><p><em>Barter</em> involves the exchange of two (or more) items without the use of
+money. Barter is not common because both traders must be interested in
+both items. Traders who want to exchange apples for oranges often cannot
+easily find traders willing to exchange oranges for apples.</p><p>Trades involving money can be considered special cases of barter in
+which one of the traded items is money. This characterization of trading
+reminds us that all trades are relative value trades. People buy things
+when they value the item more than the money they exchange for it. They
+sell things when they value the money more than the item. In a sense,
+all trades are arbitrages because all trades are relative value trades.</p><hr><p>Our presentation starts with some definitions. We then characterize
+arbitrage so that we can understand it in light of trading strategies
+that we have already discussed. Next, we introduce and discuss various
+types of arbitrages. We follow this with discussions about the risks of
+arbitrage and about how arbitrageurs control these risks. We conclude
+the chapter with discussions about the quantity characteristics of
+arbitrage and about how dealers and arbitrageurs relate to each other.</p><h2 id=171-definitions>17.1 DEFINITIONS<a class=anchor href=#171-definitions>#</a></h2><p><em>Arbitrageurs</em> trade instruments whose prices are correlated.
+<em>Correlated prices</em> tend to rise or fall together. Instruments typically
+have correlated prices when their values depend on common fundamental
+factors. They also may have correlated prices when the demands of
+uninformed traders to buy or sell the instruments are correlated.</p><p>Arbitrageurs form opinions about the normal relations among correlated
+instruments. An <em>arbitrage opportunity</em> arises when the prices of
+correlated instruments diverge from their normal relations. Arbitrageurs
+then buy those instruments which have become relatively cheap and sell
+those which have become relatively expensive. The strategy is profitable
+if the prices of the instruments return to their normal relations. When
+that happens, the prices have <em>converged</em>. Arbitrageurs profit from
+<em>price convergence</em>.</p><p>When arbitrageurs take arbitrage positions, they <em>put on</em> the arbitrage.
+When they close their positions, they <em>unwind</em> their positions or <em>take
+off</em> the arbitrage. Arbitrageurs usually unwind their positions when the
+arbitrage converges. Since prices may again diverge after they converge,
+arbitrageurs need to watch their positions closely so that they can
+close them at favorable prices.</p><p>The portfolios that arbitrageurs construct are their <em>hedge portfolios</em>.
+The various positions in the hedge portfolio are the <em>legs</em> of the
+arbitrage.</p><p>Hedge portfolios usually consist of one or more long positions and one
+or more short positions in various correlated instruments. Arbitrageurs
+generally construct hedge portfolios to minimize the total risk of the
+portfolio, given some measure of its size.</p><p>(In some instances, hedge portfolios may consist only of short positions
+or only of long positions. Traders construct such hedge portfolios of
+instruments whose returns are inversely correlated. Such portfolios
+typically include put contracts. For example, a long position in a put
+contract is a hedge for a long position in the underlying instrument.)</p><p>Traders usually identify one leg of the hedge portfolio as the
+<em>arbitrage numerator</em> or <em>reference instrument</em>. They use the numerator
+to measure the size of the portfolio. The arbitrage numerator is usually
+the security, contract, or commodity that traders most closely identify
+with the common risk factor which causes the correlations among the
+various instruments in the hedge portfolio. The arbitrage numerator for
+hedge portfolios involving a derivative contract and its underlying cash
+instrument is usually the cash instrument.</p><p>The ratios of holdings in other legs to holdings in the numerator are
+the portfolio <em>hedge ratios</em>. Traders choose their hedge ratios to
+minimize the total risk of the portfolio.</p><p>Arbitrageurs may have long or short positions
+in the hedge portfolio. They are long the hedge portfolio when they have
+a long position in the instrument that serves as the arbitrage
+numerator. Since hedge portfolios usually have both long and short
+positions, a long hedge portfolio will have one or more short positions.
+A short hedge portfolio will likewise have one or more long positions.</p><hr><p><strong>Some Confusing Nomenclature</strong></p><p><em>Hedge funds</em> are managed by speculators who sometimes hedge their
+positions to minimize exposure to risks that they cannot forecast. They
+may engage in arbitrage, but they often do not.</p><p><em>Long-short portfolios</em> are actively managed portfolios that have no net
+exposure to marketwide risk. They typically consist of long and short
+positions of approximately equal aggregate sizes. Portfolio managers
+call the portion of an equity portfolio return that is correlated with
+the market index <em>deadweight</em>. Well-designed long-short portfolios have
+no deadweight. Since long-short portfolio managers construct hedged
+positions, they may be characterized as arbitrageurs. They rarely see
+themselves this way, however. Most simply see themselves as active
+managers who want to avoid exposure to market risk.</p><p>In the futures markets, a <em>long hedger</em> is a trader who holds the cash
+position and hedges it with a short futures position. His short futures
+position is his <em>short hedge</em>. Likewise, a <em>short hedger</em> is a trader
+who hedges a short cash position with a long futures position. Hedgers
+usually trade to reduce risks in their cash positions rather than to
+obtain arbitrage profits.</p><hr><p>Hedge portfolios have carrying costs. <em>Carrying costs</em> are the costs of
+holding a hedge portfolio. Depending on the arbitrage, these costs may
+include interest paid or forgone to finance positions in the hedge
+portfolio, dividends paid on short positions, fees paid to physically
+store commodities, and depreciation incurred as commodities age and
+spoil. Carrying costs are sometimes offset by dividends, interest
+income, and lending fees earned on long positions, or by interest earned
+on the proceeds from short sales. Carrying costs can make some
+arbitrages very expensive.</p><p>The difference in prices between instruments in the hedge portfolio is
+the <em>basis</em>. The <em>fair value</em> of the basis is the basis that would
+result if all instruments were correctly priced relative to each other.
+Fair values depend on carrying costs. Arbitrageurs must estimate fair
+values because they usually are not common knowledge.</p><p>The <em>arbitrage spread</em> is the difference between the basis and the fair
+value of the basis. Arbitrageurs trade when the arbitrage spread is
+sufficiently large.</p><p>The values of the basis at which arbitrageurs are just willing to trade
+are called <em>arbitrage bounds</em>. They are on either side of fair value.
+Arbitrageurs generally put on their arbitrages only when the basis is
+outside of the arbitrage bounds.</p><p>Hedge portfolios generally are less risky than the positions in the
+individual instruments from which arbitrageurs construct them. The
+reduction in risk is due to the offsetting effects of having long and
+short positions in instruments whose values depend on the same factors.
+When changes in these factors cause instrument values to fall, gains in
+the short positions offset losses in the long positions. Likewise, when
+changes in these factors cause instrument values to rise, gains in the
+long positions offset losses in the short positions.</p><p>The risk that an arbitrage hedge portfolio will lose value is called
+<em>basis risk</em>. Analysts also call this <em>residual risk</em> because it remains
+after the common factor risks in the various portfolio instruments
+cancel each other. Basis risk arises because prices depend on
+instrument-specific factors as well as common factors. The specific
+factors may be fundamental valuation factors, or they may be due to the
+price impacts that uninformed traders have on prices. Since specific
+factors are unique to each instrument, no combination of long and short
+positions can create a hedge portfolio that has no exposure to these
+risks. The contribution of instrument-specific factors to basis risk may
+be small, however, if the hedge portfolio is a well-diversified
+portfolio of many instruments. Most stock index arbitrage portfolios
+have very little residual risk.</p><h2 id=172-a-simple-characterization-of-arbitrage>17.2 A SIMPLE CHARACTERIZATION OF ARBITRAGE<a class=anchor href=#172-a-simple-characterization-of-arbitrage>#</a></h2><p>Arbitrage is particularly easy to understand if you imagine that the
+arbitrage hedge portfolio is an instrument that traders buy or sell like
+any other instrument. When traders "buy" the hedge portfolio, they buy
+its long positions and sell its short
+positions. When they "sell" the hedge portfolio, they sell its long
+positions and buy its short positions. Viewed this way, arbitrageurs are
+simply traders who use various trading strategies to trade the arbitrage
+portfolio.</p><hr><p><strong>EFPs Are Hedge Portfolio Trades</strong></p><p>Arbitrageurs buy one item and sell another when they believe that the
+first is cheap relative to the second. They sometimes do these
+transactions as a single barter trade. The most important example of an
+arbitrage barter trade is an <em>exchange for physical</em> (EFP) in the
+futures markets.</p><p>In an EFP, one trader offers a futures contract in exchange for the
+underlying physical commodity while the other trader offers the
+commodity in exchange for the contract. The trader offering the futures
+contract also must offer cash because the futures contract is only a
+commitment to buy the commodity in the future. The resulting trade is
+essentially a trade in the arbitrage hedge portfolio. Arbitragers who
+want to buy the commodity and sell futures contracts (or vice versa)
+often engage in EFPs.</p><hr><p>Arbitrageurs who employ high-frequency trading strategies are
+essentially dealers in the hedge portfolio. They buy and sell the hedge
+portfolio to profit from short-term reversals in its value. Such
+reversals typically occur when uninformed traders in one or more of the
+instruments cause prices in that instrument to change when they demand
+liquidity. Dealer-type arbitrageurs generally are less concerned about
+the fair value of basis than in its short-term behavior. They offer
+immediacy when they trade the hedge portfolio, but they usually are
+unwilling to trade large size when they do not know fair values well.
+Dealer-type arbitrageurs are usually professional traders who have very
+quick access to the markets.</p><p>Arbitrageurs who take large arbitrage positions must be very certain
+about the fair value of the basis. Such arbitrageurs are essentially
+value traders in the hedge portfolio. They supply substantial depth, but
+they may not be the fastest traders. When dealer-type arbitrageurs want
+to lay off positions in the hedge portfolio, they often trade with
+value-type arbitrageurs. (<a href=#part0027.html_ch16>Chapter 16</a>
+describes the relation between value traders and dealers.)</p><h2 id=173-types-of-arbitrage>17.3 TYPES OF ARBITRAGE<a class=anchor href=#173-types-of-arbitrage>#</a></h2><p>Arbitrages differ by the nature of the basis risk that arbitrageurs
+assume. <em>Pure arbitrages</em> involve instruments for which the value of the
+hedge portfolio is strictly <em>mean reverting. Speculative arbitrages</em>,
+also known as <em>risk arbitrages</em>, involve instruments for which the value
+of the hedge portfolio is <em>nonstationary</em>. This section defines these
+concepts and discusses their implications for arbitrageurs.</p><hr><p><strong>Dice Are Mean-reverting</strong></p><p>The completely random sequence of sums generated by rolling a pair of
+dice is mean reverting. The mean value of this sequence is seven. When a
+roll produces a sum above seven, the next sum will more likely be lower
+than higher. Likewise, when a roll produces a sum below seven, the next
+sum more probably will be higher than lower.</p><hr><h3 id=1731-pure-arbitrages>17.3.1 Pure Arbitrages<a class=anchor href=#1731-pure-arbitrages>#</a></h3><p>A variable is <em>mean reverting</em> if its values tend to return to some
+average value. Mean-reverting variables tend to drop when their values
+are above their long-run average values, and they tend to rise when
+their values are below their long-run averages. The best long-range
+estimate of the value of a mean-reverting variable is always the mean of
+the variable. Long-run value estimates never depend much on the current
+value of the variable.</p><p>Traders like pure arbitrages because a mean-reverting base eventually
+converges to its mean value. The mean typically is the fair value of the
+basis. Pure arbitrages therefore are not very risky in the long run.
+They may be quite risky in the short run, however, if the factors that
+have caused the wide arbitrage spread continue to widen the basis after
+arbitrageurs have established their positions.</p><p>Pure arbitrages typically involve instruments whose fundamental values
+depend on nearly identical factors and for which some mechanism ensures
+that the basis will eventually close. The mechanism generally places
+strong bounds on how wide the basis will be.</p><p>We can classify pure arbitrages by the type of mechanism that causes
+prices to converge. The basis in a <em>shipping arbitrage</em> depends on the
+cost of shipping an instrument from one market to another. In a
+<em>delivery arbitrage</em>, the basis depends on
+the costs of delivering on a contract. In a <em>conversion arbitrage</em>, it
+depends on the costs of converting a risk from one form to another. The
+next subsections discuss these types of pure arbitrages.</p><hr><p><strong>What Would You Do?</strong></p><p>Cash corn is cheap relative to the near corn futures contract. You sell
+the futures contract and buy corn with the intention of delivering it.
+The price of corn then rises, and the basis continues to widen. The
+increase in price causes you to lose money on your futures position and
+to make money on your cash position. Unfortunately, since the basis
+widened, you lost more than you made.</p><p>You receive a margin call from your futures commission merchant
+(broker), who requires that you cover your loss in the futures contract.
+Should you close your position and limit your losses, hold your position
+and wait until the basis closes, or increase your position now that the
+basis is wider?</p><p>Suppose you increase your position. The next day, prices continue to
+rise, the basis continues to widen, and you continue to lose money. What
+should you do now?</p><p>The next day the same thing happens again. You are becoming financially
+distressed. If you are right about the basis, you now face an incredibly
+profitable arbitrage opportunity. If you are wrong, or if prices
+continue to move against you, you may be ruined. What should you do now?</p><p>Your answers should depend on how well you understand the arbitrage
+relation, on your ability to finance your positions, and on your degree
+of risk aversion.</p><hr><h4 id=17311-shipping-arbitrages>17.3.1.1 Shipping Arbitrages<a class=anchor href=#17311-shipping-arbitrages>#</a></h4><p><em>Shipping arbitrages</em> involve two essentially identical instruments that
+trade in different markets. Arbitrageurs buy the cheaper instrument and
+sell the more expensive one. If necessary, they then ship it between the
+two markets to settle their trades. The costs of shipping the instrument
+(and of financing it while in transit) generally determine arbitrage
+bounds for the arbitrage spread. When the spread is wider than these
+costs, arbitrage is essentially risk free.</p><p>In practice, arbitrageurs often do not have to ship the instrument.
+Instead, they hope to unwind their positions if the prices converge on
+their own accord. When this happens, they avoid the shipping costs. The
+competition among arbitrageurs for profits therefore often forces them
+to put on these shipping arbitrages at much narrower spreads than their
+shipping costs would indicate. Shipping arbitrage thus can be risky. If
+arbitrageurs can unwind without shipping, they profit. If they must
+ship, they may lose.</p><p>Shipping arbitrage opportunities arise when one market has an excess of
+buyers or another market has an excess of sellers. The effect of their
+trading causes the basis to widen. By trading on opposite sides of these
+markets, shipping arbitrageurs essentially connect excess demand in one
+market to excess supply in the other market. Since they supply liquidity
+in one or both of the markets, they compete with the dealers in those
+markets.</p><p>Two types of traders typically engage in shipping arbitrages. They
+differ by whether they will actually ship the instrument. <em>Virtual
+shippers</em> are arbitrageurs who do not ship. They try to hold their hedge
+portfolios until they can unwind them at a
+profit. If they are unable or unwilling to bear the risks and costs
+associated with carrying their hedge portfolios, they <em>lay off</em> their
+positions (typically at a loss) to actual shippers. <em>Actual shippers</em>
+physically ship the instrument from one market to the other.</p><hr><p><strong>Persian---or Mexican---Gulf Oil</strong></p><p>Crude oil futures trade in New York and in London. When the price of oil
+is significantly higher in New York than in London, traders sell oil in
+New York and buy it in London.</p><p>Although floor traders at the New York Mercantile Exchange and at
+London's International Petroleum Exchange are the first to engage in
+this arbitrage, the ultimate arbitrageurs are shippers who have oil in
+transit from the Persian Gulf or the Gulf of Mexico. These shippers
+typically hedge their cargoes by selling oil futures in the market near
+where they expect to deliver their oil. When oil becomes more expensive
+in New York than in London, these shippers reroute their ships from
+Europe to New York. They simultaneously buy crude oil futures in London
+and sell futures crude oil in New York to transfer their hedge from
+London to New York.</p><p>The normal basis between the two crude oil futures contracts reflects
+differences in delivery specifications between the two contracts. The
+contract that requires delivery of a higher grade will be more
+expensive. It also depends on local storage and delivery conditions. Oil
+will be more expensive in the port where it is more expensive to
+deliver.</p><p>After adjusting for quality, storage, and delivery differentials, the
+basis cannot be any larger than the costs of shipping oil across the
+Atlantic Ocean. In practice, it is smaller because oil companies never
+ship crude oil from one market to the other. Instead, they ship it from
+its source to one or both of the markets. The normal basis therefore
+depends on the difference in the costs of shipping oil to the two
+markets. When oil companies ship oil from the Persian Gulf to both
+Europe and New York, the New York crude oil price rarely exceeds the
+London price by more than the difference in the shipping costs.
+Likewise, when they ship oil from the Gulf of Mexico to both Europe and
+New York, the London price rarely exceeds the New York price by more
+than the difference in shipping costs from the Gulf of Mexico.</p><hr><hr><p><strong>A Wheat Delivery Arbitrage</strong></p><p>If the wheat futures contract price is sufficiently greater than the
+cost of delivering cash wheat, arbitrageurs will buy cash wheat and sell
+wheat futures. If the basis closes before the delivery date,
+arbitrageurs then may offset these trades. Otherwise, arbitrageurs will
+deliver the wheat. This arbitrage is profitable only when the futures
+price is greater than the combined costs of buying the cash wheat,
+financing and storing it until delivery, and shipping it to the contract
+delivery point.</p><p>If the wheat futures contract price is substantially lower than the cash
+price, arbitrageurs will buy the futures contract and sell cash wheat
+short. To sell cash wheat short, they must borrow wheat from a grain
+operator. They return the wheat when they take delivery on the futures
+contract or when they reverse the arbitrage by selling the futures
+contract and buying cash wheat.</p><p>Since the options to demand or take delivery are often valuable to local
+grain operators, as contracts approach expiration, grain operators who
+can handle the cash wheat at the delivery points are the primary
+arbitrageurs.</p><hr><hr><p><strong>Stock Index Futures
+Arbitrage</strong></p><p>Traders who want exposure to S&amp;P 500 Index risk can hold a portfolio of
+index stocks, or they can hold index futures contracts. (Other
+alternatives also exist.) When traders want to hold more index risk in
+the form of futures contracts than contracts are available to them,
+futures prices rise relative to the underlying index. The wide basis
+encourages index arbitrageurs to sell futures contracts and buy a
+representative portfolio of the 500 index stocks, usually with a program
+trade. They reverse the transaction when the basis closes or when the
+futures contract expires. To avoid transaction costs in the individual
+stocks, arbitrageurs also may <em>roll</em> their futures positions from the
+current delivery month to a later expiration month. (Traders <em>roll a
+position</em> when they exchange a position in a near contract for a similar
+position in a more distant contract.)</p><p>The hedge portfolio that index arbitrageurs construct may not include
+all 500 stocks because trading 500 stocks is quite expensive. Instead,
+index arbitrageurs may trade a representative portfolio that they design
+to closely replicate the returns to the S&amp;P 500 Index. The
+representative portfolio typically includes the largest firms in the
+index and a carefully selected set of smaller firms designed to provide
+broad industrial representation of the smaller firms in the Index. The
+included smaller firms are overweighted to compensate for the omitted
+ones. When two arbitrage trades follow one another on the same side of
+the market, the second program trade includes small stocks that the
+first program trade omitted so that the combined hedge portfolio will
+more closely replicate the Index.</p><p>Index futures contracts normally trade at slight premiums to the cash
+value of their underlying indexes. The premiums are necessary to
+compensate traders for the costs of financing long cash index
+portfolios. The dividends that traders expect to receive from holding
+the stocks in the cash portfolio slightly reduce these required premiums
+because traders who hold the futures contracts do not receive these
+dividends. Since traders cannot perfectly predict financing costs and
+future dividends, stock index arbitrage is not risk free.</p><hr><p>Virtual shippers are most successful when they can predict whether (and
+when) the arbitrage basis will close so that they can unwind their
+positions at a profit. Since they often compete with many other traders,
+they must be very quick to capitalize on arbitrage opportunities as they
+arise.</p><hr><p><strong>Financial Engineering</strong></p><p>The term <em>financial engineering</em> has emerged to describe the highly
+technical body of knowledge that traders use to manage risk and to
+convert it from one form to another. The word <em>engineering</em> very
+accurately suggests that financial engineers engage in a productive
+process that consumes feedstock (various instruments) and produces
+products (other instruments). Unlike other productive processes, most
+financial engineering processes are completely reversible.</p><hr><p>Actual shippers are most successful when they can ship the instrument
+cheaply between markets. Since shippers compete with each other,
+arbitrage spreads generally are no wider than the shipping costs of the
+most efficient (lowest-cost) shippers.</p><h4 id=17312-delivery-arbitrages>17.3.1.2 Delivery Arbitrages<a class=anchor href=#17312-delivery-arbitrages>#</a></h4><p><em>Delivery arbitrages</em> involve contracts for the future delivery of a
+commodity or, in some cases, its cash equivalent. The delivery mechanism
+causes the basis between the contract price and the underlying cash
+price to converge to zero---plus or minus the costs and benefits of
+delivery---on the maturity date. Before the delivery date, the basis
+depends on the carrying costs of the underlying commodity. When the cash
+commodity is cheap relative to the contract price, arbitrageurs buy the
+cash and sell the contract. When the cash commodity is expensive
+relative to the contract price, arbitrageurs sell the cash and buy the
+contract.</p><hr><p><strong>Manufacturing Stock
+Option Contracts</strong></p><p>Public investors generally want to buy more option contracts than they
+are willing to sell. This is true for both calls and for puts. Since
+option contracts are in zero net supply, arbitrageurs generally fill the
+excess demands.</p><p>Arbitrageurs who sell option contracts manufacture them by constructing
+hedge portfolios. To do so, they must buy or sell enough of the
+underlying stocks so that the values of their hedge portfolios do not
+change when prices change. In effect, arbitrageurs convert equity risk
+from stock shares to option contracts.</p><p>The hedge is difficult to maintain because the value of an option
+contract is a nonlinear function of the value of the underlying
+stock.^<a href=#part0028.html_ch17fn1>1</a>^
+As prices change, hedge ratios also change so that arbitragers must buy
+or sell stocks. Arbitrageurs therefore must constantly monitor their
+hedge portfolios to ensure that they remain well hedged when prices
+change.</p><p>Arbitrageurs do not actually adjust their hedge portfolios whenever
+prices change, because trading is costly. Instead, they adjust them only
+when their hedges become intolerably risky. Options arbitrage therefore
+is risky because prices often change when arbitrageurs are imperfectly
+hedged.</p><p>Options arbitrage is also risky because arbitrageurs cannot always trade
+when they want to rebalance their hedge portfolios. For example, an
+arbitrageur who is hedging a call option must sell stock when the
+underlying stock price falls. If the price drops too quickly, however,
+the arbitrageur may be unable to sell stock while the price is falling.
+The hedge portfolio therefore will have too much stock when stock prices
+are falling. The imbalance causes arbitrageurs to lose more money on
+their stock positions than they make on their short call positions.
+Arbitrageurs also face this problem when prices rise quickly. Their
+hedge portfolios then have too little stock to adequately hedge their
+short call positions. The imbalance causes them to lose more money on
+their short call positions than they make on their long---but too
+small---stock positions. Price changes in either direction therefore
+cause arbitrageurs to lose money.</p><p>Arbitrageurs are aware of the potential costs of their hedging programs.
+When they expect high volatility, they require substantial option
+premiums to cover their expected hedging costs. (This is another way of
+explaining why option values depend on volatility.) Once arbitrageurs
+have established their positions, they hope that volatility will be
+small. Since volatility varies, options arbitrage can be quite risky. If
+prices prove to be more volatile than arbitrageurs expect, they lose
+money.</p><p>Options dealers do most stock options arbitrage. When making their
+markets, they limit their risk exposure by hedging with the underlying
+stock or with related option contracts. Although these dealers may
+engage in numerous arbitrages among many different instruments, they
+generally do not consider each one separately. Instead, when making
+trading decisions, they consider only how their decisions will affect
+the risk profiles of their combined positions.</p><p><a href=#part0028.html_ch17fna1>1</a>. The
+relation between option values and underlying stock values depends
+critically on the difference between the option strike price and the
+stock price. It varies by whether the option is in, at, or out of the
+money.</p><p>An option is <em>in the money</em> when it would be valuable if it expired
+immediately. It is <em>out of the money</em> when it would be worthless if it
+expired immediately.</p><p>Standard call option contracts are in the money when the underlying
+stock price is above the strike price. Upon expiration, the option
+holder would exercise the option to buy stock at the strike price
+because the stock is worth more than the strike price. If the strike
+price were higher than the stock price, the option would be worthless:
+Option holders will not pay the strike price when they can buy the same
+stock at a lower price in the stock market. Put options are likewise in
+the money when the underlying stock price is below the strike price, and
+out of the money otherwise. Both types of options are <em>at the money</em>
+when the underlying stock price is equal to their strike prices.</p><p>When an option is far out of the money, a small change in the underlying
+price has little effect on the value of the option because the option
+will likely expire worthless. When an option is deep in the money, a
+small change in the underlying price will cause a nearly equal change in
+the option value. Option values therefore have a nonlinear relation to
+underlying instrument values.</p><p>The rate at which options values change in response to a change in the
+underlying instrument price is called the <em>delta</em> of the option. Deltas
+are positive for call options and negative for put options. They are
+near zero for far out of the money options and near 1 (in absolute
+value) for deep in the money options. The number of stock shares that an
+arbitrageur must hold in the hedge portfolio is equal to delta times the
+number of shares covered by the options contract. Arbitrageurs typically
+compute deltas by using complicated mathematical models. The
+Black-Scholes option-pricing model is one of the simplest of these
+models.</p><hr><hr><p><strong>Index Enhancement</strong></p><p>Investors can very closely replicate the returns to an index by holding
+a properly weighted portfolio of the index stocks or by holding the
+corresponding stock index futures contract plus cash invested in secure
+short-term debt instruments like Treasury bills. Some index funds are
+indifferent between these two alternatives. When investing new cash,
+they will buy whichever is cheaper.</p><p>Some index <em>enhancement funds</em> try to produce an enhanced index return
+by switching between the cash index stock portfolio and the equivalent
+futures contracts when their prices diverge. They buy futures and sell
+stock when futures are relatively cheap, and they sell futures and buy
+stock when stock is relative cheap. The profits that they make from
+these arbitrage trades, conducted from a long position, allow them to
+ratchet up their returns.</p><hr><h4 id=17313-conversion-arbitrages>17.3.1.3 Conversion Arbitrages<a class=anchor href=#17313-conversion-arbitrages>#</a></h4><p>A <em>conversion arbitrage</em> involves the purchase and sale of two or more
+instruments that embody essentially the same risks expressed in
+different forms. When buying one instrument and selling another, the
+arbitrageur in effect converts risk from one form to another. Viewed
+this way, the <em>conversion arbitrageur</em> is a manufacturer who produces
+financial instruments that interest traders.</p><p>Conversion arbitrage opportunities generally arise when traders are more
+interested in holding risk in one form than in another. The basis widens
+as traders attempt to buy the popular instrument or sell the less
+popular instrument. The wide basis is the signal that attracts
+arbitrageurs to their work.</p><p>The arbitrage bounds for a conversion arbitrage depend on the costs of
+doing the conversion and of carrying the hedge portfolio. When trading
+costs and carrying costs are high, traders must pay large arbitrage
+spreads to encourage arbitrageurs to convert risk from one form to
+another.</p><p>The traders who profit most from conversion
+arbitrages are those who can do the conversions at lowest cost and those
+whose costs of holding the arbitrage portfolio are lowest. They are
+often traders who have a natural reason to engage in the arbitrage
+transactions.</p><p>Many conversion arbitrages require that arbitrageurs continuously
+monitor and periodically adjust their hedge portfolios. Such hedges are
+<em>dynamic hedges</em>. They arise whenever the value of one instrument is not
+an exact linear function of the value of another instrument. (A variable
+is an exact <em>linear function</em> of another variable when all possible
+pairs of their theoretical values plot along a straight line.) The most
+common dynamic hedges involve option contracts. Dynamic hedges can be
+risky because price volatility makes them perform poorly.</p><p>Some conversion arbitrages are the financial equivalent of an underlying
+physical production process. The soybean crush may be the most
+interesting of these arbitrages. It is a three-legged arbitrage
+involving futures contracts for soybeans, soybean oil, and soybean meal.</p><hr><p><strong>Crushing Soybeans on
+the Floor of the Chicago Board of Trade</strong></p><p>Millers make soy meal and soy oil by crushing soybeans. They sell the
+meal primarily to feedlot operators for use as animal food. They sell
+the oil to food processors and chemical firms, which use it in a variety
+of products. (The process also releases a significant, but economically
+trivial, quantity of water.)</p><p>The Chicago Board of Trade trades futures contracts in all three
+commodities. The prices of beans, meal, and oil obviously are closely
+related. The notional value of the bean contract is approximately equal
+to the sum of the values of the meal and oil contracts less the cost of
+milling the beans and net difference in the costs of storing the three
+commodities.</p><p>The three soy contracts trade in adjacent trading pits. At the tops of
+these pits stand arbitrageurs who monitor prices in the three markets.
+When they determine that beans are cheap compared to oil and meal, they
+buy beans and sell oil and meal. Arbitrageurs thus crush soybeans on the
+floor of the Board of Trade!</p><p>Unlike the physical millers, arbitrageurs often reconstitute beans. They
+do this when they reverse the crush by buying oil and meal and selling
+beans.</p><p>Exchange locals do most of the arbitrage on the floor of the exchange
+because they are the fastest traders. When they are no longer willing to
+do arbitrage, either because they are unwilling to bear the risk or
+because they cannot finance additional positions, they often lay off
+their positions to millers for whom the soybean crush is a portfolio of
+three delivery arbitrages.</p><p>The costs of physically crushing beans place an economic bound on one
+side of the arbitrage spread. If beans are too cheap relative to meal
+and oil, millers will start to crush beans and thereby raise the price
+of beans and lower the prices of meal and oil. No such bound exists on
+the other side of the arbitrage, however, since millers cannot recombine
+oil and meal to sell as beans. Instead, when beans are expensive
+relative to meal and oil, millers stop crushing them until oil and meal
+consumption depletes supplies and thereby raises their relative prices.</p><hr><p>Perhaps the most intriguing conversion arbitrages are <em>cyclic
+arbitrages</em>, in which arbitrageurs exchange A for B, B for C, and C for
+A. When successful, these arbitrages seemingly create arbitrage profits
+from thin air. Currency cross-rate arbitrages are examples of cyclic
+arbitrages.</p><h3 id=1732-speculative-arbitrages>17.3.2 Speculative Arbitrages<a class=anchor href=#1732-speculative-arbitrages>#</a></h3><p><em>Speculative arbitrages</em> involve arbitrage hedge portfolios whose values
+are nonstationary. A variable is <em>nonstationary</em> if an increase or
+decrease in its current value causes us to expect that all future values
+of the variable will be higher or lower. Nonstationary variables tend to
+wander around without regularly returning to any particular value. The
+best estimate of a distant value of a nonstationary process always
+depends critically on the current value of the process. These estimates
+therefore change through time. Nonstationary variables do not have mean
+values. Long-run averages of their values do not converge. Instead,
+averages of their values also wander about.</p><p>Variables are either mean reverting or nonstationary; they cannot be
+both. The sum of a mean-reverting process and a nonstationary process is
+a nonstationary process because the properties of the nonstationary
+process eventually dominate the properties of the mean-reverting
+process. In the short-run, however, if the variation in a mean-reverting
+process is large compared to the variation in
+a nonstationary process, the process may appear to be a mean-reverting
+process.</p><hr><p><strong>A Three-legged Currency Money Machine</strong></p><p>Various dealers make markets in the yen-euro, the euro-dollar, and the
+dollar-yen foreign exchange markets. The prices in these markets are
+codependent. Any two of the exchange rates imply the third exchange
+rate. For example, if the dollar-yen rate is 110 yen per dollar, and the
+dollar-euro rate is 1.10 dollars per euro, the implied yen-euro rate is
+100 yen per euro.</p><p>On very rare occasions, an implied rate obtained from two of the markets
+is substantially different from the actual rate in the third market.
+When this happens, traders can do cyclic arbitrage. For example, suppose
+that the implied yen-euro rate obtained from the euro-dollar and
+dollar-yen markets is 100 yen per euro, as quoted above, but the actual
+yen-euro rate is 99.9 yen per euro. Arbitrageurs could buy 99.9 million
+yen for 1 million euro, buy 1 million euro for 1.10 million dollars, and
+buy 1.10 million dollars for 100 million yen. Following the three
+trades, the traders would have 0.1 million more yen--about 1,000
+dollars--than when they started.</p><p>If these relations persisted forever, traders could become infinitely
+wealthy. In practice, price pressure from the arbitrage trades quickly
+causes the exchange rates to adjust so that further arbitrage will be
+unprofitable. In our example, the euro would appreciate relative to the
+yen, the dollar would appreciate relative to the euro, and the yen would
+appreciate relative to the dollar. The implied yen-euro rate thus would
+fall while the actual yen-euro rate would rise.</p><p>Dealers are the natural arbitrageurs in the currency markets because
+they are the fastest traders. These arbitrages typically arise when
+traders are unaware of price changes that take place in related currency
+markets.</p><hr><hr><p><strong>Random Walks</strong></p><p>A random walk is the best-known example of a nonstationary process. To
+generate a simple random walk, flip a coin repeatedly and keep track of
+the difference between the number of times it comes up heads and the
+number of times it comes up tails. This difference is a nonstationary
+process. After each flip, it is equal to its previous value plus 1 if
+the result is heads and minus 1 if the result is tails. Statisticians
+call this process a <em>random walk</em> because it describes the path a walker
+would take if after every step he flipped a coin to decide whether to
+next step forward or backward.</p><p>Fully informative prices seem to follow random walks because no one can
+predict future price changes from past information when prices fully
+reflect that information. When price changes are unpredictable, they
+appear random.</p><hr><p><em>Speculative arbitrages</em> involve nonstationary hedge portfolios that
+arbitrageurs believe have a strong tendency toward short-term mean
+reversion. The nonstationariness is due to instrument-specific valuation
+factors that cause prices to follow a random walk in the long run. The
+mean reversion may come from inconsistent pricing of the common factors
+among the instruments in the hedge portfolio or from mispricing of one
+or more specific factors. Both types of errors cause mean-reverting
+price changes. <a href=#part0028.html_ch17tab01>Table 17-1</a> provides
+some examples of common and specific factors for several pairs of
+correlated assets.</p><p>Speculative arbitrages can be quite risky because the value of the hedge
+portfolio will not ultimately converge to some mean. Arbitrageurs should
+engage in speculative arbitrages only when they believe that mean
+reversion in the value of the hedge portfolio will dominate
+nonstationariness in the short run. Since speculative arbitrages are
+often quite risky, traders often call them <em>risk arbitrages</em>.</p><p>We can characterize the risk in an arbitrage by the volatility expected
+in the basis over a given period. Since the basis is nonstationary, its
+expected volatility over a given period increases with the length of the
+period. Speculative arbitrages that may not converge quickly therefore
+are more risky than are those for which traders expect quick
+convergence.</p><h4 id=17321-spreads>17.3.2.1 Spreads<a class=anchor href=#17321-spreads>#</a></h4><p>Many common speculative arbitrages are spreads. <em>Spreads</em> involve the
+purchase and sale of instruments that are similar to each other in all
+respects but one. In a <em>maturity spread</em>, the
+instruments differ by when they mature or expire. In a <em>credit spread</em>,
+the instruments differ by issuer credit quality.</p><p><strong>TABLE 17-1</strong>.<br>Common and Specific Valuation Factors of Some Correlated Instruments</p><p><img src=images/00092.jpeg alt=Image></p><p>Maturity spreads are some of the least risky speculative arbitrages. In
+a maturity spread, the arbitrageur buys and sells contracts that mature
+on different dates but are otherwise identical. The prices of such
+contracts are usually very highly correlated, especially if the
+contracts mature in the distant future and their maturity dates are near
+each other, so that most factors which determine their values are common
+to both contracts.</p><p>Fundamental contract values in a maturity spread differ only with
+respect to events forecast to occur between the different contract
+maturity dates. Since such valuation factors make the basis
+nonstationary, maturity spreads are speculative arbitrages. In practice,
+the mean-reverting component of the basis usually dominates.</p><p>The most common maturity spreads are calendar spreads and yield curve
+spreads. <em>Calendar spreads</em> involve futures contracts or option
+contracts that mature on different dates. <em>Yield curve spreads</em> involve
+bonds that mature on different dates.</p><h4 id=17322-pairs-trading>17.3.2.2 Pairs Trading<a class=anchor href=#17322-pairs-trading>#</a></h4><p><em>Pairs traders</em> try to identify pairs of instruments that they believe
+are mispriced relative to each other. They then buy the one that appears
+cheap and sell the one that appears expensive.</p><p>Pairs trading is profitable when the prices of the two instruments have
+diverged because their common fundamental valuation factors are not
+consistently priced or because traders have mispriced some
+instrument-specific factors. This often happens when informed buyers bid
+up the price of one instrument or uninformed sellers push down the price
+of the other instrument. It also happens when the price of one
+instrument has changed in response to a change in some common valuation
+factor, but the price of the other instrument has not yet changed. In
+these events, prices tend to converge. If the convergence occurs before
+specific factors cause the spread to widen, a pairs trade arbitrage will
+be profitable.</p><p>Pairs trading is not profitable when the change in relative prices is
+due to a change in instrument-specific valuation factors. When specific
+valuation factors change, the arbitrageurs cannot expect that the basis
+will converge.</p><hr><p><strong>Calendar Spreads in Oat
+Futures Contracts</strong></p><p>In North America, the oat harvest starts in late May in the northern
+Mexican states and moves north into Canada throughout the summer. Oat
+contracts trade at the Chicago Board of Trade for delivery in July,
+September, December, March, and May.</p><p>The December contract is normally cheaper than the March contract
+because sellers in March must carry their inventory for a longer period
+than sellers in December. This normal relation depends on interest
+rates, the costs of storage, and expected spoilage.</p><p>In September, after most of the crop has been harvested, Arnie sees that
+December contracts are trading at an unusually large discount to March
+contracts. He therefore sells March contracts, buys December contracts,
+and hopes that the normal relation will be restored. This calendar
+spread involves little risk because most factors that determine the
+value of oats for delivery in December also determine the value of oats
+for delivery in March.</p><p>The May contract normally trades at a very substantial premium to the
+July contract because traders generally deliver oats stored from the
+previous harvest for the May contract, whereas they deliver newly
+harvested oats on the July contract. The spread between the two prices
+can vary substantially, however, when traders are uncertain about the
+size of the new harvest or about whether supplies will be adequate for
+May delivery. If traders expect a small new harvest, July prices will be
+relatively high. If they expect unusually large May inventories, May
+prices will be relatively low.</p><p>In March, Arnie sees that the May contract is trading at a substantially
+higher premium to the July contract than he expects. He buys the July
+contract, sells the May contract, and hopes that their prices will
+converge. This calendar spread is highly risky because traders in March
+cannot accurately estimate the size of the new harvest and the oat
+inventory that will remain in May.</p><hr><hr><p><strong>A Successful Pairs Trade in Washington Mutual and FirstFed</strong></p><p>Bernie sees that Washington Mutual, a very actively traded large banking
+stock, rises following good macroeconomic news about interest rates.
+FirstFed Financial Corporation, a small and less frequently traded
+savings and loan, does not rise, however. Bernie knows that after taking
+into consideration their great difference in size, both firms have
+approximately the same exposure to interest rate risk.</p><p>Bernie concludes that Washington Mutual has moved in response to the
+news but that FirstFed has not. He therefore buys FirstFed and sells
+Washington Mutual short. The next day, traders interested in buying
+FirstFed arrive. Bernie sells them his position for a 3 percent profit
+and then immediately closes his Washington Mutual hedge position with a
+0.2 percent loss. His net profit is 2.8 percent of the size of his long
+position. Since he borrowed half the money he needed to finance his
+position, his profit on the money he actually committed to the arbitrage
+was 5.2 percent.</p><hr><p>Pairs trading is risky regardless of whether the pairs trader has
+correctly identified a true arbitrage opportunity. While pairs traders
+wait for convergence, they are exposed to the possibility that some
+instrument-specific event will cause one or both of the prices to
+permanently move against their positions.</p><p>Fortunately, the opposite may also happen. Since good and bad events
+tend to offset each other, pairs traders do not expect to lose money, on
+average, when they fail to identify a
+profitable arbitrage opportunity. However, pairs traders may lose due to
+the costs of establishing and financing their positions.</p><hr><p><strong>A Failed Pairs Trade in Ford and GM</strong></p><p>Gerry sees that Ford has risen in value relative to GM, but he can see
+no fundamental reason to explain the change in relative prices. Gerry
+therefore buys GM and sells Ford short.</p><p>Unfortunately, the spread never closes. Ford soon reports that sales of
+its huge SUV, the Excursion, are soaring. The sales apparently are
+coming at the expense of GM's Suburban. Gerry eventually closes his
+arbitrage at a slight loss due to his transaction costs and to the costs
+of financing his positions.</p><hr><p>Pairs traders are most successful when they can accurately predict
+whether changes in a spread will be mean reverting or permanent. They
+therefore pay close attention to the order flow to determine whether
+prices are changing in response to trades made by uninformed traders or
+informed traders. Since pairs traders generally do not know whether
+other traders are well informed, they often make mistakes when trading.</p><p>Pairs traders also pay close attention to how quickly and how
+efficiently markets respond, on average, to new information about common
+fundamental factors. Arbitrageurs generally should be reluctant to trade
+against markets that quickly and efficiently aggregate new information
+because the prices in such markets tend to accurately reflect
+fundamental values.</p><h4 id=17323-statistical-arbitrage>17.3.2.3 Statistical Arbitrage<a class=anchor href=#17323-statistical-arbitrage>#</a></h4><p><em>Statistical arbitrageurs</em> use factor models to generalize the pairs
+trading strategy to many instruments. <em>Factor models</em> are statistical
+models that represent instrument returns by a weighted sum of common
+factors plus an instrument-specific factor. The weights, called <em>factor
+loadings</em>, are unique for each instrument. The arbitrageur must estimate
+them.</p><p>Either statistical arbitrageurs specify the factors, or they use
+statistical methods to identify the factors from returns data for many
+instruments. Specified factors typically include macroeconomic variables
+such as interest rates, inflation rates, industrial production, credit
+spreads, stock index levels, and market volatility. The statistical
+methods that some arbitrageurs use to identify factors include factor
+analysis, principal components, and canonical correlations. These
+methods appear in books on multivariate statistics.</p><p>Statistical arbitrageurs estimate current factor values in order to
+determine which instrument prices appear to be inconsistent with their
+common factor representations. The arbitrageurs then sell those
+instruments which appear overpriced and buy those which appear
+underpriced.</p><p>Some statistical arbitrageurs also try to forecast future factor values.
+When they can successfully predict these values, they will speculate on
+this information by incorporating it into their trading models.</p><p>Statistical arbitrageurs carefully select the instruments and the
+quantities that they trade in order to control risk in their hedge
+portfolios while maximizing their expected returns. They also carefully
+consider how their transaction costs will affect their profitability.
+They employ sophisticated risk and transaction cost models, and they use
+numeric optimization methods to fine-tune their decisions.</p><h4 id=17324-risk-arbitrage>17.3.2.4 Risk Arbitrage<a class=anchor href=#17324-risk-arbitrage>#</a></h4><p>Although <em>risk arbitrage</em> may refer to many different kinds of
+speculative arbitrages, traders most often use the term to refer to
+speculations and arbitrages that involve firms which may or will soon
+merge. In most mergers, a <em>bidder</em> (or <em>acquiring firm)</em> acquires a
+<em>target firm</em>.</p><p>Target firm share prices frequently rise because most bidders must pay a
+premium over current market value to obtain control. Since investors
+often suspect that bidders pay too much for their acquisitions, the
+stock prices of bidders sometimes fall on the announcement of an
+acquisition.</p><hr><p><strong>Identifying Likely
+Arbitrage Opportunities in the GE-S&amp;P 500 Futures Spread</strong></p><p>General Electric common stock price changes are correlated with changes
+in the S&amp;P 500 Index because the values of the two instruments depend on
+many common macroeconomic factors. These factors include interest rates,
+the general health of the economy, and trader sentiment about the
+future. When the spread between GE and the S&amp;P 500 Stock Index futures
+contract widens (when GE rises relative to the Index), pairs traders may
+sell GE and buy S&amp;P 500 futures contracts.</p><p>Clever traders discriminate between different causes for the change in
+the spread before they decide to trade. The spread may widen because (1)
+the price of GE has risen while the Index futures price has remained
+largely unchanged, or because (2) the price of GE has remained largely
+unchanged while the Index futures price has fallen. Successful traders
+consider which situation is more likely to offer a profitable arbitrage
+opportunity.</p><p>Situation 1 may occur when uninformed traders buy GE and push up its
+price. If that is the case, the arbitrage will probably be profitable.
+This scenario is probable because uninformed traders often trade GE and
+affect its price.</p><p>Situation 1 may also occur when the value of GE rises in response to a
+change in some factor specific only to GE. In this event, the arbitrage
+will not be profitable. This scenario is also probable because
+information specific to GE frequently changes the price of GE common
+stock.</p><p>Finally, situation 1 may occur when marketwide factors cause GE to rise
+while the futures market remains unchanged. If that is the case, the
+arbitrage will probably be profitable. This scenario, however, is
+unlikely, given the informational efficiency of the S&amp;P 500 Index
+futures market.</p><p>Situation 2 may occur when a change in some common valuation factor
+causes the market to drop. GE may not drop, however, because the markets
+for individual stocks---even those as large as GE---generally respond to
+marketwide factors more slowly than does the S&amp;P 500 Index futures
+market. The futures market responds faster to changes in marketwide
+factors because it focuses exclusively on those factors and because it
+is the more actively traded market. Arbitrage in this likely scenario
+probably would be profitable.</p><p>Situation 2 also may occur when changes in marketwide factors cause the
+S&amp;P 500 Index to fall while offsetting changes in firm-specific factors
+cause GE to remain unchanged. Arbitrage in this scenario would be
+unprofitable. The coincidence, however, is unlikely.</p><p>Finally, situation 2 may occur when uninformed sellers in the futures
+market cause futures prices to drop. In this scenario, the arbitrage
+probably would be profitable. Although this scenario is possible, it is
+not likely because the S&amp;P 500 Index futures market is highly liquid.</p><p>This discussion of the various alternatives suggests that arbitrage will
+more likely be profitable in situation 2 than in situation 1. In the
+first situation, the arbitrageur speculates that either GE rose
+improperly or the Index failed to rise. The former alternative is
+possible, but the latter is unlikely. In the second situation, the
+arbitrageur speculates that either GE failed to drop or that the Index
+dropped improperly. The former alternative is likely but the alternative
+again is unlikely. <a href=#part0028.html_ch17tab02>Table 17-2</a>
+presents a summary of the various contingencies discussed in this box.</p><hr><p><strong>TABLE 17-2</strong>.<br>Event Contingencies When the Price of General Electric Common Stock
+Rises Relative to the Price of the S&amp;P 500 Index Futures Contract</p><p><img src=images/00093.jpeg alt=Image></p><p>Traders who can predict merger transactions therefore can profit from
+their insights by buying the target firms and selling the acquiring
+firms. Since the targets and the bidders usually are in the same (or
+closely related) industries, their equity values depend on many common
+fundamental valuation factors. Their prices therefore are closely
+correlated. The "hedge portfolio" thus has less risk than its component
+positions. Although called <em>risk arbitrage</em>, this strategy is more like
+a risky speculation than a mean-reverting arbitrage. It is highly
+speculative because the hoped-for merger may never take place.</p><p>When firms announce their intention to merge, they usually publish the
+terms of the merger negotiated by their respective managements. These
+terms fix the price of the target firm. In a <em>cash offer</em>, the price is
+either a fixed sum or a sum that depends on some observable variables.
+In a <em>stock offer</em>, the terms specify the number of shares the acquiring
+firm will exchange for each share of the target firm. In <em>a fixed rate
+stock offer</em>, the exchange rate is constant. In a <em>constant value stock
+offer</em>, the exchange rate varies in inverse proportion to the acquiring
+firm's stock price so that the value of the offer is constant. In <em>mixed
+offers</em>, the terms include both cash and stock.</p><p>The terms of the merger thus define the value of the target firm and,
+hence, a potential arbitrage relation. In a cash offer or in a constant
+value stock offer, the stock of the target
+firm essentially becomes a debt security that matures upon the
+successful completion of the merger. In such mergers, the arbitrage
+portfolio consists of a long (or short) position in the target stock
+offset by a short (or long) position in a short-term debt security. (The
+portfolio may also include other instruments if the cash payment depends
+on other variables.) In a fixed rate stock offer, the stock of the
+target firm essentially becomes the same as the stock of the acquiring
+firm. In such mergers, the arbitrage portfolio consists of a long (or
+short) position in the target stock offset by a short (or long) position
+in the acquiring firm. Risk arbitrageurs trade when the prices of the
+various instruments are inconsistent with the terms of the merger.</p><hr><p><strong>A Rumored Merger</strong></p><p>On June 8, 2000, CNBC reported that Broadwing was in talks to acquire
+Intermedia Communications. That day, Intermedia rose 16 percent, and
+Broadwing fell 13 percent, from their previous day's closing prices on
+very high volumes.</p><p>The next day, CNBC reported that the talks seemed to have failed over
+the treatment of a well-known accounting issue. Intermedia fell 14
+percent, and Broadwing rose 7 percent.</p><p>Had Broadwing and Intermedia reached a deal, Intermedia might have risen
+even more than it did. As it happened, traders who bought Intermedia
+after the reported talks lost heavily the next day.</p><p>It is possible that traders who wanted to sell Intermedia stock fed the
+story to CNBC. As a matter of policy, neither firm would confirm that
+negotiations had taken place.</p><hr><p>The risk in these arbitrages depends on whether the deal will fail,
+whether the terms will change, and whether the deal will close when
+scheduled. When the merger closes at the announced terms on schedule,
+the basis will revert to its theoretical fair value. The arbitrage then
+would be a pure arbitrage with no long-term basis risk. In the short
+run, the basis might differ from its fair value because traders may be
+unaware of prices in other markets, or because an excess of buyers in
+one market or of sellers in another market causes prices to diverge. The
+arbitrageurs connect the two markets and ensure that common risks
+expressed in essentially similar instruments are priced the same.</p><p>The merger may not close, however, if the shareholders do not support
+it, or if the merger requires government approval and the government
+does not approve. The basis under such circumstances will be
+nonstationary. If the deal fails, the price of the target firm will
+freely change in response to market conditions.</p><p>Target prices usually rise upon merger announcements, and they generally
+drop when deals fail to close. Accordingly, when traders doubt that
+mergers will close, target firms will often trade at discounts to their
+theoretical values implied by the terms of the merger. When the
+probability of failure is large, risk arbitrage is more like risky
+speculation than mean-reverting arbitrage. Well-informed traders who
+believe a deal will close, buy the arbitrage portfolio. Traders who
+believe that a deal will fail, sell the arbitrage portfolio.</p><p>Many merger agreements have collars. <em>Collars</em> are clauses in merger
+agreements that modify the terms of the agreement based on the price of
+the acquiring firm. Collars introduce optionlike characteristics into
+the arbitrage relation between the acquiring firm and the target firm
+share prices. Traders who attempt risk arbitrage in these situations
+usually implement dynamic hedges.</p><h2 id=174-arbitrage-risks>17.4 ARBITRAGE RISKS<a class=anchor href=#174-arbitrage-risks>#</a></h2><p>Several risks make arbitrage strategies difficult to implement
+profitably. <em>Implementation risk</em> is the risk that arbitrageurs will
+trade at worse than expected prices. <em>Basis risk</em> is the risk that the
+arbitrage basis will move against the arbitrageur's position. <em>Model
+risk</em> is the risk that arbitrageurs will fail to understand relative
+instrument values properly. <em>Carrying cost risk</em> is the risk that hedge
+portfolios prove to be more costly to carry than expected. Arbitrageurs
+must manage each of these risks in order to trade successfully.</p><hr><p><strong>How Definitive Is
+"Definitive"?</strong></p><p>In a February 7, 2000, press release, Lucent announced that it had
+reached a "definitive merger agreement" with Ortel. Under the agreement,
+Lucent would exchange 3.135 shares of Lucent for each share of Ortel.
+The press release stated that Lucent expected to complete the
+acquisition during the quarter ending June 30, 2000. The deal actually
+closed on April 28.</p><p>By the close of trading on February 8, the news was well known to all
+interested professional traders. Ortel closed at 161½ and Lucent closed
+at
+54<img src=images/00094.jpeg alt=Image>
+.
+Assuming that the deal would close, the implied value of a share of
+Ortel then was 169.88 = 3.135 X
+54<img src=images/00094.jpeg alt=Image>
+.
+Ortel therefore traded at a 5 percent discount to its theoretical value.
+This discount steadily narrowed to zero on April 28 when the deal
+closed.</p><p>If you bought Ortel and sold 3.135 shares of Lucent on February 8, you
+would have made 5 percent of the Ortel price. In addition, if you
+received interest on the proceeds of your Lucent short sale, you would
+have made another 1 percent in short interest. A 6 percent return over
+the 80-day period corresponds to a 32 percent annualized return.</p><p>Had the deal closed on June 30, you would have made 5 percent plus about
+1.5 percent in short interest. You also would have had to pay the 2
+cents per share dividend (0.04 percent) that Lucent paid on June 1 to
+its stockholders of record on April 30. Over this almost five-month
+period, your return would have been approximately 17 percent on an
+annualized basis.</p><hr><p>Since nobody likes exposure to risk, arbitrageurs must be compensated
+for taking risks. Arbitrageurs obtain their compensation when they trade
+at favorable prices. In particular, they will not enter a risky
+arbitrage if their expected profits seem small. Arbitrage price bounds
+therefore tend to be wide when arbitrage is risky.</p><h3 id=1741-implementation-risk>17.4.1 Implementation Risk<a class=anchor href=#1741-implementation-risk>#</a></h3><p>Arbitrageurs face implementation risk when they establish and close
+their positions. <em>Implementation risk</em> is the risk that their
+transaction costs will be greater than they expect. Since transaction
+costs reduce trading profits, arbitrageurs must estimate their
+transaction costs before they trade. They must trade only when they
+expect that their transaction costs will be less than the profit they
+hope to obtain from reversion in the basis. If their actual transaction
+costs prove to be greater than they expect, arbitrageurs will make less
+arbitrage profit than they expect. If their transaction costs are larger
+than the expected basis reversion, arbitrageurs may lose money.</p><p>Arbitrageurs face implementation risk whether they use market orders or
+limit orders. When using market orders, their implementation risk is due
+to <em>execution price uncertainty:</em> Their market orders may trade at less
+favorable prices than they expect. Their orders may have greater than
+expected price impact, or prices may move against them during the
+interval between when they submit their orders and when their orders
+actually fill. Of course, arbitrageurs sometimes obtain better than
+expected execution prices. Unfortunately, the probabilities of trading
+at better than expected prices generally are less than the probabilities
+of trading at worse than expected prices. The asymmetry is due to
+competition that arbitrageurs face from other arbitrageurs and from
+other informed traders. Their trading tends to cause the basis to
+narrow.</p><hr><p><strong>The Seagram-Vivendi
+Merger</strong></p><p>On June 20, 2000, The Seagram Co. Ltd. and Vivendi S.A. entered into a
+merger agreement. Under the terms of the agreement, each share of
+Seagram would be exchanged for shares in Vivendi. The exchange rate
+would depend on an average of Vivendi's ordinary common stock daily
+closing prices at the Paris Bourse, expressed in dollars. The average
+would be computed over a 20-day period ending three days before the
+effective date of the merger. If the average price was less than 96.6875
+dollars, the exchange rate would be 0.8 share of Vivendi for each share
+of Seagram. If the average was greater than 124.3369 dollars, the
+exchange rate would be 0.6221. If the average was between these two
+prices, the exchange rate would be equal to 77.35 dollars divided by the
+average Vivendi share price.</p><p>The value of the deal on the effective date of the merger depended on
+the exchange rate and the then current Vivendi share price. If the
+current share price was equal to the average share price and the average
+was between the two cutoff prices, the deal would be worth exactly 77.35
+dollars per Seagram share. The deal would be worth more if the Vivendi
+average price was above 124.3369 dollars and less if the average was
+below 96.6875 dollars. <a href=#part0028.html_ch17fig01>Figure 17-1</a>
+plots the value of the deal as a function of the Vivendi average stock
+price.</p><p>If the Vivendi share price on the effective date of the merger was equal
+to its average closing price, a portfolio of the following three
+positions would produce an identical return to holding a share of
+Seagram:</p><p>• A long position in a pure discount bond worth 77.35 dollars on the
+effective merger date</p><p>• A long position of 0.6221 Vivendi calls struck at 124.3369 dollars
+expiring on the effective merger date</p><p>• A short position of 0.8 Vivendi puts struck at 96.6875 dollars
+expiring on the effective merger date</p><p>Given our price assumption, and assuming further that the merger will
+close, the value of a Seagram share therefore must equal the value of
+this portfolio.</p><p>The assumption that Vivendi's share price on the effective date will
+equal the average closing price is too unrealistic to produce useful
+valuation formulas and hedge portfolios for the risk arbitrage. This
+analysis, however, shows that the merger agreement introduces option
+characteristics into the valuation of Seagram shares. Financial
+engineers who undertake this arbitrage must derive appropriate formulas
+that do not depend on our simplifying assumption. They also must adjust
+for options to buy 19.9 percent of Seagram's stock at 77.35 dollars that
+Vivendi received in the merger agreement.</p><p>The July 26, 2000, NYSE closing price for Seagram was
+57<img src=images/00094.jpeg alt=Image>
+dollars. Vivendi closed at 88.90 euros at the Paris Bourse. Given the
+then current exchange rate of 0.9429 euros per dollar, the dollar
+equivalent Vivendi closing price was 83.83 dollars. If the Vivendi
+average price were equal to this price, and if Vivendi was worth this
+amount on the effective date, each share of Seagram would be worth 67.06
+dollars. Seagram traded at a discount to this value because subsequent
+increases in Vivendi's share price would have little effect on Seagram's
+value until Vivendi rose above 124 dollars. Any decrease in Vivendi's
+share price, however, would proportionally decrease Seagram's value.
+Seagram may also have been trading at a discount because traders doubted
+that the deal would close.</p><hr><p><strong>FIGURE 17-1.</strong><br>Value of a Seagram Share at the Effective Date of the Merger This
+analysis assumes that the Vivendi share price on the effective date of
+the merger is equal to its average closing price over the 20 trading
+days ending three days before the effective date.</p><p><img src=images/00095.jpeg alt=Image></p><hr><p><strong>Arbitrage and Ice Floes</strong></p><p>Arbitrageurs are like artic explorers who jump from one ice floe to
+another. When both legs are on the same side, they go with the floe! But
+if they straddle two floes, a foot on each, they face a substantial risk
+of being soaked.</p><p>Arbitrageurs likewise jump between relatively secure positions when they
+put on or take off their arbitrages. When they are fully hedged, they do
+not care where prices take them. They get into trouble when they are
+stuck in the middle with one leg on and one leg off.</p><hr><p>When using limit orders, arbitrageurs face implementation risk due to
+<em>execution uncertainty</em>. Their orders will not execute when prices move
+away from them. Arbitrageurs then must either cancel and resubmit their
+orders at less favorable prices or abandon their arbitrages. If they
+abandon their arbitrages before they have traded any instruments, they
+merely lose the opportunity to make arbitrage profits. If they abandon
+their arbitrage after trading one or more arbitrage legs, they must
+close those positions. These reversals usually generate additional
+transaction costs.</p><p>Failure to execute is an especially serious problem when arbitrageurs
+have already executed one or more arbitrage legs. Until they complete
+all the trades necessary to acquire (or liquidate) their hedge
+portfolios, their positions will be poorly hedged. Any price changes
+that occur during this time have a very significant effect on their
+trading profits. Arbitrageurs therefore try very hard to trade all legs
+of their hedge portfolio at the same time.</p><p>Some arbitrageurs try to keep their trades synchronized by using only
+market orders. This strategy is sensible when bid/ask spreads are small,
+and when the execution price uncertainty associated with market orders
+is small relative to the execution uncertainty associated with limit
+orders. These conditions generally hold in liquid markets.</p><p>When one instrument in an arbitrage trades in a liquid market and the
+other trades in an illiquid market, arbitrageurs often try to trade the
+illiquid instrument first. After that leg trades, they then trade the
+other leg. This strategy allows them to cancel their arbitrage cheaply
+if the basis closes before the illiquid leg trades.</p><p>When both instruments of an arbitrage trade in illiquid markets,
+arbitrageurs often split their orders into parts that they interleave to
+minimize their exposure to unhedged risks. In such markets, arbitragers
+often must use limit orders because the execution price risk of market
+orders can be quite large.</p><p>Implementation risk is greatest when the market is moving quickly and
+when arbitrageurs cannot easily estimate the
+price impacts of their trades. It is a particularly significant risk
+when the arbitrage spread is small compared to short-term price
+volatility, and when the interval between when arbitrageurs submit their
+orders, and when they execute, is long.</p><hr><p><strong>Implementation Risk in a Takeover Spread</strong></p><p>When two firms agree to a merger in which one firm buys the other with
+an exchange of stock, the stock prices of the two firms become highly
+correlated. The price of the target firm times the agreed-upon stock
+conversion rate becomes approximately equal to the price of the
+acquiring firm. In practice, the target firm usually trades at a slight
+discount (or occasionally at a slight premium) to the acquiring firm.
+The difference may be due to relative mispricing of the two stocks or to
+speculation that the transaction will not close.</p><p>Risk arbitrageurs who wish to speculate on price discrepancies between
+the two stocks buy the relatively cheap stock and sell the comparatively
+expensive one. The spread that they earn for doing this transaction must
+compensate them for the loss they will experience if the transaction
+falls through, and it must cover the costs of financing the hedge
+portfolio.</p><p>When traders are quite certain that the transaction will close, the
+basis is usually small in comparison to the volatility in the stocks.
+Traders who try to buy one stock and sell the other risk failing to
+capture the arbitrage spread if prices change between the completions of
+their two trades. This can happen if they buy the long position first,
+and prices fall before they can sell the short position. They likewise
+may lose if they sell the short position first, and prices rise before
+they can buy the long position. Of course, if the opposite happens, they
+will profit by more than they expect.</p><hr><hr><p><strong>Building a Balanced Position Is like Loading a Small Boat</strong></p><p>Darlene wants to buy <em>75</em> contracts of ABC and sell 60 contracts of XYZ
+to implement an arbitrage in some illiquid markets. She enters the
+arbitrage by simultaneously submitting limit orders to buy 25 ABC and
+sell 20 XYZ.</p><p>Darlene's next trading decision depends on which order fills first.
+Suppose the execution report for ABC arrives first. If after a while the
+XYZ order still does not execute, she then may submit a second limit
+order to sell 20 XYZ, using a more aggressively priced order than the
+first XYZ order. This new order therefore should execute before the
+first XYZ order. When it executes, she will have a properly hedged
+portfolio. If both XYZ orders execute, she then will submit another
+order to buy 25 more ABC. If neither XYZ order executes, she will cancel
+and replace the first order with an even more aggressively priced XYZ
+order. Darlene will not submit another ABC order until she fills an XYZ
+order because she needs to hedge her 25-contract ABC position.</p><p>In this way, Darlene alternates fills between the two instruments to
+ensure that her positions are never too far from being properly hedged.
+If the basis closes while she is not fully hedged, she will cancel any
+unfilled orders and reverse one of her completed trades to establish a
+hedged position.</p><p>Building a balanced arbitrage position in illiquid markets is like
+loading a small boat. If you put everything in on one side first, you
+risk capsizing.</p><hr><h3 id=1742-basis-risk-and-arbitrage-scale>17.4.2 Basis Risk and Arbitrage Scale<a class=anchor href=#1742-basis-risk-and-arbitrage-scale>#</a></h3><p><em>Basis risk</em> is the risk that the arbitrage basis will move in the wrong
+direction. The hedge portfolio decreases in value when this happens.
+Adverse price changes may occur when
+instrument-specific factors diverge or when common factors are not
+priced correctly. For many arbitrages, basis risk is the most important
+risk.</p><hr><p><strong>Index Arbitrage Program Trading</strong></p><p>Index arbitrageurs use program trades to buy or sell a basket of index
+stocks while simultaneously selling or buying the corresponding index
+futures contracts. Because of differences in market structures, their
+futures orders usually fill faster than their stock orders.</p><p>Index arbitrageurs often split their futures orders to synchronize the
+execution of their program trades with the execution of their futures
+trades. They first submit their program trade. They then submit half of
+their futures order when the stock orders start to fill. They submit the
+remainder of their futures order when most of the stock orders have
+filled.</p><hr><p>As noted above, basis risk differs by whether the basis is mean
+reverting or nonstationary. Mean-reverting arbitrages (pure arbitrages)
+generally are less risky in the long run than are nonstationary
+arbitrages (speculative arbitrages). In the short run, both types of
+arbitrage may be very risky.</p><p>Arbitrageurs can do little to control basis risk besides ensuring that
+they correctly understand the arbitrage relation. However, they can
+control their total exposure to basis risk by carefully choosing the
+scale of their arbitrage operations.</p><p>The total basis risk in an arbitrage is proportional to the size of the
+arbitrage portfolio. The larger the portfolio, the more risky it will
+be. When the basis is quite risky, arbitrageurs generally choose to hold
+smaller portfolios. When the basis risk is quite small, arbitrageurs
+often leverage their returns by creating large portfolios.</p><p>Arbitrageurs must be careful when they choose the size of their
+portfolios. Arbitrageurs lose money when the basis widens. If they
+cannot finance their losses, they may have to liquidate their positions
+earlier than they want to. Forced liquidations are especially costly
+when arbitrageurs engage in pure arbitrages because the liquidations
+take place when the arbitrage is most attractive. Arbitrageurs therefore
+should never leverage their positions to the maximum extent that their
+capital permits. Those who do, have no <em>staying power</em> if the basis
+moves against them.</p><h3 id=1743-model-risk>17.4.3 Model Risk<a class=anchor href=#1743-model-risk>#</a></h3><p><em>Model risk</em>, also known as <em>analytic risk</em>, is the risk that
+arbitrageurs will fail to properly understand the fundamental value
+relations among the instruments they trade. They then may mistakenly
+enter an arbitrage on the wrong side, they may construct a hedge
+portfolio that exposes them to risks that they do not recognize, or they
+may construct a hedge portfolio with the wrong hedge ratios.</p><p>The most common mistake that arbitrageurs make is to incorrectly
+identify a change in the basis as an arbitrage opportunity. Not all
+basis changes indicate that prices are inconsistent. Some changes move
+the basis toward its fair value. To determine whether changes in the
+basis move it closer to or further from its fair value, arbitrageurs
+must accurately estimate the fair value of the basis. Their estimation
+problem is especially difficult when the fair value of the basis changes
+frequently.</p><p>The fair value of the basis changes when any of the factors that
+determine it change. In all arbitrages, the fair value depends on the
+cost of carry factors such as interest rates, storage costs, and
+spoilage conditions. If the relation between the instruments is
+nonlinear, the fair value also depends on the common fundamental factors
+that cause the instrument values to be correlated. As these factors
+change, the theoretical values of the instruments either diverge or
+converge. Finally, if the arbitrage is a speculative arbitrage, the fair
+value of the basis also depends on any instrument-specific valuation
+factors. Changes in instrument-specific valuation factors by definition
+affect only the value of the specific instrument, and therefore must
+change the fair value of the basis.</p><hr><p><strong>Wrong Way to Be Right</strong></p><p>Long-Term Capital Management (LTCM) was a hedge fund that engaged in
+many pure arbitrages and highly mean-reverting speculative arbitrages.
+Most of their positions were in the bond and swaps markets, where it is
+possible to create very highly leveraged positions. LTCM employed
+substantial leverage to create very large positions in arbitrages whose
+bases it thought were not particularly risky.</p><p>On July 31, 1998, LTCM controlled approximately 125 billion dollars in
+assets from an equity capital base of only 4.1 billion dollars. The
+gross notional amounts of its contracts on futures exchanges exceeded
+500 billion dollars, its swaps contracts exceeded 750 billion dollars,
+and its options and other OTC derivatives exceeded 150 billion dollars.
+Of course, the risks inherent in most of these positions substantially
+offset each other.</p><p>Most of LTCM's portfolio consisted of long positions in illiquid
+securities offset by short positions in highly correlated liquid
+securities. LTCM therefore was essentially selling liquidity to the
+market.</p><p>In August 1998, when Russia defaulted on its government bonds, credit
+and liquidity spreads widened considerably as investors sought more
+secure investments and shunned illiquid investments. Although LTCM lost
+substantially on its positions, most of them then appeared more
+attractive than ever before.</p><p>By September 21, LTCM's capital had deteriorated to the point that the
+firm would likely default within a few days. On September 23, a
+consortium of LTCM's primary creditors arranged to inject 3.6 billion
+dollars of new equity into the firm in exchange for 90 percent of LTCM's
+equity.</p><p>LTCM's partners lost nearly everything they had invested in the firm,
+yet their positions were still quite attractive. Although the subsequent
+performance of many LTCM's positions was not as good as the partners
+expected, many positions were still quite profitable by any measure. Had
+the firm been able to weather the crisis, its partners would now be much
+wealthier.</p><hr><p>Arbitrageurs can avoid model risk only by being very careful when they
+construct their valuation models. They must ensure that they estimate
+the fair value of the basis using as much information as they can
+practically acquire. Traders who do not have the appropriate tools and
+data to model financial relations should avoid trading arbitrages whose
+values are not easy to derive. In addition, traders who find that their
+positions are losing money should carefully examine their models to
+determine whether they are in error or whether market conditions have
+simply changed against them.</p><h3 id=1744-carrying-cost-risk>17.4.4 Carrying Cost Risk<a class=anchor href=#1744-carrying-cost-risk>#</a></h3><p><em>Carrying cost risk</em> is the risk that hedge portfolios will prove to be
+more costly to carry than arbitrageurs expect. The unexpected costs
+might be due to unexpected increases in the nominal size of the hedge
+portfolio, longer-than-expected holding periods, unexpected increases in
+interest rates, unexpected physical costs of carrying the hedge
+portfolio, or unexpected security borrowing costs.</p><h4 id=17441-unexpected-costs-of-carry>17.4.4.1 Unexpected Costs of Carry<a class=anchor href=#17441-unexpected-costs-of-carry>#</a></h4><p>Arbitrage portfolios are costly to carry. Traders must finance their
+long positions. If the long positions consist of physical commodities,
+arbitrageurs must store them and insure them.
+If the commodities are perishable, they will spoil and depreciate. If
+the arbitrageurs must borrow securities to establish their short
+positions, they must pay borrowing fees to the lender. They also must
+pay lenders any dividends that they would have received if they had not
+lent their securities. These expenses may be offset by dividends paid on
+long positions, by lending fees that arbitrageurs receive by lending
+their long positions, and by interest that they may earn on the proceeds
+of their short sales. <a href=#part0028.html_ch17tab03>Table 17-3</a>
+presents examples of factors that determine carrying costs.</p><hr><p><strong>Valuing Stock Stubs</strong></p><p>Some publicly traded corporations own very substantial positions in
+other publicly traded corporations. In rare cases, the total market
+value of the parent's positions in its subsidiaries may be greater than
+the parent's total market value. The implied market value of the
+remainder of the firm's assets thus might appear to be less than zero.</p><p>Arbitrageurs who believe that those assets have positive values may
+attempt to profit in these circumstances by buying the parent firm and
+selling short their pro rata (undistributed) shares in the subsidiaries.
+This strategy, when properly executed, buys the parent's assets and
+liabilities exclusive of its marketable holdings. Traders call this
+strategy <em>buying the stub</em> of the parent.</p><p>When evaluating this strategy, it is extremely important to consider the
+parent's liabilities. If the parent is heavily encumbered by debt, the
+stub may have a negative implied price simply because of the debt. In
+that case, the apparent arbitrage opportunity may not be real.</p><p>The parent's liabilities may also include obligations to pay taxes in
+the future. If the parent sells its substantially appreciated assets,
+the parent will realize substantial capital gains. (It may be able to
+<em>spin off</em> its holdings in a tax-free pro rata distribution to its
+shareholders if it owns a sufficiently large fraction of the
+subsidiaries' shares.) The unrealized capital gains imply unrealized tax
+liabilities on the firm. In effect, the government shares ownership of
+the subsidiaries. Since these unrealized tax liabilities increase with
+the subsidiaries' values, arbitrageurs must account for them when
+computing their hedge ratios. Otherwise, their short positions will be
+too large. If the subsidiaries' values rise, the value of their hedge
+portfolios will fall, and vice versa.</p><p>Arbitrageurs who fail to properly evaluate stub values risk overpaying
+for their stubs. Those who fail to properly adjust their hedge ratios
+for the unrealized tax liabilities inadvertently take larger short
+positions in the subsidiaries than they should.</p><hr><p>The fair value of the basis depends on the carrying costs of the
+arbitrage. When these costs increase, arbitrage profits will be less
+than arbitrageurs expect.</p><h4 id=17442-unexpected-price-increases>17.4.4.2 Unexpected Price Increases<a class=anchor href=#17442-unexpected-price-increases>#</a></h4><p>For arbitrages with finite horizons, and for many other arbitrages as
+well, the most important carrying cost risk is a significant, unexpected
+increase in the prices of the instruments in the hedge portfolios. When
+prices rise, hedge portfolio positions increase in value. Arbitrageurs
+profit from the increases in their long positions, but they lose from
+the increases in their short positions. In many markets, arbitrageurs
+must immediately fund the losses in their short positions. These
+payments impose greater financing costs on the arbitrageur.</p><hr><p><strong>How Fischer Black
+Destroyed the ValueLine Index Futures Contract</strong></p><p>Fischer Black was an MIT finance professor when he decided to take a
+year's leave to work for Goldman Sachs in New York in 1984.</p><p>At that time, the Kansas City Board of Trade's ValueLine Index futures
+contract was still very actively traded. After its introduction in 1982
+as the world's first stock index futures contract, it quickly became
+extremely popular.</p><p>The ValueLine Index is an unusual stock index. Most indexes are weighted
+arithmetic sums of stock prices. The ValueLine Index is based on a
+weighted sum of the logarithms of stock price relatives. A <em>stock price
+relative</em> is the ratio of the current stock price to a previous stock
+price.</p><p>Geometric indexes are easily approximated by arithmetic price indexes.
+Most ValueLine arbitrageurs used these approximations to value the
+futures contract and to compute their hedge ratios.</p><p>Fischer Black, however, knew that the mathematical properties of the
+geometric index implied that the exact theoretical fair value for the
+futures contract should depend on the volatilities of the individual
+stocks in addition to their prices. The formula he derived implied
+different theoretical values for the contract than those derived by
+traders who approximated the Index by an arithmetic average.</p><p>Goldman Sachs aggressively traded the arbitrage. Other arbitrageurs also
+aggressively traded the arbitrage, but on the other side. Many of them
+traded with Goldman. At one point, Goldman held 30 percent of the open
+interest in the contract.</p><p>Goldman Sachs prevailed in the end. The firm earned more than 125
+million dollars on their trades!</p><p>The other traders reportedly said that they knew the theoretical value
+of the futures contract depended on the stock volatilities, but they
+assumed that the dependence was not economically significant. Had they
+attended Fischer's finance classes at MIT in 1982 and 1983, they would
+have known better. Fischer repeatedly told his MBA students about the
+pricing anomaly, and how he expected that it would soon go away. He
+probably had no idea then that he would make it happen.</p><p>Fischer Black remained at Goldman Sachs, where he ultimately was made
+partner.</p><p>After losing substantially in the ValueLine contract, other traders
+stopped trading it. The Kansas City Board of Trade quickly lost its
+market share in stock index futures trading to the Chicago Mercantile
+Exchange. The CME bases its most successful stock index futures contract
+on the S&amp;P 500 Index, which is an arithmetic index. In an effort to
+regain market share, Kansas City changed the specifications of its
+contract to base it on an arithmetic form of the ValueLine Index. The
+reformulated contract never obtained any significant market share.</p><p>This is an unusual story about the analytic risks associated with
+proprietary trading. In this story, the market was wrong but Goldman
+Sachs was right. More commonly, a few traders are wrong and the market
+is right.</p><p>Goldman was able to profit from its minority position because the
+contract's cash settlement mechanism ensured that the basis would close
+by the contract expiration date. Had the arbitrage been a speculative
+arbitrage instead of a pure arbitrage, the valuation mistakes made by
+the majority of the traders probably would have influenced prices well
+into the distant future. In that case, Goldman would not have made its
+profits nearly so quickly.</p><hr><p><strong>TABLE 17-3</strong>.<br>Carrying Cost Factors</p><p><img src=images/00096.jpeg alt=Image></p><p>When arbitrageurs cannot fund the losses in their short positions when
+required, their brokers or their counterparts will liquidate the
+arbitrageurs' positions to satisfy their obligations. Unlike
+liquidations caused by adverse changes in the basis, these liquidations
+do not necessarily happen when the basis widens and arbitrageurs are
+least willing to give up their positions. However, the increase in
+prices is often correlated with increased volatility in the basis.
+Losing the option to continue the arbitrage therefore may be costly. The
+lesson is worth repeating: Successful arbitrageurs do not leverage their
+positions to the maximum extent that their capital permits. Instead,
+they leave themselves some margin to ensure that they have staying power
+if their hedge portfolios increase in value.</p><h4 id=17443-slow-convergence>17.4.4.3 Slow Convergence<a class=anchor href=#17443-slow-convergence>#</a></h4><p>For arbitrages that have no finite horizons, the most important carrying
+cost risk is often an unexpected increase in the holding period. If the
+arbitrage basis takes longer to revert than expected, the costs of
+carrying the hedge portfolio will be greater than expected. Successful
+arbitrageurs not only must value the basis correctly, they also must be
+able to predict when it will close.</p><h4 id=17444-unexpected-buy-ins>17.4.4.4 Unexpected Buy-ins<a class=anchor href=#17444-unexpected-buy-ins>#</a></h4><p>When arbitrageurs borrow securities to short sell them, they generally
+must return those securities when the lender demands them. Upon such
+demands, if the arbitrageurs or their brokers cannot arrange another
+loan, the arbitrageurs must repurchase their short positions in a
+<em>forced buy-in</em>. Such repurchases force them to terminate their
+arbitrages earlier than they would prefer.</p><p>Forced buy-ins often occur when the lender wants to sell because the
+security has appreciated significantly. Under such circumstances, the
+basis probably has moved against arbitrageurs. Such buy-ins therefore
+are especially costly.</p><p>On rare occasions, short squeezers may manipulate arbitrageurs. Short
+squeezes (described in <a href=#part0021.html_ch11>chapter 11</a>) are
+particularly costly to arbitrageurs. They
+typically occur when the basis has widened greatly. Arbitrageurs who are
+caught in a squeeze are forced to sell their positions after they have
+lost heavily, and when their positions look most attractive going
+forward.</p><hr><p><strong>Not All Stubs Are Mean-reverting</strong></p><p>Intermedia Communications owns about 62 percent of Digex. Between
+December 1999 and early June 2000, Intermedia's Digex position accounted
+for approximately 50 percent of its total market value.</p><p>During this period, Marcia observed that the relation between Intermedia
+and Digex appeared to be nearly linear, as theory would suggest. She
+also observed that the basis between the two---the Intermedia
+stub---appeared to be highly mean reverting.</p><p>Given these facts, Marcia decided to buy Intermedia and sell Digex when
+the stub fell from its average value of 16 to its historic low of 10 on
+June 30, 2000. Unfortunately, the stub did not revert to its former
+average value. Instead, Intermedia announced a few days later that
+earnings in its main line of business would fall substantially short of
+market expectations. The announcement specifically mentioned that its
+problems did not affect Digex. Intermedia shares fell very hard while
+Digex shares rose slightly. The Intermedia stub dropped below zero and
+reached a low of -3 on July 21.</p><p>Marcia lost heavily because she failed to recognize that firm-specific
+factors had caused the fair value of the stub to drop to 10. Given this
+mistake, she did not consider whether traders had already impounded the
+bad news in Intermedia's stock price.</p><hr><h2 id=175-the-causes-of-arbitrage-opportunities>17.5 THE CAUSES OF ARBITRAGE OPPORTUNITIES<a class=anchor href=#175-the-causes-of-arbitrage-opportunities>#</a></h2><hr><p><strong>Carrying Cost Risk in Index Futures Arbitrage</strong></p><p>When an index futures contract trades at a substantial discount to its
+fair value, index arbitrageurs sell the futures contract and buy the
+underlying index stocks. Carrying the hedge portfolio is expensive
+because the arbitrageur must finance the long stock purchases. The long
+positions, however, sometimes pay dividends, which reduce the carrying
+cost. Arbitrageurs therefore consider the expected costs of carrying
+their positions when they decide whether to trade. The fair value of the
+futures contract is the current value of the cash index, reduced by the
+expected interest costs of carrying the cash positions plus the
+dividends that the cash positions are expected to pay. Arbitrageurs buy
+the index contract when its price is below its fair value.</p><p>If interest rates unexpectedly rise while arbitrageurs hold their hedge
+portfolios, or if dividend payouts are smaller than expected, the
+arbitrageur's profits will be less than expected.</p><hr><p>Two sets of circumstances cause arbitrage opportunities. In the <em>slow
+price adjustment scenario</em>, arbitrage opportunities arise when common
+factor values change, but not all prices that depend on those factors
+change appropriately. Usually, one or more prices are slow to change.
+Occasionally, some prices may change too much in response to the news.
+Arbitrage trading in this scenario causes prices to adjust to their new
+fundamental values.</p><p>In the <em>uninformed liquidity demand scenario</em>, arbitrage opportunities
+arise when fundamental values are constant, but uninformed traders cause
+prices to change as they buy in some markets or sell in other markets.
+Arbitrage trading in this scenario connects demands for liquidity that
+traders make in different markets. The arbitrageurs sell to the buyers
+in markets where buyers have pushed prices up, and they buy from sellers
+in markets where sellers have pushed prices down. Their trading tends to
+restore prices to their fundamental values.</p><p>Although arbitrage generally will be profitable in both scenarios,
+arbitrageurs who recognize the causes of their arbitrage opportunities
+often will trade more profitably than will those who cannot recognize
+them. The former can formulate better trading strategies. In addition,
+since they know more about why they are trading, they are less likely to
+identify changes in the basis as arbitrage opportunities when those
+changes are due to changes in the fair value of the basis.</p><p>How arbitrageurs implement their trading strategies should depend on the
+cause of the arbitrage opportunity. When the opportunity arises because
+not all prices have appropriately adjusted to
+news about common fundamental factors, arbitrageurs should trade
+quickly. Otherwise, they may lose the opportunity to profit as news
+traders or value traders compete to trade first, and as dealers and
+limit order traders adjust their prices in response to the news.
+Arbitrageurs therefore should demand liquidity when trading in the slow
+price adjustment scenario.</p><hr><p><strong>Financing a Losing Short Position in Plug Power</strong></p><p>Mechanical Technology (MKTY) owns approximately 32 percent of the common
+stock shares of Plug Power (PLUG). On January 6, 2000, the market value
+of that position was substantially greater than the market value of all
+shares outstanding in MKTY. After accounting for MKTY's unrealized
+capital gains on its PLUG holdings, the MKTY stub---Mechanical
+Technology exclusive of its holdings in Plug Power---was worth
+approximately 30 cents per share.</p><p>Arbitrageurs who thought that the stub should be worth more would have
+bought shares in Mechanical Technology and sold shares in Plug Power.
+The proper hedge ratio depends on MKTY's corporate tax rate, its shares
+outstanding, its executive stock options outstanding, and its PLUG
+holdings. At that time, the hedge ratio was probably around 0.64 share
+of PLUG per share of MKTY.</p><p>The closing prices of MKTY and PLUG on January 6 were 23½ and 36¼,
+respectively. If an arbitrageur bought 1,000 shares of MKTY and sold 640
+shares of PLUG at their closing prices, he would have spent 23,500
+dollars on MKTY and received 23,200 dollars from PLUG. The difference of
+300 dollars for 1000 shares is the value of 1000 MKTY stubs at 30 cents
+per stub.</p><p>If this arbitrageur does not receive interest on the short proceeds of
+his sale, and if his cost of funds is 8 percent per year, the carrying
+cost of his position is 5.15 dollars per day, or 0.515 cents per stub
+per day. On average, the stub must appreciate every day by more than 0.5
+cent for the arbitrage to be profitable.</p><p>By March 10, the prices of MKTY and PLUG had quadrupled! That day, MKTY
+closed at 90, and PLUG closed at 149¾. The arbitrageur now had a
+90,000-dollar long position in MKTY and a 95,840-dollar short position
+in PLUG. The difference implies a stub value of -5.84 dollars. The
+arbitrageur lost 6,140 dollars on his positions. He also lost more than
+325 dollars in financing costs for the 63 days between January 6 and
+March 10 that he held his position.</p><p>By March 10, the arbitrageur needed to give his broker a cumulative sum
+of 72,640 dollars to cover his losses in PLUG. If the arbitrageur could
+not have produced these funds, his broker would have closed his
+position. The increase in PLUG'S price increased the arbitrageur's cost
+of carry to 21.01 dollars per day, or 2.1 cents per stub per day. The
+stub must now appreciate by more than a dollar every 50 days for the
+arbitrageur to avoid losing more money.</p><p>Fortunately, the arbitrageur's payday arrived a few days later. Over the
+next few days, MKTY and PLUG both fell substantially, with PLUG falling
+faster. At the close on March 14, the stub was worth 12.6 dollars per
+share. Had the arbitrageur sold then, he would have made a net profit
+after all costs of about 12,000 dollars.</p><hr><hr><p><strong>Economists Must Be Patient Traders</strong></p><p>Economists often correctly predict future events, but they frequently
+cannot accurately predict when they will occur. The laws of economic
+science are often suspended, but they are never rescinded.</p><hr><p>When the arbitrage opportunity arises because uninformed traders cause
+prices to move from their fundamental values, arbitrageurs often have
+more time to trade. Indeed, they may sometimes wait to see whether
+uninformed traders push prices farther from
+their fundamental values. In this scenario, arbitrageurs compete
+primarily with value traders to supply liquidity to the uninformed
+traders. They also supply liquidity to dealers whose inventories are out
+of balance because they have already supplied liquidity to the
+uninformed traders. In the uninformed liquidity demand scenario,
+arbitrageurs offer liquidity when trading. They therefore should not
+trade too aggressively.</p><p>Arbitrageurs of course often compete with each other to offer liquidity.
+When their competition is intense, they must trade more aggressively and
+at smaller margins, regardless of the cause of the arbitrage
+opportunity.</p><hr><p><strong>Crossed Markets</strong></p><p>The simplest form of arbitrage involves crossed markets. In a <em>crossed
+market</em>, a buyer bids a higher price than a seller simultaneously offers
+for exactly the same instrument. An arbitrageur who can buy from the
+seller at the lower price and sell to the buyer at the higher price will
+make an immediate arbitrage profit. This arbitrage is especially
+attractive because it generally does not require a hedge portfolio.</p><p>Crossed markets typically arise when trading is active and prices move
+very quickly. Markets cross when sellers do not quickly withdraw their
+offers when prices are rising or when buyers do not quickly withdraw
+their bids when prices are falling. When these slow traders trade with
+an arbitrageur, they naturally regret it.</p><hr><h2 id=176-quantity-characterizations-of-arbitrage>17.6 QUANTITY CHARACTERIZATIONS OF ARBITRAGE<a class=anchor href=#176-quantity-characterizations-of-arbitrage>#</a></h2><p>Arbitrage is best understood from two perspectives. The <em>price
+characterization of arbitrage</em> focuses on fundamental information. In
+this view, arbitrageurs are informed traders who trade on information
+about relative values. They trade when they conclude that instruments
+are inconsistently priced. The effect of their trading is to enforce the
+law of one price. This characterization holds regardless of the cause of
+the arbitrage opportunity.</p><p>The <em>quantity characterization of arbitrage</em> considers the economic
+roles arbitrageurs play when they trade instruments that are
+inconsistently priced. As noted above, inconsistent prices arise when
+prices are slow to adjust to new information about common factors, or
+when uninformed traders cause prices to move from their fundamental
+values.</p><p>When trading in the slow price adjustment scenario, arbitrageurs act as
+disciplinarians. Their trading tends to correct valuation mistakes that
+other traders make when common factor values change. This perspective
+explains why other traders often resent arbitrageurs. Nobody likes to
+take discipline from others.</p><p>When trading in the uninformed liquidity demand scenario, arbitrageurs
+act as shippers or repackagers of common factor risk. They act as
+shippers when they move the underlying risk from buyers in some markets
+to sellers in other markets. If the underlying risk is traded in
+different forms in the various markets, arbitrageurs also act as
+repackagers. When they buy an instrument in one market and sell a
+similar but different instrument in another market, they essentially
+repackage the underlying common factor risk.</p><p>In the derivative markets, risk repackaging is a productive process
+generally run by financial engineers. Arbitrageurs who buy cash
+instruments and then sell derivative contracts are essentially
+derivative contract manufacturers. They allow other traders to buy long
+contract positions. If the arbitrageur sells short to someone who is not
+covering a short position, the transaction increases the open interest
+in the contract. Likewise, arbitrageurs who buy derivative contracts and
+sell cash instruments essentially manufacture short derivative positions
+for other traders. If the arbitrageur is not short and if the seller is
+not covering a long position, the transaction increases the open
+interest. These processes also work in reverse. When arbitrageurs allow
+other traders to cover their positions, open interest usually drops.</p><p>The price and quantity characterizations of arbitrage are closely
+related. The price discrepancies that motivate arbitrage trading are
+signals to arbitrageurs to offer their productive services. The
+arbitrage spread---the difference between the
+basis and its fair value---is the compensation that arbitrageurs expect
+to receive for their services.</p><hr><p><strong>Time and Place</strong></p><p>Traders say that liquidity is all about <em>time and place</em>. When buyers
+and sellers arrive at the same time and place, trades are easy to
+arrange. When they arrive at different times or at different places,
+they need the assistance of an intermediary to complete their trades.</p><p>Dealers and arbitrageurs are such intermediaries. Dealers use their
+inventories to match buyers and sellers who arrive at different times in
+the same place. Arbitrageurs use their hedge portfolios to match buyers
+and sellers who arrive at the same time in different places.</p><hr><h2 id=177-arbitrageurs-dealers-and-brokers>17.7 ARBITRAGEURS, DEALERS, AND BROKERS<a class=anchor href=#177-arbitrageurs-dealers-and-brokers>#</a></h2><p>Arbitrageurs often trade in response to demands for liquidity that
+uninformed traders make. When the price impacts of uninformed trades
+cause price discrepancies across markets, arbitrageurs enter to provide
+liquidity.</p><p>Since dealers also provide liquidity, arbitrageurs and dealers often
+compete with each other. The two types of traders, however, operate in
+different dimensions. Dealers offer liquidity to buyers and sellers who
+arrive at different times in the same market. In contrast, arbitrageurs
+offer liquidity to buyers and sellers who arrive at the same time but in
+different markets.</p><p>The two trader types also use different technologies to connect buyers
+to sellers. Dealers use their inventories to span time gaps between
+buyers and sellers. Arbitrageurs use their hedge portfolios to span
+spatial gaps between buyers and sellers.</p><p>Both traders need mean reversion in order to trade profitably. Dealers
+profit when prices have a strong mean-reverting component. Arbitrageurs
+profit when the basis has a strong mean-reverting component.</p><p>The competition among dealers and arbitrageurs explains why dealers
+often do not appreciate having arbitrageurs trade in their markets.
+Dealing would be more profitable if dealers did not have to compete with
+arbitrageurs to supply liquidity. Dealing also would be more profitable
+if arbitrageurs did not trade with dealers when dealers are slow to
+change their prices in response to new information.</p><p>Dealers do appreciate trading with arbitrageurs when the arbitrageurs
+help them solve inventory problems that trouble them. Such trades
+usually occur after a dealer fills a large order or a sequence of small
+orders on one side of the market. To reduce the resulting inventory
+imbalance, dealers often adjust their prices to encourage other traders
+to trade with them on the other side. When these price changes cause the
+basis to widen, arbitrageurs will trade and take the dealers' unwanted
+inventory positions.</p><p>Arbitrage also would be more profitable if arbitrageurs did not have to
+compete with dealers to supply liquidity. When dealers offer liquidity,
+they decrease the impact that uninformed traders have on prices.
+Arbitrageurs therefore see fewer profitable arbitrage opportunities than
+they otherwise would see. Stated differently, dealers make prices less
+mean reverting when they offer liquidity to uninformed traders. Less
+mean reversion in prices generally implies less mean reversion in the
+basis, and therefore less arbitrage profit.</p><p>Traders who can simultaneously act as dealers and arbitrageurs often
+have an advantage over traders who specialize in only one strategy. When
+confronted with an order flow imbalance, such traders can choose whether
+to supply liquidity by dealing from their inventories or by constructing
+hedge portfolios. This flexibility allows them always to choose the
+strategy with the greatest profit potential.</p><p>Arbitrageurs also compete with brokers. Arbitrageurs buy from traders in
+one market and sell to traders in another market. They therefore match
+buyers with sellers, which is essentially
+what brokers do. Brokers arrange matches on an agency basis: Their
+clients pay them commissions for arranging their trades. Arbitrageurs
+arrange these matches on a proprietary basis: The arbitrage spread
+rewards them for matching willing buyers with willing sellers. Since
+arbitrageurs are in some respects like brokers, the skills that make
+good brokers---being able to identify buyers and sellers who are willing
+to trade---also make good arbitrageurs.</p><hr><p><strong>Options Market Makers Like Options</strong></p><p>Traders who make markets in stock option contracts typically quote every
+series within an options class. An <em>options class</em> includes all options
+that trade on the same underlying instrument. An <em>option series</em> is a
+specific option contract. Options series vary by their strike prices, by
+their expiration dates, and by their type---whether they are puts or
+calls.</p><p>When options dealers take a position in a given series, they may offset
+the risk in that position by a transaction in the same series or by a
+position in any other series in the class. They also may offset the risk
+by taking a position in the underlying instrument. The option to offset
+their risks in a multitude of different ways gives options market makers
+a great deal of flexibility. This flexibility allows them to take much
+greater positions in an individual series than they otherwise would
+take.</p><p>Options traders keep track of their total risk exposure by expressing
+the risk in each of their positions in terms of the underlying
+instrument. They do this by multiplying their options positions by their
+deltas.^<a href=#part0028.html_ch17fn2>1</a>^
+The sum of their delta-adjusted positions is their net exposure to the
+risk in the underlying instrument. The delta of a perfectly hedged
+portfolio is zero. Options traders who do not want to speculate on price
+changes in the underlying instrument try to keep their net delta near
+zero.</p><p>Deltas change as the underlying instrument prices change. Options
+traders keep track of the net gamma of their positions so that they know
+how much of the underlying instrument they must trade to maintain their
+hedge when the underlying instrument price drops.</p><p>Option prices also depend on the volatility of the underlying
+instrument. Options traders keep track of the net vega of their
+positions so that they know how much they will gain or lose when
+volatility changes. Since most public traders buy puts or buy calls,
+options dealers typically have positions with negative net vega. They
+therefore make money when volatility falls or when prices do not change
+much before expiration.</p><p><a href=#part0028.html_ch17fna2>1</a>. The
+<em>delta</em> of an option is the rate at which the option value changes when
+the price of the underlying security changes. (It is approximately equal
+to the change in option value that would result from a one-dollar
+increase in the underlying security price.) Calls have positive deltas,
+and puts have negative deltas. The <em>gamma</em> of an option is the rate at
+which its delta changes when the price of the underlying security
+changes. The <em>vega</em> of an option is the rate at which the option value
+changes when the volatility of the underlying security changes. Puts and
+calls have positive vegas.</p><h2 id=178-competition-among-arbitrageurs-and-equilibrium-arbitrage-spreads>17.8 COMPETITION AMONG ARBITRAGEURS AND EQUILIBRIUM ARBITRAGE SPREADS<a class=anchor href=#178-competition-among-arbitrageurs-and-equilibrium-arbitrage-spreads>#</a></h2><p>Arbitrageurs compete with each other to make arbitrage profits. Although
+arbitrage is most profitable when the arbitrage spread is wide,
+arbitrageurs who wait for wide spreads often lose the opportunity to
+trade when more aggressive arbitrageurs trade
+first. Competition among arbitrageurs therefore tends to narrow
+arbitrage spreads so that only the most efficient arbitrageurs can
+survive.</p><p>When arbitrageurs can freely enter and exit, the resulting arbitrage
+spreads are just wide enough to ensure that most arbitrageurs make only
+normal economic profits on average. When arbitrage is more profitable,
+new traders enter and spreads narrow. When arbitrage is less profitable,
+some arbitrageurs give up, and arbitrage spreads widen.</p><p>Arbitrage spreads therefore reflect the costs of doing arbitrage. When
+arbitrage is expensive, arbitrage bounds will be wide.</p><p>Since only the most efficient arbitrageurs survive, arbitrageurs tend to
+be excellent traders and excellent estimators of relative values. In
+markets where the arbitrage relation is easy to understand, the most
+successful arbitrageurs are excellent traders who have very high-speed
+access to their markets. In markets where the arbitrage relation is
+difficult to understand, the most successful arbitrageurs are excellent
+analysts.</p><p>Arbitrageurs are often traders who have a natural interest in one or
+more legs of the hedge portfolio. Such traders are often the lowest cost
+arbitrageurs because they already are committed to doing one or more of
+the trades necessary to construct the hedge portfolio. For example, for
+agricultural delivery arbitrages, local operators near the contract
+delivery point are often the lowest cost arbitrageurs because they often
+need to buy or sell the commodity there anyway.</p><h2 id=179-summary>17.9 SUMMARY<a class=anchor href=#179-summary>#</a></h2><p>Arbitrageurs play many roles in the markets. They enforce the law of one
+price, they discipline slow traders, they connect buyers to sellers, and
+they repackage risks into forms that other traders find most useful.
+These activities provide benefits to the economy and to individual
+traders.</p><p>Arbitrage trading strategies are special cases of more basic trading
+strategies. Arbitrageurs are simply traders who deal or speculate in
+their hedge portfolios. Trading two or more instruments simultaneously
+can be difficult, however, especially when price volatility is large
+relative to the basis. Good arbitrageurs therefore tend to be good
+traders.</p><p>Arbitrage is not easy. To trade successfully, arbitrageurs must properly
+understand the arbitrage relation, they must successfully implement
+their positions, and they must control their carrying costs.
+Arbitrageurs risk losing when the basis moves against them, when
+carrying costs are unexpectedly large, when they falsely identify
+arbitrage opportunities, and when they can no longer carry their
+positions because they have grown too large. Successful arbitrageurs
+must anticipate these problems and deal with them as they arise.</p><p>Arbitrageurs profit from mean reversion in the basis. In pure
+arbitrages, the basis must revert. Arbitrageurs can still lose, however,
+if the reversion takes too long. In speculative arbitrages, the
+nonstationary component of the basis may dominate the mean-reverting
+component, and the basis may never revert.</p><p>The most successful arbitrageurs understand why their arbitrage
+opportunities arise. They then know how best to trade, and they are less
+likely to trade when they should not trade.</p><p>Since arbitrageurs trade in more than one
+market, we need to consider their behavior when we consider how markets
+relate to each other. We discuss how arbitrageurs transmit volatility
+between markets in <a href=#part0032.html_ch20>chapter 20</a>, and in
+<a href=#part0040.html_ch26>chapter 26</a> we show that arbitrageurs
+are instrumental in keeping fragmented markets together.</p><h2 id=1710-some-points-to-remember>17.10 SOME POINTS TO REMEMBER<a class=anchor href=#1710-some-points-to-remember>#</a></h2><p>• Arbitrageurs trade similar risks in related markets.</p><p>• Arbitrageurs generally are dealers or value traders in their arbitrage
+hedge portfolios.</p><p>• Arbitrageurs convert assets and risks to different types, forms, or
+locations.</p><p>• Arbitrageurs are cross-sectional dealers.</p><p>• A large basis tells arbitrageurs to move liquidity from one market to
+another or to convert risk from one form to the other.</p><p>• The basis pays for the arbitrageurs' services.</p><p>• Arbitrage enforces the law of one price across fragmented markets.</p><p>• Successful arbitrageurs are low cost traders.</p><h2 id=1711-questions-for-thought>17.11 QUESTIONS FOR THOUGHT<a class=anchor href=#1711-questions-for-thought>#</a></h2><p>• What limits arbitrage profits?</p><p>• Can you repeat the intermarket currency cross-rate arbitrage until you
+are rich beyond your wildest dreams? Why not?</p><p>• What would happen to arbitrage spreads if the government taxed
+trading?</p><p>• Would index futures contracts have more appeal to hedgers and
+arbitrageurs if they required short holders to pay long holders the
+amount of dividends that they would have received had they held the cash
+portfolio instead of the futures contract?</p><p>• Can arbitrage trading cause prices in one or more markets to move away
+from their fundamental values? If this happens, which traders would
+restore prices to their proper values?</p><p>• How are bid/ask spreads in option contracts related to bid/ask spreads
+in their underlying instruments?</p><p>• When one market becomes volatile, arbitrageurs often cause prices in
+related markets to change. Does arbitrage therefore increase total
+volatility?</p><p>• What effect does arbitrage have on total market liquidity?</p><p>• What advantages do commodity operators have as arbitrageurs?</p><p>• What can traders learn about future price changes from where prices
+lie within arbitrage bounds?</p><p>• Is a spread between two option contracts with the same expiration date
+but different strike prices a speculative arbitrage or a pure arbitrage?</p><p>• What are the missing event contingencies referred to in the footnote
+to <a href=#part0028.html_ch17tab02>table 17-2</a> about identifying
+likely arbitrage opportunities in the GE-S&amp;P 500 futures spread?</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/digital-library/books/trading-and-exchanges/ch16.html class="flex align-center"><img src=/digital-library/icons/backward.svg class=book-icon alt=Backward>
+<span>Chapter 16: Value Traders</span>
+</a></span><span><a href=/digital-library/books/trading-and-exchanges/ch18.html class="flex align-center"><span>Chapter 18: Buy-Side Traders</span>
+<img src=/digital-library/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class="book-copyright flex justify-center"><small>Yuan's Library - © Yuanuite</small></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#171-definitions>17.1 DEFINITIONS</a></li><li><a href=#172-a-simple-characterization-of-arbitrage>17.2 A SIMPLE CHARACTERIZATION OF ARBITRAGE</a></li><li><a href=#173-types-of-arbitrage>17.3 TYPES OF ARBITRAGE</a><ul><li><a href=#1731-pure-arbitrages>17.3.1 Pure Arbitrages</a><ul><li><a href=#17311-shipping-arbitrages>17.3.1.1 Shipping Arbitrages</a></li><li><a href=#17312-delivery-arbitrages>17.3.1.2 Delivery Arbitrages</a></li><li><a href=#17313-conversion-arbitrages>17.3.1.3 Conversion Arbitrages</a></li></ul></li><li><a href=#1732-speculative-arbitrages>17.3.2 Speculative Arbitrages</a><ul><li><a href=#17321-spreads>17.3.2.1 Spreads</a></li><li><a href=#17322-pairs-trading>17.3.2.2 Pairs Trading</a></li><li><a href=#17323-statistical-arbitrage>17.3.2.3 Statistical Arbitrage</a></li><li><a href=#17324-risk-arbitrage>17.3.2.4 Risk Arbitrage</a></li></ul></li></ul></li><li><a href=#174-arbitrage-risks>17.4 ARBITRAGE RISKS</a><ul><li><a href=#1741-implementation-risk>17.4.1 Implementation Risk</a></li><li><a href=#1742-basis-risk-and-arbitrage-scale>17.4.2 Basis Risk and Arbitrage Scale</a></li><li><a href=#1743-model-risk>17.4.3 Model Risk</a></li><li><a href=#1744-carrying-cost-risk>17.4.4 Carrying Cost Risk</a><ul><li><a href=#17441-unexpected-costs-of-carry>17.4.4.1 Unexpected Costs of Carry</a></li><li><a href=#17442-unexpected-price-increases>17.4.4.2 Unexpected Price Increases</a></li><li><a href=#17443-slow-convergence>17.4.4.3 Slow Convergence</a></li><li><a href=#17444-unexpected-buy-ins>17.4.4.4 Unexpected Buy-ins</a></li></ul></li></ul></li><li><a href=#175-the-causes-of-arbitrage-opportunities>17.5 THE CAUSES OF ARBITRAGE OPPORTUNITIES</a></li><li><a href=#176-quantity-characterizations-of-arbitrage>17.6 QUANTITY CHARACTERIZATIONS OF ARBITRAGE</a></li><li><a href=#177-arbitrageurs-dealers-and-brokers>17.7 ARBITRAGEURS, DEALERS, AND BROKERS</a></li><li><a href=#178-competition-among-arbitrageurs-and-equilibrium-arbitrage-spreads>17.8 COMPETITION AMONG ARBITRAGEURS AND EQUILIBRIUM ARBITRAGE SPREADS</a></li><li><a href=#179-summary>17.9 SUMMARY</a></li><li><a href=#1710-some-points-to-remember>17.10 SOME POINTS TO REMEMBER</a></li><li><a href=#1711-questions-for-thought>17.11 QUESTIONS FOR THOUGHT</a></li></ul></nav></div></aside></main></body></html>
