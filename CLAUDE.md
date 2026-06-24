@@ -59,7 +59,13 @@ themes/hugo-book/          # Git submodule
 
 **Hugo 主题覆盖** — 修改主题功能时，一律用项目级文件覆盖，不动子模块 `themes/hugo-book/`。优先级：`assets/` > `layouts/` > `i18n/` > CI deploy.yml patch。
 
+**暗色模式 CSS 特异性** — 新增任何暗/亮双模式样式时，选择器必须写 `html[data-theme="dark"]` 而非 `[data-theme="dark"]`。后者特异性 (0,1,0) 与主题 `:root` 相同，主题后加载会覆盖自定义变量。加 `html` 前缀 → (0,1,1) 碾压主题。
+
+**colorScheme 同步** — 新增涉及暗/亮切换的 JS 时，设置 `data-theme` 的同时必须设 `document.documentElement.style.colorScheme = t`，否则原生控件（滚动条、表单、`<select>`）不跟随。head 内联防闪烁脚本也要同步。
+
+**head 防闪烁** — 新增依赖 localStorage 的 UI 状态时，必须在 `layouts/_partials/docs/inject/head.html` 加同步内联脚本，放在 `<link>` 之前，避免页面渲染后再切换导致闪烁。
+
 ## fix 流程
 1. fix 之后需要询问用户是否 push
-2. 纠错、push 等简单内容采用 haiku agent 处理
-3. push之后整理提炼fix过程中预计在维护过程中的经验，加入到CLAUDE.md中。需得用户授权。
+2. fix、push、添加内容等简单操作优先采用 haiku subagent
+3. push之后整理提炼fix过程中预计在维护过程中的经验，筛选出可复用的经验，加入到CLAUDE.md中。需得用户授权。
