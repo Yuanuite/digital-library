@@ -3,54 +3,23 @@ title: "斯坦福机器学习教程笔记"
 description: "吴恩达 (Andrew Ng) 机器学习课程中文笔记，涵盖监督学习、无监督学习、神经网络、SVM、推荐系统等。"
 weight: 1
 BookCollapseSection: true
-categories: ["机器学习"]
 tags: ['机器学习', '笔记']
 ---
-# 斯坦福大学 2014 机器学习教程 · 个人笔记
 
-**作者**：黄海广 | **版本**：V5.52 | **日期**：2018-03-07
+<section class="book-cover">
+  <h1 class="book-cover-title">斯坦福机器学习教程笔记</h1>
+  <p class="book-cover-subtitle">Andrew Ng · Stanford CS229</p>
+  <p class="book-cover-author">黄海广 · V5.52 · 2018</p>
+</section>
 
-本笔记是针对斯坦福大学 2014 年（Andrew Ng）机器学习课程的中文笔记，基于视频内容、中文字幕及 PPT 制作。
-
----
-
-**课程视频**：[Bilibili BV1W34y1i7xK](https://www.bilibili.com/video/BV1W34y1i7xK)  
-**课程主页**：[Coursera ML](https://www.coursera.org/course/ml)
-
----
-
-## 课程概述
-
-Machine Learning(机器学习)是研究计算机怎样模拟或实现人类的学习行为，以获取新的知识或技能，重新组织已有的知识结构使之不断改善自身的性能。它是人工智能的核心，是使计算机具有智能的根本途径，其应用遍及人工智能的各个领域，它主要使用归纳、综合而不是演绎。在过去的十年中，机器学习帮助我们自动驾驶汽车，有效的语音识别，有效的网络搜索，并极大地提高了人类基因组的认识。机器学习是当今非常普遍，你可能会使用这一天几十倍而不自知。很多研究者也认为这是最好的人工智能的取得方式。在本课中，您将学习最有效的机器学习技术，并获得实践，让它们为自己的工作。更重要的是，你会不仅得到理论基础的学习，而且获得那些需要快速和强大的应用技术解决问题的实用技术。最后，你会学到一些硅谷利用机器学习和人工智能的最佳实践创新。
-
-本课程提供了一个广泛的介绍机器学习、数据挖掘、统计模式识别的课程。主题包括：
-
-（一）监督学习（参数/非参数算法，支持向量机，核函数，神经网络）。
-
-（二）无监督学习（聚类，降维，推荐系统，深入学习推荐）。
-
-（三）在机器学习的最佳实践（偏差/方差理论；在机器学习和人工智能创新过程）。本课程还将使用大量的案例研究，您还将学习如何运用学习算法构建智能机器人（感知，控制），文本的理解（Web搜索，反垃圾邮件），计算机视觉，医疗信息，音频，数据挖掘，和其他领域。
-
-本课程需要10周共18节课，相对以前的机器学习视频，这个视频更加清晰，而且每课都有PPT课件，推荐学习。
-
-## 相关资源
-
-- 笔记更新：[Coursera-ML-AndrewNg-Notes](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
-- 深度学习笔记：[deeplearning_ai_books](https://github.com/fengdu78/deeplearning_ai_books)
-- 统计学习方法代码：[lihang-code](https://github.com/fengdu78/lihang-code)
-- 数据科学仓库：[Data-Science-Notes](https://github.com/fengdu78/Data-Science-Notes)
+<section class="book-intro">
+  <h2>简介</h2>
+  <p>吴恩达斯坦福机器学习课程中文笔记，涵盖监督/无监督学习、神经网络、SVM、推荐系统。含 CS229 数学复习材料。</p>
+  <p class="book-intro-links">
+    <a href="https://www.bilibili.com/video/BV1W34y1i7xK">📺 课程视频</a>
+    <a href="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes">📂 GitHub</a>
+  </p>
+</section>
 
 ## 目录
-
-- [第1周 · 引言 & 线性回归 & 线性代数](ch01.md)
-- [第2周 · 多变量线性回归 & Octave](ch02.md)
-- [第3周 · 逻辑回归 & 正则化](ch03.md)
-- [第4周 · 神经网络表述](ch04.md)
-- [第5周 · 神经网络学习](ch05.md)
-- [第6周 · 应用建议 & 系统设计](ch06.md)
-- [第7周 · 支持向量机](ch07.md)
-- [第8周 · 聚类 & 降维](ch08.md)
-- [第9周 · 异常检测 & 推荐系统](ch09.md)
-- [第10周 · 大规模ML & OCR & 总结](ch10.md)
-- [附件 · CS229复习 & 数学基础](appendix.md)
-
+{{< book-toc >}}

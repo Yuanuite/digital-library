@@ -15,7 +15,7 @@
 <div class="book-toc-list">
   {{ range $pages }}
     <a class="toc-row" href="{{ .RelPermalink }}">
-      <span class="toc-row-title">{{ partial "docs/title" . }}</span>
+      <span class="toc-row-title">{{ .Title }}</span>
       {{ with .Description }}
         <span class="toc-row-desc">{{ . }}</span>
       {{ end }}

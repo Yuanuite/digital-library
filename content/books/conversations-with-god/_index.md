@@ -1,43 +1,22 @@
 ---
 title: "与神对话"
 description: "一场人与神的深度对话，五卷灵性经典，探讨个人生活、全球议题与宇宙真相。"
-weight: 3
+weight: 2
 BookCollapseSection: true
 categories: ["灵性"]
 tags: ['灵性', '哲学']
 ---
-# 与神对话
 
-**Conversations with God**
+<section class="book-cover">
+  <h1 class="book-cover-title">与神对话</h1>
+  <p class="book-cover-subtitle">Conversations with God · 完整版（全五卷）</p>
+  <p class="book-cover-author">尼尔·唐纳德·沃尔什 · 李继宏 译</p>
+</section>
 
----
+<section class="book-intro">
+  <h2>简介</h2>
+  <p>一场人与神的深度对话。五卷灵性经典以问答体展开，涵盖个人生活、全球议题、宇宙真相。1996年出版后畅销全球。</p>
+</section>
 
-**[美] 尼尔·唐纳德·沃尔什 著**
-
-**李继宏 译**
-
----
-
-《与神对话》是一部深刻影响了数百万读者的灵性经典。作者尼尔·唐纳德·沃尔什在人生最低谷时，向神写了一封愤怒的信，却意外地收到了回答。这场对话持续了三年，最终凝结为这套震撼人心的作品。
-
-全书共五卷，以问答形式探讨了个人生活、全球议题、宇宙真相以及灵魂旅程等宏大主题。它不是传统意义上的宗教书籍，而是融合了东西方智慧的灵性指南，为现代人提供了一种全新的宇宙观和人生观。
-
-## 各卷简介
-
-| 卷次 | 书名 | 主题 |
-|------|------|------|
-| 第一卷 | [与神对话 · 第一卷](vol1.md) | 个人生活与真理 |
-| 第二卷 | [与神对话 · 第二卷](vol2.md) | 全球议题与集体经验 |
-| 第三卷 | [与神对话 · 第三卷](vol3.md) | 宇宙真相与灵魂旅程 |
-| 第四卷 | [与神为友](vol4.md) | 将对话升华为友谊 |
-| 第五卷 | [与神合一](vol5.md) | 合一经验与人类幻觉 |
-
----
-
-## 开始阅读
-
-- [:octicons-arrow-right-24: 第一卷 · 个人生活与真理](vol1.md)
-- [:octicons-arrow-right-24: 第二卷 · 全球议题](vol2.md)
-- [:octicons-arrow-right-24: 第三卷 · 宇宙真相](vol3.md)
-- [:octicons-arrow-right-24: 第四卷 · 与神为友](vol4.md)
-- [:octicons-arrow-right-24: 第五卷 · 与神合一](vol5.md)
+## 目录
+{{< book-toc >}}

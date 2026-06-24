@@ -3,30 +3,19 @@ title: "Why Stock Markets Crash"
 description: "复杂金融系统中的临界事件，从物理学家视角剖析股市崩盘的机制与预兆。"
 weight: 4
 BookCollapseSection: true
-categories: ["金融"]
 tags: ['金融', '复杂系统']
 ---
-# Why Stock Markets Crash
 
-**Critical Events in Complex Financial Systems**
+<section class="book-cover">
+  <h1 class="book-cover-title">Why Stock Markets Crash</h1>
+  <p class="book-cover-subtitle">Critical Events in Complex Financial Systems</p>
+  <p class="book-cover-author">Didier Sornette · Princeton University Press, 2003</p>
+</section>
 
-**Didier Sornette**
+<section class="book-intro">
+  <h2>简介</h2>
+  <p>物理学家视角下的股市崩盘研究。用复杂系统理论、分形数学和正反馈机制解释金融市场的临界现象——泡沫形成、崩盘触发与预测。</p>
+</section>
 
-*Princeton University Press, 2003*
-
----
-
-## 章节目录
-
-- [Preface](preface.md)
-- [Chapter 1 ](ch01.md)
-- [Chapter 2 ](ch02.md)
-- [Chapter 3 ](ch03.md)
-- [Chapter 4 ](ch04.md)
-- [Chapter 5 ](ch05.md)
-- [Chapter 6 ](ch06.md)
-- [Chapter 7 ](ch07.md)
-- [Chapter 8 ](ch08.md)
-- [Chapter 9 ](ch09.md)
-- [Chapter 10](ch10.md)
-- [References](references.md)
+## 目录
+{{< book-toc >}}

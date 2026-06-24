@@ -95,7 +95,7 @@ RAW --extract--> EXTRACTED --clean+split--> STRUCTURED --wire+build--> LIVE
 
 **head 防闪烁** — 新增依赖 localStorage 的 UI 状态时，必须在 `layouts/_partials/docs/inject/head.html` 加同步内联脚本，放在 `<link>` 之前，避免页面渲染后再切换导致闪烁。
 
-## 任务委派（Haiku subagent）
+## 任务委派（Haiku 模型）
 
 **规则**：需要理解 >2 个文件的因果链 → 主线程。单文件、确定目标、无判断 → Haiku。
 
@@ -113,5 +113,5 @@ RAW --extract--> EXTRACTED --clean+split--> STRUCTURED --wire+build--> LIVE
 
 ## fix 流程
 1. fix 之后需要询问用户是否 push
-2. fix、push、添加内容等简单操作优先采用 haiku subagent
+2. fix、push、添加内容等简单操作优先采用 Haiku 模型（Agent 工具设 `subagent_type: "general-purpose"`, `model: "haiku"`）
 3. push之后整理提炼fix过程中预计在维护过程中的经验，筛选出可复用的经验，加入到CLAUDE.md中。需得用户授权。

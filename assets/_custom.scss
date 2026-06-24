@@ -587,6 +587,24 @@ body {
   margin: 0;
 }
 
+// === 书籍简介栏 ===
+.book-intro {
+  margin: 1rem 0 2rem;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid var(--primary);
+  background: var(--surface);
+  border-radius: 0 6px 6px 0;
+  p { margin: 0 0 0.4rem; }
+  p:last-child { margin-bottom: 0; }
+}
+.book-intro-links {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  a { font-size: 0.9rem; }
+}
+
 // === 自动章节目录（{{< book-toc >}}）===
 .book-toc-list {
   margin: 1rem 0 2rem;
