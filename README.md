@@ -1,69 +1,64 @@
-# 📚 Add Book to Library
+# 📚 Yuan's Digital Library
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> 一键将 PDF 学术书籍转为 MkDocs Material 数字图书馆页面。
-> 把书拖给 Claude，聊几句天，剩下的全自动。 **[演示站点](https://yuanuite.github.io/digital-library/)**
+> 个人数字图书馆 — Hugo + KaTeX + pseudocode.js，自动部署到 GitHub Pages。
+> **[演示站点](https://yuanuite.github.io/digital-library/)**
 
 ## 🙏 致谢
 
-本项目基于 [UynajGI/yuulibrary](https://github.com/UynajGI/yuulibrary) 开发，感谢原作者的开源精神。在此基础上扩展为完整的自动化管线：Claude Code Skill + MinerU VLM 识别 + 多阶段清洗校对 + 一键部署。
+本项目基于 [UynajGI/yuulibrary](https://github.com/UynajGI/yuulibrary) 开发，感谢原作者的开源精神。
 
 ## 🚀 使用
 
 ```bash
-# 1. 初始化图书馆仓库
-cp templates/mkdocs.yml templates/deploy.yml my-library/
-mkdir -p my-library/docs/javascripts my-library/docs/stylesheets
-cp templates/mathjax.js my-library/docs/javascripts/
-cp templates/pseudocode-render.js my-library/docs/javascripts/
-cp templates/extra.css my-library/docs/stylesheets/
-# 改 mkdocs.yml 的 site_url 为你的 GitHub Pages 地址
-
-# 2. 在 Claude Code 中触发
-add this book          # 或拖 PDF 进对话框说"把这本书加入图书馆"
+git clone --recurse-submodules git@github.com:Yuanuite/digital-library.git
+hugo serve        # 本地预览 http://localhost:1313
+git push          # CI 自动构建 → GitHub Pages
 ```
 
-8 阶段自动流转（支持断点续传）：归集 → 提取（MinerU VLM / pandoc）→ 清洗 → 分章 → AI 校对 → 格式化 → 导航接入 → 验证。
+## 📝 添加书籍
 
-```bash
-# 3. 部署
-git push origin main   # GitHub Actions 自动构建 → GitHub Pages
-```
+使用 Claude Code 对话式添加：拖 PDF 进对话框 → 提取 → 清洗 → 分章 → 格式化 → 导航接入。`scripts/` 中的 Python 脚本辅助 Markdown 清洗和章节拆分。
 
 ## ✨ 特性
 
-- **数学公式**：MathJax 3 `tex-chtml-full.js`，`\boldsymbol`/`\mathbb`/`\mathcal` 全支持，instant nav 下不消失
-- **算法伪代码**：pseudocode.js，LaTeX algorithmic 原生语法
-- **解答块**：扫描 `解答：` 自动包裹为绿色背景 `<div class="solution">`
-- **表格增强**：数据表全宽居中、格子世界固定尺寸、表注居中小字、符号表 4 栏
-- **交叉引用**：正文"第3章"自动转为 `[第3章](ch03.md)`
-- **中英文检测**：CJK 比例自动设 `<html lang>`，优化字体和翻译
-- **完整书内页**：封面目录 / 符号说明 / 算法列表 / 术语索引
+- **数学公式**：KaTeX auto-render，`$...$` / `$...$` 分隔符
+- **算法伪代码**：pseudocode.js，LaTeX algorithmic 语法
+- **解答块**：`{{</* solution */>}}` shortcode，绿色左边框
+- **元素框**：`{{</* definition */>}}` / `{{</* theorem */>}}` / `{{</* example */>}}` / `{{</* key-point */>}}`
+- **暗色模式**：☀️/🌙 切换按钮，localStorage 持久，无闪烁
+- **表格增强**：全宽居中、格子世界固定尺寸、表注居中小字
+- **书架**：分类分组、整行式列表，Hover 左移动画
+- **标签系统**：标签云 + term 页卡片网格
 
 ## 📁 结构
 
 ```
-my-library/
-├── mkdocs.yml
-├── docs/
-│   ├── index.md              # 首页（卡片式书单）
-│   ├── books/<category>/<book-slug>/
-│   │   ├── index.md          # 封面 + 双栏目录
-│   │   ├── ch01.md ~ …       # 章节
-│   │   ├── notations.md      # 符号说明
-│   │   ├── algorithms.md     # 算法列表
-│   │   ├── index_term.md     # 术语索引
-│   │   └── images/
-│   ├── stylesheets/extra.css
-│   └── javascripts/{mathjax,pseudocode-render,translate-toggle}.js
-├── pdfs/                     # PDF 源文件（.gitignore）
+digital-library/
+├── hugo.toml
+├── content/                    # 所有内容页
+│   ├── _index.md               # 首页
+│   ├── books/                  # 书籍（按学科分类）
+│   │   └── <category>/<book-slug>/
+│   │       ├── _index.md       # 封面 + 目录
+│   │       ├── ch01.md ~ …
+│   │       ├── notations.md
+│   │       ├── algorithms.md
+│   │       └── index_term.md
+│   ├── notes/                  # 笔记
+│   ├── papers/                 # 论文
+│   └── reference/              # 参考
+├── layouts/                    # Hugo 模板
+│   ├── _shortcodes/            # solution / definition / theorem / caption …
+│   └── _partials/docs/         # 侧栏、主题切换
+├── static/                     # JS/CSS/字体
+├── assets/                     # SCSS → CSS
+├── themes/hugo-book/           # 主题（git submodule）
 └── .github/workflows/deploy.yml
 ```
 
-## 📖 我的图书馆
-
-**[yuanuite.github.io/digital-library](https://yuanuite.github.io/digital-library/)**
+## 📖 书目
 
 | 书名 | 作者 | 学科 |
 |------|------|------|
@@ -74,7 +69,7 @@ my-library/
 
 ## 🔧 技术栈
 
-[MinerU VLM](https://github.com/opendatalab/MinerU) · [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) · [MathJax 3](https://www.mathjax.org/) · [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js) · [pandoc](https://pandoc.org/) · [GitHub Actions](https://github.com/features/actions)
+[Hugo](https://gohugo.io/) · [hugo-book](https://github.com/alex-shpak/hugo-book) · [KaTeX](https://katex.org/) · [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js) · [pandoc](https://pandoc.org/) · [GitHub Actions](https://github.com/features/actions)
 
 ## 📄 许可证
 

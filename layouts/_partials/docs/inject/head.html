@@ -1,6 +1,6 @@
 {{- /* 防止亮/暗闪烁：页面渲染前从 localStorage 读取主题 */ -}}
 <script>
-  (function(){var t=localStorage.getItem('book-theme');if(t)document.documentElement.dataset.theme=t})()
+  (function(){var t=localStorage.getItem('book-theme');if(t){document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}})()
 </script>
 
 {{- /* 字体：Noto Sans SC（思源黑体）+ Inter（拉丁/数字） */ -}}

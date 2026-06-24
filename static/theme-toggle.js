@@ -8,6 +8,7 @@
 
   function setTheme(t) {
     document.documentElement.dataset.theme = t
+    document.documentElement.style.colorScheme = t
     localStorage.setItem(KEY, t)
     if (icon) icon.textContent = t === 'dark' ? '☀️' : '🌙'
   }

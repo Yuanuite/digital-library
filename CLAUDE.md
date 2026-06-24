@@ -1,36 +1,58 @@
-# Yuan's Digital Library
+# CLAUDE.md
 
-Hugo + hugo-book 主题，部署于 GitHub Pages。
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## 上传书籍后自检
+## 项目本质
 
-| # | 症状 | 根因 | 修复 |
-|---|------|------|------|
-| 1 | KaTeX 公式不渲染 | `<script>` 内联 `$$` 被 Hugo 模板吞掉 | KaTeX 初始化放独立 `.js` 文件 |
-| 2 | 黑夜模式字体色不变 | `BookTheme=auto` 缺少 `theme-auto` mixin | `_custom.scss` 补全 `theme-light/dark/auto` |
-| 3 | 中文书字体/间距异常 | `_index.md` 有孤立 `</div>` | 删除多余闭合标签 |
-| 4 | 目录链接不可点击 | TOC 用纯文本表格 | 改用 `- [标题](chXX.md)` 列表 |
-| 5 | 侧栏无分区层级 | `books/` 下书是扁平的 | 每书 `_index.md` 加 `categories: ["分类"]` |
-| 6 | 页脚双份导航 | `docs/footer` + `inject/footer` 并存 | 删 `post-prev-next` 调用，只留 inject |
+**Hugo 静态站点** — 个人数字图书馆，部署到 GitHub Pages。无 build 系统（Hugo 本身即构建器），内容为 Markdown + KaTeX + pseudocode.js。
 
-## 每次上传改动的文件
+## 站点架构
 
-| 概率 | 文件 | 改什么 |
-|------|------|--------|
-| 100% | `content/books/<book>/_index.md` | 写入封面内容 + 目录链接 |
-| 100% | `content/books/<book>/ch*.md` | 章节文件 |
-| 30% | `assets/_custom.scss` | 新增书特有样式 |
-| 10% | `layouts/` | 新增 shortcode 或 partial |
+```
+hugo.toml                  # Hugo 配置（hugo-book 主题）
+content/                   # 所有内容页（Markdown）
+  _index.md                # 首页
+  books/<category>/<slug>/ # 书籍（_index.md 封面 + ch*.md 章节）
+  notes/                   # 笔记
+  papers/                  # 论文
+  reference/               # 参考元素模板
+layouts/                   # 覆写模板
+  _shortcodes/             # solution / definition / theorem / caption 等
+  _partials/docs/          # 侧栏菜单（含 theme-toggle 按钮）、head 注入
+static/                    # JS/CSS/字体（KaTeX、pseudocode.js）
+assets/_custom.scss        # 全局自定义样式
+themes/hugo-book/          # Git submodule
+```
 
-## 关键架构规则
+## 关键设计约束
 
-**Hugo 模板**：`$` 和 `$$` 在 `.html` 模板的 `<script>` 标签内会被 Hugo 解析。含 `$` 的 JS 一律放 `static/*.js`。
+- **KaTeX** — `static/katex/` 本地托管，`auto-render.min.js` 处理 `$...$` 行内和 `$...$` 块级公式
+- **pseudocode.js** — `<pre class="pseudocode">` + `\begin{algorithm}` 语法
+- **暗色模式** — `html[data-theme="dark"]` CSS 选择器（特异性 0,1,1，覆盖主题 `:root`），`theme-toggle.js` 持久到 localStorage，`head.html` 内联脚本防闪烁
+- **解答块** — `{{</* solution */>}}` shortcode，非 `<div>` 裸写
+- **表格标题** — `{{</* caption */>}}` shortcode
+- **章节标题** — `#` 为章标题，`##` 为节标题
+- **hugo.toml** — `unsafe = true` 允许 HTML 混排，`uglyurls = true` 生成 `.html` 路径
 
-**Goldmark**：`unsafe = true`（raw HTML 穿透），`passthrough` 保留 `$`/`$$` 给 KaTeX。需显式启用 `[markup.goldmark.extensions.footnote]`。
+## scripts/ 中的工具
 
-**BookTheme**：`_custom.scss` 内必须定义 `theme-light`、`theme-dark`、`theme-auto` 三个 mixin（主题只提供 `theme-contrast-*` 等，不提供无前缀版本）。
+内容处理脚本（格式无关，Hugo 和 MkDocs 通用）：
+- `clean_markdown.py` — LaTeX 空白修复、去页眉/脚注
+- `clean_epub.py` — EPUB 版权页清理
+- `split_chapters.py` — 按 `# Chapter` 边界拆分
+- `fix_double_question.py` / `fix_dq_final.py` — 双问号修复
+- `migrate_to_hugo.py` — MkDocs→Hugo 迁移（已完成，保留参考）
 
-**内容规范**：
-- 书封面 TOC 必须用 `- [标题](file.md)`，禁止纯文本表格
-- 章节文件用 `weight` 控制排序（升序）
-- 禁止孤立 HTML 标签（`</div>` 无对应开标签）
+## 添加书籍流程
+
+1. 将 PDF/EPUB 放入项目根目录（不入库，gitignore `pdfs/`）
+2. 提取为 Markdown（MinerU VLM / pandoc）
+3. 运行 `scripts/clean_markdown.py` 清洗
+4. 按章节拆分到 `content/books/<category>/<slug>/`
+5. 格式化：封面 `_index.md`、算法、符号表、术语索引
+6. 更新 `content/_index.md` 首页书架
+7. `hugo serve` 预览 → push → CI 自动部署
+
+## fix 流程
+1. fix之后需要询问用户是否push
+2. 纠错、push等简单内容采用haiku agent处理
