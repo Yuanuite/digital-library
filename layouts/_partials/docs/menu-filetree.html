@@ -91,6 +91,9 @@
   {{ with $tagsPage }}
     <li>{{ template "menu-static-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
   {{ end }}
+  {{ with $.Site.GetPage "/about" }}
+    <li>{{ template "menu-static-link" (dict "Page" . "CurrentPage" $currentPage) }}</li>
+  {{ end }}
 </ul>
 
 {{ define "menu-static-link" }}

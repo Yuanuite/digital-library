@@ -2,13 +2,12 @@
 {{- $pages := slice -}}
 {{- $parent := .Parent -}}
 {{- $isSection := .IsSection -}}
+{{- $home := .Site.Home -}}
 
 {{- if $parent -}}
   {{- if $isSection -}}
-    {{- /* 书封面：同级是其他书 */ -}}
     {{- $pages = $parent.Pages.ByWeight -}}
   {{- else -}}
-    {{- /* 章节页：同级是同一本书的其他章节 */ -}}
     {{- $pages = $parent.RegularPages.ByWeight -}}
     {{- if not $pages -}}
       {{- $pages = $parent.Pages.ByWeight -}}
@@ -16,7 +15,7 @@
   {{- end -}}
 {{- end -}}
 
-{{- $prev := false -}}{{- $next := false -}}{{- $nextLabel := "→" -}}{{- $isLast := false -}}
+{{- $prev := false -}}{{- $next := false -}}{{- $nextLabel := "→" -}}{{- $isLast := false -}}{{- $isFirst := false -}}
 
 {{- if $isSection -}}
   {{- /* 书封面：prev=分类页(优先) 否则书架，next=开始阅读 */ -}}
@@ -33,24 +32,27 @@
     {{- if gt (len .) 0 -}}{{- $next = index . 0 -}}{{- $nextLabel = "开始阅读 →" -}}{{- end -}}
   {{- end -}}
 {{- else if gt (len $pages) 1 -}}
-  {{- $found := false -}}{{- $isLast := false -}}
+  {{- $found := false -}}{{- $isLast := false -}}{{- $isFirst := false -}}
   {{- $lastIdx := sub (len $pages) 1 -}}
   {{- range $idx, $p := $pages -}}
     {{- if $found -}}
       {{- if not $next -}}{{- $next = $p -}}{{- end -}}
+    {{- end -}}
+    {{- if eq $p $ -}}
+      {{- $found = true -}}
+      {{- if eq $idx 0 -}}{{- $isFirst = true -}}{{- end -}}
+      {{- if eq $idx $lastIdx -}}{{- $isLast = true -}}{{- end -}}
     {{- else -}}
-      {{- if eq $p $ -}}
-        {{- $found = true -}}
-        {{- if eq $idx $lastIdx -}}{{- $isLast = true -}}{{- end -}}
-      {{- else -}}
-        {{- $prev = $p -}}
-      {{- end -}}
+      {{- $prev = $p -}}
     {{- end -}}
   {{- end -}}
-  {{- if $isLast -}}
-    {{- $next = $parent -}}{{- $nextLabel = "完结 · 返回封面 →" -}}
+  {{- if $isFirst -}}
+    {{- $prev = $home -}}
   {{- end -}}
-  {{- /* 第一页：prev = 书封面 */ -}}
+  {{- if $isLast -}}
+    {{- $next = $home -}}{{- $nextLabel = "完结 · 返回首页 →" -}}
+  {{- end -}}
+  {{- /* 第一页兜底：prev = 书封面 */ -}}
   {{- if not $prev -}}{{- $prev = $parent -}}{{- end -}}
 {{- end -}}
 

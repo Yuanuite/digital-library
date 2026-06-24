@@ -53,4 +53,4 @@ weight: 1
 
 ---
 
-本站由 [Hugo](https://gohugo.io) + [Hugo Book](https://github.com/alex-shpak/hugo-book) 主题构建，托管于 GitHub Pages。书籍通过 MinerU VLM 提取排版，AI 辅助翻译校对。
+<!-- 关于本站已移至侧栏底部 -->
