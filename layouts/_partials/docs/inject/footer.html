@@ -18,19 +18,11 @@
 {{- $prev := false -}}{{- $next := false -}}{{- $nextLabel := "" -}}{{- $isLast := false -}}{{- $isFirst := false -}}
 
 {{- if $isSection -}}
-  {{- /* 书封面：prev=父级section(优先) > 分类页 > 书架，next=开始阅读 */ -}}
-  {{- if and $parent $parent.IsSection (ne $parent .Site.Home) (ne $parent (.Site.GetPage "/books")) -}}
+  {{- /* 书封面：prev=父级section(仅丛书卷) → 首页，next=开始阅读 */ -}}
+  {{- if and $parent $parent.IsSection $parent.Params.BookCollapseSection -}}
     {{- $prev = $parent -}}
   {{- else -}}
-    {{- $prev = .Site.GetPage "/books" -}}
-    {{- with .Params.categories -}}
-      {{- $cat := index . 0 -}}
-      {{- range $.Site.Taxonomies.categories -}}
-        {{- if eq .Page.Title $cat -}}
-          {{- $prev = .Page -}}
-        {{- end -}}
-      {{- end -}}
-    {{- end -}}
+    {{- $prev = .Site.Home -}}
   {{- end -}}
   {{- with .RegularPages.ByWeight -}}
     {{- if gt (len .) 0 -}}{{- $next = index . 0 -}}{{- $nextLabel = "开始阅读 →" -}}{{- end -}}
