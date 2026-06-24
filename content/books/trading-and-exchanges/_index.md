@@ -3,6 +3,7 @@ title: "Trading and Exchanges"
 description: "市场微观结构经典教材，覆盖交易行业、订单属性、市场结构、流动性、波动性、交易成本等 29 个主题。"
 weight: 5
 BookCollapseSection: true
+categories: ["金融"]
 tags: ['金融', '市场微观结构']
 ---
 
