@@ -1,0 +1,460 @@
+---
+name: add-book-to-library
+description: |
+  将 PDF 书籍转换为 MkDocs 页面并加入个人数字图书馆。完整流程：PDF 提取（MinerU VLM）→ Markdown 清洗 → 章节拆分 → 格式化 → 导航与首页接入。
+  触发词：add this book, 加入图书馆, 添加书籍, 把 PDF 转成网页, 把书加入图书馆, convert PDF to library, add book to library, 个人图书馆, digital library.
+---
+
+# Add Book to Library
+
+将一本 PDF 学术书籍加入已有的 MkDocs 数字图书馆。
+
+## 架构
+
+```
+repo/
+├── mkdocs.yml
+├── docs/
+│   ├── index.md                    # 图书馆首页（卡片式书单）
+│   ├── books/                      # 书籍（按学科分类）
+│   │   └── <category>/
+│   │       └── <book-slug>/
+│   ├── papers/                     # 论文
+│   │   └── <field>/
+│   │       └── <paper-slug>/
+│   ├── notes/                      # 笔记
+│   ├── stylesheets/extra.css
+│   └── javascripts/{mathjax,pseudocode-render}.js
+├── pdfs/                           # PDF 源文件（本地，不入库）
+└── .github/workflows/deploy.yml
+```
+
+`<category>` 由用户在添加时指定，如 `finance`、`math`、`cs`、`physics` 等。
+
+---
+
+## 工作流
+
+### 🛑 强制入口：状态文件
+
+**处理任何书之前，必须先检查 `pdfs/<book-id>.state.json` 是否存在。**
+
+- 存在 → 读取 `current_phase`，从中断点恢复
+- 不存在 → **🛑 STOP，必须先完成 Phase 0 才能继续**
+
+每个 phase 完成后**强制**写入状态文件：`current_phase` 改为 `phase_N_done`，对应 phase 的 `status` 改为 `done`。
+
+---
+
+### Phase 0：归集 PDF + 创建状态文件
+
+将源文件复制到仓库的 `pdfs/` 目录（已 gitignore，不会发布）。支持 PDF、EPUB、MOBI 三种格式：
+
+```bash
+cp /path/to/book.pdf pdfs/    # PDF
+cp /path/to/book.epub pdfs/   # EPUB
+cp /path/to/book.mobi pdfs/   # MOBI
+```
+
+创建状态文件 `pdfs/<book-id>.state.json`，记录每本书的处理进度：
+
+```json
+{
+  "book_id": "<book-id>",
+  "pdf": "<filename>",
+  "type": null,
+  "category": null,
+  "slug": null,
+  "format": null,
+  "current_phase": "phase_0_done",
+  "phases": {
+    "phase_0": { "status": "done", "note": "Book copied to pdfs/ (format: pdf|epub|mobi)" },
+    "phase_1": { "status": "pending", "note": "PDF to Markdown via MinerU VLM" },
+    "phase_2": { "status": "pending", "note": "Clean markdown" },
+    "phase_3": { "status": "pending", "note": "Choose category" },
+    "phase_4": { "status": "pending", "note": "Split into chapters" },
+    "phase_5": { "status": "pending", "note": "Format special pages" },
+    "phase_6": { "status": "pending", "note": "Wire nav and homepage" },
+    "phase_7": { "status": "pending", "note": "Build and verify" }
+  }
+}
+```
+
+**Phase 0 完成后**：写入 `current_phase: "phase_0_done"`，`phase_0.status: "done"`。
+
+### Phase 1：PDF → Markdown
+
+调用 `/mineru-document-extractor`。学术书籍带公式：
+
+```bash
+mineru-open-api auth --verify
+mineru-open-api extract book.pdf -o out/ -f md --model vlm --language en --timeout 3600
+```
+
+**失败分支**：MinerU API 超时或不可用 → 将 PDF 按 200 页拆分重试：
+```bash
+mineru-open-api extract book.pdf -o out_part1/ -f md --model vlm --language en --timeout 3600 --pages 1-200
+mineru-open-api extract book.pdf -o out_part2/ -f md --model vlm --language en --timeout 3600 --pages 201-400
+# 手动合并输出文件后继续
+```
+
+**EPUB → Markdown（pandoc，本地免费）：**
+
+```bash
+pandoc book.epub -t markdown --extract-media=images -o out/book.md
+```
+
+输出质量高于 OCR：无伪影，HTML 语义直接转换为 Markdown。
+
+**MOBI → EPUB → Markdown（fallback）：**
+
+```bash
+ebook-convert book.mobi book.epub   # calibre，需先 brew install calibre
+pandoc book.epub -t markdown --extract-media=images -o out/book.md
+```
+
+**Phase 1 完成后**：写入 `current_phase: "phase_1_done"`，`phase_1.status: "done"`。
+
+### Phase 2：清洗 Markdown
+
+运行 `scripts/clean_markdown.py` 处理：
+- LaTeX 空白修复（`x _ {i}` → `x_{i}`）
+- 数学内数字间距（`1 0 0` → `100`）
+- 页眉泄露（章节名混入正文）
+- 脚注上标（`$^{1}$`）
+
+**失败分支**：脚本报错 → 检查输入是否为 MinerU VLM 输出格式，手动检查第一处报错行的原始内容。
+
+**中文书注意**：`clean_markdown.py` 主要处理英文 LaTeX 问题。中文书额外手动清理：
+- OCR 伪影（空字母碎片如 `A\nB C\nD`）
+- 重复的标题/作者行
+- ISBN、版权声明、客服联系方式
+- 源代码下载链接和客服邮箱（保留 GitHub 链接即可）
+
+**EPUB 书注意**：pandoc 输出无 OCR 伪影，但可能残留版权声明、ISBN、出版信息页、前言推荐语——手动删除即可。EPUB 内嵌图片已在 Phase 1 通过 `--extract-media=images` 提取，无需额外处理。
+
+🔴 **CHECKPOINT**：清洗完成后，展示前 50 行的 before/after 对比。用户确认清洗质量后继续。
+
+**Phase 2 完成后**：写入 `current_phase: "phase_2_done"`，`phase_2.status: "done"`。
+
+### Phase 3：选择分类
+
+询问用户：
+1. 这是书籍、论文还是笔记？（决定放 `books/`、`papers/` 还是 `notes/`）
+2. 属于哪个学科分类？（如 `finance`、`math`、`cs`）
+3. 书的 URL slug 是什么？（短横线命名，如 `quant-finance-interview`）
+
+🔴 **CHECKPOINT**：确认路径 `docs/<type>/<category>/<book-slug>/` 后继续。
+
+**Phase 3 完成后**：写入 `current_phase: "phase_3_done"`，更新 `type`、`category`、`slug` 字段。
+
+### Phase 4：拆分章节
+
+```bash
+mkdir -p docs/<type>/<category>/<book-slug>/images
+```
+
+找到 `## Chapter N` 或 `## 第N章` 边界，每个章节存为 `ch01.md`、`ch02.md` ……
+
+修正标题层级：
+- 章节标题 → `#`（H1）
+- 节（N.M）→ `##`（H2）
+- 问题/主题 → `###`（H3）
+
+页码 ≤ 15 的薄书不拆分，合并为一个文件。
+
+**修复代码注释被误识别为标题**：遍历所有 `ch*.md`，将代码块（` ``` ` 包裹区域内）中以 `# ` 开头的行降级为 `## `，防止 Python 注释 `# 这是一段说明` 被渲染为 H1。
+
+**失败分支**：`## Chapter` 模式匹配不到 → 改用 `# Chapter` 或 `### Chapter` 匹配；仍失败则让用户提供章节边界关键词。
+
+**Phase 4 完成后**：写入 `current_phase: "phase_4_done"`，`phase_4.status: "done"`。
+
+### Phase 4.5：逐章审核（Haiku 并行）
+
+每章 spawn 一个 Haiku agent 独立校对，所有章节并行处理。每个 agent 检查：
+
+1. **OCR 错误** — 数学符号被误识别（λ→入、∑→Σ 空、∈→E）、中文字符混入公式
+2. **算法伪代码格式** — 行是否被错误合并、缩进是否保留、变量名是否正确
+3. **表格和图标题** — `表N.N　标题` 是否独立成行、`图N.N　标题` 是否正确关联
+4. **标题层级** — 代码注释 `#` 是否被识别为 H1、节标题层级是否正确
+5. **交叉引用** — 文中 `第N章` 是否已转为链接
+
+每个 agent 返回：修复后的章节内容 + 修复清单。
+
+**失败分支**：Haiku agent 不可用 → 主 agent 逐章过前 3 章，剩余章 spot-check 首尾。
+
+**Phase 4.5 完成后**：写入 `current_phase: "phase_4.5_done"`。
+
+### Phase 5：格式化
+
+#### 封面 + 目录（`index.md`）
+
+用 HTML + markdown 混排：
+- 居中书名、作者、封面图片
+- 双栏目录表格：左列章节链接，右列小节链接
+
+#### 符号说明（`notations.md`）
+
+**强制**：4 栏 markdown 表格：
+
+```markdown
+| 符号 | 含义 | 符号 | 含义 |
+|------|------|------|------|
+| E | 期望 | π | 策略 |
+```
+
+#### 算法列表（`algorithms.md`，如有）
+
+**强制**：表格带章节链接：
+
+```markdown
+| # | 算法 | 章节 |
+|---|------|------|
+| 1 | Q 学习算法 | [第5章](ch05.md) |
+```
+
+#### 算法伪代码
+
+使用 pseudocode.js（LaTeX algorithmic 语法）：
+
+```html
+<pre class="pseudocode">
+\begin{algorithm}
+\caption{算法 1: Sarsa算法}
+\begin{algorithmic}
+\STATE 输入: episodes, α, γ
+\FOR{each episode in episodes}
+    \STATE S ← first state of episode
+    \REPEAT
+        \STATE A = policy(Q, S)
+        \STATE Q(S, A) ← Q(S, A) + α(R + γQ(S', A') - Q(S, A))
+    \UNTIL{S is terminal state}
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+</pre>
+```
+
+`_` 需转义为 `\_`。Phase 4.5 的 Haiku agent 负责将纯文本伪代码转换为上述格式。
+
+#### 表格标题
+
+将 `表N.N　标题` 包裹为表格标题居中样式：
+```html
+<p class="caption">表5.1　n步Q收获</p>
+```
+
+紧接在 `<table>` 之前。
+
+#### 跨页面交叉引用
+
+**强制**：遍历所有 `ch*.md`，将正文中的「第 N 章」转为可点击链接：
+```
+第3章 → [第3章](ch03.md)
+```
+不替换标题行（`# 第N章`）和已有链接。**链接用 `.md` 后缀，mkdocs 构建时自动转为 `.html`。**
+
+#### 解答块
+
+将 `解答：` 起头的内容包裹：
+```html
+<div class="solution" markdown="1">
+
+解答：...
+
+</div>
+```
+
+**失败分支**：`</div>` 漏写 → build 时 HTML 错乱。每个 `解答：` 出现次数应等于 `<div class="solution">` 出现次数。
+
+#### 索引（`index_term.md`）
+
+6 栏表格：`| 术语 | 章节 | 术语 | 章节 | 术语 | 章节 |`
+
+跨页面锚点：先 `mkdocs build`，从 `site/` 的 HTML 提取实际 `id` 属性，再回填链接。
+
+**失败分支**：锚点 404 → 检查 mkdocs 生成的 slug 与索引中引用的 slug 是否一致（mkdocs 会去除中文标点、转小写英文）。
+
+**Phase 5 完成后**：写入 `current_phase: "phase_5_done"`，`phase_5.status: "done"`。
+
+### Phase 6：接入导航和首页
+
+#### 6.1 mkdocs.yml nav
+
+在对应分类位置插入。注意 `navigation.indexes` 已启用，**每个层级必须有 index.md 作为第一项**，否则点击该层级会直接跳到第一个子页面：
+
+```yaml
+nav:
+  - 首页: index.md
+  - 书籍:
+    - books/index.md                # ← 分区索引（已有）
+    - <分类名>:
+      - books/<category>/index.md   # ← 分类索引（如已有则跳过，如新建分类则创建）
+      - <书名>:
+        - 封面: books/<category>/<book-slug>/index.md
+        - 第1章 · <标题>: books/<category>/<book-slug>/ch01.md
+        - ...
+```
+
+章节标题从每个 `ch*.md` 的 `#` 行提取，>50 字符则截断。
+
+#### 6.2 分类索引页（如新建分类）
+
+创建 `docs/books/<category>/index.md`，展示该分类下所有书籍卡片：
+
+```markdown
+# 分类名
+
+<div class="grid cards" markdown>
+
+-   :material-book-open-variant: __书名__
+
+    ---
+
+    作者 · 语言
+
+    简介
+
+    [:octicons-arrow-right-24: 开始阅读](<book-slug>/index.md)
+
+</div>
+```
+
+#### 6.3 首页卡片（docs/index.md）
+
+仅 `<category>/index.md` 未覆盖的卡片放首页。设计原则：**首页 → 分区页 → 书籍** 三层递进，首页放分区卡片，分类页放书籍卡片。
+
+#### 6.4 术语缩写（可选）
+
+如有新领域术语，追加到 `docs/snippets/abbreviations.md`（用 `<!-- -->` 注释分区，**禁用 `#` 标题**——snippet 注入页面时 `#` 会渲染为可见标题）。
+
+**Phase 6 完成后**：执行 [上传后自检清单](#上传后自检清单)，通过后写入 `current_phase: "phase_6_done"`。
+
+### Phase 7：验证
+
+```bash
+mkdocs build
+```
+
+检查：
+- 构建零错误
+- 所有内部链接可点击
+- 公式在页面中正确渲染
+- 解答块样式正常
+
+🔴 **CHECKPOINT**：`mkdocs build` 通过后展示章节数、图片数、内部链接数。用户决定何时 push。
+
+**Phase 7 完成后**：写入 `current_phase: "phase_7_done"`，`phase_7.status: "done"`。整本书处理完毕。
+
+---
+
+## 上传后自检清单
+
+每本书加入导航和首页后，`mkdocs build` 前逐项检查：
+
+| # | 检查项 | 症状 | 修复 |
+|---|--------|------|------|
+| 1 | `:material-xxx:` 图标显示为原始文本 | 首页/分区页卡片图标不显示 | `mkdocs.yml` 需启用 `pymdownx.emoji` (twemoji) |
+| 2 | 点击分区/分类 tab 直接跳到第一本书 | 无中间过渡页 | 该层级需 `index.md` 作为 nav 第一项（配合 `navigation.indexes`） |
+| 3 | snippet 文件中的 `#` 标题渲染到页面 | 书籍封面出现无关 H1 标题 | snippet 用 `<!-- -->` 注释，不用 `#` / `##` |
+| 4 | 新建分类后点击分类跳转错误 | 404 或跳到其他书 | `mkdocs.yml` nav 中该分类第一项加 `books/<cat>/index.md` |
+| 5 | 新增书籍在分区页无入口 | 用户找不到新书 | `docs/books/<category>/index.md` 添加对应卡片 |
+| 6 | 新增分区在首页无入口 | 首页没有该分区卡片 | `docs/books/index.md` 添加分区卡片 |
+
+### 每次上传后需更新的文件（按概率）
+
+| 概率 | 文件 | 改什么 |
+|------|------|--------|
+| 100% | `mkdocs.yml` nav | 插入书名 + 章节列表 |
+| 90% | `docs/books/<category>/index.md` | 添加新书卡片 |
+| 30% | `docs/books/index.md` | 新分类时添加分区卡片 |
+| 20% | `docs/books/<category>/index.md` | 新建（新分类时） |
+| 10% | `docs/snippets/abbreviations.md` | 新领域术语 |
+
+---
+
+## 失败模式速查
+
+| 症状 | 一线修复 | 仍失败 |
+|------|---------|--------|
+| 公式不渲染 | 检查 `mathjax.js` 的 inlineMath/displayMath 是否含 `$` 分隔符 | mkdocs.yml 是否用 `tex-chtml-full.js`（非 `tex-mml-chtml.js`） |
+| `\boldsymbol` 红色未渲染 | CDN 用 `tex-chtml-full.js`，包含所有 TeX 扩展包 | `tex-mml-chtml.js` 不含 boldsymbol 包 |
+| 超宽公式溢出 | 改用 `\begin{aligned}` 手动断行 | `chtml.linebreaks.automatic` 对极长单行公式效果有限 |
+| HTML 内 md 不解析 | mkdocs.yml 加 `md_in_html` | 改用 `<img src>` 替代 `![](path)` |
+| 解答块颜色消失 | 检查 `extra.css` 中 `.solution` 定义 | 检查 `<div>` 是否有 `markdown="1"` |
+| 嵌套解答块（问题文本也变绿） | 查 `<div>` 和 `</div>` 配对 | grep `解答：` 出现次数 = `<div class="solution">` 出现次数 |
+| 索引锚点 404 | `mkdocs build` 后从 HTML 提取 id | 手动比对 mkdocs slug 规则 |
+| 图片不显示 | 检查路径相对 `docs/` 而非文件所在目录 | `![](images/x.jpg)` 不是 `![](../images/x.jpg)` |
+| Build 报错 nav 路径 | 检查 `mkdocs.yml` 的 nav 路径文件存在 | `use_directory_urls: false` 确保 .md 链接稳定 |
+| 图标 `:xxx:` 显示为文本 | `mkdocs.yml` 加 `pymdownx.emoji` twemoji | Material icons 需要 emoji 扩展解析 |
+| 点击分区/分类直接跳书 | 该层级 nav 第一项加 `index.md` | `navigation.indexes` 需 index.md 作为可点击索引 |
+| snippet 标题污染页面 | 改 `# 标题` 为 `<!-- 标题 -->` | snippet 的 `#` 在注入页面后渲染为 H1 |
+| 图注/表注未与正文区分 | 包裹 `<p class="caption">图N.N 标题</p>` | CSS `.caption { text-align: center; font-size: .8rem; }` |
+| 4×4 格子世界散落成数字 | 用 `<table class="grid-world">` 包裹 | CSS 加固定格子尺寸 + 边框 |
+| OCR 伪影：`<details>natural_image</details>` | 删除空 `<details>` 块，只留 `![](image)` | Phase 4.5 Haiku 逐章审核 |
+| OCR 错误：λ→入、S→.s. | 替换词表 + Phase 4.5 Haiku 校对 | 数学符号误识别需人工/LLM 上下文判断 |
+
+---
+
+## 反例黑名单（不要做）
+
+| # | 禁止 | 原因 | 正确做法 |
+|---|------|------|---------|
+| 1 | 跳过清洗直接翻译/拆分 | 残留 `\text {word}` 等 LaTeX 垃圾会污染全书 | Phase 2 必须在 Phase 4 之前 |
+| 2 | 用 `!!! admonition` | 每行需 4 空格缩进 + 空行，一处错整块崩 | 用 `<div class="solution" markdown="1">` |
+| 3 | 直接编辑 `site/` 下的文件 | `site/` 是构建产物，下次 build 被覆盖 | 只改 `docs/` 源文件 |
+| 4 | 翻译时动 LaTeX 公式 | `$x_i$` 变成 `$x _ i$` 直接破坏数学内容 | 翻译 prompt 明确黑名单保护 |
+| 5 | 章节标题用 `##` | mkdocs 侧边栏 H2 会缩进过深 | 章节标题用 `#`，节用 `##` |
+| 6 | 不 build 直接手写锚点 | mkdocs slug 规则与直觉不同（去除中文标点等） | `mkdocs build` → 从 HTML 提取 `id` |
+| 7 | PDF 源文件放入 docs/ | 会发布到网站上，浪费带宽和存储 | 放 `pdfs/`（已 gitignore） |
+| 8 | 交叉引用用 `.html` 后缀 | mkdocs build 会报 warning，期望 `.md` | 统一用 `.md` 后缀，mkdocs 构建时自动转换 |
+| 9 | `\boldsymbol` 不渲染 | `tex-mml-chtml.js` 不含 boldsymbol 包 → 红色未识别 | 用 `tex-chtml-full.js` CDN |
+| 10 | 超宽公式出滚动条 | 用户不接受滚动条 | 用 `\begin{aligned}` 手动断行 |
+| 11 | 表格数据挤在一起 | 默认表格无居中、无 padding | CSS `td { text-align: center; padding: .4rem .8rem; }` |
+| 12 | nav 分区不设 index.md | 点击 tab 直接跳第一本书，用户找不到其他书 | 每层 nav 第一项放 `index.md`（分区卡片页） |
+| 13 | snippet 用 `#` 注释分组 | `#` 注入页面后渲染为 H1，显示无关标题 | 用 `<!-- 注释 -->` |
+
+---
+
+## 经验总结
+
+以下是从实际转换 `强化学习入门` 全书（10 章，7565 行）中总结的关键经验。
+
+### 基础设施要求
+
+1. **MathJax CDN 必须用 `tex-chtml-full.js`** — `tex-mml-chtml.js` 缺少 `\boldsymbol` 等扩展包
+2. **pseudocode.js 算法渲染** — 需要 CDN CSS + JS + `docs/javascripts/pseudocode-render.js`
+3. **lefthook pre-commit** — `mkdocs build --strict` 阻断有 broken link 的提交
+4. **mathjax.js** — `$`/`$$` 分隔符 + `document$.subscribe` 兼容 instant navigation
+
+### 算法伪代码格式
+
+```html
+<pre class="pseudocode">
+\begin{algorithm}
+\caption{算法 1: 名称}
+\begin{algorithmic}
+\STATE 输入: ...
+\FOR{each episode}
+    \STATE ...
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+</pre>
+```
+
+注意 `_` 转义为 `\_`。
+
+### 常见 OCR 误识别
+
+| 原文 | 误识别为 | 修复 |
+|------|---------|------|
+| λ | 入 | `\(λ)` 替换 `（入）` |
+| S₁ | .s. | Phase 4.5 Haiku 上下文判断 |
+| \mathrm{S} | \mathrm {~ s ~} | `\\[a-z]+ {` → `\\\1{` |
+
+### 表格格式化
+
+- 格子世界（4×4 等）：`<table class="grid-world">` + CSS 固定格子
+- 数据表格：文字居中、padding
+- 表注：`<p class="caption">表N.N 标题</p>`，置 `<table>` 上方
