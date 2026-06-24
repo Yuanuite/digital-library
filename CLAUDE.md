@@ -36,22 +36,52 @@ themes/hugo-book/          # Git submodule
 
 ## scripts/ 中的工具
 
-内容处理脚本（格式无关，Hugo 和 MkDocs 通用）：
-- `clean_markdown.py` — LaTeX 空白修复、去页眉/脚注
-- `clean_epub.py` — EPUB 版权页清理
-- `split_chapters.py` — 按 `# Chapter` 边界拆分
-- `fix_double_question.py` / `fix_dq_final.py` — 双问号修复
-- `migrate_to_hugo.py` — MkDocs→Hugo 迁移（已完成，保留参考）
+仅有两个活跃脚本：
+- `clean_markdown.py` — VLM 输出清洗（LaTeX 空白修复、去页眉/脚注）
+- `clean_epub.py` — EPUB pandoc 输出清洗（版权页、CSS 残留）
 
-## 添加书籍流程
+## 添加书籍流程（4态马尔可夫链）
 
-1. 将 PDF/EPUB 放入项目根目录（不入库，gitignore `pdfs/`）
-2. 提取为 Markdown（MinerU VLM / pandoc）
-3. 运行 `scripts/clean_markdown.py` 清洗
-4. 按章节拆分到 `content/books/<category>/<slug>/`
-5. 格式化：封面 `_index.md`、算法、符号表、术语索引
-6. 更新 `content/_index.md` 首页书架
-7. `hugo serve` 预览 → push → CI 自动部署
+参见 `.claude/skills/add-book-to-library/SKILL.md`。状态机：
+
+```
+RAW --extract--> EXTRACTED --clean+split--> STRUCTURED --wire+build--> LIVE
+```
+
+| 状态 | Phase | 含义 |
+|------|-------|------|
+| RAW | 0 | pdfs/ 有源文件 + 状态文件 |
+| EXTRACTED | 1+2 | out/ 有清洗后 Markdown |
+| STRUCTURED | 3+4+5 | content/ 有章节 + 格式化 |
+| LIVE | 6+7 | 接入导航，hugo build 通过 |
+
+### 关键规则
+
+1. **PREFLIGHT（Phase 0.5）**：处理前检查 `test -f hugo.toml` 确认框架为 Hugo
+2. **每阶段写状态文件**：`pdfs/<book-id>.state.json` 含 `schema_version: 2` 和 `state` 字段
+3. **写完即构建**：Phase 2 和 Phase 4 之后各跑 `hugo --quiet 2>&1 | head -5`
+4. **失败回退**：当前状态失败 → 回退至前一状态，删除该阶段产物，重试
+5. **PUBLISHED 终端态**：`git push` 后 state 写为 `PUBLISHED`
+
+### SKILL.md 单一真相源
+
+`~/.claude/skills/add-book-to-library` 是 symlink，指向本项目的 `.claude/skills/add-book-to-library/`。编辑项目版本即编辑活跃 skill。Git 自动版本化。
+
+### 状态文件 schema
+
+```json
+{
+  "schema_version": 2,
+  "book_id": "<id>",
+  "pdf": "<filename>",
+  "state": "RAW|EXTRACTED|STRUCTURED|LIVE|PUBLISHED",
+  "type": "books|papers|notes",
+  "category": "<cat>",
+  "slug": "<slug>",
+  "format": "pdf|epub",
+  "phases": { "phase_0": {...}, ... }
+}
+```
 
 ## 通用原则
 
