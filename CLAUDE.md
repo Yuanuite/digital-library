@@ -46,6 +46,9 @@ themes/hugo-book/          # Git submodule
 - **主题子模块必须初始化** — 克隆仓库后务必 `git submodule update --init --recursive`，否则全站 404 且 Hugo 无错误提示。
 - **批量改 frontmatter 后重启 Hugo** — Fast Render Mode 缓存旧 frontmatter。改完多文件后必须 `kill $(lsof -ti :1313) && hugo server -D -p 1313`。
 - **书封 CSS 精简** — `.book-cover` 的内边距保持 `padding: 2rem 1rem 1rem`，上方留白过大影响视觉平衡。
+- **Footer prev 感知来源** — 书封面 prev 不能硬编码 `/books/`。先查 `.Params.categories`，有则指向分类页（如 `/categories/工程/`），fallback 到 `/books/`。
+- **Chapter prev/next 惯用法** — Hugo 遍历有序页面找 prev：`range $pages → if not $found → eq $p $ → found → else prev=$p`。`$found` 前最后一个页面即为 prev。
+- **首页 prev 回退父级** — 第一章无 prev 同级页，用 `{{ if not $prev }}{{ $prev = $parent }}{{ end }}` 回退到书封面，不能取 range 末元素。
 
 ## scripts/ 中的工具
 
