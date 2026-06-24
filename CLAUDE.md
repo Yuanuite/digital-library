@@ -34,6 +34,19 @@ themes/hugo-book/          # Git submodule
 - **章节标题** — `#` 为章标题，`##` 为节标题
 - **hugo.toml** — `unsafe = true` 允许 HTML 混排，`uglyurls = true` 生成 `.html` 路径
 
+## 内容约定
+
+- **章节标题统一格式** — 全部书籍的章标题使用 `第X章 · 主题`（空格+中点+空格分隔），description 控制在 4-8 字。序言保留"序言"，附录用 `附件 · ...`。此规则已写入 add-book-to-library skill 的 Phase 4。
+- **书籍简介用原文** — `_index.md` 的 `.book-intro` 优先使用原书封底/简介原文。仅当原文过长（如 600+ 行出版商标语）才截断。AI 摘要质量显著低于原书文案。
+- **中文 OCR 空格修复** — VLM 提取中文后字间可能插入空格（`多 变 量` → `多变量`）。修复方式：递归 `re.sub(r'([一-鿿])\s+([一-鿿])', r'\1\2', text)` 直到无匹配。
+
+## Hugo 特有坑点
+
+- **book-toc 短代码不列子章节** — `{{< book-toc >}}` 只列出 `IsSection eq false` 的叶子页面。有卷/分部结构的书（如《与神对话》分 5 卷），主 `_index.md` 需手写目录表格。
+- **主题子模块必须初始化** — 克隆仓库后务必 `git submodule update --init --recursive`，否则全站 404 且 Hugo 无错误提示。
+- **批量改 frontmatter 后重启 Hugo** — Fast Render Mode 缓存旧 frontmatter。改完多文件后必须 `kill $(lsof -ti :1313) && hugo server -D -p 1313`。
+- **书封 CSS 精简** — `.book-cover` 的内边距保持 `padding: 2rem 1rem 1rem`，上方留白过大影响视觉平衡。
+
 ## scripts/ 中的工具
 
 仅有两个活跃脚本：
