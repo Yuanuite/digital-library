@@ -1,6 +1,14 @@
 {{- /* 防止亮/暗闪烁：页面渲染前从 localStorage 读取主题 */ -}}
 <script>
-  (function(){var t=localStorage.getItem('book-theme');if(t){document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}})()
+  (function(){
+    var t=localStorage.getItem('book-theme');
+    if(t){
+      document.documentElement.dataset.theme=t;
+      document.documentElement.style.colorScheme=t;
+      document.documentElement.style.backgroundColor=t==='dark'?'#1a1a1a':'#ffffff';
+      document.documentElement.style.color=t==='dark'?'#e0e0e0':'#000000';
+    }
+  })()
 </script>
 
 {{- /* 字体：Noto Sans SC（思源黑体）+ Inter（拉丁/数字） */ -}}
