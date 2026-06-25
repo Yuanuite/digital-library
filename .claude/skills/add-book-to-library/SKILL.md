@@ -367,7 +367,7 @@ categories: ["机器学习"]
 
 #### Footer 导航约定
 
-书封面 `_index.md` 的 prev 链接优先指向分类页；第一章的 prev 回退至书封面（不循环到末章）——由 `layouts/_partials/docs/inject/footer.html` 自动处理，无需手动配置。
+书封面 `_index.md` 的 prev 始终指向首页（Yuan's Library）；丛书卷封面指向父级丛书封面（`BookCollapseSection: true`）；第一章 prev 回退至书封面。由 `layouts/_partials/docs/inject/footer.html` 自动处理，无需手动配置。
 
 #### 书架卡片
 
