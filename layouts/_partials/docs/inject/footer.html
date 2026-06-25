@@ -17,7 +17,10 @@
 
 {{- $prev := false -}}{{- $next := false -}}{{- $nextLabel := "" -}}{{- $isLast := false -}}{{- $isFirst := false -}}
 
-{{- if $isSection -}}
+{{- if or (eq .Kind "taxonomy") (eq .Kind "term") -}}
+  {{- /* 分类/标签页：prev=首页，无next */ -}}
+  {{- $prev = .Site.Home -}}
+{{- else if $isSection -}}
   {{- /* 书封面：prev=父级section(仅丛书卷) → 首页，next=开始阅读 */ -}}
   {{- if and $parent $parent.IsSection $parent.Params.BookCollapseSection -}}
     {{- $prev = $parent -}}
