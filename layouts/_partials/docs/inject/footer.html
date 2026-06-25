@@ -18,8 +18,31 @@
 {{- $prev := false -}}{{- $next := false -}}{{- $nextLabel := "" -}}{{- $isLast := false -}}{{- $isFirst := false -}}
 
 {{- if or (eq .Kind "taxonomy") (eq .Kind "term") -}}
-  {{- /* 分类/标签页：prev=书架，无next */ -}}
-  {{- with .Site.GetPage "/books" -}}{{- $prev = . -}}{{- end -}}
+  {{- /* 分类/标签页：prev=前一分类, next=后一分类, 首尾回书架 */ -}}
+  {{- $terms := slice -}}
+  {{- range .Site.Taxonomies.categories -}}{{- $terms = $terms | append .Page -}}{{- end -}}
+  {{- if gt (len $terms) 1 -}}
+    {{- $found := false -}}{{- $isLast := false -}}{{- $isFirst := false -}}
+    {{- $lastIdx := sub (len $terms) 1 -}}
+    {{- range $idx, $p := $terms -}}
+      {{- if $found -}}
+        {{- if not $next -}}{{- $next = $p -}}{{- end -}}
+      {{- else -}}
+        {{- if eq $p $ -}}
+          {{- $found = true -}}
+          {{- if eq $idx 0 -}}{{- $isFirst = true -}}{{- end -}}
+          {{- if eq $idx $lastIdx -}}{{- $isLast = true -}}{{- end -}}
+        {{- else -}}
+          {{- $prev = $p -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with .Site.GetPage "/books" -}}
+      {{- if $isFirst -}}{{- $prev = . -}}{{- end -}}
+      {{- if $isLast -}}{{- $next = . -}}{{- $nextLabel = "完结 · 返回书架 →" -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $prev -}}{{- with .Site.GetPage "/books" -}}{{- $prev = . -}}{{- end -}}{{- end -}}
 {{- else if $isSection -}}
   {{- /* 书封面：prev=父级section(仅丛书卷) → 首页，next=开始阅读 */ -}}
   {{- if and $parent $parent.IsSection $parent.Params.BookCollapseSection -}}
