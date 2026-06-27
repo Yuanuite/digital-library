@@ -17,6 +17,12 @@ weight: 1
     <span class="book-row-desc">吴恩达 (Andrew Ng) 机器学习课程中文笔记，涵盖监督学习、无监督学习、神经网络、SVM、推荐系统等。</span>
     <span class="book-row-arrow">›</span>
   </a>
+  <a class="book-row" href="{{< relref "/books/python-for-data-analysis/_index.md" >}}">
+    <span class="book-row-title">利用Python进行数据分析</span>
+    <span class="book-row-meta">Wes McKinney</span>
+    <span class="book-row-desc">Python 数据分析权威指南，pandas 作者所著。NumPy、pandas、matplotlib，14 章。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
   <a class="book-row" href="{{< relref "/books/lun-system-engineering/_index.md" >}}">
     <span class="book-row-title">论系统工程（新世纪版）</span>
     <span class="book-row-meta">钱学森 等</span>
