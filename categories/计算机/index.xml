@@ -29,7 +29,7 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch02.html"&gt;
  &lt;span class="toc-row-title"&gt;第2章 · Python语法基础&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;IPython与Jupyter&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;语法基础与环境&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -37,7 +37,7 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch03.html"&gt;
  &lt;span class="toc-row-title"&gt;第3章 · 内建数据结构与函数&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;元组列表字典&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;数据结构与函数&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -61,7 +61,7 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch06.html"&gt;
  &lt;span class="toc-row-title"&gt;第6章 · 数据加载与存储&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;文本二进制格式&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;文本与二进制格式&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
@@ -85,7 +85,7 @@
  &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch09.html"&gt;
  &lt;span class="toc-row-title"&gt;第9章 · 绘图与可视化&lt;/span&gt;
  
- &lt;span class="toc-row-desc"&gt;matplotlib&lt;/span&gt;
+ &lt;span class="toc-row-desc"&gt;matplotlib与seaborn&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
