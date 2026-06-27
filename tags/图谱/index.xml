@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>图谱 on Yuan's Library</title><link>https://yuanuite.github.io/digital-library/tags/%E5%9B%BE%E8%B0%B1.html</link><description>Recent content in 图谱 on Yuan's Library</description><generator>Hugo</generator><language>zh-CN</language><copyright>© Yuanuite</copyright><atom:link href="https://yuanuite.github.io/digital-library/tags/%E5%9B%BE%E8%B0%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>Spectra of Random Graphs with Given Expected Degrees</title><link>https://yuanuite.github.io/digital-library/papers/network-science/random-graph-spectra/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/papers/network-science/random-graph-spectra/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;Spectra of Random Graphs&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;with Given Expected Degrees&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Fan Chung · Linyuan Lu · Van Vu · PNAS, 2003&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;Abstract&lt;/h2&gt;
+ &lt;p&gt;In the study of power-law graph spectra, two competing approaches exist: Wigner's semicircle law vs power-law eigenvalue distribution. Chung, Lu, and Vu reconcile both by showing the Laplacian follows the semicircle law while the adjacency matrix obeys the power law. Results are based on random graphs with given expected degrees, with phase transitions at &lt;em&gt;β&lt;/em&gt; = 2.5.&lt;/p&gt;</description></item></channel></rss>
