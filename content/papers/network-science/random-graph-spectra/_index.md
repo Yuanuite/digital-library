@@ -2,8 +2,7 @@
 title: "Spectra of Random Graphs with Given Expected Degrees"
 description: "Chung-Lu-Vu 随机图模型图谱理论，PNAS 2003。"
 weight: 2
-categories: ["网络科学"]
-tags: ["随机图", "图谱", "复杂网络"]
+tags: ["随机图", "图谱", "复杂网络", "网络科学"]
 ---
 
 <section class="book-cover">
