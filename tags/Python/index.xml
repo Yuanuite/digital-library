@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Yuan's Library</title><link>https://yuanuite.github.io/digital-library/tags/Python.html</link><description>Recent content in Python on Yuan's Library</description><generator>Hugo</generator><language>zh-CN</language><copyright>© Yuanuite</copyright><atom:link href="https://yuanuite.github.io/digital-library/tags/Python/index.xml" rel="self" type="application/rss+xml"/><item><title>利用Python进行数据分析</title><link>https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;利用Python进行数据分析&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;Python for Data Analysis · 原书第2版&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Wes McKinney · 徐敬一 译&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;Python 数据分析权威指南，原作者 Wes McKinney 是 pandas 库的创建者。第2版全面覆盖 NumPy、pandas、matplotlib、scikit-learn 等核心工具，从数据清洗到建模可视化，14 章循序渐进。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · 准备工作&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;环境与数据生态&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · Python语法基础&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;IPython与Jupyter&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · 内建数据结构与函数&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;元组列表字典&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · NumPy基础&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;多维数组与通用函数&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · pandas入门&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Series与DataFrame&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · 数据加载与存储&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;文本二进制格式&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · 数据清洗与准备&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;缺失值与转换&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · 数据规整&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;聚合合并与重塑&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;第9章 · 绘图与可视化&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;matplotlib&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;第10章 · 数据聚合与分组&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;GroupBy机制&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch11.html"&gt;
+ &lt;span class="toc-row-title"&gt;第11章 · 时间序列&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;日期与频率转换&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch12.html"&gt;
+ &lt;span class="toc-row-title"&gt;第12章 · pandas高级应用&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;分类与建模&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch13.html"&gt;
+ &lt;span class="toc-row-title"&gt;第13章 · Python建模库&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;statsmodels&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/cs/python-for-data-analysis/ch14.html"&gt;
+ &lt;span class="toc-row-title"&gt;第14章 · 数据分析案例&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Bitly与MovieLens&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item></channel></rss>
