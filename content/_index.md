@@ -53,6 +53,54 @@ weight: 1
     <span class="book-row-desc">金融工程经典教材，第11版。期货、期权、互换、信用衍生品、利率模型，37 章。</span>
     <span class="book-row-arrow">›</span>
   </a>
+  <a class="book-row" href="{{< relref "/books/algo-trading/_index.md" >}}">
+    <span class="book-row-title">算法交易与套利交易</span>
+    <span class="book-row-meta">赵胜民 编著</span>
+    <span class="book-row-desc">从投资组合理论到算法交易系统，涵盖配对交易、可转债套利、期指套利等策略，15 章。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
+  <a class="book-row" href="{{< relref "/books/quant-finance-interview/_index.md" >}}">
+    <span class="book-row-title">量化金融面试实用指南</span>
+    <span class="book-row-meta">Xinfeng Zhou · 中文翻译版</span>
+    <span class="book-row-desc">概率论、随机过程、衍生品定价、算法，200+ 道真实面试题。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
+  <a class="book-row" href="{{< relref "/books/quant-trading/_index.md" >}}">
+    <span class="book-row-title">量化交易</span>
+    <span class="book-row-meta">Ernest P. Chan</span>
+    <span class="book-row-desc">从策略研发到实盘部署的完整量化交易入门指南。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
+  <a class="book-row" href="{{< relref "/books/random-walk-wall-street/_index.md" >}}">
+    <span class="book-row-title">漫步华尔街</span>
+    <span class="book-row-meta">Burton G. Malkiel</span>
+    <span class="book-row-desc">Burton G. Malkiel 的经典投资著作——随机漫步理论与个人投资策略。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
+  <a class="book-row" href="{{< relref "/books/stat-arb/_index.md" >}}">
+    <span class="book-row-title">统计套利</span>
+    <span class="book-row-meta">Andrew Pole</span>
+    <span class="book-row-desc">Andrew Pole 著，配对交易与统计套利策略的系统性论述。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
+  <a class="book-row" href="{{< relref "/books/trade-your-way/_index.md" >}}">
+    <span class="book-row-title">通向财务自由之路</span>
+    <span class="book-row-meta">Van K. Tharp</span>
+    <span class="book-row-desc">交易系统开发的完整框架——从目标设定、期望值分析到仓位管理。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
+  <a class="book-row" href="{{< relref "/books/quant-asset-management/_index.md" >}}">
+    <span class="book-row-title">量化资产管理</span>
+    <span class="book-row-meta">Michael Robbins</span>
+    <span class="book-row-desc">Michael Robbins 著，因子投资与机器学习在机构投资中的系统性实践指南。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
+  <a class="book-row" href="{{< relref "/books/stats-nonstatisticians/_index.md" >}}">
+    <span class="book-row-title">非统计学家的统计学</span>
+    <span class="book-row-meta">Birger Stjernholm Madsen</span>
+    <span class="book-row-desc">为非统计学背景的从业者编写的实用统计入门指南，涵盖数据收集、描述统计、正态分布、统计检验等核心概念。</span>
+    <span class="book-row-arrow">›</span>
+  </a>
 </div>
 
 ## 最近笔记
