@@ -1,4 +1,468 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>金融 on Yuan's Library</title><link>https://yuanuite.github.io/digital-library/categories/%E9%87%91%E8%9E%8D.html</link><description>Recent content in 金融 on Yuan's Library</description><generator>Hugo</generator><language>zh-CN</language><copyright>© Yuanuite</copyright><atom:link href="https://yuanuite.github.io/digital-library/categories/%E9%87%91%E8%9E%8D/index.xml" rel="self" type="application/rss+xml"/><item><title>Why Stock Markets Crash</title><link>https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/index.html</guid><description>&lt;section class="book-cover"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>金融 on Yuan's Library</title><link>https://yuanuite.github.io/digital-library/categories/%E9%87%91%E8%9E%8D.html</link><description>Recent content in 金融 on Yuan's Library</description><generator>Hugo</generator><language>zh-CN</language><copyright>© Yuanuite</copyright><atom:link href="https://yuanuite.github.io/digital-library/categories/%E9%87%91%E8%9E%8D/index.xml" rel="self" type="application/rss+xml"/><item><title>量化交易：如何建立自己的算法交易业务</title><link>https://yuanuite.github.io/digital-library/books/quant-trading/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/quant-trading/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;量化交易&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;如何建立自己的算法交易业务&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Ernest P. Chan&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;从策略研发到实盘部署的完整量化交易入门指南。本书面向独立交易者，涵盖策略灵感寻找、回测方法论、交易平台搭建、资金与风险管理以及均值回复、协整、机器学习、高频交易等进阶量化专题，帮助读者建立并运营自己的算法交易业务。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/preface.html"&gt;
+ &lt;span class="toc-row-title"&gt;前言&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;本书的目标读者、所需背景和内容概览。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/acknowledgments.html"&gt;
+ &lt;span class="toc-row-title"&gt;致谢&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;致谢。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · 量化交易的定义、参与者与原因&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;什么是量化交易、谁能成为量化交易者、量化交易的商业逻辑。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · 寻找策略灵感&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;如何寻找适合自己的策略、常见策略陷阱、基本面与技术面数据源。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · 回测&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;回测方法论——从数据清洗、模型构建到避免过拟合的完整流程。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · 搭建你的交易业务&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;零售与自营交易平台选择、技术基础设施、经纪商比较。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · 资金与风险管理&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;最优杠杆Kelly公式、风险管理工具、仓位控制与止损策略。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · 量化交易专题&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;均值回复、协整、机器学习、高频交易等进阶量化专题。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;结论&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;量化交易的关键要点总结与行动建议。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-trading/appendix_a.html"&gt;
+ &lt;span class="toc-row-title"&gt;附录A · MATLAB速览&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;MATLAB常用函数与工具箱速览。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item><item><title>量化金融面试实用指南</title><link>https://yuanuite.github.io/digital-library/books/quant-finance-interview/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/quant-finance-interview/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;量化金融面试实用指南&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;A Practical Guide to Quantitative Finance Interviews&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Xinfeng Zhou · 中文翻译版&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;本书是量化金融面试领域的经典备考指南，覆盖概率论、随机过程、衍生品定价、算法等核心领域的 200 余道真实面试题，系统讲解解题思路与数学基础，帮助读者全面掌握量化岗位所需的关键知识与应对策略。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/preface.html"&gt;
+ &lt;span class="toc-row-title"&gt;前言&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;本书概述、目标读者与使用指南。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/notations.html"&gt;
+ &lt;span class="toc-row-title"&gt;符号说明&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;全书常用数学符号及其含义。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · 基本原则&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;面试基本原则、数学基础与解题策略。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · 脑筋急转弯&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;常见脑筋急转弯题目及其解题思路。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · 微积分与线性代数&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;微积分与线性代数核心知识及其在量化面试中的应用。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · 概率论&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;概率论基础知识与常见面试题型。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · 随机过程与随机微积分&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;马尔可夫链、随机游走、鞅与动态规划。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · 金融&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;衍生品定价直觉与数学模型。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · 算法与数值方法&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;常用算法与数值方法在量化面试中的应用。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-finance-interview/index_term.html"&gt;
+ &lt;span class="toc-row-title"&gt;索引&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;全书术语索引。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item><item><title>算法交易与套利交易</title><link>https://yuanuite.github.io/digital-library/books/algo-trading/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/algo-trading/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;算法交易与套利交易&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;从投资理论到量化策略&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;赵胜民 编著&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;本书系统介绍算法交易与套利交易的理论基础与实战策略，从现代投资组合理论出发，依次讲解 CAPM、交易成本分析、算法交易系统架构，以及配对交易、可转债套利、期指套利等主流策略，并深入剖析长期资本管理公司的失败教训。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/preface.html"&gt;
+ &lt;span class="toc-row-title"&gt;前言&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;全书目录与内容概览——从投资收益与风险到套利失败的教训。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · 投资的收益与风险&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;收益计算、风险评估、风险溢价——投资决策的基础。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · 资产配置与均值方差模型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;资产类别、投资组合收益与方差、现代投资组合理论、有效前沿。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · CAPM 和套利定价理论&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;CAPM 推导与检验、单指数模型、套利定价理论。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · 金融计算基础及对债券的估值&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;货币时间价值、债券估值、收益率曲线、久期与凸性。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · 股票基础分析&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;股票估值模型、财务报表分析、基本面分析框架。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · 算法交易简介&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;算法交易概述、市场微观结构、电子交易发展历程。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · 算法交易系统的结构&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;算法交易系统架构、订单管理系统、市场数据接入。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · 交易成本分析&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;交易成本构成、冲击成本、隐性成本、成本管理。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;第9章 · 算法交易策略介绍&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;执行算法、VWAP/TWAP/IS 策略、智能订单路由。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;第10章 · 交易后分析和算法的选择&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;交易后分析框架、算法性能评估、Benchmark 比较。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch11.html"&gt;
+ &lt;span class="toc-row-title"&gt;第11章 · 配对交易&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;统计套利基础、协整检验、配对选择与交易信号。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch12.html"&gt;
+ &lt;span class="toc-row-title"&gt;第12章 · 可转换债券套利&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;可转债定价、Delta/ Gamma 对冲、套利策略构建。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch13.html"&gt;
+ &lt;span class="toc-row-title"&gt;第13章 · 风险套利&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;并购套利、事件驱动策略、风险与收益分析。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch14.html"&gt;
+ &lt;span class="toc-row-title"&gt;第14章 · 股指期货套利&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期指定价偏差、跨期套利、跨品种套利策略。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/algo-trading/ch15.html"&gt;
+ &lt;span class="toc-row-title"&gt;第15章 · 套利失败的教训——长期资本管理公司的教训&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;长期资本管理公司兴衰、杠杆风险、流动性危机教训。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item><item><title>统计套利</title><link>https://yuanuite.github.io/digital-library/books/stat-arb/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stat-arb/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;统计套利&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;Statistical Arbitrage&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Andrew Pole&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;Andrew Pole 著，配对交易与统计套利策略的系统性论述。本书深入探讨统计套利的理论基础与实战方法，从配对交易的起源到算法交易的崛起，涵盖结构模型、回归定律、波动率分析、事件风险等核心主题，并审视十进制改革和竞争加剧对统计套利的影响，最后展望其复兴前景。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/preface.html"&gt;
+ &lt;span class="toc-row-title"&gt;前言&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;作者序言与致谢&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · 蒙特卡洛还是破产&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;从配对交易到统计套利的演变历程&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · 统计套利&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;噪声模型、爆米花过程、配对识别与组合配置&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · 结构模型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;预测函数、移动平均、因子模型与随机共振&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · 回归定律&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;均值回归的数学基础与实证检验&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · 高斯不是回归之神&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;非高斯分布下的回归特性&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · 股票间波动率&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;股票间相对波动率的理论与实证&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · 量化回归机会&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;平稳与非平稳过程中的回归机会量化&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · 诺贝尔难题&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;事件风险、监管变化与相关性崩塌&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;第9章 · 三位一体的麻烦&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;十进制改革、竞争加剧与结构性变化&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;第10章 · 黑箱崛起&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;算法交易、市场冲击与黑箱模型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stat-arb/ch11.html"&gt;
+ &lt;span class="toc-row-title"&gt;第11章 · 统计套利的复兴&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;灾变过程、趋势识别与风险管理新范式&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Why Stock Markets Crash</title><link>https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/why-stock-markets-crash/index.html</guid><description>&lt;section class="book-cover"&gt;
  &lt;h1 class="book-cover-title"&gt;Why Stock Markets Crash&lt;/h1&gt;
  &lt;p class="book-cover-subtitle"&gt;Critical Events in Complex Financial Systems&lt;/p&gt;
  &lt;p class="book-cover-author"&gt;Didier Sornette · Princeton University Press, 2003&lt;/p&gt;
@@ -702,6 +1166,574 @@
  &lt;span class="toc-row-title"&gt;第37章&lt;/span&gt;
  
  &lt;span class="toc-row-desc"&gt;金融损失案例&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item><item><title>漫步华尔街</title><link>https://yuanuite.github.io/digital-library/books/random-walk-wall-street/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/random-walk-wall-street/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;漫步华尔街&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;A Random Walk Down Wall Street&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Burton G. Malkiel&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;一本面向个人投资者的经典指南，系统阐述了随机漫步理论——股票市场价格不可预测，长期持有指数基金才是稳健策略。Malkiel 以轻松流畅的笔触，带你穿越投资历史、心理学陷阱与资产类别全景，最终落脚于一个简单恒久的财富建议。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/preface.html"&gt;
+ &lt;span class="toc-row-title"&gt;前言&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;作者前言与全书导览&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/part1.html"&gt;
+ &lt;span class="toc-row-title"&gt;第一部分 · 股票及其价值&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;投资理论基础：坚实基础理论与空中楼阁理论，历史上的投机泡沫。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · 坚实基础与空中楼阁&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;什么是随机漫步？投资的坚实基础理论与空中楼阁理论。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · 群众的疯狂&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;荷兰郁金香泡沫、南海泡沫——历史上的投机狂潮。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · 20世纪60年代至90年代的投机泡沫&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;成长股狂热、概念股泡沫、漂亮五十、日本地产泡沫。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · 21世纪初的爆炸性泡沫&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;互联网泡沫与美国房地产泡沫的成因与崩盘。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/part2.html"&gt;
+ &lt;span class="toc-row-title"&gt;第二部分 · 专业人士如何玩游戏&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;技术分析与基本面分析的方法、局限与实证检验。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · 技术分析与基本面分析&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;图表分析与基本面分析的基本方法与局限。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · 技术分析与随机漫步理论&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;技术分析系统的实证检验：动量、滤波、道氏理论。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · 基本面分析有多好？&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;有效市场假说的三种形式与分析师预测的实证。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/part3.html"&gt;
+ &lt;span class="toc-row-title"&gt;第三部分 · 新投资技术&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;现代投资组合理论、CAPM、行为金融学与智能贝塔。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · 新步行鞋：现代投资组合理论&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;风险的定义、分散化与现代投资组合理论。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;第9章 · 增加风险以获取回报&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Beta、CAPM、套利定价理论与Fama-French三因子模型。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;第10章 · 行为金融学&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;投资者的非理性行为：过度自信、羊群效应、损失厌恶。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch11.html"&gt;
+ &lt;span class="toc-row-title"&gt;第11章 · 智能贝塔真的很聪明吗？&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;因子投资、低波动策略与市值加权指数的比较。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/part4.html"&gt;
+ &lt;span class="toc-row-title"&gt;第四部分 · 随机漫步者的实用指南&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;保险、储蓄、债券、房产、指数基金——个人投资的完整操作指南。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch12.html"&gt;
+ &lt;span class="toc-row-title"&gt;第12章 · 随机漫步者的健身手册&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;保险、储蓄、债券、房产——个人投资的实操指南。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch13.html"&gt;
+ &lt;span class="toc-row-title"&gt;第13章 · 金融竞赛的赔率：理解与预测股票债券回报&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;历史回报的四个时代与未来回报的预测框架。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch14.html"&gt;
+ &lt;span class="toc-row-title"&gt;第14章 · 生命周期投资指南&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;资产配置五原则与不同人生阶段的投资组合建议。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/random-walk-wall-street/ch15.html"&gt;
+ &lt;span class="toc-row-title"&gt;第15章 · 华尔街的三大步&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;指数基金、自选股票与聘请专业人士——三种投资策略。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item><item><title>通向财务自由之路</title><link>https://yuanuite.github.io/digital-library/books/trade-your-way/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/trade-your-way/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;通向财务自由之路&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;Trade Your Way to Financial Freedom&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Van K. Tharp&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;系统化交易方法的必读之作。Van K. Tharp 从交易心理出发，深入探讨期望值、头寸规模、退出策略等核心要素，帮助交易者建立可复制、可优化的交易系统。本书不推荐"圣杯"系统，而是教你如何找到属于你自己的圣杯。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trade-your-way/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · 圣杯的传说&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;圣杯隐喻、交易中真正重要的事、市场天才建模、影响系统开发的认知偏差。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trade-your-way/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · 设定你的目标&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;自我评估、交易目标设计、目标与系统开发的关系。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trade-your-way/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · 系统开发的步骤&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;从理念到系统的完整开发流程——选择概念、测试、优化、评估。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trade-your-way/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · 理解期望值与交易成功的关键&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;期望值计算、盈亏比、胜率、交易系统的绩效衡量。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trade-your-way/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · 入场信号的使用&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;设置条件的类型——通道突破、均线交叉、波动率突破、基本面筛选。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trade-your-way/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · 如何获利了结&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;止损与获利退出策略——固定止损、追踪止损、利润回撤保护。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trade-your-way/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · 机会与成本因素&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;交易频率、滑点、佣金、市场冲击对系统绩效的影响。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/trade-your-way/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · 仓位管理&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;仓位管理的重要性——固定比例、反等价鞅、Kelly公式、风险控制。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item><item><title>量化资产管理</title><link>https://yuanuite.github.io/digital-library/books/quant-asset-management/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/quant-asset-management/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;量化资产管理&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;Quantitative Asset Management: Factor Investing and Machine Learning for Institutional Investing&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Michael Robbins&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;一本系统介绍因子投资与机器学习在机构资产管理中应用的实践指南。Robbins 以清晰的框架串联起从因子构建、组合优化到业绩归因的量化投资全流程，并深入探讨机器学习方法在资产定价和风险管理中的实际落地。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/partI.html"&gt;
+ &lt;span class="toc-row-title"&gt;第一部分 · 规划我们的工作&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;投资方程式——从产品定位到治理架构。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第01章 · 选择我们的产品&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;投资中的技术能力并非放之四海而皆准，本章讨论不同类型机构的目标、资源、约束与激励如何塑造投资管理的方式。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第02章 · 投资流程&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;既然我们已在第1章确定了自身在业务中的使命，并阐明了如何推进其目标&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第03章 · 领导力与治理&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;三种致命的投资错误——傲慢、无知与道德的随意——以及如何通过文化、商业论证、投资政策声明（IPS）和尽职调查来构建审慎治理与有效领导。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/partII.html"&gt;
+ &lt;span class="toc-row-title"&gt;第二部分 · 数据、特征与响应&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;资产类型、金融数据、特征工程与因子。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第04章 · 资产类型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;本章将考察可用于决策的各类数据，并系统梳理股票、固定收益、大宗商品、另类投资等各类可投资资产的特征与差异。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第05章 · 金融数据&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;传统的统计和时间序列分析方法在处理金融数据的细微之处时往往力不从心&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第06章 · 特征&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;尽管人们普遍认为建模阶段占据预测过程的主要份额，但恰当选择特征往往对最终结果更为关键。本章讨论数据探索、抽样、可视化、特征的选择、处理与整理，以及缺失数据填补、异常值处理和合成数据生成等技术。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第07章 · 金融因子与经济因子&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;本章系统梳理量化投资中金融因子（financial factor）与经济因子（economic factor）的类别、构建与层级化建模方法，探讨风格因子、跨资产特征、另类数据及因子择时等关键议题。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第08章 · 构建因子预测&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;构建因子预测——从单因子到多因子模型，探讨因子组合、条件预测与机器学习方法。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;第09章 · 策略、目标与条件&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;策略、目标与条件——如何将投资观点转化为可执行的目标函数与约束条件。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch10.html"&gt;
+ &lt;span class="toc-row-title"&gt;第10章 · 金融市场的时间序列与横截面分析&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;金融市场的时间序列与横截面分析——两种分析维度的方法、应用与组合。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/partIII.html"&gt;
+ &lt;span class="toc-row-title"&gt;第三部分 · 构建我们的流程&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Alpha 与风险模型、资产配置、选股、回测、交易成本。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch11.html"&gt;
+ &lt;span class="toc-row-title"&gt;第11章 · Alpha 与风险模型&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;Alpha 与风险模型——收益预测模型与风险模型的协同设计，从单因子到集成模型。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch12.html"&gt;
+ &lt;span class="toc-row-title"&gt;第12章 · 资产配置&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;资产配置——战略配置、战术配置与选股的全流程，投资组合工厂的构建。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch13.html"&gt;
+ &lt;span class="toc-row-title"&gt;第13章 · 选股&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;选股——从宏观主题到量化打分，多策略组合内的证券选择方法。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch14.html"&gt;
+ &lt;span class="toc-row-title"&gt;第14章 · 回测&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;回测（backtesting）是验证系统化投资流程、建立信任并暴露模型缺陷的关键步骤。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch15.html"&gt;
+ &lt;span class="toc-row-title"&gt;第15章 · 交易成本与费用&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;交易成本与费用——显性费用与隐性市场冲击的建模、度量与优化。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch16.html"&gt;
+ &lt;span class="toc-row-title"&gt;第16章 · 再平衡与税收&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;再平衡与税收——投资方程式、税损收割与再平衡规则的成本效益分析。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch17.html"&gt;
+ &lt;span class="toc-row-title"&gt;第17章 · 金融市场的时间序列与横截面分析&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;我们在第二部分的结尾讨论了与该部分相关的算法。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/partIV.html"&gt;
+ &lt;span class="toc-row-title"&gt;第四部分 · 执行我们的计划&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;再平衡与税务、绩效与风险度量、投资与现金流管理。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch18.html"&gt;
+ &lt;span class="toc-row-title"&gt;第18章 · 绩效与风险度量&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;绩效与风险度量——自建还是外购、归因分析、风险分解与监控体系。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/quant-asset-management/ch19.html"&gt;
+ &lt;span class="toc-row-title"&gt;第19章 · 投资、风险与现金管理&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;战略计划是脆弱的，但这并不削弱规划的价值。本章系统梳理投资、风险与现金管理的治理、流程、文化与持续改进。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+&lt;/div&gt;</description></item><item><title>非统计学家的统计学</title><link>https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/index.html</guid><description>&lt;section class="book-cover"&gt;
+ &lt;h1 class="book-cover-title"&gt;非统计学家的统计学&lt;/h1&gt;
+ &lt;p class="book-cover-subtitle"&gt;Statistics for Non-Statisticians: A First Course for the Practitioner&lt;/p&gt;
+ &lt;p class="book-cover-author"&gt;Birger Stjernholm Madsen&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="book-intro"&gt;
+ &lt;h2&gt;简介&lt;/h2&gt;
+ &lt;p&gt;面向非统计专业从业者的统计入门教材，用最小预备知识讲清数据收集、描述统计、正态分布、假设检验、回归分析等核心概念。本书不堆砌数学公式，而是通过大量实际案例帮助读者建立统计直觉，适合需要应用统计方法但并非专职统计师的读者。&lt;/p&gt;
+&lt;/section&gt;
+&lt;h2 id="目录"&gt;目录&lt;a class="anchor" href="#%e7%9b%ae%e5%bd%95"&gt;#&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+&lt;div class="book-toc-list"&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/preface.html"&gt;
+ &lt;span class="toc-row-title"&gt;前言 · 读者指南&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;本书的读者对象、结构安排与使用建议。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch01.html"&gt;
+ &lt;span class="toc-row-title"&gt;第1章 · 数据收集&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;抽样调查与实验设计——从总体到样本，数据收集的基本方法与误差来源。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch02.html"&gt;
+ &lt;span class="toc-row-title"&gt;第2章 · 数据呈现&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;条形图、直方图、折线图、表格——用图表直观呈现数据分布与模式。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch03.html"&gt;
+ &lt;span class="toc-row-title"&gt;第3章 · 数据描述&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;系统变异与随机变异、位置与离散度量——描述性统计的核心工具。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch04.html"&gt;
+ &lt;span class="toc-row-title"&gt;第4章 · 正态分布&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;正态分布的性质与应用——置信区间、t 分布、控制图与过程能力分析。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch05.html"&gt;
+ &lt;span class="toc-row-title"&gt;第5章 · 定性数据分析&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;二项分布、统计不确定性、卡方检验——分类数据的统计分析方法。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch09.html"&gt;
+ &lt;span class="toc-row-title"&gt;第9章 · 附录&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;概率论基础、统计方法速查、电子表格函数、统计表、术语表与索引。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch06.html"&gt;
+ &lt;span class="toc-row-title"&gt;第6章 · 误差来源与规划&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;系统误差与随机误差、样本量计算、抽样方法——如何规划和设计可靠的统计调查。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch07.html"&gt;
+ &lt;span class="toc-row-title"&gt;第7章 · 关系评估&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;线性回归分析——最小二乘法、相关系数、残差检验与置信区间。&lt;/span&gt;
+ 
+ &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
+ &lt;/a&gt;
+ 
+ &lt;a class="toc-row" href="https://yuanuite.github.io/digital-library/books/stats-nonstatisticians/ch08.html"&gt;
+ &lt;span class="toc-row-title"&gt;第8章 · 比较两组&lt;/span&gt;
+ 
+ &lt;span class="toc-row-desc"&gt;配对t检验、两组t检验、方差分析——比较两组或多组数据的统计方法。&lt;/span&gt;
  
  &lt;span class="toc-row-arrow"&gt;›&lt;/span&gt;
  &lt;/a&gt;
