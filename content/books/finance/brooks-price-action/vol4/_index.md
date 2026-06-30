@@ -2,7 +2,7 @@
 title: "高级反转技术分析（下册）"
 description: "价格行为交易系统之反转分析"
 weight: 40
-categories: ["交易"]
+categories: ["金融"]
 tags: ["价格行为", "技术分析", "布鲁克斯"]
 BookCollapseSection: true
 ---

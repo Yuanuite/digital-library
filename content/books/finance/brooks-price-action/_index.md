@@ -2,7 +2,7 @@
 title: "布鲁克斯价格行为"
 description: "阿尔·布鲁克斯价格行为交易系统全集"
 weight: 10
-categories: ["交易"]
+categories: ["金融"]
 tags: ["价格行为", "技术分析", "布鲁克斯"]
 BookCollapseSection: true
 ---
