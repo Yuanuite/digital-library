@@ -2,7 +2,6 @@
 title: "高级波段技术分析"
 description: "价格行为交易系统之区间分析"
 weight: 20
-categories: ["金融"]
 tags: ["价格行为", "技术分析", "布鲁克斯"]
 BookCollapseSection: true
 ---
