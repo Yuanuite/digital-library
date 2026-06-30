@@ -482,3 +482,70 @@ hugo
 - 格子世界（4×4 等）：`<table class="grid-world">` + CSS 固定格子
 - 数据表格：文字居中、padding
 - 表注：`<p class="caption">表N.N 标题</p>`，置 `<table>` 上方
+
+### 丛书（多卷本）分批次上传
+
+从 `布鲁克斯价格行为` 四卷本（3 PDF + 1 EPUB）实践中总结的关键经验。
+
+#### 目录结构
+
+```
+content/books/<category>/<series-slug>/
+  _index.md          ← 丛书主页（BookCollapseSection: true, 手动目录表, categories）
+  vol1/
+    _index.md        ← 第一卷封面（BookCollapseSection: true, 无 categories, 无 tags）
+    ch*.md
+    images/
+  vol2/ ...
+```
+
+#### 🔴 categories 铁律（防侧栏计数膨胀）
+
+**categories 只放在丛书主页 `_index.md`，不得放在 volN/_index.md 中。**
+
+侧栏 `menu-filetree.html` 按 `categories` 分组，**每个含 `categories` 的 `_index.md` 都被计为一个独立项**。若 vol1-4 各有 `categories: ["金融"]`，侧栏会把每卷当作独立书籍，导致计数 = 4 + 1（丛书主页）+ 其他同分类书籍 = 远超预期。
+
+- ✅ 丛书主页：`categories: ["金融"]`
+- ❌ vol1-4 `_index.md`：不加 `categories`（从父 section 继承）
+- ❌ 分类页 `content/books/finance/_index.md`：不加 `categories` 和 `BookCollapseSection`（避免递归嵌套）
+
+#### 分批处理流程
+
+每卷独立走完整状态机（Phase 0–7），第一卷建丛书框架，后续卷复用：
+
+1. **第一卷** — Phase 4 时创建 `vol1/` 和父级 `_index.md`（`BookCollapseSection: true` + 手动目录表，待填卷链接）
+2. **第二卷** — 独立走 Phase 0–7，Phase 4 写入 `vol2/`，**更新**父级目录表添加 `vol2/` 行
+3. **后续卷** — 同上，每卷处理完即更新父级目录表
+4. **最终** — 全部卷上线后，父级目录表完整，`hugo` 零报错
+
+#### MinerU 大 PDF 分页提取
+
+PDF 超过 200 页或上传超时时，用 `--pages` 拆分：
+
+```bash
+# MinerU API 限制：单次 ≤200 页。上传超时（阿里云 OSS 网络不稳定）时也适用拆分策略
+mineru-open-api extract book.pdf -o out/chunks/p1-200/ -f md --model vlm --timeout 3600 --pages 1-200
+mineru-open-api extract book.pdf -o out/chunks/p201-400/ -f md --model vlm --timeout 3600 --pages 201-400
+mineru-open-api extract book.pdf -o out/chunks/p401-417/ -f md --model vlm --timeout 3600 --pages 401-417
+
+# 合并时按页码顺序拼接
+cat out/chunks/p1-200/*.md out/chunks/p201-400/*.md out/chunks/p401-417/*.md > out/book-merged.md
+```
+
+**要点**：
+- 每 chunk 用独立输出目录 `-o out/chunks/pX-Y/` 避免同名文件覆盖
+- 页面范围必须精确（如 401-417 = 17 页），超出 200 页 API 直接拒绝
+- 合并后运行 `scripts/clean_markdown.py` 处理 VLM 伪影
+- **使用绝对路径**：后台任务（`run_in_background: true`）的 CWD 可能不同，导致相对路径找不到文件
+
+#### EPUB 优先策略
+
+EPUB 用 pandoc 本地转换，秒级完成，质量高于 OCR（无伪影、HTML 语义保留）。多格式混排的丛书优先处理 EPUB，用省下的时间对付 PDF 提取。
+
+```bash
+pandoc book.epub -t markdown --extract-media=out/images -o out/book.md
+```
+
+#### Haiku 并行清洗+拆分
+
+两本以上书籍可并行委派 Haiku agent 做 Phase 2–4（清洗 + 图片收集 + 章节拆分 + 封面创建），主线程只做最终构建验证。每个 agent 处理一本书，报告章节数、图片数、构建结果。
