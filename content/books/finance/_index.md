@@ -2,8 +2,6 @@
 title: "金融"
 description: "金融、投资与交易书籍"
 weight: 40
-categories: ["金融"]
-BookCollapseSection: true
 ---
 
 # 金融
